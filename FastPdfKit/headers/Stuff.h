@@ -1,0 +1,223 @@
+/*
+ *  Stuff.h
+ *  OffscreenRendererTest
+ *
+ *  Created by Nicolò Tosi on 4/21/10.
+ *  Copyright 2010 MobFarm S.r.l. All rights reserved.
+ *
+ */
+
+#define ORIENTATION_PORTRAIT 0
+#define ORIENTATION_LANDSCAPE 1
+
+#define DETAIL_POPIN_DELAY 0.15
+
+//enum MFLegacyMode {
+//	MFLegacyModeDisabled = 0,
+//	MFLegacyModeForced = 1,
+//	MFLegacyModeAuto = 2
+//};
+//typedef NSUInteger MFLegacyMode;
+
+enum MFDocumentLead {
+	MFDocumentLeadLeft = 0,
+	MFDocumentLeadRight = 1
+};
+typedef NSUInteger MFDocumentLead;
+//#define MFDocumentLeadLeft 0
+//#define MFDocumentLeadRight 1
+
+enum MFDocumentMode {
+	MFDocumentModeSingle = 1,
+	MFDocumentModeDouble = 2
+};
+typedef NSUInteger MFDocumentMode;
+//#define MFDocumentModeSingle 1
+//#define MFDocumentModeDouble 2
+
+enum MFDocumentDirection {
+	MFDocumentDirectionL2R = 0,
+	MFDocumentDirectionR2L = 1
+};
+typedef NSUInteger MFDocumentDirection;
+//#define MFDocumentDirectionL2R 0
+//#define MFDocumentDirectionR2L 1
+
+#define IS_DEVICE_PAD ([UIDevice instancesRespondToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+static inline int normalize_angle(int degs) {
+	while( degs < 0) {
+		degs+=360;
+	}
+	while(degs >= 360) {
+		degs-=360;
+	}
+	return degs;
+}
+
+static inline float f_normalize_angle(float degs) {
+	while (degs < 0) {
+		degs+=360.0;
+	} 
+	while(degs >= 360) {
+		degs-=360.0;
+	}
+	return degs;
+}
+
+
+static inline NSUInteger pageForDirection(NSUInteger pageNumber, NSUInteger numberOfPages, MFDocumentDirection direction) {
+	
+	if(direction == MFDocumentDirectionL2R) {
+		return pageNumber;
+	} else if (direction == MFDocumentDirectionR2L) {
+		return numberOfPages-pageNumber+1;
+	} else {
+		return 0;
+	}
+	
+}
+
+static inline float degreesToRadians(float degs) {
+	return ((fmod(degs, 360.0)) / 180.0) * M_PI;
+}
+
+static inline NSInteger pageNumberForPosition(NSInteger position) {
+	return position+1;
+}
+
+static inline CGSize sizeForContent(NSInteger numberOfPages, CGSize pageSize) {
+	CGFloat contentHeight = pageSize.height;
+	CGFloat contentWidth = numberOfPages * pageSize.width;
+	return CGSizeMake(contentWidth, contentHeight);
+}
+
+static inline NSUInteger numberOfPositions(NSUInteger numberOfPages, MFDocumentMode pagesForPositions, MFDocumentLead lead) {
+	
+	int nrOfPos = 0;
+	if(pagesForPositions == MFDocumentModeSingle){
+		
+		nrOfPos = numberOfPages;
+		
+	} else if (pagesForPositions == MFDocumentModeDouble) {
+		
+		if(lead == MFDocumentLeadLeft) {
+			
+			nrOfPos = ceil((double)numberOfPages*0.5);
+			
+		} else if (lead == MFDocumentLeadRight) {
+			nrOfPos = ceil(((double)numberOfPages+1.0)*0.5); 
+		}
+	}
+	return nrOfPos;
+}
+
+static inline NSInteger positionForPage(NSUInteger page, MFDocumentMode mode, MFDocumentLead lead, MFDocumentDirection direction, NSUInteger maxPages) {
+	int pos = 0;
+	
+	if(direction == MFDocumentDirectionL2R) {
+		// Page will remain the same
+	} else if (direction == MFDocumentDirectionR2L) {
+		page = maxPages-page+1;
+	}
+	
+	if(mode == MFDocumentModeSingle) {
+		pos = page-1;
+	} else if (mode == MFDocumentModeDouble) {
+		if(lead == MFDocumentLeadLeft) {
+			pos = (ceil((double)page * 0.5))-1;
+		} else if (lead == MFDocumentLeadRight) {
+			pos = (floor((double)page * 0.5));
+		}
+	}
+	return pos;
+}
+
+
+static inline NSUInteger leftPageForPosition(NSInteger position, MFDocumentMode mode, MFDocumentLead lead, MFDocumentDirection direction, NSUInteger maxPages) {
+	
+	int page = 0;
+	
+	if(mode == MFDocumentModeSingle) {
+		page = position+1;
+	} else if (mode == MFDocumentModeDouble) {
+		
+		if(lead == MFDocumentLeadLeft) {
+			page = position * 2 + 1;
+		} else if (lead == MFDocumentLeadRight) {
+			page = position * 2 + 0;
+		}
+	}
+	
+	if(page < 0 || page > maxPages) {
+		page = 0;
+	}
+	
+	if(direction == MFDocumentDirectionR2L) {
+		page = maxPages-page+1;
+	}
+	
+	return page;
+}
+
+static inline NSUInteger rightPageForPosition(NSInteger position, MFDocumentMode mode, MFDocumentLead lead, MFDocumentDirection direction, NSUInteger maxPages) {
+	
+	int page = 0;
+	
+	if(mode == MFDocumentModeSingle) {
+		page = 0;
+	} else if (mode == MFDocumentModeDouble) {
+		
+	if(lead == MFDocumentLeadLeft) {
+		page = position * 2 + 2;
+	} else if (lead == MFDocumentLeadRight) {
+		page = position * 2 + 1;
+	}
+	}
+	
+	if(page < 0 || page > maxPages) {
+		page = 0;
+	}
+	
+	if(direction == MFDocumentDirectionR2L) {
+		page = maxPages-page+1;
+	}
+	
+	return page;
+}
+
+// Return the smallest pages displayed, ranging between 1 and maxPages
+static inline NSUInteger pageForPosition(NSInteger position, MFDocumentMode mode, MFDocumentLead lead, MFDocumentDirection direction, NSUInteger maxPages) {
+	
+	int page = 0;
+	
+	if(mode == MFDocumentModeSingle) {
+		page = position+1;
+	} else if (mode == MFDocumentModeDouble) {
+		if(lead == MFDocumentLeadLeft) {
+			page = position * 2 + 1;
+		} else if (lead == MFDocumentLeadRight) {
+			page = position * 2;
+		}
+	}
+ 	
+	if(page <= 0)
+		page = 1;
+	if(page > maxPages)
+		page = maxPages;
+	
+	if(direction == MFDocumentDirectionR2L) {
+		page = maxPages-page+1;
+	}
+	
+	return page;
+	
+}
+
+static inline CGRect rectForPosition(NSInteger position, CGSize pageSize) {
+	
+	return CGRectMake(position * pageSize.width, 0, pageSize.width, pageSize.height);
+	
+}
+
+
