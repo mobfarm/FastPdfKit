@@ -86,13 +86,14 @@
 		[passwordField setSecureTextEntry:YES];
 		[passwordField setKeyboardAppearance:UIKeyboardAppearanceAlert];
 		[passwordField setBackgroundColor:[UIColor whiteColor]];
-		
+		[passwordField setTag:TAG_PASSWORDFIELD];
 		
 	//
 // Now show it
-		[alert addSubview:passwordField];
+		[alert addSubview:passwordField];		
 		[alert show];
 		[alert release];
+		[passwordField release];
 		
 	} else {
 		
@@ -141,7 +142,7 @@
 		
 		if(buttonIndex == 1) {
 			
-			UITextField *passwordField = [[alertView subviews] objectAtIndex:4]; 
+			UITextField *passwordField = [alertView viewWithTag:TAG_PASSWORDFIELD]; 
 			NSString * password = [passwordField text];
 			if(password == nil) {
 				password = @"";

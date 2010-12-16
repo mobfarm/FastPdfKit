@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define TAG_PASSWORDFIELD 77
+
 @class MFDocumentManager;
 
 @interface MenuViewController : UIViewController {
