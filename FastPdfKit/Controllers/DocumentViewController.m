@@ -29,7 +29,7 @@
 @synthesize pageLabel, pageSlider;
 @synthesize dismissButton, bookmarksButton, outlineButton;
 @synthesize prevButton, nextButton;
-@synthesize textButton;
+@synthesize textButton, textDisplayViewController;
 @synthesize searchViewController, searchButton;
 @synthesize thumbnailView;
 
@@ -435,7 +435,11 @@
 	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar.
 	UIView * aView = nil;
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+	BOOL isPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+ 	if(isPad) {
 		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20 + 44, 768, 1024-20-44)];
 	} else {
 		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20 + 44, 320, 480-20-44)];
@@ -473,7 +477,14 @@
 	CGFloat padding = 10;
 	
 	UIFont *font = nil;
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+
+	BOOL isPad = NO;
+
+#ifdef UI_USER_INTERFACE_IDIOM
+	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+
+ 	if(isPad) {
 		font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 	} else {
 		font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
@@ -541,7 +552,7 @@
 	
 	// Text button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*3-buttonHeight*3, buttonWidth, buttonHeight)];
+	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*4-buttonHeight*4, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Text" forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 	[aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
@@ -551,7 +562,7 @@
 	
 	// Search button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*4-buttonHeight*4, buttonWidth, buttonHeight)];
+	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*5-buttonHeight*5, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Search" forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 	[aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
@@ -692,6 +703,8 @@
 	[searchViewController release],searchViewController = nil;
 	
 	[textButton release];
+	[textDisplayViewController release],textDisplayViewController = nil;
+	
 	[thumbnailView release];
 	
 	[modeButton release];
@@ -713,6 +726,5 @@
 	
     [super dealloc];
 }
-
 
 @end
