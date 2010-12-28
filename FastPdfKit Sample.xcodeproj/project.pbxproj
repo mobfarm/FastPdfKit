@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		015EF60B12CA29EE0098E4B6 /* SearchView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF60512CA29EE0098E4B6 /* SearchView_pad.xib */; };
+		015EF60C12CA29EE0098E4B6 /* SearchView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF60612CA29EE0098E4B6 /* SearchView_phone.xib */; };
+		015EF60D12CA29EE0098E4B6 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60812CA29EE0098E4B6 /* SearchViewController.m */; };
+		015EF60E12CA29EE0098E4B6 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60A12CA29EE0098E4B6 /* TextSearchOperation.m */; };
+		015EF6C712CA474B0098E4B6 /* TextDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF6C412CA474B0098E4B6 /* TextDisplayView.xib */; };
+		015EF6C812CA474B0098E4B6 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */; };
 		01CC21D012B907BF00E77E6E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC21CF12B907BF00E77E6E /* libFastPDFKit.a */; };
 		01F434C412ACD94D00D08021 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
 		01FB0F95125CB46A002D4337 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
@@ -33,6 +39,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		015EF60312CA29EE0098E4B6 /* SearchResultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDataSource.h; sourceTree = "<group>"; };
+		015EF60412CA29EE0098E4B6 /* SearchResultDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDelegate.h; sourceTree = "<group>"; };
+		015EF60512CA29EE0098E4B6 /* SearchView_pad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView_pad.xib; sourceTree = "<group>"; };
+		015EF60612CA29EE0098E4B6 /* SearchView_phone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView_phone.xib; sourceTree = "<group>"; };
+		015EF60712CA29EE0098E4B6 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		015EF60812CA29EE0098E4B6 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		015EF60912CA29EE0098E4B6 /* TextSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSearchOperation.h; sourceTree = "<group>"; };
+		015EF60A12CA29EE0098E4B6 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
+		015EF6C412CA474B0098E4B6 /* TextDisplayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayView.xib; sourceTree = "<group>"; };
+		015EF6C512CA474B0098E4B6 /* TextDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewController.h; sourceTree = "<group>"; };
+		015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDisplayViewController.m; sourceTree = "<group>"; };
 		01CC21C012B9077300E77E6E /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		01CC21C112B9077300E77E6E /* MFDocumentOverlayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentOverlayDataSource.h; sourceTree = "<group>"; };
 		01CC21C212B9077300E77E6E /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
@@ -93,6 +110,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		015EF60212CA29EE0098E4B6 /* TextSearch */ = {
+			isa = PBXGroup;
+			children = (
+				015EF6C412CA474B0098E4B6 /* TextDisplayView.xib */,
+				015EF6C512CA474B0098E4B6 /* TextDisplayViewController.h */,
+				015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */,
+				015EF60312CA29EE0098E4B6 /* SearchResultDataSource.h */,
+				015EF60412CA29EE0098E4B6 /* SearchResultDelegate.h */,
+				015EF60512CA29EE0098E4B6 /* SearchView_pad.xib */,
+				015EF60612CA29EE0098E4B6 /* SearchView_phone.xib */,
+				015EF60712CA29EE0098E4B6 /* SearchViewController.h */,
+				015EF60812CA29EE0098E4B6 /* SearchViewController.m */,
+				015EF60912CA29EE0098E4B6 /* TextSearchOperation.h */,
+				015EF60A12CA29EE0098E4B6 /* TextSearchOperation.m */,
+			);
+			name = TextSearch;
+			sourceTree = "<group>";
+		};
 		01CC21BF12B9077300E77E6E /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +157,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				015EF60212CA29EE0098E4B6 /* TextSearch */,
 				01F434C212ACD94D00D08021 /* DocumentViewController.h */,
 				01F434C312ACD94D00D08021 /* DocumentViewController.m */,
 				95F5A3531270A2A700F65929 /* BasicLauncherController.h */,
@@ -283,6 +319,9 @@
 				95F5A36C1270A2A700F65929 /* OutlineView.xib in Resources */,
 				95F5A36F1270A2A700F65929 /* gitmanual.pdf in Resources */,
 				95F5A3701270A2A700F65929 /* gitmanualcrypt.pdf in Resources */,
+				015EF60B12CA29EE0098E4B6 /* SearchView_pad.xib in Resources */,
+				015EF60C12CA29EE0098E4B6 /* SearchView_phone.xib in Resources */,
+				015EF6C712CA474B0098E4B6 /* TextDisplayView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +339,9 @@
 				95F5A36A1270A2A700F65929 /* BookmarkViewController.m in Sources */,
 				95F5A36D1270A2A700F65929 /* OutlineViewController.m in Sources */,
 				01F434C412ACD94D00D08021 /* DocumentViewController.m in Sources */,
+				015EF60D12CA29EE0098E4B6 /* SearchViewController.m in Sources */,
+				015EF60E12CA29EE0098E4B6 /* TextSearchOperation.m in Sources */,
+				015EF6C812CA474B0098E4B6 /* TextDisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

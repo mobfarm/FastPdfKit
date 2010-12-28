@@ -10,6 +10,8 @@
 #import "BookmarkViewController.h"
 #import "OutlineViewController.h"
 #import "MFDocumentManager.h"
+#import "SearchViewController.h"
+#import "TextDisplayViewController.h"
 
 #define TITLE_MODE_SINGLE @"Single"
 #define TITLE_MODE_DOUBLE @"Double"
@@ -28,6 +30,7 @@
 @synthesize dismissButton, bookmarksButton, outlineButton;
 @synthesize prevButton, nextButton;
 @synthesize textButton;
+@synthesize searchViewController, searchButton;
 @synthesize thumbnailView;
 
 
@@ -53,7 +56,80 @@
 }
 
 #pragma mark -
+#pragma mark TextDisplayViewController lazy init and management
+
+-(TextDisplayViewController *)textDisplayViewController {
+	
+	if(nil == textDisplayViewController) {
+		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle mainBundle]];
+	}
+	
+	return textDisplayViewController;
+}
+
+#pragma mark -
+#pragma mark SearchViewController lazy initialization and management
+
+-(SearchViewController *)searchViewController {
+	
+	// Lazily allocation when required.
+	
+	if(nil==searchViewController) {
+		
+		// We use different xib on iPhone and iPad.
+		
+		BOOL isPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+			if(isPad) {
+				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView_pad" bundle:[NSBundle mainBundle]];
+			} else {
+				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView_phone" bundle:[NSBundle mainBundle]];
+			}
+	}
+	
+	return searchViewController;
+}
+
+#pragma mark -
 #pragma mark Actions
+
+-(IBAction)actionText:(id)sender {
+	
+	if(!waitingForTextInput) {
+		
+		// We set the flag to YES and enable the documenter interaction. The flag is used to discard unwanted
+		// user interaction on the document elsewhere, while the document interaction will allow the document
+		// manager to notify its delegate (in this case itself) of user generated event on the document, like
+		// the tap on a certain page.
+		
+		waitingForTextInput = YES;
+		self.documentInteractionEnabled = YES;
+		
+		UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+		
+	} else {
+		waitingForTextInput = NO;
+	}
+	
+}
+
+-(IBAction)actionSearch:(id)sender {
+	
+	// Get the SearchViewController lazily, set it as the overlay data source for the docment view controller
+	// and enable the overlay to display the search result. The document view controller will query the data
+	// source for overlay objects to draw when displaying the document's pages.
+	
+	SearchViewController *controller = self.searchViewController;
+	controller.delegate = self;
+	self.overlayDataSource = (NSObject *)controller;
+	self.overlayEnabled = YES;
+	
+	[self presentModalViewController:(UIViewController *)controller animated:YES];
+}
 
 -(IBAction)actionNext:(id)sender {
 	[self moveToNextPage];
@@ -291,43 +367,62 @@
 	}
 }
 
--(void) documentViewController:(MFDocumentViewController *)dvc didReceivedTapAtPoint:(CGPoint)point {
+-(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point {
 	
-	//
-//	We are using this callback to selectively hide/unhide some UI components like the buttons.
-	
-	if(hudHidden) {
+	if(waitingForTextInput) {
 		
-		// Show
+		waitingForTextInput = NO;
 		
-		[nextButton setHidden:NO];
-		[prevButton setHidden:NO];
+		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
+		// and show it.
+		TextDisplayViewController *controller = self.textDisplayViewController;
+		controller.delegate = self;
+		[controller updateWithTextOfPage:page];
 		
-		[autozoomButton setHidden:NO];
-		[automodeButton setHidden:NO];
-		
-		[leadButton setHidden:NO];
-		[modeButton setHidden:NO];
-		[directionButton setHidden:NO];
-		
-		hudHidden = NO;
-		 
-	} else {
-		
-		// Hide
-		[nextButton setHidden:YES];
-		[prevButton setHidden:YES];
-		
-		[autozoomButton setHidden:YES];
-		[automodeButton setHidden:YES];
-		
-		[leadButton setHidden:YES];
-		[modeButton setHidden:YES];
-		[directionButton setHidden:YES];
-		
-		hudHidden = YES;
+		[self presentModalViewController:controller animated:YES];
 	}
+}
+
+-(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point {
 	
+	// If the flag waitingForTextInput is enabled, we use the
+	
+	if(!waitingForTextInput) {
+		
+		//	We are using this callback to selectively hide/unhide some UI components like the buttons.
+		
+		if(hudHidden) {
+			
+			// Show
+			
+			[nextButton setHidden:NO];
+			[prevButton setHidden:NO];
+			
+			[autozoomButton setHidden:NO];
+			[automodeButton setHidden:NO];
+			
+			[leadButton setHidden:NO];
+			[modeButton setHidden:NO];
+			[directionButton setHidden:NO];
+			
+			hudHidden = NO;
+			
+		} else {
+			
+			// Hide
+			[nextButton setHidden:YES];
+			[prevButton setHidden:YES];
+			
+			[autozoomButton setHidden:YES];
+			[automodeButton setHidden:YES];
+			
+			[leadButton setHidden:YES];
+			[modeButton setHidden:YES];
+			[directionButton setHidden:YES];
+			
+			hudHidden = YES;
+		}		
+	}
 }
 
 #pragma mark -
@@ -443,17 +538,27 @@
 	[self setAutozoomButton:aButton];
 	[[self view]addSubview:aButton];
 	
-	/*
-	// Text button
+	
+	// Text button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*4-buttonHeight*4, buttonWidth, buttonHeight)];
+	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*3-buttonHeight*3, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Text" forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 	[aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	self.textButton = aButton;
 	[[self view]addSubview:aButton];
-	*/
+	
+	// Search button.
+	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*4-buttonHeight*4, buttonWidth, buttonHeight)];
+	[aButton setTitle:@"Search" forState:UIControlStateNormal];
+	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
+	[aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
+	[[aButton titleLabel]setFont:font];
+	self.searchButton = aButton;
+	[[self view]addSubview:aButton];
+	
 	
 	// Dismiss button
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -582,6 +687,9 @@
 
 
 - (void)dealloc {
+	
+	[searchButton release], searchButton = nil;
+	[searchViewController release],searchViewController = nil;
 	
 	[textButton release];
 	[thumbnailView release];

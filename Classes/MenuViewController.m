@@ -142,7 +142,7 @@
 		
 		if(buttonIndex == 1) {
 			
-			UITextField *passwordField = [alertView viewWithTag:TAG_PASSWORDFIELD]; 
+			UITextField *passwordField = (UITextField *)[alertView viewWithTag:TAG_PASSWORDFIELD]; 
 			NSString * password = [passwordField text];
 			if(password == nil) {
 				password = @"";

@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MFDocumentViewController.h"
 #import "MFDocumentViewControllerDelegate.h"
+
 @class BookmarkViewController;
+@class SearchViewController;
+@class TextDisplayViewController;
 
 @interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate>{
 
@@ -27,6 +30,11 @@
 	UIButton *prevButton;
 	
 	UIButton *textButton;
+	BOOL waitingForTextInput;
+	TextDisplayViewController *textDisplayViewController;
+	
+	UIButton *searchButton;
+	SearchViewController *searchViewController;
 	
 	UILabel *pageLabel;
 	UISlider *pageSlider;
@@ -42,6 +50,7 @@
 @property (nonatomic, retain) UIImageView *thumbnailView;
 
 @property (nonatomic, retain) UIButton *textButton;
+@property (nonatomic, retain) TextDisplayViewController *textDisplayViewController;
 
 @property (nonatomic, retain) UIButton *leadButton;
 @property (nonatomic, retain) UIButton *modeButton;
@@ -53,6 +62,9 @@
 @property (nonatomic, retain) UISlider *pageSlider;
 @property (nonatomic, retain) UIButton *bookmarksButton;
 @property (nonatomic, retain) UIButton *outlineButton;
+
+@property (nonatomic, retain) UIButton *searchButton;
+@property (nonatomic, retain) SearchViewController *searchViewController;
 
 @property (nonatomic, retain) UIButton *nextButton;
 @property (nonatomic, retain) UIButton *prevButton;
