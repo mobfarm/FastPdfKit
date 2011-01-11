@@ -12,6 +12,7 @@
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
 #import "TextSearchOperation.h"
+#import "SearchManager.h"
 
 @interface SearchViewController()
 
@@ -23,10 +24,9 @@
 -(void)stopSearch;
 -(void)saveSearchStatus;
 -(void)restoreSearchStatus;
--(void)startSearch;
+-(void)startSearchWithTerm:(NSString *)term;
 
 @end
-
 
 @implementation SearchViewController
 
@@ -38,6 +38,7 @@
 @synthesize startingSearchPage, currentSearchPage;
 @synthesize rightButtonItem, activityIndicatorView;
 @synthesize delegate;
+@synthesize searchManager;
 
 #pragma mark -
 #pragma mark SearchResultsDataSource methods
@@ -82,31 +83,32 @@
 *	Add the MFSearchResult object to the array if it is not empty and update the table. Spawn a new operation
 *	for the next page if necessary.
 */
--(void)handleSearchResult:(MFSearchResult *)searchResult {
+
+-(void)updateResults:(NSArray *)results withResults:(MFSearchResult *)addedResult forPage:(NSUInteger)page {
+
+	if([addedResult size]>0) {
+		
+		[searchResults addObject:addedResult];
+		[searchTableView reloadData];
+		totalItems+= [addedResult size];
+	}
+}
+
+-(void) searchDidPause {
+	[activityIndicatorView stopAnimating];
+}
+
+-(void) searchDidResume {
+	[activityIndicatorView startAnimating];
+}
+
+-(void) searchDidStop {
 	
 	[activityIndicatorView stopAnimating];
-	
-	if([searchResult size]>0) {
-		[searchResults addObject:searchResult];
-		[searchTableView reloadData];
-		totalItems+= [searchResult size];
-	}
-	
-	//
-	// Automatically spawn another operation if the limit is not reached yet.
-	
-	if(totalItems < maxItems) {
-	
-		// 
-		// Abort if we reached the last page. If you want to start from the beginning avoid updating the
-		// currentSearchPage from the documentViewController.
-		
-		if(currentSearchPage < [[delegate document]numberOfPages]) {
-			
-			currentSearchPage++;
-			[self startSearch];	
-		}
-	}	
+}
+
+-(void) searchDidStart {
+	[activityIndicatorView startAnimating];
 }
 
 -(void)saveSearchStatus {
@@ -120,42 +122,33 @@
 	[searchBar setText:savedSearchTerm];
 }
 
--(void)stopSearch {
-	
-	if([self searchOperation]) {
-		[activityIndicatorView stopAnimating];
-		[searchOperation cancel];
-		[self setSearchOperation:nil];
-	}
+#pragma mark -
+#pragma mark Start and Stop
+
+-(void)pauseSearch {
+	[searchManager pauseSearch];
 }
 
--(void)startSearch {
+-(void)stopSearch {
 	
-	TextSearchOperation *op = [[TextSearchOperation alloc]init];
-	[op setPage:currentSearchPage];
-	[op setDelegate:self];
-	[op setSearchTerm:[searchBar text]];
-	[op setDocument:[delegate document]];
-	[self setSearchOperation:op];
-	[operationQueue addOperation:op];
-	[op release];
-		
-	[activityIndicatorView startAnimating];
+	[searchManager stopSearch];
+}
+
+-(void)startSearchWithTerm:(NSString *)aSearchTerm {
+	
+	[searchManager startSearchOfTerm:aSearchTerm fromPage:delegate.page];
 }
 
 -(void)cancelSearch {
 	
-	// Standard stop.
-	[self stopSearch];
-	
-	// Also release the result obtained until now and reload the data.
+	[searchManager stopSearch];
 	[searchResults removeAllObjects];
 	[searchTableView reloadData];
 }
 		 
--(void)continueSearch {
-	// TODO: coming soon.
+-(void)resumeSearch {
 	
+	[searchManager resumeSearch];
 }
 
 #pragma mark -
@@ -257,7 +250,7 @@
 	[sBar resignFirstResponder];
 	
 	// Let the startSearch helper function handle the spawning of the operation.
-	[self startSearch];
+	[self startSearchWithTerm:[sBar text]];
 }
 
 -(void) searchBarTextDidBeginEditing:(UISearchBar *)sBar {
@@ -275,12 +268,7 @@
        
 		searchResults = [[NSMutableArray alloc]init];
 		
-		operationQueue =  [[NSOperationQueue alloc]init];
-		[operationQueue setMaxConcurrentOperationCount:1];
-		
-		maxItems = 20;
-		
-    }
+	}
     return self;
 }
 
@@ -344,7 +332,7 @@
 
 - (void)dealloc {
 	
-	[operationQueue release],operationQueue = nil;
+	searchManager = nil;
 	
 	[searchOperation release],searchOperation = nil;
 	[savedSearchTerm release],savedSearchTerm = nil;

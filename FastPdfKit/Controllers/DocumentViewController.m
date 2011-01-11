@@ -12,6 +12,7 @@
 #import "MFDocumentManager.h"
 #import "SearchViewController.h"
 #import "TextDisplayViewController.h"
+#import "SearchManager.h"
 
 #define TITLE_MODE_SINGLE @"Single"
 #define TITLE_MODE_DOUBLE @"Double"
@@ -30,7 +31,7 @@
 @synthesize dismissButton, bookmarksButton, outlineButton;
 @synthesize prevButton, nextButton;
 @synthesize textButton, textDisplayViewController;
-@synthesize searchViewController, searchButton;
+@synthesize searchViewController, searchButton, searchManager;
 @synthesize thumbnailView;
 
 
@@ -93,6 +94,19 @@
 }
 
 #pragma mark -
+#pragma mark SearchManager lazy initialization
+
+-(SearchManager *)searchManager {
+
+	if(nil == searchManager) {
+		
+		searchManager = [[SearchManager alloc]init];
+	}
+	
+	return searchManager;
+}
+
+#pragma mark -
 #pragma mark Actions
 
 -(IBAction)actionText:(id)sender {
@@ -123,10 +137,16 @@
 	// and enable the overlay to display the search result. The document view controller will query the data
 	// source for overlay objects to draw when displaying the document's pages.
 	
+	SearchManager *manager = self.searchManager;
+	manager.document = self.document;
+	
 	SearchViewController *controller = self.searchViewController;
 	controller.delegate = self;
 	self.overlayDataSource = (NSObject *)controller;
 	self.overlayEnabled = YES;
+	
+	manager.delegate = controller;
+	controller.searchManager = manager;
 	
 	[self presentModalViewController:(UIViewController *)controller animated:YES];
 }
@@ -698,6 +718,8 @@
 
 
 - (void)dealloc {
+	
+	[searchManager release], searchManager = nil;
 	
 	[searchButton release], searchButton = nil;
 	[searchViewController release],searchViewController = nil;

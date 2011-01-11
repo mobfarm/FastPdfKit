@@ -92,9 +92,9 @@
 	//
 //	Dismiss this modal view controller and tell the delegate to show the requested page number. Consider
 // implementing a documentDelegate interface that handle such kind of request
-	
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	[delegate setPage:page];
+	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	
 }
 
 -(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

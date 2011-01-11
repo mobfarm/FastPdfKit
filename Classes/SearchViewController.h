@@ -13,6 +13,7 @@
 
 @class MFDocumentManager;
 @class DocumentViewController;
+@class SearchManager;
 
 @interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SearchResultDelegate, UISearchBarDelegate,SearchResultDataSource, MFDocumentOverlayDataSource> {
 
@@ -27,20 +28,16 @@
 	NSUInteger totalItems;
 	NSUInteger maxItems;
 	
-	NSUInteger startingSearchPage;
-	NSUInteger currentSearchPage;
-	
-	// Operation.
-	NSOperation *searchOperation;
-	NSOperationQueue *operationQueue;
-	
 	// Save status.
 	NSString *savedSearchTerm;
 	BOOL searchStatusSaved;
 	
 	DocumentViewController *delegate;
+	
+	SearchManager * searchManager;
 }
 
+@property (assign) SearchManager * searchManager;
 @property (assign) DocumentViewController *delegate;
 
 @property (readonly) NSUInteger currentSearchPage;

@@ -13,6 +13,7 @@
 @class BookmarkViewController;
 @class SearchViewController;
 @class TextDisplayViewController;
+@class SearchManager;
 
 @interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate>{
 
@@ -35,6 +36,7 @@
 	
 	UIButton *searchButton;
 	SearchViewController *searchViewController;
+	SearchManager *searchManager;
 	
 	UILabel *pageLabel;
 	UISlider *pageSlider;
@@ -65,6 +67,7 @@
 
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) SearchViewController *searchViewController;
+@property (nonatomic, retain) SearchManager *searchManager;
 
 @property (nonatomic, retain) UIButton *nextButton;
 @property (nonatomic, retain) UIButton *prevButton;
