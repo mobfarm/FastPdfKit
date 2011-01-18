@@ -304,6 +304,13 @@
 #pragma mark -
 #pragma mark MFDocumentViewControllerDelegate methods implementation
 
+-(void)documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri {
+
+	// Here we can handle the URI request, for example by opening a web browser to display the web page.
+	NSLog(@"Received URI request %@",uri);
+	
+}
+
 -(void) documentViewController:(MFDocumentViewController *)dvc didGoToPage:(NSUInteger)page {
 	
 	//
