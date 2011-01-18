@@ -14,6 +14,7 @@
 @class SearchViewController;
 @class TextDisplayViewController;
 @class SearchManager;
+@class MiniSearchView;
 
 @interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate>{
 
@@ -37,6 +38,7 @@
 	UIButton *searchButton;
 	SearchViewController *searchViewController;
 	SearchManager *searchManager;
+	MiniSearchView *miniSearchView;
 	
 	UILabel *pageLabel;
 	UISlider *pageSlider;
@@ -65,9 +67,11 @@
 @property (nonatomic, retain) UIButton *bookmarksButton;
 @property (nonatomic, retain) UIButton *outlineButton;
 
+-(void)switchToMiniSearchView:(NSUInteger)index; 
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) SearchViewController *searchViewController;
 @property (nonatomic, retain) SearchManager *searchManager;
+@property (nonatomic, retain) MiniSearchView *miniSearchView;
 
 @property (nonatomic, retain) UIButton *nextButton;
 @property (nonatomic, retain) UIButton *prevButton;

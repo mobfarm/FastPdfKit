@@ -20,8 +20,11 @@
 	// UI.
 	IBOutlet UISearchBar *searchBar;
 	IBOutlet UITableView *searchTableView;
+	
 	UIActivityIndicatorView *activityIndicatorView;
-	IBOutlet UIBarButtonItem *rightButtonItem;
+	
+	IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
+	IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
 	
 	// Data.
 	NSMutableArray *searchResults;
@@ -43,11 +46,12 @@
 @property (readonly) NSUInteger currentSearchPage;
 @property (readonly) NSUInteger startingSearchPage;
 @property (nonatomic, readonly) NSString *searchTerm;
-@property (nonatomic,readonly) NSMutableArray *searchResults;
 
--(IBAction)actionBack:(id)sender;
+-(IBAction)actionCancelStop:(id)sender;
+-(IBAction)actionMinimize:(id)sender;
+
 @property (nonatomic,retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic,retain) IBOutlet UITableView *searchTableView;
 @property (nonatomic,retain) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic,retain) IBOutlet UIBarButtonItem *rightButtonItem;
+@property (nonatomic,retain) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
 @end

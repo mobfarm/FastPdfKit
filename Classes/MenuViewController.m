@@ -17,9 +17,9 @@
 #define TITLE_ENCRYPTED @"Open"
 
 //#define DOC_PLAIN @"FastPDF1.3Manual"
-//#define DOC_PLAIN @"ilfatto20101121"
+#define DOC_PLAIN @"ilfatto20101121"
 //#define DOC_PLAIN @"pdf_reference_1-7"
-#define DOC_PLAIN @"_Int3r_nazional3_845"
+//define DOC_PLAIN @"rassegna7987"
 //#define DOC_PLAIN @"Altroconsumo"
 //#define DOC_PLAIN @"Appunti Macteo"
 #define DOC_ENCRYPTED @"gitmanualcrypt"

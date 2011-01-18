@@ -13,6 +13,7 @@
 #import "SearchViewController.h"
 #import "TextDisplayViewController.h"
 #import "SearchManager.h"
+#import "MiniSearchView.h"
 
 #define TITLE_MODE_SINGLE @"Single"
 #define TITLE_MODE_DOUBLE @"Double"
@@ -31,9 +32,8 @@
 @synthesize dismissButton, bookmarksButton, outlineButton;
 @synthesize prevButton, nextButton;
 @synthesize textButton, textDisplayViewController;
-@synthesize searchViewController, searchButton, searchManager;
+@synthesize searchViewController, searchButton, searchManager, miniSearchView;
 @synthesize thumbnailView;
-
 
 #pragma mark Thumbnail utility functions
 
@@ -86,7 +86,7 @@
 			if(isPad) {
 				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView_pad" bundle:[NSBundle mainBundle]];
 			} else {
-				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView_phone" bundle:[NSBundle mainBundle]];
+				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
 			}
 	}
 	
@@ -96,6 +96,61 @@
 #pragma mark -
 #pragma mark SearchManager lazy initialization
 
+-(void)presentFullSearchView {
+	
+	SearchManager *manager = self.searchManager;
+	manager.document = self.document;
+	
+	SearchViewController *controller = self.searchViewController;
+	controller.delegate = self;
+	self.overlayDataSource = self.searchManager;
+	self.overlayEnabled = YES;
+	
+	manager.delegate = controller;
+	controller.searchManager = manager;
+	
+	[self presentModalViewController:(UIViewController *)controller animated:YES];
+}
+
+// Void
+-(void)presentMiniSearchViewWithEntryAtIndex:(NSUInteger)index {
+	
+	if(miniSearchView == nil) {
+		
+		// If nil, allocate and initialize it.
+		
+		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(20, 20, 280, 120)];
+		
+	} else {
+		
+		// If not nil, remove it from the superview.
+		if([miniSearchView superview]!=nil)
+			[miniSearchView removeFromSuperview];
+	}
+	
+	// Set up the connections.
+	miniSearchView.dataSource = self.searchManager;
+	self.searchManager.delegate = miniSearchView;
+	
+	// TODO: fix this shit.
+	// Update the view with the right index.
+	[miniSearchView reloadData];
+	[miniSearchView setCurrentResultIndex:index];
+	
+	// Add the subview and referesh the superview.
+	[[self view]addSubview:miniSearchView];
+	[[self view]setNeedsLayout];
+}
+
+-(void)dismissMiniSearchView {
+	
+	if(miniSearchView!=nil) {
+		
+		[miniSearchView removeFromSuperview];
+		MF_COCOA_RELEASE(miniSearchView);
+	}
+}
+
 -(SearchManager *)searchManager {
 
 	if(nil == searchManager) {
@@ -104,6 +159,21 @@
 	}
 	
 	return searchManager;
+}
+
+-(void)revertToFullSearchView {
+
+	// Dismiss the search view.
+	
+	[self dismissMiniSearchView];
+	[self presentFullSearchView];
+}
+
+-(void)switchToMiniSearchView:(NSUInteger)index {
+
+	[self dismissModalViewControllerAnimated:YES];
+	
+	[self presentMiniSearchViewWithEntryAtIndex:index];
 }
 
 #pragma mark -
@@ -142,7 +212,7 @@
 	
 	SearchViewController *controller = self.searchViewController;
 	controller.delegate = self;
-	self.overlayDataSource = (NSObject *)controller;
+	self.overlayDataSource = self.searchManager;
 	self.overlayEnabled = YES;
 	
 	manager.delegate = controller;
@@ -191,7 +261,6 @@
 	
 	[self presentModalViewController:outlineVC animated:YES];
 	[outlineVC release];
-	
 }
 
 -(IBAction) actionDismiss:(id)sender {
@@ -679,7 +748,14 @@
 	self.thumbnailView = anImageView;
 	[[self view]addSubview:anImageView];
 	[anImageView release];
-}
+	
+	MiniSearchView *aMiniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(20, 80, 280, 76)];
+	[aMiniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleLeftMargin];
+	self.miniSearchView = aMiniSearchView;
+	[[self view]addSubview:aMiniSearchView];
+	[aMiniSearchView release];
+	
+ }
 
 /*
 // Override to allow orientations other than the default portrait orientation.
