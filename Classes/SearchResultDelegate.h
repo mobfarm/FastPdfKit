@@ -16,5 +16,6 @@
 
 -(void)searchDidStop;
 -(void)searchDidStart;
+-(void)searchGotCancelled;
 
 @end

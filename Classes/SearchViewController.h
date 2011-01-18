@@ -31,10 +31,6 @@
 	NSUInteger totalItems;
 	NSUInteger maxItems;
 	
-	// Save status.
-	NSString *savedSearchTerm;
-	BOOL searchStatusSaved;
-	
 	DocumentViewController *delegate;
 	
 	SearchManager * searchManager;
@@ -42,10 +38,6 @@
 
 @property (assign) SearchManager * searchManager;
 @property (assign) DocumentViewController *delegate;
-
-@property (readonly) NSUInteger currentSearchPage;
-@property (readonly) NSUInteger startingSearchPage;
-@property (nonatomic, readonly) NSString *searchTerm;
 
 -(IBAction)actionCancelStop:(id)sender;
 -(IBAction)actionMinimize:(id)sender;

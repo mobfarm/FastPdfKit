@@ -113,13 +113,13 @@
 }
 
 // Void
--(void)presentMiniSearchViewWithEntryAtIndex:(NSUInteger)index {
+-(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
 	
 	if(miniSearchView == nil) {
 		
 		// If nil, allocate and initialize it.
 		
-		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(20, 20, 280, 120)];
+		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(20, 20, 280, 76)];
 		
 	} else {
 		
@@ -135,7 +135,7 @@
 	// TODO: fix this shit.
 	// Update the view with the right index.
 	[miniSearchView reloadData];
-	[miniSearchView setCurrentResultIndex:index];
+	[miniSearchView setCurrentTextItem:item];
 	
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:miniSearchView];
@@ -163,17 +163,18 @@
 
 -(void)revertToFullSearchView {
 
-	// Dismiss the search view.
+	// Dismiss the minimized view and present the full one.
 	
 	[self dismissMiniSearchView];
 	[self presentFullSearchView];
 }
 
--(void)switchToMiniSearchView:(NSUInteger)index {
+-(void)switchToMiniSearchView:(MFTextItem *)item {
 
-	[self dismissModalViewControllerAnimated:YES];
+	// Dismiss the full view and present the minimized one.
 	
-	[self presentMiniSearchViewWithEntryAtIndex:index];
+	[self dismissModalViewControllerAnimated:YES];
+	[self presentMiniSearchViewWithStartingItem:item];
 }
 
 #pragma mark -
@@ -749,11 +750,11 @@
 	[[self view]addSubview:anImageView];
 	[anImageView release];
 	
-	MiniSearchView *aMiniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(20, 80, 280, 76)];
-	[aMiniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleLeftMargin];
-	self.miniSearchView = aMiniSearchView;
-	[[self view]addSubview:aMiniSearchView];
-	[aMiniSearchView release];
+	//MiniSearchView *aMiniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(20, 80, 280, 76)];
+//	[aMiniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleLeftMargin];
+//	self.miniSearchView = aMiniSearchView;
+//	[[self view]addSubview:aMiniSearchView];
+//	[aMiniSearchView release];
 	
  }
 

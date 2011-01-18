@@ -15,15 +15,9 @@
 
 @interface SearchViewController()
 
-@property (nonatomic, retain) NSOperation *searchOperation;
-@property (nonatomic, copy) NSString *savedSearchTerm;
-@property (readwrite) NSUInteger startingSearchPage;
-@property (readwrite) NSUInteger currentSearchPage;
 @property (nonatomic,retain) NSMutableArray *searchResults;
 
 -(void)stopSearch;
--(void)saveSearchStatus;
--(void)restoreSearchStatus;
 -(void)startSearchWithTerm:(NSString *)term;
 
 @end
@@ -32,10 +26,6 @@
 
 @synthesize searchBar, searchTableView;
 @synthesize searchResults;
-@synthesize searchOperation;
-@synthesize savedSearchTerm;
-@synthesize searchTerm;
-@synthesize startingSearchPage, currentSearchPage;
 @synthesize switchToMiniBarButtonItem, activityIndicatorView;
 @synthesize delegate;
 @synthesize searchManager;
@@ -99,7 +89,23 @@
 	}
 }
 
+-(void) searchGotCancelled {
+
+	NSLog(@"Got cancelled");
+	
+	[searchBar setText:@""];
+	[searchResults removeAllObjects];
+	[activityIndicatorView stopAnimating];
+	[cancelStopBarButtonItem setEnabled:NO];
+	[switchToMiniBarButtonItem setEnabled:NO];
+	[searchTableView reloadData];
+	
+	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+}
+
 -(void) searchDidStop {
+	
+	NSLog(@"Did stop");
 	
 	[cancelStopBarButtonItem setTitle:@"Cancel"];
 	[activityIndicatorView stopAnimating];
@@ -107,19 +113,12 @@
 
 -(void) searchDidStart {
 	
+	NSLog(@"Did start");
+	
 	[cancelStopBarButtonItem setTitle:@"Stop"];
 	[activityIndicatorView startAnimating];
-}
-
--(void)saveSearchStatus {
-	// Save the status.
-	[self setSavedSearchTerm:[searchBar text]];
-}
-
--(void)restoreSearchStatus {
-	
-	// Reload the saved status.
-	[searchBar setText:savedSearchTerm];
+	[cancelStopBarButtonItem setEnabled:YES];
+	[switchToMiniBarButtonItem setEnabled:YES];
 }
 
 #pragma mark -
@@ -132,14 +131,12 @@
 
 -(void)startSearchWithTerm:(NSString *)aSearchTerm {
 	
-	[searchManager startSearchOfTerm:aSearchTerm fromPage:delegate.page];
+	[searchManager startSearchOfTerm:aSearchTerm fromPage:[delegate page]];
 }
 
 -(void)cancelSearch {
 	
-	[searchManager stopSearch];
-	[searchResults removeAllObjects];
-	[searchTableView reloadData];
+	[searchManager cancelSearch];
 }
 
 #pragma mark -
@@ -160,7 +157,12 @@
 
 -(IBAction)actionMinimize:(id)sender {
 	
-	[delegate switchToMiniSearchView:1];
+	MFTextItem * firstItem = [[searchResults objectAtIndex:0]objectAtIndex:0];
+	
+	if(firstItem!=nil) {
+	
+	[delegate switchToMiniSearchView:firstItem];
+	}
 }
 		
 #pragma mark -
@@ -169,6 +171,7 @@
 -(BOOL)searchBarShouldEndEditing:(UISearchBar *)sBar {
 	
 	[sBar resignFirstResponder];
+	
 	return YES;
 }
 
@@ -176,14 +179,10 @@
 	
 	// Dismiss the keyboard.
 	[sBar resignFirstResponder];
+	[self cancelSearch];
 }
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)sBar {
-	
-	// Get the current page form the document as a starting point.
-	NSUInteger currentShownPage = [delegate page];
-	[self setStartingSearchPage:currentShownPage];
-	[self setCurrentSearchPage:currentShownPage];
 	
 	[sBar resignFirstResponder];
 	
@@ -194,7 +193,7 @@
 -(void) searchBarTextDidBeginEditing:(UISearchBar *)sBar {
 	
 	// Let the cancelSearch helper function stop the pending operation.
-	[self cancelSearch];
+	[self stopSearch];
 }
 
 		 
@@ -222,8 +221,9 @@
 	MFTextItem * item = [searchResult objectAtIndex:indexPath.row];
 	
 	// Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page.
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
-	[delegate setPage:[item page]];
+	[delegate switchToMiniSearchView:item];
+	
+	[delegate setPage:[item page] zoomOnRect:CGPathGetBoundingBox([item highlightPath])];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -303,7 +303,7 @@
 	
 	// Common setup.
 	
-	[searchBar setText:[searchManager currentSearchTerm]];
+	[searchBar setText:[searchManager searchTerm]];
 	self.searchResults = [[searchManager searchResults]mutableCopy];
 	[searchTableView reloadData];
 }
@@ -341,9 +341,6 @@
 - (void)dealloc {
 	
 	searchManager = nil;
-	
-	[searchOperation release],searchOperation = nil;
-	[savedSearchTerm release],savedSearchTerm = nil;
 	
 	[switchToMiniBarButtonItem release],switchToMiniBarButtonItem = nil;
 	[cancelStopBarButtonItem release],cancelStopBarButtonItem = nil;

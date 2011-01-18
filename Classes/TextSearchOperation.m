@@ -16,7 +16,7 @@
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
 	
-	MFSearchResult *searchResult = [[document searchResultOnPage:page forSearchTerms:searchTerm]retain];
+	NSArray *searchResult = [[document searchResultOnPage:page forSearchTerms:searchTerm]copy];
 	
 	if(![self isCancelled]) {
 		
