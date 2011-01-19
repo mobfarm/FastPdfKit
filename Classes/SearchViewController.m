@@ -223,7 +223,7 @@
 	// Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page.
 	[delegate switchToMiniSearchView:item];
 	
-	[delegate setPage:[item page] zoomOnRect:CGPathGetBoundingBox([item highlightPath])];
+	[delegate setPage:[item page] withZoomOnRect:CGPathGetBoundingBox([item highlightPath])];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

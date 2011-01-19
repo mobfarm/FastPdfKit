@@ -130,6 +130,7 @@
 	
 	// Set up the connections.
 	miniSearchView.dataSource = self.searchManager;
+	miniSearchView.documentDelegate = self;
 	self.searchManager.delegate = miniSearchView;
 	
 	// TODO: fix this shit.
