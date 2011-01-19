@@ -91,8 +91,6 @@
 
 -(void) searchGotCancelled {
 
-	NSLog(@"Got cancelled");
-	
 	[searchBar setText:@""];
 	[searchResults removeAllObjects];
 	[activityIndicatorView stopAnimating];
@@ -105,16 +103,16 @@
 
 -(void) searchDidStop {
 	
-	NSLog(@"Did stop");
-	
 	[cancelStopBarButtonItem setTitle:@"Cancel"];
 	[activityIndicatorView stopAnimating];
 }
 
 -(void) searchDidStart {
 	
-	NSLog(@"Did start");
-	
+	if([searchResults count]>0){
+	[searchResults removeAllObjects];
+	[searchTableView reloadData];
+	}
 	[cancelStopBarButtonItem setTitle:@"Stop"];
 	[activityIndicatorView startAnimating];
 	[cancelStopBarButtonItem setEnabled:YES];

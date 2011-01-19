@@ -84,7 +84,7 @@
 		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
 			if(isPad) {
-				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView_pad" bundle:[NSBundle mainBundle]];
+				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:[NSBundle mainBundle]];
 			} else {
 				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
 			}
@@ -119,7 +119,7 @@
 		
 		// If nil, allocate and initialize it.
 		
-		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(20, 20, 280, 76)];
+		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(10, 40, 230, 76)];
 		
 	} else {
 		
@@ -496,6 +496,8 @@
 			[modeButton setHidden:NO];
 			[directionButton setHidden:NO];
 			
+			[miniSearchView setHidden:NO];
+			
 			hudHidden = NO;
 			
 		} else {
@@ -510,6 +512,8 @@
 			[leadButton setHidden:YES];
 			[modeButton setHidden:YES];
 			[directionButton setHidden:YES];
+			
+			[miniSearchView setHidden:YES];
 			
 			hudHidden = YES;
 		}		
@@ -750,12 +754,6 @@
 	self.thumbnailView = anImageView;
 	[[self view]addSubview:anImageView];
 	[anImageView release];
-	
-	//MiniSearchView *aMiniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(20, 80, 280, 76)];
-//	[aMiniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleLeftMargin];
-//	self.miniSearchView = aMiniSearchView;
-//	[[self view]addSubview:aMiniSearchView];
-//	[aMiniSearchView release];
 	
  }
 
