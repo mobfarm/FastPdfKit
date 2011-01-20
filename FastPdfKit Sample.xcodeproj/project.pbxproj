@@ -13,7 +13,6 @@
 		015EF60E12CA29EE0098E4B6 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60A12CA29EE0098E4B6 /* TextSearchOperation.m */; };
 		015EF6C712CA474B0098E4B6 /* TextDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF6C412CA474B0098E4B6 /* TextDisplayView.xib */; };
 		015EF6C812CA474B0098E4B6 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */; };
-		019DD11D12E5B5FD007D39DC /* ipercoop.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 019DD11C12E5B5FD007D39DC /* ipercoop.pdf */; };
 		01CC21D012B907BF00E77E6E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC21CF12B907BF00E77E6E /* libFastPDFKit.a */; };
 		01F434C412ACD94D00D08021 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
 		01FB0F95125CB46A002D4337 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
@@ -51,7 +50,6 @@
 		015EF6C412CA474B0098E4B6 /* TextDisplayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayView.xib; sourceTree = "<group>"; };
 		015EF6C512CA474B0098E4B6 /* TextDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewController.h; sourceTree = "<group>"; };
 		015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDisplayViewController.m; sourceTree = "<group>"; };
-		019DD11C12E5B5FD007D39DC /* ipercoop.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ipercoop.pdf; path = ../../../../Documents/ipercoop.pdf; sourceTree = SOURCE_ROOT; };
 		01CC21C012B9077300E77E6E /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		01CC21C112B9077300E77E6E /* MFDocumentOverlayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentOverlayDataSource.h; sourceTree = "<group>"; };
 		01CC21C212B9077300E77E6E /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 		95F5A3651270A2A700F65929 /* PDFs */ = {
 			isa = PBXGroup;
 			children = (
-				019DD11C12E5B5FD007D39DC /* ipercoop.pdf */,
 				95F5A3661270A2A700F65929 /* gitmanual.pdf */,
 				95F5A3671270A2A700F65929 /* gitmanualcrypt.pdf */,
 			);
@@ -325,7 +322,6 @@
 				015EF60B12CA29EE0098E4B6 /* SearchView_pad.xib in Resources */,
 				015EF60C12CA29EE0098E4B6 /* SearchView_phone.xib in Resources */,
 				015EF6C712CA474B0098E4B6 /* TextDisplayView.xib in Resources */,
-				019DD11D12E5B5FD007D39DC /* ipercoop.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
