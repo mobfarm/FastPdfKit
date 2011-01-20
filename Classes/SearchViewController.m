@@ -12,6 +12,7 @@
 #import "DocumentViewController.h"
 #import "TextSearchOperation.h"
 #import "SearchManager.h"
+#import "SearchResultCellView.h"
 
 @interface SearchViewController()
 
@@ -233,18 +234,24 @@
 	NSArray *searchResult = [searchResults objectAtIndex:indexPath.section];
 	MFTextItem *searchItem = [searchResult objectAtIndex:indexPath.row];
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+	//UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+	SearchResultCellView *cell = (SearchResultCellView *)[tableView dequeueReusableCellWithIdentifier:cellId];
 	
 	if(nil == cell) {
 		
 		// Create the cell.
-		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
-		[cell setAccessoryType:UITableViewCellAccessoryNone];
-		[cell setSelectionStyle:UITableViewCellSeparatorStyleNone];
+		//cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+//		[cell setAccessoryType:UITableViewCellAccessoryNone];
+//		[cell setSelectionStyle:UITableViewCellSeparatorStyleNone];
+		
+		cell = [[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+		[cell setTextSnippet:[searchItem text]];
+		[cell setPage:[searchItem page]];
+		[cell setBoldRange:[searchItem searchTermRange]];
 	}
 	
 	// Setup the cell.
-	[[cell textLabel]setText:[searchItem text]];
+	//[[cell textLabel]setText:[searchItem text]];
 	
 	return cell;
 	
