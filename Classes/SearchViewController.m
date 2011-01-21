@@ -75,13 +75,10 @@
 #pragma mark -
 #pragma mark MFSearchViewController() methods
 
-/*	
-*	Add the MFSearchResult object to the array if it is not empty and update the table. Spawn a new operation
-*	for the next page if necessary.
-*/
-
 -(void)updateResults:(NSArray *)results withResults:(NSArray *)addedResult forPage:(NSUInteger)page {
 
+	// If there is a new batch of result, let's add them to our local result storage array.
+	
 	if([addedResult count]>0) {
 		
 		[searchResults addObject:addedResult];
@@ -92,6 +89,7 @@
 
 -(void) searchGotCancelled {
 
+	// Setup the view accordingly.
 	[searchBar setText:@""];
 	[searchResults removeAllObjects];
 	[activityIndicatorView stopAnimating];
@@ -99,21 +97,28 @@
 	[switchToMiniBarButtonItem setEnabled:NO];
 	[searchTableView reloadData];
 	
+	// Dismiss this view controller and its view from the stack.
+	
 	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
 -(void) searchDidStop {
 	
+	// Set up the view status.
 	[cancelStopBarButtonItem setTitle:@"Cancel"];
 	[activityIndicatorView stopAnimating];
 }
 
 -(void) searchDidStart {
 	
+	// Clean up if there are old search results.
 	if([searchResults count]>0){
-	[searchResults removeAllObjects];
-	[searchTableView reloadData];
+		[searchResults removeAllObjects];
+		[searchTableView reloadData];
 	}
+	
+	// Set up the view status accordingly.
+	
 	[cancelStopBarButtonItem setTitle:@"Stop"];
 	[activityIndicatorView startAnimating];
 	[cancelStopBarButtonItem setEnabled:YES];
@@ -125,15 +130,21 @@
 
 -(void)stopSearch {
 	
+	// Tell the manager to stop the search and let the delegate's methods to refresh this view.
+	
 	[searchManager stopSearch];
 }
 
 -(void)startSearchWithTerm:(NSString *)aSearchTerm {
 	
+	// Tell the manager to start the search  and let the delegate's methods to refresh this view.
+	
 	[searchManager startSearchOfTerm:aSearchTerm fromPage:[delegate page]];
 }
 
 -(void)cancelSearch {
+	
+	// Tell the manager to cancel the search and let the delegate's  methods to refresh this view.
 	
 	[searchManager cancelSearch];
 }
@@ -150,17 +161,21 @@
 		
 	} else {
 		
+		// Cancel.
 		[self cancelSearch];
 	}
 }
 
 -(IBAction)actionMinimize:(id)sender {
 	
+	// We are going to use the first item to initialize the mini view.
+	
 	MFTextItem * firstItem = [[searchResults objectAtIndex:0]objectAtIndex:0];
 	
 	if(firstItem!=nil) {
 	
 	[delegate switchToMiniSearchView:firstItem];
+		
 	}
 }
 		
@@ -199,20 +214,6 @@
 #pragma mark -
 #pragma mark UITableViewDelegate and DataSource methods
 
--(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	
-	// We are setting up a title for the header of the section, just to make the table a little
-	// less asettic.
-	
-	NSString *headerTitle = nil;
-	NSArray *searchResult = [searchResults objectAtIndex:section];
-	NSUInteger page = [[searchResult objectAtIndex:0]page];
-	
-	headerTitle = [NSString stringWithFormat:@"Page %u",page];
-	
-	return headerTitle;
-}
-
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	// We don't care about the search item, just the search result that contains the page.
@@ -238,11 +239,6 @@
 	SearchResultCellView *cell = (SearchResultCellView *)[tableView dequeueReusableCellWithIdentifier:cellId];
 	
 	if(nil == cell) {
-		
-		// Create the cell.
-		//cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
-//		[cell setAccessoryType:UITableViewCellAccessoryNone];
-//		[cell setSelectionStyle:UITableViewCellSeparatorStyleNone];
 		
 		cell = [[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
 		[cell setTextSnippet:[searchItem text]];
@@ -278,6 +274,7 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
        
 		searchResults = [[NSMutableArray alloc]init];
+		switchToMiniBarButtonItem.enabled = NO;
 		
 	}
     return self;
