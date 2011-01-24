@@ -344,9 +344,11 @@
 
 - (void)dealloc {
 	
-	[operationQueue release],operationQueue = nil;
+	delegate = nil;
 	
+	[operationQueue release],operationQueue = nil;
 	[searchOperation release],searchOperation = nil;
+
 	[savedSearchTerm release],savedSearchTerm = nil;
 	
 	[searchResults release],searchResults = nil;
@@ -354,6 +356,7 @@
 	[searchBar release],searchBar = nil;
 	[searchTableView release], searchTableView = nil;
 	[activityIndicatorView release],activityIndicatorView = nil;
+	[rightButtonItem release], rightButtonItem = nil;
 	
     [super dealloc];
 }
