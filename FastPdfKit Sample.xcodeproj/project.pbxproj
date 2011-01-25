@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0157CF7C12EF16B200DDC590 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7312EF16B200DDC590 /* SearchManager.m */; };
+		0157CF7D12EF16B200DDC590 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7512EF16B200DDC590 /* MiniSearchView.m */; };
+		0157CF7E12EF16B200DDC590 /* SearchView2_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0157CF7612EF16B200DDC590 /* SearchView2_phone.xib */; };
+		0157CF7F12EF16B200DDC590 /* SearchView2_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0157CF7712EF16B200DDC590 /* SearchView2_pad.xib */; };
+		0157CF8012EF16B200DDC590 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7912EF16B200DDC590 /* SearchResultCellView.m */; };
+		0157CF8112EF16B200DDC590 /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7B12EF16B200DDC590 /* SearchResultView.m */; };
 		015EF60B12CA29EE0098E4B6 /* SearchView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF60512CA29EE0098E4B6 /* SearchView_pad.xib */; };
 		015EF60C12CA29EE0098E4B6 /* SearchView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF60612CA29EE0098E4B6 /* SearchView_phone.xib */; };
 		015EF60D12CA29EE0098E4B6 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60812CA29EE0098E4B6 /* SearchViewController.m */; };
@@ -39,6 +45,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0157CF7212EF16B200DDC590 /* SearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchManager.h; sourceTree = "<group>"; };
+		0157CF7312EF16B200DDC590 /* SearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchManager.m; sourceTree = "<group>"; };
+		0157CF7412EF16B200DDC590 /* MiniSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSearchView.h; sourceTree = "<group>"; };
+		0157CF7512EF16B200DDC590 /* MiniSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniSearchView.m; sourceTree = "<group>"; };
+		0157CF7612EF16B200DDC590 /* SearchView2_phone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView2_phone.xib; sourceTree = "<group>"; };
+		0157CF7712EF16B200DDC590 /* SearchView2_pad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView2_pad.xib; sourceTree = "<group>"; };
+		0157CF7812EF16B200DDC590 /* SearchResultCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCellView.h; sourceTree = "<group>"; };
+		0157CF7912EF16B200DDC590 /* SearchResultCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCellView.m; sourceTree = "<group>"; };
+		0157CF7A12EF16B200DDC590 /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
+		0157CF7B12EF16B200DDC590 /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
 		015EF60312CA29EE0098E4B6 /* SearchResultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDataSource.h; sourceTree = "<group>"; };
 		015EF60412CA29EE0098E4B6 /* SearchResultDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDelegate.h; sourceTree = "<group>"; };
 		015EF60512CA29EE0098E4B6 /* SearchView_pad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView_pad.xib; sourceTree = "<group>"; };
@@ -113,6 +129,16 @@
 		015EF60212CA29EE0098E4B6 /* TextSearch */ = {
 			isa = PBXGroup;
 			children = (
+				0157CF7212EF16B200DDC590 /* SearchManager.h */,
+				0157CF7312EF16B200DDC590 /* SearchManager.m */,
+				0157CF7412EF16B200DDC590 /* MiniSearchView.h */,
+				0157CF7512EF16B200DDC590 /* MiniSearchView.m */,
+				0157CF7612EF16B200DDC590 /* SearchView2_phone.xib */,
+				0157CF7712EF16B200DDC590 /* SearchView2_pad.xib */,
+				0157CF7812EF16B200DDC590 /* SearchResultCellView.h */,
+				0157CF7912EF16B200DDC590 /* SearchResultCellView.m */,
+				0157CF7A12EF16B200DDC590 /* SearchResultView.h */,
+				0157CF7B12EF16B200DDC590 /* SearchResultView.m */,
 				015EF6C412CA474B0098E4B6 /* TextDisplayView.xib */,
 				015EF6C512CA474B0098E4B6 /* TextDisplayViewController.h */,
 				015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */,
@@ -322,6 +348,8 @@
 				015EF60B12CA29EE0098E4B6 /* SearchView_pad.xib in Resources */,
 				015EF60C12CA29EE0098E4B6 /* SearchView_phone.xib in Resources */,
 				015EF6C712CA474B0098E4B6 /* TextDisplayView.xib in Resources */,
+				0157CF7E12EF16B200DDC590 /* SearchView2_phone.xib in Resources */,
+				0157CF7F12EF16B200DDC590 /* SearchView2_pad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +370,10 @@
 				015EF60D12CA29EE0098E4B6 /* SearchViewController.m in Sources */,
 				015EF60E12CA29EE0098E4B6 /* TextSearchOperation.m in Sources */,
 				015EF6C812CA474B0098E4B6 /* TextDisplayViewController.m in Sources */,
+				0157CF7C12EF16B200DDC590 /* SearchManager.m in Sources */,
+				0157CF7D12EF16B200DDC590 /* MiniSearchView.m in Sources */,
+				0157CF8012EF16B200DDC590 /* SearchResultCellView.m in Sources */,
+				0157CF8112EF16B200DDC590 /* SearchResultView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
