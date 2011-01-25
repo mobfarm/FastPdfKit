@@ -19,6 +19,7 @@
 
 @interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate>{
 
+	// UI elements.
 	UIButton *leadButton;
 	UIButton *modeButton;
 	UIButton *directionButton;
@@ -32,22 +33,29 @@
 	UIButton *nextButton;
 	UIButton *prevButton;
 	
-	UIButton *textButton;
-	BOOL waitingForTextInput;
-	TextDisplayViewController *textDisplayViewController;
-	
 	UIButton *searchButton;
-	SearchViewController *searchViewController;
-	SearchManager *searchManager;
-	MiniSearchView *miniSearchView;
+	
+	UIButton *textButton;
 	
 	UILabel *pageLabel;
 	UISlider *pageSlider;
 	
-	BOOL hudHidden;
+	BOOL hudHidden; // HUD status flag.
 	
+	// Thumbnail view and stuff.
 	UIImageView *thumbnailView;
 	NSUInteger thumbPage;
+	
+	// Text extraction controller and stuff.
+	BOOL waitingForTextInput;
+	TextDisplayViewController *textDisplayViewController;
+	
+	// Text search controller and stuff.
+	SearchViewController *searchViewController;
+	SearchManager *searchManager;
+	MiniSearchView *miniSearchView;
+	
+	
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;

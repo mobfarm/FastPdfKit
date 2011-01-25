@@ -15,9 +15,9 @@
 @class DocumentViewController;
 @class SearchManager;
 
-@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SearchResultDelegate, UISearchBarDelegate,SearchResultDataSource, MFDocumentOverlayDataSource> {
+@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SearchResultDelegate, UISearchBarDelegate> {
 
-	// UI.
+	// UI elements.
 	IBOutlet UISearchBar *searchBar;
 	IBOutlet UITableView *searchTableView;
 	
@@ -27,13 +27,13 @@
 	IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
 	
 	// Data.
-	NSMutableArray *searchResults;
-	NSUInteger totalItems;
-	NSUInteger maxItems;
+	NSMutableArray *searchResults;	// Local copy. It is an array of array.
+	NSUInteger totalItems;		// Counter of the total amount of item.
+	NSUInteger maxItems;		// Max number of items.
 	
-	DocumentViewController *delegate;
+	DocumentViewController *delegate; // A delegate to change the page.
 	
-	SearchManager * searchManager;
+	SearchManager * searchManager;	// Data source.
 }
 
 @property (assign) SearchManager * searchManager;

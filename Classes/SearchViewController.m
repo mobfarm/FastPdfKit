@@ -14,6 +14,8 @@
 #import "SearchManager.h"
 #import "SearchResultCellView.h"
 
+#define ZOOM_LEVEL 4.0
+
 @interface SearchViewController()
 
 @property (nonatomic,retain) NSMutableArray *searchResults;
@@ -32,52 +34,15 @@
 @synthesize searchManager;
 
 #pragma mark -
-#pragma mark SearchResultsDataSource methods
-
--(NSArray *)documentViewController:(MFDocumentViewController *)dvc drawablesForPage:(NSUInteger)page {
-	
-	// Work on a copy of the current search results.
-
-	NSArray *results = [searchResults copy];
-	NSMutableArray *drawables = [[NSMutableArray alloc]init];
-	
-	// Put each item in the array that will be returned.
-	for(NSArray * result in results) {
-		for(MFTextItem * item in result) {
-			if([item page] == page) {
-				[drawables addObject:item];
-			}	
-		}
-	}
-	
-	[results release];
-	
-	return [drawables autorelease];
-}
-
--(NSArray *)searchItemsForPage:(NSUInteger)page {
-	
-	NSArray *searchItems = nil;
-	NSMutableArray *tmp = [[NSMutableArray alloc]init];
-	for (NSArray *sr in searchResults) {
-		for(MFTextItem * item in sr) {
-			if([item page] == page) {
-				[tmp addObject:item];
-			}	
-		}
-	}
-	
-	searchItems = [NSArray arrayWithArray:tmp];
-	[tmp release];
-	return searchItems;
-}
-
-#pragma mark -
 #pragma mark MFSearchViewController() methods
+
+// The nice thing about delegate callbacks is that we don't need to extensively check the status of the search
+// manager or keep track of it. We just set the ui element accordingly to the event received by the search manager.
 
 -(void)updateResults:(NSArray *)results withResults:(NSArray *)addedResult forPage:(NSUInteger)page {
 
-	// If there is a new batch of result, let's add them to our local result storage array.
+	// If there is a new batch of result, let's add them to our local result storage array and update
+	// the table view.
 	
 	if([addedResult count]>0) {
 		
@@ -90,6 +55,7 @@
 -(void) searchGotCancelled {
 
 	// Setup the view accordingly.
+	
 	[searchBar setText:@""];
 	[searchResults removeAllObjects];
 	[activityIndicatorView stopAnimating];
@@ -105,6 +71,7 @@
 -(void) searchDidStop {
 	
 	// Set up the view status.
+	
 	[cancelStopBarButtonItem setTitle:@"Cancel"];
 	[activityIndicatorView stopAnimating];
 }
@@ -112,6 +79,7 @@
 -(void) searchDidStart {
 	
 	// Clean up if there are old search results.
+	
 	if([searchResults count]>0){
 		[searchResults removeAllObjects];
 		[searchTableView reloadData];
@@ -154,6 +122,9 @@
 
 -(IBAction)actionCancelStop:(id)sender {
 	
+	// If the search is running, stop it. Otherwise, cancel the 
+	// search entirely.
+	
 	if([searchManager isRunning]) {
 	
 		// Stop.
@@ -182,6 +153,7 @@
 #pragma mark -
 #pragma mark UISearchBarDelegate methods
 
+
 -(BOOL)searchBarShouldEndEditing:(UISearchBar *)sBar {
 	
 	[sBar resignFirstResponder];
@@ -191,22 +163,25 @@
 
 -(void) searchBarCancelButtonClicked:(UISearchBar *)sBar {
 	
-	// Dismiss the keyboard.
+	// Dismiss the keyboard and cancel the search.
+	
 	[sBar resignFirstResponder];
 	[self cancelSearch];
 }
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)sBar {
-	
+
+	// Let the startSearch helper function handle the spawning of the operation.
+
 	[sBar resignFirstResponder];
 	
-	// Let the startSearch helper function handle the spawning of the operation.
 	[self startSearchWithTerm:[sBar text]];
 }
 
 -(void) searchBarTextDidBeginEditing:(UISearchBar *)sBar {
 	
 	// Let the cancelSearch helper function stop the pending operation.
+	
 	[self stopSearch];
 }
 
@@ -216,14 +191,17 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	// We don't care about the search item, just the search result that contains the page.
+	// Let's get the MFTextItem from its container array.
+	
 	NSArray *searchResult = [searchResults objectAtIndex:indexPath.section];
 	MFTextItem * item = [searchResult objectAtIndex:indexPath.row];
 	
-	// Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page.
+	// Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page after
+	// displaying the mini search view.
+	
 	[delegate switchToMiniSearchView:item];
 	
-	[delegate setPage:[item page] withZoomOnRect:CGPathGetBoundingBox([item highlightPath])];
+	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -235,19 +213,19 @@
 	NSArray *searchResult = [searchResults objectAtIndex:indexPath.section];
 	MFTextItem *searchItem = [searchResult objectAtIndex:indexPath.row];
 	
-	//UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+	// This is a custom view cell that display an MFTextItem directly.
+	
 	SearchResultCellView *cell = (SearchResultCellView *)[tableView dequeueReusableCellWithIdentifier:cellId];
 	
 	if(nil == cell) {
+	
+		// Simple initialization.
 		
-		cell = [[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
 		[cell setTextSnippet:[searchItem text]];
 		[cell setPage:[searchItem page]];
 		[cell setBoldRange:[searchItem searchTermRange]];
 	}
-	
-	// Setup the cell.
-	//[[cell textLabel]setText:[searchItem text]];
 	
 	return cell;
 	

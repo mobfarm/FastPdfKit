@@ -38,6 +38,9 @@
 #pragma mark Thumbnail utility functions
 
 -(void)hideThumbnailView {
+	
+	// Hide the thumbnail.
+	
 	self.thumbnailView.hidden = YES;
 }
 
@@ -46,9 +49,12 @@
 	CGSize thumbSize = CGSizeMake(60, 80);
 	
 	// Get the thumbnail image from the document. Remember to release the CGImage.
+	
 	CGImageRef img = [self.document createImageForThumbnailOfPageNumber:thumbPage ofSize:thumbSize andScale:1.0];
 	UIImage *thumbImage = [[UIImage alloc]initWithCGImage:img];
 	CGImageRelease(img);
+	
+	// Set the image as the data of the thumbnail image view and hunide it.
 	
 	self.thumbnailView.image = thumbImage;
 	self.thumbnailView.hidden = NO;
@@ -61,6 +67,8 @@
 
 -(TextDisplayViewController *)textDisplayViewController {
 	
+	// Show the text display view controller to the user.
+	
 	if(nil == textDisplayViewController) {
 		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle mainBundle]];
 	}
@@ -70,6 +78,15 @@
 
 #pragma mark -
 #pragma mark SearchViewController lazy initialization and management
+
+// The entire search is a bit tricky, and it is not the best implementation out of there: we are likely to move most of the
+// code inside the document view controller or the future MFDocumentView and have the developer only handle the striclty
+// necessary.
+// For now, it works like this: present a search view controller that will get a search term from the user and ask the
+// document manager to perform the search on every page. Store each result inside a search manager and use it as a data
+// source to present the result to the user. Anytime the user can "minimized" the full search view controller to a mini
+// search view to navigate the document while looking for matches. Details are here, in the SearchViewController, SearchManager
+// and MiniSearchView.
 
 -(SearchViewController *)searchViewController {
 	
@@ -93,27 +110,44 @@
 	return searchViewController;
 }
 
-#pragma mark -
-#pragma mark SearchManager lazy initialization
-
 -(void)presentFullSearchView {
+	
+	// Get the full search view controller lazily, set it upt as the delegate for
+	// the search manager and present it to the user modally.
+	
+	// Get the search manager lazily and set up the document.
 	
 	SearchManager *manager = self.searchManager;
 	manager.document = self.document;
 	
+	// Get the search view controller lazily, set the delegate at self to handle
+	// document action and the search manager as data source.
+	
 	SearchViewController *controller = self.searchViewController;
 	controller.delegate = self;
+	controller.searchManager = manager;
+	
+	// Set the search view controller as the data source delegate.
+	
+	manager.delegate = controller;
+	
+	// Enable overlay and set the search manager as the data source for
+	// overlay items.
 	self.overlayDataSource = self.searchManager;
 	self.overlayEnabled = YES;
 	
-	manager.delegate = controller;
-	controller.searchManager = manager;
 	
 	[self presentModalViewController:(UIViewController *)controller animated:YES];
 }
 
 // Void
 -(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
+	
+	// This could be rather tricky.
+	
+	// This method is called only when the (Full) SearchViewController. It first instantiate the
+	// mini search view if necessary, then set the mini search view as the delegate for the current
+	// search manager - associated until now to the full SVC - then present it to the user.
 	
 	if(miniSearchView == nil) {
 		
@@ -133,7 +167,6 @@
 	miniSearchView.documentDelegate = self;
 	self.searchManager.delegate = miniSearchView;
 	
-	// TODO: fix this shit.
 	// Update the view with the right index.
 	[miniSearchView reloadData];
 	[miniSearchView setCurrentTextItem:item];
@@ -145,6 +178,8 @@
 
 -(void)dismissMiniSearchView {
 	
+	// Remove from the superview and release the mini search view.
+	
 	if(miniSearchView!=nil) {
 		
 		[miniSearchView removeFromSuperview];
@@ -154,6 +189,8 @@
 
 -(SearchManager *)searchManager {
 
+	// Lazily allocate and instantiate the search manager.
+	
 	if(nil == searchManager) {
 		
 		searchManager = [[SearchManager alloc]init];
@@ -205,32 +242,27 @@
 
 -(IBAction)actionSearch:(id)sender {
 	
-	// Get the SearchViewController lazily, set it as the overlay data source for the docment view controller
-	// and enable the overlay to display the search result. The document view controller will query the data
-	// source for overlay objects to draw when displaying the document's pages.
+	// Get the instance of the Search Manager lazily and then present a full sized search view controller
+	// to the user. The full search view controller will allow the user to type in a search term and
+	// start the search. Look at the details in the utility method implementation.
 	
-	SearchManager *manager = self.searchManager;
-	manager.document = self.document;
-	
-	SearchViewController *controller = self.searchViewController;
-	controller.delegate = self;
-	self.overlayDataSource = self.searchManager;
-	self.overlayEnabled = YES;
-	
-	manager.delegate = controller;
-	controller.searchManager = manager;
-	
-	[self presentModalViewController:(UIViewController *)controller animated:YES];
+	[self presentFullSearchView];
 }
 
 -(IBAction)actionNext:(id)sender {
+	
+	// This would be connected to an hypotetical next page button. You can enable
+	// pageFlipOnEdgeTouch instead.
+	
 	[self moveToNextPage];
 }
 
 -(IBAction)actionPrev:(id)sender {
+	
+	// Same as actionNext.
+	
 	[self moveToPreviousPage];
 }
-
 
 -(IBAction) actionBookmarks:(id)sender {
 	
@@ -371,6 +403,9 @@
 
 -(void)actionChangeAutozoom:(id)sender {
 	
+	// If autozoom is enable, when the user move to a new page, the zoom will be restored as it
+	// was on the last page.
+	
 	BOOL autozoom = [self autozoomOnPageChange];
 	if(autozoom) {
 		[self setAutozoomOnPageChange:NO];
@@ -382,6 +417,9 @@
 }
 
 -(void)actionChangeAutomode:(id)sender {
+	
+	// When automode is turned on, it will automatically change the mode to single page when in portrait
+	// and double page when in landscape.
 	
 	BOOL automode = [self automodeOnRotation];
 	if(automode) {
@@ -395,12 +433,18 @@
 #pragma mark -
 #pragma mark MFDocumentViewControllerDelegate methods implementation
 
+
+// The nice things about delegate callbacks is that we can use them to update the UI when the internal status of
+// the controller changes, rather than query or keep track of it when the user press a button. Just listen for
+// the right event and update the UI accordingly.
+
 -(void) documentViewController:(MFDocumentViewController *)dvc didGoToPage:(NSUInteger)page {
 	
 	//
 //	Page has changed, either by user input or an internal change upon an event: update the label and the 
 //	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 //	in this callback.
+	
 	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
@@ -476,7 +520,8 @@
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point {
 	
-	// If the flag waitingForTextInput is enabled, we use the
+	// If the flag waitingForTextInput is enabled, we use the touch event to select the page. Otherwise,
+	// we are free to use it to show/hide the selected HUD elements.
 	
 	if(!waitingForTextInput) {
 		
@@ -527,7 +572,10 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 	
-	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar.
+	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar. If
+	// you want to add a toolbar, use the navigation controller's one like you would with an UIImageView to not cover
+	// the document.
+	
 	UIView * aView = nil;
 	
 	BOOL isPad = NO;
@@ -543,11 +591,14 @@
 	[aView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
 	[aView setAutoresizesSubviews:YES];
 	
+	// Background color: a nice texture if available, otherwise plain gray.
+	
 	if ([UIColor respondsToSelector:@selector(scrollViewTexturedBackgroundColor)]) {
 		[aView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
 	} else {
 		[aView setBackgroundColor:[UIColor grayColor]];
 	}
+	
 	[self setView:aView];
 	
 	[aView release];
@@ -573,8 +624,10 @@
 	
 	UIFont *font = nil;
 
+	// Slighty different font sizes on iPad and iPhone.
+	
 	BOOL isPad = NO;
-
+	
 #ifdef UI_USER_INTERFACE_IDIOM
 	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
@@ -594,7 +647,7 @@
 //	The buttons here are normal rounded rect buttons, are large and quite ugly. You can use image instead and
 //	icon-like buttons 32x32 (64x64 on iPhone4) are small, good looking and quite effective on both iphone and ipad.
 	
-	// Mode button
+	// Mode button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding, padding, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_MODE_SINGLE forState:UIControlStateNormal];
@@ -604,7 +657,7 @@
 	[self setModeButton:aButton];
 	[[self view] addSubview:aButton];
 	
-	// Lead button
+	// Lead button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding*2 + buttonWidth, padding, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_LEAD_RIGHT forState:UIControlStateNormal];
@@ -614,7 +667,7 @@
 	[self setLeadButton:aButton];
 	[[self view] addSubview:aButton];
 	
-	// Direction button
+	// Direction button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding*3 + buttonWidth * 2, padding, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_DIR_L2R forState:UIControlStateNormal];
@@ -624,7 +677,7 @@
 	[self setDirectionButton:aButton];
 	[[self view] addSubview:aButton];
 	
-	// Automode button	
+	// Automode button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_AUTOMODE_NO forState:UIControlStateNormal];
@@ -634,7 +687,7 @@
 	[self setAutomodeButton:aButton];
 	[[self view]addSubview:aButton];
 	
-	// Autozoom button
+	// Autozoom button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding*2 + buttonHeight, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_AUTOZOOM_NO forState:UIControlStateNormal];
@@ -666,7 +719,7 @@
 	[[self view]addSubview:aButton];
 	
 	
-	// Dismiss button
+	// Dismiss button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Dismiss" forState:UIControlStateNormal];
@@ -676,7 +729,7 @@
 	[self setDismissButton:aButton];
 	[[self view]addSubview:aButton];
 	
-	// Bookmarks
+	// Bookmarks.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Bookmarks" forState:UIControlStateNormal];
@@ -686,7 +739,7 @@
 	[self setBookmarksButton:aButton];
 	[[self view]addSubview:aButton];
 	
-	// Outline
+	// Outline.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding, viewSize.height-padding*3-buttonHeight*3, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Outline" forState:UIControlStateNormal];
@@ -695,35 +748,12 @@
 	[[aButton titleLabel]setFont:font];
 	[self setBookmarksButton:aButton];
 	[[self view]addSubview:aButton];
-	
-
-//	// The controller now detect taps on the edge to perform page flipping. If you prefer button, uncomment these lines and set the property
-//	// pageFlipOnEdgeTouch to NO.
-//	// Previous page.
-//	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//	[aButton setFrame:CGRectMake(padding, viewSize.height*0.5 - buttonHeight*0.5, buttonWidth, buttonHeight)];
-//	[aButton setTitle:@"Prev" forState:UIControlStateNormal];
-//	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
-//	[aButton addTarget:self action:@selector(actionPrev:) forControlEvents:UIControlEventTouchUpInside];
-//	[[aButton titleLabel]setFont:font];
-//	[self setPrevButton:aButton];
-//	[[self view]addSubview:aButton];
-//	
-//	// Next page.
-//	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height*0.5-buttonHeight*0.5, buttonWidth, buttonHeight)];
-//	[aButton setTitle:@"Next" forState:UIControlStateNormal];
-//	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
-//	[aButton addTarget:self action:@selector(actionNext:) forControlEvents:UIControlEventTouchUpInside];
-//	[[aButton titleLabel]setFont:font];
-//	[self setNextButton:aButton];
-//	[[self view]addSubview:aButton];
-	
+		
 	
 	// Page sliders and label, bottom margin
 	// |<-- 20 px -->| Label (80 x 40 px) |<-- 20 px -->| Slider ((view_width - labelwidth - padding) x 40 px) |<-- 20 px -->|
 	
-	// Label
+	// Page label.
 	UILabel *aLabel = [[UILabel alloc]initWithFrame:CGRectMake(padding, viewSize.height-padding-buttonHeight, buttonWidth, buttonHeight)];
 	[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 	[aLabel setBackgroundColor:[UIColor clearColor]];
@@ -734,7 +764,7 @@
 	[[self view]addSubview:aLabel];
 	[aLabel release];
 	
-	// Slider
+	// Page slider.
 	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(padding*2+buttonWidth, viewSize.height-padding-buttonHeight, viewSize.width-padding*3-buttonWidth, buttonHeight)];
 	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
 	[aSlider setMinimumValue:1.0];
@@ -746,6 +776,7 @@
 	[[self view]addSubview:aSlider];
 	[aSlider release];
 
+	// Thumbmail view.
 	UIImageView *anImageView = [[UIImageView alloc]initWithFrame:CGRectMake((viewSize.width-60)*0.5, viewSize.height-80-40, 60, 80)];
 	[anImageView setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 	[anImageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -771,7 +802,8 @@
 //	Here we call the superclass initWithDocumentManager passing the very same MFDocumentManager
 //	we used to initialize this class. However, since you probably want to track which document are
 //	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
-//	as long as you pass an instance of it to the superclass initializer
+//	as long as you pass an instance of it to the superclass initializer.
+	
 	if(self = [super initWithDocumentManager:aDocumentManager]) {
 		[self setDocumentDelegate:self];
 	}
@@ -780,16 +812,17 @@
 
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+	
+	// Remember to call the super implementation, since MFDocumentViewController will use
+	// memory warnings to clear up its rendering cache.
+	
+	[super didReceiveMemoryWarning];
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    
+	[super viewDidUnload];
+	
 }
 
 
