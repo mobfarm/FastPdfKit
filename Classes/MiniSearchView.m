@@ -402,6 +402,7 @@
 	CGContextAddArc(ctx, radius, rect.size.height-radius, radius, M_PI*0.5, M_PI, 0);
 	CGContextClosePath(ctx);
 	CGContextDrawPath(ctx, kCGPathFillStroke);
+	
 }
 
 

@@ -135,6 +135,7 @@
 		
 		// Here we set the color as red.
 		CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTForegroundColorAttributeName, red);
+		CGColorRelease(red);
 		
 		// Framesetter as before.
 		CTFramesetterRef snippetFramesetter = CTFramesetterCreateWithAttributedString(snippetAttrString);
@@ -159,6 +160,7 @@
 		CTFrameDraw(snippetFrame,ctx);
 		
 		CFRelease(snippetFrame);
+		CGPathRelease(snippetPath);
 		
 		// Pop the stored context state.
 		CGContextRestoreGState(ctx);

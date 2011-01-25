@@ -202,6 +202,8 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	
 	self.currentSearchOperation = operation;	
 	[searchOperationQueue addOperation:operation];	
+	
+	[operation release];
 }
 
 -(void)startSearchOfTerm:(NSString *)term fromPage:(NSUInteger)aStartingPage {
@@ -264,6 +266,7 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	MF_COCOA_RELEASE(searchTerm);
 	MF_COCOA_RELEASE(searchResults);
 	
+	MF_COCOA_RELEASE(currentSearchOperation);
 	MF_COCOA_RELEASE(searchOperationQueue);
 	
 	MF_COCOA_RELEASE(currentSearchTerm);
