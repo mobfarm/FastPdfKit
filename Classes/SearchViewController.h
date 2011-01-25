@@ -13,44 +13,37 @@
 
 @class MFDocumentManager;
 @class DocumentViewController;
+@class SearchManager;
 
-@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SearchResultDelegate, UISearchBarDelegate,SearchResultDataSource, MFDocumentOverlayDataSource> {
+@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SearchResultDelegate, UISearchBarDelegate> {
 
-	// UI.
+	// UI elements.
 	IBOutlet UISearchBar *searchBar;
 	IBOutlet UITableView *searchTableView;
+	
 	UIActivityIndicatorView *activityIndicatorView;
-	IBOutlet UIBarButtonItem *rightButtonItem;
+	
+	IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
+	IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
 	
 	// Data.
-	NSMutableArray *searchResults;
-	NSUInteger totalItems;
-	NSUInteger maxItems;
+	NSMutableArray *searchResults;	// Local copy. It is an array of array.
+	NSUInteger totalItems;		// Counter of the total amount of item.
+	NSUInteger maxItems;		// Max number of items.
 	
-	NSUInteger startingSearchPage;
-	NSUInteger currentSearchPage;
+	DocumentViewController *delegate; // A delegate to change the page.
 	
-	// Operation.
-	NSOperation *searchOperation;
-	NSOperationQueue *operationQueue;
-	
-	// Save status.
-	NSString *savedSearchTerm;
-	BOOL searchStatusSaved;
-	
-	DocumentViewController *delegate;
+	SearchManager * searchManager;	// Data source.
 }
 
+@property (assign) SearchManager * searchManager;
 @property (assign) DocumentViewController *delegate;
 
-@property (readonly) NSUInteger currentSearchPage;
-@property (readonly) NSUInteger startingSearchPage;
-@property (nonatomic, readonly) NSString *searchTerm;
-@property (nonatomic,readonly) NSMutableArray *searchResults;
+-(IBAction)actionCancelStop:(id)sender;
+-(IBAction)actionMinimize:(id)sender;
 
--(IBAction)actionBack:(id)sender;
 @property (nonatomic,retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic,retain) IBOutlet UITableView *searchTableView;
 @property (nonatomic,retain) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic,retain) IBOutlet UIBarButtonItem *rightButtonItem;
+@property (nonatomic,retain) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
 @end

@@ -13,9 +13,13 @@
 @class BookmarkViewController;
 @class SearchViewController;
 @class TextDisplayViewController;
+@class SearchManager;
+@class MiniSearchView;
+@class MFTextItem;
 
 @interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate>{
 
+	// UI elements.
 	UIButton *leadButton;
 	UIButton *modeButton;
 	UIButton *directionButton;
@@ -29,20 +33,29 @@
 	UIButton *nextButton;
 	UIButton *prevButton;
 	
-	UIButton *textButton;
-	BOOL waitingForTextInput;
-	TextDisplayViewController *textDisplayViewController;
-	
 	UIButton *searchButton;
-	SearchViewController *searchViewController;
+	
+	UIButton *textButton;
 	
 	UILabel *pageLabel;
 	UISlider *pageSlider;
 	
-	BOOL hudHidden;
+	BOOL hudHidden; // HUD status flag.
 	
+	// Thumbnail view and stuff.
 	UIImageView *thumbnailView;
 	NSUInteger thumbPage;
+	
+	// Text extraction controller and stuff.
+	BOOL waitingForTextInput;
+	TextDisplayViewController *textDisplayViewController;
+	
+	// Text search controller and stuff.
+	SearchViewController *searchViewController;
+	SearchManager *searchManager;
+	MiniSearchView *miniSearchView;
+	
+	
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
@@ -63,8 +76,11 @@
 @property (nonatomic, retain) UIButton *bookmarksButton;
 @property (nonatomic, retain) UIButton *outlineButton;
 
+-(void)switchToMiniSearchView:(MFTextItem *)index; 
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) SearchViewController *searchViewController;
+@property (nonatomic, retain) SearchManager *searchManager;
+@property (nonatomic, retain) MiniSearchView *miniSearchView;
 
 @property (nonatomic, retain) UIButton *nextButton;
 @property (nonatomic, retain) UIButton *prevButton;

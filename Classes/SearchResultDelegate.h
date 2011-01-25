@@ -12,6 +12,10 @@
 
 @protocol SearchResultDelegate
 
--(void)handleSearchResult:(MFSearchResult *)searchResult;
+-(void)updateResults:(NSArray *)searchResults withResults:(NSArray *)addedResult forPage:(NSUInteger)page;
+
+-(void)searchDidStop;
+-(void)searchDidStart;
+-(void)searchGotCancelled;
 
 @end
