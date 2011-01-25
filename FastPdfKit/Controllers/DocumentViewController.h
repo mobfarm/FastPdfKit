@@ -76,7 +76,11 @@
 @property (nonatomic, retain) UIButton *bookmarksButton;
 @property (nonatomic, retain) UIButton *outlineButton;
 
--(void)switchToMiniSearchView:(MFTextItem *)index; 
+// Swapping search views.
+-(void)switchToMiniSearchView:(MFTextItem *)index;
+-(void)dismissMiniSearchView;
+-(void)revertToFullSearchView;
+
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) SearchViewController *searchViewController;
 @property (nonatomic, retain) SearchManager *searchManager;

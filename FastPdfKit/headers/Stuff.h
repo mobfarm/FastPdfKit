@@ -12,6 +12,12 @@
 
 #define DETAIL_POPIN_DELAY 0.15
 
+#define MF_COCOA_RELEASE(x) [(x)release],(x)=nil
+#define MF_C_FREE(x)\
+if((x)!=NULL) {		\
+free((x)),(x)=NULL; \
+}					\
+
 //enum MFLegacyMode {
 //	MFLegacyModeDisabled = 0,
 //	MFLegacyModeForced = 1,

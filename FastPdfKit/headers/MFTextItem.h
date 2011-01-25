@@ -15,7 +15,8 @@
 	@private
 	NSString *text;
 	CGPathRef highlightPath;
-	
+	NSUInteger page;
+	NSRange searchTermRange;
 }
 
 /**
@@ -23,6 +24,13 @@
  page space.
  */
 -(id)initWithText:(NSString *)someText andHighlightPath:(CGPathRef)aPath;
+
+/**
+ Default initializer, plus the page number.
+ */
+-(id)initWithText:(NSString *)someText highlightPath:(CGPathRef)aPath andPage:(NSUInteger)aPage;
+
+@property (nonatomic,readwrite) NSRange searchTermRange;
 
 /**
  Some text to be displayed along with the item.
@@ -33,4 +41,10 @@
  The path for the hilight. It is defined in page space.
  */
 @property (readonly) CGPathRef highlightPath;
+
+/**
+ The page of which this text item represent the position of a word.
+ */
+@property (readonly) NSUInteger page;
+
 @end

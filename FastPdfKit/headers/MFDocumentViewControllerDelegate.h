@@ -27,7 +27,7 @@
 -(void)documentViewController:(MFDocumentViewController *)dvc didChangeLeadTo:(MFDocumentLead)lead;
 
 /**
- This method will notify a change in the mode of the document, either esplicit or automatic.
+ This method will notify a change in the mode of the document, either by esplicity setting it or automatic on rotation.
  */
 -(void)documentViewController:(MFDocumentViewController *)dvc didChangeModeTo:(MFDocumentMode)mode automatic:(BOOL)automatically;
 
@@ -35,11 +35,6 @@
  This method will notify a change in the direction used to present the document.
  */
 -(void)documentViewController:(MFDocumentViewController *)dvc didChangeDirectionTo:(MFDocumentDirection)direction;
-
-/**
- This method will notify if the user has tapped the screen on a specified page. Page is 0 if the tap has landed outside of a page boundaries, while point is in page coordinates space.
- */
--(void)documentViewControllerDidReceiveTap:(MFDocumentViewController *)dvc onPage:(NSUInteger)page atPoint:(CGPoint)point;
 
 /**
  This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.
@@ -58,12 +53,18 @@
 -(void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point;
 
 /**
- This method will be called right before displaying a high definition version of the current page.
+ This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
+ that report the current zoom to the user.
+ */
+-(void)documentViewController:(MFDocumentViewController *)dvc didEndZoomingAtScale:(float)level;
+
+/**
+ This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator.
  */
 -(void)documentViewController:(MFDocumentViewController *)dvc willFocusOnPage:(NSUInteger)page;
 
 /**
- This method will be called upon the showing up of the high definition version of the current page.
+ This method will be called upon the showing up of the high definition version of the current page. Could be used to stop and Activity Indicator.
  */
 -(void)documentViewController:(MFDocumentViewController *)dvc didFocusOnPage:(NSUInteger)page;
 

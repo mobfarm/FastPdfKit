@@ -82,7 +82,7 @@
  displayed on the screen. Tipically you want to set this just after the init of the viewController.
  Default is 1.
  */
-@property (readwrite) NSUInteger startingPage;
+@property (nonatomic,readwrite) NSUInteger startingPage;
 
 /**
  Enable the page flip when the user touch the edges of the screen.
@@ -135,6 +135,10 @@
  This metod will set the current page of the document and jump to the specified page. Current page is used to determine bookmarks position. On side-by-side (double) mode, it is usually the left-most page of the two.
  */
 -(void)setPage:(NSUInteger)page;
+
+/**
+ This metod will set the current page of the document and jump to the specified page, while trying to zoom in on the specified rect */
+-(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
 
 /**
  Returns the current page of the document.

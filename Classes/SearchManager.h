@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SearchResultDelegate.h"
+#import "MFDocumentOverlayDataSource.h"
 
 @class MFDocumentManager;
 
-@interface SearchManager : UIView {
+@interface SearchManager : UIView <MFDocumentOverlayDataSource> {
 
 	// Status.
 	
