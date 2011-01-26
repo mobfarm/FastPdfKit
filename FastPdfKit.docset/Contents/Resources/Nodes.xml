@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>FastPdfKit</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				
+				<Node type="folder">
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						
+					</Subnodes>
+				</Node>
+				
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		<Node id="1">
+			<Name>MFDocumentManager</Name>
+			<Path>Classes/MFDocumentManager.html</Path>
+		</Node>
+		<Node id="2">
+			<Name>MFDocumentViewController</Name>
+			<Path>Classes/MFDocumentViewController.html</Path>
+		</Node>
+		<Node id="3">
+			<Name>MFPDFOutlineEntry</Name>
+			<Path>Classes/MFPDFOutlineEntry.html</Path>
+		</Node>
+		<Node id="4">
+			<Name>MFTextItem</Name>
+			<Path>Classes/MFTextItem.html</Path>
+		</Node>
+		
+		
+		<Node id="5">
+			<Name>MFDocumentOverlayDataSource</Name>
+			<Path>Protocols/MFDocumentOverlayDataSource.html</Path>
+		</Node>
+		<Node id="6">
+			<Name>MFDocumentViewControllerDelegate</Name>
+			<Path>Protocols/MFDocumentViewControllerDelegate.html</Path>
+		</Node>
+		<Node id="7">
+			<Name>MFOverlayDrawable</Name>
+			<Path>Protocols/MFOverlayDrawable.html</Path>
+		</Node>
+		<Node id="8">
+			<Name>MFOverlayTouchable</Name>
+			<Path>Protocols/MFOverlayTouchable.html</Path>
+		</Node>
+		
+	</Library>
+</DocSetNodes>

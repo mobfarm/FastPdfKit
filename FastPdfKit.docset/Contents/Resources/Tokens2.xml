@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MFDocumentViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MFDocumentViewController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/startingPage</TokenIdentifier>
+			<Abstract type="html"> Set the starting   <a href="#//api/name/page">page</a>  of the   <a href="#//api/name/document">document</a> . It is valid only after initialization and before the view is
+displayed on the screen. Tipically you want to set this just after the init of the viewController.
+Default is 1. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/startingPage</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/pageFlipOnEdgeTouchEnabled</TokenIdentifier>
+			<Abstract type="html"> Enable the   <a href="#//api/name/page">page</a>  flip when the user touch the edges of the screen. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/pageFlipOnEdgeTouchEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/zoomInOnDoubleTapEnabled</TokenIdentifier>
+			<Abstract type="html"> Enabled the zoom in when the user double tap on the screen. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/zoomInOnDoubleTapEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/documentInteractionEnabled</TokenIdentifier>
+			<Abstract type="html"> Enabled the zoom in when the user double tap on the screen. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentInteractionEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/overlayEnabled</TokenIdentifier>
+			<Abstract type="html"> Enable or disable the display of overlay item over the   <a href="#//api/name/document">document</a> . Default is disabled. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/overlayEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/legacyModeEnabled</TokenIdentifier>
+			<Abstract type="html"> Enabled or force the legacy   <a href="#//api/name/mode">mode</a> , or let the app choose to enable it or not depending on the device.
+Default is disabled. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/legacyModeEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/initWithDocumentManager:</TokenIdentifier>
+			<Abstract type="html"> Enabled or force the legacy   <a href="#//api/name/mode">mode</a> , or let the app choose to enable it or not depending on the device.
+Default is disabled. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/initWithDocumentManager:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/automodeOnRotation</TokenIdentifier>
+			<Abstract type="html"> This metod enable or disable the automatic   <a href="#//api/name/mode">mode</a>  switching upon rotation. If enabled, the   <a href="#//api/name/page">page</a>    <a href="#//api/name/mode">mode</a>  will be automatically
+changed to single   <a href="#//api/name/page">page</a>  in portrait and side-by-side (double) on landscape. Setting the   <a href="#//api/name/mode">mode</a>  manually will disable the automode. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/automodeOnRotation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setAutomodeOnRotation:</TokenIdentifier>
+			<Abstract type="html"> Returns whether automode is enabled or not. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/setAutomodeOnRotation:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setMode:</TokenIdentifier>
+			<Abstract type="html"> Set how the pages are presented to the user. MFDocumentModeSingle present a single   <a href="#//api/name/page">page</a>  to the user, centered on the screen. MFDocumentModeDouble present two pages side-by-side, as they would appear on a magazine or a books. This will allow to preserve content split between the pages, for example a large background image. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/setMode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/mode</TokenIdentifier>
+			<Abstract type="html"> Returns the current   <a href="#//api/name/mode">mode</a>  used to display the   <a href="#//api/name/document">document</a> . </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/mode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setPage:</TokenIdentifier>
+			<Abstract type="html"> This metod will set the current   <a href="#//api/name/page">page</a>  of the   <a href="#//api/name/document">document</a>  and jump to the specified   <a href="#//api/name/page">page</a> . Current   <a href="#//api/name/page">page</a>  is used to determine bookmarks position. On side-by-side (double)   <a href="#//api/name/mode">mode</a> , it is usually the left-most   <a href="#//api/name/page">page</a>  of the two. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/setPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setPage:withZoomOfLevel:onRect:</TokenIdentifier>
+			<Abstract type="html"> This metod will set the current   <a href="#//api/name/page">page</a>  of the   <a href="#//api/name/document">document</a>  and jump to the specified   <a href="#//api/name/page">page</a> , while trying to zoom in on the specified rect </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/setPage:withZoomOfLevel:onRect:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/page</TokenIdentifier>
+			<Abstract type="html"> Returns the current   <a href="#//api/name/page">page</a>  of the   <a href="#//api/name/document">document</a> . </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/page</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setLead:</TokenIdentifier>
+			<Abstract type="html"> This method will set the   <a href="#//api/name/lead">lead</a>  used to present the pages in side-by-side (double)   <a href="#//api/name/mode">mode</a> . With MFDocumentLeadLeft, the
+cover will appear on the left side in side-by-side   <a href="#//api/name/mode">mode</a> , whereas with MFDocumentLeadRight will appear on the right side. Use this method to keep pairing between pages for books and magazines. Single   <a href="#//api/name/page">page</a>    <a href="#//api/name/mode">mode</a>  is not affected by this setting. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/setLead:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/lead</TokenIdentifier>
+			<Abstract type="html"> Returns the current   <a href="#//api/name/lead">lead</a>  used when presenting the   <a href="#//api/name/document">document</a> . </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/lead</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setDirection:</TokenIdentifier>
+			<Abstract type="html"> This method is used to set the   <a href="#//api/name/page">page</a>  reading direction: left to right or right to left. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/setDirection:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/direction</TokenIdentifier>
+			<Abstract type="html"> Return the current   <a href="#//api/name/direction">direction</a>  used by the   <a href="#//api/name/document">document</a> . </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/direction</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setAutozoomOnPageChange:</TokenIdentifier>
+			<Abstract type="html"> This method will turn on or off the autozoom feature. If on, the current zoom level will be kept between pages,
+otherwise will be rest to 100% on   <a href="#//api/name/page">page</a>  change. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/setAutozoomOnPageChange:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/autozoomOnPageChange</TokenIdentifier>
+			<Abstract type="html"> Returns whether the autozoom feature is enabled or not. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/autozoomOnPageChange</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/moveToNextPage</TokenIdentifier>
+			<Abstract type="html"> This method will begin an animated transition to the next   <a href="#//api/name/page">page</a> , if available. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/moveToNextPage</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/moveToPreviousPage</TokenIdentifier>
+			<Abstract type="html"> This method will begin an animated transition to the previous   <a href="#//api/name/page">page</a> , if available. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/moveToPreviousPage</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/cleanUp</TokenIdentifier>
+			<Abstract type="html"> Call this method rightly after dismissing this   <a href="MFDocumentViewController.html">MFDocumentViewController</a>  instance. It will release all the resources
+and stop the background threads. Once this method has been called, the   <a href="MFDocumentViewController.html">MFDocumentViewController</a>  instance cannot be
+considered valid anymore and should be released. </Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
+			
+			<Anchor>//api/name/cleanUp</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

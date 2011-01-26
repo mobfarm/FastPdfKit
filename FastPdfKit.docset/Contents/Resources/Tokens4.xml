@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MFTextItem.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MFTextItem</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/initWithText:andHighlightPath:</TokenIdentifier>
+			<Abstract type="html"> Default initializer. Init the Text Item with some   <a href="#//api/name/text">text</a>  and a path for the hilight that will be rendered in
+  <a href="#//api/name/page">page</a>  space. </Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>
+			
+			<Anchor>//api/name/initWithText:andHighlightPath:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/initWithText:highlightPath:andPage:</TokenIdentifier>
+			<Abstract type="html"> Default initializer, plus the   <a href="#//api/name/page">page</a>  number. </Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>
+			
+			<Anchor>//api/name/initWithText:highlightPath:andPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/text</TokenIdentifier>
+			<Abstract type="html"> Some   <a href="#//api/name/text">text</a>  to be displayed along with the item. </Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>
+			
+			<Anchor>//api/name/text</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/highlightPath</TokenIdentifier>
+			<Abstract type="html"> The path for the hilight. It is defined in   <a href="#//api/name/page">page</a>  space. </Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>
+			
+			<Anchor>//api/name/highlightPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/page</TokenIdentifier>
+			<Abstract type="html"> The   <a href="#//api/name/page">page</a>  of which this   <a href="#//api/name/text">text</a>  item represent the position of a word. </Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>
+			
+			<Anchor>//api/name/page</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
