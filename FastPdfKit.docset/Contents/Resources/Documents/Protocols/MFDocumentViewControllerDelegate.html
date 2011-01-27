@@ -1,0 +1,501 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MFDocumentViewControllerDelegate Protocol Reference</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<meta name="generator" content="appledoc 2.0.1 (build 530)" />
+	</head>
+	<body>
+		<article>
+			<div class="main-navigation navigation-top">
+				<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+			</div>
+			<div id="header">
+				<div class="section-header">
+					<h1 class="title title-header">MFDocumentViewControllerDelegate Protocol Reference</h1>
+				</div>		
+			</div>
+			<div id="container">	
+				
+				<div class="section section-specification"><table cellspacing="0"><tbody>
+					<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MFDocumentViewControllerDelegate.h</td>
+</tr>
+					</tbody></table></div>
+				
+				
+				
+				
+				
+				
+				<div class="section section-tasks">
+					<h2 class="subtitle subtitle-tasks">Tasks</h2>
+					
+					
+
+					<ul class="task-list">
+						<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didChangeDirectionTo:">- documentViewController:didChangeDirectionTo:</a></code>
+		<span class="tooltip">This method will notify a change in the direction used to present the document.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didGoToPage:">- documentViewController:didGoToPage:</a></code>
+		<span class="tooltip">This method will be called to notify the transition to a new page. Use this to update page number related UI's elements or synchronize selected actions.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didChangeLeadTo:">- documentViewController:didChangeLeadTo:</a></code>
+		<span class="tooltip">This method will notify a change in the lead used to present the document.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didChangeModeTo:automatic:">- documentViewController:didChangeModeTo:automatic:</a></code>
+		<span class="tooltip">This method will notify a change in the mode of the document, either by esplicity setting it or automatic on rotation.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveTapAtPoint:">- documentViewController:didReceiveTapAtPoint:</a></code>
+		<span class="tooltip">This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveURIRequest:">- documentViewController:didReceiveURIRequest:</a></code>
+		<span class="tooltip">This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
+link is activated and an internet browser should be open to show the link's content.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveTapOnPage:atPoint:">- documentViewController:didReceiveTapOnPage:atPoint:</a></code>
+		<span class="tooltip">This method will notify if and where the user has tapped on a page bounds. Coordinates of the point are in document's user space.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didEndZoomingAtScale:">- documentViewController:didEndZoomingAtScale:</a></code>
+		<span class="tooltip">This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
+that report the current zoom to the user.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:willFocusOnPage:">- documentViewController:willFocusOnPage:</a></code>
+		<span class="tooltip">This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didFocusOnPage:">- documentViewController:didFocusOnPage:</a></code>
+		<span class="tooltip">This method will be called upon the showing up of the high definition version of the current page. Could be used to stop and Activity Indicator.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewControllerDidUnfocus:">- documentViewControllerDidUnfocus:</a></code>
+		<span class="tooltip">This method will be called when the high definition version of the page is removed from the view.</span>
+	</span>
+	
+</li>
+					</ul>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				<div class="section section-methods">
+					<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didChangeDirectionTo:" title="documentViewController:didChangeDirectionTo:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didChangeDirectionTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify a change in the direction used to present the document.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didChangeDirectionTo:(MFDocumentDirection)<em>direction</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didChangeLeadTo:" title="documentViewController:didChangeLeadTo:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didChangeLeadTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify a change in the lead used to present the document.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didChangeLeadTo:(MFDocumentLead)<em>lead</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didChangeModeTo:automatic:" title="documentViewController:didChangeModeTo:automatic:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didChangeModeTo:automatic:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify a change in the mode of the document, either by esplicity setting it or automatic on rotation.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didChangeModeTo:(MFDocumentMode)<em>mode</em> automatic:(BOOL)<em>automatically</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didEndZoomingAtScale:" title="documentViewController:didEndZoomingAtScale:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didEndZoomingAtScale:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
+that report the current zoom to the user.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didEndZoomingAtScale:(float)<em>level</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didFocusOnPage:" title="documentViewController:didFocusOnPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didFocusOnPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called upon the showing up of the high definition version of the current page. Could be used to stop and Activity Indicator.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didFocusOnPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didGoToPage:" title="documentViewController:didGoToPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didGoToPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called to notify the transition to a new page. Use this to update page number related UI's elements or synchronize selected actions.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didGoToPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveTapAtPoint:" title="documentViewController:didReceiveTapAtPoint:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveTapAtPoint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveTapAtPoint:(CGPoint)<em>point</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveTapOnPage:atPoint:" title="documentViewController:didReceiveTapOnPage:atPoint:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveTapOnPage:atPoint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify if and where the user has tapped on a page bounds. Coordinates of the point are in document's user space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveTapOnPage:(NSUInteger)<em>page</em> atPoint:(CGPoint)<em>point</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveURIRequest:" title="documentViewController:didReceiveURIRequest:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveURIRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
+link is activated and an internet browser should be open to show the link's content.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveURIRequest:(NSString *)<em>uri</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewController:willFocusOnPage:" title="documentViewController:willFocusOnPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:willFocusOnPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> willFocusOnPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/documentViewControllerDidUnfocus:" title="documentViewControllerDidUnfocus:"></a>
+	<h3 class="subsubtitle method-title">documentViewControllerDidUnfocus:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called when the high definition version of the page is removed from the view.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewControllerDidUnfocus:(MFDocumentViewController *)<em>dvc</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+				</div>
+				
+				
+				
+				
+			</div>
+			<div class="main-navigation navigation-bottom">
+				<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+			</div>
+			<div id="footer">
+				<hr />
+				<div class="footer-copyright">
+					<p><span class="copyright">&copy; 2011 MobFarm S.r.l.. All rights reserved. (Last updated: 2011-01-26)</span><br />
+					
+					<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.1 (build 530)</a>.</span></p>
+					
+				</div>
+			</div>
+		</article>
+	</body>
+</html>
