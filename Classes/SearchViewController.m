@@ -43,8 +43,10 @@
 
 	// If there is a new batch of result, let's add them to our local result storage array and update
 	// the table view.
-	
 	if([addedResult count]>0) {
+	
+		
+		NSLog(@"Added %d for page %d",[addedResult count],[[addedResult objectAtIndex:0]page]);
 		
 		[searchResults addObject:addedResult];
 		[searchTableView reloadData];
@@ -81,6 +83,7 @@
 	// Clean up if there are old search results.
 	
 	if([searchResults count]>0){
+		NSLog(@"Cleaning up table for the new search");
 		[searchResults removeAllObjects];
 		[searchTableView reloadData];
 	}
@@ -222,10 +225,12 @@
 		// Simple initialization.
 		
 		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
-		[cell setTextSnippet:[searchItem text]];
-		[cell setPage:[searchItem page]];
-		[cell setBoldRange:[searchItem searchTermRange]];
+		
 	}
+	
+	[cell setTextSnippet:[searchItem text]];
+	[cell setPage:[searchItem page]];
+	[cell setBoldRange:[searchItem searchTermRange]];
 	
 	return cell;
 	
@@ -285,6 +290,7 @@
 	
 	[searchBar setText:[searchManager searchTerm]];
 	self.searchResults = [[searchManager searchResults]mutableCopy];
+	NSLog(@"SearchResult count %d\n",[searchResults count]);
 	[searchTableView reloadData];
 }
 

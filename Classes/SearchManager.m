@@ -99,7 +99,7 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	// This is just an utility method used to calculate the next page, returning to the
 	// first one - 0 actually - when the last one is exceeded, like in circular buffers.
 	
-	return (currentPage+1)%maxPage;
+	return (currentPage+1)%(maxPage+1);
 }
 
 -(void)cancelSearch {
