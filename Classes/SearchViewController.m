@@ -46,8 +46,6 @@
 	if([addedResult count]>0) {
 	
 		
-		NSLog(@"Added %d for page %d",[addedResult count],[[addedResult objectAtIndex:0]page]);
-		
 		[searchResults addObject:addedResult];
 		[searchTableView reloadData];
 		totalItems+= [addedResult count];
@@ -83,7 +81,7 @@
 	// Clean up if there are old search results.
 	
 	if([searchResults count]>0){
-		NSLog(@"Cleaning up table for the new search");
+		
 		[searchResults removeAllObjects];
 		[searchTableView reloadData];
 	}
@@ -290,7 +288,6 @@
 	
 	[searchBar setText:[searchManager searchTerm]];
 	self.searchResults = [[searchManager searchResults]mutableCopy];
-	NSLog(@"SearchResult count %d\n",[searchResults count]);
 	[searchTableView reloadData];
 }
 
