@@ -11,12 +11,17 @@
 
 @implementation TextSearchOperation
 @synthesize page, searchTerm, delegate, document;
+@synthesize profile;
 
 -(void)main {
 	
+	// Allocate an autorelease pool.
+	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
 	
-	NSArray *searchResult = [[document searchResultOnPage:page forSearchTerms:searchTerm]copy];
+	// Get the search result from the document.
+	
+	NSArray *searchResult = [[document searchResultOnPage:page forSearchTerms:searchTerm withProfile:&profile]copy];
 	
 	if(![self isCancelled]) {
 		
@@ -24,9 +29,10 @@
 			[delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
 	}
 	
+	
+	// Cleanup.
+	
 	[searchResult release];
-	
-	
 	[pool release];
 }
 

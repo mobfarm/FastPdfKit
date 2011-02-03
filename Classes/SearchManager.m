@@ -189,10 +189,19 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	
 	TextSearchOperation * operation = [[TextSearchOperation alloc]init];
 	
+	// We use a local profile to configure the operation profile that will be used with the document
+	// manager search method. The profile is copied to TextOperation, so we would be also able to use
+	// a dynamically allocated one and release it afterwards.
+	
+	MFProfile profile;
+	initProfile(&profile);	// Default initializer;
+	// initProfile(&profile, 0, 1, 3, 0, 1, 1, 0, 1); // Custom initializer. Look at mfprofile.h for details.
+	
 	operation.page = page;				// Page number.
 	operation.searchTerm = term;		// Search term.
 	operation.delegate = self;			// Delegate for handling the results.
 	operation.document = self.document;	// Document.
+	operation.profile = profile;
 	
 	// Save the search term.
 	

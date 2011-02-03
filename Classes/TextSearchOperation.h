@@ -8,17 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "SearchResultDelegate.h"
+#import "mfprofile.h"
 
 @class MFDocumentManager;
 @interface TextSearchOperation : NSOperation {
 
-	NSString *searchTerm;
-	NSObject<SearchResultDelegate>* delegate;
-	
-	MFDocumentManager *document;
+	NSString *searchTerm;						// Search term.
+	NSObject<SearchResultDelegate>* delegate;	// Delegate.
+	MFProfile profile;							// Search profile.
+	MFDocumentManager *document;				// Document manager.
 }
+
 @property (retain) MFDocumentManager *document;
 @property (readwrite) NSUInteger page;
 @property (copy) NSString *searchTerm;
 @property (assign) NSObject<SearchResultDelegate>* delegate;
+@property (nonatomic,readwrite) MFProfile profile;
+
 @end

@@ -34,8 +34,9 @@
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
 	
-	// Just call the -wholeTextForPage: method of MFDocumentManager.
-	NSString *someText = [[self.delegate.document wholeTextForPage:[page intValue]]copy];
+	// Just call the -wholeTextForPage: method of MFDocumentManager. Pass NULL as profile to use the default profile.
+	// If you want to use a different profile pass a reference to a MFProfile.
+	NSString *someText = [[self.delegate.document wholeTextForPage:[page intValue] withProfile:NULL]copy];
 	
 	// Call back performed on the main thread.
 	[self performSelectorOnMainThread:@selector(updateTextToTextDisplayView:) withObject:someText  waitUntilDone:YES];
