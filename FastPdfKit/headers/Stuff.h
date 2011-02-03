@@ -18,13 +18,12 @@ if((x)!=NULL) {		\
 free((x)),(x)=NULL; \
 }					\
 
-//enum MFLegacyMode {
-//	MFLegacyModeDisabled = 0,
-//	MFLegacyModeForced = 1,
-//	MFLegacyModeAuto = 2
-//};
-//typedef NSUInteger MFLegacyMode;
 
+/**
+ When the lead property of the MFDocumentViewController is set to MFDocumentLeadLeft, the odd numbered page is shown
+ on the left side of the view. MFDocumentLeadRight move the odd page on the right, and this should be the default behaviour
+ when dealing with books or magazines.
+ */
 enum MFDocumentLead {
 	MFDocumentLeadLeft = 0,
 	MFDocumentLeadRight = 1
@@ -33,6 +32,10 @@ typedef NSUInteger MFDocumentLead;
 //#define MFDocumentLeadLeft 0
 //#define MFDocumentLeadRight 1
 
+/**
+ Pretty much self explanatory: when the mode property of the MFDocumentViewController is set to MFDocumentModeSingle, a single
+ page is drawn on the view. MFDocumentModeDouble display two pages side-by-side.
+ */
 enum MFDocumentMode {
 	MFDocumentModeSingle = 1,
 	MFDocumentModeDouble = 2
@@ -41,6 +44,10 @@ typedef NSUInteger MFDocumentMode;
 //#define MFDocumentModeSingle 1
 //#define MFDocumentModeDouble 2
 
+/**
+ MFDocumentDirectionL2R is the standard for western magazine and books. Set the direction property of MFDocumentViewController
+ to MFDocumentDirectionR2L if you want to display document likes manga.
+ */
 enum MFDocumentDirection {
 	MFDocumentDirectionL2R = 0,
 	MFDocumentDirectionR2L = 1

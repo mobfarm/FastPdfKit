@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
+#import "mfprofile.h"
 
 @class MFOffscreenRenderer;
 
@@ -28,6 +29,8 @@
 	int *dataSetFlags;
 	CGRect *cropboxes;
 	int *rotations;
+	
+	MFProfile profile;
 }
 
 // These method are used internally.
@@ -47,32 +50,32 @@
  */
 +(MFDocumentManager *)documentManagerWithFilePath:(NSString *)filePath;
 
-/* 
+/** 
  Return an array of MFOutlineEntry as the outline/TOC of the pdf document.
  */
 -(NSMutableArray *)outline;
 
-/* 
+/**
  Initializer. You can also use the factory method above. 
  */
 -(id)initWithFileUrl:(NSURL*)anUrl;
 	
-/* 
+/** 
  Check if a document is encrypted and blocked by a password or not.
  */
 -(BOOL)isLocked;
 
-/* 
+/**
  Try to unlock the document with a password and return if the unlock has been successful or not.
 */
 -(BOOL)tryUnlockWithPassword:(NSString *)aPassword;
 
-/* 
+/** 
  Return the number of pages that make up the document.
  */
 -(NSUInteger)numberOfPages;
 
-/* 
+/** 
  Clear the page cache. It is important to call this method on memory warning as in the sample code
  to prevent the application being killed right for excessive memory usage.
  */
@@ -88,5 +91,11 @@
  Return a string representation of the text contained in a pdf page.
  */
 -(NSString *)wholeTextForPage:(NSUInteger)pageNr;
+
+/**
+ This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
+ set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it.
+ */
+@property (nonatomic,readwrite) MFProfile profile;
 
 @end

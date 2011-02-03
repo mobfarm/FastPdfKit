@@ -14,6 +14,7 @@
 #import "TextDisplayViewController.h"
 #import "SearchManager.h"
 #import "MiniSearchView.h"
+#import "mfprofile.h"
 
 #define TITLE_MODE_SINGLE @"Single"
 #define TITLE_MODE_DOUBLE @"Double"
@@ -329,7 +330,6 @@
 	
 	// Go to the page.
 	[self setPage:pageNumber];
-
 }
 
 -(IBAction) actionPageSliderSlided:(id)sender {

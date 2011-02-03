@@ -23,9 +23,24 @@
 	
 }
 
+/**
+ Indentation level of the outline entry. It is also the node level inside the outline tree.
+ */
 @property NSInteger indentation;
+
+/**
+ Page number of the entry.
+ */
 @property NSUInteger pageNumber;
+
+/**
+ Child entries.
+ */
 @property (retain) NSArray * bookmarks;
+
+/**
+ Title for the outline entry.
+ */
 @property (copy) NSString * title;
 
 @end
