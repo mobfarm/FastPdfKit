@@ -30,7 +30,7 @@
 	CGRect *cropboxes;
 	int *rotations;
 	
-	MFProfile profile;
+	MFProfile defaultProfile;
 }
 
 // These method are used internally.
@@ -83,19 +83,24 @@
 
 /**
  Return an array of MFTextItem representing the matches of teh search term on the page passed
- as arguments. It is a good choice running this method in a secondary thread.
+ as arguments. It is a good choice running this method in a secondary thread. Pass NULL as profile
+ to use default search profile. Profile is not retained, so be sure to keep it in memory until the function
+ returns.
  */
--(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm;
+-(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm withProfile:(MFProfile *)p;
+
 
 /**
- Return a string representation of the text contained in a pdf page.
+ Return a string representation of the text contained in a pdf page. Profile is not retained, so be sure to keep
+ it in memory until the function returns. You can pass NULL to use the default profile.
  */
--(NSString *)wholeTextForPage:(NSUInteger)pageNr;
+-(NSString *)wholeTextForPage:(NSUInteger)pageNr withProfile:(MFProfile *)p;
 
 /**
  This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
- set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it.
+ set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it. This is the default profile used as fallback when
+ a NULL profile is passed to the search and extraction methods.
  */
-@property (nonatomic,readwrite) MFProfile profile;
+@property (nonatomic,readwrite) MFProfile defaultProfile;
 
 @end

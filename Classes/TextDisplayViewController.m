@@ -8,6 +8,7 @@
 
 #import "TextDisplayViewController.h"
 #import "DocumentViewController.h"
+#import "MFDocumentManager.h"
 
 @implementation TextDisplayViewController
 
