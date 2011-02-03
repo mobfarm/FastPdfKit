@@ -195,7 +195,7 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	
 	MFProfile profile;
 	initProfile(&profile);	// Default initializer;
-	// initProfile(&profile, 0, 1, 3, 0, 1, 1, 0, 1); // Custom initializer. Look at mfprofile.h for details.
+	// initProfileWithSettings(&profile, 0, 1, 3, 0, 1, 1, 0, 1); // Custom initializer. Look at mfprofile.h for details.
 	
 	operation.page = page;				// Page number.
 	operation.searchTerm = term;		// Search term.
