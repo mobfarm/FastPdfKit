@@ -33,8 +33,12 @@
 @synthesize dismissButton, bookmarksButton, outlineButton;
 @synthesize prevButton, nextButton;
 @synthesize textButton, textDisplayViewController;
-@synthesize searchViewController, searchButton, searchManager, miniSearchView;
+@synthesize searchViewController, searchButton, searchManager, pdfIsOpen,miniSearchView;
 @synthesize thumbnailView;
+@synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
+@synthesize thumbImgArray;
+@synthesize nomefile,thumbsViewVisible;
+@synthesize thumbSliderView,aTSVH;
 
 #pragma mark Thumbnail utility functions
 
@@ -275,6 +279,43 @@
 	[bookmarksVC setDelegate:self];
 	[self presentModalViewController:(UIViewController *)bookmarksVC animated:YES];
 	[bookmarksVC release];
+}
+
+-(IBAction) actionThumbnail:(id)sender{
+	
+	if (thumbsViewVisible) {
+		
+		[self hideHorizontalThumbnails];
+		//[self.thumbSliderViewHorizontal setHidden:YES];
+	}else {
+		[self showHorizontalThumbnails];
+		//[self.thumbSliderViewHorizontal setHidden:NO];
+	}
+
+}
+
+-(void)showHorizontalThumbnails{
+	if (thumbSliderViewHorizontal.frame.origin.y >= self.view.bounds.size.height) {
+		//toolbar.hidden = NO;
+		[UIView beginAnimations:@"show" context:NULL];
+		[UIView setAnimationDuration:0.35];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		//[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, 44)];
+		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+		[UIView commitAnimations];
+		thumbsViewVisible = YES;
+	}
+}
+
+-(void)hideHorizontalThumbnails{
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.35];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	//[toolbar setFrame:CGRectMake(0, -44, toolbar.frame.size.width, 44)];
+	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+	[UIView commitAnimations];
+	thumbsViewVisible = NO;
+	
 }
 
 -(IBAction) actionOutline:(id)sender {
@@ -543,6 +584,7 @@
 			
 			[miniSearchView setHidden:NO];
 			
+			
 			hudHidden = NO;
 			
 		} else {
@@ -559,6 +601,7 @@
 			[directionButton setHidden:YES];
 			
 			[miniSearchView setHidden:YES];
+		
 			
 			hudHidden = YES;
 		}		
@@ -613,6 +656,7 @@
 	
 	[super viewDidLoad];
 	
+	pdfIsOpen = YES;
 	
 	UIButton *aButton = nil;
 	
@@ -775,18 +819,161 @@
 	[self setPageSlider:aSlider];
 	[[self view]addSubview:aSlider];
 	[aSlider release];
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		[aButton setFrame:CGRectMake(padding, viewSize.height-padding*9-buttonHeight*9, buttonWidth, buttonHeight)];
+		[aButton setTitle:@"Thumbnail" forState:UIControlStateNormal];
+		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
+		[aButton addTarget:self action:@selector(actionThumbnail:) forControlEvents:UIControlEventTouchUpInside];
+		[[aButton titleLabel]setFont:font];
+		[self setBookmarksButton:aButton];
+		[[self view]addSubview:aButton];
+		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 230)];
+	}else {
+		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		[aButton setFrame:CGRectMake(padding, viewSize.height-padding*5-buttonHeight*5, buttonWidth, buttonHeight)];
+		[aButton setTitle:@"Thumbnail" forState:UIControlStateNormal];
+		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
+		[aButton addTarget:self action:@selector(actionThumbnail:) forControlEvents:UIControlEventTouchUpInside];
+		[[aButton titleLabel]setFont:font];
+		[self setBookmarksButton:aButton];
+		[[self view]addSubview:aButton];
+		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 115)];
+	}
 
-	// Thumbmail view.
-	UIImageView *anImageView = [[UIImageView alloc]initWithFrame:CGRectMake((viewSize.width-60)*0.5, viewSize.height-80-40, 60, 80)];
-	[anImageView setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
-	[anImageView setContentMode:UIViewContentModeScaleAspectFit];
-	[anImageView setBackgroundColor:[UIColor darkGrayColor]];
-	[anImageView setHidden:YES];
-	self.thumbnailView = anImageView;
-	[[self view]addSubview:anImageView];
-	[anImageView release];
+	
+	[aTSVH setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+	[aTSVH setAutoresizesSubviews:YES];
+	
+	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5]];
+	
+	[self.view addSubview:aTSVH];
+	// [thumbSliderViewHorizontal setHidden:YES];
+	self.thumbSliderViewHorizontal = aTSVH;
+	[aTSVH release];
+	
+	/*creo un array di immagini di test*/
+	NSMutableArray * aThumbImgArray  = [[NSMutableArray alloc]init];
+	
+	
+	// NSLog(@"inizio thumb");
+	
+	NSUInteger numpagePDF = [[self document]numberOfPages];
+	for (int i=0; i<numpagePDF ; i++) {
+		UIImage *img = [UIImage imageNamed:@"icon.png"];
+		//CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
+		//UIImage *img = [UIImage imageWithCGImage:imgthumb];
+		
+		[aThumbImgArray insertObject:img atIndex:i];
+		//CGImageRelease(imgthumb);
+	}	
+	
+	self.thumbImgArray = aThumbImgArray;
+	[aThumbImgArray release];
+	
+	[self performSelector:@selector(createThumbToolbar) withObject:nil afterDelay:0.1];
 	
  }
+
+-(void)createThumbToolbar{
+	// Horizontal thumb slider.
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(140, 180) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
+		anHorizontalThumbSlider.delegate = self;	
+		self.thumbsliderHorizontal = anHorizontalThumbSlider;
+	
+		[self.thumbSliderViewHorizontal addSubview:thumbsliderHorizontal.view];
+		[anHorizontalThumbSlider viewDidLoad];
+		
+		[anHorizontalThumbSlider release];
+		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
+		
+	}else {
+		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(70, 90) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
+		anHorizontalThumbSlider.delegate = self;
+		
+		self.thumbsliderHorizontal = anHorizontalThumbSlider;
+		[self.thumbSliderViewHorizontal addSubview:thumbsliderHorizontal.view];
+		[anHorizontalThumbSlider viewDidLoad];
+		
+		[anHorizontalThumbSlider release];
+		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
+		
+	}
+	
+	
+}
+
+
+- (void)didTappedOnPage:(int)number ofType:(int)type withObject:(id)object{
+	[self setPage:number];
+	// NSLog(@"didTappedOnPage");
+}
+
+- (void)didSelectedPage:(int)number ofType:(int)type withObject:(id)object{
+	// NSLog(@"didSelectedPage");
+}
+
+-(void)generathumbinbackground:(NSNumber *)numeropaginEPDF {
+	
+	NSAutoreleasePool *arPool = [[NSAutoreleasePool alloc] init];
+    [numeropaginEPDF retain];
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	documentsDirectory = [ documentsDirectory stringByAppendingString:@"/"];
+	documentsDirectory = [documentsDirectory stringByAppendingString:nomefile];
+	
+	// NSLog(@"directory crea thumb : %@",documentsDirectory);
+	
+	NSFileManager *filemanager = [[NSFileManager alloc]init];
+	NSError *error;
+	BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:&error];
+	
+	// BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
+	
+	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
+	
+	if (testDirectoryCreated) {
+		NSLog(@"directory creata");
+	}else {
+		NSLog(@"directory gia esistente");
+	}
+	
+	
+	
+	// NSLog(@"inizio");
+	
+	CGSize thumbSize = CGSizeMake(140, 182);
+	
+	for (int i=1; i<=[[self document]numberOfPages] ; i++) {
+		
+		NSString *filename = [NSString stringWithFormat:@"png%d.png",i]; //nome del file su disco, possiamo anche chiamarlo in altro modo
+		NSString *fullPathToFile = [documentsDirectory stringByAppendingString:@"/"];
+		fullPathToFile = [ fullPathToFile stringByAppendingString:filename];
+		//fullPathToFile= [fullPathToFile stringByAppendingPathComponent:filename];
+		
+		// NSLog(@"path crea thumb : %@",fullPathToFile);
+		
+		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)
+		{
+			CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
+			UIImage *img = [[UIImage alloc] initWithCGImage:imgthumb];
+			NSData *data = UIImagePNGRepresentation(img);
+			if (pdfIsOpen) {
+				[filemanager createFileAtPath:fullPathToFile contents:data attributes:nil];
+			}
+			CGImageRelease(imgthumb);
+			[img release];
+			
+		}
+		//	[thumbImgArray insertObject:img atIndex:i];
+	}
+	// NSLog(@"fine");
+	[filemanager release];
+	[arPool release];
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.

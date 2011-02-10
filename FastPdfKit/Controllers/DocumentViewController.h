@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MFDocumentViewController.h"
 #import "MFDocumentViewControllerDelegate.h"
+#import "MFHorizontalSlider.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -17,7 +18,7 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-@interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate>{
+@interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate>{
 
 	// UI elements.
 	UIButton *leadButton;
@@ -55,6 +56,18 @@
 	SearchManager *searchManager;
 	MiniSearchView *miniSearchView;
 	
+	MFHorizontalSlider *thumbsliderHorizontal;
+	UIView *thumbSliderViewHorizontal;
+	
+	UIView *thumbSliderView;
+	UIView *aTSVH;
+	
+	NSMutableArray *thumbImgArray;
+	
+	NSString *nomefile;
+	BOOL pdfIsOpen;
+	BOOL thumbsViewVisible;
+	
 	
 }
 
@@ -75,6 +88,17 @@
 @property (nonatomic, retain) UISlider *pageSlider;
 @property (nonatomic, retain) UIButton *bookmarksButton;
 @property (nonatomic, retain) UIButton *outlineButton;
+
+@property (nonatomic, retain) NSMutableArray *thumbImgArray;
+
+@property (nonatomic, retain) MFHorizontalSlider *thumbsliderHorizontal;
+@property (nonatomic, retain) UIView *thumbSliderViewHorizontal;
+@property (nonatomic, retain) UIView *thumbSliderView;
+@property (nonatomic, retain) UIView *aTSVH;
+
+@property (nonatomic, retain) NSString *nomefile;
+@property (nonatomic) BOOL pdfIsOpen;
+@property (nonatomic) BOOL thumbsViewVisible;
 
 // Swapping search views.
 -(void)switchToMiniSearchView:(MFTextItem *)index;

@@ -39,7 +39,7 @@
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
-	
+	aDocViewController.nomefile=DOC_PLAIN;
 	//
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
@@ -118,6 +118,7 @@
 		
 		DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:document];
 		[[self navigationController]pushViewController:aDocViewController animated:YES];
+		aDocViewController.nomefile=DOC_PLAIN;
 		[aDocViewController release];
 		
 	} else {
