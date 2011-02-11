@@ -24,7 +24,8 @@
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
-		aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:[NSBundle mainBundle]];
+		//aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:[NSBundle mainBundle]];
+		aMenuViewController = [[MenuViewController alloc]initWithNibName:@"Kiosk_ipad" bundle:[NSBundle mainBundle]];
 	} else {
 		aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_phone" bundle:[NSBundle mainBundle]];
 	}

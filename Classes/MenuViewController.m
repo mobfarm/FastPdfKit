@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
+#import "MFHomeListPdf.h"
 
 #define TEXT_PLAIN @"The following button will open a plain PDF. The MFDocumentManager instance can be immediately used to create a DocumentViewController to push onto the stack. Look for the details in the MenuViewController class"
 #define TEXT_ENCRYPTED @"The following button will open a password protected PDF. You will be asked to insert a password. The program will use the password to try to unlock the PDF and the DocumentViewController will be created only once the document has been succesfully unlocked. The password is 12345"
@@ -18,6 +19,8 @@
 
 #define DOC_PLAIN @"gitmanual"
 #define DOC_ENCRYPTED @"gitmanualcrypt"
+
+#define NUM_PDFTOSHOW 6
 
 @implementation MenuViewController
 
@@ -189,6 +192,24 @@
 	[referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
 	[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
 	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+	
+		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 130, 768, 900)];
+		scrollView.backgroundColor = [UIColor lightGrayColor];
+		scrollView.contentSize = CGSizeMake(768, 560 * NUM_PDFTOSHOW);
+			
+	
+				for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
+					MFHomeListPdf *ViewPdf = [[MFHomeListPdf alloc] initWithPageNumber:i andImage:@"icon144.png" andSize:CGSizeMake(350, 450)];
+					CGRect frame = self.view.frame;
+					frame.origin.y = 550 * (i-1);
+					frame.origin.x = 0;
+					frame.size.width = 350;
+					ViewPdf.view.frame = frame;
+					[scrollView addSubview:ViewPdf.view];
+				}
+		[self.view addSubview:scrollView];
+	}
 }
 
 

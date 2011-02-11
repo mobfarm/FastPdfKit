@@ -22,6 +22,8 @@
 	MFDocumentManager *document;
 	
 	UIAlertView *passwordAlertView;
+	
+	UIScrollView *scrollView;
 }
 
 -(IBAction)actionOpenPlainDocument:(id)sender;
