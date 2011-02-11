@@ -16,7 +16,8 @@
 #define TITLE_PLAIN @"Open"
 #define TITLE_ENCRYPTED @"Open"
 
-#define DOC_PLAIN @"gitmanual"
+#define DOC_PLAIN @"Sample Chapter"
+//#define DOC_PLAIN @"gitmanual"
 #define DOC_ENCRYPTED @"gitmanualcrypt"
 
 @implementation MenuViewController
