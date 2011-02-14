@@ -24,25 +24,22 @@
  
 typedef struct MFProfile {
 	
-	/// Td, TD, Tm, Tstar, TJ
-	// 0 - do nothing
+	/// Td, TD, Tm, Tstar
+	// 0 - do nothing (strings will be appended).
 	// 1 - add space with trimm
 	// 2 - add new line
-	
 	// Example:
 	// The array {1,2,1,0} will cause the Td operator to add a space with trim, TD to add a new line, Tm to act like Td, and Tstar to do nothing.
-	// TJ is only considered when the adjustment is greater than the span of the space.
 	
 	unsigned int fpdfk_xtr_policy[5];
 	
-	// Td, TD, Tm, Tstar, TJ
+	// Td, TD, Tm, Tstar
 	// 0 - do nothing
 	// 1 - reset check
 	// 2 - reset check and add space
 	// 3 - add space
 	// Example:
 	// The array {0,1,3,2} will cause the search to just use the string passed after Td operator as a continuation of the string already checked, then to reset the check before continue on TD, to reset the check and add a space before taking in consideration the text passed after Tm, and just add a space when T* is encountered.
-	// TJ is only considered when the adjustment is greater than the span of the space.
 	
 	unsigned int fpdfk_src_policy[5];
 	
