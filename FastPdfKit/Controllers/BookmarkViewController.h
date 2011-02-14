@@ -21,6 +21,8 @@
 	NSUInteger status;
 	NSMutableArray *bookmarks;
 	
+	IBOutlet UIToolbar *toolbar;
+	
 	//
 //	Delegate to get the current page and tell to show a certain page. It can also be used to
 //	get a list of bookmarks for the current document. 
@@ -37,5 +39,7 @@
 
 @property (nonatomic, retain) NSMutableArray *bookmarks;
 @property (nonatomic, assign) DocumentViewController *delegate;
+
+@property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 
 @end

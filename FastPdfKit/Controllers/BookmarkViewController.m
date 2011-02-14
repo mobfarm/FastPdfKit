@@ -16,13 +16,37 @@
 @synthesize delegate;
 @synthesize bookmarks;
 
+-(void)enableEditing {
+	
+	NSMutableArray * items = [[toolbar items]mutableCopy];
+    
+	UIBarButtonItem * button = [items objectAtIndex:1];
+	[button setTitle:@"Edit"];
+	
+	[toolbar setItems:items];
+	
+    [bookmarksTableView setEditing:YES];
+    status = STATUS_EDITING;
+}
+
+-(void)disableEditing {
+    
+	NSMutableArray * items = [[toolbar items]mutableCopy];
+    
+	UIBarButtonItem * button = [items objectAtIndex:1];
+	[button setTitle:@"Done"];
+	
+	[toolbar setItems:items];
+	
+    [bookmarksTableView setEditing:NO];
+    status = STATUS_NORMAL;
+}
+
 -(IBAction)actionDone:(id)sender {
 	
     NSString * documentId = nil;
     
-    [editButton setTitle:@"Edit"];
-    [bookmarksTableView setEditing:NO];
-    status = STATUS_NORMAL;
+    [self disableEditing];
     
     documentId = delegate.documentId;
     [[NSUserDefaults standardUserDefaults]setObject:bookmarks forKey:KEY_FROM_DOCUMENT_ID(documentId)];
@@ -34,17 +58,12 @@
 
 	if(status == STATUS_NORMAL) {
 		
-		[editButton setTitle:@"Done"];
-		[bookmarksTableView setEditing:YES];
-		status = STATUS_EDITING;
+		[self enableEditing];
         
 	} else if (status == STATUS_EDITING) {
 		
-		[editButton setTitle:@"Edit"];
-		[bookmarksTableView setEditing:NO];
-		status = STATUS_NORMAL;
+		[self disableEditing];
 	}
-	
 }
 
 -(IBAction)actionAddBookmark:(id)sender {
@@ -90,6 +109,8 @@
         aBookmarksArray = [[NSMutableArray alloc]init];
 	}
     
+	NSLog(@"%d",[aBookmarksArray count]);
+	
 	[self setBookmarks:aBookmarksArray];
 	
 	[bookmarksTableView reloadData];
@@ -179,7 +200,8 @@
 
 - (void)dealloc {
 
-	[bookmarksTableView release];
+	[toolbar release], toolbar = nil;
+	[bookmarksTableView release], bookmarksTableView = nil;
 	[editButton release];
 	
 	[bookmarks release];
