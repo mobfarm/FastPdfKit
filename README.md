@@ -2,7 +2,12 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
-### Update: 0.9.1 (Feb 3th, 2011)
+### Update: 0.9.5 (Feb 14th, 2011)
+* Early support for type 0 fonts for search and text extraction
+* Fix on bookmarks controller buttons
+* Safer cleanup implementation
+
+### Update: 0.9.1 (Feb 3rd, 2011)
 * Added customizable Td, TD, Tm, T* and TJ behaviour with custom profiles.
 	Look at `mprofile.h` and `MFDocumentManager.h`
 * Added CMap support for non Type 0 fonts
@@ -24,7 +29,7 @@ This repository contains the FastPdfKit library with a sample project. This libr
 * Fixed first letter highlight bug
 * Supported encoding for every non multibyte font
 
-### Update: 0.7.1 (Dec 3th, 2010)
+### Update: 0.7.1 (Dec 3rd, 2010)
 * External links support
 
 ### Update: 0.7.0 (Nov 19th, 2010)
