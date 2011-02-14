@@ -15,6 +15,7 @@
 @synthesize editButton, bookmarksTableView;
 @synthesize delegate;
 @synthesize bookmarks;
+@synthesize toolbar;
 
 -(void)enableEditing {
 	
