@@ -7,29 +7,23 @@
 //
 
 #import "MFHomeListPdf.h"
+#import "MenuViewController.h"
 
 
 @implementation MFHomeListPdf
-@synthesize object, temp, dataSource,senderButton ,corner;
+@synthesize object, temp, dataSource,senderButton ,corner,PdfToDownload,numDocumento;
+@synthesize mvc;
 
 // Load the view nib and initialize the pageNumber ivar.
-- (id)initWithPageNumber:(int)aPage andImage:(NSString *)_image andSize:(CGSize)_size{
+- (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
 	size = _size;
 	thumbnail = _image;
-	page = aPage;
+	page = Page;
+	numDocumento = numDoc;
 	temp = NO;
 	return self;
 }
 
-- (id)initWithPageNumberNoThumb:(int)aPage andImage:(NSString *)_image andSize:(CGSize)_size andObject:(id)_object andDataSource:(id)_source{
-	[self setObject:_object];
-	size = _size;
-	thumbnail = _image;
-	page = aPage;	
-	temp = YES;
-	dataSource = _source;
-	return self;
-}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -59,10 +53,14 @@
 		[[self view] addSubview:image];
 		[image release];
 		
+		/*NSFileManager *filemanager = [[NSFileManager alloc]init];
+		NSError *error;
+		
+		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
 		UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		[aButton setFrame:CGRectMake(10*3 + 45 * 2, 490, 120, 30)];
 		[aButton setTitle:@"Download" forState:UIControlStateNormal];
-		[aButton setTag:page];
+		[aButton setTag:numDocumento];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 		[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
@@ -75,7 +73,7 @@
 			pageLabel.textColor = [UIColor whiteColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
 			pageLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(25.0)];
-			NSString *titlelabel = [NSString stringWithFormat:@"Rivista numero : %i",page];
+			NSString *titlelabel = [NSString stringWithFormat:@"Titolo : %@",page];
 			[pageLabel setText:titlelabel]; 
 			[[self view] addSubview:pageLabel];
 			[pageLabel release];
@@ -87,7 +85,7 @@
 			pageLabel.textColor = [UIColor whiteColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
 			pageLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)];
-			NSString *titlelabel = [NSString stringWithFormat:@"Rivista numero : %i",page];
+			NSString *titlelabel = [NSString stringWithFormat:@"Titolo : %@",page];
 			[pageLabel setText:titlelabel]; 
 			[[self view]addSubview:pageLabel];
 			[pageLabel release];
@@ -97,7 +95,12 @@
 }
 
 -(void)actionOpenPdf:(id)sender {
-	NSLog(@"Devo aprire Pdf");
+	
+	//NSLog(@"Nome Filesssss %@",PdfToDownload);
+	//mvc.nomePdfDaAprire = PdfToDownload;
+	
+	//[mvc setNomePdfDaAprire:PdfToDownload];
+	[mvc actionOpenPlainDocumentFromNewMain:self];
 }
 
 -(void)actionDownloadPdf:(id)sender {
@@ -106,15 +109,16 @@
 	
 	UIButton *btnPdfToDownload = (UIButton *)sender;
 	
-	NSString *PdfToDownload =[NSString stringWithFormat:@"%d", btnPdfToDownload.tag];
+	//NSString *PdfToDownload1 =[NSString stringWithFormat:@"%d", btnPdfToDownload.tag];
 	
 	//NSLog(@"sebder...%@",sender);
-	PdfToDownload=[@"pdf" stringByAppendingString: PdfToDownload];
+	PdfToDownload=[@"pdf" stringByAppendingString: @"1"];
 	
-	NSString * storyLink = @"http://gapil.truelite.it/gapil.pdf";
+	NSString * storyLink = [@"http://go.mobfarm.eu/pdf/" stringByAppendingString:PdfToDownload] ;
+	
 		
 	[self downloadPDF:self withUrl:storyLink andName:PdfToDownload];
-
+	
 }
 
 
@@ -141,7 +145,7 @@
 	[request setDownloadDestinationPath:pdfPath];
 	[request setDidFinishSelector:@selector(requestFinished:)];
 	[request setDidFailSelector:@selector(requestFailed:)];
-	//[request setDownloadProgressDelegate:progressView];
+	[request setDownloadProgressDelegate:mvc.downloadProgressView];
 	[request setShouldPresentAuthenticationDialog:YES];
 	[request setDownloadDestinationPath:pdfPath];
 	[request startAsynchronous];
@@ -149,6 +153,7 @@
 
 -(void)requestStarted:(ASIHTTPRequest *)request{
 	NSLog(@"requestStarted");
+	mvc.showViewDownload;
 	//[downloadInProgress setHidden:NO];
 	//[progressView setHidden:NO];
 	//[progressView setProgress:0.0];
@@ -156,9 +161,10 @@
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
-	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD TERMINATO" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
+	/*UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD TERMINATO" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-	[popupQuery showInView:self.view];
+	[popupQuery showInView:self.view];*/
+	mvc.hideViewDownload;
 	NSLog(@"requestFinished");
 	//[mvc redrawTableAfterForeground];
 	//[progressView setHidden:YES];
@@ -202,34 +208,6 @@
 	*/  
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
-{	
-	NSSet *allTouches = [event allTouches];
-	
-	switch ([allTouches count]) {
-		case 1: { //Single touch
-			
-			//Get the first touch.
-			UITouch *touch = [[allTouches allObjects] objectAtIndex:0];
-			
-			switch ([touch tapCount])
-			 {
-				 case 1: {	//Single Tap.
-					// [self.delegate thumbTapped:page withObject:object];
-					 [self setSelected:YES];
-					} break;
-				 case 2: {	//Double tap.
-					 
-				 } break;
-			 }
-		} break;
-		case 2: { //Double Touch
-			
-		} break;
-		default:
-			break;
-	}
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview

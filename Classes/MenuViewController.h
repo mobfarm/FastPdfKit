@@ -24,11 +24,18 @@
 	UIAlertView *passwordAlertView;
 	
 	UIScrollView *scrollView;
+	UIView *DownloadProgress;
+	UIProgressView *downloadProgressView;
+	
+	NSString *nomePdfDaAprire;
 }
 
 -(IBAction)actionOpenPlainDocument:(id)sender;
+-(IBAction)actionOpenPlainDocumentFromNewMain:(id)sender;
 
 -(IBAction)actionOpenEncryptedDocument:(id)sender;
+-(void)showViewDownload;
+-(void)hideViewDownload;
 
 @property (nonatomic, retain) IBOutlet UIButton *referenceButton;
 @property (nonatomic, retain) IBOutlet UIButton *manualButton;
@@ -36,6 +43,9 @@
 @property (nonatomic, retain) IBOutlet UITextView *manualTextView;
 
 @property (nonatomic, retain) MFDocumentManager *document;
+@property (nonatomic, retain) NSString *nomePdfDaAprire;
+@property (nonatomic,retain ) UIProgressView *downloadProgressView;
+@property (nonatomic,retain ) UIView *DownloadProgress;
 
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
 
