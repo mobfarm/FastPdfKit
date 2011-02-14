@@ -11,14 +11,17 @@
 
 
 @implementation MFHomeListPdf
-@synthesize object, temp, dataSource,senderButton ,corner,PdfToDownload,numDocumento;
+@synthesize object, temp, dataSource,senderButton ,corner,pdfToDownload,numDocumento;
 @synthesize mvc;
+@synthesize page;
 
 // Load the view nib and initialize the pageNumber ivar.
 - (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
 	size = _size;
 	thumbnail = _image;
-	page = Page;
+	thumbnail = [thumbnail stringByAppendingString:@".png"];
+	self.page=Page;
+	NSLog(@"Page...%@",page);
 	numDocumento = numDoc;
 	temp = NO;
 	return self;
@@ -96,28 +99,23 @@
 
 -(void)actionOpenPdf:(id)sender {
 	
-	//NSLog(@"Nome Filesssss %@",PdfToDownload);
+	NSLog(@"Nome Filesssss %@",pdfToDownload);
 	//mvc.nomePdfDaAprire = PdfToDownload;
-	
-	//[mvc setNomePdfDaAprire:PdfToDownload];
+	[mvc setNomePdfDaAprire:pdfToDownload];
 	[mvc actionOpenPlainDocumentFromNewMain:self];
 }
 
 -(void)actionDownloadPdf:(id)sender {
 	
 	senderButton = sender;
-	
-	UIButton *btnPdfToDownload = (UIButton *)sender;
-	
-	//NSString *PdfToDownload1 =[NSString stringWithFormat:@"%d", btnPdfToDownload.tag];
-	
-	//NSLog(@"sebder...%@",sender);
-	PdfToDownload=[@"pdf" stringByAppendingString: @"1"];
-	
-	NSString * storyLink = [@"http://go.mobfarm.eu/pdf/" stringByAppendingString:PdfToDownload] ;
-	
 		
-	[self downloadPDF:self withUrl:storyLink andName:PdfToDownload];
+	//NSLog(@"sebder...%@",sender);
+	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
+	NSLog(@"PdfToDownload...%@",pdfToDownload);
+	
+	NSString * storyLink = [@"http://go.mobfarm.eu/pdf/" stringByAppendingString:pdfToDownload] ;
+	
+	[self downloadPDF:self withUrl:storyLink andName:pdfToDownload];
 	
 }
 

@@ -24,17 +24,18 @@
 	ASIHTTPRequest *request;
 	BOOL pdfInDownload;
 	MenuViewController *mvc;
-	NSString *PdfToDownload;
+	NSString *pdfToDownload;
 }
 
 @property (nonatomic,assign) id object;
 @property (nonatomic,assign) id dataSource;
 @property (nonatomic,assign) id senderButton;
 @property (nonatomic,retain) UIImageView *corner;
-@property (nonatomic,retain) NSString *PdfToDownload;
+@property (nonatomic,retain) NSString *pdfToDownload;
 @property (nonatomic) BOOL temp;
 @property (nonatomic, assign) MenuViewController *mvc;
 @property (nonatomic, assign) int numDocumento;
+@property (nonatomic,copy) NSString *page;
 
 - (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size;
 - (void)setSelected:(BOOL)selected;

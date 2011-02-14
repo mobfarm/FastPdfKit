@@ -43,7 +43,7 @@
 @property (nonatomic, retain) IBOutlet UITextView *manualTextView;
 
 @property (nonatomic, retain) MFDocumentManager *document;
-@property (nonatomic, retain) NSString *nomePdfDaAprire;
+@property (nonatomic, assign) NSString *nomePdfDaAprire;
 @property (nonatomic,retain ) UIProgressView *downloadProgressView;
 @property (nonatomic,retain ) UIView *DownloadProgress;
 

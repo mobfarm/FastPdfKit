@@ -22,7 +22,7 @@
 #define DOC_PLAIN @"gitmanual"
 #define DOC_ENCRYPTED @"gitmanualcrypt"
 
-#define NUM_PDFTOSHOW 9
+#define NUM_PDFTOSHOW 5
 
 @implementation MenuViewController
 
@@ -31,6 +31,7 @@
 @synthesize passwordAlertView;
 @synthesize downloadProgressView;
 @synthesize DownloadProgress;
+@synthesize nomePdfDaAprire;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
     //
@@ -70,13 +71,10 @@
 	
 	NSLog(@"PAth : %@", paths);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
-	
-	NSLog(@"documentsDirectory : %@", documentsDirectory);
-	
-	
-	
+		
 	NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
 	pdfPath = [pdfPath stringByAppendingString:nomePdfDaAprire];
+	pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 	
 	NSLog(@"pdfpath :%@",pdfPath);
 	//pdfPath = [pdfPath stringByAppendingString:@"/"];
@@ -94,7 +92,7 @@
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
-	aDocViewController.nomefile=DOC_PLAIN;
+	aDocViewController.nomefile=nomePdfDaAprire;
 	//
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
@@ -235,8 +233,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	nomePdfDaAprire  = @"pdf1.pdf";
-	
 	UIFont *smallSystemFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 	
 	[referenceTextView setText:TEXT_PLAIN];
@@ -265,7 +261,7 @@
 			
 	
 				for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
-					MFHomeListPdf *ViewPdf = [[MFHomeListPdf alloc] initWithName:[arrayPdf objectAtIndex:i-1] andnumOfDoc:i andImage:@"icon144.png" andSize:CGSizeMake(350, 450)];
+					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:[arrayPdf objectAtIndex:i-1] andnumOfDoc:i andImage:[arrayPdf objectAtIndex:i-1] andSize:CGSizeMake(350, 450)];
 					//MFHomeListPdf *ViewPdf = [[MFHomeListPdf alloc] initWithPageNumber:i andImage:@"icon144.png" andSize:CGSizeMake(350, 450)];
 					CGRect frame = self.view.frame;
 					if ((i%2)==0) {
@@ -278,9 +274,9 @@
 						frame.size.width = 350;
 					}
 					
-					ViewPdf.view.frame = frame;
-					ViewPdf.mvc=self;
-					[scrollView addSubview:ViewPdf.view];
+					viewPdf.view.frame = frame;
+					viewPdf.mvc=self;
+					[scrollView addSubview:viewPdf.view];
 				}
 		[self.view addSubview:scrollView];
 		
