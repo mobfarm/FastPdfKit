@@ -21,7 +21,7 @@
 	NSMutableArray * items = [[toolbar items]mutableCopy];
     
 	UIBarButtonItem * button = [items objectAtIndex:1];
-	[button setTitle:@"Edit"];
+	[button setTitle:@"Done"];
 	
 	[toolbar setItems:items];
 	
@@ -34,7 +34,7 @@
 	NSMutableArray * items = [[toolbar items]mutableCopy];
     
 	UIBarButtonItem * button = [items objectAtIndex:1];
-	[button setTitle:@"Done"];
+	[button setTitle:@"Edit"];
 	
 	[toolbar setItems:items];
 	
