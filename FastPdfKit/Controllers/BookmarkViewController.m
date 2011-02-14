@@ -9,6 +9,8 @@
 #import "BookmarkViewController.h"
 #import "DocumentViewController.h"
 
+#define KEY_FROM_DOCUMENT_ID(doc_id) [NSString stringWithFormat:@"bookmarks_%@",(doc_id)]
+
 @implementation BookmarkViewController
 @synthesize editButton, bookmarksTableView;
 @synthesize delegate;
@@ -16,6 +18,15 @@
 
 -(IBAction)actionDone:(id)sender {
 	
+    NSString * documentId = nil;
+    
+    [editButton setTitle:@"Edit"];
+    [bookmarksTableView setEditing:NO];
+    status = STATUS_NORMAL;
+    
+    documentId = delegate.documentId;
+    [[NSUserDefaults standardUserDefaults]setObject:bookmarks forKey:KEY_FROM_DOCUMENT_ID(documentId)];
+    
 	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
@@ -23,15 +34,15 @@
 
 	if(status == STATUS_NORMAL) {
 		
-		[editButton setStyle:UIBarButtonSystemItemBookmarks];
+		[editButton setTitle:@"Done"];
 		[bookmarksTableView setEditing:YES];
-		
+		status = STATUS_EDITING;
+        
 	} else if (status == STATUS_EDITING) {
 		
-		
-		[editButton setStyle:UIBarButtonSystemItemEdit];
+		[editButton setTitle:@"Edit"];
 		[bookmarksTableView setEditing:NO];
-		
+		status = STATUS_NORMAL;
 	}
 	
 }
@@ -70,12 +81,15 @@
 //	pdf document, you probably want to store them in coredata or some other way and bind them to a specific document
 //	by setting or passing to this viewcontroller an identifier for the document or tell a delegate to load/save
 //	them for us.
-	
-	NSMutableArray *aBookmarksArray = [[NSUserDefaults standardUserDefaults]objectForKey:@"bookmarks"];
-	if(nil == aBookmarksArray) {
-		aBookmarksArray = [[NSMutableArray alloc]init];
-		[[NSUserDefaults standardUserDefaults]setObject:aBookmarksArray forKey:@"bookmarks"];
+    
+	NSString * documentId = delegate.documentId;
+    
+	NSMutableArray *aBookmarksArray = [[[NSUserDefaults standardUserDefaults]objectForKey:KEY_FROM_DOCUMENT_ID(documentId)]mutableCopy];
+    
+	if(!aBookmarksArray) {
+        aBookmarksArray = [[NSMutableArray alloc]init];
 	}
+    
 	[self setBookmarks:aBookmarksArray];
 	
 	[bookmarksTableView reloadData];

@@ -16,8 +16,7 @@
 #define TITLE_PLAIN @"Open"
 #define TITLE_ENCRYPTED @"Open"
 
-#define DOC_PLAIN @"Sample Chapter"
-//#define DOC_PLAIN @"gitmanual"
+#define DOC_PLAIN @"gitmanual"
 #define DOC_ENCRYPTED @"gitmanualcrypt"
 
 @implementation MenuViewController
@@ -40,7 +39,8 @@
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
-	
+	[aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
+    
 	//
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
@@ -118,6 +118,7 @@
 		//		core data, the settings or the keychain
 		
 		DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:document];
+        [aDocViewController setDocumentId:DOC_ENCRYPTED]; // We know that in this sample that the file can only be this one.
 		[[self navigationController]pushViewController:aDocViewController animated:YES];
 		[aDocViewController release];
 		

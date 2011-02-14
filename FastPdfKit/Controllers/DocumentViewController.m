@@ -35,6 +35,7 @@
 @synthesize textButton, textDisplayViewController;
 @synthesize searchViewController, searchButton, searchManager, miniSearchView;
 @synthesize thumbnailView;
+@synthesize documentId;
 
 #pragma mark Thumbnail utility functions
 
@@ -804,7 +805,7 @@
 //	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
 //	as long as you pass an instance of it to the superclass initializer.
 	
-	if(self = [super initWithDocumentManager:aDocumentManager]) {
+	if((self = [super initWithDocumentManager:aDocumentManager])) {
 		[self setDocumentDelegate:self];
 	}
 	return self;
@@ -828,6 +829,8 @@
 
 - (void)dealloc {
 	
+    [documentId release], documentId = nil;
+    
 	[searchManager release], searchManager = nil;
 	
 	[searchButton release], searchButton = nil;

@@ -54,11 +54,16 @@
 	SearchViewController *searchViewController;
 	SearchManager *searchManager;
 	MiniSearchView *miniSearchView;
+    
+    // Document's ID. We use this as an unique id for bookmarks and other per-document data.
+    NSString * documentId;
 	
 	
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
+
+@property (nonatomic, copy) NSString * documentId;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 
