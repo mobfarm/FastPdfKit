@@ -109,8 +109,6 @@
 	if(!aBookmarksArray) {
         aBookmarksArray = [[NSMutableArray alloc]init];
 	}
-    
-	NSLog(@"%d",[aBookmarksArray count]);
 	
 	[self setBookmarks:aBookmarksArray];
 	
