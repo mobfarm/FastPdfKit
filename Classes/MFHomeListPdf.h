@@ -25,6 +25,7 @@
 	BOOL pdfInDownload;
 	MenuViewController *mvc;
 	NSString *pdfToDownload;
+	UIButton *removeButton;
 }
 
 @property (nonatomic,assign) id object;
@@ -36,6 +37,7 @@
 @property (nonatomic, assign) MenuViewController *mvc;
 @property (nonatomic, assign) int numDocumento;
 @property (nonatomic,copy) NSString *page;
+@property (nonatomic,retain ) UIButton *removeButton;
 
 - (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size;
 - (void)setSelected:(BOOL)selected;

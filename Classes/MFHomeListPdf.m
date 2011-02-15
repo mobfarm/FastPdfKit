@@ -14,6 +14,7 @@
 @synthesize object, temp, dataSource,senderButton ,corner,pdfToDownload,numDocumento;
 @synthesize mvc;
 @synthesize page;
+@synthesize removeButton;
 
 // Load the view nib and initialize the pageNumber ivar.
 - (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
@@ -61,19 +62,31 @@
 		
 		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
 		UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(10*3 + 45 * 2, 490, 120, 30)];
+		[aButton setFrame:CGRectMake(120, 520, 140, 44)];
 		[aButton setTitle:@"Download" forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
 		[aButton setTag:numDocumento];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 		[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
 		[[self view] addSubview:aButton];
 		
+		removeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		[removeButton setFrame:CGRectMake(120, 580, 140, 44)];
+		[removeButton setTitle:@"Remove" forState:UIControlStateNormal];
+		[removeButton setImage:[UIImage imageNamed:@"remove.png"] forState:UIControlStateNormal];
+		[removeButton setTag:numDocumento];
+		[removeButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
+		[removeButton addTarget:self action:@selector(actionremovePdf:) forControlEvents:UIControlEventTouchUpInside];
+		[[removeButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
+		[removeButton setHidden:YES];
+		[[self view] addSubview:removeButton];
+		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 450, 300, 30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 485, 300, 30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
-			pageLabel.textColor = [UIColor whiteColor];
+			pageLabel.textColor = [UIColor blackColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
 			pageLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(25.0)];
 			NSString *titlelabel = [NSString stringWithFormat:@"Titolo : %@",page];
@@ -83,9 +96,9 @@
 			
 		}else {
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 450, 300, 30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 485, 300, 30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
-			pageLabel.textColor = [UIColor whiteColor];
+			pageLabel.textColor = [UIColor blackColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
 			pageLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)];
 			NSString *titlelabel = [NSString stringWithFormat:@"Titolo : %@",page];
@@ -97,9 +110,20 @@
 	[super viewDidLoad];
 }
 
+-(void)actionremovePdf:(id)sender{
+	//[buttonRemoveDict objectForKey:[arrayPdf objectAtIndex:i-1];
+	//UIButton *btnRemoveSel = [[mvc.buttonRemoveDict objectForKey:numDocumento]];
+	//btnRemoveSel.hidden = NO;
+	NSLog(@"Remove pdf %@",pdfToDownload);
+}
+							   
+-(void)visualizzaButtonRemove{
+	//[buttonRemoveDict objectForKey:[arrayPdf objectAtIndex:i-1];
+	UIButton *btnRemoveSel = [mvc.buttonRemoveDict objectForKey:page];
+	btnRemoveSel.hidden = NO;
+}
+
 -(void)actionOpenPdf:(id)sender {
-	
-	NSLog(@"Nome Filesssss %@",pdfToDownload);
 	//mvc.nomePdfDaAprire = PdfToDownload;
 	[mvc setNomePdfDaAprire:pdfToDownload];
 	[mvc actionOpenPlainDocumentFromNewMain:self];
@@ -116,7 +140,6 @@
 	NSString * storyLink = [@"http://go.mobfarm.eu/pdf/" stringByAppendingString:pdfToDownload] ;
 	
 	[self downloadPDF:self withUrl:storyLink andName:pdfToDownload];
-	
 }
 
 
@@ -171,7 +194,10 @@
 	UIButton *btnPdfToDownload = (UIButton *)senderButton;
 	[btnPdfToDownload setTitle:@"Apri" forState:UIControlStateNormal];
 	[btnPdfToDownload removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[btnPdfToDownload setImage:[UIImage imageNamed:@"view.png"] forState:UIControlStateNormal];
 	[btnPdfToDownload addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self performSelector:@selector(visualizzaButtonRemove) withObject:nil afterDelay:0.1];
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request{

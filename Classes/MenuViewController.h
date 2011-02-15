@@ -26,6 +26,7 @@
 	UIScrollView *scrollView;
 	UIView *DownloadProgress;
 	UIProgressView *downloadProgressView;
+	NSDictionary *buttonRemoveDict;
 	
 	NSString *nomePdfDaAprire;
 }
@@ -48,5 +49,6 @@
 @property (nonatomic,retain ) UIView *DownloadProgress;
 
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
+@property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 
 @end

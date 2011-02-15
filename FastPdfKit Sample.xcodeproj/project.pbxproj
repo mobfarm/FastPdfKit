@@ -47,6 +47,10 @@
 		6FEE963C1309917C00CCA999 /* pdf4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96361309917C00CCA999 /* pdf4.png */; };
 		6FEE963D1309917C00CCA999 /* pdf5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96371309917C00CCA999 /* pdf5.png */; };
 		6FEE963E1309917C00CCA999 /* pdf6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96381309917C00CCA999 /* pdf6.png */; };
+		6FEE9706130A9A0600CCA999 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE9702130A9A0600CCA999 /* download.png */; };
+		6FEE9707130A9A0600CCA999 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE9703130A9A0600CCA999 /* header.png */; };
+		6FEE9708130A9A0600CCA999 /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE9704130A9A0600CCA999 /* remove.png */; };
+		6FEE9709130A9A0600CCA999 /* view.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE9705130A9A0600CCA999 /* view.png */; };
 		6FF57BD31305763A0019F4A0 /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF57BD21305763A0019F4A0 /* MFHomeListPdf.m */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
@@ -147,6 +151,10 @@
 		6FEE96361309917C00CCA999 /* pdf4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pdf4.png; path = copertine/pdf4.png; sourceTree = "<group>"; };
 		6FEE96371309917C00CCA999 /* pdf5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pdf5.png; path = copertine/pdf5.png; sourceTree = "<group>"; };
 		6FEE96381309917C00CCA999 /* pdf6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pdf6.png; path = copertine/pdf6.png; sourceTree = "<group>"; };
+		6FEE9702130A9A0600CCA999 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = download.png; path = img/download.png; sourceTree = "<group>"; };
+		6FEE9703130A9A0600CCA999 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = img/header.png; sourceTree = "<group>"; };
+		6FEE9704130A9A0600CCA999 /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remove.png; path = img/remove.png; sourceTree = "<group>"; };
+		6FEE9705130A9A0600CCA999 /* view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = view.png; path = img/view.png; sourceTree = "<group>"; };
 		6FF57BD1130576390019F4A0 /* MFHomeListPdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHomeListPdf.h; sourceTree = "<group>"; };
 		6FF57BD21305763A0019F4A0 /* MFHomeListPdf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHomeListPdf.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* FastPDFKit_Sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FastPDFKit_Sample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -310,6 +318,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6FEE9700130A99FB00CCA999 /* img */,
 				6FEE96251309911B00CCA999 /* copertine */,
 				95F5A11E1270939500F65929 /* XIBs */,
 				9597F994125D17E400E17B47 /* iTunesArtwork */,
@@ -373,6 +382,17 @@
 				6FEE96381309917C00CCA999 /* pdf6.png */,
 			);
 			name = copertine;
+			sourceTree = "<group>";
+		};
+		6FEE9700130A99FB00CCA999 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				6FEE9702130A9A0600CCA999 /* download.png */,
+				6FEE9703130A9A0600CCA999 /* header.png */,
+				6FEE9704130A9A0600CCA999 /* remove.png */,
+				6FEE9705130A9A0600CCA999 /* view.png */,
+			);
+			name = img;
 			sourceTree = "<group>";
 		};
 		95F5A11E1270939500F65929 /* XIBs */ = {
@@ -480,6 +500,10 @@
 				6FEE963C1309917C00CCA999 /* pdf4.png in Resources */,
 				6FEE963D1309917C00CCA999 /* pdf5.png in Resources */,
 				6FEE963E1309917C00CCA999 /* pdf6.png in Resources */,
+				6FEE9706130A9A0600CCA999 /* download.png in Resources */,
+				6FEE9707130A9A0600CCA999 /* header.png in Resources */,
+				6FEE9708130A9A0600CCA999 /* remove.png in Resources */,
+				6FEE9709130A9A0600CCA999 /* view.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

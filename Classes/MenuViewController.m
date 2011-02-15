@@ -32,6 +32,7 @@
 @synthesize downloadProgressView;
 @synthesize DownloadProgress;
 @synthesize nomePdfDaAprire;
+@synthesize buttonRemoveDict;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
     //
@@ -256,27 +257,35 @@
 		//[appDelegate.nameArray addObject:playerName];
 	
 		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 130, 768, 900)];
-		scrollView.backgroundColor = [UIColor lightGrayColor];
-		scrollView.contentSize = CGSizeMake(768, 590 * ((NUM_PDFTOSHOW/2)+1));
+		scrollView.backgroundColor = [UIColor whiteColor];
+		scrollView.contentSize = CGSizeMake(768, 640 * ((NUM_PDFTOSHOW/2)+1));
+		
+		buttonRemoveDict = [[NSMutableDictionary alloc] init];
 			
 	
 				for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
-					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:[arrayPdf objectAtIndex:i-1] andnumOfDoc:i andImage:[arrayPdf objectAtIndex:i-1] andSize:CGSizeMake(350, 450)];
+					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:[arrayPdf objectAtIndex:i-1] andnumOfDoc:i andImage:[arrayPdf objectAtIndex:i-1] andSize:CGSizeMake(350, 480)];
 					//MFHomeListPdf *ViewPdf = [[MFHomeListPdf alloc] initWithPageNumber:i andImage:@"icon144.png" andSize:CGSizeMake(350, 450)];
 					CGRect frame = self.view.frame;
 					if ((i%2)==0) {
-						frame.origin.y = 580 * ( (i-1) / 2 );
+						frame.origin.y = 630 * ( (i-1) / 2 );
 						frame.origin.x = 380;
 						frame.size.width = 350;
+						frame.size.height = 580;
 					}else {
 						frame.origin.x = 20;
-						frame.origin.y = 290 *(i-1);
+						frame.origin.y = 315 *(i-1);
 						frame.size.width = 350;
+						frame.size.height = 580;
 					}
 					
 					viewPdf.view.frame = frame;
 					viewPdf.mvc=self;
 					[scrollView addSubview:viewPdf.view];
+					[buttonRemoveDict setValue:viewPdf.removeButton forKey:[arrayPdf objectAtIndex:i-1]];
+					
+					//[buttonRemoveDict setObject:viewPdf.removeButton forKey:[arrayPdf objectAtIndex:i-1]];
+
 				}
 		[self.view addSubview:scrollView];
 		
