@@ -31,6 +31,7 @@
 	}
 	
 	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:aMenuViewController];
+	[aNavController setNavigationBarHidden:YES];
 	[self setNavigationController:aNavController];
 	
 	[window addSubview:[aNavController view]];

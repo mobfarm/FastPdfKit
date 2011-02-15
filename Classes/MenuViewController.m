@@ -33,6 +33,7 @@
 @synthesize DownloadProgress;
 @synthesize nomePdfDaAprire;
 @synthesize buttonRemoveDict;
+@synthesize buttonOpenDict;
 @synthesize progressViewDict;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
@@ -142,7 +143,6 @@
 		[passwordField setSecureTextEntry:YES];
 		[passwordField setKeyboardAppearance:UIKeyboardAppearanceAlert];
 		[passwordField setBackgroundColor:[UIColor whiteColor]];
-		
 		
 		//
 		// Now show it
@@ -262,6 +262,7 @@
 		scrollView.contentSize = CGSizeMake(768, 640 * ((NUM_PDFTOSHOW/2)+1));
 		
 		buttonRemoveDict = [[NSMutableDictionary alloc] init];
+		buttonOpenDict = [[NSMutableDictionary alloc] init];
 		progressViewDict = [[NSMutableDictionary alloc] init];
 	
 				for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
@@ -272,17 +273,18 @@
 						frame.origin.y = 630 * ( (i-1) / 2 );
 						frame.origin.x = 380;
 						frame.size.width = 350;
-						frame.size.height = 580;
+						frame.size.height = 650;
 					}else {
 						frame.origin.x = 20;
 						frame.origin.y = 315 *(i-1);
 						frame.size.width = 350;
-						frame.size.height = 580;
+						frame.size.height = 650;
 					}
 					
 					viewPdf.view.frame = frame;
 					viewPdf.mvc=self;
 					[scrollView addSubview:viewPdf.view];
+					[buttonOpenDict setValue:viewPdf.openButton forKey:[arrayPdf objectAtIndex:i-1]];
 					[buttonRemoveDict setValue:viewPdf.removeButton forKey:[arrayPdf objectAtIndex:i-1]];
 					[progressViewDict setValue:viewPdf.progressDownload forKey:[arrayPdf objectAtIndex:i-1]];
 
@@ -342,6 +344,9 @@
 	[self setManualTextView:nil];
 	[self setReferenceButton:nil];
 	[self setReferenceTextView:nil];
+	[buttonRemoveDict dealloc];
+	[buttonOpenDict dealloc];
+	[progressViewDict dealloc];
 }
 
 

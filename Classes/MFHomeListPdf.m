@@ -14,7 +14,7 @@
 @synthesize object, temp, dataSource,senderButton ,corner,pdfToDownload,numDocumento;
 @synthesize mvc;
 @synthesize page;
-@synthesize removeButton;
+@synthesize removeButton,openButton;
 @synthesize progressDownload;
 
 // Load the view nib and initialize the pageNumber ivar.
@@ -41,40 +41,32 @@
 		[self.view addSubview:spinner];
 		[spinner release];
 		
-		
-		// image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, size.width-10, size.height-10)]; // Fissare dimensioni
-		// [image setImage:[UIImage imageNamed:thumbnail]];
-		// [image setUserInteractionEnabled:YES];
-		// [self.view addSubview:image];
-		// [image release];
-		
 	} else {
 		
 		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)]; // Fissare dimensioni
-		// NSLog(@"%f, %f", self.view.frame.origin.x, self.view.frame.origin.y);
 		[image setImage:[UIImage imageNamed:thumbnail]];
-		//[image setImage:[UIImage imageNamed:thumbnail]];
 		[image setUserInteractionEnabled:YES];
 		[[self view] addSubview:image];
 		[image release];
 		
 		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(15, 480, size.width-10, size.height-10)];
 		progressDownload.progress= 0.0;
+		progressDownload.hidden = TRUE;
 		[[self view] addSubview:progressDownload];
 		
 		/*NSFileManager *filemanager = [[NSFileManager alloc]init];
 		NSError *error;
 		
 		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
-		UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		[aButton setFrame:CGRectMake(120, 525, 140, 44)];
-		[aButton setTitle:@"Download" forState:UIControlStateNormal];
-		[aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
-		[aButton setTag:numDocumento];
-		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
-		[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
-		[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
-		[[self view] addSubview:aButton];
+		openButton = [UIButton buttonWithType:UIButtonTypeCustom];
+		[openButton setFrame:CGRectMake(120, 525, 140, 44)];
+		[openButton setTitle:@"Download" forState:UIControlStateNormal];
+		[openButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
+		[openButton setTag:numDocumento];
+		[openButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
+		[openButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+		[[openButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
+		[[self view] addSubview:openButton];
 		
 		removeButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		[removeButton setFrame:CGRectMake(120, 585, 140, 44)];
@@ -116,18 +108,38 @@
 }
 
 -(void)actionremovePdf:(id)sender{
-	//btnRemoveSel.hidden = NO;
-	NSLog(@"Remove pdf %@",pdfToDownload);
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	
+	
+	NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
+	pdfPath = [pdfPath stringByAppendingString:page];
+	pdfPath = [pdfPath stringByAppendingString:@".pdf"];
+	
+	NSFileManager *filemanager = [[NSFileManager alloc]init];
+	
+	[filemanager removeItemAtPath:pdfPath error:NULL];
+	
+	UIButton *btnRemoveSel = [mvc.buttonRemoveDict objectForKey:page];
+	btnRemoveSel.hidden = YES;
+	
+	UIButton *btnDownloadSel = [mvc.buttonOpenDict objectForKey:page];
+	[btnDownloadSel setTitle:@"Download" forState:UIControlStateNormal];
+	[btnDownloadSel setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
+	[btnDownloadSel setTag:numDocumento];
+	[btnDownloadSel setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
+	[btnDownloadSel removeTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
+	[btnDownloadSel addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
 }
 							   
 -(void)visualizzaButtonRemove{
-	//[buttonRemoveDict objectForKey:[arrayPdf objectAtIndex:i-1];
 	UIButton *btnRemoveSel = [mvc.buttonRemoveDict objectForKey:page];
 	btnRemoveSel.hidden = NO;
 }
 
 -(void)actionOpenPdf:(id)sender {
-	//mvc.nomePdfDaAprire = PdfToDownload;
 	[mvc setNomePdfDaAprire:pdfToDownload];
 	[mvc actionOpenPlainDocumentFromNewMain:self];
 }
@@ -135,11 +147,7 @@
 -(void)actionDownloadPdf:(id)sender {
 	
 	senderButton = sender;
-		
-	//NSLog(@"sebder...%@",sender);
 	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
-	NSLog(@"PdfToDownload...%@",pdfToDownload);
-	
 	NSString * storyLink = [@"http://go.mobfarm.eu/pdf/" stringByAppendingString:pdfToDownload] ;
 	
 	[self downloadPDF:self withUrl:storyLink andName:pdfToDownload];
@@ -177,6 +185,8 @@
 }
 
 -(void)requestStarted:(ASIHTTPRequest *)request{
+	UIProgressView *progressViewDownload = [mvc.progressViewDict objectForKey:page];
+	progressViewDownload.hidden = NO;
 	NSLog(@"requestStarted");
 	//mvc.showViewDownload;
 	pdfInDownload = YES;
@@ -199,6 +209,8 @@
 	[btnPdfToDownload addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[self performSelector:@selector(visualizzaButtonRemove) withObject:nil afterDelay:0.1];
+	UIProgressView *progressViewDownload = [mvc.progressViewDict objectForKey:page];
+	progressViewDownload.hidden = YES;
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request{
