@@ -66,7 +66,7 @@
 		NSError *error;
 		
 		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
-		UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		[aButton setFrame:CGRectMake(120, 525, 140, 44)];
 		[aButton setTitle:@"Download" forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
@@ -76,7 +76,7 @@
 		[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
 		[[self view] addSubview:aButton];
 		
-		removeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		removeButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		[removeButton setFrame:CGRectMake(120, 585, 140, 44)];
 		[removeButton setTitle:@"Remove" forState:UIControlStateNormal];
 		[removeButton setImage:[UIImage imageNamed:@"remove.png"] forState:UIControlStateNormal];
