@@ -13,7 +13,6 @@
 		0157CF7F12EF16B200DDC590 /* SearchView2_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0157CF7712EF16B200DDC590 /* SearchView2_pad.xib */; };
 		0157CF8012EF16B200DDC590 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7912EF16B200DDC590 /* SearchResultCellView.m */; };
 		0157CF8112EF16B200DDC590 /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7B12EF16B200DDC590 /* SearchResultView.m */; };
-		015EEABC1309C02500C4C75E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 015EEABB1309C02500C4C75E /* libFastPDFKit.a */; };
 		015EF60B12CA29EE0098E4B6 /* SearchView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF60512CA29EE0098E4B6 /* SearchView_pad.xib */; };
 		015EF60C12CA29EE0098E4B6 /* SearchView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF60612CA29EE0098E4B6 /* SearchView_phone.xib */; };
 		015EF60D12CA29EE0098E4B6 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60812CA29EE0098E4B6 /* SearchViewController.m */; };
@@ -21,6 +20,7 @@
 		015EF6C712CA474B0098E4B6 /* TextDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF6C412CA474B0098E4B6 /* TextDisplayView.xib */; };
 		015EF6C812CA474B0098E4B6 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
+		01D1873B130AFB4000775625 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D1873A130AFB4000775625 /* libFastPDFKit.a */; };
 		01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01E3A3061309C3D9008BB483 /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
 		01F434C412ACD94D00D08021 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
@@ -58,7 +58,6 @@
 		0157CF7912EF16B200DDC590 /* SearchResultCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCellView.m; sourceTree = "<group>"; };
 		0157CF7A12EF16B200DDC590 /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
 		0157CF7B12EF16B200DDC590 /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
-		015EEABB1309C02500C4C75E /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		015EF60312CA29EE0098E4B6 /* SearchResultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDataSource.h; sourceTree = "<group>"; };
 		015EF60412CA29EE0098E4B6 /* SearchResultDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDelegate.h; sourceTree = "<group>"; };
 		015EF60512CA29EE0098E4B6 /* SearchView_pad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView_pad.xib; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		016AB5CB1309BE1D004563C3 /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
 		016AB5CC1309BE1D004563C3 /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		01D1873A130AFB4000775625 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01E3A3031309C3D9008BB483 /* Identity-H.cidf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Identity-H.cidf"; sourceTree = "<group>"; };
 		01E3A3041309C3D9008BB483 /* Identity-V.cidf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Identity-V.cidf"; sourceTree = "<group>"; };
 		01F434C212ACD94D00D08021 /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentViewController.h; path = ../FastPdfKit/Controllers/DocumentViewController.h; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */,
 				950B37D0125CBEC4007BDDA1 /* UIKit.framework in Frameworks */,
 				0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */,
-				015EEABC1309C02500C4C75E /* libFastPDFKit.a in Frameworks */,
+				01D1873B130AFB4000775625 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,8 +181,8 @@
 		01CC21CB12B907AF00E77E6E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				01D1873A130AFB4000775625 /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
-				015EEABB1309C02500C4C75E /* libFastPDFKit.a */,
 				016AB5C21309BE1D004563C3 /* headers */,
 			);
 			name = Library;
