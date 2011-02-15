@@ -33,6 +33,7 @@
 @synthesize DownloadProgress;
 @synthesize nomePdfDaAprire;
 @synthesize buttonRemoveDict;
+@synthesize progressViewDict;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
     //
@@ -261,7 +262,7 @@
 		scrollView.contentSize = CGSizeMake(768, 640 * ((NUM_PDFTOSHOW/2)+1));
 		
 		buttonRemoveDict = [[NSMutableDictionary alloc] init];
-			
+		progressViewDict = [[NSMutableDictionary alloc] init];
 	
 				for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
 					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:[arrayPdf objectAtIndex:i-1] andnumOfDoc:i andImage:[arrayPdf objectAtIndex:i-1] andSize:CGSizeMake(350, 480)];
@@ -283,24 +284,10 @@
 					viewPdf.mvc=self;
 					[scrollView addSubview:viewPdf.view];
 					[buttonRemoveDict setValue:viewPdf.removeButton forKey:[arrayPdf objectAtIndex:i-1]];
-					
-					//[buttonRemoveDict setObject:viewPdf.removeButton forKey:[arrayPdf objectAtIndex:i-1]];
+					[progressViewDict setValue:viewPdf.progressDownload forKey:[arrayPdf objectAtIndex:i-1]];
 
 				}
 		[self.view addSubview:scrollView];
-		
-		DownloadProgress = [[UIView alloc ] initWithFrame:CGRectMake(0, self.view.frame.size.height-200, self.view.frame.size.width, 200)];
-		DownloadProgress.backgroundColor = [UIColor lightGrayColor];
-		downloadProgressView = [[UIProgressView alloc] initWithFrame:CGRectMake(10, 40, DownloadProgress.frame.size.width-30, 20)];
-		downloadProgressView.progress= 1.0;
-		UILabel *labelDownload  = [[UILabel alloc]initWithFrame:CGRectMake(10, 20, DownloadProgress.frame.size.width-30, 20)];
-		labelDownload.backgroundColor = [UIColor clearColor];
-		labelDownload.text = @"DOWNLOAD IN CORSO ... ATTENDERE" ;
-		[DownloadProgress addSubview:downloadProgressView];
-		[DownloadProgress addSubview:labelDownload];
-		DownloadProgress.hidden = YES;
-		[self.view addSubview:DownloadProgress];
-		
 	}
 }
 

@@ -26,6 +26,7 @@
 	MenuViewController *mvc;
 	NSString *pdfToDownload;
 	UIButton *removeButton;
+	UIProgressView *progressDownload;
 }
 
 @property (nonatomic,assign) id object;
@@ -38,6 +39,7 @@
 @property (nonatomic, assign) int numDocumento;
 @property (nonatomic,copy) NSString *page;
 @property (nonatomic,retain ) UIButton *removeButton;
+@property (nonatomic,retain ) UIProgressView *progressDownload;
 
 - (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size;
 - (void)setSelected:(BOOL)selected;

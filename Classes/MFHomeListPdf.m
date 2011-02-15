@@ -15,6 +15,7 @@
 @synthesize mvc;
 @synthesize page;
 @synthesize removeButton;
+@synthesize progressDownload;
 
 // Load the view nib and initialize the pageNumber ivar.
 - (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
@@ -57,12 +58,16 @@
 		[[self view] addSubview:image];
 		[image release];
 		
+		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(15, 480, size.width-10, size.height-10)];
+		progressDownload.progress= 0.0;
+		[[self view] addSubview:progressDownload];
+		
 		/*NSFileManager *filemanager = [[NSFileManager alloc]init];
 		NSError *error;
 		
 		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
 		UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(120, 520, 140, 44)];
+		[aButton setFrame:CGRectMake(120, 525, 140, 44)];
 		[aButton setTitle:@"Download" forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
 		[aButton setTag:numDocumento];
@@ -72,7 +77,7 @@
 		[[self view] addSubview:aButton];
 		
 		removeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[removeButton setFrame:CGRectMake(120, 580, 140, 44)];
+		[removeButton setFrame:CGRectMake(120, 585, 140, 44)];
 		[removeButton setTitle:@"Remove" forState:UIControlStateNormal];
 		[removeButton setImage:[UIImage imageNamed:@"remove.png"] forState:UIControlStateNormal];
 		[removeButton setTag:numDocumento];
@@ -84,7 +89,7 @@
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 485, 300, 30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 490, 300, 30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor blackColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
@@ -96,7 +101,7 @@
 			
 		}else {
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 485, 300, 30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 490, 300, 30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor blackColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
@@ -111,8 +116,6 @@
 }
 
 -(void)actionremovePdf:(id)sender{
-	//[buttonRemoveDict objectForKey:[arrayPdf objectAtIndex:i-1];
-	//UIButton *btnRemoveSel = [[mvc.buttonRemoveDict objectForKey:numDocumento]];
 	//btnRemoveSel.hidden = NO;
 	NSLog(@"Remove pdf %@",pdfToDownload);
 }
@@ -166,7 +169,8 @@
 	[request setDownloadDestinationPath:pdfPath];
 	[request setDidFinishSelector:@selector(requestFinished:)];
 	[request setDidFailSelector:@selector(requestFailed:)];
-	[request setDownloadProgressDelegate:mvc.downloadProgressView];
+	UIProgressView *progressViewDownload = [mvc.progressViewDict objectForKey:page];
+	[request setDownloadProgressDelegate:progressViewDownload];
 	[request setShouldPresentAuthenticationDialog:YES];
 	[request setDownloadDestinationPath:pdfPath];
 	[request startAsynchronous];
@@ -174,10 +178,7 @@
 
 -(void)requestStarted:(ASIHTTPRequest *)request{
 	NSLog(@"requestStarted");
-	mvc.showViewDownload;
-	//[downloadInProgress setHidden:NO];
-	//[progressView setHidden:NO];
-	//[progressView setProgress:0.0];
+	//mvc.showViewDownload;
 	pdfInDownload = YES;
 }
 
@@ -185,7 +186,7 @@
 	/*UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD TERMINATO" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];*/
-	mvc.hideViewDownload;
+	//mvc.hideViewDownload;
 	NSLog(@"requestFinished");
 	//[mvc redrawTableAfterForeground];
 	//[progressView setHidden:YES];
