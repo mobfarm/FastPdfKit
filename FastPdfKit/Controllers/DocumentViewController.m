@@ -37,8 +37,9 @@
 @synthesize thumbnailView;
 @synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
 @synthesize thumbImgArray;
-@synthesize nomefile,thumbsViewVisible;
+@synthesize nomefile,thumbsViewVisible,visibleBookmark;
 @synthesize thumbSliderView,aTSVH;
+@synthesize popupBookmark,popupOutline;
 
 #pragma mark Thumbnail utility functions
 
@@ -274,11 +275,27 @@
 	//
 //	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 //	you can also push the controller with the navigation controller or use an UIActionSheet.
-	
-	BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
-	[bookmarksVC setDelegate:self];
-	[self presentModalViewController:(UIViewController *)bookmarksVC animated:YES];
-	[bookmarksVC release];
+		
+		if (visibleBookmark) {
+			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+				[popupBookmark dismissPopoverAnimated:YES];
+				visibleBookmark=NO;
+			}
+		}else {
+			BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
+			bookmarksVC.delegate=self;
+			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+				//se è aperto il popover slide verticale va chiuso
+				popupBookmark = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
+				[popupBookmark setPopoverContentSize:CGSizeMake(372, 650)];
+				[popupBookmark presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+				visibleBookmark=YES;
+			}else {
+				[self presentModalViewController:bookmarksVC animated:YES];
+				visibleBookmark=YES;
+			}
+			[bookmarksVC release];
+		}
 }
 
 -(IBAction) actionThumbnail:(id)sender{
@@ -286,10 +303,8 @@
 	if (thumbsViewVisible) {
 		
 		[self hideHorizontalThumbnails];
-		//[self.thumbSliderViewHorizontal setHidden:YES];
 	}else {
 		[self showHorizontalThumbnails];
-		//[self.thumbSliderViewHorizontal setHidden:NO];
 	}
 
 }
@@ -318,6 +333,11 @@
 	
 }
 
+-(IBAction)actionDone:(id)sender {
+	
+	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+}
+
 -(IBAction) actionOutline:(id)sender {
 	
 	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
@@ -328,15 +348,31 @@
 	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
 	// of low memory warnings.
 	
-	OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
-	[outlineVC setDelegate:self];
+	
 	
 	// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
 	// this array and the openentries array somewhere and set them again before present the view to the user again.
-	[outlineVC setOutlineEntries:[[self document] outline]];
-	
-	[self presentModalViewController:outlineVC animated:YES];
-	[outlineVC release];
+
+	if (visibleOutline) {
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			[popupOutline dismissPopoverAnimated:YES];
+			visibleOutline=NO;
+		}
+	}else {
+		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
+		[outlineVC setDelegate:self];
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			//se è aperto il popover slide verticale va chiuso
+			popupOutline = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
+			[popupOutline setPopoverContentSize:CGSizeMake(372, 650)];
+			[popupOutline presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			visibleOutline=YES;
+		}else {
+			[self presentModalViewController:outlineVC animated:YES];
+			visibleOutline=YES;
+		}
+		[outlineVC release];
+	}
 }
 
 -(IBAction) actionDismiss:(id)sender {
@@ -507,8 +543,10 @@
 	
 	if(mode == MFDocumentModeSingle) {
 		[modeButton setTitle:TITLE_MODE_SINGLE forState:UIControlStateNormal];
+		[changeModeBarButtonItem setImage:imgChangeModeDouble];
 	} else if (mode == MFDocumentModeDouble) {
 		[modeButton setTitle:TITLE_MODE_DOUBLE forState:UIControlStateNormal];
+		[changeModeBarButtonItem setImage:imgChangeMode];
 	}
 }
 
@@ -570,6 +608,8 @@
 		
 		if(hudHidden) {
 			
+			[self showToolbar];
+			
 			// Show
 			
 			[nextButton setHidden:NO];
@@ -590,6 +630,9 @@
 		} else {
 			
 			// Hide
+			
+			[self hideToolbar];
+			
 			[nextButton setHidden:YES];
 			[prevButton setHidden:YES];
 			
@@ -671,6 +714,8 @@
 	// Slighty different font sizes on iPad and iPhone.
 	
 	BOOL isPad = NO;
+	visibleBookmark = NO;
+	visibleOutline = NO;
 	
 #ifdef UI_USER_INTERFACE_IDIOM
 	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
@@ -692,14 +737,14 @@
 //	icon-like buttons 32x32 (64x64 on iPhone4) are small, good looking and quite effective on both iphone and ipad.
 	
 	// Mode button.
-	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding, padding, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_MODE_SINGLE forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	[self setModeButton:aButton];
-	[[self view] addSubview:aButton];
+	[[self view] addSubview:aButton];*/
 	
 	// Lead button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -764,34 +809,34 @@
 	
 	
 	// Dismiss button.
-	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Dismiss" forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 	[aButton addTarget:self action:@selector(actionDismiss:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	[self setDismissButton:aButton];
-	[[self view]addSubview:aButton];
+	[[self view]addSubview:aButton];*/
 	
 	// Bookmarks.
-	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Bookmarks" forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	[self setBookmarksButton:aButton];
-	[[self view]addSubview:aButton];
+	[[self view]addSubview:aButton];*/
 	
 	// Outline.
-	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding, viewSize.height-padding*3-buttonHeight*3, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Outline" forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	[self setBookmarksButton:aButton];
-	[[self view]addSubview:aButton];
+	[[self view]addSubview:aButton];*/
 		
 	
 	// Page sliders and label, bottom margin
@@ -821,24 +866,8 @@
 	[aSlider release];
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding, viewSize.height-padding*9-buttonHeight*9, buttonWidth, buttonHeight)];
-		[aButton setTitle:@"Thumbnail" forState:UIControlStateNormal];
-		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
-		[aButton addTarget:self action:@selector(actionThumbnail:) forControlEvents:UIControlEventTouchUpInside];
-		[[aButton titleLabel]setFont:font];
-		[self setBookmarksButton:aButton];
-		[[self view]addSubview:aButton];
 		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 230)];
 	}else {
-		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding, viewSize.height-padding*5-buttonHeight*5, buttonWidth, buttonHeight)];
-		[aButton setTitle:@"Thumbnail" forState:UIControlStateNormal];
-		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
-		[aButton addTarget:self action:@selector(actionThumbnail:) forControlEvents:UIControlEventTouchUpInside];
-		[[aButton titleLabel]setFont:font];
-		[self setBookmarksButton:aButton];
-		[[self view]addSubview:aButton];
 		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 115)];
 	}
 
@@ -874,7 +903,119 @@
 	
 	[self performSelector:@selector(createThumbToolbar) withObject:nil afterDelay:0.1];
 	
+	//Add ToolBar
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		imgChangeMode =[UIImage imageNamed:@"changeModeSingle.png"];
+		[imgChangeMode retain];
+		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble.png"];
+		[imgChangeModeDouble retain];
+		
+	}else {
+		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
+		[imgChangeMode retain];
+		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
+		[imgChangeModeDouble retain];
+		
+	}
+	
+	
+	
+	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, 44)];
+	toolbar.hidden = YES;
+	toolbar.barStyle = UIBarStyleBlackTranslucent;
+	[toolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
+	
+	// [toolbar sizeToFit];
+	// toolbar.frame = CGRectMake(0, 0, 768, 44);
+	
+	
+	
+	UIBarButtonItem *toolBarTitle = [[UIBarButtonItem alloc] initWithCustomView:nil ];
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
+												  initWithImage:[UIImage imageNamed:@"bookmark_add.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		
+		
+		UIBarButtonItem *dismissBarButtonItem = [[UIBarButtonItem alloc]
+												 initWithImage:[UIImage imageNamed:@"X.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		
+		
+		changeModeBarButtonItem = [[UIBarButtonItem alloc]
+								   initWithImage:[UIImage imageNamed:@"changeModeDouble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
+		
+		UIBarButtonItem *sliderVerticalBarButtonItem = [[UIBarButtonItem alloc]
+														initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		
+		
+		UIBarButtonItem *thumbnailBarButtonItem = [[UIBarButtonItem alloc]
+														initWithImage:[UIImage imageNamed:@"changeModeSingle.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionThumbnail:)];
+		
+		
+		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+																								target:nil
+																								action:nil];
+		
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,toolBarTitle,itemSpazioBarButtnItem,thumbnailBarButtonItem,itemSpazioBarButtnItem,sliderVerticalBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		
+		[bookmarkBarButtonItem release];
+		[changeModeBarButtonItem release];
+		[sliderVerticalBarButtonItem release];
+		[itemSpazioBarButtnItem release];
+		[toolbar setItems:items animated:NO];
+		
+		
+	} else {
+		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
+												  initWithImage:[UIImage imageNamed:@"bookmark_add_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		
+		
+		UIBarButtonItem *dismissBarButtonItem = [[UIBarButtonItem alloc]
+												 initWithImage:[UIImage imageNamed:@"X_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		
+		
+		changeModeBarButtonItem = [[UIBarButtonItem alloc]
+								   initWithImage:[UIImage imageNamed:@"changeModeDouble_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
+		
+		UIBarButtonItem *sliderVerticalBarButtonItem = [[UIBarButtonItem alloc]
+														initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(press:)];
+		
+		
+		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+																								target:nil
+																								action:nil];
+		
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,toolBarTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,itemSpazioBarButtnItem,sliderVerticalBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		
+		[bookmarkBarButtonItem release];
+		[changeModeBarButtonItem release];
+		[sliderVerticalBarButtonItem release];
+		[itemSpazioBarButtnItem release];
+		[toolbar setItems:items animated:NO];
+		
+	}
+	
+	[self.view addSubview:toolbar];
  }
+
+-(void)showToolbar{
+		toolbar.hidden = NO;
+		[UIView beginAnimations:@"show" context:NULL];
+		[UIView setAnimationDuration:0.35];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, 44)];
+		[UIView commitAnimations];		
+}
+
+-(void)hideToolbar{
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.35];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	[toolbar setFrame:CGRectMake(0, -44, toolbar.frame.size.width, 44)];
+	[UIView commitAnimations];
+}
+
 
 -(void)createThumbToolbar{
 	// Horizontal thumb slider.
@@ -1041,6 +1182,9 @@
 	
 	[nextButton release];
 	[prevButton release];
+	
+	[imgChangeModeDouble release];
+	[imgChangeMode release];
 	
     [super dealloc];
 }

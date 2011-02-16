@@ -18,7 +18,7 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-@interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate>{
+@interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate>{
 
 	// UI elements.
 	UIButton *leadButton;
@@ -68,6 +68,17 @@
 	BOOL pdfIsOpen;
 	BOOL thumbsViewVisible;
 	
+	UIToolbar *toolbar;
+	UIBarButtonItem *changeModeBarButtonItem;
+	
+	BOOL visibleBookmark;
+	BOOL visibleOutline;
+	UIPopoverController *popupBookmark;
+	UIPopoverController *popupOutline;
+	
+	UIImage *imgChangeMode;
+	UIImage *imgChangeModeDouble;
+	
 	
 }
 
@@ -99,11 +110,20 @@
 @property (nonatomic, retain) NSString *nomefile;
 @property (nonatomic) BOOL pdfIsOpen;
 @property (nonatomic) BOOL thumbsViewVisible;
+@property  BOOL visibleBookmark;
+@property  BOOL visibleOutline;
+@property (nonatomic, retain) UIPopoverController *popupBookmark;
+@property (nonatomic, retain) UIPopoverController *popupOutline;
 
 // Swapping search views.
 -(void)switchToMiniSearchView:(MFTextItem *)index;
 -(void)dismissMiniSearchView;
 -(void)revertToFullSearchView;
+-(void)showToolbar;
+-(void)hideToolbar;
+-(void)hideHorizontalThumbnails;
+-(void)showHorizontalThumbnails;
+
 
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) SearchViewController *searchViewController;

@@ -16,7 +16,7 @@
 
 -(IBAction)actionDone:(id)sender {
 	
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	[[self delegate]actionBookmarks:self];
 }
 
 -(IBAction)actionToggleMode:(id)sender {

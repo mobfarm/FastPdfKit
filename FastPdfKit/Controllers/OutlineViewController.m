@@ -20,7 +20,8 @@
 -(IBAction)actionBack:(id)sender {
 	
 	// Dismiss this view controller (it only if this is presented as a model view controller, so be careful).
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	//[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	[[self delegate]actionOutline:self];
 }
 
 #pragma mark -
