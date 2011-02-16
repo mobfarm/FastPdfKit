@@ -259,7 +259,7 @@
 	
 		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 130, 768, 900)];
 		scrollView.backgroundColor = [UIColor whiteColor];
-		scrollView.contentSize = CGSizeMake(768, 640 * ((NUM_PDFTOSHOW/2)+1));
+		scrollView.contentSize = CGSizeMake(768, 650 * ((NUM_PDFTOSHOW/2)+1));
 		
 		buttonRemoveDict = [[NSMutableDictionary alloc] init];
 		buttonOpenDict = [[NSMutableDictionary alloc] init];
@@ -273,12 +273,12 @@
 						frame.origin.y = 630 * ( (i-1) / 2 );
 						frame.origin.x = 380;
 						frame.size.width = 350;
-						frame.size.height = 650;
+						frame.size.height = 660;
 					}else {
 						frame.origin.x = 20;
 						frame.origin.y = 315 *(i-1);
 						frame.size.width = 350;
-						frame.size.height = 650;
+						frame.size.height = 660;
 					}
 					
 					viewPdf.view.frame = frame;

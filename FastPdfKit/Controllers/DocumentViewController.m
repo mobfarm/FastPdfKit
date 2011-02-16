@@ -461,8 +461,10 @@
 	
 	if(lead == MFDocumentLeadLeft) {
 		[self setLead:MFDocumentLeadRight];
+		[changeLeadButtonItem setImage:imgChangeLead];
 	} else if (lead == MFDocumentLeadRight) {
 		[self setLead:MFDocumentLeadLeft];
+		[changeLeadButtonItem setImage:imgChangeLeadClick];
 	}
 }
 
@@ -473,8 +475,10 @@
 	MFDocumentDirection direction = [self direction];
 	if(direction == MFDocumentDirectionL2R) {
 		[self setDirection:MFDocumentDirectionR2L];
+		[changeDirectionButtonItem setImage:imgl2r];
 	} else if (direction == MFDocumentDirectionR2L) {
 		[self setDirection:MFDocumentDirectionL2R];
+		[changeDirectionButtonItem setImage:imgr2l];
 	}
 }
 
@@ -487,9 +491,11 @@
 	if(autozoom) {
 		[self setAutozoomOnPageChange:NO];
 		[autozoomButton setTitle:TITLE_AUTOZOOM_NO forState:UIControlStateNormal];
+		[zoomLockBarButtonItem setImage:imgZoomUnlock];
 	} else {
 		[self setAutozoomOnPageChange:YES];
 		[autozoomButton setTitle:TITLE_AUTOZOOM_YES forState:UIControlStateNormal];
+		[zoomLockBarButtonItem setImage:imgZoomLock];
 	}
 }
 
@@ -714,6 +720,8 @@
 	// Slighty different font sizes on iPad and iPhone.
 	
 	BOOL isPad = NO;
+	
+	hudHidden=YES;
 	visibleBookmark = NO;
 	visibleOutline = NO;
 	
@@ -747,16 +755,16 @@
 	[[self view] addSubview:aButton];*/
 	
 	// Lead button.
-	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding*2 + buttonWidth, padding, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_LEAD_RIGHT forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	[self setLeadButton:aButton];
-	[[self view] addSubview:aButton];
+	[[self view] addSubview:aButton];*/
 	
-	// Direction button.
+	/*// Direction button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(padding*3 + buttonWidth * 2, padding, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_DIR_L2R forState:UIControlStateNormal];
@@ -764,7 +772,7 @@
 	[aButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	[self setDirectionButton:aButton];
-	[[self view] addSubview:aButton];
+	[[self view] addSubview:aButton];*/
 	
 	// Automode button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -777,14 +785,14 @@
 	[[self view]addSubview:aButton];
 	
 	// Autozoom button.
-	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding*2 + buttonHeight, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_AUTOZOOM_NO forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin];
 	[aButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	[self setAutozoomButton:aButton];
-	[[self view]addSubview:aButton];
+	[[self view]addSubview:aButton];*/
 	
 	
 	// Text button.
@@ -911,15 +919,45 @@
 		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble.png"];
 		[imgChangeModeDouble retain];
 		
+		imgZoomLock =[UIImage imageNamed:@"zoomLock.png"];
+		[imgZoomLock retain];
+		imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock.png"];
+		[imgZoomUnlock retain];
+		
+		imgl2r =[UIImage imageNamed:@"direction_l2r.png"];
+		[imgl2r retain];
+		imgr2l =[UIImage imageNamed:@"direction_r2l.png"];
+		[imgr2l retain];
+		
+		imgChangeLead =[UIImage imageNamed:@"pagelead.png"];
+		[imgChangeLead retain];
+		imgChangeLeadClick =[UIImage imageNamed:@"pagelead_click.png"];
+		[imgChangeLeadClick retain];
+		
+		
 	}else {
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
 		[imgChangeMode retain];
 		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
 		[imgChangeModeDouble retain];
 		
+		imgZoomLock =[UIImage imageNamed:@"zoomLock_phone.png"];
+		[imgZoomLock retain];
+		imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock_phone.png"];
+		[imgZoomUnlock retain];
+		
+		imgl2r =[UIImage imageNamed:@"direction_l2r_phone.png"];
+		[imgl2r retain];
+		imgr2l =[UIImage imageNamed:@"direction_r2l_phone.png"];
+		[imgr2l retain];
+		
+		imgChangeLead =[UIImage imageNamed:@"pagelead_phone.png"];
+		[imgChangeLead retain];
+		imgChangeLeadClick =[UIImage imageNamed:@"pagelead_click_phone.png"];
+		[imgChangeLeadClick retain];
+		
+		
 	}
-	
-	
 	
 	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, 44)];
 	toolbar.hidden = YES;
@@ -945,23 +983,33 @@
 		changeModeBarButtonItem = [[UIBarButtonItem alloc]
 								   initWithImage:[UIImage imageNamed:@"changeModeDouble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
 		
-		UIBarButtonItem *sliderVerticalBarButtonItem = [[UIBarButtonItem alloc]
+		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
 														initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		
 		
 		UIBarButtonItem *thumbnailBarButtonItem = [[UIBarButtonItem alloc]
 														initWithImage:[UIImage imageNamed:@"changeModeSingle.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionThumbnail:)];
 		
+		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
+												   initWithImage:[UIImage imageNamed:@"zoomUnlock.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+		
+		
+		changeDirectionButtonItem = [[UIBarButtonItem alloc]
+								 initWithImage:[UIImage imageNamed:@"direction_r2l.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		
+		
+		changeLeadButtonItem = [[UIBarButtonItem alloc]
+								initWithImage:[UIImage imageNamed:@"pagelead_click.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
 		
 		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
 																								target:nil
 																								action:nil];
 		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,toolBarTitle,itemSpazioBarButtnItem,thumbnailBarButtonItem,itemSpazioBarButtnItem,sliderVerticalBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,toolBarTitle,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,thumbnailBarButtonItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
 		
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];
-		[sliderVerticalBarButtonItem release];
+		[OutlineBarButtonItem release];
 		[itemSpazioBarButtnItem release];
 		[toolbar setItems:items animated:NO];
 		
@@ -978,7 +1026,7 @@
 		changeModeBarButtonItem = [[UIBarButtonItem alloc]
 								   initWithImage:[UIImage imageNamed:@"changeModeDouble_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
 		
-		UIBarButtonItem *sliderVerticalBarButtonItem = [[UIBarButtonItem alloc]
+		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
 														initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(press:)];
 		
 		
@@ -986,11 +1034,11 @@
 																								target:nil
 																								action:nil];
 		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,toolBarTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,itemSpazioBarButtnItem,sliderVerticalBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,toolBarTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
 		
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];
-		[sliderVerticalBarButtonItem release];
+		[OutlineBarButtonItem release];
 		[itemSpazioBarButtnItem release];
 		[toolbar setItems:items animated:NO];
 		

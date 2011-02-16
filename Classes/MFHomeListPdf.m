@@ -43,13 +43,34 @@
 		
 	} else {
 		
+		//check pdf already downloaded;
+		
+		BOOL fileAlreadyExists= NO;
+		
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		NSString *documentsDirectory = [paths objectAtIndex:0];
+		
+		
+		NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
+		pdfPath = [pdfPath stringByAppendingString:page];
+		pdfPath = [pdfPath stringByAppendingString:@".pdf"];
+		
+		NSFileManager *filemanager = [[NSFileManager alloc]init];
+		
+		if ([filemanager fileExistsAtPath:pdfPath]) {
+			fileAlreadyExists = YES;
+		}else {
+			fileAlreadyExists = NO;
+		}
+
 		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)]; // Fissare dimensioni
 		[image setImage:[UIImage imageNamed:thumbnail]];
 		[image setUserInteractionEnabled:YES];
 		[[self view] addSubview:image];
 		[image release];
 		
-		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(15, 480, size.width-10, size.height-10)];
+		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(15, 485, size.width-10, size.height-10)];
+		progressDownload.progressViewStyle = UIActivityIndicatorViewStyleGray;
 		progressDownload.progress= 0.0;
 		progressDownload.hidden = TRUE;
 		[[self view] addSubview:progressDownload];
@@ -59,46 +80,57 @@
 		
 		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
 		openButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		[openButton setFrame:CGRectMake(120, 525, 140, 44)];
+		[openButton setFrame:CGRectMake(120, 530, 140, 44)];
 		[openButton setTitle:@"Download" forState:UIControlStateNormal];
 		[openButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
 		[openButton setTag:numDocumento];
 		[openButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[openButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 		[[openButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
+		if (!fileAlreadyExists) {
+			[openButton setTitle:@"Download" forState:UIControlStateNormal];
+			[openButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
+			[openButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+		}else {
+			[openButton setTitle:@"Apri" forState:UIControlStateNormal];
+			[openButton setImage:[UIImage imageNamed:@"view.png"] forState:UIControlStateNormal];
+			[openButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
+		}
+
+		
 		[[self view] addSubview:openButton];
 		
 		removeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		[removeButton setFrame:CGRectMake(120, 585, 140, 44)];
+		[removeButton setFrame:CGRectMake(120, 590, 140, 44)];
 		[removeButton setTitle:@"Remove" forState:UIControlStateNormal];
 		[removeButton setImage:[UIImage imageNamed:@"remove.png"] forState:UIControlStateNormal];
 		[removeButton setTag:numDocumento];
 		[removeButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[removeButton addTarget:self action:@selector(actionremovePdf:) forControlEvents:UIControlEventTouchUpInside];
 		[[removeButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
-		[removeButton setHidden:YES];
+		[removeButton setHidden:(!fileAlreadyExists)];
 		[[self view] addSubview:removeButton];
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 490, 300, 30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 495, 300, 30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor blackColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
 			pageLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(25.0)];
-			NSString *titlelabel = [NSString stringWithFormat:@"Titolo : %@",page];
+			NSString *titlelabel = [NSString stringWithFormat:@"%@",page];
 			[pageLabel setText:titlelabel]; 
 			[[self view] addSubview:pageLabel];
 			[pageLabel release];
 			
 		}else {
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 490, 300, 30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 495, 300, 30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor blackColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
 			pageLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)];
-			NSString *titlelabel = [NSString stringWithFormat:@"Titolo : %@",page];
+			NSString *titlelabel = [NSString stringWithFormat:@"%@",page];
 			[pageLabel setText:titlelabel]; 
 			[[self view]addSubview:pageLabel];
 			[pageLabel release];

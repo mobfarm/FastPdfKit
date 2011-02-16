@@ -70,6 +70,9 @@
 	
 	UIToolbar *toolbar;
 	UIBarButtonItem *changeModeBarButtonItem;
+	UIBarButtonItem *zoomLockBarButtonItem;
+	UIBarButtonItem *changeDirectionButtonItem;
+	UIBarButtonItem *changeLeadButtonItem;
 	
 	BOOL visibleBookmark;
 	BOOL visibleOutline;
@@ -79,6 +82,14 @@
 	UIImage *imgChangeMode;
 	UIImage *imgChangeModeDouble;
 	
+	UIImage *imgZoomLock;
+	UIImage *imgZoomUnlock;
+	
+	UIImage *imgl2r;
+	UIImage *imgr2l;
+	
+	UIImage *imgChangeLead;
+	UIImage *imgChangeLeadClick;
 	
 }
 
