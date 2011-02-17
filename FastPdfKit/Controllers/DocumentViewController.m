@@ -270,12 +270,28 @@
 	[self moveToPreviousPage];
 }
 
+-(void)dismissAllPopoversFrom:(id)sender{
+	if (visibleBookmark) {
+		[popupBookmark dismissPopoverAnimated:YES];
+		visibleBookmark=NO;
+	}
+	
+	if (visibleOutline) {
+		[popupOutline dismissPopoverAnimated:YES];
+		visibleOutline=NO;
+
+	}
+
+}
+
 -(IBAction) actionBookmarks:(id)sender {
 	
 	//
 //	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 //	you can also push the controller with the navigation controller or use an UIActionSheet.
 		
+		[self dismissAllPopoversFrom:sender];
+	
 		if (visibleBookmark) {
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 				[popupBookmark dismissPopoverAnimated:YES];
@@ -353,6 +369,8 @@
 	// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
 	// this array and the openentries array somewhere and set them again before present the view to the user again.
 
+	[self dismissAllPopoversFrom:sender];
+	
 	if (visibleOutline) {
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			[popupOutline dismissPopoverAnimated:YES];
@@ -607,6 +625,7 @@
 	
 	// If the flag waitingForTextInput is enabled, we use the touch event to select the page. Otherwise,
 	// we are free to use it to show/hide the selected HUD elements.
+	
 	
 	if(!waitingForTextInput) {
 		

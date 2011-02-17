@@ -16,7 +16,8 @@
 
 -(IBAction)actionDone:(id)sender {
 	
-	[[self delegate]actionBookmarks:self];
+	//[[self delegate]actionBookmarks:self];
+	[[self delegate]dismissAllPopoversFrom:self];
 }
 
 -(IBAction)actionToggleMode:(id)sender {

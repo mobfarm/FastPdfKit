@@ -20,8 +20,15 @@
 -(IBAction)actionBack:(id)sender {
 	
 	// Dismiss this view controller (it only if this is presented as a model view controller, so be careful).
-	//[[self parentViewController]dismissModalViewControllerAnimated:YES];
-	[[self delegate]actionOutline:self];
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[[self delegate]dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	}
+
+	
+	
 }
 
 #pragma mark -

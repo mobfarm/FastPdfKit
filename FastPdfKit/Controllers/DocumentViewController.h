@@ -134,6 +134,7 @@
 -(void)hideToolbar;
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
+-(void)dismissAllPopoversFrom:(id)sender;
 
 
 @property (nonatomic, retain) UIButton *searchButton;
