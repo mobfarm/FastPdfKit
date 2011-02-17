@@ -65,7 +65,14 @@
 	
 	// Dismiss this view controller and its view from the stack.
 	
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[[self delegate]dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	}
+	
+	//[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
 -(void) searchDidStop {
@@ -136,6 +143,12 @@
 		// Cancel.
 		[self cancelSearch];
 	}
+}
+
+
+-(IBAction)actionBack:(id)sender {
+	
+	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)actionMinimize:(id)sender {

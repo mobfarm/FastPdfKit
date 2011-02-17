@@ -71,7 +71,14 @@
 
 -(IBAction)actionBack:(id)sender {
 	
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[[self delegate]dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	}
+
+	
+	
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

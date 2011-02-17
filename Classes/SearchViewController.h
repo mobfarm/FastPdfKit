@@ -41,6 +41,7 @@
 
 -(IBAction)actionCancelStop:(id)sender;
 -(IBAction)actionMinimize:(id)sender;
+-(IBAction)actionBack:(id)sender;
 
 @property (nonatomic,retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic,retain) IBOutlet UITableView *searchTableView;

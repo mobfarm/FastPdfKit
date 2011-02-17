@@ -267,6 +267,8 @@
 	// to the user. The full search view controller will allow the user to type in a search term and
 	// start the search. Look at the details in the utility method implementation.
 	
+	[self dismissAllPopoversFrom:sender];
+	
 	[self presentFullSearchView:sender];
 }
 
@@ -317,7 +319,7 @@
 //	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 //	you can also push the controller with the navigation controller or use an UIActionSheet.
 		
-		[self dismissAllPopoversFrom:sender];
+		
 	
 		if (visibleBookmark) {
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -325,6 +327,7 @@
 				visibleBookmark=NO;
 			}
 		}else {
+			[self dismissAllPopoversFrom:sender];
 			BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
 			bookmarksVC.delegate=self;
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -358,7 +361,7 @@
 		[UIView beginAnimations:@"show" context:NULL];
 		[UIView setAnimationDuration:0.35];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height-44, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
 		[UIView commitAnimations];
 		thumbsViewVisible = YES;
 	}
@@ -368,7 +371,7 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height+44, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
 	[UIView commitAnimations];
 	thumbsViewVisible = NO;
 	
@@ -394,7 +397,7 @@
 	// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
 	// this array and the openentries array somewhere and set them again before present the view to the user again.
 
-	[self dismissAllPopoversFrom:sender];
+	
 	
 	if (visibleOutline) {
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -402,6 +405,7 @@
 			visibleOutline=NO;
 		}
 	}else {
+		[self dismissAllPopoversFrom:sender];
 		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
 		[outlineVC setDelegate:self];
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -722,9 +726,12 @@
 			
 			[miniSearchView setHidden:YES];
 		
-			
 			hudHidden = YES;
-		}		
+		}
+		
+		if (thumbsViewVisible) {
+			[self hideHorizontalThumbnails];
+		}
 	}
 }
 
@@ -845,6 +852,7 @@
 	[self setDirectionButton:aButton];
 	[[self view] addSubview:aButton];*/
 	
+	/*
 	// Automode button.
 	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding, buttonWidth, buttonHeight)];
@@ -853,7 +861,7 @@
 	[aButton addTarget:self action:@selector(actionChangeAutomode:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	[self setAutomodeButton:aButton];
-	[[self view]addSubview:aButton];
+	[[self view]addSubview:aButton];*/
 	
 	// Autozoom button.
 	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -922,7 +930,7 @@
 	// |<-- 20 px -->| Label (80 x 40 px) |<-- 20 px -->| Slider ((view_width - labelwidth - padding) x 40 px) |<-- 20 px -->|
 	
 	// Page label.
-	UILabel *aLabel = [[UILabel alloc]initWithFrame:CGRectMake(padding, viewSize.height-padding-buttonHeight, buttonWidth, buttonHeight)];
+	/*UILabel *aLabel = [[UILabel alloc]initWithFrame:CGRectMake(padding, viewSize.height-padding-buttonHeight, buttonWidth, buttonHeight)];
 	[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 	[aLabel setBackgroundColor:[UIColor clearColor]];
 	[aLabel setFont:font];
@@ -942,7 +950,7 @@
 	[aSlider addTarget:self action:@selector(actionPageSliderStopped:) forControlEvents:UIControlEventTouchUpInside];
 	[self setPageSlider:aSlider];
 	[[self view]addSubview:aSlider];
-	[aSlider release];
+	[aSlider release];*/
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 230)];
