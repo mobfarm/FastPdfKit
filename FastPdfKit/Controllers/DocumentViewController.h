@@ -76,8 +76,16 @@
 	
 	BOOL visibleBookmark;
 	BOOL visibleOutline;
+	BOOL visibleSearch;
+	BOOL visibleText;
+	
+	id senderText;
+	id senderSearch;
+	
 	UIPopoverController *popupBookmark;
 	UIPopoverController *popupOutline;
+	UIPopoverController *popupSearch;
+	UIPopoverController *popupText;
 	
 	UIImage *imgChangeMode;
 	UIImage *imgChangeModeDouble;
@@ -123,8 +131,14 @@
 @property (nonatomic) BOOL thumbsViewVisible;
 @property  BOOL visibleBookmark;
 @property  BOOL visibleOutline;
+@property  BOOL visibleSearch;
+@property  BOOL visibleText;
+@property id senderSearch;
+@property id senderText;
 @property (nonatomic, retain) UIPopoverController *popupBookmark;
 @property (nonatomic, retain) UIPopoverController *popupOutline;
+@property (nonatomic, retain) UIPopoverController *popupSearch;
+@property (nonatomic, retain) UIPopoverController *popupText;
 
 // Swapping search views.
 -(void)switchToMiniSearchView:(MFTextItem *)index;

@@ -37,9 +37,10 @@
 @synthesize thumbnailView;
 @synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
 @synthesize thumbImgArray;
-@synthesize nomefile,thumbsViewVisible,visibleBookmark;
+@synthesize nomefile,thumbsViewVisible,visibleBookmark,visibleSearch,visibleText;
 @synthesize thumbSliderView,aTSVH;
-@synthesize popupBookmark,popupOutline;
+@synthesize popupBookmark,popupOutline,popupSearch,popupText;
+@synthesize senderText,senderSearch;
 
 #pragma mark Thumbnail utility functions
 
@@ -116,7 +117,7 @@
 	return searchViewController;
 }
 
--(void)presentFullSearchView {
+-(void)presentFullSearchView:(id)sender {
 	
 	// Get the full search view controller lazily, set it upt as the delegate for
 	// the search manager and present it to the user modally.
@@ -142,8 +143,20 @@
 	self.overlayDataSource = self.searchManager;
 	self.overlayEnabled = YES;
 	
+
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			//se è aperto il popover slide verticale va chiuso
+		popupSearch = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
+		[popupSearch setPopoverContentSize:CGSizeMake(450, 650)];
+		[popupSearch presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		visibleSearch=YES;
+	}else {
+		[self presentModalViewController:(UIViewController *)controller animated:YES];
+			visibleSearch=YES;
+	}
 	
-	[self presentModalViewController:(UIViewController *)controller animated:YES];
+	
+	//[self presentModalViewController:(UIViewController *)controller animated:YES];
 }
 
 // Void
@@ -210,7 +223,7 @@
 	// Dismiss the minimized view and present the full one.
 	
 	[self dismissMiniSearchView];
-	[self presentFullSearchView];
+	[self presentFullSearchView:self];
 }
 
 -(void)switchToMiniSearchView:(MFTextItem *)item {
@@ -240,6 +253,8 @@
 		[alert show];
 		[alert release];
 		
+		senderText = sender;
+		
 	} else {
 		waitingForTextInput = NO;
 	}
@@ -252,7 +267,7 @@
 	// to the user. The full search view controller will allow the user to type in a search term and
 	// start the search. Look at the details in the utility method implementation.
 	
-	[self presentFullSearchView];
+	[self presentFullSearchView:sender];
 }
 
 -(IBAction)actionNext:(id)sender {
@@ -280,6 +295,18 @@
 		[popupOutline dismissPopoverAnimated:YES];
 		visibleOutline=NO;
 
+	}
+	
+	if (visibleSearch) {
+		[popupSearch dismissPopoverAnimated:YES];
+		visibleSearch=NO;
+		
+	}
+	
+	if (visibleText) {
+		[popupText dismissPopoverAnimated:YES];
+		visibleText=NO;
+		
 	}
 
 }
@@ -331,8 +358,7 @@
 		[UIView beginAnimations:@"show" context:NULL];
 		[UIView setAnimationDuration:0.35];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		//[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, 44)];
-		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height-44, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
 		[UIView commitAnimations];
 		thumbsViewVisible = YES;
 	}
@@ -342,8 +368,7 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	//[toolbar setFrame:CGRectMake(0, -44, toolbar.frame.size.width, 44)];
-	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height+44, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
 	[UIView commitAnimations];
 	thumbsViewVisible = NO;
 	
@@ -607,17 +632,44 @@
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point {
 	
+	
+	[self dismissAllPopoversFrom:self];
+	
 	if(waitingForTextInput) {
 		
 		waitingForTextInput = NO;
 		
 		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
 		// and show it.
-		TextDisplayViewController *controller = self.textDisplayViewController;
+	/*	TextDisplayViewController *controller = self.textDisplayViewController;
 		controller.delegate = self;
 		[controller updateWithTextOfPage:page];
 		
-		[self presentModalViewController:controller animated:YES];
+		[self presentModalViewController:controller animated:YES];*/
+		
+		
+		
+		if (visibleText) {
+			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+				[popupText dismissPopoverAnimated:YES];
+				visibleText=NO;
+			}
+		}else {
+			TextDisplayViewController *controller = self.textDisplayViewController;
+			controller.delegate = self;
+			[controller updateWithTextOfPage:page];
+			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+				//se è aperto il popover slide verticale va chiuso
+				popupText = [[UIPopoverController alloc] initWithContentViewController:controller];
+				[popupText setPopoverContentSize:CGSizeMake(372, 650)];
+				[popupText presentPopoverFromBarButtonItem:senderText permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+				visibleText=YES;
+			}else {
+				[self presentModalViewController:controller animated:YES];
+				visibleText=YES;
+			}
+			//[controller release];
+		}
 	}
 }
 
@@ -815,24 +867,24 @@
 	
 	
 	// Text button.
-	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*4-buttonHeight*4, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Text" forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 	[aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	self.textButton = aButton;
-	[[self view]addSubview:aButton];
+	[[self view]addSubview:aButton];*/
 	
 	// Search button.
-	aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*5-buttonHeight*5, buttonWidth, buttonHeight)];
 	[aButton setTitle:@"Search" forState:UIControlStateNormal];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 	[aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:font];
 	self.searchButton = aButton;
-	[[self view]addSubview:aButton];
+	[[self view]addSubview:aButton];*/
 	
 	
 	// Dismiss button.
@@ -1020,16 +1072,30 @@
 		changeLeadButtonItem = [[UIBarButtonItem alloc]
 								initWithImage:[UIImage imageNamed:@"pagelead_click.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
 		
+		
+		UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]
+												   initWithImage:[UIImage imageNamed:@"search.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		
+		
+		UIBarButtonItem *textBarButtonItem = [[UIBarButtonItem alloc]
+												initWithImage:[UIImage imageNamed:@"text.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
+		
+		
 		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
 																								target:nil
 																								action:nil];
 		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,toolBarTitle,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,thumbnailBarButtonItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,thumbnailBarButtonItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
 		
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];
+		[changeDirectionButtonItem release],
 		[OutlineBarButtonItem release];
 		[itemSpazioBarButtnItem release];
+		[searchBarButtonItem release];
+		[zoomLockBarButtonItem release];
+		[thumbnailBarButtonItem release];
+		[textBarButtonItem release];
 		[toolbar setItems:items animated:NO];
 		
 		
