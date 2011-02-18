@@ -288,10 +288,8 @@
 					NSString *titoloPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"];
 					NSString *linkPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"link"];
 					NSString *copertinaPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"copertina"];
-					NSLog(@"titoloPdf %@",titoloPdf);
-					NSLog(@"linkPdf %@",linkPdf);
-					NSLog(@"copertinaPdf %@",copertinaPdf);
-					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
+					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
+					//MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
 					CGRect frame = self.view.frame;
 					if ((i%2)==0) {
 						frame.origin.y = 630 * ( (i-1) / 2 );

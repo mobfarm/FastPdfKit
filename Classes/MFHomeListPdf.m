@@ -18,8 +18,11 @@
 @synthesize progressDownload;
 
 // Load the view nib and initialize the pageNumber ivar.
-- (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
+
+- (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
+
 	size = _size;
+	linkDownloadPdf = linkpdf;
 	thumbnail = _image;
 	[self downloadImage:self withUrl:thumbnail andName:Page];
 	//thumbnail = @"pdf1.png";// [thumbnail stringByAppendingString:@".png"];
@@ -55,6 +58,8 @@
 		pdfPath = [pdfPath stringByAppendingString:page];
 		pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 		
+		NSLog(@"pdfaaaa %@",pdfPath);
+		
 		NSFileManager *filemanager = [[NSFileManager alloc]init];
 		
 		if ([filemanager fileExistsAtPath:pdfPath]) {
@@ -73,9 +78,7 @@
 		pdfPathThumb = [pdfPathThumb stringByAppendingString:@"/"];
 		pdfPathThumb = [pdfPathThumb stringByAppendingString:page];
 		pdfPathThumb = [pdfPathThumb stringByAppendingString:@".png"];
-		
-		NSLog(@"pdfPathThumb %@",pdfPathThumb);
-		
+				
 		[image setImage:[UIImage imageWithContentsOfFile:pdfPathThumb]];
 		[image setUserInteractionEnabled:YES];
 		[image setTag:numDocumento];
@@ -193,11 +196,7 @@
 	
 	senderButton = sender;
 	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
-	NSString * storyLink = [@"http://go.mobfarm.eu/pdf/" stringByAppendingString:pdfToDownload] ;
-	storyLink = [storyLink stringByAppendingString:@".pdf"];
-	NSLog(@"storyLink : %@",storyLink);
-	
-	[self downloadPDF:self withUrl:storyLink andName:pdfToDownload];
+	[self downloadPDF:self withUrl:linkDownloadPdf andName:pdfToDownload];
 }
 
 
@@ -233,9 +232,6 @@
 
 -(void)downloadImage:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf{
 	
-	
-	//_url = @"http://gapil.truelite.it/gapil.pdf";
-	
 	NSURL *url = [NSURL URLWithString:_url];
 	NSLog(@"url %@",url);
 	request = [ASIHTTPRequest requestWithURL:url];
@@ -252,6 +248,9 @@
 	pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
 	pdfPath = [pdfPath stringByAppendingString:@".png"];
 	NSLog(@"pdfPath %@",pdfPath);
+	[request setDidStartSelector:@selector(requestStartedDownloadImg:)];
+	[request setDidFinishSelector:@selector(requestFinishedDownloadImg:)];
+	[request setDidFailSelector:@selector(requestFailedDownloadImg:)];
 	[request setUseKeychainPersistence:YES];
 	[request setDownloadDestinationPath:pdfPath];
 	[request startSynchronous];
@@ -263,6 +262,15 @@
 	NSLog(@"requestStarted");
 	//mvc.showViewDownload;
 	pdfInDownload = YES;
+}
+
+-(void)requestFinishedDownloadImg:(ASIHTTPRequest *)request{
+}
+
+-(void)requestFailedDownloadImg:(ASIHTTPRequest *)request{
+}
+
+-(void)requestStartedDownloadImg:(ASIHTTPRequest *)request{
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{

@@ -15,6 +15,7 @@
 	NSString *thumbnail;
 	CGSize size;
 	NSString *page;
+	NSString *linkDownloadPdf;
 	id delegate;
 	id dataSource;
 	id senderButton;
@@ -35,6 +36,7 @@
 @property (nonatomic,assign) id senderButton;
 @property (nonatomic,retain) UIImageView *corner;
 @property (nonatomic,retain) NSString *pdfToDownload;
+@property (nonatomic,retain) NSString *linkDownloadPdf;
 @property (nonatomic) BOOL temp;
 @property (nonatomic, assign) MenuViewController *mvc;
 @property (nonatomic, assign) int numDocumento;
@@ -43,7 +45,7 @@
 @property (nonatomic,retain ) UIButton *openButton;
 @property (nonatomic,retain ) UIProgressView *progressDownload;
 
-- (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size;
+- (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size;
 - (void)setSelected:(BOOL)selected;
 - (void)updateCorner;
 
