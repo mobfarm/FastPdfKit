@@ -10,6 +10,7 @@
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
 #import "MFHomeListPdf.h"
+#import "XMLParser.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -35,6 +36,7 @@
 @synthesize buttonRemoveDict;
 @synthesize buttonOpenDict;
 @synthesize progressViewDict;
+@synthesize pdfHome;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
     //
@@ -246,13 +248,30 @@
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
-		NSMutableArray *arrayPdf = [NSMutableArray arrayWithCapacity:NUM_PDFTOSHOW];
+		
+		//reading the file.
+		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"homePdf" ofType:@"xml"];  
+		NSData *fileData = [NSData dataWithContentsOfFile:filePath]; 
+		NSString *xmlFile = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+		
+		NSMutableArray *arrayPdf = [[NSMutableArray alloc]init];
+		
+		XMLParser *parser = [[XMLParser alloc] init];
+		
+		parser.mvc = self;
+		
+		[parser parseXMLFileAtURL:@"http://go.mobfarm.eu/pdf/xmldaparsare.xml"];
+		
+		//NSLog(@"numpagine %i",numpaginetotale);
+		[xmlFile release];
+		
+		/*NSMutableArray *arrayPdf = [NSMutableArray arrayWithCapacity:NUM_PDFTOSHOW];
 		
 		
 		for (int i=0; i<= NUM_PDFTOSHOW-1 ; i++) {
 			NSString *myString = [NSString stringWithFormat:@"%d",i+1];
 			[arrayPdf addObject:[@"pdf" stringByAppendingString:myString]];
-		}
+		}*/
 		
 		//[appDelegate.nameArray addObject:playerName];
 	
@@ -265,8 +284,14 @@
 		progressViewDict = [[NSMutableDictionary alloc] init];
 	
 				for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
-					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:[arrayPdf objectAtIndex:i-1] andnumOfDoc:i andImage:[arrayPdf objectAtIndex:i-1] andSize:CGSizeMake(350, 480)];
-					//MFHomeListPdf *ViewPdf = [[MFHomeListPdf alloc] initWithPageNumber:i andImage:@"icon144.png" andSize:CGSizeMake(350, 450)];
+					//NSLog(@"prova %@",[[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"]);
+					NSString *titoloPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"];
+					NSString *linkPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"link"];
+					NSString *copertinaPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"copertina"];
+					NSLog(@"titoloPdf %@",titoloPdf);
+					NSLog(@"linkPdf %@",linkPdf);
+					NSLog(@"copertinaPdf %@",copertinaPdf);
+					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
 					CGRect frame = self.view.frame;
 					if ((i%2)==0) {
 						frame.origin.y = 630 * ( (i-1) / 2 );
@@ -283,9 +308,9 @@
 					viewPdf.view.frame = frame;
 					viewPdf.mvc=self;
 					[scrollView addSubview:viewPdf.view];
-					[buttonOpenDict setValue:viewPdf.openButton forKey:[arrayPdf objectAtIndex:i-1]];
-					[buttonRemoveDict setValue:viewPdf.removeButton forKey:[arrayPdf objectAtIndex:i-1]];
-					[progressViewDict setValue:viewPdf.progressDownload forKey:[arrayPdf objectAtIndex:i-1]];
+					[buttonOpenDict setValue:viewPdf.openButton forKey:titoloPdf];
+					[buttonRemoveDict setValue:viewPdf.removeButton forKey:titoloPdf];
+					[progressViewDict setValue:viewPdf.progressDownload forKey:titoloPdf];
 
 				}
 		[self.view addSubview:scrollView];

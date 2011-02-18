@@ -21,9 +21,9 @@
 - (id)initWithName:(NSString *)Page andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
 	size = _size;
 	thumbnail = _image;
-	thumbnail = [thumbnail stringByAppendingString:@".png"];
+	[self downloadImage:self withUrl:thumbnail andName:Page];
+	//thumbnail = @"pdf1.png";// [thumbnail stringByAppendingString:@".png"];
 	self.page=Page;
-	NSLog(@"Page...%@",page);
 	numDocumento = numDoc;
 	temp = NO;
 	return self;
@@ -64,8 +64,21 @@
 		}
 
 		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)]; // Fissare dimensioni
-		[image setImage:[UIImage imageNamed:thumbnail]];
+		
+		NSArray *pathsok = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+		NSString *cacheDirectory = [pathsok objectAtIndex:0];
+		
+		
+		NSString *pdfPathThumb = [cacheDirectory stringByAppendingPathComponent:[[delegate fileManager] firstAvailableFileNameForName:page]];
+		pdfPathThumb = [pdfPathThumb stringByAppendingString:@"/"];
+		pdfPathThumb = [pdfPathThumb stringByAppendingString:page];
+		pdfPathThumb = [pdfPathThumb stringByAppendingString:@".png"];
+		
+		NSLog(@"pdfPathThumb %@",pdfPathThumb);
+		
+		[image setImage:[UIImage imageWithContentsOfFile:pdfPathThumb]];
 		[image setUserInteractionEnabled:YES];
+		[image setTag:numDocumento];
 		[[self view] addSubview:image];
 		[image release];
 		
@@ -181,6 +194,8 @@
 	senderButton = sender;
 	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
 	NSString * storyLink = [@"http://go.mobfarm.eu/pdf/" stringByAppendingString:pdfToDownload] ;
+	storyLink = [storyLink stringByAppendingString:@".pdf"];
+	NSLog(@"storyLink : %@",storyLink);
 	
 	[self downloadPDF:self withUrl:storyLink andName:pdfToDownload];
 }
@@ -214,6 +229,32 @@
 	[request setShouldPresentAuthenticationDialog:YES];
 	[request setDownloadDestinationPath:pdfPath];
 	[request startAsynchronous];
+}
+
+-(void)downloadImage:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf{
+	
+	
+	//_url = @"http://gapil.truelite.it/gapil.pdf";
+	
+	NSURL *url = [NSURL URLWithString:_url];
+	NSLog(@"url %@",url);
+	request = [ASIHTTPRequest requestWithURL:url];
+	[request setDelegate:self];
+	
+	// Filename Path
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	
+	
+	NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:[[delegate fileManager] firstAvailableFileNameForName:_url]];
+	pdfPath = [pdfPath stringByAppendingString:@"/"];
+	pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
+	pdfPath = [pdfPath stringByAppendingString:@".png"];
+	NSLog(@"pdfPath %@",pdfPath);
+	[request setUseKeychainPersistence:YES];
+	[request setDownloadDestinationPath:pdfPath];
+	[request startSynchronous];
 }
 
 -(void)requestStarted:(ASIHTTPRequest *)request{

@@ -30,6 +30,8 @@
 	NSDictionary *buttonOpenDict;
 	NSDictionary *progressViewDict;
 	
+	NSMutableArray *pdfHome;
+	
 	NSString *nomePdfDaAprire;
 }
 
@@ -46,11 +48,12 @@
 @property (nonatomic, retain) IBOutlet UITextView *manualTextView;
 
 @property (nonatomic, retain) MFDocumentManager *document;
-@property (nonatomic, assign) NSString *nomePdfDaAprire;
+@property (nonatomic, assign) NSMutableArray *pdfHome;
 @property (nonatomic,retain ) UIProgressView *downloadProgressView;
 @property (nonatomic,retain ) UIView *DownloadProgress;
 
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
+@property (nonatomic, assign) NSString *nomePdfDaAprire;
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 @property (nonatomic,retain ) NSDictionary *buttonOpenDict;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
