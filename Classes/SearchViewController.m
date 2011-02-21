@@ -142,6 +142,9 @@
 	
 	// We are going to use the first item to initialize the mini view.
 	
+	if([searchResults count] == 0)
+		return;
+	
 	MFTextItem * firstItem = [[searchResults objectAtIndex:0]objectAtIndex:0];
 	
 	if(firstItem!=nil) {
