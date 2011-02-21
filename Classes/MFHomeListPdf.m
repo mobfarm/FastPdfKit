@@ -97,11 +97,8 @@
 		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
 		openButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		[openButton setFrame:CGRectMake(120, 530, 140, 44)];
-		[openButton setTitle:@"Download" forState:UIControlStateNormal];
-		[openButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
 		[openButton setTag:numDocumento];
 		[openButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
-		[openButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 		[[openButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
 		if (!fileAlreadyExists) {
 			[openButton setTitle:@"Download" forState:UIControlStateNormal];
@@ -188,6 +185,8 @@
 }
 
 -(void)actionOpenPdf:(id)sender {
+	senderButton = sender;
+	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
 	[mvc setNomePdfDaAprire:pdfToDownload];
 	[mvc actionOpenPlainDocumentFromNewMain:self];
 }

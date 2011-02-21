@@ -312,6 +312,11 @@
 
 				}
 		[self.view addSubview:scrollView];
+		
+		UIImageView *border = [[UIImageView alloc] initWithFrame:CGRectMake(0, 127, 770, 40)]; // Fissare dimensioni
+		[border setImage:[UIImage imageNamed:@"border.png"]];
+		[self.view addSubview:border];
+		[border release];
 	}
 }
 
@@ -345,7 +350,7 @@
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return YES;
+    return NO;
 }
 
 
