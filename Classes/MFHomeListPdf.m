@@ -179,7 +179,7 @@
 			
 		}else {
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 165, 105, 20) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 170, 105, 20) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor blackColor];
 			pageLabel.backgroundColor = [UIColor clearColor];

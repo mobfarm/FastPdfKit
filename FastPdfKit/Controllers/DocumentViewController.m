@@ -589,6 +589,8 @@
 	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
+	
+	[thumbsliderHorizontal goToPage:page-1 animated:YES];
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didChangeModeTo:(MFDocumentMode)mode automatic:(BOOL)automatically {
@@ -970,7 +972,7 @@
 	[aTSVH setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
 	[aTSVH setAutoresizesSubviews:YES];
 	//[aTSVH setBackgroundColor:[UIColor blackColor]];
-	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7]];
+	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
 	
 	UIToolbar *toolbarThumb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, yToolbarThumb, self.view.frame.size.width, heightToolbarThumb)];
 	[toolbarThumb setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
@@ -982,7 +984,7 @@
 	//Page slider.
 	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(aTSVH.frame.size.width/4, ySlider, aTSVH.frame.size.width/2,heightSlider)];
 	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
-	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1]];
+	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
 	[aSlider setMinimumValue:1.0];
 	[aSlider setMaximumValue:[[self document] numberOfPages]];
 	[aSlider setContinuous:YES];
