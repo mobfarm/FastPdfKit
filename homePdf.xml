@@ -12,17 +12,17 @@
 			<copertina>http://go.mobfarm.eu/pdf/MacBookAir.png</copertina>
 		</pdf>
         <pdf>
-            <titolo>IMac</titolo>
+            <titolo>iMac</titolo>
 			<link>http://go.mobfarm.eu/pdf/iMac.pdf</link>
 			<copertina>http://go.mobfarm.eu/pdf/iMac.png</copertina>
 		</pdf>
 		<pdf>
-            <titolo>Ipad</titolo>
+            <titolo>iPad</titolo>
 			<link>http://go.mobfarm.eu/pdf/iPad.pdf</link>
 			<copertina>http://go.mobfarm.eu/pdf/iPad.png</copertina>
 		</pdf>
 		<pdf>
-            <titolo>Iphone</titolo>
+            <titolo>iPhone</titolo>
 			<link>http://go.mobfarm.eu/pdf/iPhone.pdf</link>
 			<copertina>http://go.mobfarm.eu/pdf/iPhone.png</copertina>
 		</pdf>

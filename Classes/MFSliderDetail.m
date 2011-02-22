@@ -76,7 +76,7 @@
 			[color release];
 			[self.view addSubview:corner];*/
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(10, 87, size.width-30, size.height-30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(10, 84, size.width-30, size.height-30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor whiteColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
@@ -96,7 +96,7 @@
 			[color release];
 			[self.view addSubview:corner];*/
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(12, 45, size.width-30, size.height-30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(12, 40, size.width-30, size.height-30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor whiteColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
