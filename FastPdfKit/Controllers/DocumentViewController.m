@@ -1067,8 +1067,6 @@
 		[imgChangeLead retain];
 		imgChangeLeadClick =[UIImage imageNamed:@"pagelead_click_phone.png"];
 		[imgChangeLeadClick retain];
-		
-		
 	}
 	
 	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, heightToolbar)];
@@ -1137,43 +1135,57 @@
 		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
 												  initWithImage:[UIImage imageNamed:@"bookmark_add_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
 		
+		[bookmarkBarButtonItem setWidth:25];
 		
 		UIBarButtonItem *dismissBarButtonItem = [[UIBarButtonItem alloc]
 												 initWithImage:[UIImage imageNamed:@"X_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
 		
+		[dismissBarButtonItem setWidth:22];
 		
 		changeModeBarButtonItem = [[UIBarButtonItem alloc]
 								   initWithImage:[UIImage imageNamed:@"changeModeDouble_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
 		
+		[changeModeBarButtonItem setWidth:32];
+		
 		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
 												 initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		
+		[OutlineBarButtonItem setWidth:22];
 		
 		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
 								 initWithImage:[UIImage imageNamed:@"zoomUnlock_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
 		
+		[zoomLockBarButtonItem setWidth:22];
 		
 		changeDirectionButtonItem = [[UIBarButtonItem alloc]
 									 initWithImage:[UIImage imageNamed:@"direction_r2l_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
 		
+		[changeDirectionButtonItem setWidth:22];
 		
 		changeLeadButtonItem = [[UIBarButtonItem alloc]
 								initWithImage:[UIImage imageNamed:@"pagelead_click_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
 		
 		
+		[changeLeadButtonItem setWidth:25];
+		
 		UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]
 												initWithImage:[UIImage imageNamed:@"search_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		
+		[searchBarButtonItem setWidth:22];
 		
 		
 		UIBarButtonItem *textBarButtonItem = [[UIBarButtonItem alloc]
 											  initWithImage:[UIImage imageNamed:@"text_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
 		
+		[textBarButtonItem setWidth:22];
+		
 		
 		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
 																								target:nil
 																								action:nil];
+		[itemSpazioBarButtnItem setWidth:25];
 		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
 		
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];

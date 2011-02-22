@@ -60,6 +60,7 @@
 		6F6AE45D13139FD300D7D279 /* zoomUnlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43E13139FD300D7D279 /* zoomUnlock.png */; };
 		6F6AE49C1313CE4400D7D279 /* backThumb_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE49A1313CE4400D7D279 /* backThumb_iphone.png */; };
 		6F6AE49D1313CE4400D7D279 /* backThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE49B1313CE4400D7D279 /* backThumb.png */; };
+		6F6AE9581314439200D7D279 /* pagelead_click_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE9571314439200D7D279 /* pagelead_click_phone.png */; };
 		6F6D226B13059E0F0053696A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6D226A13059E0F0053696A /* CFNetwork.framework */; };
 		6F6D226F13059E5B0053696A /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6D226E13059E5B0053696A /* libz.1.2.3.dylib */; };
 		6F6D228513059EB80053696A /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D227413059EB80053696A /* ASIAuthenticationDialog.m */; };
@@ -181,6 +182,7 @@
 		6F6AE43E13139FD300D7D279 /* zoomUnlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoomUnlock.png; path = img/zoomUnlock.png; sourceTree = "<group>"; };
 		6F6AE49A1313CE4400D7D279 /* backThumb_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backThumb_iphone.png; path = img/backThumb_iphone.png; sourceTree = "<group>"; };
 		6F6AE49B1313CE4400D7D279 /* backThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backThumb.png; path = img/backThumb.png; sourceTree = "<group>"; };
+		6F6AE9571314439200D7D279 /* pagelead_click_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pagelead_click_phone.png; path = img/pagelead_click_phone.png; sourceTree = "<group>"; };
 		6F6D226A13059E0F0053696A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6F6D226E13059E5B0053696A /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		6F6D227313059EB80053696A /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = ASIHTTP/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				6F6AE42E13139FD300D7D279 /* indice_phone.png */,
 				6F6AE42F13139FD300D7D279 /* indice.png */,
 				6F6AE43013139FD300D7D279 /* pagelead_click.png */,
+				6F6AE9571314439200D7D279 /* pagelead_click_phone.png */,
 				6F6AE43113139FD300D7D279 /* pagelead_phone.png */,
 				6F6AE43213139FD300D7D279 /* pagelead.png */,
 				6F6AE43313139FD300D7D279 /* remove.png */,
@@ -629,6 +632,7 @@
 				6F6AE45D13139FD300D7D279 /* zoomUnlock.png in Resources */,
 				6F6AE49C1313CE4400D7D279 /* backThumb_iphone.png in Resources */,
 				6F6AE49D1313CE4400D7D279 /* backThumb.png in Resources */,
+				6F6AE9581314439200D7D279 /* pagelead_click_phone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
