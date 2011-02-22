@@ -25,6 +25,7 @@
 		[[self delegate]dismissAllPopoversFrom:self];
 	}else {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		delegate.visibleOutline = NO;
 	}
 
 	

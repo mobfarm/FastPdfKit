@@ -16,6 +16,8 @@
 @synthesize page;
 @synthesize removeButton,openButton;
 @synthesize progressDownload;
+@synthesize yProgressBar,xBtnRemove,yBtnRemove,xBtnOpen,yBtnOpen,widthButton,heightButton;
+
 
 // Load the view nib and initialize the pageNumber ivar.
 
@@ -35,16 +37,28 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	// NSLog(@"Did load Page %i", page);
-	[self.view setBackgroundColor:[UIColor clearColor]];
-	if (temp) {
-		UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		[spinner setFrame:CGRectMake(size.width/2.0 - spinner.frame.size.width/2.0, size.height/2.0 - spinner.frame.size.height/2.0, spinner.frame.size.width, spinner.frame.size.height)];
-		[spinner startAnimating];
-		[self.view addSubview:spinner];
-		[spinner release];
-		
-	} else {
+
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			yProgressBar=485;
+			xBtnRemove=120;
+			yBtnRemove=590;
+			xBtnOpen=120;
+			yBtnOpen=530;
+			widthButton=140;
+			heightButton=44;
+		}else {
+			yProgressBar=175;
+			xBtnRemove=40;
+			yBtnRemove=215;
+			xBtnOpen=40;
+			yBtnOpen=190;
+			widthButton=70;
+			heightButton=22;
+		}
+
+	
+	
+		[self.view setBackgroundColor:[UIColor clearColor]];
 		
 		//check pdf already downloaded;
 		
@@ -85,7 +99,7 @@
 		[[self view] addSubview:image];
 		[image release];
 		
-		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(15, 485, size.width-10, size.height-10)];
+		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(15, yProgressBar, size.width-10, size.height-10)];
 		progressDownload.progressViewStyle = UIActivityIndicatorViewStyleGray;
 		progressDownload.progress= 0.0;
 		progressDownload.hidden = TRUE;
@@ -96,7 +110,7 @@
 		
 		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
 		openButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		[openButton setFrame:CGRectMake(120, 530, 140, 44)];
+		[openButton setFrame:CGRectMake(xBtnOpen, yBtnOpen, widthButton, heightButton)];
 		[openButton setTag:numDocumento];
 		[openButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[[openButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
@@ -114,7 +128,7 @@
 		[[self view] addSubview:openButton];
 		
 		removeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		[removeButton setFrame:CGRectMake(120, 590, 140, 44)];
+		[removeButton setFrame:CGRectMake(xBtnRemove, yBtnRemove, widthButton, heightButton)];
 		[removeButton setTitle:@"Remove" forState:UIControlStateNormal];
 		[removeButton setImage:[UIImage imageNamed:@"remove.png"] forState:UIControlStateNormal];
 		[removeButton setTag:numDocumento];
@@ -138,7 +152,7 @@
 			
 		}else {
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 495, 300, 30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 165, 105, 20) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor blackColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
@@ -148,7 +162,6 @@
 			[[self view]addSubview:pageLabel];
 			[pageLabel release];
 		}
-	}
 	[super viewDidLoad];
 }
 

@@ -37,6 +37,7 @@
 @synthesize buttonOpenDict;
 @synthesize progressViewDict;
 @synthesize pdfHome;
+@synthesize widthThumb,heightThumb,widthButton,heightButton,widthScrollView,heightScrollView,heightViewDetail,xSxThumb,xDxThumb,heightFrame,yScrollView;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
     //
@@ -247,14 +248,34 @@
 	[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		widthThumb=350;
+		heightThumb=480;
+		xSxThumb = 20;
+		xDxThumb = 380;
+		heightFrame = 325;
+		widthScrollView=768;
+		heightScrollView=900;
+		heightViewDetail=670;
+		yScrollView=130;
+	
+	}else {
+		widthThumb=125;
+		heightThumb=170;
+		xSxThumb = 10;
+		xDxThumb = 160;
+		heightFrame = 115;
+		widthScrollView=320;
+		heightScrollView=450;
+		heightViewDetail=270;
+		yScrollView=60;
+	}
+
 		
 		
 		//reading the file.
 		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"homePdf" ofType:@"xml"];  
 		NSData *fileData = [NSData dataWithContentsOfFile:filePath]; 
 		NSString *xmlFile = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
-		
-		NSMutableArray *arrayPdf = [[NSMutableArray alloc]init];
 		
 		XMLParser *parser = [[XMLParser alloc] init];
 		
@@ -275,9 +296,9 @@
 		
 		//[appDelegate.nameArray addObject:playerName];
 	
-		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 130, 768, 900)];
+		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, yScrollView, widthScrollView, heightScrollView)];
 		scrollView.backgroundColor = [UIColor whiteColor];
-		scrollView.contentSize = CGSizeMake(768, 650 * ((NUM_PDFTOSHOW/2)+1));
+		scrollView.contentSize = CGSizeMake(widthScrollView, heightViewDetail * ((NUM_PDFTOSHOW/2)+1));
 		
 		buttonRemoveDict = [[NSMutableDictionary alloc] init];
 		buttonOpenDict = [[NSMutableDictionary alloc] init];
@@ -288,19 +309,19 @@
 					NSString *titoloPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"];
 					NSString *linkPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"link"];
 					NSString *copertinaPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"copertina"];
-					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
+					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(widthThumb, heightThumb)];
 					//MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
 					CGRect frame = self.view.frame;
 					if ((i%2)==0) {
-						frame.origin.y = 630 * ( (i-1) / 2 );
-						frame.origin.x = 380;
-						frame.size.width = 350;
-						frame.size.height = 660;
+						frame.origin.y = (heightFrame * 2 ) * ( (i-1) / 2 );
+						frame.origin.x = xDxThumb;
+						frame.size.width = widthThumb;
+						frame.size.height = heightViewDetail;
 					}else {
-						frame.origin.x = 20;
-						frame.origin.y = 315 *(i-1);
-						frame.size.width = 350;
-						frame.size.height = 660;
+						frame.origin.y = heightFrame *(i-1);
+						frame.origin.x = xSxThumb;
+						frame.size.width = widthThumb;
+						frame.size.height = heightViewDetail;
 					}
 					
 					viewPdf.view.frame = frame;
@@ -313,11 +334,11 @@
 				}
 		[self.view addSubview:scrollView];
 		
-		UIImageView *border = [[UIImageView alloc] initWithFrame:CGRectMake(0, 127, 770, 40)]; // Fissare dimensioni
+		UIImageView *border = [[UIImageView alloc] initWithFrame:CGRectMake(0, yScrollView-3, widthScrollView, 40)]; 
 		[border setImage:[UIImage imageNamed:@"border.png"]];
 		[self.view addSubview:border];
 		[border release];
-	}
+	//}
 }
 
 -(void)showViewDownload{

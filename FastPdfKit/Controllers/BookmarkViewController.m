@@ -16,8 +16,12 @@
 
 -(IBAction)actionDone:(id)sender {
 	
-	//[[self delegate]actionBookmarks:self];
-	[[self delegate]dismissAllPopoversFrom:self];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[[self delegate]dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		delegate.visibleBookmark = NO;
+	}
 }
 
 -(IBAction)actionToggleMode:(id)sender {

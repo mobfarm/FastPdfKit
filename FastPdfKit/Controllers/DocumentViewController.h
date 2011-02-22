@@ -99,6 +99,7 @@
 	UIImage *imgChangeLead;
 	UIImage *imgChangeLeadClick;
 	
+	CGFloat heightToolbar;
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
@@ -139,6 +140,7 @@
 @property (nonatomic, retain) UIPopoverController *popupOutline;
 @property (nonatomic, retain) UIPopoverController *popupSearch;
 @property (nonatomic, retain) UIPopoverController *popupText;
+@property CGFloat heightToolbar;
 
 // Swapping search views.
 -(void)switchToMiniSearchView:(MFTextItem *)index;

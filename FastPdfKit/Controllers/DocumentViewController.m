@@ -41,6 +41,7 @@
 @synthesize thumbSliderView,aTSVH;
 @synthesize popupBookmark,popupOutline,popupSearch,popupText;
 @synthesize senderText,senderSearch;
+@synthesize heightToolbar;
 
 #pragma mark Thumbnail utility functions
 
@@ -325,12 +326,17 @@
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 				[popupBookmark dismissPopoverAnimated:YES];
 				visibleBookmark=NO;
+			}else {
+				[[self parentViewController]dismissModalViewControllerAnimated:YES];
+				visibleBookmark=NO;
 			}
+
 		}else {
-			[self dismissAllPopoversFrom:sender];
+			
 			BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
 			bookmarksVC.delegate=self;
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+				[self dismissAllPopoversFrom:sender];
 				//se è aperto il popover slide verticale va chiuso
 				popupBookmark = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
 				[popupBookmark setPopoverContentSize:CGSizeMake(372, 650)];
@@ -403,12 +409,17 @@
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			[popupOutline dismissPopoverAnimated:YES];
 			visibleOutline=NO;
+		}else {
+			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			visibleOutline=NO;
 		}
+
 	}else {
-		[self dismissAllPopoversFrom:sender];
+		
 		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
 		[outlineVC setDelegate:self];
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			[self dismissAllPopoversFrom:sender];
 			//se è aperto il popover slide verticale va chiuso
 			popupOutline = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
 			[popupOutline setPopoverContentSize:CGSizeMake(372, 650)];
@@ -663,15 +674,10 @@
 			controller.delegate = self;
 			[controller updateWithTextOfPage:page];
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-				//se è aperto il popover slide verticale va chiuso
-				popupText = [[UIPopoverController alloc] initWithContentViewController:controller];
-				[popupText setPopoverContentSize:CGSizeMake(372, 650)];
-				[popupText presentPopoverFromBarButtonItem:senderText permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-				visibleText=YES;
-			}else {
-				[self presentModalViewController:controller animated:YES];
-				visibleText=YES;
+				controller.modalPresentationStyle = UIModalPresentationFormSheet;
 			}
+			visibleText=YES;
+			[self presentModalViewController:controller animated:YES];
 			//[controller release];
 		}
 	}
@@ -785,13 +791,13 @@
 	
 	pdfIsOpen = YES;
 	
-	UIButton *aButton = nil;
+	//UIButton *aButton = nil;
 	
-	CGSize viewSize = [[self view]bounds].size;
+	//CGSize viewSize = [[self view]bounds].size;
 	
-	CGFloat buttonHeight = 20;
-	CGFloat buttonWidth = 60;
-	CGFloat padding = 10;
+	//CGFloat buttonHeight = 20;
+	//CGFloat buttonWidth = 60;
+	//CGFloat padding = 10;
 	
 	UIFont *font = nil;
 
@@ -993,6 +999,7 @@
 	//Add ToolBar
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		heightToolbar = 44;
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle.png"];
 		[imgChangeMode retain];
 		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble.png"];
@@ -1015,6 +1022,7 @@
 		
 		
 	}else {
+		heightToolbar = 33;
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
 		[imgChangeMode retain];
 		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
@@ -1038,17 +1046,13 @@
 		
 	}
 	
-	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, 44)];
+	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, heightToolbar)];
 	toolbar.hidden = YES;
 	toolbar.barStyle = UIBarStyleBlackTranslucent;
 	[toolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
 	
 	// [toolbar sizeToFit];
 	// toolbar.frame = CGRectMake(0, 0, 768, 44);
-	
-	
-	
-	UIBarButtonItem *toolBarTitle = [[UIBarButtonItem alloc] initWithCustomView:nil ];
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
@@ -1068,7 +1072,7 @@
 		
 		UIBarButtonItem *thumbnailBarButtonItem = [[UIBarButtonItem alloc]
 														initWithImage:[UIImage imageNamed:@"changeModeSingle.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionThumbnail:)];
-		
+				
 		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
 												   initWithImage:[UIImage imageNamed:@"zoomUnlock.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
 		
@@ -1120,21 +1124,48 @@
 								   initWithImage:[UIImage imageNamed:@"changeModeDouble_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
 		
 		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
-														initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(press:)];
+												 initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		
+		
+		UIBarButtonItem *thumbnailBarButtonItem = [[UIBarButtonItem alloc]
+												   initWithImage:[UIImage imageNamed:@"changeModeSingle_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionThumbnail:)];
+		
+		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
+								 initWithImage:[UIImage imageNamed:@"zoomUnlock_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+		
+		
+		changeDirectionButtonItem = [[UIBarButtonItem alloc]
+									 initWithImage:[UIImage imageNamed:@"direction_r2l_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		
+		
+		changeLeadButtonItem = [[UIBarButtonItem alloc]
+								initWithImage:[UIImage imageNamed:@"pagelead_click_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+		
+		
+		UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]
+												initWithImage:[UIImage imageNamed:@"search_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		
+		
+		UIBarButtonItem *textBarButtonItem = [[UIBarButtonItem alloc]
+											  initWithImage:[UIImage imageNamed:@"text_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
 		
 		
 		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
 																								target:nil
 																								action:nil];
 		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,toolBarTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,thumbnailBarButtonItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
 		
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];
+		[changeDirectionButtonItem release],
 		[OutlineBarButtonItem release];
 		[itemSpazioBarButtnItem release];
+		[searchBarButtonItem release];
+		[zoomLockBarButtonItem release];
+		[thumbnailBarButtonItem release];
+		[textBarButtonItem release];
 		[toolbar setItems:items animated:NO];
-		
 	}
 	
 	[self.view addSubview:toolbar];
@@ -1145,7 +1176,7 @@
 		[UIView beginAnimations:@"show" context:NULL];
 		[UIView setAnimationDuration:0.35];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, 44)];
+		[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, heightToolbar)];
 		[UIView commitAnimations];		
 }
 
@@ -1153,7 +1184,7 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[toolbar setFrame:CGRectMake(0, -44, toolbar.frame.size.width, 44)];
+	[toolbar setFrame:CGRectMake(0, -heightToolbar, toolbar.frame.size.width, heightToolbar)];
 	[UIView commitAnimations];
 }
 

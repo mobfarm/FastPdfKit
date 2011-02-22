@@ -33,6 +33,18 @@
 	NSMutableArray *pdfHome;
 	
 	NSString *nomePdfDaAprire;
+	
+	CGFloat widthThumb;
+	CGFloat heightThumb;
+	CGFloat widthButton;
+	CGFloat heightButton;
+	CGFloat widthScrollView;
+	CGFloat heightScrollView;
+	CGFloat heightViewDetail;
+	CGFloat xSxThumb;
+	CGFloat xDxThumb;
+	CGFloat heightFrame;
+	CGFloat yScrollView;
 }
 
 -(IBAction)actionOpenPlainDocument:(id)sender;
@@ -57,5 +69,17 @@
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 @property (nonatomic,retain ) NSDictionary *buttonOpenDict;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
+
+@property CGFloat widthThumb;
+@property CGFloat heightThumb;
+@property CGFloat widthButton;
+@property CGFloat heightButton;
+@property CGFloat widthScrollView;
+@property CGFloat heightScrollView;
+@property CGFloat heightViewDetail;
+@property CGFloat xSxThumb;
+@property CGFloat xDxThumb;
+@property CGFloat heightFrame;
+@property CGFloat yScrollView;
 
 @end

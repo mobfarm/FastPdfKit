@@ -29,6 +29,14 @@
 	UIButton *removeButton;
 	UIButton *openButton;
 	UIProgressView *progressDownload;
+	
+	CGFloat yProgressBar;
+	CGFloat xBtnRemove;
+	CGFloat yBtnRemove;
+	CGFloat xBtnOpen;
+	CGFloat yBtnOpen;
+	CGFloat widthButton;
+	CGFloat heightButton;
 }
 
 @property (nonatomic,assign) id object;
@@ -44,6 +52,13 @@
 @property (nonatomic,retain ) UIButton *removeButton;
 @property (nonatomic,retain ) UIButton *openButton;
 @property (nonatomic,retain ) UIProgressView *progressDownload;
+@property CGFloat yProgressBar;
+@property CGFloat xBtnRemove;
+@property CGFloat yBtnRemove;
+@property CGFloat widthButton;
+@property CGFloat heightButton;
+@property CGFloat xBtnOpen;
+@property CGFloat yBtnOpen;
 
 - (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size;
 - (void)setSelected:(BOOL)selected;
