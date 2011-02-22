@@ -85,7 +85,6 @@
 	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERRORE DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];
-	NSLog(@"requestFinished");
 	//[downloadInProgress setHidden:YES];
 	pdfInDownload = NO;
 }
@@ -123,7 +122,13 @@
 	
     // here, for some reason you have to use NSClassFromString when trying to alloc NSXMLParser, otherwise you will get an object not found error
     // this may be necessary only for the toolchain
-    xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+    //xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+	
+	
+				 
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"homePdf" ofType:@"xml"];  
+	NSData *fileData = [NSData dataWithContentsOfFile:filePath]; 
+	xmlParser = [[NSXMLParser alloc] initWithData:fileData];
 	
     // Set self as the delegate of the parser so that it will receive the parser delegate methods callbacks.
     [xmlParser setDelegate:self];

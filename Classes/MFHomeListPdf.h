@@ -28,7 +28,9 @@
 	NSString *pdfToDownload;
 	UIButton *removeButton;
 	UIButton *openButton;
+	UIButton *openButtonFromImage;
 	UIProgressView *progressDownload;
+	UIImageView *imgThumb;
 	
 	CGFloat yProgressBar;
 	CGFloat xBtnRemove;
@@ -51,7 +53,9 @@
 @property (nonatomic,copy) NSString *page;
 @property (nonatomic,retain ) UIButton *removeButton;
 @property (nonatomic,retain ) UIButton *openButton;
+@property (nonatomic,retain ) UIButton *openButtonFromImage;
 @property (nonatomic,retain ) UIProgressView *progressDownload;
+@property (nonatomic,retain ) UIImageView *imgThumb;
 @property CGFloat yProgressBar;
 @property CGFloat xBtnRemove;
 @property CGFloat yBtnRemove;

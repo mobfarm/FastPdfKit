@@ -235,7 +235,7 @@
 	
 		// Simple initialization.
 		
-		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId]autorelease];
 		
 	}
 	

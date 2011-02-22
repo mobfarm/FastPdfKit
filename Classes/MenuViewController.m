@@ -35,7 +35,7 @@
 @synthesize nomePdfDaAprire;
 @synthesize buttonRemoveDict;
 @synthesize buttonOpenDict;
-@synthesize progressViewDict;
+@synthesize progressViewDict,imgDict;
 @synthesize pdfHome;
 @synthesize widthThumb,heightThumb,widthButton,heightButton,widthScrollView,heightScrollView,heightViewDetail,xSxThumb,xDxThumb,heightFrame,yScrollView;
 
@@ -75,14 +75,14 @@
 	
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	
-	NSLog(@"PAth : %@", paths);
+	//NSLog(@"PAth : %@", paths);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 		
 	NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
 	pdfPath = [pdfPath stringByAppendingString:nomePdfDaAprire];
 	pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 	
-	NSLog(@"pdfpath :%@",pdfPath);
+	//NSLog(@"pdfpath :%@",pdfPath);
 	//pdfPath = [pdfPath stringByAppendingString:@"/"];
 	//pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
 	//pdfPath = [pdfPath stringByAppendingString:@".pdf"];
@@ -254,8 +254,8 @@
 		xDxThumb = 380;
 		heightFrame = 325;
 		widthScrollView=768;
-		heightScrollView=900;
-		heightViewDetail=670;
+		heightScrollView=870;
+		heightViewDetail=665;
 		yScrollView=130;
 	
 	}else {
@@ -265,36 +265,16 @@
 		xDxThumb = 160;
 		heightFrame = 115;
 		widthScrollView=320;
-		heightScrollView=450;
-		heightViewDetail=270;
+		heightScrollView=400;
+		heightViewDetail=240;
 		yScrollView=60;
 	}
 
-		
-		
-		//reading the file.
-		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"homePdf" ofType:@"xml"];  
-		NSData *fileData = [NSData dataWithContentsOfFile:filePath]; 
-		NSString *xmlFile = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
-		
 		XMLParser *parser = [[XMLParser alloc] init];
 		
 		parser.mvc = self;
 		
 		[parser parseXMLFileAtURL:@"http://go.mobfarm.eu/pdf/xmldaparsare.xml"];
-		
-		//NSLog(@"numpagine %i",numpaginetotale);
-		[xmlFile release];
-		
-		/*NSMutableArray *arrayPdf = [NSMutableArray arrayWithCapacity:NUM_PDFTOSHOW];
-		
-		
-		for (int i=0; i<= NUM_PDFTOSHOW-1 ; i++) {
-			NSString *myString = [NSString stringWithFormat:@"%d",i+1];
-			[arrayPdf addObject:[@"pdf" stringByAppendingString:myString]];
-		}*/
-		
-		//[appDelegate.nameArray addObject:playerName];
 	
 		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, yScrollView, widthScrollView, heightScrollView)];
 		scrollView.backgroundColor = [UIColor whiteColor];
@@ -303,6 +283,7 @@
 		buttonRemoveDict = [[NSMutableDictionary alloc] init];
 		buttonOpenDict = [[NSMutableDictionary alloc] init];
 		progressViewDict = [[NSMutableDictionary alloc] init];
+	    imgDict = [[NSMutableDictionary alloc] init];
 	
 				for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
 					//NSLog(@"prova %@",[[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"]);
@@ -327,6 +308,7 @@
 					viewPdf.view.frame = frame;
 					viewPdf.mvc=self;
 					[scrollView addSubview:viewPdf.view];
+					[imgDict setValue:viewPdf.openButtonFromImage forKey:titoloPdf];
 					[buttonOpenDict setValue:viewPdf.openButton forKey:titoloPdf];
 					[buttonRemoveDict setValue:viewPdf.removeButton forKey:titoloPdf];
 					[progressViewDict setValue:viewPdf.progressDownload forKey:titoloPdf];
@@ -395,6 +377,7 @@
 	[buttonRemoveDict dealloc];
 	[buttonOpenDict dealloc];
 	[progressViewDict dealloc];
+	[imgDict dealloc];
 }
 
 

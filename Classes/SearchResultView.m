@@ -106,7 +106,7 @@
 		[pageAttrString release];
 		
 		// Start 16 pixel down from the top edge.
-		CGContextSetTextPosition(ctx, 4, contentRect.size.height-16);
+		CGContextSetTextPosition(ctx, 25, contentRect.size.height-50);
 		
 		// Draw the line.
 		CTLineDraw(labelLine, ctx);
@@ -134,15 +134,21 @@
 		CGColorSpaceRelease(rgbColorSpace);
 		
 		// Here we set the color as red.
-		CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTForegroundColorAttributeName, red);
+		//CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTForegroundColorAttributeName, red);
 		CGColorRelease(red);
+		
+		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 15.0, NULL);
+		 [snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(boldRange.location, boldRange.length)];
+		//[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:CFRangeMake(boldRange.location, boldRange.length)];
+		
+
 		
 		// Framesetter as before.
 		CTFramesetterRef snippetFramesetter = CTFramesetterCreateWithAttributedString(snippetAttrString);
 		CFRelease(snippetAttrString);
 		
 		// Rect for the snippet frame.
-		CGRect snippetRect = CGRectMake(12, 0, contentRect.size.width-12, contentRect.size.height-24);
+		CGRect snippetRect = CGRectMake(8, 0, contentRect.size.width-12, contentRect.size.height-10);
 		
 		// Cut and trim if necessary.
 		CFRange snippetFitRange;

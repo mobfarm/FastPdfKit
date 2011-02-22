@@ -29,6 +29,7 @@
 	NSDictionary *buttonRemoveDict;
 	NSDictionary *buttonOpenDict;
 	NSDictionary *progressViewDict;
+	NSDictionary *imgDict;
 	
 	NSMutableArray *pdfHome;
 	
@@ -69,6 +70,7 @@
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 @property (nonatomic,retain ) NSDictionary *buttonOpenDict;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
+@property (nonatomic,retain ) NSDictionary *imgDict;
 
 @property CGFloat widthThumb;
 @property CGFloat heightThumb;

@@ -24,7 +24,7 @@
 	
 	[self.view setFrame:CGRectMake(0, 0, sliderWidth, thumbHeight)];
 	
-	[self.view setBackgroundColor:[UIColor clearColor]];
+	[self.view setBackgroundColor:[UIColor blackColor]];
 	return self;
 }
 
@@ -60,15 +60,15 @@
 	 x = (sliderWidth-width)/2;
 	 }
 	 */
-	thumbnailsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 10, sliderWidth, thumbHeight+40)]; // Fissare dimensioni
+	thumbnailsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 10, sliderWidth, thumbHeight+20)]; // Fissare dimensioni
 	[thumbnailsView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-	// thumbnailsView.backgroundColor = [UIColor grayColor];
+	[thumbnailsView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1]];
 	[thumbnailsView setDelegate:self];
 	thumbnailsView.alwaysBounceVertical = NO;
 	thumbnailsView.alwaysBounceHorizontal = NO;
 	thumbnailsView.pagingEnabled = NO;
     thumbnailsView.contentSize = CGSizeMake(thumbWidth * ([thumbnailNumbers count]), thumbnailsView.frame.size.height);
-    thumbnailsView.showsHorizontalScrollIndicator = YES;
+    thumbnailsView.showsHorizontalScrollIndicator = NO;
 	[thumbnailsView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
     thumbnailsView.showsVerticalScrollIndicator = NO;
 	

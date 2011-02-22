@@ -696,6 +696,9 @@
 		if(hudHidden) {
 			
 			[self showToolbar];
+			[self showHorizontalThumbnails];
+			//[self actionThumbnail:self];
+			
 			
 			// Show
 			
@@ -719,6 +722,8 @@
 			// Hide
 			
 			[self hideToolbar];
+			//[self actionThumbnail:self];
+			[self hideHorizontalThumbnails];
 			
 			[nextButton setHidden:YES];
 			[prevButton setHidden:YES];
@@ -733,10 +738,6 @@
 			[miniSearchView setHidden:YES];
 		
 			hudHidden = YES;
-		}
-		
-		if (thumbsViewVisible) {
-			[self hideHorizontalThumbnails];
 		}
 	}
 }
@@ -944,31 +945,53 @@
 	[aLabel setTextAlignment:UITextAlignmentCenter];
 	[self setPageLabel:aLabel];
 	[[self view]addSubview:aLabel];
-	[aLabel release];
+	[aLabel release];*/
 	
-	// Page slider.
-	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(padding*2+buttonWidth, viewSize.height-padding-buttonHeight, viewSize.width-padding*3-buttonWidth, buttonHeight)];
+	CGFloat ySlider = 0 ;
+	CGFloat heightSlider = 0;
+	CGFloat yToolbarThumb = 0;
+	CGFloat heightToolbarThumb = 0;
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 200)];
+		ySlider = 175;
+		heightSlider = 20 ;
+		yToolbarThumb = ySlider-15;
+		heightToolbarThumb = 40;
+	}else {
+		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 100)];
+		ySlider = 70 ;
+		heightSlider = 10;
+		yToolbarThumb = ySlider-8;
+		heightToolbarThumb = 20;
+	}
+
+	
+	[aTSVH setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+	[aTSVH setAutoresizesSubviews:YES];
+	//[aTSVH setBackgroundColor:[UIColor blackColor]];
+	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7]];
+	
+	UIToolbar *toolbarThumb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, yToolbarThumb, self.view.frame.size.width, heightToolbarThumb)];
+	[toolbarThumb setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
+	toolbarThumb.barStyle = UIBarStyleBlackTranslucent;
+	
+	[aTSVH addSubview:toolbarThumb];
+	[toolbarThumb release];
+	
+	//Page slider.
+	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(aTSVH.frame.size.width/4, ySlider, aTSVH.frame.size.width/2,heightSlider)];
 	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
+	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1]];
 	[aSlider setMinimumValue:1.0];
 	[aSlider setMaximumValue:[[self document] numberOfPages]];
 	[aSlider setContinuous:YES];
 	[aSlider addTarget:self action:@selector(actionPageSliderSlided:) forControlEvents:UIControlEventValueChanged];
 	[aSlider addTarget:self action:@selector(actionPageSliderStopped:) forControlEvents:UIControlEventTouchUpInside];
 	[self setPageSlider:aSlider];
-	[[self view]addSubview:aSlider];
-	[aSlider release];*/
+	[aSlider release];
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 230)];
-	}else {
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 115)];
-	}
-
-	
-	[aTSVH setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
-	[aTSVH setAutoresizesSubviews:YES];
-	
-	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5]];
+	[aTSVH addSubview:aSlider];
 	
 	[self.view addSubview:aTSVH];
 	// [thumbSliderViewHorizontal setHidden:YES];
@@ -1022,7 +1045,7 @@
 		
 		
 	}else {
-		heightToolbar = 33;
+		heightToolbar = 44;
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
 		[imgChangeMode retain];
 		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
@@ -1070,9 +1093,6 @@
 														initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		
 		
-		UIBarButtonItem *thumbnailBarButtonItem = [[UIBarButtonItem alloc]
-														initWithImage:[UIImage imageNamed:@"changeModeSingle.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionThumbnail:)];
-				
 		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
 												   initWithImage:[UIImage imageNamed:@"zoomUnlock.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
 		
@@ -1097,7 +1117,7 @@
 																								target:nil
 																								action:nil];
 		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,thumbnailBarButtonItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
 		
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];
@@ -1106,7 +1126,7 @@
 		[itemSpazioBarButtnItem release];
 		[searchBarButtonItem release];
 		[zoomLockBarButtonItem release];
-		[thumbnailBarButtonItem release];
+		//[thumbnailBarButtonItem release];
 		[textBarButtonItem release];
 		[toolbar setItems:items animated:NO];
 		
@@ -1126,9 +1146,6 @@
 		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
 												 initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		
-		
-		UIBarButtonItem *thumbnailBarButtonItem = [[UIBarButtonItem alloc]
-												   initWithImage:[UIImage imageNamed:@"changeModeSingle_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionThumbnail:)];
 		
 		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
 								 initWithImage:[UIImage imageNamed:@"zoomUnlock_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
@@ -1154,7 +1171,7 @@
 																								target:nil
 																								action:nil];
 		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,thumbnailBarButtonItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
 		
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];
@@ -1163,7 +1180,7 @@
 		[itemSpazioBarButtnItem release];
 		[searchBarButtonItem release];
 		[zoomLockBarButtonItem release];
-		[thumbnailBarButtonItem release];
+		//[thumbnailBarButtonItem release];
 		[textBarButtonItem release];
 		[toolbar setItems:items animated:NO];
 	}
@@ -1192,7 +1209,7 @@
 -(void)createThumbToolbar{
 	// Horizontal thumb slider.
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(140, 180) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
+		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(100, 130) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
 		anHorizontalThumbSlider.delegate = self;	
 		self.thumbsliderHorizontal = anHorizontalThumbSlider;
 	
@@ -1203,7 +1220,7 @@
 		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
 		
 	}else {
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(70, 90) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
+		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(50, 66) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
 		anHorizontalThumbSlider.delegate = self;
 		
 		self.thumbsliderHorizontal = anHorizontalThumbSlider;
