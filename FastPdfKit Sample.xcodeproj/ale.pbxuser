@@ -1,0 +1,141 @@
+// !$*UTF8*$!
+{
+	01F434C312ACD94D00D08021 /* DocumentViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1333, 17992}}";
+			sepNavSelRange = "{33853, 0}";
+			sepNavVisRange = "{33480, 612}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* FastPdfKit Sample */ = {
+		activeExec = 0;
+		executables = (
+			71B6AC9D1312DB8200BEC45E /* FastPdfKit Sample */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 71B6AC9D1312DB8200BEC45E /* FastPdfKit Sample */;
+		activeSDKPreference = iphonesimulator4.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* FastPdfKit Sample */;
+		codeSenseManager = 71B6ACD31312DB8D00BEC45E /* Code sense */;
+		executables = (
+			71B6AC9D1312DB8200BEC45E /* FastPdfKit Sample */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					753,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 320157046;
+			PBXWorkspaceStateSaveDate = 320157046;
+		};
+		perUserProjectItems = {
+			7111F055131442A400A44381 /* PBXTextBookmark */ = 7111F055131442A400A44381 /* PBXTextBookmark */;
+			713E3C0313153E6D0061A410 /* PBXTextBookmark */ = 713E3C0313153E6D0061A410 /* PBXTextBookmark */;
+			713E3C0413153E7C0061A410 /* PBXTextBookmark */ = 713E3C0413153E7C0061A410 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 71B6ACD21312DB8D00BEC45E /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	6FCADC7E130EC39E00F978A9 /* homePdf.xml */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1202, 390}}";
+			sepNavSelRange = "{775, 0}";
+			sepNavVisRange = "{431, 472}";
+		};
+	};
+	7111F055131442A400A44381 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 6FCADC7E130EC39E00F978A9 /* homePdf.xml */;
+		name = "homePdf.xml: 25";
+		rLen = 0;
+		rLoc = 775;
+		rType = 0;
+		vrLen = 699;
+		vrLoc = 222;
+	};
+	713E3C0313153E6D0061A410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */;
+		name = "DocumentViewController.m: 969";
+		rLen = 0;
+		rLoc = 33853;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 33640;
+	};
+	713E3C0413153E7C0061A410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */;
+		name = "DocumentViewController.m: 961";
+		rLen = 1;
+		rLoc = 33600;
+		rType = 0;
+		vrLen = 1660;
+		vrLoc = 33295;
+	};
+	71B6AC9D1312DB8200BEC45E /* FastPdfKit Sample */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "FastPdfKit Sample";
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	71B6ACD21312DB8D00BEC45E /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	71B6ACD31312DB8D00BEC45E /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}
