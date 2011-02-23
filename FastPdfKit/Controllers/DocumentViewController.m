@@ -1042,7 +1042,7 @@
 		
 		imgChangeLead =[UIImage imageNamed:@"pagelead.png"];
 		[imgChangeLead retain];
-		imgChangeLeadClick =[UIImage imageNamed:@"pagelead_click.png"];
+		imgChangeLeadClick =[UIImage imageNamed:@"pagelead.png"];
 		[imgChangeLeadClick retain];
 		
 		
@@ -1065,7 +1065,7 @@
 		
 		imgChangeLead =[UIImage imageNamed:@"pagelead_phone.png"];
 		[imgChangeLead retain];
-		imgChangeLeadClick =[UIImage imageNamed:@"pagelead_click_phone.png"];
+		imgChangeLeadClick =[UIImage imageNamed:@"pagelead_phone.png"];
 		[imgChangeLeadClick retain];
 	}
 	
@@ -1102,7 +1102,7 @@
 		
 		
 		changeLeadButtonItem = [[UIBarButtonItem alloc]
-								initWithImage:[UIImage imageNamed:@"pagelead_click.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+								initWithImage:[UIImage imageNamed:@"pagelead.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
 		
 		
 		UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]
@@ -1163,7 +1163,7 @@
 		[changeDirectionButtonItem setWidth:22];
 		
 		changeLeadButtonItem = [[UIBarButtonItem alloc]
-								initWithImage:[UIImage imageNamed:@"pagelead_click_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+								initWithImage:[UIImage imageNamed:@"pagelead_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
 		
 		
 		[changeLeadButtonItem setWidth:25];
