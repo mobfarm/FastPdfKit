@@ -309,8 +309,8 @@
 		// Next button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(size.width-34, size.height-(4+20), 30, 20);
-		[aButton setTitle:@">>" forState:UIControlStateNormal];
-		[aButton setTitle:@">>" forState:UIControlStateDisabled];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateDisabled];
 		[[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionNext:) forControlEvents:UIControlEventTouchUpInside];
@@ -324,8 +324,10 @@
 		// Prev button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(4, size.height-(4+20), 30, 20);
-		[aButton setTitle:@"<<" forState:UIControlStateNormal];
-		[aButton setTitle:@"<<" forState:UIControlStateDisabled];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateDisabled];
+		//[aButton setTitle:@"<<" forState:UIControlStateNormal];
+		//[aButton setTitle:@"<<" forState:UIControlStateDisabled];
 		[[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionPrev:) forControlEvents:UIControlEventTouchUpInside];
@@ -339,8 +341,8 @@
 		// Cancel button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(size.width*0.5-(2+60), size.height-(4+20), 60, 20);
-		[aButton setTitle:@"Cancel" forState:UIControlStateNormal];
-		[aButton setTitle:@"Cancel" forState:UIControlStateDisabled];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_cancel.png"] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_cancel.png"] forState:UIControlStateDisabled];
 		[[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionCancel:) forControlEvents:UIControlEventTouchUpInside];
@@ -354,8 +356,8 @@
 		// Full button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(size.width*0.5+2, size.height-(4+20), 60, 20);
-		[aButton setTitle:@"Full" forState:UIControlStateNormal];
-		[aButton setTitle:@"Full" forState:UIControlStateDisabled];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_full.png"] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_full.png"] forState:UIControlStateDisabled];
 		[[aButton titleLabel]setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionFull:) forControlEvents:UIControlEventTouchUpInside];

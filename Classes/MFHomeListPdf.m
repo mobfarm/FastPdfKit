@@ -27,9 +27,8 @@
 	size = _size;
 	linkDownloadPdf = linkpdf;
 	thumbnail = _image;
-	[self downloadImage:self withUrl:thumbnail andName:Page];
-	//thumbnail = @"pdf1.png";// [thumbnail stringByAppendingString:@".png"];
 	self.page=Page;
+	[self downloadImage:self withUrl:thumbnail andName:Page];
 	numDocumento = numDoc;
 	temp = NO;
 	return self;
@@ -48,7 +47,7 @@
 			widthButton=140;
 			heightButton=44;
 		}else {
-			yProgressBar=175;
+			yProgressBar=215;
 			xBtnRemove=40;
 			yBtnRemove=215;
 			xBtnOpen=40;
@@ -94,7 +93,7 @@
 		[[self view] addSubview:backthumb];
 		[backthumb release];
 	
-		imgThumb = [[UIImageView alloc] initWithFrame:CGRectMake(20, 15, size.width-20, size.height-20)]; // Fissare dimensioni
+		imgThumb = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, size.width-24, size.height-24)]; // Fissare dimensioni
 		
 		NSArray *pathsok = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 		NSString *cacheDirectory = [pathsok objectAtIndex:0];
@@ -123,6 +122,8 @@
 			}
 	
 		[[self view] addSubview:openButtonFromImage];
+	
+		
 		
 		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(15, yProgressBar, size.width-10, size.height-10)];
 		progressDownload.progressViewStyle = UIActivityIndicatorViewStyleGray;
@@ -285,18 +286,27 @@
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
+	NSFileManager *fileManager = [[NSFileManager alloc]init];
 	
-	NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:[[delegate fileManager] firstAvailableFileNameForName:_url]];
-	pdfPath = [pdfPath stringByAppendingString:@"/"];
-	pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
-	pdfPath = [pdfPath stringByAppendingString:@".png"];
-	//NSLog(@"pdfPath %@",pdfPath);
-	[request setDidStartSelector:@selector(requestStartedDownloadImg:)];
-	[request setDidFinishSelector:@selector(requestFinishedDownloadImg:)];
-	[request setDidFailSelector:@selector(requestFailedDownloadImg:)];
-	[request setUseKeychainPersistence:YES];
-	[request setDownloadDestinationPath:pdfPath];
-	[request startSynchronous];
+	NSString *imgSavedPath = [documentsDirectory stringByAppendingString:@"/"];
+	imgSavedPath = [imgSavedPath stringByAppendingString:page];
+	imgSavedPath = [imgSavedPath stringByAppendingString:@".png"];
+	NSLog(@"path img : %@",imgSavedPath);
+	
+	if(![fileManager fileExistsAtPath: imgSavedPath]){
+		NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:[[delegate fileManager] firstAvailableFileNameForName:_url]];
+		pdfPath = [pdfPath stringByAppendingString:@"/"];
+		pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
+		pdfPath = [pdfPath stringByAppendingString:@".png"];
+		//NSLog(@"pdfPath %@",pdfPath);
+		[request setDidStartSelector:@selector(requestStartedDownloadImg:)];
+		[request setDidFinishSelector:@selector(requestFinishedDownloadImg:)];
+		[request setDidFailSelector:@selector(requestFailedDownloadImg:)];
+		[request setUseKeychainPersistence:YES];
+		[request setDownloadDestinationPath:pdfPath];
+		[request startSynchronous];
+	}
+
 }
 
 -(void)requestStarted:(ASIHTTPRequest *)request{
@@ -351,6 +361,8 @@
 	//[downloadInProgress setHidden:YES];
 	//[progressView setHidden:YES];
 	pdfInDownload = NO;
+	UIProgressView *progressViewDownload = [mvc.progressViewDict objectForKey:page];
+	progressViewDownload.hidden = YES;
 }
 
 - (void)updateCorner{

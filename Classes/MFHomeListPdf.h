@@ -50,7 +50,7 @@
 @property (nonatomic) BOOL temp;
 @property (nonatomic, assign) MenuViewController *mvc;
 @property (nonatomic, assign) int numDocumento;
-@property (nonatomic,copy) NSString *page;
+@property (nonatomic,retain) NSString *page;
 @property (nonatomic,retain ) UIButton *removeButton;
 @property (nonatomic,retain ) UIButton *openButton;
 @property (nonatomic,retain ) UIButton *openButtonFromImage;

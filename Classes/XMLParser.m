@@ -13,7 +13,7 @@
 @implementation XMLParser
 
 @synthesize mvc;
-@synthesize pdfInDownload;
+@synthesize pdfInDownload,errorDownload;
 @synthesize currentString;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -33,6 +33,7 @@
 	// self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	//downloadInProgress.hidden=YES;
 	pdfInDownload = NO;
+	errorDownload = NO;
 }
 
 
@@ -122,13 +123,14 @@
 	
     // here, for some reason you have to use NSClassFromString when trying to alloc NSXMLParser, otherwise you will get an object not found error
     // this may be necessary only for the toolchain
-    //xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
 	
-	
-				 
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"homePdf" ofType:@"xml"];  
-	NSData *fileData = [NSData dataWithContentsOfFile:filePath]; 
-	xmlParser = [[NSXMLParser alloc] initWithData:fileData];
+	if (errorDownload) {
+		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"homePdf" ofType:@"xml"];  
+		NSData *fileData = [NSData dataWithContentsOfFile:filePath]; 
+		xmlParser = [[NSXMLParser alloc] initWithData:fileData];
+	}else {
+		xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+	}
 	
     // Set self as the delegate of the parser so that it will receive the parser delegate methods callbacks.
     [xmlParser setDelegate:self];
@@ -145,9 +147,8 @@
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
 	NSString * errorString = [NSString stringWithFormat:@"Unable to download story feed from web site (Error code %i )", [parseError code]];
 	NSLog(@"error parsing XML: %@", errorString);
-	
-	UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:@"Error loading content" message:errorString delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-	[errorAlert show];
+	errorDownload = YES;
+	[self parseXMLFileAtURL:@"http://go.mobfarm.eu/pdf/xmldaparsare.xml"];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{            
@@ -189,6 +190,8 @@
 	//return stories;
 	
 	mvc.pdfHome = stories;
+	
+	errorDownload = NO;
 
 }
 

@@ -38,10 +38,12 @@
 	MenuViewController *mvc ;
 	
 	BOOL pdfInDownload;
+	BOOL errorDownload;
 }
 
 @property (nonatomic, assign) MenuViewController *mvc;
 @property (readwrite) BOOL pdfInDownload;
+@property (readwrite) BOOL errorDownload;
 @property (nonatomic,retain ) NSString *currentString;
 
 -(void)downloadPDF:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf;

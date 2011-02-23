@@ -148,7 +148,7 @@
 		CFRelease(snippetAttrString);
 		
 		// Rect for the snippet frame.
-		CGRect snippetRect = CGRectMake(8, 0, contentRect.size.width-12, contentRect.size.height-10);
+		CGRect snippetRect = CGRectMake(8, 0, contentRect.size.width, contentRect.size.height-10);
 		
 		// Cut and trim if necessary.
 		CFRange snippetFitRange;

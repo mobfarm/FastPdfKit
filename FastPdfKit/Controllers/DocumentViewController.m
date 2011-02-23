@@ -173,7 +173,7 @@
 		
 		// If nil, allocate and initialize it.
 		
-		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(10, 40, 230, 76)];
+		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(10, 50, 230, 96)];
 		
 	} else {
 		
@@ -1008,7 +1008,7 @@
 	
 	NSUInteger numpagePDF = [[self document]numberOfPages];
 	for (int i=0; i<numpagePDF ; i++) {
-		UIImage *img = [UIImage imageNamed:@"icon.png"];
+		UIImage *img = [UIImage imageNamed:@"Icon.png"];
 		//CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
 		//UIImage *img = [UIImage imageWithCGImage:imgthumb];
 		
