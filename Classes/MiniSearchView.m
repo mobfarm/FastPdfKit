@@ -306,6 +306,13 @@
 		CGSize size = frame.size;
 		UIFont *smallFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 		
+		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width,size.height)];
+		[image setImage:[UIImage imageNamed:@"minisearch_next.png"]];
+		[image setUserInteractionEnabled:NO];
+		[self addSubview:image];
+		[image release];
+		
+		
 		// Next button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(size.width-34, size.height-(4+20), 30, 20);
@@ -370,6 +377,7 @@
 		SearchResultView *aSRV = [[SearchResultView alloc]initWithFrame:CGRectMake(4, 4, size.width-8, size.height-(4+4+4+20))];
 		[aSRV setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
 		self.searchResultView = aSRV;
+		[aSRV setBackgroundColor:[UIColor clearColor]];
 		[self addSubview:aSRV];
 		[aSRV release];
 		

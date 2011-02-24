@@ -137,10 +137,8 @@
 		//CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTForegroundColorAttributeName, red);
 		CGColorRelease(red);
 		
-		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 15.0, NULL);
+		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 12.0, NULL);
 		 [snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(boldRange.location, boldRange.length)];
-		//[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:CFRangeMake(boldRange.location, boldRange.length)];
-		
 
 		
 		// Framesetter as before.
