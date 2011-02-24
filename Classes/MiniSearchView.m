@@ -327,7 +327,6 @@
 		[self addSubview:aButton];
 		[aButton release];
 		
-		
 		// Prev button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(8, size.height-28, 30, 20);

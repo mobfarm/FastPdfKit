@@ -174,7 +174,7 @@
 		
 		// If nil, allocate and initialize it.
 		
-		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(10, 50, 230, 96)];
+		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(10, 50, 270, 96)];
 		
 	} else {
 		
@@ -1113,6 +1113,7 @@
 		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
 														initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		
+		[OutlineBarButtonItem setWidth:60];
 		
 		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
 												   initWithImage:[UIImage imageNamed:@"zoomUnlock.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
@@ -1138,6 +1139,7 @@
 																								target:nil
 																								action:nil];
 		
+		
 		NSArray *items = [NSArray arrayWithObjects:dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
 		
 		//NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
@@ -1154,8 +1156,6 @@
 		[numberOfPageTitle release];
 		[toolbar setItems:items animated:NO];
 	
-		
-		
 	} else {
 		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
 												  initWithImage:[UIImage imageNamed:@"bookmark_add_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];

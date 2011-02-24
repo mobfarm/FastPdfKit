@@ -90,7 +90,7 @@
 		
 		// 1) Let's draw the Page X label first.
 		
-		// Set the text matrix to the identity.
+		/*// Set the text matrix to the identity.
 		CGContextSaveGState(ctx);
 		
 		CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
@@ -113,7 +113,7 @@
 		
 		CFRelease(labelLine);
 		
-		CGContextRestoreGState(ctx);
+		CGContextRestoreGState(ctx);*/
 		
 		// 2) Now let's proceed with the snippet.
 		
@@ -138,7 +138,7 @@
 		CGColorRelease(red);
 		
 		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 12.0, NULL);
-		 [snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(boldRange.location, boldRange.length)];
+		[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(boldRange.location, boldRange.length)];
 
 		
 		// Framesetter as before.
