@@ -41,7 +41,7 @@
 @synthesize thumbSliderView,aTSVH;
 @synthesize popupBookmark,popupOutline,popupSearch,popupText;
 @synthesize senderText,senderSearch;
-@synthesize heightToolbar;
+@synthesize heightToolbar,widthborder;
 
 #pragma mark Thumbnail utility functions
 
@@ -341,6 +341,7 @@
 				popupBookmark = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
 				[popupBookmark setPopoverContentSize:CGSizeMake(372, 650)];
 				[popupBookmark presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+				[popupBookmark setDelegate:self];
 				visibleBookmark=YES;
 			}else {
 				[self presentModalViewController:bookmarksVC animated:YES];
@@ -424,6 +425,7 @@
 			popupOutline = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
 			[popupOutline setPopoverContentSize:CGSizeMake(372, 650)];
 			[popupOutline presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[popupOutline setDelegate:self];
 			visibleOutline=YES;
 		}else {
 			[self presentModalViewController:outlineVC animated:YES];
@@ -591,6 +593,7 @@
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
 	[thumbsliderHorizontal goToPage:page-1 animated:YES];
+	[self setNumberOfPageToolbar];
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didChangeModeTo:(MFDocumentMode)mode automatic:(BOOL)automatically {
@@ -650,7 +653,9 @@
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point {
 	
 	
-	[self dismissAllPopoversFrom:self];
+	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
+		[self dismissAllPopoversFrom:self];
+	}
 	
 	if(waitingForTextInput) {
 		
@@ -685,10 +690,20 @@
 	}
 }
 
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController{
+	visibleBookmark=NO;
+	visibleOutline=NO;
+}
+
+
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point {
 	
 	// If the flag waitingForTextInput is enabled, we use the touch event to select the page. Otherwise,
 	// we are free to use it to show/hide the selected HUD elements.
+	
+	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
+		[self dismissAllPopoversFrom:self];
+	}
 	
 	
 	if(!waitingForTextInput) {
@@ -956,12 +971,14 @@
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 200)];
+		widthborder = 100;
 		ySlider = 175;
 		heightSlider = 20 ;
 		yToolbarThumb = ySlider-15;
 		heightToolbarThumb = 40;
 	}else {
 		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 100)];
+		widthborder = 50;
 		ySlider = 70 ;
 		heightSlider = 10;
 		yToolbarThumb = ySlider-8;
@@ -982,7 +999,7 @@
 	[toolbarThumb release];
 	
 	//Page slider.
-	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(aTSVH.frame.size.width/4, ySlider, aTSVH.frame.size.width/2,heightSlider)];
+	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(widthborder/2, ySlider, aTSVH.frame.size.width-widthborder,heightSlider)];
 	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
 	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
 	[aSlider setMinimumValue:1.0];
@@ -1078,6 +1095,9 @@
 	// toolbar.frame = CGRectMake(0, 0, 768, 44);
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		
+		UIBarButtonItem *numberOfPageTitle = [[UIBarButtonItem alloc] initWithCustomView:numberOfPageTitleToolbar];
+		
 		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
 												  initWithImage:[UIImage imageNamed:@"bookmark_add.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
 		
@@ -1117,7 +1137,9 @@
 																								target:nil
 																								action:nil];
 		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
+		NSArray *items = [NSArray arrayWithObjects:dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
+		
+		//NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem, itemSpazioBarButtnItem ,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,itemSpazioBarButtnItem,OutlineBarButtonItem,changeModeBarButtonItem,bookmarkBarButtonItem, nil];
 		
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];
@@ -1128,7 +1150,9 @@
 		[zoomLockBarButtonItem release];
 		//[thumbnailBarButtonItem release];
 		[textBarButtonItem release];
+		[numberOfPageTitle release];
 		[toolbar setItems:items animated:NO];
+	
 		
 		
 	} else {
@@ -1201,6 +1225,36 @@
 	
 	[self.view addSubview:toolbar];
  }
+
+-(void)initNumberOfPageToolbar{
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
+		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:20.0];
+	} else {
+		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 23)];
+		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:10.0];
+	}
+	
+	numberOfPageTitleToolbar.textAlignment = UITextAlignmentLeft;
+	numberOfPageTitleToolbar.backgroundColor = [UIColor clearColor];
+	numberOfPageTitleToolbar.shadowColor = [UIColor whiteColor];
+	numberOfPageTitleToolbar.shadowOffset = CGSizeMake(0, 1);
+	numberOfPageTitleToolbar.textColor = [UIColor whiteColor];
+	//NSString *ToolbarTextTitle = [[NSString alloc]initWithString:@"RASSEGNA STAMPA ETT - "];
+	NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
+	//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:@" di "];
+	//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:[@"%i",numberOfPages]];
+	numberOfPageTitleToolbar.text = ToolbarTextTitle;
+	
+}
+
+-(void)setNumberOfPageToolbar{
+	NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
+	//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:@" di "];
+	//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:[@"%i",numberOfPages]];
+	numberOfPageTitleToolbar.text = ToolbarTextTitle;
+	
+}
 
 -(void)showToolbar{
 		toolbar.hidden = NO;

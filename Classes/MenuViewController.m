@@ -54,6 +54,7 @@
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	aDocViewController.nomefile=DOC_PLAIN;
+	[aDocViewController initNumberOfPageToolbar];
 	//
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
@@ -99,6 +100,7 @@
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	aDocViewController.nomefile=nomePdfDaAprire;
+	[aDocViewController initNumberOfPageToolbar];
 	//
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
@@ -253,8 +255,8 @@
 		xSxThumb = 20;
 		xDxThumb = 380;
 		heightFrame = 325;
-		widthScrollView=768;
-		heightScrollView=870;
+		widthScrollView=771;
+		heightScrollView=875;
 		heightViewDetail=665;
 		yScrollView=130;
 	

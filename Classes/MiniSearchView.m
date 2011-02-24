@@ -307,7 +307,7 @@
 		UIFont *smallFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 		
 		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width,size.height)];
-		[image setImage:[UIImage imageNamed:@"minisearch_next.png"]];
+		[image setImage:[UIImage imageNamed:@"minisearch_back.png"]];
 		[image setUserInteractionEnabled:NO];
 		[self addSubview:image];
 		[image release];
@@ -315,7 +315,7 @@
 		
 		// Next button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(size.width-34, size.height-(4+20), 30, 20);
+		aButton.frame = CGRectMake(size.width-38, size.height-28, 30, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateDisabled];
 		[[aButton titleLabel] setFont:smallFont];
@@ -330,7 +330,7 @@
 		
 		// Prev button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(4, size.height-(4+20), 30, 20);
+		aButton.frame = CGRectMake(8, size.height-28, 30, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateDisabled];
 		//[aButton setTitle:@"<<" forState:UIControlStateNormal];
@@ -347,7 +347,7 @@
 		
 		// Cancel button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(size.width*0.5-(2+60), size.height-(4+20), 60, 20);
+		aButton.frame = CGRectMake(size.width*0.5-(2+60), size.height-28, 60, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_cancel.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_cancel.png"] forState:UIControlStateDisabled];
 		[[aButton titleLabel] setFont:smallFont];
@@ -362,7 +362,7 @@
 		
 		// Full button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(size.width*0.5+2, size.height-(4+20), 60, 20);
+		aButton.frame = CGRectMake(size.width*0.5+2, size.height-28, 60, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_full.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_full.png"] forState:UIControlStateDisabled];
 		[[aButton titleLabel]setFont:smallFont];

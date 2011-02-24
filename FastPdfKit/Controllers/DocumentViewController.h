@@ -39,6 +39,7 @@
 	UIButton *textButton;
 	
 	UILabel *pageLabel;
+	UILabel *numberOfPageTitleToolbar;
 	UISlider *pageSlider;
 	
 	BOOL hudHidden; // HUD status flag.
@@ -100,9 +101,12 @@
 	UIImage *imgChangeLeadClick;
 	
 	CGFloat heightToolbar;
+	CGFloat widthborder;
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
+-(void)initNumberOfPageToolbar;
+-(void)setNumberOfPageToolbar;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 
@@ -141,6 +145,7 @@
 @property (nonatomic, retain) UIPopoverController *popupSearch;
 @property (nonatomic, retain) UIPopoverController *popupText;
 @property CGFloat heightToolbar;
+@property CGFloat widthborder;
 
 // Swapping search views.
 -(void)switchToMiniSearchView:(MFTextItem *)index;

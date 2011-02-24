@@ -88,6 +88,7 @@
 		6FEE963D1309917C00CCA999 /* pdf5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96371309917C00CCA999 /* pdf5.png */; };
 		6FEE963E1309917C00CCA999 /* pdf6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96381309917C00CCA999 /* pdf6.png */; };
 		6FF57BD31305763A0019F4A0 /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF57BD21305763A0019F4A0 /* MFHomeListPdf.m */; };
+		6FFC6ED71316815B00A7AB8D /* minisearch_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFC6ED61316815B00A7AB8D /* minisearch_back.png */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -230,6 +231,7 @@
 		6FEE96381309917C00CCA999 /* pdf6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pdf6.png; path = copertine/pdf6.png; sourceTree = "<group>"; };
 		6FF57BD1130576390019F4A0 /* MFHomeListPdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHomeListPdf.h; sourceTree = "<group>"; };
 		6FF57BD21305763A0019F4A0 /* MFHomeListPdf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHomeListPdf.m; sourceTree = "<group>"; };
+		6FFC6ED61316815B00A7AB8D /* minisearch_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minisearch_back.png; path = img/minisearch_back.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* FastPDFKit_Sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FastPDFKit_Sample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		950B37C1125CBEA5007BDDA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -463,6 +465,7 @@
 		6FEE9700130A99FB00CCA999 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6FFC6ED61316815B00A7AB8D /* minisearch_back.png */,
 				6FBD0F05131509D1007097BB /* minisearch_cancel.png */,
 				6FBD0F06131509D1007097BB /* minisearch_full.png */,
 				6FBD0F07131509D1007097BB /* minisearch_next.png */,
@@ -649,6 +652,7 @@
 				6FBD0F0A131509D1007097BB /* minisearch_full.png in Resources */,
 				6FBD0F0B131509D1007097BB /* minisearch_next.png in Resources */,
 				6FBD0F0C131509D1007097BB /* minisearch_prev.png in Resources */,
+				6FFC6ED71316815B00A7AB8D /* minisearch_back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

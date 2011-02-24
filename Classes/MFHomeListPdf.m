@@ -125,7 +125,7 @@
 	
 		
 		
-		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(15, yProgressBar, size.width-10, size.height-10)];
+		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(21, yProgressBar, size.width-24, size.height-10)];
 		progressDownload.progressViewStyle = UIActivityIndicatorViewStyleGray;
 		progressDownload.progress= 0.0;
 		progressDownload.hidden = TRUE;
