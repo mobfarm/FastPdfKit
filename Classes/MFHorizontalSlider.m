@@ -22,7 +22,7 @@
 	thumbnailNumbers = [[NSMutableArray alloc] initWithArray:images];
 	nomecartellathumb = _nomecartellapdf;
 	
-	[self.view setFrame:CGRectMake(0, 0, sliderWidth, thumbHeight)];
+	[self.view setFrame:CGRectMake(0,0, sliderWidth, thumbHeight)];
 	
 	[self.view setBackgroundColor:[UIColor blackColor]];
 	return self;
@@ -60,7 +60,10 @@
 	 x = (sliderWidth-width)/2;
 	 }
 	 */
-	thumbnailsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 10, sliderWidth, thumbHeight+20)]; // Fissare dimensioni
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		thumbHeight = thumbHeight+26;
+	}
+	thumbnailsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, sliderWidth, thumbHeight)]; // Fissare dimensioni
 	[thumbnailsView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
 	[thumbnailsView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1]];
 	[thumbnailsView setDelegate:self];
@@ -136,11 +139,14 @@
 	[self loadAndUnloadWithPage:currentThumbnail];
 }
 - (void)loadAndUnloadWithPage:(int)_page{
-	if (_page - 7 > 0) {
-		for(unsigned i = 0; i < _page - 7; i++){
+	if (_page - 10 > 0) {
+		for(unsigned i = 0; i < _page - 10; i++){
 			[self unloadThumbnailViewWithPage:i];
 		}		
 	}
+	[self loadThumbnailViewWithPage:_page - 10];
+	[self loadThumbnailViewWithPage:_page - 9];
+	[self loadThumbnailViewWithPage:_page - 8];
 	[self loadThumbnailViewWithPage:_page - 7];
 	[self loadThumbnailViewWithPage:_page - 6];
 	[self loadThumbnailViewWithPage:_page - 5];
@@ -156,8 +162,12 @@
 	[self loadThumbnailViewWithPage:_page + 5];
 	[self loadThumbnailViewWithPage:_page + 6];
 	[self loadThumbnailViewWithPage:_page + 7];
-	if (_page + 8 < [thumbnailNumbers count]) {
-		for(unsigned j = _page + 8; j < [thumbnailNumbers count]; j++){
+	[self loadThumbnailViewWithPage:_page + 8];
+	[self loadThumbnailViewWithPage:_page + 9];
+	[self loadThumbnailViewWithPage:_page + 10];
+	[self loadThumbnailViewWithPage:_page + 11];
+	if (_page + 12 < [thumbnailNumbers count]) {
+		for(unsigned j = _page + 12; j < [thumbnailNumbers count]; j++){
 			[self unloadThumbnailViewWithPage:j];
 		}
 	}

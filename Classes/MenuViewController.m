@@ -266,8 +266,8 @@
 		xSxThumb = 10;
 		xDxThumb = 160;
 		heightFrame = 115;
-		widthScrollView=320;
-		heightScrollView=400;
+		widthScrollView=323;
+		heightScrollView=404;
 		heightViewDetail=240;
 		yScrollView=60;
 	}

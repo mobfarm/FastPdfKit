@@ -970,14 +970,14 @@
 	CGFloat heightToolbarThumb = 0;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 200)];
+		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 200)];
 		widthborder = 100;
 		ySlider = 175;
 		heightSlider = 20 ;
 		yToolbarThumb = ySlider-15;
 		heightToolbarThumb = 40;
 	}else {
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 100)];
+		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 130)];
 		widthborder = 50;
 		ySlider = 70 ;
 		heightSlider = 10;
@@ -988,7 +988,6 @@
 	
 	[aTSVH setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
 	[aTSVH setAutoresizesSubviews:YES];
-	//[aTSVH setBackgroundColor:[UIColor blackColor]];
 	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
 	
 	UIToolbar *toolbarThumb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, yToolbarThumb, self.view.frame.size.width, heightToolbarThumb)];
@@ -1288,7 +1287,7 @@
 		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
 		
 	}else {
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(50, 66) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
+		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(50, 66) andWidth:self.view.frame.size.width andType:1 andNomeFile:nomefile];
 		anHorizontalThumbSlider.delegate = self;
 		
 		self.thumbsliderHorizontal = anHorizontalThumbSlider;

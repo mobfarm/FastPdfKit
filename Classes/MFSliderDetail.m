@@ -76,11 +76,11 @@
 			[color release];
 			[self.view addSubview:corner];*/
 			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(10, 84, size.width-30, size.height-30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(10, 86, size.width-30, size.height-30) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor whiteColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
-			pageLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(21.0)];
+			pageLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(20.0)];
 			NSString *titlelabel = [NSString stringWithFormat:@"%i",page];
 			[pageLabel setText:titlelabel]; 
 			[self.view addSubview:pageLabel];
