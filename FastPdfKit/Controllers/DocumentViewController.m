@@ -37,10 +37,11 @@
 @synthesize thumbnailView;
 @synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
 @synthesize thumbImgArray;
-@synthesize nomefile,thumbsViewVisible,visibleBookmark,visibleSearch,visibleText;
+@synthesize nomefile,thumbsViewVisible,visibleBookmark,visibleOutline,visibleSearch,visibleText;
 @synthesize thumbSliderView,aTSVH;
 @synthesize popupBookmark,popupOutline,popupSearch,popupText;
-@synthesize senderText,senderSearch;
+@synthesize senderText;
+@synthesize senderSearch;
 @synthesize heightToolbar,widthborder;
 
 #pragma mark Thumbnail utility functions
@@ -149,7 +150,7 @@
 			//se è aperto il popover slide verticale va chiuso
 		popupSearch = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
 		[popupSearch setPopoverContentSize:CGSizeMake(450, 650)];
-		[popupSearch presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		[popupSearch presentPopoverFromBarButtonItem:senderSearch permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 		visibleSearch=YES;
 	}else {
 		[self presentModalViewController:(UIViewController *)controller animated:YES];
@@ -267,6 +268,7 @@
 	// Get the instance of the Search Manager lazily and then present a full sized search view controller
 	// to the user. The full search view controller will allow the user to type in a search term and
 	// start the search. Look at the details in the utility method implementation.
+	senderSearch = sender;
 	
 	[self dismissAllPopoversFrom:sender];
 	

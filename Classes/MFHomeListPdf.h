@@ -10,7 +10,7 @@
 #import "ASIHTTPRequest.h"
 #import "MenuViewController.h"
 
-@interface MFHomeListPdf : UIViewController {
+@interface MFHomeListPdf : UIViewController <UIActionSheetDelegate>{
 	id object;
 	NSString *thumbnail;
 	CGSize size;
@@ -67,5 +67,7 @@
 - (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size;
 - (void)setSelected:(BOOL)selected;
 - (void)updateCorner;
+- (void)downloadPDF:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf;
+- (void)downloadImage:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf;
 
 @end

@@ -18,6 +18,7 @@
 @synthesize progressDownload;
 @synthesize yProgressBar,xBtnRemove,yBtnRemove,xBtnOpen,yBtnOpen,widthButton,heightButton;
 @synthesize imgThumb;
+@synthesize linkDownloadPdf;
 
 
 // Load the view nib and initialize the pageNumber ivar.

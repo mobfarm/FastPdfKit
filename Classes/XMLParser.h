@@ -11,7 +11,7 @@
 #import "MenuViewController.h"
 
 
-@interface XMLParser : UIViewController <ASIHTTPRequestDelegate>{
+@interface XMLParser : UIViewController <ASIHTTPRequestDelegate,UIActionSheetDelegate,NSXMLParserDelegate>{
 	
 	
 	
@@ -47,5 +47,6 @@
 @property (nonatomic,retain ) NSString *currentString;
 
 -(void)downloadPDF:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf;
+-(void)parseXMLFileAtURL:(NSString *)URL;
 
 @end

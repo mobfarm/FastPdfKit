@@ -138,8 +138,8 @@
 @property  BOOL visibleOutline;
 @property  BOOL visibleSearch;
 @property  BOOL visibleText;
-@property id senderSearch;
-@property id senderText;
+@property (nonatomic, retain) id senderSearch;
+@property (nonatomic, retain) id senderText;
 @property (nonatomic, retain) UIPopoverController *popupBookmark;
 @property (nonatomic, retain) UIPopoverController *popupOutline;
 @property (nonatomic, retain) UIPopoverController *popupSearch;
