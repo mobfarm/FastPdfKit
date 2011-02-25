@@ -1042,7 +1042,7 @@
 			[numPaginaLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
 			//NSString *numPaginaLabel = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
 		
-			numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
+			numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
 			numPaginaLabel.textAlignment = UITextAlignmentLeft;
 			numPaginaLabel.backgroundColor = [UIColor clearColor];
 			numPaginaLabel.shadowColor = [UIColor whiteColor];
@@ -1053,11 +1053,7 @@
 			[numPaginaLabel release];
 		}
 	
-	
-
-	
 		[self.view addSubview:aTSVH];
-		// [thumbSliderViewHorizontal setHidden:YES];
 		self.thumbSliderViewHorizontal = aTSVH;
 		[aTSVH release];
 	}
@@ -1279,7 +1275,7 @@
 		numberOfPageTitleToolbar.shadowOffset = CGSizeMake(0, 1);
 		numberOfPageTitleToolbar.textColor = [UIColor whiteColor];
 		//NSString *ToolbarTextTitle = [[NSString alloc]initWithString:@"RASSEGNA STAMPA ETT - "];
-		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
+		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
 		//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:@" di "];
 		//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:[@"%i",numberOfPages]];
 		numberOfPageTitleToolbar.text = ToolbarTextTitle;
@@ -1294,7 +1290,7 @@
 
 -(void)setNumberOfPageToolbar{
 	
-	NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
+	NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
 
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		numberOfPageTitleToolbar.text = ToolbarTextTitle;

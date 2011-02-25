@@ -102,6 +102,7 @@
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	aDocViewController.nomefile=nomePdfDaAprire;
+	aDocViewController.graphicsMode = graphicsMode;
 	[aDocViewController initNumberOfPageToolbar];
 	//
 	//	In this example we use a navigation controller to present the document view controller but you can present it
