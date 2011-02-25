@@ -9,6 +9,7 @@
 #import "OutlineViewController.h"
 #import "MFPDFOutlineEntry.h"
 #import "DocumentViewController.h"
+#import "DocumentViewController_Kiosk.h"
 
 @implementation OutlineViewController
 
@@ -20,9 +21,8 @@
 -(IBAction)actionBack:(id)sender {
 	
 	// Dismiss this view controller (it only if this is presented as a model view controller, so be careful).
-	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[[self delegate]dismissAllPopoversFrom:self];
+		[[self delegate]actionDone:self];
 	}else {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 		//delegate.visibleOutline = NO;

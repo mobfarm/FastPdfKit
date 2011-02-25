@@ -22,11 +22,129 @@
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01E56DF912FB26FC007D5018 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E56DF812FB26FC007D5018 /* libFastPDFKit.a */; };
 		01F434C412ACD94D00D08021 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
-		01FB0F95125CB46A002D4337 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
 		1D3623260D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		6F563BFD13044392005CF390 /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F563BFB13044392005CF390 /* Kiosk_ipad.xib */; };
-		6F563BFE13044392005CF390 /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F563BFC13044392005CF390 /* Kiosk_phone.xib */; };
+		6F4BA8C91317C11F008C5A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		6F4BA8D81317C39D008C5A7E /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F563BFB13044392005CF390 /* Kiosk_ipad.xib */; };
+		6F4BA8D91317C39D008C5A7E /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F563BFC13044392005CF390 /* Kiosk_phone.xib */; };
+		6F4BA8DD1317C3A7008C5A7E /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F563BFB13044392005CF390 /* Kiosk_ipad.xib */; };
+		6F4BA8DE1317C3A7008C5A7E /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F563BFC13044392005CF390 /* Kiosk_phone.xib */; };
+		6F4BA8DF1317C3A7008C5A7E /* BookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A3551270A2A700F65929 /* BookmarkView.xib */; };
+		6F4BA8E01317C3A7008C5A7E /* OutlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A35A1270A2A700F65929 /* OutlineView.xib */; };
+		6F4BA8E11317C3A7008C5A7E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A1321270948600F65929 /* MainWindow.xib */; };
+		6F4BA8E21317C3A7008C5A7E /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A1331270948600F65929 /* MenuView_pad.xib */; };
+		6F4BA8E31317C3A7008C5A7E /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A1341270948600F65929 /* MenuView_phone.xib */; };
+		6F4BA8E41317C3A7008C5A7E /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BA8C41317BFCF008C5A7E /* MainWindow_Kiosk.xib */; };
+		6F4BA8E51317C3A8008C5A7E /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BA8C41317BFCF008C5A7E /* MainWindow_Kiosk.xib */; };
+		6F4BA8E61317C3B6008C5A7E /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9597F994125D17E400E17B47 /* iTunesArtwork */; };
+		6F4BA8E71317C3B6008C5A7E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
+		6F4BA8E81317C3B6008C5A7E /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
+		6F4BA8E91317C3B6008C5A7E /* Icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon144.png */; };
+		6F4BA8EA1317C3B6008C5A7E /* homePdf.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6FCADC7E130EC39E00F978A9 /* homePdf.xml */; };
+		6F4BA8EB1317C3C5008C5A7E /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6D226E13059E5B0053696A /* libz.1.2.3.dylib */; };
+		6F4BA8EC1317C3C5008C5A7E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
+		6F4BA8ED1317C3C5008C5A7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
+		6F4BA8EE1317C3C5008C5A7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
+		6F4BA8EF1317C3C5008C5A7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
+		6F4BA8F01317C3C5008C5A7E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
+		6F4BA8F11317C3C5008C5A7E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6D226A13059E0F0053696A /* CFNetwork.framework */; };
+		6F4BA8F21317C3C5008C5A7E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6D22B713059FBD0053696A /* SystemConfiguration.framework */; };
+		6F4BA8F31317C3C5008C5A7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6D22BB13059FCC0053696A /* MobileCoreServices.framework */; };
+		6F4BA8F41317C45D008C5A7E /* pdf1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96331309917C00CCA999 /* pdf1.png */; };
+		6F4BA8F51317C45D008C5A7E /* pdf2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96341309917C00CCA999 /* pdf2.png */; };
+		6F4BA8F61317C45D008C5A7E /* pdf3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96351309917C00CCA999 /* pdf3.png */; };
+		6F4BA8F71317C45D008C5A7E /* pdf4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96361309917C00CCA999 /* pdf4.png */; };
+		6F4BA8F81317C45D008C5A7E /* pdf5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96371309917C00CCA999 /* pdf5.png */; };
+		6F4BA8F91317C45D008C5A7E /* pdf6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96381309917C00CCA999 /* pdf6.png */; };
+		6F4BA8FA1317C463008C5A7E /* minisearch_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFC6ED61316815B00A7AB8D /* minisearch_back.png */; };
+		6F4BA8FB1317C463008C5A7E /* minisearch_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F05131509D1007097BB /* minisearch_cancel.png */; };
+		6F4BA8FC1317C463008C5A7E /* minisearch_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F06131509D1007097BB /* minisearch_full.png */; };
+		6F4BA8FD1317C463008C5A7E /* minisearch_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F07131509D1007097BB /* minisearch_next.png */; };
+		6F4BA8FE1317C463008C5A7E /* minisearch_prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F08131509D1007097BB /* minisearch_prev.png */; };
+		6F4BA8FF1317C463008C5A7E /* backThumb_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE49A1313CE4400D7D279 /* backThumb_iphone.png */; };
+		6F4BA9001317C463008C5A7E /* backThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE49B1313CE4400D7D279 /* backThumb.png */; };
+		6F4BA9011317C463008C5A7E /* bookmark_add_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42013139FD300D7D279 /* bookmark_add_phone.png */; };
+		6F4BA9021317C463008C5A7E /* bookmark_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42113139FD300D7D279 /* bookmark_add.png */; };
+		6F4BA9031317C463008C5A7E /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42213139FD300D7D279 /* border.png */; };
+		6F4BA9041317C463008C5A7E /* changeModeDouble_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42313139FD300D7D279 /* changeModeDouble_phone.png */; };
+		6F4BA9051317C463008C5A7E /* changeModeDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42413139FD300D7D279 /* changeModeDouble.png */; };
+		6F4BA9061317C463008C5A7E /* changeModeSingle_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42513139FD300D7D279 /* changeModeSingle_phone.png */; };
+		6F4BA9071317C463008C5A7E /* changeModeSingle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42613139FD300D7D279 /* changeModeSingle.png */; };
+		6F4BA9081317C463008C5A7E /* direction_l2r_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42713139FD300D7D279 /* direction_l2r_phone.png */; };
+		6F4BA9091317C463008C5A7E /* direction_l2r.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42813139FD300D7D279 /* direction_l2r.png */; };
+		6F4BA90A1317C463008C5A7E /* direction_r2l_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42913139FD300D7D279 /* direction_r2l_phone.png */; };
+		6F4BA90B1317C463008C5A7E /* direction_r2l.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42A13139FD300D7D279 /* direction_r2l.png */; };
+		6F4BA90C1317C463008C5A7E /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42B13139FD300D7D279 /* download.png */; };
+		6F4BA90D1317C463008C5A7E /* header_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42C13139FD300D7D279 /* header_iphone.png */; };
+		6F4BA90E1317C463008C5A7E /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42D13139FD300D7D279 /* header.png */; };
+		6F4BA90F1317C463008C5A7E /* indice_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42E13139FD300D7D279 /* indice_phone.png */; };
+		6F4BA9101317C463008C5A7E /* indice.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42F13139FD300D7D279 /* indice.png */; };
+		6F4BA9111317C463008C5A7E /* pagelead_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43013139FD300D7D279 /* pagelead_click.png */; };
+		6F4BA9121317C463008C5A7E /* pagelead_click_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE9571314439200D7D279 /* pagelead_click_phone.png */; };
+		6F4BA9131317C463008C5A7E /* pagelead_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43113139FD300D7D279 /* pagelead_phone.png */; };
+		6F4BA9141317C463008C5A7E /* pagelead.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43213139FD300D7D279 /* pagelead.png */; };
+		6F4BA9151317C463008C5A7E /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43313139FD300D7D279 /* remove.png */; };
+		6F4BA9161317C463008C5A7E /* search_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43413139FD300D7D279 /* search_phone.png */; };
+		6F4BA9171317C463008C5A7E /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43513139FD300D7D279 /* search.png */; };
+		6F4BA9181317C463008C5A7E /* text_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43613139FD300D7D279 /* text_phone.png */; };
+		6F4BA9191317C463008C5A7E /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43713139FD300D7D279 /* text.png */; };
+		6F4BA91A1317C463008C5A7E /* view.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43813139FD300D7D279 /* view.png */; };
+		6F4BA91B1317C463008C5A7E /* X_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43913139FD300D7D279 /* X_phone.png */; };
+		6F4BA91C1317C463008C5A7E /* X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43A13139FD300D7D279 /* X.png */; };
+		6F4BA91D1317C463008C5A7E /* zoomLock_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43B13139FD300D7D279 /* zoomLock_phone.png */; };
+		6F4BA91E1317C463008C5A7E /* zoomLock.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43C13139FD300D7D279 /* zoomLock.png */; };
+		6F4BA91F1317C463008C5A7E /* zoomUnlock_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43D13139FD300D7D279 /* zoomUnlock_phone.png */; };
+		6F4BA9201317C463008C5A7E /* zoomUnlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE43E13139FD300D7D279 /* zoomUnlock.png */; };
+		6F4BA9221317C482008C5A7E /* BasicLauncherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F5A3541270A2A700F65929 /* BasicLauncherController.m */; };
+		6F4BA9231317C482008C5A7E /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F5A3571270A2A700F65929 /* BookmarkViewController.m */; };
+		6F4BA9241317C482008C5A7E /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F5A35C1270A2A700F65929 /* OutlineViewController.m */; };
+		6F4BA9261317C482008C5A7E /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */; };
+		6F4BA9271317C482008C5A7E /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93FB6D1304002B001C333F /* MFHorizontalSlider.m */; };
+		6F4BA9281317C482008C5A7E /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93FB6F1304002B001C333F /* MFSliderDetail.m */; };
+		6F4BA9291317C482008C5A7E /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF57BD21305763A0019F4A0 /* MFHomeListPdf.m */; };
+		6F4BA92A1317C482008C5A7E /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCADD22130EC7C600F978A9 /* XMLParser.m */; };
+		6F4BA92B1317C49C008C5A7E /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7312EF16B200DDC590 /* SearchManager.m */; };
+		6F4BA92C1317C49C008C5A7E /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7512EF16B200DDC590 /* MiniSearchView.m */; };
+		6F4BA92D1317C49C008C5A7E /* SearchView2_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0157CF7612EF16B200DDC590 /* SearchView2_phone.xib */; };
+		6F4BA92E1317C49C008C5A7E /* SearchView2_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0157CF7712EF16B200DDC590 /* SearchView2_pad.xib */; };
+		6F4BA92F1317C49C008C5A7E /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7912EF16B200DDC590 /* SearchResultCellView.m */; };
+		6F4BA9301317C49C008C5A7E /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7B12EF16B200DDC590 /* SearchResultView.m */; };
+		6F4BA9311317C49C008C5A7E /* TextDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF6C412CA474B0098E4B6 /* TextDisplayView.xib */; };
+		6F4BA9321317C49C008C5A7E /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */; };
+		6F4BA9331317C49C008C5A7E /* SearchView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF60512CA29EE0098E4B6 /* SearchView_pad.xib */; };
+		6F4BA9341317C49C008C5A7E /* SearchView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015EF60612CA29EE0098E4B6 /* SearchView_phone.xib */; };
+		6F4BA9351317C49C008C5A7E /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60812CA29EE0098E4B6 /* SearchViewController.m */; };
+		6F4BA9361317C49C008C5A7E /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60A12CA29EE0098E4B6 /* TextSearchOperation.m */; };
+		6F4BA9371317C4AB008C5A7E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D227413059EB80053696A /* ASIAuthenticationDialog.m */; };
+		6F4BA9381317C4AB008C5A7E /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D227713059EB80053696A /* ASIDownloadCache.m */; };
+		6F4BA9391317C4AB008C5A7E /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D227913059EB80053696A /* ASIFormDataRequest.m */; };
+		6F4BA93A1317C4AB008C5A7E /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D227B13059EB80053696A /* ASIHTTPRequest.m */; };
+		6F4BA93B1317C4AB008C5A7E /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D227F13059EB80053696A /* ASIInputStream.m */; };
+		6F4BA93C1317C4AB008C5A7E /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D228113059EB80053696A /* ASINetworkQueue.m */; };
+		6F4BA93D1317C4AB008C5A7E /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D228313059EB80053696A /* ASINSStringAdditions.m */; };
+		6F4BA93E1317C4B8008C5A7E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D229413059F150053696A /* Reachability.m */; };
+		6F4BA93F1317C4BF008C5A7E /* gitmanual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A3661270A2A700F65929 /* gitmanual.pdf */; };
+		6F4BA9401317C4BF008C5A7E /* gitmanualcrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A3671270A2A700F65929 /* gitmanualcrypt.pdf */; };
+		6F4BA9411317C4C7008C5A7E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E56DF812FB26FC007D5018 /* libFastPDFKit.a */; };
+		6F4BA95C1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4BA95B1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m */; };
+		6F4BA9831317E40E008C5A7E /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4BA9821317E40E008C5A7E /* DocumentViewController_Kiosk.m */; };
+		6F4BAA001317EC97008C5A7E /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4BA9FF1317EC97008C5A7E /* MenuViewController_Kiosk.m */; };
+		6F4BAA6D1317F06F008C5A7E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
+		6F4BAA7F1317F0FE008C5A7E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
+		6F4BAA801317F105008C5A7E /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
+		6F4BAB9B1317FD7E008C5A7E /* backThumb_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB8E1317FD7E008C5A7E /* backThumb_iphone@2x.png */; };
+		6F4BAB9C1317FD7E008C5A7E /* bookmark_add_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB8F1317FD7E008C5A7E /* bookmark_add_phone@2x.png */; };
+		6F4BAB9D1317FD7E008C5A7E /* changeModeDouble_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB901317FD7E008C5A7E /* changeModeDouble_phone@2x.png */; };
+		6F4BAB9E1317FD7E008C5A7E /* changeModeSingle_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB911317FD7E008C5A7E /* changeModeSingle_phone@2x.png */; };
+		6F4BAB9F1317FD7E008C5A7E /* direction_l2r_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB921317FD7E008C5A7E /* direction_l2r_phone@2x.png */; };
+		6F4BABA01317FD7E008C5A7E /* direction_r2l_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB931317FD7E008C5A7E /* direction_r2l_phone@2x.png */; };
+		6F4BABA11317FD7E008C5A7E /* header_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB941317FD7E008C5A7E /* header_iphone@2x.png */; };
+		6F4BABA21317FD7E008C5A7E /* pagelead_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB951317FD7E008C5A7E /* pagelead_phone@2x.png */; };
+		6F4BABA31317FD7E008C5A7E /* search_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB961317FD7E008C5A7E /* search_phone@2x.png */; };
+		6F4BABA41317FD7E008C5A7E /* text_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB971317FD7E008C5A7E /* text_phone@2x.png */; };
+		6F4BABA51317FD7E008C5A7E /* X_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB981317FD7E008C5A7E /* X_phone@2x.png */; };
+		6F4BABA61317FD7E008C5A7E /* zoomLock_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB991317FD7E008C5A7E /* zoomLock_phone@2x.png */; };
+		6F4BABA71317FD7E008C5A7E /* zoomUnlock_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4BAB9A1317FD7E008C5A7E /* zoomUnlock_phone@2x.png */; };
 		6F6AE43F13139FD300D7D279 /* bookmark_add_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42013139FD300D7D279 /* bookmark_add_phone.png */; };
 		6F6AE44013139FD300D7D279 /* bookmark_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42113139FD300D7D279 /* bookmark_add.png */; };
 		6F6AE44113139FD300D7D279 /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6AE42213139FD300D7D279 /* border.png */; };
@@ -80,14 +198,12 @@
 		6FBD0F0B131509D1007097BB /* minisearch_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F07131509D1007097BB /* minisearch_next.png */; };
 		6FBD0F0C131509D1007097BB /* minisearch_prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F08131509D1007097BB /* minisearch_prev.png */; };
 		6FCADC7F130EC39E00F978A9 /* homePdf.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6FCADC7E130EC39E00F978A9 /* homePdf.xml */; };
-		6FCADD23130EC7C600F978A9 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCADD22130EC7C600F978A9 /* XMLParser.m */; };
 		6FEE96391309917C00CCA999 /* pdf1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96331309917C00CCA999 /* pdf1.png */; };
 		6FEE963A1309917C00CCA999 /* pdf2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96341309917C00CCA999 /* pdf2.png */; };
 		6FEE963B1309917C00CCA999 /* pdf3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96351309917C00CCA999 /* pdf3.png */; };
 		6FEE963C1309917C00CCA999 /* pdf4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96361309917C00CCA999 /* pdf4.png */; };
 		6FEE963D1309917C00CCA999 /* pdf5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96371309917C00CCA999 /* pdf5.png */; };
 		6FEE963E1309917C00CCA999 /* pdf6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEE96381309917C00CCA999 /* pdf6.png */; };
-		6FF57BD31305763A0019F4A0 /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF57BD21305763A0019F4A0 /* MFHomeListPdf.m */; };
 		6FFC6ED71316815B00A7AB8D /* minisearch_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFC6ED61316815B00A7AB8D /* minisearch_back.png */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
@@ -152,6 +268,28 @@
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* FastPDFKit_Sample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_Sample_Prefix.pch; sourceTree = "<group>"; };
+		6F4BA8BC1317BE8E008C5A7E /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F4BA8BE1317BE8E008C5A7E /* FastPdfKit Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit Kiosk-Info.plist"; sourceTree = "<group>"; };
+		6F4BA8C41317BFCF008C5A7E /* MainWindow_Kiosk.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow_Kiosk.xib; sourceTree = "<group>"; };
+		6F4BA95A1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_KioskAppDelegate.h; sourceTree = "<group>"; };
+		6F4BA95B1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_KioskAppDelegate.m; sourceTree = "<group>"; };
+		6F4BA9811317E40E008C5A7E /* DocumentViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController_Kiosk.h; sourceTree = "<group>"; };
+		6F4BA9821317E40E008C5A7E /* DocumentViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController_Kiosk.m; sourceTree = "<group>"; };
+		6F4BA9FE1317EC97008C5A7E /* MenuViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController_Kiosk.h; path = ../MenuViewController_Kiosk.h; sourceTree = "<group>"; };
+		6F4BA9FF1317EC97008C5A7E /* MenuViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController_Kiosk.m; path = ../MenuViewController_Kiosk.m; sourceTree = "<group>"; };
+		6F4BAB8E1317FD7E008C5A7E /* backThumb_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backThumb_iphone@2x.png"; path = "img/backThumb_iphone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB8F1317FD7E008C5A7E /* bookmark_add_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bookmark_add_phone@2x.png"; path = "img/bookmark_add_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB901317FD7E008C5A7E /* changeModeDouble_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "changeModeDouble_phone@2x.png"; path = "img/changeModeDouble_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB911317FD7E008C5A7E /* changeModeSingle_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "changeModeSingle_phone@2x.png"; path = "img/changeModeSingle_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB921317FD7E008C5A7E /* direction_l2r_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "direction_l2r_phone@2x.png"; path = "img/direction_l2r_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB931317FD7E008C5A7E /* direction_r2l_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "direction_r2l_phone@2x.png"; path = "img/direction_r2l_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB941317FD7E008C5A7E /* header_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "header_iphone@2x.png"; path = "img/header_iphone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB951317FD7E008C5A7E /* pagelead_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pagelead_phone@2x.png"; path = "img/pagelead_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB961317FD7E008C5A7E /* search_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search_phone@2x.png"; path = "img/search_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB971317FD7E008C5A7E /* text_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text_phone@2x.png"; path = "img/text_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB981317FD7E008C5A7E /* X_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "X_phone@2x.png"; path = "img/X_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB991317FD7E008C5A7E /* zoomLock_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoomLock_phone@2x.png"; path = "img/zoomLock_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAB9A1317FD7E008C5A7E /* zoomUnlock_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoomUnlock_phone@2x.png"; path = "img/zoomUnlock_phone@2x.png"; sourceTree = "<group>"; };
 		6F563BFB13044392005CF390 /* Kiosk_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Kiosk_ipad.xib; sourceTree = "<group>"; };
 		6F563BFC13044392005CF390 /* Kiosk_phone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Kiosk_phone.xib; sourceTree = "<group>"; };
 		6F6AE42013139FD300D7D279 /* bookmark_add_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark_add_phone.png; path = img/bookmark_add_phone.png; sourceTree = "<group>"; };
@@ -274,6 +412,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6F4BA8BA1317BE8E008C5A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F4BA8EB1317C3C5008C5A7E /* libz.1.2.3.dylib in Frameworks */,
+				6F4BA8EC1317C3C5008C5A7E /* CoreText.framework in Frameworks */,
+				6F4BA8ED1317C3C5008C5A7E /* UIKit.framework in Frameworks */,
+				6F4BA8EE1317C3C5008C5A7E /* CoreGraphics.framework in Frameworks */,
+				6F4BA8EF1317C3C5008C5A7E /* Foundation.framework in Frameworks */,
+				6F4BA8F01317C3C5008C5A7E /* QuartzCore.framework in Frameworks */,
+				6F4BA8F11317C3C5008C5A7E /* CFNetwork.framework in Frameworks */,
+				6F4BA8F21317C3C5008C5A7E /* SystemConfiguration.framework in Frameworks */,
+				6F4BA8F31317C3C5008C5A7E /* MobileCoreServices.framework in Frameworks */,
+				6F4BA9411317C4C7008C5A7E /* libFastPDFKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -340,6 +495,8 @@
 				015EF60212CA29EE0098E4B6 /* TextSearch */,
 				01F434C212ACD94D00D08021 /* DocumentViewController.h */,
 				01F434C312ACD94D00D08021 /* DocumentViewController.m */,
+				6F4BA9811317E40E008C5A7E /* DocumentViewController_Kiosk.h */,
+				6F4BA9821317E40E008C5A7E /* DocumentViewController_Kiosk.m */,
 				95F5A3531270A2A700F65929 /* BasicLauncherController.h */,
 				95F5A3541270A2A700F65929 /* BasicLauncherController.m */,
 				95F5A3561270A2A700F65929 /* BookmarkViewController.h */,
@@ -348,8 +505,12 @@
 				95F5A35C1270A2A700F65929 /* OutlineViewController.m */,
 				01FB0F91125CB46A002D4337 /* MenuViewController.h */,
 				01FB0F92125CB46A002D4337 /* MenuViewController.m */,
+				6F4BA9FE1317EC97008C5A7E /* MenuViewController_Kiosk.h */,
+				6F4BA9FF1317EC97008C5A7E /* MenuViewController_Kiosk.m */,
 				1D3623240D0F684500981E51 /* FastPDFKit_SampleAppDelegate.h */,
 				1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */,
+				6F4BA95A1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.h */,
+				6F4BA95B1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m */,
 				6F93FB6C1304002B001C333F /* MFHorizontalSlider.h */,
 				6F93FB6D1304002B001C333F /* MFHorizontalSlider.m */,
 				6F93FB6E1304002B001C333F /* MFSliderDetail.h */,
@@ -366,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */,
+				6F4BA8BC1317BE8E008C5A7E /* FastPdfKit Kiosk.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,6 +566,7 @@
 				9598FDE512338042008D7198 /* Icon144.png */,
 				6FCADC7E130EC39E00F978A9 /* homePdf.xml */,
 				8D1107310486CEB800E47090 /* FastPDFKit_Sample-Info.plist */,
+				6F4BA8BE1317BE8E008C5A7E /* FastPdfKit Kiosk-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -504,6 +667,19 @@
 				6F6AE43C13139FD300D7D279 /* zoomLock.png */,
 				6F6AE43D13139FD300D7D279 /* zoomUnlock_phone.png */,
 				6F6AE43E13139FD300D7D279 /* zoomUnlock.png */,
+				6F4BAB8E1317FD7E008C5A7E /* backThumb_iphone@2x.png */,
+				6F4BAB8F1317FD7E008C5A7E /* bookmark_add_phone@2x.png */,
+				6F4BAB901317FD7E008C5A7E /* changeModeDouble_phone@2x.png */,
+				6F4BAB911317FD7E008C5A7E /* changeModeSingle_phone@2x.png */,
+				6F4BAB921317FD7E008C5A7E /* direction_l2r_phone@2x.png */,
+				6F4BAB931317FD7E008C5A7E /* direction_r2l_phone@2x.png */,
+				6F4BAB941317FD7E008C5A7E /* header_iphone@2x.png */,
+				6F4BAB951317FD7E008C5A7E /* pagelead_phone@2x.png */,
+				6F4BAB961317FD7E008C5A7E /* search_phone@2x.png */,
+				6F4BAB971317FD7E008C5A7E /* text_phone@2x.png */,
+				6F4BAB981317FD7E008C5A7E /* X_phone@2x.png */,
+				6F4BAB991317FD7E008C5A7E /* zoomLock_phone@2x.png */,
+				6F4BAB9A1317FD7E008C5A7E /* zoomUnlock_phone@2x.png */,
 			);
 			name = img;
 			sourceTree = "<group>";
@@ -518,6 +694,7 @@
 				95F5A1321270948600F65929 /* MainWindow.xib */,
 				95F5A1331270948600F65929 /* MenuView_pad.xib */,
 				95F5A1341270948600F65929 /* MenuView_phone.xib */,
+				6F4BA8C41317BFCF008C5A7E /* MainWindow_Kiosk.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -560,6 +737,23 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6F4BA8BB1317BE8E008C5A7E /* FastPdfKit Kiosk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F4BA8C21317BE8F008C5A7E /* Build configuration list for PBXNativeTarget "FastPdfKit Kiosk" */;
+			buildPhases = (
+				6F4BA8B81317BE8E008C5A7E /* Resources */,
+				6F4BA8B91317BE8E008C5A7E /* Sources */,
+				6F4BA8BA1317BE8E008C5A7E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FastPdfKit Kiosk";
+			productName = "FastPdfKit Kiosk";
+			productReference = 6F4BA8BC1317BE8E008C5A7E /* FastPdfKit Kiosk.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -580,6 +774,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* FastPdfKit Sample */,
+				6F4BA8BB1317BE8E008C5A7E /* FastPdfKit Kiosk */,
 			);
 		};
 /* End PBXProject section */
@@ -605,8 +800,6 @@
 				015EF6C712CA474B0098E4B6 /* TextDisplayView.xib in Resources */,
 				0157CF7E12EF16B200DDC590 /* SearchView2_phone.xib in Resources */,
 				0157CF7F12EF16B200DDC590 /* SearchView2_pad.xib in Resources */,
-				6F563BFD13044392005CF390 /* Kiosk_ipad.xib in Resources */,
-				6F563BFE13044392005CF390 /* Kiosk_phone.xib in Resources */,
 				6FEE96391309917C00CCA999 /* pdf1.png in Resources */,
 				6FEE963A1309917C00CCA999 /* pdf2.png in Resources */,
 				6FEE963B1309917C00CCA999 /* pdf3.png in Resources */,
@@ -653,6 +846,94 @@
 				6FBD0F0B131509D1007097BB /* minisearch_next.png in Resources */,
 				6FBD0F0C131509D1007097BB /* minisearch_prev.png in Resources */,
 				6FFC6ED71316815B00A7AB8D /* minisearch_back.png in Resources */,
+				6F4BA8D81317C39D008C5A7E /* Kiosk_ipad.xib in Resources */,
+				6F4BA8D91317C39D008C5A7E /* Kiosk_phone.xib in Resources */,
+				6F4BA8E51317C3A8008C5A7E /* MainWindow_Kiosk.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F4BA8B81317BE8E008C5A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F4BA8DD1317C3A7008C5A7E /* Kiosk_ipad.xib in Resources */,
+				6F4BA8DE1317C3A7008C5A7E /* Kiosk_phone.xib in Resources */,
+				6F4BA8DF1317C3A7008C5A7E /* BookmarkView.xib in Resources */,
+				6F4BA8E01317C3A7008C5A7E /* OutlineView.xib in Resources */,
+				6F4BA8E11317C3A7008C5A7E /* MainWindow.xib in Resources */,
+				6F4BA8E21317C3A7008C5A7E /* MenuView_pad.xib in Resources */,
+				6F4BA8E31317C3A7008C5A7E /* MenuView_phone.xib in Resources */,
+				6F4BA8E41317C3A7008C5A7E /* MainWindow_Kiosk.xib in Resources */,
+				6F4BA8E61317C3B6008C5A7E /* iTunesArtwork in Resources */,
+				6F4BA8E71317C3B6008C5A7E /* Icon.png in Resources */,
+				6F4BA8E81317C3B6008C5A7E /* Icon72.png in Resources */,
+				6F4BA8E91317C3B6008C5A7E /* Icon144.png in Resources */,
+				6F4BA8EA1317C3B6008C5A7E /* homePdf.xml in Resources */,
+				6F4BA8F41317C45D008C5A7E /* pdf1.png in Resources */,
+				6F4BA8F51317C45D008C5A7E /* pdf2.png in Resources */,
+				6F4BA8F61317C45D008C5A7E /* pdf3.png in Resources */,
+				6F4BA8F71317C45D008C5A7E /* pdf4.png in Resources */,
+				6F4BA8F81317C45D008C5A7E /* pdf5.png in Resources */,
+				6F4BA8F91317C45D008C5A7E /* pdf6.png in Resources */,
+				6F4BA8FA1317C463008C5A7E /* minisearch_back.png in Resources */,
+				6F4BA8FB1317C463008C5A7E /* minisearch_cancel.png in Resources */,
+				6F4BA8FC1317C463008C5A7E /* minisearch_full.png in Resources */,
+				6F4BA8FD1317C463008C5A7E /* minisearch_next.png in Resources */,
+				6F4BA8FE1317C463008C5A7E /* minisearch_prev.png in Resources */,
+				6F4BA8FF1317C463008C5A7E /* backThumb_iphone.png in Resources */,
+				6F4BA9001317C463008C5A7E /* backThumb.png in Resources */,
+				6F4BA9011317C463008C5A7E /* bookmark_add_phone.png in Resources */,
+				6F4BA9021317C463008C5A7E /* bookmark_add.png in Resources */,
+				6F4BA9031317C463008C5A7E /* border.png in Resources */,
+				6F4BA9041317C463008C5A7E /* changeModeDouble_phone.png in Resources */,
+				6F4BA9051317C463008C5A7E /* changeModeDouble.png in Resources */,
+				6F4BA9061317C463008C5A7E /* changeModeSingle_phone.png in Resources */,
+				6F4BA9071317C463008C5A7E /* changeModeSingle.png in Resources */,
+				6F4BA9081317C463008C5A7E /* direction_l2r_phone.png in Resources */,
+				6F4BA9091317C463008C5A7E /* direction_l2r.png in Resources */,
+				6F4BA90A1317C463008C5A7E /* direction_r2l_phone.png in Resources */,
+				6F4BA90B1317C463008C5A7E /* direction_r2l.png in Resources */,
+				6F4BA90C1317C463008C5A7E /* download.png in Resources */,
+				6F4BA90D1317C463008C5A7E /* header_iphone.png in Resources */,
+				6F4BA90E1317C463008C5A7E /* header.png in Resources */,
+				6F4BA90F1317C463008C5A7E /* indice_phone.png in Resources */,
+				6F4BA9101317C463008C5A7E /* indice.png in Resources */,
+				6F4BA9111317C463008C5A7E /* pagelead_click.png in Resources */,
+				6F4BA9121317C463008C5A7E /* pagelead_click_phone.png in Resources */,
+				6F4BA9131317C463008C5A7E /* pagelead_phone.png in Resources */,
+				6F4BA9141317C463008C5A7E /* pagelead.png in Resources */,
+				6F4BA9151317C463008C5A7E /* remove.png in Resources */,
+				6F4BA9161317C463008C5A7E /* search_phone.png in Resources */,
+				6F4BA9171317C463008C5A7E /* search.png in Resources */,
+				6F4BA9181317C463008C5A7E /* text_phone.png in Resources */,
+				6F4BA9191317C463008C5A7E /* text.png in Resources */,
+				6F4BA91A1317C463008C5A7E /* view.png in Resources */,
+				6F4BA91B1317C463008C5A7E /* X_phone.png in Resources */,
+				6F4BA91C1317C463008C5A7E /* X.png in Resources */,
+				6F4BA91D1317C463008C5A7E /* zoomLock_phone.png in Resources */,
+				6F4BA91E1317C463008C5A7E /* zoomLock.png in Resources */,
+				6F4BA91F1317C463008C5A7E /* zoomUnlock_phone.png in Resources */,
+				6F4BA9201317C463008C5A7E /* zoomUnlock.png in Resources */,
+				6F4BA92D1317C49C008C5A7E /* SearchView2_phone.xib in Resources */,
+				6F4BA92E1317C49C008C5A7E /* SearchView2_pad.xib in Resources */,
+				6F4BA9311317C49C008C5A7E /* TextDisplayView.xib in Resources */,
+				6F4BA9331317C49C008C5A7E /* SearchView_pad.xib in Resources */,
+				6F4BA9341317C49C008C5A7E /* SearchView_phone.xib in Resources */,
+				6F4BA93F1317C4BF008C5A7E /* gitmanual.pdf in Resources */,
+				6F4BA9401317C4BF008C5A7E /* gitmanualcrypt.pdf in Resources */,
+				6F4BAB9B1317FD7E008C5A7E /* backThumb_iphone@2x.png in Resources */,
+				6F4BAB9C1317FD7E008C5A7E /* bookmark_add_phone@2x.png in Resources */,
+				6F4BAB9D1317FD7E008C5A7E /* changeModeDouble_phone@2x.png in Resources */,
+				6F4BAB9E1317FD7E008C5A7E /* changeModeSingle_phone@2x.png in Resources */,
+				6F4BAB9F1317FD7E008C5A7E /* direction_l2r_phone@2x.png in Resources */,
+				6F4BABA01317FD7E008C5A7E /* direction_r2l_phone@2x.png in Resources */,
+				6F4BABA11317FD7E008C5A7E /* header_iphone@2x.png in Resources */,
+				6F4BABA21317FD7E008C5A7E /* pagelead_phone@2x.png in Resources */,
+				6F4BABA31317FD7E008C5A7E /* search_phone@2x.png in Resources */,
+				6F4BABA41317FD7E008C5A7E /* text_phone@2x.png in Resources */,
+				6F4BABA51317FD7E008C5A7E /* X_phone@2x.png in Resources */,
+				6F4BABA61317FD7E008C5A7E /* zoomLock_phone@2x.png in Resources */,
+				6F4BABA71317FD7E008C5A7E /* zoomUnlock_phone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +946,6 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m in Sources */,
-				01FB0F95125CB46A002D4337 /* MenuViewController.m in Sources */,
 				95F5A3681270A2A700F65929 /* BasicLauncherController.m in Sources */,
 				95F5A36A1270A2A700F65929 /* BookmarkViewController.m in Sources */,
 				95F5A36D1270A2A700F65929 /* OutlineViewController.m in Sources */,
@@ -679,7 +959,6 @@
 				0157CF8112EF16B200DDC590 /* SearchResultView.m in Sources */,
 				6F93FB701304002B001C333F /* MFHorizontalSlider.m in Sources */,
 				6F93FB711304002B001C333F /* MFSliderDetail.m in Sources */,
-				6FF57BD31305763A0019F4A0 /* MFHomeListPdf.m in Sources */,
 				6F6D228513059EB80053696A /* ASIAuthenticationDialog.m in Sources */,
 				6F6D228613059EB80053696A /* ASIDownloadCache.m in Sources */,
 				6F6D228713059EB80053696A /* ASIFormDataRequest.m in Sources */,
@@ -688,7 +967,43 @@
 				6F6D228A13059EB80053696A /* ASINetworkQueue.m in Sources */,
 				6F6D228B13059EB80053696A /* ASINSStringAdditions.m in Sources */,
 				6F6D229613059F150053696A /* Reachability.m in Sources */,
-				6FCADD23130EC7C600F978A9 /* XMLParser.m in Sources */,
+				6F4BAA6D1317F06F008C5A7E /* MenuViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F4BA8B91317BE8E008C5A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F4BA8C91317C11F008C5A7E /* main.m in Sources */,
+				6F4BA9221317C482008C5A7E /* BasicLauncherController.m in Sources */,
+				6F4BA9231317C482008C5A7E /* BookmarkViewController.m in Sources */,
+				6F4BA9241317C482008C5A7E /* OutlineViewController.m in Sources */,
+				6F4BA9261317C482008C5A7E /* FastPDFKit_SampleAppDelegate.m in Sources */,
+				6F4BA9271317C482008C5A7E /* MFHorizontalSlider.m in Sources */,
+				6F4BA9281317C482008C5A7E /* MFSliderDetail.m in Sources */,
+				6F4BA9291317C482008C5A7E /* MFHomeListPdf.m in Sources */,
+				6F4BA92A1317C482008C5A7E /* XMLParser.m in Sources */,
+				6F4BA92B1317C49C008C5A7E /* SearchManager.m in Sources */,
+				6F4BA92C1317C49C008C5A7E /* MiniSearchView.m in Sources */,
+				6F4BA92F1317C49C008C5A7E /* SearchResultCellView.m in Sources */,
+				6F4BA9301317C49C008C5A7E /* SearchResultView.m in Sources */,
+				6F4BA9321317C49C008C5A7E /* TextDisplayViewController.m in Sources */,
+				6F4BA9351317C49C008C5A7E /* SearchViewController.m in Sources */,
+				6F4BA9361317C49C008C5A7E /* TextSearchOperation.m in Sources */,
+				6F4BA9371317C4AB008C5A7E /* ASIAuthenticationDialog.m in Sources */,
+				6F4BA9381317C4AB008C5A7E /* ASIDownloadCache.m in Sources */,
+				6F4BA9391317C4AB008C5A7E /* ASIFormDataRequest.m in Sources */,
+				6F4BA93A1317C4AB008C5A7E /* ASIHTTPRequest.m in Sources */,
+				6F4BA93B1317C4AB008C5A7E /* ASIInputStream.m in Sources */,
+				6F4BA93C1317C4AB008C5A7E /* ASINetworkQueue.m in Sources */,
+				6F4BA93D1317C4AB008C5A7E /* ASINSStringAdditions.m in Sources */,
+				6F4BA93E1317C4B8008C5A7E /* Reachability.m in Sources */,
+				6F4BA95C1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m in Sources */,
+				6F4BA9831317E40E008C5A7E /* DocumentViewController_Kiosk.m in Sources */,
+				6F4BAA001317EC97008C5A7E /* MenuViewController_Kiosk.m in Sources */,
+				6F4BAA7F1317F0FE008C5A7E /* MenuViewController.m in Sources */,
+				6F4BAA801317F105008C5A7E /* DocumentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +1061,88 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		6F4BA8BF1317BE8F008C5A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "FastPdfKit Kiosk-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FastPdfKit\"",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "FastPdfKit Kiosk";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6F4BA8C01317BE8F008C5A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "FastPdfKit Kiosk-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FastPdfKit\"",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "FastPdfKit Kiosk";
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		6F4BA8C11317BE8F008C5A7E /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "FastPdfKit Kiosk-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FastPdfKit\"",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "FastPdfKit Kiosk";
+				SDKROOT = iphoneos;
+			};
+			name = "Ad Hoc";
 		};
 		9597F95D125D129600E17B47 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
@@ -832,6 +1229,16 @@
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
 				9597F95E125D129600E17B47 /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F4BA8C21317BE8F008C5A7E /* Build configuration list for PBXNativeTarget "FastPdfKit Kiosk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F4BA8BF1317BE8F008C5A7E /* Debug */,
+				6F4BA8C01317BE8F008C5A7E /* Release */,
+				6F4BA8C11317BE8F008C5A7E /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

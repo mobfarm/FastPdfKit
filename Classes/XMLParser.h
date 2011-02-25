@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
-#import "MenuViewController.h"
+#import "MenuViewController_Kiosk.h"
 
 
 @interface XMLParser : UIViewController <ASIHTTPRequestDelegate,UIActionSheetDelegate,NSXMLParserDelegate>{
@@ -35,13 +35,13 @@
 	NSMutableString * currentTitle, * currentCopertina, * currentLink;
 	ASIHTTPRequest *request;
 	id delegate;
-	MenuViewController *mvc ;
+	MenuViewController_Kiosk *mvc ;
 	
 	BOOL pdfInDownload;
 	BOOL errorDownload;
 }
 
-@property (nonatomic, assign) MenuViewController *mvc;
+@property (nonatomic, assign) MenuViewController_Kiosk *mvc;
 @property (readwrite) BOOL pdfInDownload;
 @property (readwrite) BOOL errorDownload;
 @property (nonatomic,retain ) NSString *currentString;

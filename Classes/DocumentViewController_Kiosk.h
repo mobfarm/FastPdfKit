@@ -18,8 +18,8 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-@interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate>{
-
+@interface DocumentViewController_Kiosk : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate>{
+	
 	// UI elements.
 	UIButton *leadButton;
 	UIButton *modeButton;
@@ -39,11 +39,14 @@
 	UIButton *textButton;
 	
 	UILabel *pageLabel;
+	UILabel *numberOfPageTitleToolbar;
 	UILabel *numPaginaLabel;
 	UISlider *pageSlider;
 	
 	BOOL hudHidden; // HUD status flag.
 	
+	// Thumbnail view and stuff.
+	UIImageView *thumbnailView;
 	NSUInteger thumbPage;
 	
 	// Text extraction controller and stuff.
@@ -55,14 +58,60 @@
 	SearchManager *searchManager;
 	MiniSearchView *miniSearchView;
 	
+	MFHorizontalSlider *thumbsliderHorizontal;
+	UIView *thumbSliderViewHorizontal;
+	
+	UIView *thumbSliderView;
+	UIView *aTSVH;
+	
+	NSMutableArray *thumbImgArray;
+	
 	NSString *nomefile;
 	BOOL pdfIsOpen;
+	BOOL thumbsViewVisible;
 	
-		
-
+	UIToolbar *toolbar;
+	UIBarButtonItem *changeModeBarButtonItem;
+	UIBarButtonItem *zoomLockBarButtonItem;
+	UIBarButtonItem *changeDirectionButtonItem;
+	UIBarButtonItem *changeLeadButtonItem;
+	
+	BOOL visibleBookmark;
+	BOOL visibleOutline;
+	BOOL visibleSearch;
+	BOOL visibleText;
+	
+	id senderText;
+	id senderSearch;
+	
+	UIPopoverController *popupBookmark;
+	UIPopoverController *popupOutline;
+	UIPopoverController *popupSearch;
+	UIPopoverController *popupText;
+	
+	UIImage *imgChangeMode;
+	UIImage *imgChangeModeDouble;
+	
+	UIImage *imgZoomLock;
+	UIImage *imgZoomUnlock;
+	
+	UIImage *imgl2r;
+	UIImage *imgr2l;
+	
+	UIImage *imgChangeLead;
+	UIImage *imgChangeLeadClick;
+	
+	CGFloat heightToolbar;
+	CGFloat widthborder;
+	CGFloat heightTSHV;
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
+-(void)initNumberOfPageToolbar;
+-(void)setNumberOfPageToolbar;
+-(void)showToolbar;
+-(void)hideToolbar;
+-(void)actionDone:(id)sender;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 
@@ -83,18 +132,37 @@
 
 @property (nonatomic, retain) NSMutableArray *thumbImgArray;
 
+@property (nonatomic, retain) MFHorizontalSlider *thumbsliderHorizontal;
+@property (nonatomic, retain) UIView *thumbSliderViewHorizontal;
+@property (nonatomic, retain) UIView *thumbSliderView;
+@property (nonatomic, retain) UIView *aTSVH;
 
 @property (nonatomic, retain) NSString *nomefile;
 @property (nonatomic) BOOL pdfIsOpen;
-
+@property (nonatomic) BOOL thumbsViewVisible;
+@property  BOOL visibleBookmark;
+@property  BOOL visibleOutline;
+@property  BOOL visibleSearch;
+@property  BOOL visibleText;
 @property (nonatomic, retain) id senderSearch;
 @property (nonatomic, retain) id senderText;
+@property (nonatomic, retain) UIPopoverController *popupBookmark;
+@property (nonatomic, retain) UIPopoverController *popupOutline;
+@property (nonatomic, retain) UIPopoverController *popupSearch;
+@property (nonatomic, retain) UIPopoverController *popupText;
+@property CGFloat heightToolbar;
+@property CGFloat widthborder;
+@property CGFloat heightTSHV;
 
 // Swapping search views.
 -(void)switchToMiniSearchView:(MFTextItem *)index;
 -(void)dismissMiniSearchView;
 -(void)revertToFullSearchView;
--(void)actionDone:(id)sender;
+-(void)showToolbar;
+-(void)hideToolbar;
+-(void)hideHorizontalThumbnails;
+-(void)showHorizontalThumbnails;
+-(void)dismissAllPopoversFrom:(id)sender;
 
 
 @property (nonatomic, retain) UIButton *searchButton;

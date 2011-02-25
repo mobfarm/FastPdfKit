@@ -35,14 +35,11 @@
 @synthesize textButton, textDisplayViewController;
 @synthesize searchViewController, searchButton, searchManager, pdfIsOpen,miniSearchView;
 @synthesize thumbnailView;
-@synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
 @synthesize thumbImgArray;
-@synthesize nomefile,thumbsViewVisible,visibleBookmark,visibleOutline,visibleSearch,visibleText,graphicsMode;
-@synthesize thumbSliderView,aTSVH;
-@synthesize popupBookmark,popupOutline,popupSearch,popupText;
+@synthesize nomefile;
+
 @synthesize senderText;
 @synthesize senderSearch;
-@synthesize heightToolbar,widthborder,heightTSHV;
 
 #pragma mark Thumbnail utility functions
 
@@ -145,20 +142,8 @@
 	self.overlayDataSource = self.searchManager;
 	self.overlayEnabled = YES;
 	
+	[self presentModalViewController:(UIViewController *)controller animated:YES];
 
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			//se è aperto il popover slide verticale va chiuso
-		popupSearch = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
-		[popupSearch setPopoverContentSize:CGSizeMake(450, 650)];
-		[popupSearch presentPopoverFromBarButtonItem:senderSearch permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-		visibleSearch=YES;
-	}else {
-		[self presentModalViewController:(UIViewController *)controller animated:YES];
-			visibleSearch=YES;
-	}
-	
-	
-	//[self presentModalViewController:(UIViewController *)controller animated:YES];
 }
 
 // Void
@@ -270,8 +255,6 @@
 	// start the search. Look at the details in the utility method implementation.
 	senderSearch = sender;
 	
-	[self dismissAllPopoversFrom:sender];
-	
 	[self presentFullSearchView:sender];
 }
 
@@ -290,101 +273,19 @@
 	[self moveToPreviousPage];
 }
 
--(void)dismissAllPopoversFrom:(id)sender{
-	if (visibleBookmark) {
-		[popupBookmark dismissPopoverAnimated:YES];
-		visibleBookmark=NO;
-	}
-	
-	if (visibleOutline) {
-		[popupOutline dismissPopoverAnimated:YES];
-		visibleOutline=NO;
-
-	}
-	
-	if (visibleSearch) {
-		[popupSearch dismissPopoverAnimated:YES];
-		visibleSearch=NO;
-		
-	}
-	
-	if (visibleText) {
-		[popupText dismissPopoverAnimated:YES];
-		visibleText=NO;
-		
-	}
-
-}
-
 -(IBAction) actionBookmarks:(id)sender {
 	
 	//
 //	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 //	you can also push the controller with the navigation controller or use an UIActionSheet.
 		
-		
-	
-		if (visibleBookmark) {
-			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-				[popupBookmark dismissPopoverAnimated:YES];
-				visibleBookmark=NO;
-			}else {
-				[[self parentViewController]dismissModalViewControllerAnimated:YES];
-				visibleBookmark=NO;
-			}
 
-		}else {
-			
 			BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
 			bookmarksVC.delegate=self;
-			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-				[self dismissAllPopoversFrom:sender];
-				//se è aperto il popover slide verticale va chiuso
-				popupBookmark = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
-				[popupBookmark setPopoverContentSize:CGSizeMake(372, 650)];
-				[popupBookmark presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-				[popupBookmark setDelegate:self];
-				visibleBookmark=YES;
-			}else {
-				[self presentModalViewController:bookmarksVC animated:YES];
-				visibleBookmark=YES;
-			}
+			[self presentModalViewController:bookmarksVC animated:YES];
 			[bookmarksVC release];
-		}
 }
 
--(IBAction) actionThumbnail:(id)sender{
-	
-	if (thumbsViewVisible) {
-		
-		[self hideHorizontalThumbnails];
-	}else {
-		[self showHorizontalThumbnails];
-	}
-
-}
-
--(void)showHorizontalThumbnails{
-	if (thumbSliderViewHorizontal.frame.origin.y >= self.view.bounds.size.height) {
-		//toolbar.hidden = NO;
-		[UIView beginAnimations:@"show" context:NULL];
-		[UIView setAnimationDuration:0.35];
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
-		[UIView commitAnimations];
-		thumbsViewVisible = YES;
-	}
-}
-
--(void)hideHorizontalThumbnails{
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
-	[UIView commitAnimations];
-	thumbsViewVisible = NO;
-	
-}
 
 -(IBAction)actionDone:(id)sender {
 	
@@ -406,35 +307,12 @@
 	// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
 	// this array and the openentries array somewhere and set them again before present the view to the user again.
 
-	
-	
-	if (visibleOutline) {
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			[popupOutline dismissPopoverAnimated:YES];
-			visibleOutline=NO;
-		}else {
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
-			visibleOutline=NO;
-		}
-
-	}else {
 		
 		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
 		[outlineVC setDelegate:self];
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			[self dismissAllPopoversFrom:sender];
-			//se è aperto il popover slide verticale va chiuso
-			popupOutline = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
-			[popupOutline setPopoverContentSize:CGSizeMake(372, 650)];
-			[popupOutline presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-			[popupOutline setDelegate:self];
-			visibleOutline=YES;
-		}else {
-			[self presentModalViewController:outlineVC animated:YES];
-			visibleOutline=YES;
-		}
+		[self presentModalViewController:outlineVC animated:YES];
 		[outlineVC release];
-	}
+
 }
 
 -(IBAction) actionDismiss:(id)sender {
@@ -459,8 +337,8 @@
 	// We move to the page only if the user release the slider (on UITouchUpInside).
 	
 	// Cancel the previous request for thumbnail, we don't need it.
-	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showThumbnailView) object:nil];
-	[self hideThumbnailView];
+	//[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showThumbnailView) object:nil];
+	//[self hideThumbnailView];
 	
 	// Get the requested page number from the slider.
 	UISlider *slider = (UISlider *)sender;
@@ -478,10 +356,10 @@
 	
 	// Cancel the previous request if any.
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showThumbnailView) object:nil];
-	[self hideThumbnailView];
+	//[self hideThumbnailView];
 	
 	// Start a new one.
-	[self performSelector:@selector(showThumbnailView) withObject:nil afterDelay:1.0];
+	//[self performSelector:@selector(showThumbnailView) withObject:nil afterDelay:1.0];
 	
 	// Get the slider value.
 	UISlider *slider = (UISlider *)sender;
@@ -489,7 +367,7 @@
 	NSUInteger pageNumber = [number unsignedIntValue];
 	
 	//We use the instance's thumbPage variable to avoid passing a number to the selector each time.
-	thumbPage = pageNumber;
+	//thumbPage = pageNumber;
 	
 	// Update the label.
 	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
@@ -523,10 +401,8 @@
 	
 	if(lead == MFDocumentLeadLeft) {
 		[self setLead:MFDocumentLeadRight];
-		[changeLeadButtonItem setImage:imgChangeLead];
 	} else if (lead == MFDocumentLeadRight) {
 		[self setLead:MFDocumentLeadLeft];
-		[changeLeadButtonItem setImage:imgChangeLeadClick];
 	}
 }
 
@@ -537,10 +413,8 @@
 	MFDocumentDirection direction = [self direction];
 	if(direction == MFDocumentDirectionL2R) {
 		[self setDirection:MFDocumentDirectionR2L];
-		[changeDirectionButtonItem setImage:imgl2r];
 	} else if (direction == MFDocumentDirectionR2L) {
 		[self setDirection:MFDocumentDirectionL2R];
-		[changeDirectionButtonItem setImage:imgr2l];
 	}
 }
 
@@ -553,11 +427,9 @@
 	if(autozoom) {
 		[self setAutozoomOnPageChange:NO];
 		[autozoomButton setTitle:TITLE_AUTOZOOM_NO forState:UIControlStateNormal];
-		[zoomLockBarButtonItem setImage:imgZoomUnlock];
 	} else {
 		[self setAutozoomOnPageChange:YES];
 		[autozoomButton setTitle:TITLE_AUTOZOOM_YES forState:UIControlStateNormal];
-		[zoomLockBarButtonItem setImage:imgZoomLock];
 	}
 }
 
@@ -594,9 +466,6 @@
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
-	[thumbsliderHorizontal goToPage:page-1 animated:YES];
-	
-	[self setNumberOfPageToolbar];
 	
 }
 
@@ -616,10 +485,8 @@
 	
 	if(mode == MFDocumentModeSingle) {
 		[modeButton setTitle:TITLE_MODE_SINGLE forState:UIControlStateNormal];
-		[changeModeBarButtonItem setImage:imgChangeModeDouble];
 	} else if (mode == MFDocumentModeDouble) {
 		[modeButton setTitle:TITLE_MODE_DOUBLE forState:UIControlStateNormal];
-		[changeModeBarButtonItem setImage:imgChangeMode];
 	}
 }
 
@@ -657,10 +524,6 @@
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point {
 	
 	
-	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
-		[self dismissAllPopoversFrom:self];
-	}
-	
 	if(waitingForTextInput) {
 		
 		waitingForTextInput = NO;
@@ -675,28 +538,12 @@
 		
 		
 		
-		if (visibleText) {
-			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-				[popupText dismissPopoverAnimated:YES];
-				visibleText=NO;
-			}
-		}else {
 			TextDisplayViewController *controller = self.textDisplayViewController;
 			controller.delegate = self;
 			[controller updateWithTextOfPage:page];
-			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-				controller.modalPresentationStyle = UIModalPresentationFormSheet;
-			}
-			visibleText=YES;
 			[self presentModalViewController:controller animated:YES];
 			//[controller release];
-		}
 	}
-}
-
--(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController{
-	visibleBookmark=NO;
-	visibleOutline=NO;
 }
 
 
@@ -705,23 +552,12 @@
 	// If the flag waitingForTextInput is enabled, we use the touch event to select the page. Otherwise,
 	// we are free to use it to show/hide the selected HUD elements.
 	
-	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
-		[self dismissAllPopoversFrom:self];
-	}
-	
-	
 	if(!waitingForTextInput) {
 		
 		//	We are using this callback to selectively hide/unhide some UI components like the buttons.
 		
 		if(hudHidden) {
 			
-			// Show
-			
-			if (graphicsMode) {
-				[self showToolbar];
-				[self showHorizontalThumbnails];
-			}else {
 				[nextButton setHidden:NO];
 				[prevButton setHidden:NO];
 				
@@ -731,7 +567,6 @@
 				[leadButton setHidden:NO];
 				[modeButton setHidden:NO];
 				[directionButton setHidden:NO];
-			}
 
 			[miniSearchView setHidden:NO];
 			hudHidden = NO;
@@ -740,10 +575,6 @@
 			
 			// Hide
 			
-			if (graphicsMode) {
-				[self hideToolbar];
-				[self hideHorizontalThumbnails];
-			}else {
 				[nextButton setHidden:YES];
 				[prevButton setHidden:YES];
 				
@@ -754,8 +585,6 @@
 				[modeButton setHidden:YES];
 				[directionButton setHidden:YES];
 				
-				
-			}
 			
 			[miniSearchView setHidden:YES];
 			hudHidden = YES;
@@ -806,8 +635,8 @@
 - (void)viewDidLoad {
     
 	// 
-//	Let the superclass do its stuff (setting up the views), then you can begin to add your own custom subviews
-//	like buttons.
+	//	Let the superclass do its stuff (setting up the views), then you can begin to add your own custom subviews
+	//	like buttons.
 	
 	[super viewDidLoad];
 	
@@ -822,26 +651,23 @@
 	CGFloat padding = 10;
 	
 	UIFont *font = nil;
-
+	
 	// Slighty different font sizes on iPad and iPhone.
 	
 	BOOL isPad = NO;
 	
 	hudHidden=YES;
-	visibleBookmark = NO;
-	visibleOutline = NO;
 	
 #ifdef UI_USER_INTERFACE_IDIOM
 	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
-
- 	if(isPad) {
+	
+	if(isPad) {
 		font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 	} else {
 		font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 	}
 	
-	if (!graphicsMode) {
 		//
 		//	Now we can add our custom button to the view. Default values are MFDocumentModeSingle, MFDocumentLeadRight
 		//	MFDocumentDirectionL2R with both Autozoom and Automode disabled. If you want to change some of them, is
@@ -982,369 +808,11 @@
 		[[self view]addSubview:aSlider];
 		[aSlider release];
 		
-		
-	}else {
-
-		CGFloat ySlider = 0 ;
-		CGFloat heightSlider = 0;
-		CGFloat yToolbarThumb = 0;
-		CGFloat heightToolbarThumb = 0;
-	
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 195)];
-			widthborder = 100;
-			ySlider = 170;
-			heightSlider = 20 ;
-			yToolbarThumb = ySlider-15;
-			heightToolbarThumb = 40;
-		}else {
-			aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 95)];
-			widthborder = 50;
-			ySlider = 68 ;
-			heightSlider = 10;
-			yToolbarThumb = ySlider-8;
-			heightToolbarThumb = 25;
-		}
-
-		[aTSVH setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
-		[aTSVH setAutoresizesSubviews:YES];
-		[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
-	
-		UIToolbar *toolbarThumb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, yToolbarThumb, self.view.frame.size.width, heightToolbarThumb)];
-		[toolbarThumb setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
-		toolbarThumb.barStyle = UIBarStyleBlackTranslucent;
-	
-		[aTSVH addSubview:toolbarThumb];
-		[toolbarThumb release];
-	
-		int paddingSlider = 0;
-		if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-			paddingSlider = 10;
-		}
-	
-	
-		//Page slider.
-		UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake((widthborder/2)-paddingSlider, ySlider, aTSVH.frame.size.width-widthborder-(paddingSlider*2),heightSlider)];
-		[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
-		[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
-		[aSlider setMinimumValue:1.0];
-		[aSlider setMaximumValue:[[self document] numberOfPages]];
-		[aSlider setContinuous:YES];
-		[aSlider addTarget:self action:@selector(actionPageSliderSlided:) forControlEvents:UIControlEventValueChanged];
-		[aSlider addTarget:self action:@selector(actionPageSliderStopped:) forControlEvents:UIControlEventTouchUpInside];
-		[self setPageSlider:aSlider];
-		[aTSVH addSubview:aSlider];
-		[aSlider release];
-		
-	
-		if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-			numPaginaLabel = [[UILabel alloc]initWithFrame:CGRectMake((widthborder/2)+(aTSVH.frame.size.width-widthborder)-28, ySlider+6, 55, heightSlider)];
-			[numPaginaLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-			//NSString *numPaginaLabel = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
-		
-			numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-			numPaginaLabel.textAlignment = UITextAlignmentLeft;
-			numPaginaLabel.backgroundColor = [UIColor clearColor];
-			numPaginaLabel.shadowColor = [UIColor whiteColor];
-			numPaginaLabel.shadowOffset = CGSizeMake(0, 1);
-			numPaginaLabel.textColor = [UIColor whiteColor];
-			numPaginaLabel.font = [UIFont boldSystemFontOfSize:10.0];
-			[aTSVH addSubview:numPaginaLabel];
-			[numPaginaLabel release];
-		}
-	
-		[self.view addSubview:aTSVH];
-		self.thumbSliderViewHorizontal = aTSVH;
-		[aTSVH release];
-	}
-	
-	/*creo un array di immagini di test*/
-	NSMutableArray * aThumbImgArray  = [[NSMutableArray alloc]init];
-	
-	
-	// NSLog(@"inizio thumb");
-	
-	NSUInteger numpagePDF = [[self document]numberOfPages];
-	for (int i=0; i<numpagePDF ; i++) {
-		UIImage *img = [UIImage imageNamed:@"Icon.png"];
-		//CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
-		//UIImage *img = [UIImage imageWithCGImage:imgthumb];
-		
-		[aThumbImgArray insertObject:img atIndex:i];
-		//CGImageRelease(imgthumb);
-	}	
-	
-	self.thumbImgArray = aThumbImgArray;
-	[aThumbImgArray release];
-	
-	[self performSelector:@selector(createThumbToolbar) withObject:nil afterDelay:0.1];
-	
-	//Add ToolBar
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		heightToolbar = 44;
-		imgChangeMode =[UIImage imageNamed:@"changeModeSingle.png"];
-		[imgChangeMode retain];
-		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble.png"];
-		[imgChangeModeDouble retain];
-		
-		imgZoomLock =[UIImage imageNamed:@"zoomLock.png"];
-		[imgZoomLock retain];
-		imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock.png"];
-		[imgZoomUnlock retain];
-		
-		imgl2r =[UIImage imageNamed:@"direction_l2r.png"];
-		[imgl2r retain];
-		imgr2l =[UIImage imageNamed:@"direction_r2l.png"];
-		[imgr2l retain];
-		
-		imgChangeLead =[UIImage imageNamed:@"pagelead.png"];
-		[imgChangeLead retain];
-		imgChangeLeadClick =[UIImage imageNamed:@"pagelead.png"];
-		[imgChangeLeadClick retain];
-		
-		
-	}else {
-		heightToolbar = 44;
-		heightTSHV = 130;
-		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
-		[imgChangeMode retain];
-		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
-		[imgChangeModeDouble retain];
-		
-		imgZoomLock =[UIImage imageNamed:@"zoomLock_phone.png"];
-		[imgZoomLock retain];
-		imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock_phone.png"];
-		[imgZoomUnlock retain];
-		
-		imgl2r =[UIImage imageNamed:@"direction_l2r_phone.png"];
-		[imgl2r retain];
-		imgr2l =[UIImage imageNamed:@"direction_r2l_phone.png"];
-		[imgr2l retain];
-		
-		imgChangeLead =[UIImage imageNamed:@"pagelead_phone.png"];
-		[imgChangeLead retain];
-		imgChangeLeadClick =[UIImage imageNamed:@"pagelead_phone.png"];
-		[imgChangeLeadClick retain];
-	}
-	
-	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, heightToolbar)];
-	toolbar.hidden = YES;
-	toolbar.barStyle = UIBarStyleBlackTranslucent;
-	[toolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
-	
-	// [toolbar sizeToFit];
-	// toolbar.frame = CGRectMake(0, 0, 768, 44);
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
-		UIBarButtonItem *numberOfPageTitle = [[UIBarButtonItem alloc] initWithCustomView:numberOfPageTitleToolbar];
-		
-		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
-												  initWithImage:[UIImage imageNamed:@"bookmark_add.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
-		
-		
-		UIBarButtonItem *dismissBarButtonItem = [[UIBarButtonItem alloc]
-												 initWithImage:[UIImage imageNamed:@"X.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
-		
-		
-		changeModeBarButtonItem = [[UIBarButtonItem alloc]
-								   initWithImage:[UIImage imageNamed:@"changeModeDouble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
-		
-		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
-														initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
-		
-		[OutlineBarButtonItem setWidth:60];
-		
-		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
-												   initWithImage:[UIImage imageNamed:@"zoomUnlock.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
-		
-		
-		changeDirectionButtonItem = [[UIBarButtonItem alloc]
-								 initWithImage:[UIImage imageNamed:@"direction_r2l.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
-		
-		
-		changeLeadButtonItem = [[UIBarButtonItem alloc]
-								initWithImage:[UIImage imageNamed:@"pagelead.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
-		
-		
-		UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]
-												   initWithImage:[UIImage imageNamed:@"search.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
-		
-		
-		UIBarButtonItem *textBarButtonItem = [[UIBarButtonItem alloc]
-												initWithImage:[UIImage imageNamed:@"text.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
-		
-		
-		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-																								target:nil
-																								action:nil];
-		
-		
-		NSArray *items = [NSArray arrayWithObjects:dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
-		
-		[bookmarkBarButtonItem release];
-		[changeModeBarButtonItem release];
-		[changeDirectionButtonItem release],
-		[OutlineBarButtonItem release];
-		[itemSpazioBarButtnItem release];
-		[searchBarButtonItem release];
-		[zoomLockBarButtonItem release];
-		[textBarButtonItem release];
-		[numberOfPageTitle release];
-		[toolbar setItems:items animated:NO];
-	
-	} else {
-		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
-												  initWithImage:[UIImage imageNamed:@"bookmark_add_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
-		
-		[bookmarkBarButtonItem setWidth:25];
-		
-		UIBarButtonItem *dismissBarButtonItem = [[UIBarButtonItem alloc]
-												 initWithImage:[UIImage imageNamed:@"X_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
-		
-		[dismissBarButtonItem setWidth:22];
-		
-		changeModeBarButtonItem = [[UIBarButtonItem alloc]
-								   initWithImage:[UIImage imageNamed:@"changeModeDouble_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
-		
-		[changeModeBarButtonItem setWidth:32];
-		
-		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
-												 initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
-		
-		[OutlineBarButtonItem setWidth:22];
-		
-		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
-								 initWithImage:[UIImage imageNamed:@"zoomUnlock_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
-		
-		[zoomLockBarButtonItem setWidth:22];
-		
-		changeDirectionButtonItem = [[UIBarButtonItem alloc]
-									 initWithImage:[UIImage imageNamed:@"direction_r2l_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
-		
-		[changeDirectionButtonItem setWidth:22];
-		
-		changeLeadButtonItem = [[UIBarButtonItem alloc]
-								initWithImage:[UIImage imageNamed:@"pagelead_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
-		
-		
-		[changeLeadButtonItem setWidth:25];
-		
-		UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]
-												initWithImage:[UIImage imageNamed:@"search_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
-		
-		[searchBarButtonItem setWidth:22];
-		
-		
-		UIBarButtonItem *textBarButtonItem = [[UIBarButtonItem alloc]
-											  initWithImage:[UIImage imageNamed:@"text_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
-		
-		[textBarButtonItem setWidth:22];
-		
-		
-		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-																								target:nil
-																								action:nil];
-		[itemSpazioBarButtnItem setWidth:25];
-		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
-		
-		
-		[bookmarkBarButtonItem release];
-		[changeModeBarButtonItem release];
-		[changeDirectionButtonItem release],
-		[OutlineBarButtonItem release];
-		[itemSpazioBarButtnItem release];
-		[searchBarButtonItem release];
-		[zoomLockBarButtonItem release];
-		//[thumbnailBarButtonItem release];
-		[textBarButtonItem release];
-		[toolbar setItems:items animated:NO];
-	}
-	
-	[self.view addSubview:toolbar];
  }
 
--(void)initNumberOfPageToolbar{
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
-		numberOfPageTitleToolbar.textAlignment = UITextAlignmentLeft;
-		numberOfPageTitleToolbar.backgroundColor = [UIColor clearColor];
-		numberOfPageTitleToolbar.shadowColor = [UIColor whiteColor];
-		numberOfPageTitleToolbar.shadowOffset = CGSizeMake(0, 1);
-		numberOfPageTitleToolbar.textColor = [UIColor whiteColor];
-		//NSString *ToolbarTextTitle = [[NSString alloc]initWithString:@"RASSEGNA STAMPA ETT - "];
-		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-		//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:@" di "];
-		//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:[@"%i",numberOfPages]];
-		numberOfPageTitleToolbar.text = ToolbarTextTitle;
-		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:20.0];
-	} else {
-		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 23)];
-		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:10.0];
-	}
 
-	
-}
+-(void)dismissOutline{
 
--(void)setNumberOfPageToolbar{
-	
-	NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		numberOfPageTitleToolbar.text = ToolbarTextTitle;
-	}else {
-		numPaginaLabel.text = ToolbarTextTitle;
-	}
-
-}
-
--(void)showToolbar{
-		toolbar.hidden = NO;
-		[UIView beginAnimations:@"show" context:NULL];
-		[UIView setAnimationDuration:0.35];
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, heightToolbar)];
-		[UIView commitAnimations];		
-}
-
--(void)hideToolbar{
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[toolbar setFrame:CGRectMake(0, -heightToolbar, toolbar.frame.size.width, heightToolbar)];
-	[UIView commitAnimations];
-}
-
-
--(void)createThumbToolbar{
-	// Horizontal thumb slider.
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(90, 120) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
-		anHorizontalThumbSlider.delegate = self;	
-		self.thumbsliderHorizontal = anHorizontalThumbSlider;
-	
-		[self.thumbSliderViewHorizontal addSubview:thumbsliderHorizontal.view];
-		[anHorizontalThumbSlider viewDidLoad];
-		
-		[anHorizontalThumbSlider release];
-		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
-		
-	}else {
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(45, 58) andWidth:self.view.frame.size.width andType:1 andNomeFile:nomefile];
-		anHorizontalThumbSlider.delegate = self;
-		
-		self.thumbsliderHorizontal = anHorizontalThumbSlider;
-		[self.thumbSliderViewHorizontal addSubview:thumbsliderHorizontal.view];
-		[anHorizontalThumbSlider viewDidLoad];
-		
-		[anHorizontalThumbSlider release];
-		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
-		
-	}
-	
-	
 }
 
 
@@ -1483,9 +951,6 @@
 	
 	[nextButton release];
 	[prevButton release];
-	
-	[imgChangeModeDouble release];
-	[imgChangeMode release];
 	
     [super dealloc];
 }

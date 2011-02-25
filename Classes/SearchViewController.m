@@ -10,6 +10,7 @@
 #import "MFTextItem.h"
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
+#import "DocumentViewController_Kiosk.h"
 #import "TextSearchOperation.h"
 #import "SearchManager.h"
 #import "SearchResultCellView.h"
@@ -218,10 +219,9 @@
 	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[[self delegate]dismissAllPopoversFrom:self];
+		[[self delegate]actionDone:self];
 	}else {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		delegate.visibleBookmark = NO;
 	}
 }
 

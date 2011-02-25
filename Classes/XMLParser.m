@@ -7,7 +7,7 @@
 //
 
 #import "XMLParser.h"
-#import "MenuViewController.h"
+#import "MenuViewController_Kiosk.h"
 
 
 @implementation XMLParser

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
-#import "MenuViewController.h"
+#import "MenuViewController_Kiosk.h"
 
 @interface MFHomeListPdf : UIViewController <UIActionSheetDelegate>{
 	id object;
@@ -24,7 +24,7 @@
 	int numDocumento;
 	ASIHTTPRequest *request;
 	BOOL pdfInDownload;
-	MenuViewController *mvc;
+	MenuViewController_Kiosk *mvc;
 	NSString *pdfToDownload;
 	UIButton *removeButton;
 	UIButton *openButton;
@@ -48,7 +48,7 @@
 @property (nonatomic,retain) NSString *pdfToDownload;
 @property (nonatomic,retain) NSString *linkDownloadPdf;
 @property (nonatomic) BOOL temp;
-@property (nonatomic, assign) MenuViewController *mvc;
+@property (nonatomic, assign) MenuViewController_Kiosk *mvc;
 @property (nonatomic, assign) int numDocumento;
 @property (nonatomic,retain) NSString *page;
 @property (nonatomic,retain ) UIButton *removeButton;

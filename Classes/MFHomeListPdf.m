@@ -7,7 +7,7 @@
 //
 
 #import "MFHomeListPdf.h"
-#import "MenuViewController.h"
+#import "MenuViewController_Kiosk.h"
 
 
 @implementation MFHomeListPdf
@@ -87,14 +87,16 @@
 		UIImageView *backthumb = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)]; // Fissare dimensioni
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			[backthumb setImage:[UIImage imageNamed:@"backThumb.png"]];
+			imgThumb = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, size.width-24, size.height-24)]; // Fissare dimensioni
 		}
 		else {
 			[backthumb setImage:[UIImage imageNamed:@"backThumb_iphone.png"]];
+			imgThumb = [[UIImageView alloc] initWithFrame:CGRectMake(17, 12, size.width-14, size.height-14)]; // Fissare dimensioni
 		}
 		[[self view] addSubview:backthumb];
 		[backthumb release];
 	
-		imgThumb = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, size.width-24, size.height-24)]; // Fissare dimensioni
+		//imgThumb = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, size.width-24, size.height-24)]; // Fissare dimensioni
 		
 		NSArray *pathsok = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 		NSString *cacheDirectory = [pathsok objectAtIndex:0];
