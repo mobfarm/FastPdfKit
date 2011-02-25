@@ -38,6 +38,7 @@
 @synthesize progressViewDict,imgDict;
 @synthesize pdfHome;
 @synthesize widthThumb,heightThumb,widthButton,heightButton,widthScrollView,heightScrollView,heightViewDetail,xSxThumb,xDxThumb,heightFrame,yScrollView;
+@synthesize graphicsMode;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
     //
@@ -54,6 +55,7 @@
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	aDocViewController.nomefile=DOC_PLAIN;
+	aDocViewController.graphicsMode = graphicsMode;
 	[aDocViewController initNumberOfPageToolbar];
 	//
 	//	In this example we use a navigation controller to present the document view controller but you can present it
@@ -239,45 +241,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	UIFont *smallSystemFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-	
-	[referenceTextView setText:TEXT_PLAIN];
-	[referenceTextView setFont:smallSystemFont];
-	[manualTextView setText:TEXT_ENCRYPTED];
-	[manualTextView setFont:smallSystemFont];
-	
-	[referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
-	[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		widthThumb=350;
-		heightThumb=480;
-		xSxThumb = 20;
-		xDxThumb = 380;
-		heightFrame = 325;
-		widthScrollView=771;
-		heightScrollView=875;
-		heightViewDetail=665;
-		yScrollView=130;
-	
-	}else {
-		widthThumb=125;
-		heightThumb=170;
-		xSxThumb = 10;
-		xDxThumb = 160;
-		heightFrame = 115;
-		widthScrollView=323;
-		heightScrollView=404;
-		heightViewDetail=240;
-		yScrollView=60;
-	}
-
+	if (graphicsMode) {
+		
+		//Graphics visualization
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			widthThumb=350;
+			heightThumb=480;
+			xSxThumb = 20;
+			xDxThumb = 380;
+			heightFrame = 325;
+			widthScrollView=771;
+			heightScrollView=875;
+			heightViewDetail=665;
+			yScrollView=130;
+			
+		}else {
+			widthThumb=125;
+			heightThumb=170;
+			xSxThumb = 10;
+			xDxThumb = 160;
+			heightFrame = 115;
+			widthScrollView=323;
+			heightScrollView=404;
+			heightViewDetail=240;
+			yScrollView=60;
+		}
+		
 		XMLParser *parser = [[XMLParser alloc] init];
 		
 		parser.mvc = self;
 		
 		[parser parseXMLFileAtURL:@"http://go.mobfarm.eu/pdf/xmldaparsare.xml"];
-	
+		
 		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, yScrollView, widthScrollView, heightScrollView)];
 		scrollView.backgroundColor = [UIColor whiteColor];
 		scrollView.contentSize = CGSizeMake(widthScrollView, heightViewDetail * ((NUM_PDFTOSHOW/2)+1));
@@ -286,43 +282,61 @@
 		buttonOpenDict = [[NSMutableDictionary alloc] init];
 		progressViewDict = [[NSMutableDictionary alloc] init];
 	    imgDict = [[NSMutableDictionary alloc] init];
-	
-				for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
-					//NSLog(@"prova %@",[[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"]);
-					NSString *titoloPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"];
-					NSString *linkPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"link"];
-					NSString *copertinaPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"copertina"];
-					MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(widthThumb, heightThumb)];
-					//MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
-					CGRect frame = self.view.frame;
-					if ((i%2)==0) {
-						frame.origin.y = (heightFrame * 2 ) * ( (i-1) / 2 );
-						frame.origin.x = xDxThumb;
-						frame.size.width = widthThumb;
-						frame.size.height = heightViewDetail;
-					}else {
-						frame.origin.y = heightFrame *(i-1);
-						frame.origin.x = xSxThumb;
-						frame.size.width = widthThumb;
-						frame.size.height = heightViewDetail;
-					}
-					
-					viewPdf.view.frame = frame;
-					viewPdf.mvc=self;
-					[scrollView addSubview:viewPdf.view];
-					[imgDict setValue:viewPdf.openButtonFromImage forKey:titoloPdf];
-					[buttonOpenDict setValue:viewPdf.openButton forKey:titoloPdf];
-					[buttonRemoveDict setValue:viewPdf.removeButton forKey:titoloPdf];
-					[progressViewDict setValue:viewPdf.progressDownload forKey:titoloPdf];
-
-				}
+		
+		for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
+			//NSLog(@"prova %@",[[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"]);
+			NSString *titoloPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"];
+			NSString *linkPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"link"];
+			NSString *copertinaPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"copertina"];
+			MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(widthThumb, heightThumb)];
+			//MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
+			CGRect frame = self.view.frame;
+			if ((i%2)==0) {
+				frame.origin.y = (heightFrame * 2 ) * ( (i-1) / 2 );
+				frame.origin.x = xDxThumb;
+				frame.size.width = widthThumb;
+				frame.size.height = heightViewDetail;
+			}else {
+				frame.origin.y = heightFrame *(i-1);
+				frame.origin.x = xSxThumb;
+				frame.size.width = widthThumb;
+				frame.size.height = heightViewDetail;
+			}
+			
+			viewPdf.view.frame = frame;
+			viewPdf.mvc=self;
+			[scrollView addSubview:viewPdf.view];
+			[imgDict setValue:viewPdf.openButtonFromImage forKey:titoloPdf];
+			[buttonOpenDict setValue:viewPdf.openButton forKey:titoloPdf];
+			[buttonRemoveDict setValue:viewPdf.removeButton forKey:titoloPdf];
+			[progressViewDict setValue:viewPdf.progressDownload forKey:titoloPdf];
+			
+		}
 		[self.view addSubview:scrollView];
 		
 		UIImageView *border = [[UIImageView alloc] initWithFrame:CGRectMake(0, yScrollView-3, widthScrollView, 40)]; 
 		[border setImage:[UIImage imageNamed:@"border.png"]];
 		[self.view addSubview:border];
 		[border release];
-	//}
+		
+		
+	}else {
+		
+		//No graphics visualization
+		
+		UIFont *smallSystemFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+		
+		[referenceTextView setText:TEXT_PLAIN];
+		[referenceTextView setFont:smallSystemFont];
+		[manualTextView setText:TEXT_ENCRYPTED];
+		[manualTextView setFont:smallSystemFont];
+		
+		[referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
+		[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
+		
+	}
+
+	
 }
 
 -(void)showViewDownload{

@@ -81,6 +81,8 @@
 	BOOL visibleSearch;
 	BOOL visibleText;
 	
+	BOOL graphicsMode;
+	
 	id senderText;
 	id senderSearch;
 	
@@ -141,6 +143,7 @@
 @property  BOOL visibleOutline;
 @property  BOOL visibleSearch;
 @property  BOOL visibleText;
+@property (nonatomic,assign ) BOOL graphicsMode;
 @property (nonatomic, retain) id senderSearch;
 @property (nonatomic, retain) id senderText;
 @property (nonatomic, retain) UIPopoverController *popupBookmark;

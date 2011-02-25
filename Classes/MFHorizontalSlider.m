@@ -11,7 +11,7 @@
 
 @implementation MFHorizontalSlider
 
-@synthesize thumbnailsView, thumbnailsPageControl, thumbnailViewControllers, thumbnailNumbers;
+@synthesize thumbnailsView, thumbnailsPageControl, thumbnailViewControllers, thumbnailNumbers,viewHeight;
 @synthesize delegate;
 
 - (MFHorizontalSlider *)initWithImages:(NSArray *)images andSize:(CGSize)size andWidth:(CGFloat)_width andType:(int)_type andNomeFile:(NSString *)_nomecartellapdf{
@@ -22,7 +22,7 @@
 	thumbnailNumbers = [[NSMutableArray alloc] initWithArray:images];
 	nomecartellathumb = _nomecartellapdf;
 	
-	[self.view setFrame:CGRectMake(0,0, sliderWidth, thumbHeight)];
+	[self.view setFrame:CGRectMake(0,5, sliderWidth, thumbHeight)];
 	
 	[self.view setBackgroundColor:[UIColor blackColor]];
 	return self;
@@ -41,7 +41,7 @@
 	
 	// Create the main view
 	UIView *contentView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]; // Fissare dimensioni 
-																								   // contentView.backgroundColor = [UIColor grayColor];
+	// contentView.backgroundColor = [UIColor grayColor];
 	self.view = contentView;
 	[contentView setFrame:CGRectMake(0, 0, sliderWidth, thumbHeight)];	
 	[contentView release];
@@ -61,9 +61,12 @@
 	 }
 	 */
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		thumbHeight = thumbHeight+26;
+		viewHeight = thumbHeight+32;
+	}else {
+		viewHeight = thumbHeight;
 	}
-	thumbnailsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, sliderWidth, thumbHeight)]; // Fissare dimensioni
+
+	thumbnailsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, sliderWidth, viewHeight)]; // Fissare dimensioni
 	[thumbnailsView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
 	[thumbnailsView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1]];
 	[thumbnailsView setDelegate:self];
@@ -85,17 +88,6 @@
 	thumbnailsPageControl.numberOfPages = [thumbnailNumbers count];
     thumbnailsPageControl.currentPage = currentThumbnail;
 	[thumbnailsPageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
-	// Qui per mostrare il page controller
-	//thumbnailsPageControl.hidden = true;
-	
-	// [self.view addSubview:thumbnailsPageControl];
-
-	
-	
-	/*
-	for (unsigned j = 0; j < [thumbnailNumbers count]; j++) {
-		[self loadThumbnailViewWithPage:j];
-    }*/
 	
 	// update the scroll view to the appropriate page
 	CGRect frame = thumbnailsView.frame;
@@ -109,26 +101,7 @@
 	[thumbnailsPageControl updateCurrentPageDisplay];
 	
 	
-	
-	/*
-	border = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, thumbWidth, thumbHeight)];
-	[border setImage:[UIImage imageNamed:@"border.png"]];
-	[border setBackgroundColor:[UIColor clearColor]];
-	[border setUserInteractionEnabled:NO];
-	[border setAlpha:1.0];
-	[thumbnailsView addSubview:border];
-	[border release];
-	*/
-	
 	goToPageUsed = NO;
-	// Aggiungo la maschera sopra le immagini
-	//	NSString *thumbName = [NSString stringWithString:[NSString stringWithFormat:@"%@/maschera",[[NSBundle mainBundle] resourcePath]]];
-	//	UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 410, 320, 50)];
-	//	[image setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@.png",thumbName]]];
-	//	[image setUserInteractionEnabled:NO];
-	//	[self.view addSubview:image];
-	//	[image release];
-	
 }	
 
 -(void)viewDidLoad{

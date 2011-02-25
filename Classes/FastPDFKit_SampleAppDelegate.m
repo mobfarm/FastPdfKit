@@ -18,17 +18,29 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	
+	BOOL graphicsMode = YES;
     
     MenuViewController *aMenuViewController = nil;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
-		//aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:[NSBundle mainBundle]];
-		aMenuViewController = [[MenuViewController alloc]initWithNibName:@"Kiosk_ipad" bundle:[NSBundle mainBundle]];
+		if (graphicsMode) {
+			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"Kiosk_ipad" bundle:[NSBundle mainBundle]];
+		}else {
+			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:[NSBundle mainBundle]];
+		}
 	} else {
-		aMenuViewController = [[MenuViewController alloc]initWithNibName:@"Kiosk_phone" bundle:[NSBundle mainBundle]];
+		if (graphicsMode) {
+			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"Kiosk_phone" bundle:[NSBundle mainBundle]];
+		}else {
+			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_phone" bundle:[NSBundle mainBundle]];
+		}
+
 	}
+	
+	aMenuViewController.graphicsMode = graphicsMode;
 	
 	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:aMenuViewController];
 	[aNavController setNavigationBarHidden:YES];

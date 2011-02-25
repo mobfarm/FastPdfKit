@@ -46,6 +46,8 @@
 	CGFloat xDxThumb;
 	CGFloat heightFrame;
 	CGFloat yScrollView;
+	
+	BOOL graphicsMode;
 }
 
 -(IBAction)actionOpenPlainDocument:(id)sender;
@@ -71,6 +73,7 @@
 @property (nonatomic,retain ) NSDictionary *buttonOpenDict;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
 @property (nonatomic,retain ) NSDictionary *imgDict;
+@property (nonatomic,assign ) BOOL graphicsMode;
 
 @property CGFloat widthThumb;
 @property CGFloat heightThumb;
