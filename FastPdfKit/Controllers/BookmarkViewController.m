@@ -16,7 +16,7 @@
 
 -(IBAction)actionDone:(id)sender {
 	
-		[[self delegate]actionDone:self];
+		[[self delegate]dismissBookmark:self];
 }
 
 -(IBAction)actionToggleMode:(id)sender {

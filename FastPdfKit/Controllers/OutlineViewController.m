@@ -22,7 +22,7 @@
 	
 	// Dismiss this view controller (it only if this is presented as a model view controller, so be careful).
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[[self delegate]actionDone:self];
+		[[self delegate]dismissOutline:self];
 	}else {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 		//delegate.visibleOutline = NO;

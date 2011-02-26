@@ -286,13 +286,22 @@
 			[bookmarksVC release];
 }
 
+-(void)dismissBookmark:(id)sender {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+}
+
+-(void)dismissOutline:(id)sender {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	
+}
+
 
 -(IBAction)actionDone:(id)sender {
 	
 	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
--(IBAction) actionOutline:(id)sender {
+-(IBAction)actionOutline:(id)sender {
 	
 	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
 	// BookmarksViewController. However, you can show them in the same view with a segmented control, just

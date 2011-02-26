@@ -27,6 +27,7 @@
 	CGFloat thumbWidth;
 	CGFloat thumbHeight;
 	CGFloat sliderWidth;
+	CGFloat sliderHeight;
 	CGFloat viewHeight;
 	BOOL goToPageUsed;
 	id delegate;
@@ -41,9 +42,10 @@
 @property (nonatomic, retain) NSMutableArray *thumbnailNumbers;
 @property (nonatomic, assign) id <MFSliderDelegate> delegate;
 @property (nonatomic, assign) CGFloat viewHeight;
+@property (nonatomic, assign) CGFloat sliderHeight;
 
 
-- (MFHorizontalSlider *)initWithImages:(NSArray *)images andSize:(CGSize)size andWidth:(CGFloat)_width andType:(int)_type andNomeFile:(NSString *)_nomecartellapdf;
+- (MFHorizontalSlider *)initWithImages:(NSArray *)images andSize:(CGSize)size andWidth:(CGFloat)_width andHeight:(CGFloat)_height andType:(int)_type andNomeFile:(NSString *)_nomecartellapdf;
 - (void)goToPage:(int)page animated:(BOOL)animated;
 - (void)thumbTapped:(int)number withObject:(id)object;
 

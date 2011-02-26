@@ -125,8 +125,8 @@
 	// document action and the search manager as data source.
 	
 	SearchViewController *controller = self.searchViewController;
+	// They implement the same methods
 	[controller setDelegate:self];
-	//controller.delegate = self;
 	controller.searchManager = manager;
 	
 	// Set the search view controller as the data source delegate.
@@ -379,9 +379,26 @@
 	
 }
 
--(IBAction)actionDone:(id)sender {
+-(void)dismissBookmark:(id)sender {
 	
-	[self dismissAllPopoversFrom:self]; 
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleBookmark=NO;
+	}
+
+}
+
+-(void)dismissOutline:(id)sender {
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleOutline=NO;
+	}
+	
 }
 
 -(IBAction) actionOutline:(id)sender {
@@ -823,162 +840,36 @@
 	} else {
 		font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 	}
-	
-	//
-	//	Now we can add our custom button to the view. Default values are MFDocumentModeSingle, MFDocumentLeadRight
-	//	MFDocumentDirectionL2R with both Autozoom and Automode disabled. If you want to change some of them, is
-	//	better to do it when the DocumentViewController is istanciated and set the values ere accordingly.
-	
-	//
-	//	The buttons here are normal rounded rect buttons, are large and quite ugly. You can use image instead and
-	//	icon-like buttons 32x32 (64x64 on iPhone4) are small, good looking and quite effective on both iphone and ipad.
-	
-	// Mode button.
-	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(padding, padding, buttonWidth, buttonHeight)];
-	 [aButton setTitle:TITLE_MODE_SINGLE forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
-	 [aButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 [self setModeButton:aButton];
-	 [[self view] addSubview:aButton];*/
-	
-	// Lead button.
-	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(padding*2 + buttonWidth, padding, buttonWidth, buttonHeight)];
-	 [aButton setTitle:TITLE_LEAD_RIGHT forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
-	 [aButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 [self setLeadButton:aButton];
-	 [[self view] addSubview:aButton];*/
-	
-	/*// Direction button.
-	 aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(padding*3 + buttonWidth * 2, padding, buttonWidth, buttonHeight)];
-	 [aButton setTitle:TITLE_DIR_L2R forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
-	 [aButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 [self setDirectionButton:aButton];
-	 [[self view] addSubview:aButton];*/
-	
-	/*
-	 // Automode button.
-	 aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding, buttonWidth, buttonHeight)];
-	 [aButton setTitle:TITLE_AUTOMODE_NO forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin];
-	 [aButton addTarget:self action:@selector(actionChangeAutomode:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 [self setAutomodeButton:aButton];
-	 [[self view]addSubview:aButton];*/
-	
-	// Autozoom button.
-	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding*2 + buttonHeight, buttonWidth, buttonHeight)];
-	 [aButton setTitle:TITLE_AUTOZOOM_NO forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin];
-	 [aButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 [self setAutozoomButton:aButton];
-	 [[self view]addSubview:aButton];*/
-	
-	
-	// Text button.
-	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*4-buttonHeight*4, buttonWidth, buttonHeight)];
-	 [aButton setTitle:@"Text" forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
-	 [aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 self.textButton = aButton;
-	 [[self view]addSubview:aButton];*/
-	
-	// Search button.
-	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*5-buttonHeight*5, buttonWidth, buttonHeight)];
-	 [aButton setTitle:@"Search" forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
-	 [aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 self.searchButton = aButton;
-	 [[self view]addSubview:aButton];*/
-	
-	
-	// Dismiss button.
-	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
-	 [aButton setTitle:@"Dismiss" forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
-	 [aButton addTarget:self action:@selector(actionDismiss:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 [self setDismissButton:aButton];
-	 [[self view]addSubview:aButton];*/
-	
-	// Bookmarks.
-	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(padding, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
-	 [aButton setTitle:@"Bookmarks" forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
-	 [aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 [self setBookmarksButton:aButton];
-	 [[self view]addSubview:aButton];*/
-	
-	// Outline.
-	/*aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	 [aButton setFrame:CGRectMake(padding, viewSize.height-padding*3-buttonHeight*3, buttonWidth, buttonHeight)];
-	 [aButton setTitle:@"Outline" forState:UIControlStateNormal];
-	 [aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
-	 [aButton addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
-	 [[aButton titleLabel]setFont:font];
-	 [self setBookmarksButton:aButton];
-	 [[self view]addSubview:aButton];*/
-	
-	
-	// Page sliders and label, bottom margin
-	// |<-- 20 px -->| Label (80 x 40 px) |<-- 20 px -->| Slider ((view_width - labelwidth - padding) x 40 px) |<-- 20 px -->|
-	
-	// Page label.
-	/*UILabel *aLabel = [[UILabel alloc]initWithFrame:CGRectMake(padding, viewSize.height-padding-buttonHeight, buttonWidth, buttonHeight)];
-	 [aLabel setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
-	 [aLabel setBackgroundColor:[UIColor clearColor]];
-	 [aLabel setFont:font];
-	 [aLabel setText:[NSString stringWithFormat:@"%u/%u",[self page],[[self document]numberOfPages]]];
-	 [aLabel setTextAlignment:UITextAlignmentCenter];
-	 [self setPageLabel:aLabel];
-	 [[self view]addSubview:aLabel];
-	 [aLabel release];*/
-	
+		
 	CGFloat ySlider = 0 ;
 	CGFloat heightSlider = 0;
 	CGFloat yToolbarThumb = 0;
 	CGFloat heightToolbarThumb = 0;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 200)];
+		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
+		heightToolbarThumb = 44;
 		widthborder = 100;
-		ySlider = 175;
 		heightSlider = 20 ;
-		yToolbarThumb = ySlider-15;
-		heightToolbarThumb = 40;
+		
+		yToolbarThumb = aTSVH.frame.size.height-44;
+		ySlider = yToolbarThumb + 10;
 	}else {
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 95)];
+		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
+		heightToolbarThumb = 44;
 		widthborder = 50;
-		ySlider = 70 ;
 		heightSlider = 10;
-		yToolbarThumb = ySlider-8;
-		heightToolbarThumb = 20;
+		yToolbarThumb = aTSVH.frame.size.height-44;
+		ySlider = yToolbarThumb + 10;
 	}
 	
 	
 	[aTSVH setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
 	[aTSVH setAutoresizesSubviews:YES];
-	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
+	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
 	
 	UIToolbar *toolbarThumb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, yToolbarThumb, self.view.frame.size.width, heightToolbarThumb)];
-	[toolbarThumb setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
+	[toolbarThumb setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
 	toolbarThumb.barStyle = UIBarStyleBlackTranslucent;
 	
 	[aTSVH addSubview:toolbarThumb];
@@ -1009,13 +900,13 @@
 		[numPaginaLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
 		//NSString *numPaginaLabel = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
 		
-		numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
+		numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"Page %u",[self page]]];
 		numPaginaLabel.textAlignment = UITextAlignmentLeft;
 		numPaginaLabel.backgroundColor = [UIColor clearColor];
 		numPaginaLabel.shadowColor = [UIColor whiteColor];
 		numPaginaLabel.shadowOffset = CGSizeMake(0, 1);
 		numPaginaLabel.textColor = [UIColor whiteColor];
-		numPaginaLabel.font = [UIFont boldSystemFontOfSize:10.0];
+		numPaginaLabel.font = [UIFont boldSystemFontOfSize:9.0];
 		[aTSVH addSubview:numPaginaLabel];
 		[numPaginaLabel release];
 	}
@@ -1076,7 +967,6 @@
 		
 	}else {
 		heightToolbar = 44;
-		heightTSHV = 130;
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
 		[imgChangeMode retain];
 		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
@@ -1245,7 +1135,7 @@
 		numberOfPageTitleToolbar.shadowOffset = CGSizeMake(0, 1);
 		numberOfPageTitleToolbar.textColor = [UIColor whiteColor];
 		//NSString *ToolbarTextTitle = [[NSString alloc]initWithString:@"RASSEGNA STAMPA ETT - "];
-		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
+		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
 		//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:@" di "];
 		//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:[@"%i",numberOfPages]];
 		numberOfPageTitleToolbar.text = ToolbarTextTitle;
@@ -1260,12 +1150,15 @@
 
 -(void)setNumberOfPageToolbar{
 	
-	NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
 		numberOfPageTitleToolbar.text = ToolbarTextTitle;
+		[ToolbarTextTitle release];
 	}else {
+		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"Page %u",[self page]]];
 		numPaginaLabel.text = ToolbarTextTitle;
+		[ToolbarTextTitle release];
 	}
 	
 }
@@ -1291,7 +1184,7 @@
 -(void)createThumbToolbar{
 	// Horizontal thumb slider.
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(100, 130) andWidth:self.view.bounds.size.width andType:1 andNomeFile:nomefile];
+		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(100, 124) andWidth:self.view.bounds.size.width andHeight:160 andType:1 andNomeFile:nomefile];
 		anHorizontalThumbSlider.delegate = self;	
 		self.thumbsliderHorizontal = anHorizontalThumbSlider;
 		
@@ -1302,7 +1195,7 @@
 		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
 		
 	}else {
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(50, 66) andWidth:self.view.frame.size.width andType:1 andNomeFile:nomefile];
+		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(50, 64) andWidth:self.view.frame.size.width andHeight:70 andType:1 andNomeFile:nomefile];
 		anHorizontalThumbSlider.delegate = self;
 		
 		self.thumbsliderHorizontal = anHorizontalThumbSlider;

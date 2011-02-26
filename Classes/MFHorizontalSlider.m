@@ -11,20 +11,21 @@
 
 @implementation MFHorizontalSlider
 
-@synthesize thumbnailsView, thumbnailsPageControl, thumbnailViewControllers, thumbnailNumbers,viewHeight;
+@synthesize thumbnailsView, thumbnailsPageControl, thumbnailViewControllers, thumbnailNumbers,viewHeight,sliderHeight;
 @synthesize delegate;
 
-- (MFHorizontalSlider *)initWithImages:(NSArray *)images andSize:(CGSize)size andWidth:(CGFloat)_width andType:(int)_type andNomeFile:(NSString *)_nomecartellapdf{
+- (MFHorizontalSlider *)initWithImages:(NSArray *)images andSize:(CGSize)size andWidth:(CGFloat)_width andHeight:(CGFloat)_height andType:(int)_type andNomeFile:(NSString *)_nomecartellapdf{
 	thumbWidth = size.width;
 	thumbHeight = size.height;
 	sliderWidth = _width;
+	sliderHeight = _height;
 	sliderType = _type;
 	thumbnailNumbers = [[NSMutableArray alloc] initWithArray:images];
 	nomecartellathumb = _nomecartellapdf;
 	
-	[self.view setFrame:CGRectMake(0,5, sliderWidth, thumbHeight)];
+	[self.view setFrame:CGRectMake(0,0, sliderWidth, sliderHeight)];
 	
-	[self.view setBackgroundColor:[UIColor blackColor]];
+	[self.view setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]];
 	return self;
 }
 
@@ -43,7 +44,7 @@
 	UIView *contentView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]; // Fissare dimensioni 
 	// contentView.backgroundColor = [UIColor grayColor];
 	self.view = contentView;
-	[contentView setFrame:CGRectMake(0, 0, sliderWidth, thumbHeight)];	
+	[contentView setFrame:CGRectMake(5, 5, sliderWidth, thumbHeight)];	
 	[contentView release];
 	[self.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
 	currentThumbnail = 0;
@@ -60,20 +61,14 @@
 	 x = (sliderWidth-width)/2;
 	 }
 	 */
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		viewHeight = thumbHeight+32;
-	}else {
-		viewHeight = thumbHeight;
-	}
 
-	thumbnailsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, sliderWidth, viewHeight)]; // Fissare dimensioni
+	thumbnailsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, sliderWidth, sliderHeight)]; // Fissare dimensioni
 	[thumbnailsView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-	[thumbnailsView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1]];
 	[thumbnailsView setDelegate:self];
 	thumbnailsView.alwaysBounceVertical = NO;
 	thumbnailsView.alwaysBounceHorizontal = NO;
 	thumbnailsView.pagingEnabled = NO;
-    thumbnailsView.contentSize = CGSizeMake(thumbWidth * ([thumbnailNumbers count]), thumbnailsView.frame.size.height);
+    thumbnailsView.contentSize = CGSizeMake(((thumbWidth)* ([thumbnailNumbers count]))+(thumbWidth/3), thumbnailsView.frame.size.height);
     thumbnailsView.showsHorizontalScrollIndicator = NO;
 	[thumbnailsView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
     thumbnailsView.showsVerticalScrollIndicator = NO;
@@ -84,7 +79,7 @@
     thumbnailsView.delegate = self;
 	[self.view addSubview:thumbnailsView];
 	
-	thumbnailsPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, thumbWidth, 20)];
+	thumbnailsPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, thumbWidth, thumbHeight)];
 	thumbnailsPageControl.numberOfPages = [thumbnailNumbers count];
     thumbnailsPageControl.currentPage = currentThumbnail;
 	[thumbnailsPageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
@@ -138,9 +133,10 @@
 	[self loadThumbnailViewWithPage:_page + 8];
 	[self loadThumbnailViewWithPage:_page + 9];
 	[self loadThumbnailViewWithPage:_page + 10];
-	[self loadThumbnailViewWithPage:_page + 11];
-	if (_page + 12 < [thumbnailNumbers count]) {
-		for(unsigned j = _page + 12; j < [thumbnailNumbers count]; j++){
+
+	
+	if (_page + 11 < [thumbnailNumbers count]) {
+		for(unsigned j = _page + 11; j < [thumbnailNumbers count]; j++){
 			[self unloadThumbnailViewWithPage:j];
 		}
 	}

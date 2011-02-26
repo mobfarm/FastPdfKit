@@ -63,6 +63,8 @@
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
+-(void)dismissBookmark:(id)sender;
+-(void)dismissOutline:(id)sender;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 

@@ -37,9 +37,9 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	// NSLog(@"Did load Page %i", page);
-	//[self.view setBackgroundColor:[UIColor clearColor]];
+	[self.view setBackgroundColor:[UIColor clearColor]];
 	
-	[self.view setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.4]];
+	//[self.view setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
 	if (temp) {
 		UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 		[spinner setFrame:CGRectMake(size.width/2.0 - spinner.frame.size.width/2.0, size.height/2.0 - spinner.frame.size.height/2.0, spinner.frame.size.width, spinner.frame.size.height)];
@@ -47,17 +47,11 @@
 		[self.view addSubview:spinner];
 		[spinner release];
 		
-		
-		// image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, size.width-10, size.height-10)]; // Fissare dimensioni
-		// [image setImage:[UIImage imageNamed:thumbnail]];
-		// [image setUserInteractionEnabled:YES];
-		// [self.view addSubview:image];
-		// [image release];
-		
 	} else {
 		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, size.width-10, size.height-10)]; // Fissare dimensioni
 		// NSLog(@"%f, %f", self.view.frame.origin.x, self.view.frame.origin.y);
 		[image setImage:[UIImage imageWithContentsOfFile:thumbnail]];
+		[image	setBackgroundColor:[UIColor clearColor]];
 		//[image setImage:[UIImage imageNamed:thumbnail]];
 		[image setUserInteractionEnabled:YES];
 		[self.view addSubview:image];
@@ -67,16 +61,7 @@
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			
-			/*UIImageView *color = [[UIImageView alloc] initWithFrame:CGRectMake(size.width-34, 3, 31, 31)];
-			//NSString *name = [NSString stringWithFormat:@"%iMarkS.png", [[self dataSource] getColorForPage:page]];
-			// NSLog(@"Name: %@", name);
-			[color setImage:[UIImage imageNamed:name]];
-			[color setUserInteractionEnabled:YES];
-			[self setCorner:color];
-			[color release];
-			[self.view addSubview:corner];*/
-			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(10, 86, size.width-30, size.height-30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 138, 60, 15) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor whiteColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
@@ -87,16 +72,7 @@
 			[pageLabel release];
 		}else {
 			
-			/*UIImageView *color = [[UIImageView alloc] initWithFrame:CGRectMake(size.width-17, 3, 15, 15)];
-			//NSString *name = [NSString stringWithFormat:@"%iMarkS.png", [[self dataSource] getColorForPage:page]];
-			// NSLog(@"Name: %@", name);
-			[color setImage:[UIImage imageNamed:name]];
-			[color setUserInteractionEnabled:YES];
-			[self setCorner:color];
-			[color release];
-			[self.view addSubview:corner];*/
-			
-			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(10, 38, size.width-20, size.height-30) ];
+			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(6, 57, 40, 15) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor whiteColor];
 			pageLabel.backgroundColor = [UIColor clearColor];
@@ -117,17 +93,6 @@
 }
 
 - (void)setSelected:(BOOL)selected{
-	/*
-	[UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.7];
-    [UIView setAnimationDelegate:self];
-	if (selected && border.alpha == 0.0) {
-		border.alpha = 1.0;
-	} else if (!selected && border.alpha == 1.0){
-		border.alpha = 0.0;
-	}
-    [UIView commitAnimations];
-	*/  
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
@@ -168,10 +133,7 @@
 - (void)dealloc {
 	[corner release];
 	[self.view removeFromSuperview];
-	// NSLog(@"Dealloc page %i", page);
-	// [[[self.view subviews] objectAtIndex:0] removeFromSuperview];
-	// [image release];
-    [super dealloc];
+	[super dealloc];
 }
 
 

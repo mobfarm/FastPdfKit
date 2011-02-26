@@ -290,6 +290,7 @@
 		6F4BAB981317FD7E008C5A7E /* X_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "X_phone@2x.png"; path = "img/X_phone@2x.png"; sourceTree = "<group>"; };
 		6F4BAB991317FD7E008C5A7E /* zoomLock_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoomLock_phone@2x.png"; path = "img/zoomLock_phone@2x.png"; sourceTree = "<group>"; };
 		6F4BAB9A1317FD7E008C5A7E /* zoomUnlock_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoomUnlock_phone@2x.png"; path = "img/zoomUnlock_phone@2x.png"; sourceTree = "<group>"; };
+		6F4BAD511318127A008C5A7E /* SearchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewControllerDelegate.h; path = ../SearchViewControllerDelegate.h; sourceTree = "<group>"; };
 		6F563BFB13044392005CF390 /* Kiosk_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Kiosk_ipad.xib; sourceTree = "<group>"; };
 		6F563BFC13044392005CF390 /* Kiosk_phone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Kiosk_phone.xib; sourceTree = "<group>"; };
 		6F6AE42013139FD300D7D279 /* bookmark_add_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark_add_phone.png; path = img/bookmark_add_phone.png; sourceTree = "<group>"; };
@@ -519,6 +520,7 @@
 				6FF57BD21305763A0019F4A0 /* MFHomeListPdf.m */,
 				6FCADD21130EC7C600F978A9 /* XMLParser.h */,
 				6FCADD22130EC7C600F978A9 /* XMLParser.m */,
+				6F4BAD511318127A008C5A7E /* SearchViewControllerDelegate.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
