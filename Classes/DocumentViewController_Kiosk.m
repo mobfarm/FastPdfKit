@@ -401,6 +401,15 @@
 	
 }
 
+-(void)dismissSearch:(id)sender{
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleSearch=NO;
+	}
+}
+
 -(IBAction) actionOutline:(id)sender {
 	
 	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
@@ -454,6 +463,7 @@
 	// removal of the DocumentViweController and the processing of the values.
 	
 	// Call this function to stop the worker threads and release the associated resources.
+	pdfIsOpen = NO;
 	[self cleanUp];
 	
 	//
@@ -718,24 +728,8 @@
 			
 			[self showToolbar];
 			[self showHorizontalThumbnails];
-			//[self actionThumbnail:self];
-			
-			
-			// Show
-			
-			[nextButton setHidden:NO];
-			[prevButton setHidden:NO];
-			
-			[autozoomButton setHidden:NO];
-			[automodeButton setHidden:NO];
-			
-			[leadButton setHidden:NO];
-			[modeButton setHidden:NO];
-			[directionButton setHidden:NO];
 			
 			[miniSearchView setHidden:NO];
-			
-			
 			hudHidden = NO;
 			
 		} else {
@@ -743,18 +737,7 @@
 			// Hide
 			
 			[self hideToolbar];
-			//[self actionThumbnail:self];
 			[self hideHorizontalThumbnails];
-			
-			[nextButton setHidden:YES];
-			[prevButton setHidden:YES];
-			
-			[autozoomButton setHidden:YES];
-			[automodeButton setHidden:YES];
-			
-			[leadButton setHidden:YES];
-			[modeButton setHidden:YES];
-			[directionButton setHidden:YES];
 			
 			[miniSearchView setHidden:YES];
 			
@@ -812,15 +795,7 @@
 	[super viewDidLoad];
 	
 	pdfIsOpen = YES;
-	
-	//UIButton *aButton = nil;
-	
-	//CGSize viewSize = [[self view]bounds].size;
-	
-	//CGFloat buttonHeight = 20;
-	//CGFloat buttonWidth = 60;
-	//CGFloat padding = 10;
-	
+		
 	UIFont *font = nil;
 	
 	// Slighty different font sizes on iPad and iPhone.
@@ -847,13 +822,14 @@
 	CGFloat heightToolbarThumb = 0;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		//init the horizontal view thumb 
 		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
-		heightToolbarThumb = 44;
+		heightToolbarThumb = 44; //height of the thumb that inclued the UISlider
 		widthborder = 100;
-		heightSlider = 20 ;
+		heightSlider = 20 ; //height of slider
 		
-		yToolbarThumb = aTSVH.frame.size.height-44;
-		ySlider = yToolbarThumb + 10;
+		yToolbarThumb = aTSVH.frame.size.height-44; //y position Of Toolbar
+		ySlider = yToolbarThumb + 10; // y position of slider
 	}else {
 		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
 		heightToolbarThumb = 44;
@@ -896,10 +872,9 @@
 	
 	
 	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+		//set the number of page into the toolbar at right of UIslider .. only in Iphone
 		numPaginaLabel = [[UILabel alloc]initWithFrame:CGRectMake((widthborder/2)+(aTSVH.frame.size.width-widthborder)-28, ySlider+6, 55, heightSlider)];
 		[numPaginaLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-		//NSString *numPaginaLabel = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u di %u",[self page],[[self document]numberOfPages]]];
-		
 		numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"Page %u",[self page]]];
 		numPaginaLabel.textAlignment = UITextAlignmentLeft;
 		numPaginaLabel.backgroundColor = [UIColor clearColor];
@@ -911,15 +886,11 @@
 		[numPaginaLabel release];
 	}
 	
-	
-	
-	
 	[self.view addSubview:aTSVH];
-	// [thumbSliderViewHorizontal setHidden:YES];
 	self.thumbSliderViewHorizontal = aTSVH;
 	[aTSVH release];
 	
-	/*creo un array di immagini di test*/
+	/*Array of test img*/
 	NSMutableArray * aThumbImgArray  = [[NSMutableArray alloc]init];
 	
 	
@@ -928,11 +899,7 @@
 	NSUInteger numpagePDF = [[self document]numberOfPages];
 	for (int i=0; i<numpagePDF ; i++) {
 		UIImage *img = [UIImage imageNamed:@"Icon.png"];
-		//CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
-		//UIImage *img = [UIImage imageWithCGImage:imgthumb];
-		
 		[aThumbImgArray insertObject:img atIndex:i];
-		//CGImageRelease(imgthumb);
 	}	
 	
 	self.thumbImgArray = aThumbImgArray;
@@ -943,6 +910,7 @@
 	//Add ToolBar
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		//Set the img for the UIBarbuttonItem that change image on click
 		heightToolbar = 44;
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle.png"];
 		[imgChangeMode retain];
@@ -966,6 +934,7 @@
 		
 		
 	}else {
+		//Iphone
 		heightToolbar = 44;
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
 		[imgChangeMode retain];
@@ -988,16 +957,15 @@
 		[imgChangeLeadClick retain];
 	}
 	
+	//set the top toolbar that include all UibarButtonItem
 	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, heightToolbar)];
 	toolbar.hidden = YES;
 	toolbar.barStyle = UIBarStyleBlackTranslucent;
 	[toolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
-	
-	// [toolbar sizeToFit];
-	// toolbar.frame = CGRectMake(0, 0, 768, 44);
-	
+		
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
+		//Init UIBarButtonItem
 		UIBarButtonItem *numberOfPageTitle = [[UIBarButtonItem alloc] initWithCustomView:numberOfPageTitleToolbar];
 		
 		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
@@ -1040,9 +1008,10 @@
 																								target:nil
 																								action:nil];
 		
-		
+		//set order of BarButtonItem
 		NSArray *items = [NSArray arrayWithObjects:dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
 		
+		//release UIBarbuttonItem
 		[bookmarkBarButtonItem release];
 		[changeModeBarButtonItem release];
 		[changeDirectionButtonItem release],
@@ -1055,9 +1024,11 @@
 		[toolbar setItems:items animated:NO];
 		
 	} else {
+		//iphone
 		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
 												  initWithImage:[UIImage imageNamed:@"bookmark_add_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
 		
+		//for each UIBarButtonItem force the width
 		[bookmarkBarButtonItem setWidth:25];
 		
 		UIBarButtonItem *dismissBarButtonItem = [[UIBarButtonItem alloc]
@@ -1122,11 +1093,12 @@
 		[textBarButtonItem release];
 		[toolbar setItems:items animated:NO];
 	}
-	
+	//add toolbar to view
 	[self.view addSubview:toolbar];
 }
 
 -(void)initNumberOfPageToolbar{
+	//Init the number of page .. it's called from MenuViewController
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
 		numberOfPageTitleToolbar.textAlignment = UITextAlignmentLeft;
@@ -1134,28 +1106,27 @@
 		numberOfPageTitleToolbar.shadowColor = [UIColor whiteColor];
 		numberOfPageTitleToolbar.shadowOffset = CGSizeMake(0, 1);
 		numberOfPageTitleToolbar.textColor = [UIColor whiteColor];
-		//NSString *ToolbarTextTitle = [[NSString alloc]initWithString:@"RASSEGNA STAMPA ETT - "];
 		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-		//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:@" di "];
-		//ToolbarTextTitle = [ToolbarTextTitle stringByAppendingString:[@"%i",numberOfPages]];
 		numberOfPageTitleToolbar.text = ToolbarTextTitle;
 		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:20.0];
-	} else {
+	} /*else {
 		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 23)];
 		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:10.0];
-	}
+	}*/
 	
 	
 }
 
 -(void)setNumberOfPageToolbar{
-	
+	//for each change of page set the correct numer of page
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		//ipad on toolbar
 		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
 		numberOfPageTitleToolbar.text = ToolbarTextTitle;
 		[ToolbarTextTitle release];
 	}else {
+		//Iphone on Label at right of UISlider
 		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"Page %u",[self page]]];
 		numPaginaLabel.text = ToolbarTextTitle;
 		[ToolbarTextTitle release];
@@ -1164,6 +1135,7 @@
 }
 
 -(void)showToolbar{
+	//Show toolbar on tap
 	toolbar.hidden = NO;
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
@@ -1173,6 +1145,7 @@
 }
 
 -(void)hideToolbar{
+	//hide toolbar on tap
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -1182,7 +1155,7 @@
 
 
 -(void)createThumbToolbar{
-	// Horizontal thumb slider.
+	// Horizontal thumb slider set dimension and position
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(100, 124) andWidth:self.view.bounds.size.width andHeight:160 andType:1 andNomeFile:nomefile];
 		anHorizontalThumbSlider.delegate = self;	
@@ -1213,12 +1186,11 @@
 
 - (void)didTappedOnPage:(int)number ofType:(int)type withObject:(id)object{
 	[self setPage:number];
-	// NSLog(@"didTappedOnPage");
 }
 
 - (void)didSelectedPage:(int)number ofType:(int)type withObject:(id)object{
-	// NSLog(@"didSelectedPage");
 }
+
 
 -(void)generathumbinbackground:(NSNumber *)numeropaginEPDF {
 	
@@ -1236,32 +1208,16 @@
 	NSError *error;
 	BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:&error];
 	
-	// BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
-	
-	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
-	
-	if (testDirectoryCreated) {
-		NSLog(@"directory creata");
-	}else {
-		NSLog(@"directory gia esistente");
-	}
-	
-	
-	
-	// NSLog(@"inizio");
-	
 	CGSize thumbSize = CGSizeMake(140, 182);
 	
 	for (int i=1; i<=[[self document]numberOfPages] ; i++) {
 		
-		NSString *filename = [NSString stringWithFormat:@"png%d.png",i]; //nome del file su disco, possiamo anche chiamarlo in altro modo
+		NSString *filename = [NSString stringWithFormat:@"png%d.png",i];
 		NSString *fullPathToFile = [documentsDirectory stringByAppendingString:@"/"];
 		fullPathToFile = [ fullPathToFile stringByAppendingString:filename];
-		//fullPathToFile= [fullPathToFile stringByAppendingPathComponent:filename];
-		
-		// NSLog(@"path crea thumb : %@",fullPathToFile);
 		
 		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)
+		//if file exist and a pdf is open create the thumbnail
 		{
 			CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
 			UIImage *img = [[UIImage alloc] initWithCGImage:imgthumb];
@@ -1269,11 +1225,10 @@
 			if (pdfIsOpen) {
 				[filemanager createFileAtPath:fullPathToFile contents:data attributes:nil];
 			}
+			
 			CGImageRelease(imgthumb);
 			[img release];
-			
 		}
-		//	[thumbImgArray insertObject:img atIndex:i];
 	}
 	// NSLog(@"fine");
 	[filemanager release];

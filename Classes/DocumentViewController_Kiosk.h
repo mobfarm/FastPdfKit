@@ -111,9 +111,9 @@
 -(void)setNumberOfPageToolbar;
 -(void)showToolbar;
 -(void)hideToolbar;
--(void)actionDone:(id)sender;
 -(void)dismissBookmark:(id)sender;
 -(void)dismissOutline:(id)sender;
+-(void)dismissSearch:(id)sender;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 

@@ -34,23 +34,13 @@
 
 -(IBAction)actionOpenPlainDocumentFromNewMain:(id)sender {
 	
-	//NSString *documentPath = [[NSBundle mainBundle]pathForResource:DOC_PLAIN ofType:@"pdf"];
-	//NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
-	
-	
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	
-	//NSLog(@"PAth : %@", paths);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
 	NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
 	pdfPath = [pdfPath stringByAppendingString:nomePdfDaAprire];
 	pdfPath = [pdfPath stringByAppendingString:@".pdf"];
-	
-	//NSLog(@"pdfpath :%@",pdfPath);
-	//pdfPath = [pdfPath stringByAppendingString:@"/"];
-	//pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
-	//pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 	
 	NSURL *documentUrl = [NSURL fileURLWithPath:pdfPath];
 	
@@ -124,12 +114,10 @@
 	imgDict = [[NSMutableDictionary alloc] init];
 	
 	for (int i=1; i<= NUM_PDFTOSHOW ; i++) {
-		//NSLog(@"prova %@",[[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"]);
 		NSString *titoloPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"];
 		NSString *linkPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"link"];
 		NSString *copertinaPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"copertina"];
 		MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(widthThumb, heightThumb)];
-		//MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(350, 480)];
 		CGRect frame = self.view.frame;
 		if ((i%2)==0) {
 			frame.origin.y = (heightFrame * 2 ) * ( (i-1) / 2 );
@@ -161,27 +149,21 @@
 }
 
 -(void)showViewDownload{
-	//if (DownloadProgress.frame.origin.y >= self.view.bounds.size.height) {
-	//toolbar.hidden = NO;
 	DownloadProgress.hidden = NO;
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.10];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	//[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, 44)];
 	[DownloadProgress setFrame:CGRectMake(0, self.view.frame.size.height-200, self.view.frame.size.width, 200)];
 	[UIView commitAnimations];
-	//DownloadProgress = YES;
-	//}
 }
 
 -(void)hideViewDownload{
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	//[toolbar setFrame:CGRectMake(0, -44, toolbar.frame.size.width, 44)];
 	[DownloadProgress setFrame:CGRectMake(0, DownloadProgress.frame.origin.y+DownloadProgress.frame.size.height, DownloadProgress.frame.size.width, DownloadProgress.frame.size.height)];
 	[UIView commitAnimations];
-	//thumbsViewVisible = NO;
+
 	
 }
 

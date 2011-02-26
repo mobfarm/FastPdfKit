@@ -29,8 +29,10 @@
 @property (nonatomic,retain) UIImageView *corner;
 @property (nonatomic) BOOL temp;
 - (id)initWithPageNumber:(int)aPage andImage:(NSString *)_image andSize:(CGSize)_size andObject:(id)_object andDataSource:(id)_source;
+//not used initWithPageNumberNoThumb
 - (id)initWithPageNumberNoThumb:(int)aPage andImage:(NSString *)_image andSize:(CGSize)_size andObject:(id)_object andDataSource:(id)_source;
 - (void)setSelected:(BOOL)selected;
+//not used updateCorner
 - (void)updateCorner;
 
 @end

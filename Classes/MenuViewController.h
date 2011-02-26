@@ -36,7 +36,7 @@
 @property (nonatomic, retain) IBOutlet UITextView *referenceTextView;
 @property (nonatomic, retain) IBOutlet UITextView *manualTextView;
 
-
+@property (nonatomic, retain) MFDocumentManager *document;
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
 @property (nonatomic, assign) NSString *nomePdfDaAprire;
 

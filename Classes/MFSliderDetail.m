@@ -12,19 +12,20 @@
 @implementation MFSliderDetail
 @synthesize delegate, object, temp, dataSource, corner;
 
-// Load the view nib and initialize the pageNumber ivar.
+// Load the view and initialize the pageNumber ivar.
 - (id)initWithPageNumber:(int)aPage andImage:(NSString *)_image andSize:(CGSize)_size andObject:(id)_object andDataSource:(id)_source{
-	// NSLog(@"Init with page: %i", aPage);
 	[self setObject:_object];
-	size = _size;
-	thumbnail = _image;
-	page = aPage+1;
+	
+	size = _size; //size of the thumb
+	thumbnail = _image; //path of image
+	page = aPage+1; //number of page : set +1 because page 0 on pdf not exists
 	temp = NO;
 	dataSource = _source;
 	return self;
 }
 
 - (id)initWithPageNumberNoThumb:(int)aPage andImage:(NSString *)_image andSize:(CGSize)_size andObject:(id)_object andDataSource:(id)_source{
+	//not used
 	[self setObject:_object];
 	size = _size;
 	thumbnail = _image;
@@ -36,11 +37,10 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	// NSLog(@"Did load Page %i", page);
 	[self.view setBackgroundColor:[UIColor clearColor]];
 	
-	//[self.view setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
 	if (temp) {
+		//if thumb is not created show a spinner
 		UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 		[spinner setFrame:CGRectMake(size.width/2.0 - spinner.frame.size.width/2.0, size.height/2.0 - spinner.frame.size.height/2.0, spinner.frame.size.width, spinner.frame.size.height)];
 		[spinner startAnimating];
@@ -48,19 +48,18 @@
 		[spinner release];
 		
 	} else {
-		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, size.width-10, size.height-10)]; // Fissare dimensioni
-		// NSLog(@"%f, %f", self.view.frame.origin.x, self.view.frame.origin.y);
+		//set the image
+		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, size.width-10, size.height-10)]; // dimension of image
 		[image setImage:[UIImage imageWithContentsOfFile:thumbnail]];
 		[image	setBackgroundColor:[UIColor clearColor]];
-		//[image setImage:[UIImage imageNamed:thumbnail]];
 		[image setUserInteractionEnabled:YES];
 		[self.view addSubview:image];
 		[image release];
 		
 		
-		
+		//set the label with the number of pages
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
+			//ipad
 			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 138, 60, 15) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor whiteColor];
@@ -71,7 +70,7 @@
 			[self.view addSubview:pageLabel];
 			[pageLabel release];
 		}else {
-			
+			//Iphone
 			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(6, 57, 40, 15) ];
 			pageLabel.textAlignment =  UITextAlignmentCenter;
 			pageLabel.textColor = [UIColor whiteColor];
@@ -87,9 +86,7 @@
 }
 
 - (void)updateCorner{
-	// NSLog(@"Update Corner for page %i", page);
-	//NSString *name = [NSString stringWithFormat:@"%iMarkS.png", [[self dataSource] getColorForPage:page]];
-	//[corner setImage:[UIImage imageNamed:name]];
+	//not used
 }
 
 - (void)setSelected:(BOOL)selected{

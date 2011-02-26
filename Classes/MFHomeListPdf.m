@@ -1,5 +1,5 @@
 //
-//  ThumbnailViewController.m
+//  MFHomeListPdf.m
 //  RoadView
 //
 //  Created by Matteo Gavagnin on 26/03/09.
@@ -21,7 +21,7 @@
 @synthesize linkDownloadPdf;
 
 
-// Load the view nib and initialize the pageNumber ivar.
+// Load the view and initialize the pageNumber ivar.
 
 - (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
 
@@ -36,18 +36,20 @@
 }
 
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+// Implement viewDidLoad to do additional setup after loading the view
 - (void)viewDidLoad {
-
+		//set the width , height and position of the object present in the vew
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			yProgressBar=485;
-			xBtnRemove=120;
-			yBtnRemove=590;
-			xBtnOpen=120;
-			yBtnOpen=530;
-			widthButton=140;
-			heightButton=44;
+			//ipad
+			yProgressBar=485; //set y position of the progress bar
+			xBtnRemove=120; // set x position of btn remove 
+			yBtnRemove=590; //set y position of btn remove 
+			xBtnOpen=120; //set x position of btn remove
+			yBtnOpen=530; // set y position of btn Open/Downlaod
+			widthButton=140; // width of the button 
+			heightButton=44; // height of the button
 		}else {
+			//iphone
 			yProgressBar=215;
 			xBtnRemove=40;
 			yBtnRemove=215;
@@ -58,11 +60,10 @@
 		}
 
 	
-	
+		//set background
 		[self.view setBackgroundColor:[UIColor clearColor]];
 		
 		//check pdf already downloaded;
-		
 		BOOL fileAlreadyExists= NO;
 		
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -73,8 +74,6 @@
 		pdfPath = [pdfPath stringByAppendingString:page];
 		pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 		
-		//NSLog(@"pdfPath %@",pdfPath);
-		
 		NSFileManager *filemanager = [[NSFileManager alloc]init];
 		
 		if ([filemanager fileExistsAtPath:pdfPath]) {
@@ -83,10 +82,11 @@
 			fileAlreadyExists = NO;
 		}
 
-	
+		//The scrollview have a background and the thumb of pdf added
 		UIImageView *backthumb = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)]; // Fissare dimensioni
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			[backthumb setImage:[UIImage imageNamed:@"backThumb.png"]];
+			//set the backthumv view size.width-24 because it must be inside the backthumb.
 			imgThumb = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, size.width-24, size.height-24)]; // Fissare dimensioni
 		}
 		else {
@@ -96,68 +96,65 @@
 		[[self view] addSubview:backthumb];
 		[backthumb release];
 	
-		//imgThumb = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, size.width-24, size.height-24)]; // Fissare dimensioni
-		
 		NSArray *pathsok = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 		NSString *cacheDirectory = [pathsok objectAtIndex:0];
 		
-		
-		NSString *pdfPathThumb = [cacheDirectory stringByAppendingPathComponent:[[delegate fileManager] firstAvailableFileNameForName:page]];
-		pdfPathThumb = [pdfPathThumb stringByAppendingString:@"/"];
+		//get the correct path of the pdf - chache directory
+		NSString *pdfPathThumb = [cacheDirectory stringByAppendingString:@"/"];
 		pdfPathThumb = [pdfPathThumb stringByAppendingString:page];
 		pdfPathThumb = [pdfPathThumb stringByAppendingString:@".png"];
-				
+		
+		//set Image
 		[imgThumb setImage:[UIImage imageWithContentsOfFile:pdfPathThumb]];
 		[imgThumb setUserInteractionEnabled:YES];
 		[imgThumb setTag:numDocumento];
 		[[self view] addSubview:imgThumb];
 		[imgThumb release];
 	
-	
+		// init the acton on click on the thumb
 		openButtonFromImage= [UIButton buttonWithType:UIButtonTypeCustom];
 		[openButtonFromImage setFrame:CGRectMake(20, 15, size.width-20, size.height-20)];
 		[openButtonFromImage setTag:numDocumento];
 		[openButtonFromImage setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		if (!fileAlreadyExists) {
+				//if pdf already exist we must open the pdf at the click ok thumb
 				[openButtonFromImage addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 			}else {
+				//if pdf already exist we must download the pdf at the click on thumb
 				[openButtonFromImage addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 			}
 	
 		[[self view] addSubview:openButtonFromImage];
 	
 		
-		
+		//set the progressdownload
 		progressDownload = [[UIProgressView alloc] initWithFrame:CGRectMake(21, yProgressBar, size.width-24, size.height-10)];
 		progressDownload.progressViewStyle = UIActivityIndicatorViewStyleGray;
 		progressDownload.progress= 0.0;
 		progressDownload.hidden = TRUE;
 		[[self view] addSubview:progressDownload];
 		
-		/*NSFileManager *filemanager = [[NSFileManager alloc]init];
-		NSError *error;
-		
-		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)*/
+
+		//init open button
 		openButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		[openButton setFrame:CGRectMake(xBtnOpen, yBtnOpen, widthButton, heightButton)];
 		[openButton setTag:numDocumento];
 		[openButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[[openButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
 		if (!fileAlreadyExists) {
+			//if pdf not already exist we must download the pdf at the click on button and we set the correct image and action
 			[openButton setTitle:@"Download" forState:UIControlStateNormal];
 			[openButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
 			[openButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 		}else {
+			//if pdf already exist we must open the pdf at the click on button and we set the correct image and action
 			[openButton setTitle:@"Apri" forState:UIControlStateNormal];
 			[openButton setImage:[UIImage imageNamed:@"view.png"] forState:UIControlStateNormal];
 			[openButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 		}
-	
-		
-
-		
 		[[self view] addSubview:openButton];
 		
+		//init remove button
 		removeButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		[removeButton setFrame:CGRectMake(xBtnRemove, yBtnRemove, widthButton, heightButton)];
 		[removeButton setTitle:@"Remove" forState:UIControlStateNormal];
@@ -166,9 +163,11 @@
 		[removeButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[removeButton addTarget:self action:@selector(actionremovePdf:) forControlEvents:UIControlEventTouchUpInside];
 		[[removeButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
+		//if pdf already exist show the button
 		[removeButton setHidden:(!fileAlreadyExists)];
 		[[self view] addSubview:removeButton];
 		
+		//set the property of label initialized with title of Pdf - the title is set on xml parsed
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			
 			UILabel *pageLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 495, 300, 30) ];
@@ -198,6 +197,8 @@
 
 -(void)actionremovePdf:(id)sender{
 	
+	//remove the pdf
+	//get the correct path
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
@@ -208,31 +209,40 @@
 	
 	NSFileManager *filemanager = [[NSFileManager alloc]init];
 	
+	//remove form disk
 	[filemanager removeItemAtPath:pdfPath error:NULL];
 	
+	//get the correct btn remove form the dictionary and remove it
 	UIButton *btnRemoveSel = [mvc.buttonRemoveDict objectForKey:page];
 	btnRemoveSel.hidden = YES;
-	
+
+	//Chaneg img form opne to download
 	UIButton *btnDownloadSel = [mvc.buttonOpenDict objectForKey:page];
 	[btnDownloadSel setTitle:@"Download" forState:UIControlStateNormal];
 	[btnDownloadSel setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
 	[btnDownloadSel setTag:numDocumento];
 	[btnDownloadSel setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
+	//remove action open from button
 	[btnDownloadSel removeTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
+	//add action download from button
 	[btnDownloadSel addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 	UIButton *btnImage = [mvc.imgDict objectForKey:page];
+	//remove action open from the button up the thumb
 	[btnImage removeTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
+	//add action dwnload from the button up the thumb
 	[btnImage addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 }
 							   
 -(void)visualizzaButtonRemove{
+	//show btnRemove
 	UIButton *btnRemoveSel = [mvc.buttonRemoveDict objectForKey:page];
 	btnRemoveSel.hidden = NO;
 }
 
 -(void)actionOpenPdf:(id)sender {
+	//Open Pdf
 	senderButton = sender;
 	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
 	[mvc setNomePdfDaAprire:pdfToDownload];
@@ -240,7 +250,7 @@
 }
 
 -(void)actionDownloadPdf:(id)sender {
-	
+	//Downlad Pdf
 	senderButton = sender;
 	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
 	[self downloadPDF:self withUrl:linkDownloadPdf andName:pdfToDownload];
@@ -248,10 +258,7 @@
 
 
 -(void)downloadPDF:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf{
-	
-	
-	//_url = @"http://gapil.truelite.it/gapil.pdf";
-	
+	//download Pdf
 	NSURL *url = [NSURL URLWithString:_url];
 	request = [ASIHTTPRequest requestWithURL:url];
 	[request setDelegate:self];
@@ -262,14 +269,14 @@
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
 	
-	NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:[[delegate fileManager] firstAvailableFileNameForName:_url]];
-	pdfPath = [pdfPath stringByAppendingString:@"/"];
+	NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
 	pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
 	pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 	[request setUseKeychainPersistence:YES];
 	[request setDownloadDestinationPath:pdfPath];
 	[request setDidFinishSelector:@selector(requestFinished:)];
 	[request setDidFailSelector:@selector(requestFailed:)];
+	//start download asynchronous and set the correct progressbar
 	UIProgressView *progressViewDownload = [mvc.progressViewDict objectForKey:page];
 	[request setDownloadProgressDelegate:progressViewDownload];
 	[request setShouldPresentAuthenticationDialog:YES];
@@ -278,7 +285,7 @@
 }
 
 -(void)downloadImage:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf{
-	
+	//Download Image for the thumb of the pdf
 	NSURL *url = [NSURL URLWithString:_url];
 	//NSLog(@"url %@",url);
 	request = [ASIHTTPRequest requestWithURL:url];
@@ -297,8 +304,7 @@
 	NSLog(@"path img : %@",imgSavedPath);
 	
 	if(![fileManager fileExistsAtPath: imgSavedPath]){
-		NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:[[delegate fileManager] firstAvailableFileNameForName:_url]];
-		pdfPath = [pdfPath stringByAppendingString:@"/"];
+		NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
 		pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
 		pdfPath = [pdfPath stringByAppendingString:@".png"];
 		//NSLog(@"pdfPath %@",pdfPath);
@@ -330,14 +336,7 @@
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
-	/*UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD TERMINATO" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
-	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-	[popupQuery showInView:self.view];*/
-	//mvc.hideViewDownload;
 	NSLog(@"requestFinished");
-	//[mvc redrawTableAfterForeground];
-	//[progressView setHidden:YES];
-	//[downloadInProgress setHidden:YES];
 	pdfInDownload = NO;
 	UIButton *btnPdfToDownload =[mvc.buttonOpenDict objectForKey:page];
 	[btnPdfToDownload setTitle:@"Apri" forState:UIControlStateNormal];
@@ -360,32 +359,17 @@
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];
 	NSLog(@"requestFinished");
-	//[mvc redrawTableAfterForeground];
-	//[downloadInProgress setHidden:YES];
-	//[progressView setHidden:YES];
 	pdfInDownload = NO;
 	UIProgressView *progressViewDownload = [mvc.progressViewDict objectForKey:page];
 	progressViewDownload.hidden = YES;
 }
 
 - (void)updateCorner{
-	// NSLog(@"Update Corner for page %i", page);
-	//NSString *name = [NSString stringWithFormat:@"%iMarkS.png", [[self dataSource] getColorForPage:page]];
-	//[corner setImage:[UIImage imageNamed:name]];
+	//Not used
 }
 
 - (void)setSelected:(BOOL)selected{
-	/*
-	[UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.7];
-    [UIView setAnimationDelegate:self];
-	if (selected && border.alpha == 0.0) {
-		border.alpha = 1.0;
-	} else if (!selected && border.alpha == 1.0){
-		border.alpha = 0.0;
-	}
-    [UIView commitAnimations];
-	*/  
+ 
 }
 
 

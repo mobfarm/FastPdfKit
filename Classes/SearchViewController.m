@@ -68,7 +68,7 @@
 	
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[[self delegate]dismissAllPopoversFrom:self];
+		[[self delegate]dismissSearch:self];
 	}else {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	}

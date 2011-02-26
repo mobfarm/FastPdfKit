@@ -65,6 +65,12 @@
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
 -(void)dismissBookmark:(id)sender;
 -(void)dismissOutline:(id)sender;
+-(void)dismissSearch:(id)sender;
+// Swapping search views.
+-(void)switchToMiniSearchView:(MFTextItem *)index;
+-(void)dismissMiniSearchView;
+-(void)revertToFullSearchView;
+-(void)actionDone:(id)sender;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 
@@ -91,12 +97,6 @@
 
 @property (nonatomic, retain) id senderSearch;
 @property (nonatomic, retain) id senderText;
-
-// Swapping search views.
--(void)switchToMiniSearchView:(MFTextItem *)index;
--(void)dismissMiniSearchView;
--(void)revertToFullSearchView;
--(void)actionDone:(id)sender;
 
 
 @property (nonatomic, retain) UIButton *searchButton;

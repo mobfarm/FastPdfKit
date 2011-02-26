@@ -1,9 +1,9 @@
 //
-//  RssViewController.h
-//  FastPDF
+//  XMLParser.h
+//  FastPdfKit Sample
 //
 //  Created by Mac Book Pro on 04/02/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Mobfarm s.r.l. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,10 +12,6 @@
 
 
 @interface XMLParser : UIViewController <ASIHTTPRequestDelegate,UIActionSheetDelegate,NSXMLParserDelegate>{
-	
-	
-	
-	//IBOutlet UILabel *downloadInProgress;
 	
 	
 	NSXMLParser * xmlParser;

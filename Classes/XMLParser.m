@@ -16,18 +16,7 @@
 @synthesize pdfInDownload,errorDownload;
 @synthesize currentString;
 
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-
-/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
-	
-}*/
-
-
+ 
 - (void)viewDidLoad {
 	// Add the following line if you want the list to be editable
 	// self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -40,8 +29,6 @@
 -(void)downloadPDF:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf{
 	
 	
-	 //_url = @"http://gapil.truelite.it/gapil.pdf";
-	
 	 NSURL *url = [NSURL URLWithString:_url];
 	 request = [ASIHTTPRequest requestWithURL:url];
 	 [request setDelegate:self];
@@ -52,10 +39,9 @@
 	 NSString *documentsDirectory = [paths objectAtIndex:0];
 	
 	 
-	 NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:[[delegate fileManager] firstAvailableFileNameForName:_url]];
-	pdfPath = [pdfPath stringByAppendingString:@"/"];
-	pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
-	pdfPath = [pdfPath stringByAppendingString:@".pdf"];
+	 NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
+	 pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
+	 pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 	 [request setUseKeychainPersistence:YES];
 	 [request setDownloadDestinationPath:pdfPath];
 	 [request setDidFinishSelector:@selector(requestFinished:)];
@@ -72,7 +58,7 @@
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
-	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD TERMINATO" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
+	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD FINISHED" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];
 	NSLog(@"requestFinished");
@@ -83,10 +69,9 @@
 
 -(void)requestFailed:(ASIHTTPRequest *)request{
 	NSLog(@"requestFailed");
-	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERRORE DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
+	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERROR DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];
-	//[downloadInProgress setHidden:YES];
 	pdfInDownload = NO;
 }
 
@@ -125,6 +110,7 @@
     // this may be necessary only for the toolchain
 	
 	if (errorDownload) {
+		//if and error fo download occured we get the xml included into the project as default 
 		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"homePdf" ofType:@"xml"];  
 		NSData *fileData = [NSData dataWithContentsOfFile:filePath]; 
 		xmlParser = [[NSXMLParser alloc] initWithData:fileData];
@@ -145,9 +131,10 @@
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-	NSString * errorString = [NSString stringWithFormat:@"Unable to download story feed from web site (Error code %i )", [parseError code]];
-	NSLog(@"error parsing XML: %@", errorString);
+	//NSString * errorString = [NSString stringWithFormat:@"Unable to download story feed from web site (Error code %i )", [parseError code]];
 	errorDownload = YES;
+	//LInk of the xml it must be set 
+	//and axample of xml is in the resource filename : HomePdf.xml
 	[self parseXMLFileAtURL:@"http://go.mobfarm.eu/pdf/xmldaparsare.xml"];
 }
 
@@ -160,7 +147,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{     
-	
+	//parse the xml with the element included into the xml.
 	if ([elementName isEqualToString:@"titolo"]) {
 		
 		[item setValue:currentString forKey:@"titolo"];
@@ -192,7 +179,6 @@
 	mvc.pdfHome = stories;
 	
 	errorDownload = NO;
-
 }
 
 

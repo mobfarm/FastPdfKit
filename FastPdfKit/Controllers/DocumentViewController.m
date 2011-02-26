@@ -295,6 +295,10 @@
 	
 }
 
+-(void)dismissSearch:(id)sender{
+	[[self parentViewController]dismissModalViewControllerAnimated:YES];	
+}
+
 
 -(IBAction)actionDone:(id)sender {
 	
