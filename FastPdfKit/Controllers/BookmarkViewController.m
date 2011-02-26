@@ -93,7 +93,8 @@
 //	Dismiss this modal view controller and tell the delegate to show the requested page number. Consider
 // implementing a documentDelegate interface that handle such kind of request
 	[delegate setPage:page];
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	[delegate dismissBookmark:self];
+	//[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	
 }
 
