@@ -24,6 +24,8 @@
 		01F434C412ACD94D00D08021 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
 		1D3623260D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		6F4190EB131C0EAA00B6F1A6 /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4190EA131C0EAA00B6F1A6 /* MenuViewController_Kiosk.m */; };
+		6F4190ED131C0EBF00B6F1A6 /* homePdf.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6F4190EC131C0EBF00B6F1A6 /* homePdf.xml */; };
 		6F4BA8C91317C11F008C5A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		6F4BA8D81317C39D008C5A7E /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F563BFB13044392005CF390 /* Kiosk_ipad.xib */; };
 		6F4BA8D91317C39D008C5A7E /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F563BFC13044392005CF390 /* Kiosk_phone.xib */; };
@@ -40,7 +42,6 @@
 		6F4BA8E71317C3B6008C5A7E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		6F4BA8E81317C3B6008C5A7E /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
 		6F4BA8E91317C3B6008C5A7E /* Icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon144.png */; };
-		6F4BA8EA1317C3B6008C5A7E /* homePdf.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6FCADC7E130EC39E00F978A9 /* homePdf.xml */; };
 		6F4BA8EB1317C3C5008C5A7E /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6D226E13059E5B0053696A /* libz.1.2.3.dylib */; };
 		6F4BA8EC1317C3C5008C5A7E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		6F4BA8ED1317C3C5008C5A7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
@@ -122,7 +123,6 @@
 		6F4BA9411317C4C7008C5A7E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E56DF812FB26FC007D5018 /* libFastPDFKit.a */; };
 		6F4BA95C1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4BA95B1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m */; };
 		6F4BA9831317E40E008C5A7E /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4BA9821317E40E008C5A7E /* DocumentViewController_Kiosk.m */; };
-		6F4BAA001317EC97008C5A7E /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4BA9FF1317EC97008C5A7E /* MenuViewController_Kiosk.m */; };
 		6F4BAA6D1317F06F008C5A7E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
 		6F4BAA7F1317F0FE008C5A7E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
 		6F4BAA801317F105008C5A7E /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
@@ -191,7 +191,6 @@
 		6FBD0F0A131509D1007097BB /* minisearch_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F06131509D1007097BB /* minisearch_full.png */; };
 		6FBD0F0B131509D1007097BB /* minisearch_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F07131509D1007097BB /* minisearch_next.png */; };
 		6FBD0F0C131509D1007097BB /* minisearch_prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBD0F08131509D1007097BB /* minisearch_prev.png */; };
-		6FCADC7F130EC39E00F978A9 /* homePdf.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6FCADC7E130EC39E00F978A9 /* homePdf.xml */; };
 		6FFC6ED71316815B00A7AB8D /* minisearch_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFC6ED61316815B00A7AB8D /* minisearch_back.png */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
@@ -260,6 +259,9 @@
 		6F418F8F131C02BE00B6F1A6 /* MiniSearchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSearchViewControllerDelegate.h; sourceTree = "<group>"; };
 		6F418FBF131C040000B6F1A6 /* OutlineViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewControllerDelegate.h; sourceTree = "<group>"; };
 		6F41905C131C08D500B6F1A6 /* TextDisplayViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewControllerDelegate.h; sourceTree = "<group>"; };
+		6F4190E9131C0EAA00B6F1A6 /* MenuViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController_Kiosk.h; sourceTree = "<group>"; };
+		6F4190EA131C0EAA00B6F1A6 /* MenuViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController_Kiosk.m; sourceTree = "<group>"; };
+		6F4190EC131C0EBF00B6F1A6 /* homePdf.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = homePdf.xml; sourceTree = "<group>"; };
 		6F4BA8BC1317BE8E008C5A7E /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F4BA8BE1317BE8E008C5A7E /* FastPdfKit Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit Kiosk-Info.plist"; sourceTree = "<group>"; };
 		6F4BA8C41317BFCF008C5A7E /* MainWindow_Kiosk.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow_Kiosk.xib; sourceTree = "<group>"; };
@@ -267,8 +269,6 @@
 		6F4BA95B1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_KioskAppDelegate.m; sourceTree = "<group>"; };
 		6F4BA9811317E40E008C5A7E /* DocumentViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController_Kiosk.h; sourceTree = "<group>"; };
 		6F4BA9821317E40E008C5A7E /* DocumentViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController_Kiosk.m; sourceTree = "<group>"; };
-		6F4BA9FE1317EC97008C5A7E /* MenuViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController_Kiosk.h; path = ../MenuViewController_Kiosk.h; sourceTree = "<group>"; };
-		6F4BA9FF1317EC97008C5A7E /* MenuViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController_Kiosk.m; path = ../MenuViewController_Kiosk.m; sourceTree = "<group>"; };
 		6F4BAB8E1317FD7E008C5A7E /* backThumb_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backThumb_iphone@2x.png"; path = "img/backThumb_iphone@2x.png"; sourceTree = "<group>"; };
 		6F4BAB8F1317FD7E008C5A7E /* bookmark_add_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bookmark_add_phone@2x.png"; path = "img/bookmark_add_phone@2x.png"; sourceTree = "<group>"; };
 		6F4BAB901317FD7E008C5A7E /* changeModeDouble_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "changeModeDouble_phone@2x.png"; path = "img/changeModeDouble_phone@2x.png"; sourceTree = "<group>"; };
@@ -351,7 +351,6 @@
 		6FBD0F06131509D1007097BB /* minisearch_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minisearch_full.png; path = img/minisearch_full.png; sourceTree = "<group>"; };
 		6FBD0F07131509D1007097BB /* minisearch_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minisearch_next.png; path = img/minisearch_next.png; sourceTree = "<group>"; };
 		6FBD0F08131509D1007097BB /* minisearch_prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minisearch_prev.png; path = img/minisearch_prev.png; sourceTree = "<group>"; };
-		6FCADC7E130EC39E00F978A9 /* homePdf.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = homePdf.xml; path = ../homePdf.xml; sourceTree = "<group>"; };
 		6FCADD21130EC7C600F978A9 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		6FCADD22130EC7C600F978A9 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		6FF57BD1130576390019F4A0 /* MFHomeListPdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHomeListPdf.h; sourceTree = "<group>"; };
@@ -453,7 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				01E56DF812FB26FC007D5018 /* libFastPDFKit.a */,
-				6FCADC7E130EC39E00F978A9 /* homePdf.xml */,
+				6F4190EC131C0EBF00B6F1A6 /* homePdf.xml */,
 				01E56C6312FAC206007D5018 /* headers */,
 			);
 			name = Library;
@@ -493,8 +492,8 @@
 				95F5A35C1270A2A700F65929 /* OutlineViewController.m */,
 				01FB0F91125CB46A002D4337 /* MenuViewController.h */,
 				01FB0F92125CB46A002D4337 /* MenuViewController.m */,
-				6F4BA9FE1317EC97008C5A7E /* MenuViewController_Kiosk.h */,
-				6F4BA9FF1317EC97008C5A7E /* MenuViewController_Kiosk.m */,
+				6F4190E9131C0EAA00B6F1A6 /* MenuViewController_Kiosk.h */,
+				6F4190EA131C0EAA00B6F1A6 /* MenuViewController_Kiosk.m */,
 				1D3623240D0F684500981E51 /* FastPDFKit_SampleAppDelegate.h */,
 				1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */,
 				6F4BA95A1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.h */,
@@ -779,7 +778,6 @@
 				015EF6C712CA474B0098E4B6 /* TextDisplayView.xib in Resources */,
 				0157CF7E12EF16B200DDC590 /* SearchView2_phone.xib in Resources */,
 				0157CF7F12EF16B200DDC590 /* SearchView2_pad.xib in Resources */,
-				6FCADC7F130EC39E00F978A9 /* homePdf.xml in Resources */,
 				6F6AE43F13139FD300D7D279 /* bookmark_add_phone.png in Resources */,
 				6F6AE44013139FD300D7D279 /* bookmark_add.png in Resources */,
 				6F6AE44113139FD300D7D279 /* border.png in Resources */,
@@ -841,7 +839,6 @@
 				6F4BA8E71317C3B6008C5A7E /* Icon.png in Resources */,
 				6F4BA8E81317C3B6008C5A7E /* Icon72.png in Resources */,
 				6F4BA8E91317C3B6008C5A7E /* Icon144.png in Resources */,
-				6F4BA8EA1317C3B6008C5A7E /* homePdf.xml in Resources */,
 				6F4BA8FA1317C463008C5A7E /* minisearch_back.png in Resources */,
 				6F4BA8FB1317C463008C5A7E /* minisearch_cancel.png in Resources */,
 				6F4BA8FC1317C463008C5A7E /* minisearch_full.png in Resources */,
@@ -901,6 +898,7 @@
 				6F4BABA51317FD7E008C5A7E /* X_phone@2x.png in Resources */,
 				6F4BABA61317FD7E008C5A7E /* zoomLock_phone@2x.png in Resources */,
 				6F4BABA71317FD7E008C5A7E /* zoomUnlock_phone@2x.png in Resources */,
+				6F4190ED131C0EBF00B6F1A6 /* homePdf.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,9 +966,9 @@
 				6F4BA93E1317C4B8008C5A7E /* Reachability.m in Sources */,
 				6F4BA95C1317C5FB008C5A7E /* FastPDFKit_KioskAppDelegate.m in Sources */,
 				6F4BA9831317E40E008C5A7E /* DocumentViewController_Kiosk.m in Sources */,
-				6F4BAA001317EC97008C5A7E /* MenuViewController_Kiosk.m in Sources */,
 				6F4BAA7F1317F0FE008C5A7E /* MenuViewController.m in Sources */,
 				6F4BAA801317F105008C5A7E /* DocumentViewController.m in Sources */,
+				6F4190EB131C0EAA00B6F1A6 /* MenuViewController_Kiosk.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
