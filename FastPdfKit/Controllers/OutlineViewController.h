@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OutlineViewControllerDelegate.h"
 
 @class DocumentViewController;
 
@@ -15,7 +16,7 @@
 	NSMutableArray *outlineEntries;
 	NSMutableArray *openOutlineEntries;
 	
-	DocumentViewController *delegate;
+	NSObject<OutlineViewControllerDelegate> *delegate;
 	
 	IBOutlet UITableView *outlineTableView;
 }
@@ -25,5 +26,5 @@
 @property (nonatomic, retain) NSArray *outlineEntries;
 @property (nonatomic, retain) NSArray *openOutlineEntries;
 @property (nonatomic, retain) IBOutlet UITableView *outlineTableView;
-@property (assign) DocumentViewController *delegate;
+@property (assign) NSObject<OutlineViewControllerDelegate> *delegate;
 @end

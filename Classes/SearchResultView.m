@@ -11,7 +11,7 @@
 
 @implementation SearchResultView
 
-@synthesize text, boldRange, page;
+@synthesize text, boldRange, page,boldStart;
 @synthesize highlighted, editing;
 
 - (id)initWithFrame:(CGRect)frame {
@@ -47,7 +47,7 @@
 	
 		[text release];
 		text = [aText copy];
-		
+	
 		[self setNeedsDisplay];
 	}
 }
@@ -71,7 +71,10 @@
 	
 	CGRect contentRect = self.bounds;
 	
+	
 	if(!self.editing) {
+		
+		int lenght = 0 ;
 		
 		// Get the current context and push it.
 		CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -90,8 +93,8 @@
 		
 		// 1) Let's draw the Page X label first.
 		
-		/*// Set the text matrix to the identity.
-		CGContextSaveGState(ctx);
+		// Set the text matrix to the identity.
+		/*CGContextSaveGState(ctx);
 		
 		CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
 		
@@ -121,7 +124,12 @@
 		CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
 		
 		// Build the string as before.
-		CFStringRef snippetString = (CFStringRef)text;
+		NSString *stringPage = [@"Page " stringByAppendingString:[NSString stringWithFormat:@"%d",page]];
+		stringPage = [stringPage stringByAppendingString:@"- "];
+		lenght = stringPage.length;
+		stringPage = [stringPage stringByAppendingString:text];
+		CFStringRef snippetString = (CFStringRef)stringPage;
+		//snippetString = [@"prova" stringByAppendingString:text];
 		CFMutableAttributedStringRef snippetAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(snippetAttrString, CFRangeMake(0, 0), snippetString);
 		
@@ -138,8 +146,11 @@
 		CGColorRelease(red);
 		
 		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 12.0, NULL);
-		[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(boldRange.location, boldRange.length)];
-
+		
+		//int lenght = stringaModificata.length;
+		boldRange.location=boldRange.location+lenght;
+		[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(boldRange.location , boldRange.length)];
+		
 		
 		// Framesetter as before.
 		CTFramesetterRef snippetFramesetter = CTFramesetterCreateWithAttributedString(snippetAttrString);

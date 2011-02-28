@@ -219,7 +219,7 @@
 	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[[self delegate]actionDone:self];
+		[[self delegate]dismissSearch:self];
 	}else {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	}

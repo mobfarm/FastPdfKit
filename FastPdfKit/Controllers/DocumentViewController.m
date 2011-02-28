@@ -286,13 +286,23 @@
 			[bookmarksVC release];
 }
 
--(void)dismissBookmark:(id)sender {
+-(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+}
+
+-(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
+	self.page = page;
+	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
 -(void)dismissOutline:(id)sender {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	
+}
+
+-(void)OutlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
+	self.page = page;
+	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
 -(void)dismissSearch:(id)sender{

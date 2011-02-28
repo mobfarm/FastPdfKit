@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MFDocumentViewController.h"
 #import "MFDocumentViewControllerDelegate.h"
+#import "BookmarkViewControllerDelegate.h"
+#import "SearchViewControllerDelegate.h"
+#import "MiniSearchViewControllerDelegate.h"
+#import "OutlineViewControllerDelegate.h"
 #import "MFHorizontalSlider.h"
+#import "TextDisplayViewControllerDelegate.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -18,7 +23,7 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-@interface DocumentViewController_Kiosk : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate>{
+@interface DocumentViewController_Kiosk : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate,TextDisplayViewControllerDelegate>{
 	
 	// UI elements.
 	UIButton *leadButton;
@@ -111,7 +116,7 @@
 -(void)setNumberOfPageToolbar;
 -(void)showToolbar;
 -(void)hideToolbar;
--(void)dismissBookmark:(id)sender;
+//-(void)dismissBookmark:(id)sender;
 -(void)dismissOutline:(id)sender;
 -(void)dismissSearch:(id)sender;
 

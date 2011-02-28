@@ -10,6 +10,11 @@
 #import "MFDocumentViewController.h"
 #import "MFDocumentViewControllerDelegate.h"
 #import "MFHorizontalSlider.h"
+#import "BookmarkViewControllerDelegate.h"
+#import "SearchViewControllerDelegate.h"
+#import "MiniSearchViewControllerDelegate.h"
+#import "OutlineViewControllerDelegate.h"
+#import "TextDisplayViewControllerDelegate.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -18,7 +23,7 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-@interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate>{
+@interface DocumentViewController : MFDocumentViewController <TextDisplayViewControllerDelegate,MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate>{
 
 	// UI elements.
 	UIButton *leadButton;
@@ -63,7 +68,7 @@
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
--(void)dismissBookmark:(id)sender;
+//-(void)dismissBookmark:(id)sender;
 -(void)dismissOutline:(id)sender;
 -(void)dismissSearch:(id)sender;
 // Swapping search views.

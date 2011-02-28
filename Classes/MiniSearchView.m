@@ -298,7 +298,6 @@
 		
 		self.autoresizesSubviews = YES;		// Yes.
 		self.opaque = NO;					// Otherwise background transparencies will be flat black.
-		
 		// Layout subviews.
 		
 		UIButton *aButton = nil;
@@ -309,6 +308,7 @@
 		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width,size.height)];
 		[image setImage:[UIImage imageNamed:@"minisearch_back.png"]];
 		[image setUserInteractionEnabled:NO];
+		[image setBackgroundColor:[UIColor clearColor]];
 		[self addSubview:image];
 		[image release];
 		
@@ -318,6 +318,7 @@
 		aButton.frame = CGRectMake(size.width-38, size.height-28, 30, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateDisabled];
+		[aButton setBackgroundColor:[UIColor clearColor]];
 		[[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionNext:) forControlEvents:UIControlEventTouchUpInside];
@@ -332,7 +333,8 @@
 		aButton.frame = CGRectMake(8, size.height-28, 30, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateDisabled];
-		//[aButton setTitle:@"<<" forState:UIControlStateNormal];
+		[aButton setBackgroundColor:[UIColor clearColor]];
+		 //[aButton setTitle:@"<<" forState:UIControlStateNormal];
 		//[aButton setTitle:@"<<" forState:UIControlStateDisabled];
 		[[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
@@ -349,7 +351,8 @@
 		aButton.frame = CGRectMake(size.width*0.5-(2+60), size.height-28, 60, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_cancel.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_cancel.png"] forState:UIControlStateDisabled];
-		[[aButton titleLabel] setFont:smallFont];
+		[aButton setBackgroundColor:[UIColor clearColor]];
+		 [[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionCancel:) forControlEvents:UIControlEventTouchUpInside];
 		
@@ -364,7 +367,8 @@
 		aButton.frame = CGRectMake(size.width*0.5+2, size.height-28, 60, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_full.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_full.png"] forState:UIControlStateDisabled];
-		[[aButton titleLabel]setFont:smallFont];
+		[aButton setBackgroundColor:[UIColor clearColor]];
+		 [[aButton titleLabel]setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionFull:) forControlEvents:UIControlEventTouchUpInside];
 		

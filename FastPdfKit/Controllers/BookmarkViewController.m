@@ -8,6 +8,7 @@
 
 #import "BookmarkViewController.h"
 #import "DocumentViewController.h"
+#import "DocumentViewController_Kiosk.h"
 
 @implementation BookmarkViewController
 @synthesize editButton, bookmarksTableView;
@@ -16,7 +17,7 @@
 
 -(IBAction)actionDone:(id)sender {
 	
-		[[self delegate]dismissBookmark:self];
+		[[self delegate]dismissBookmarkViewController:self];
 }
 
 -(IBAction)actionToggleMode:(id)sender {
@@ -27,11 +28,8 @@
 		[bookmarksTableView setEditing:YES];
 		
 	} else if (status == STATUS_EDITING) {
-		
-		
 		[editButton setStyle:UIBarButtonSystemItemEdit];
 		[bookmarksTableView setEditing:NO];
-		
 	}
 	
 }
@@ -92,10 +90,10 @@
 	//
 //	Dismiss this modal view controller and tell the delegate to show the requested page number. Consider
 // implementing a documentDelegate interface that handle such kind of request
-	[delegate setPage:page];
-	[delegate dismissBookmark:self];
-	//[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	
+	[delegate bookmarkViewController:self didRequestPage:page];
+	//[delegate setPage:page];
+	//[delegate dismissBookmark:self];
 }
 
 -(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

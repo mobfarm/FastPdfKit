@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MFTextItem.h"
 
+@class SearchViewController;
 
 @protocol SearchViewControllerDelegate
 
-	[delegate dismissSearchViewController:self];
+-(NSUInteger)page;
+
+-(void)switchToMiniSearchView:(MFTextItem *)item;
+
+-(void)dismissSearch:(id)self;
+
+-(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
+
 
 @end

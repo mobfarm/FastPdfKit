@@ -72,6 +72,7 @@
 	
 	if(nil == textDisplayViewController) {
 		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle mainBundle]];
+		textDisplayViewController.documentManager = self.document;
 	}
 	
 	return textDisplayViewController;
@@ -166,9 +167,13 @@
 	if(miniSearchView == nil) {
 		
 		// If nil, allocate and initialize it.
-		
-		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(10, 50, 270, 96)];
-		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width/2)-200, -98, 450, 96)];
+		}else {
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(2, -98, self.view.frame.size.width-4, 96)];
+			
+		}
+
 	} else {
 		
 		// If not nil, remove it from the superview.
@@ -187,6 +192,17 @@
 	
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:miniSearchView];
+	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.35];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width/2)-200,50 , 450, 96)];
+	}else {
+		[miniSearchView setFrame:CGRectMake(2,50 , self.view.frame.size.width-4, 96)];
+	}
+	[UIView commitAnimations];
+	
 	[[self view]setNeedsLayout];
 }
 
@@ -194,9 +210,22 @@
 	
 	// Remove from the superview and release the mini search view.
 	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.15];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width/2)-200,-98 , 450, 96)];
+		visibleSearch = NO;
+	}else {
+		[miniSearchView setFrame:CGRectMake(2,-98 , self.view.frame.size.width-4, 96)];
+		visibleSearch = NO;
+	}
+	
+	[UIView commitAnimations];
+	
 	if(miniSearchView!=nil) {
 		
-		[miniSearchView removeFromSuperview];
+	//	[miniSearchView removeFromSuperview];
 		MF_COCOA_RELEASE(miniSearchView);
 	}
 }
@@ -263,9 +292,11 @@
 	// start the search. Look at the details in the utility method implementation.
 	senderSearch = sender;
 	
-	[self dismissAllPopoversFrom:sender];
-	
-	[self presentFullSearchView:sender];
+	if (visibleSearch) {
+		[self dismissAllPopoversFrom:sender];
+	}else {
+		[self presentFullSearchView:sender];
+	}
 }
 
 -(IBAction)actionNext:(id)sender {
@@ -379,7 +410,7 @@
 	
 }
 
--(void)dismissBookmark:(id)sender {
+-(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopoversFrom:self];
@@ -388,6 +419,16 @@
 		visibleBookmark=NO;
 	}
 
+}
+
+-(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
+	self.page = page;
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleBookmark=NO;
+	}
 }
 
 -(void)dismissOutline:(id)sender {
@@ -399,6 +440,16 @@
 		visibleOutline=NO;
 	}
 	
+}
+
+-(void)OutlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
+	self.page = page;
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopoversFrom:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleOutline=NO;
+	}
 }
 
 -(void)dismissSearch:(id)sender{
@@ -440,6 +491,7 @@
 		
 		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
 		[outlineVC setDelegate:self];
+		[outlineVC setOutlineEntries:[[self document] outline]];
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			[self dismissAllPopoversFrom:sender];
 			//se è aperto il popover slide verticale va chiuso
@@ -873,13 +925,13 @@
 	
 	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
 		//set the number of page into the toolbar at right of UIslider .. only in Iphone
-		numPaginaLabel = [[UILabel alloc]initWithFrame:CGRectMake((widthborder/2)+(aTSVH.frame.size.width-widthborder)-28, ySlider+6, 55, heightSlider)];
+		numPaginaLabel = [[UILabel alloc]initWithFrame:CGRectMake((widthborder/2)+(aTSVH.frame.size.width-widthborder)-25, ySlider+6, 55, heightSlider)];
 		[numPaginaLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-		numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"Page %u",[self page]]];
+		numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
 		numPaginaLabel.textAlignment = UITextAlignmentLeft;
 		numPaginaLabel.backgroundColor = [UIColor clearColor];
-		numPaginaLabel.shadowColor = [UIColor whiteColor];
-		numPaginaLabel.shadowOffset = CGSizeMake(0, 1);
+		//numPaginaLabel.shadowColor = [UIColor whiteColor];
+		//numPaginaLabel.shadowOffset = CGSizeMake(0, 1);
 		numPaginaLabel.textColor = [UIColor whiteColor];
 		numPaginaLabel.font = [UIFont boldSystemFontOfSize:9.0];
 		[aTSVH addSubview:numPaginaLabel];
@@ -1121,17 +1173,16 @@
 	//for each change of page set the correct numer of page
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		//ipad on toolbar
+		//Ipad on toolbar
 		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
 		numberOfPageTitleToolbar.text = ToolbarTextTitle;
 		[ToolbarTextTitle release];
 	}else {
 		//Iphone on Label at right of UISlider
-		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"Page %u",[self page]]];
+		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
 		numPaginaLabel.text = ToolbarTextTitle;
 		[ToolbarTextTitle release];
 	}
-	
 }
 
 -(void)showToolbar{
@@ -1202,12 +1253,22 @@
 	documentsDirectory = [ documentsDirectory stringByAppendingString:@"/"];
 	documentsDirectory = [documentsDirectory stringByAppendingString:nomefile];
 	
+	
 	// NSLog(@"directory crea thumb : %@",documentsDirectory);
 	
 	NSFileManager *filemanager = [[NSFileManager alloc]init];
-	NSError *error;
-	BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:&error];
 	
+	NSError **error ;
+	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:<#(NSString *)path#> withIntermediateDirectories:<#(BOOL)createIntermediates#> attributes:<#(NSDictionary *)attributes#> error:<#(NSError **)error#>
+	BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:error];
+	
+	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
+	
+	if (testDirectoryCreated) {
+		NSLog(@"directory creata");
+	}else {
+		NSLog(@"directory gia esistente");
+	}
 	CGSize thumbSize = CGSizeMake(140, 182);
 	
 	for (int i=1; i<=[[self document]numberOfPages] ; i++) {
@@ -1224,6 +1285,7 @@
 			NSData *data = UIImagePNGRepresentation(img);
 			if (pdfIsOpen) {
 				[filemanager createFileAtPath:fullPathToFile contents:data attributes:nil];
+				NSLog(@"directory crea thumb : %@",fullPathToFile);
 			}
 			
 			CGImageRelease(imgthumb);

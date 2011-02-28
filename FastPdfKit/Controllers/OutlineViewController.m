@@ -79,8 +79,10 @@
 	NSUInteger pageNumber = [entry pageNumber];
 	if(pageNumber != 0) {
 		
-		[delegate dismissOutline:self];
-		[delegate setPage:pageNumber];
+	
+		[delegate OutlineViewController:self didRequestPage:pageNumber];
+		//[delegate dismissOutline:self];
+		//[delegate setPage:pageNumber];
 	}
 	
 }

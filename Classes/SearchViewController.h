@@ -10,6 +10,7 @@
 #import "SearchResultDelegate.h"
 #import "SearchResultDataSource.h"
 #import "MFDocumentOverlayDataSource.h"
+#import "SearchViewControllerDelegate.h"
 
 @class MFDocumentManager;
 @class DocumentViewController;
@@ -31,13 +32,13 @@
 	NSUInteger totalItems;		// Counter of the total amount of item.
 	NSUInteger maxItems;		// Max number of items.
 	
-	DocumentViewController *delegate; // A delegate to change the page.
+	NSObject<SearchViewControllerDelegate> *delegate; // A delegate to change the page.
 	
 	SearchManager * searchManager;	// Data source.
 }
 
 @property (assign) SearchManager * searchManager;
-@property (assign) DocumentViewController *delegate;
+@property (assign) NSObject<SearchViewControllerDelegate> *delegate;
 
 -(IBAction)actionCancelStop:(id)sender;
 -(IBAction)actionMinimize:(id)sender;
