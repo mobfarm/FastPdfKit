@@ -164,7 +164,7 @@
 		
 		// Create the frame.
 		CTFrameRef labelFrame = CTFramesetterCreateFrame(labelFramesetter, CFRangeMake(0, pageNumberString.length), labelPath, NULL);
-		CFRelease(labelFramesetter);
+		
 		
 		// Draw the frame.
 		CTFrameDraw(labelFrame,ctx);
@@ -172,7 +172,7 @@
 		CFRelease(labelFrame);
 		CGPathRelease(labelPath);
 		CFRelease(labelAttrString);
-		
+		CFRelease(labelFramesetter);
 		
 		// 2) Now let's proceed with the snippet.
 		
@@ -206,15 +206,14 @@
 		
 		// Create the frame.
 		CTFrameRef snippetFrame = CTFramesetterCreateFrame(snippetFramesetter, snippetFitRange, snippetPath, NULL);
-		CFRelease(snippetFramesetter);
 		
 		// Draw the frame.
 		CTFrameDraw(snippetFrame,ctx);
 		
+		CFRelease(snippetFramesetter);
 		CFRelease(snippetFrame);
 		CGPathRelease(snippetPath);
 		CFRelease(snippetAttrString);
-		
 		
 		// Pop the stored context state.
 		CGContextRestoreGState(ctx);
