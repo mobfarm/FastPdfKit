@@ -28,6 +28,7 @@
 	
 	// Stop the activity indictor.
 	[activityIndicatorView stopAnimating];
+	
 }
 
 -(void)selectorWholeTextForPage:(NSNumber *)page {

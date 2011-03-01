@@ -74,7 +74,8 @@
 	
 	if(!self.editing) {
 		
-		int lenght = 0 ;
+		NSUInteger initBold = 0 ;
+		NSUInteger lengthDescritption=0;
 		
 		// Get the current context and push it.
 		CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -126,10 +127,11 @@
 		// Build the string as before.
 		NSString *stringPage = [@"Page " stringByAppendingString:[NSString stringWithFormat:@"%d",page]];
 		stringPage = [stringPage stringByAppendingString:@"- "];
-		lenght = stringPage.length;
+		initBold = stringPage.length;
+		lengthDescritption = stringPage.length;
 		stringPage = [stringPage stringByAppendingString:text];
 		CFStringRef snippetString = (CFStringRef)stringPage;
-		//snippetString = [@"prova" stringByAppendingString:text];
+		
 		CFMutableAttributedStringRef snippetAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(snippetAttrString, CFRangeMake(0, 0), snippetString);
 		
@@ -145,12 +147,13 @@
 		//CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTForegroundColorAttributeName, red);
 		CGColorRelease(red);
 		
-		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 12.0, NULL);
+		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 11.0, NULL);
 		
 		//int lenght = stringaModificata.length;
-		boldRange.location=boldRange.location+lenght;
-		[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(boldRange.location , boldRange.length)];
+		initBold=boldRange.location+initBold;
+		[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(0, lengthDescritption)];
 		
+		[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(initBold, boldRange.length)];
 		
 		// Framesetter as before.
 		CTFramesetterRef snippetFramesetter = CTFramesetterCreateWithAttributedString(snippetAttrString);

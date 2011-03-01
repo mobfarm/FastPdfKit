@@ -933,7 +933,7 @@
 		//numPaginaLabel.shadowColor = [UIColor whiteColor];
 		//numPaginaLabel.shadowOffset = CGSizeMake(0, 1);
 		numPaginaLabel.textColor = [UIColor whiteColor];
-		numPaginaLabel.font = [UIFont boldSystemFontOfSize:9.0];
+		numPaginaLabel.font = [UIFont boldSystemFontOfSize:11.0];
 		[aTSVH addSubview:numPaginaLabel];
 		[numPaginaLabel release];
 	}
