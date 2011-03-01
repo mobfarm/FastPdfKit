@@ -149,8 +149,6 @@
 		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, pageNumberString.length), kCTForegroundColorAttributeName, white);
 		CGColorRelease(white);
 		
-		
-		
 		CTTextAlignment alignment = kCTCenterTextAlignment;
 		CTParagraphStyleSetting _settings[] = {    {kCTParagraphStyleSpecifierAlignment, sizeof(alignment), &alignment} };
 		CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(_settings, sizeof(_settings) / sizeof(_settings[0]));
@@ -161,7 +159,6 @@
 		
 		// Framesetter as before.
 		CTFramesetterRef labelFramesetter = CTFramesetterCreateWithAttributedString(labelAttrString);
-		CFRelease(labelAttrString);
 		
 		// Rect for the snippet frame.
 		//CGRect snippetRect = CGRectMake(8, 0, contentRect.size.width, contentRect.size.height-10);
@@ -181,6 +178,7 @@
 		
 		CFRelease(labelFrame);
 		CGPathRelease(labelPath);
+		CFRelease(labelAttrString);
 		
 		
 		
@@ -248,7 +246,7 @@
 		
 		// Framesetter as before.
 		CTFramesetterRef snippetFramesetter = CTFramesetterCreateWithAttributedString(snippetAttrString);
-		CFRelease(snippetAttrString);
+	
 		
 		// Rect for the snippet frame.
 		//CGRect snippetRect = CGRectMake(8, 0, contentRect.size.width, contentRect.size.height-10);
@@ -256,7 +254,10 @@
 		// Cut and trim if necessary.
 		CFRange snippetFitRange;
 		
-		CTFramesetterSuggestFrameSizeWithConstraints(snippetFramesetter, CFRangeMake(0, 0), NULL, snippetRect.size, &snippetFitRange);
+		CTFramesetterSuggestFrameSizeWithConstraints(snippetFramesetter, CFRangeMake(0, (CFAttributedStringGetLength(snippetAttrString))), NULL, snippetRect.size, &snippetFitRange);
+	
+		NSLog(@"width %.3f height %.3f x: %.3f y: %.3f",snippetRect.size.width,snippetRect.size.height, snippetRect.origin.x,snippetRect.origin.y);
+		NSLog(@"%@",snippetString);
 		
 		if (!(snippetFitRange.length> boldRange.location+boldRange.length)) {
 			snippetFitRange.location = boldRange.location-((snippetFitRange.length-boldRange.length)/2);
@@ -275,6 +276,8 @@
 		
 		CFRelease(snippetFrame);
 		CGPathRelease(snippetPath);
+		CFRelease(snippetAttrString);
+		
 		
 		// Pop the stored context state.
 		CGContextRestoreGState(ctx);

@@ -168,7 +168,7 @@
 		
 		// If nil, allocate and initialize it.
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width/4), -98, (self.view.frame.size.width/2), 96)];
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 		}else {
 			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-8)/2, -98, self.view.frame.size.width-8, 96)];
@@ -194,15 +194,17 @@
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:miniSearchView];
 	
-	[UIView beginAnimations:@"show" context:NULL];
+	/*[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width/4), 50, (self.view.frame.size.width/2), 96)];
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
 	}else {
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-8)/2, 50, self.view.frame.size.width-8, 96)];
 	}
-	[UIView commitAnimations];
+	[UIView commitAnimations];*/
+	
+	miniSearchView.hidden = NO;
 	
 	[[self view]setNeedsLayout];
 }
@@ -211,18 +213,20 @@
 	
 	// Remove from the superview and release the mini search view.
 	
-	[UIView beginAnimations:@"show" context:NULL];
+	/*[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.15];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake(self.view.frame.size.width/4,-98 , (self.view.frame.size.width/2), 96)];
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
 		visibleSearch = NO;
 	}else {
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-8)/2, -98, self.view.frame.size.width-8, 96)];
 		visibleSearch = NO;
 	}
 	
-	[UIView commitAnimations];
+	[UIView commitAnimations];*/
+	
+	miniSearchView.hidden = YES;
 	
 	if(miniSearchView!=nil) {
 		
