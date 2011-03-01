@@ -75,7 +75,20 @@
 	if(!self.editing) {
 		
 		NSUInteger initBold = 0 ;
-		NSUInteger lengthDescritption=0;
+		
+		CGRect labelRect = CGRectMake(0, 0, rect.size.height*1.5,rect.size.height);
+		
+		CGRect snippetRect = CGRectMake(rect.size.height*1.5, 0, rect.size.width-(rect.size.height*1.5), rect.size.height);
+		
+		snippetRect.size.height *= 0.5;
+		snippetRect.origin.y = snippetRect.size.height * 0.5;
+		
+		labelRect.size.height *= 0.5;
+		labelRect.origin.x += 10;
+		labelRect.origin.y = labelRect.size.height * 0.5;
+		labelRect.size.width -=20;
+		
+		
 		
 		// Get the current context and push it.
 		CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -91,8 +104,86 @@
 		CGContextSetRGBFillColor(ctx, 1.0, 1.0, 1.0, 1.0);
 		CGContextFillRect(ctx, contentRect);
 		
+		//[self drawLabel:labelRect];
+		
 		
 		// 1) Let's draw the Page X label first.
+		
+		CGContextSaveGState(ctx);
+		
+		CGContextSetRGBFillColor(ctx, 0.75, 0.75, 0.75, 1.0);
+		//CGContextSetRGBStrokeColor(ctx, 0.5, 0.5, 0.5, 1.0);
+		CGContextSetAllowsAntialiasing(ctx, 1);
+		
+		CGFloat radius = labelRect.size.height*0.5;	// Radius of the corners.
+		
+		
+		// Draw a path resembling a rounded rect.
+		
+		CGContextTranslateCTM(ctx, labelRect.origin.x, labelRect.origin.y);
+		CGContextBeginPath(ctx);
+		CGContextAddArc(ctx, radius, radius, radius, M_PI, M_PI*3*0.5, 0);
+		CGContextAddArc(ctx, labelRect.size.width-radius, radius, radius, M_PI*3*0.5, 0,0);
+		CGContextAddArc(ctx, labelRect.size.width-radius, labelRect.size.height-radius, radius, 0, M_PI*0.5, 0);
+		CGContextAddArc(ctx, radius, labelRect.size.height-radius, radius, M_PI*0.5, M_PI, 0);
+		CGContextClosePath(ctx);
+		CGContextDrawPath(ctx, kCGPathFill);
+		
+		CGContextRestoreGState(ctx);
+		
+		
+		NSString *pageNumberString= [NSString stringWithFormat:@"%d",page];
+		
+		CFMutableAttributedStringRef labelAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
+		CFAttributedStringReplaceString(labelAttrString, CFRangeMake(0, 0), (CFStringRef) pageNumberString);
+		
+		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 12.0, NULL);
+		
+		[labelAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(0, pageNumberString.length)];
+		
+		CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+		CGFloat components [] = {1.0,1.0,1.0,1.0};
+		CGColorRef white = CGColorCreate(rgbColorSpace, components);
+		CGColorSpaceRelease(rgbColorSpace);
+		
+		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, pageNumberString.length), kCTForegroundColorAttributeName, white);
+		CGColorRelease(white);
+		
+		
+		
+		CTTextAlignment alignment = kCTCenterTextAlignment;
+		CTParagraphStyleSetting _settings[] = {    {kCTParagraphStyleSpecifierAlignment, sizeof(alignment), &alignment} };
+		CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(_settings, sizeof(_settings) / sizeof(_settings[0]));
+		     
+		//    set paragraph style attribute
+		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, CFAttributedStringGetLength(labelAttrString)), kCTParagraphStyleAttributeName, paragraphStyle);
+		CFRelease(paragraphStyle);
+		
+		// Framesetter as before.
+		CTFramesetterRef labelFramesetter = CTFramesetterCreateWithAttributedString(labelAttrString);
+		CFRelease(labelAttrString);
+		
+		// Rect for the snippet frame.
+		//CGRect snippetRect = CGRectMake(8, 0, contentRect.size.width, contentRect.size.height-10);
+		
+		//CTFramesetterSuggestFrameSizeWithConstraints(labelFramesetter, CFRangeMake(0, 0), NULL, snippetRect.size, NULL);
+		
+		// Create the pat.
+		CGMutablePathRef labelPath = CGPathCreateMutable();
+		CGPathAddRect(labelPath, NULL, labelRect);
+		
+		// Create the frame.
+		CTFrameRef labelFrame = CTFramesetterCreateFrame(labelFramesetter, CFRangeMake(0, pageNumberString.length), labelPath, NULL);
+		CFRelease(labelFramesetter);
+		
+		// Draw the frame.
+		CTFrameDraw(labelFrame,ctx);
+		
+		CFRelease(labelFrame);
+		CGPathRelease(labelPath);
+		
+		
+		
 		
 		// Set the text matrix to the identity.
 		/*CGContextSaveGState(ctx);
@@ -125,12 +216,12 @@
 		CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
 		
 		// Build the string as before.
-		NSString *stringPage = [@"@ " stringByAppendingString:[NSString stringWithFormat:@"%d",page]];
+		/*NSString *stringPage = [@"@ " stringByAppendingString:[NSString stringWithFormat:@"%d",text]];
 		stringPage = [stringPage stringByAppendingString:@"       "];
 		initBold = stringPage.length;
 		lengthDescritption = stringPage.length;
-		stringPage = [stringPage stringByAppendingString:text];
-		CFStringRef snippetString = (CFStringRef)stringPage;
+		//stringPage = [stringPage stringByAppendingString:text];*/
+		CFStringRef snippetString = (CFStringRef)text;
 		
 		CFMutableAttributedStringRef snippetAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(snippetAttrString, CFRangeMake(0, 0), snippetString);
@@ -138,20 +229,20 @@
 		// Now let's set a red color attribute for the sequence matching the search term to highlight it.
 		
 		// Here we prepare the color.
-		CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+		/*CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
 		CGFloat components [] = {1.0,0.0,0.0,1.0};
 		CGColorRef red = CGColorCreate(rgbColorSpace, components);
 		CGColorSpaceRelease(rgbColorSpace);
 		
 		// Here we set the color as red.
 		//CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTForegroundColorAttributeName, red);
-		CGColorRelease(red);
+		CGColorRelease(red);*/
 		
-		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 11.0, NULL);
+		//CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 11.0, NULL);
 		
 		//int lenght = stringaModificata.length;
 		initBold=boldRange.location+initBold;
-		[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(0, lengthDescritption)];
+		//[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(0, lengthDescritption)];
 		
 		[snippetAttrString addAttribute:(id)kCTFontAttributeName value:(id)helveticaBold range:NSMakeRange(initBold, boldRange.length)];
 		
@@ -160,11 +251,16 @@
 		CFRelease(snippetAttrString);
 		
 		// Rect for the snippet frame.
-		CGRect snippetRect = CGRectMake(8, 0, contentRect.size.width, contentRect.size.height-10);
+		//CGRect snippetRect = CGRectMake(8, 0, contentRect.size.width, contentRect.size.height-10);
 		
 		// Cut and trim if necessary.
 		CFRange snippetFitRange;
+		
 		CTFramesetterSuggestFrameSizeWithConstraints(snippetFramesetter, CFRangeMake(0, 0), NULL, snippetRect.size, &snippetFitRange);
+		
+		if (!(snippetFitRange.length> boldRange.location+boldRange.length)) {
+			snippetFitRange.location = boldRange.location-((snippetFitRange.length-boldRange.length)/2);
+		}
 		
 		// Create the pat.
 		CGMutablePathRef snippetPath = CGPathCreateMutable();
@@ -184,7 +280,6 @@
 		CGContextRestoreGState(ctx);
 	}
 }
-
 
 - (void)dealloc {
 	
