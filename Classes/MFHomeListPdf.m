@@ -301,7 +301,7 @@
 	NSString *imgSavedPath = [documentsDirectory stringByAppendingString:@"/"];
 	imgSavedPath = [imgSavedPath stringByAppendingString:page];
 	imgSavedPath = [imgSavedPath stringByAppendingString:@".png"];
-	NSLog(@"path img : %@",imgSavedPath);
+	//NSLog(@"path img : %@",imgSavedPath);
 	
 	if(![fileManager fileExistsAtPath: imgSavedPath]){
 		NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
@@ -355,9 +355,9 @@
 
 -(void)requestFailed:(ASIHTTPRequest *)request{
 	NSLog(@"requestFailed");
-	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERRORE DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
-	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-	[popupQuery showInView:self.view];
+	//UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERRORE DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
+	//popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	//[popupQuery showInView:self.view];
 	NSLog(@"requestFinished");
 	pdfInDownload = NO;
 	UIProgressView *progressViewDownload = [mvc.progressViewDict objectForKey:page];

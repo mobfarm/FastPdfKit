@@ -1270,9 +1270,9 @@
 	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
 	
 	if (testDirectoryCreated) {
-		NSLog(@"directory creata");
+		//NSLog(@"directory creata");
 	}else {
-		NSLog(@"directory gia esistente");
+		//NSLog(@"directory gia esistente");
 	}
 	CGSize thumbSize = CGSizeMake(140, 182);
 	
@@ -1290,7 +1290,7 @@
 			NSData *data = UIImagePNGRepresentation(img);
 			if (pdfIsOpen) {
 				[filemanager createFileAtPath:fullPathToFile contents:data attributes:nil];
-				NSLog(@"directory crea thumb : %@",fullPathToFile);
+				//NSLog(@"directory crea thumb : %@",fullPathToFile);
 			}
 			
 			CGImageRelease(imgthumb);

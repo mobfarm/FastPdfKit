@@ -142,7 +142,15 @@
 	}
 	[self.view addSubview:scrollView];
 	
-	UIImageView *border = [[UIImageView alloc] initWithFrame:CGRectMake(0, yScrollView-3, widthScrollView, 40)]; 
+	CGFloat yBorder = 0 ; 
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		yBorder = yScrollView-3 ;
+	}else {
+		yBorder = yScrollView-1 ;
+	}
+	
+	UIImageView *border = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, widthScrollView, 40)]; 
 	[border setImage:[UIImage imageNamed:@"border.png"]];
 	[self.view addSubview:border];
 	[border release];
