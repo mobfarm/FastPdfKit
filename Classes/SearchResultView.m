@@ -125,8 +125,8 @@
 		CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
 		
 		// Build the string as before.
-		NSString *stringPage = [@"Page " stringByAppendingString:[NSString stringWithFormat:@"%d",page]];
-		stringPage = [stringPage stringByAppendingString:@"- "];
+		NSString *stringPage = [@"@ " stringByAppendingString:[NSString stringWithFormat:@"%d",page]];
+		stringPage = [stringPage stringByAppendingString:@"       "];
 		initBold = stringPage.length;
 		lengthDescritption = stringPage.length;
 		stringPage = [stringPage stringByAppendingString:text];
