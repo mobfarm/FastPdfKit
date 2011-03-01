@@ -105,7 +105,7 @@
 		CGContextSaveGState(ctx);
 		
 		CGContextSetRGBFillColor(ctx, 0.75, 0.75, 0.75, 1.0);
-		CGContextSetRGBStrokeColor(ctx, 0.80, 0.80, 0.80, 1.0);
+		CGContextSetRGBStrokeColor(ctx, 0.85, 0.85, 0.85, 1.0);
 		CGContextSetAllowsAntialiasing(ctx, 1);
 		
 		CGFloat radius = labelRect.size.height*0.5;	// Radius of the corners.

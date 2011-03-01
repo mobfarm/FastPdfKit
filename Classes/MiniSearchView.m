@@ -315,7 +315,7 @@
 		
 		// Next button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(size.width-30-2, 22, 30, 20);
+		aButton.frame = CGRectMake(size.width-30-2, 24, 30, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateDisabled];
 		[aButton setBackgroundColor:[UIColor clearColor]];
@@ -330,7 +330,7 @@
 		
 		// Prev button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(2, 22, 30, 20);
+		aButton.frame = CGRectMake(2, 24, 30, 20);
 		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateNormal];
 		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateDisabled];
 		[aButton setBackgroundColor:[UIColor clearColor]];
@@ -377,7 +377,7 @@
 		[self addSubview:aButton];
 		[aButton release];
 		
-		SearchResultView *aSRV = [[SearchResultView alloc]initWithFrame:CGRectMake(60+30+4, 0, -20+size.width-60*2-30*2-2*4, size.height-20)];
+		SearchResultView *aSRV = [[SearchResultView alloc]initWithFrame:CGRectMake(30+2,2, size.width-30*2-2*4,size.height-5)];
 		[aSRV setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
 		self.searchResultView = aSRV;
 		[aSRV setBackgroundColor:[UIColor clearColor]];
