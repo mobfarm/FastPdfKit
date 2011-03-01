@@ -129,6 +129,9 @@
 	
 	currentSearchResultIndex++;
 	
+	if(currentSearchResultIndex == [searchResults count])
+		currentSearchResultIndex = 0;
+	
 	MFTextItem *item = [searchResults objectAtIndex:currentSearchResultIndex];
 	
 	if(item==nil)
@@ -140,19 +143,19 @@
 	
 	// Update prev/next buttons.
 	
-	if(currentSearchResultIndex + 1 < [searchResults count]) {
-		
-		
-		[nextButton setEnabled:YES];
-	} else {
-		
-		[nextButton setEnabled:NO];
-	}
-	if(currentSearchResultIndex > 0) {
-		[prevButton setEnabled:YES];
-	} else {
-		[prevButton setEnabled:NO];
-	}
+	//if(currentSearchResultIndex + 1 < [searchResults count]) {
+//		
+//		
+//		[nextButton setEnabled:YES];
+//	} else {
+//		
+//		[nextButton setEnabled:NO];
+//	}
+//	if(currentSearchResultIndex > 0) {
+//		[prevButton setEnabled:YES];
+//	} else {
+//		[prevButton setEnabled:NO];
+//	}
 }
 
 -(void) moveToPrevResult {
@@ -161,6 +164,9 @@
 	
 	currentSearchResultIndex--;
 	
+	if(currentSearchResultIndex < 0)
+		currentSearchResultIndex = [searchResults count]-1;
+	
 	MFTextItem *item = [searchResults objectAtIndex:currentSearchResultIndex];
 	
 	if(item==nil)
@@ -173,19 +179,19 @@
 	
 	// Update prev/next buttons.
 	
-	if(currentSearchResultIndex + 1 < [searchResults count]) {
-		
-		
-		[nextButton setEnabled:YES];
-	} else {
-		
-		[nextButton setEnabled:NO];
-	}
-	if(currentSearchResultIndex > 0) {
-		[prevButton setEnabled:YES];
-	} else {
-		[prevButton setEnabled:NO];
-	}
+	//if(currentSearchResultIndex + 1 < [searchResults count]) {
+//		
+//		
+//		[nextButton setEnabled:YES];
+//	} else {
+//		
+//		[nextButton setEnabled:NO];
+//	}
+//	if(currentSearchResultIndex > 0) {
+//		[prevButton setEnabled:YES];
+//	} else {
+//		[prevButton setEnabled:NO];
+//	}
 }
 
 #pragma mark SearchResultDelegate
