@@ -8,6 +8,7 @@
 
 #import "BookmarkViewController.h"
 #import "DocumentViewController.h"
+#import "DocumentViewController_Kiosk.h"
 
 #define KEY_FROM_DOCUMENT_ID(doc_id) [NSString stringWithFormat:@"bookmarks_%@",(doc_id)]
 
@@ -45,6 +46,7 @@
 
 -(IBAction)actionDone:(id)sender {
 	
+<<<<<<< HEAD
     NSString * documentId = nil;
     
     [self disableEditing];
@@ -53,6 +55,9 @@
     [[NSUserDefaults standardUserDefaults]setObject:bookmarks forKey:KEY_FROM_DOCUMENT_ID(documentId)];
     
 	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+=======
+		[[self delegate]dismissBookmarkViewController:self];
+>>>>>>> KioskMenu
 }
 
 -(IBAction)actionToggleMode:(id)sender {
@@ -62,8 +67,13 @@
 		[self enableEditing];
         
 	} else if (status == STATUS_EDITING) {
+<<<<<<< HEAD
 		
 		[self disableEditing];
+=======
+		[editButton setStyle:UIBarButtonSystemItemEdit];
+		[bookmarksTableView setEditing:NO];
+>>>>>>> KioskMenu
 	}
 }
 
@@ -126,9 +136,10 @@
 	//
 //	Dismiss this modal view controller and tell the delegate to show the requested page number. Consider
 // implementing a documentDelegate interface that handle such kind of request
-	[delegate setPage:page];
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	
+	[delegate bookmarkViewController:self didRequestPage:page];
+	//[delegate setPage:page];
+	//[delegate dismissBookmark:self];
 }
 
 -(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

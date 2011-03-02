@@ -9,6 +9,7 @@
 #import "OutlineViewController.h"
 #import "MFPDFOutlineEntry.h"
 #import "DocumentViewController.h"
+#import "DocumentViewController_Kiosk.h"
 
 @implementation OutlineViewController
 
@@ -19,8 +20,7 @@
 
 -(IBAction)actionBack:(id)sender {
 	
-	// Dismiss this view controller (it only if this is presented as a model view controller, so be careful).
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	[[self delegate]dismissOutline:self];
 }
 
 #pragma mark -
@@ -79,8 +79,10 @@
 	NSUInteger pageNumber = [entry pageNumber];
 	if(pageNumber != 0) {
 		
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		[delegate setPage:pageNumber];
+	
+		[delegate OutlineViewController:self didRequestPage:pageNumber];
+		//[delegate dismissOutline:self];
+		//[delegate setPage:pageNumber];
 	}
 	
 }

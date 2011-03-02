@@ -22,11 +22,14 @@
 	MFDocumentManager *document;
 	
 	UIAlertView *passwordAlertView;
+	
+	NSString *nomePdfDaAprire;
+	
 }
 
 -(IBAction)actionOpenPlainDocument:(id)sender;
-
 -(IBAction)actionOpenEncryptedDocument:(id)sender;
+
 
 @property (nonatomic, retain) IBOutlet UIButton *referenceButton;
 @property (nonatomic, retain) IBOutlet UIButton *manualButton;
@@ -34,7 +37,9 @@
 @property (nonatomic, retain) IBOutlet UITextView *manualTextView;
 
 @property (nonatomic, retain) MFDocumentManager *document;
-
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
+@property (nonatomic, assign) NSString *nomePdfDaAprire;
+
+
 
 @end

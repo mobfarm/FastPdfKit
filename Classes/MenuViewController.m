@@ -9,6 +9,8 @@
 #import "MenuViewController.h"
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 #define TEXT_PLAIN @"The following button will open a plain PDF. The MFDocumentManager instance can be immediately used to create a DocumentViewController to push onto the stack. Look for the details in the MenuViewController class"
 #define TEXT_ENCRYPTED @"The following button will open a password protected PDF. You will be asked to insert a password. The program will use the password to try to unlock the PDF and the DocumentViewController will be created only once the document has been succesfully unlocked. The password is 12345"
@@ -19,11 +21,13 @@
 #define DOC_PLAIN @"gitmanual"
 #define DOC_ENCRYPTED @"gitmanualcrypt"
 
+
 @implementation MenuViewController
 
 @synthesize referenceButton, manualButton, referenceTextView, manualTextView;
-@synthesize document;
 @synthesize passwordAlertView;
+@synthesize nomePdfDaAprire;
+@synthesize document;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
     //
@@ -39,8 +43,12 @@
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
+<<<<<<< HEAD
 	[aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
     
+=======
+	aDocViewController.nomefile=DOC_PLAIN;
+>>>>>>> KioskMenu
 	//
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
@@ -53,10 +61,11 @@
 	
 }
 
+
 -(IBAction)actionOpenEncryptedDocument:(id)sender {
 	
-		//
-// Create the MFDocumentManager using the encrypted file URL like we did for the plain one
+	//
+	// Create the MFDocumentManager using the encrypted file URL like we did for the plain one
 	
 	NSString *documentPath = [[NSBundle mainBundle]pathForResource:DOC_ENCRYPTED ofType:@"pdf"];
 	NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
@@ -64,20 +73,20 @@
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
 	
 	// 
-//	Now we can check if the document is encrypted or not. If it is, we can store it and display a prompt
-//	to the user, asking for the password. Then we try to unlock the document in the alert callback
+	//	Now we can check if the document is encrypted or not. If it is, we can store it and display a prompt
+	//	to the user, asking for the password. Then we try to unlock the document in the alert callback
 	
 	if([aDocManager isLocked]) {
 		
 		[self setDocument:aDocManager];
 		
-	// 
-//	Create and alert a reference (assign) to it
+		// 
+		//	Create and alert a reference (assign) to it
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Insert Password" message:[NSString stringWithFormat:@"This get covered"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
 		[self setPasswordAlertView:alert];
 		
-	//
-// Let's add a password field to the alert
+		//
+		// Let's add a password field to the alert
 		
 		UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 45.0, 260.0, 25.0)];
 		[passwordField setAutocorrectionType:UITextAutocorrectionTypeNo];
@@ -87,14 +96,12 @@
 		[passwordField setSecureTextEntry:YES];
 		[passwordField setKeyboardAppearance:UIKeyboardAppearanceAlert];
 		[passwordField setBackgroundColor:[UIColor whiteColor]];
-		[passwordField setTag:TAG_PASSWORDFIELD];
 		
-	//
-// Now show it
-		[alert addSubview:passwordField];		
+		//
+		// Now show it
+		[alert addSubview:passwordField];
 		[alert show];
 		[alert release];
-		[passwordField release];
 		
 	} else {
 		
@@ -103,6 +110,7 @@
 	}
 	
 }
+
 
 -(void)tryOpenPendingDocumentWithPassword:(NSString *)password {
 	
@@ -120,6 +128,7 @@
 		DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:document];
         [aDocViewController setDocumentId:DOC_ENCRYPTED]; // We know that in this sample that the file can only be this one.
 		[[self navigationController]pushViewController:aDocViewController animated:YES];
+		aDocViewController.nomefile=DOC_PLAIN;
 		[aDocViewController release];
 		
 	} else {
@@ -155,41 +164,22 @@
 	}	
 }
 
-
-
-
-
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	UIFont *smallSystemFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-	
-	[referenceTextView setText:TEXT_PLAIN];
-	[referenceTextView setFont:smallSystemFont];
-	[manualTextView setText:TEXT_ENCRYPTED];
-	[manualTextView setFont:smallSystemFont];
-	
-	[referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
-	[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
-	
+		//No graphics visualization
+		
+		UIFont *smallSystemFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+		
+		[referenceTextView setText:TEXT_PLAIN];
+		[referenceTextView setFont:smallSystemFont];
+		[manualTextView setText:TEXT_ENCRYPTED];
+		[manualTextView setFont:smallSystemFont];
+		
+		[referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
+		[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
+			
 }
 
 
@@ -197,14 +187,17 @@
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return YES;
+	if(interfaceOrientation == UIDeviceOrientationPortrait){
+		return YES;
+	}else {
+		return NO;
+	}
 }
 
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
     // Release any cached data, images, etc that aren't in use.
 }
 
@@ -224,6 +217,5 @@
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end

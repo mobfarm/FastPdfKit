@@ -15,6 +15,7 @@
 @synthesize textView, activityIndicatorView;
 @synthesize text;
 @synthesize delegate;
+@synthesize documentManager;
 
 #pragma mark -
 #pragma mark Text extraction in background
@@ -27,6 +28,7 @@
 	
 	// Stop the activity indictor.
 	[activityIndicatorView stopAnimating];
+	
 }
 
 -(void)selectorWholeTextForPage:(NSNumber *)page {
@@ -37,7 +39,9 @@
 	
 	// Just call the -wholeTextForPage: method of MFDocumentManager. Pass NULL as profile to use the default profile.
 	// If you want to use a different profile pass a reference to a MFProfile.
-	NSString *someText = [[self.delegate.document wholeTextForPage:[page intValue] withProfile:NULL]copy];
+	NSString *someText = [[documentManager wholeTextForPage:[page intValue] withProfile:NULL]copy];
+	//
+	//NSString *someText = [[self.delegate.document wholeTextForPage:[page intValue] withProfile:NULL]copy];
 	
 	// Call back performed on the main thread.
 	[self performSelectorOnMainThread:@selector(updateTextToTextDisplayView:) withObject:someText  waitUntilDone:YES];
@@ -70,7 +74,6 @@
 #pragma mark Actions
 
 -(IBAction)actionBack:(id)sender {
-	
 	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
@@ -113,6 +116,7 @@
 	[textView release],textView = nil;
 	[activityIndicatorView release],activityIndicatorView = nil;
 	[text release],text = nil;
+	[documentManager dealloc];
 	
     [super dealloc];
 }

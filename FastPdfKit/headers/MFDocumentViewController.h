@@ -75,7 +75,7 @@
 
 @property (assign) NSObject<MFDocumentOverlayDataSource> *overlayDataSource;
 @property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
-@property (readonly) MFDocumentManager * document;
+@property (readonly) MFDocumentManager *document;
 
 /**
  Set the starting page of the document. It is valid only after initialization and before the view is

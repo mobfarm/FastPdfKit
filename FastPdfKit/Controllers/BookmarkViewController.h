@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BookmarkViewControllerDelegate.h"
 
 #define STATUS_NORMAL 0
 #define STATUS_EDITING 1
@@ -26,7 +27,7 @@
 	//
 //	Delegate to get the current page and tell to show a certain page. It can also be used to
 //	get a list of bookmarks for the current document. 
-	DocumentViewController *delegate;
+	NSObject<BookmarkViewControllerDelegate> *delegate;
 	
 }
 
@@ -38,7 +39,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *bookmarksTableView;
 
 @property (nonatomic, retain) NSMutableArray *bookmarks;
-@property (nonatomic, assign) DocumentViewController *delegate;
+@property (nonatomic, assign) NSObject<BookmarkViewControllerDelegate> *delegate;
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 

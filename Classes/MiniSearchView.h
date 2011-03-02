@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SearchResultDelegate.h"
+#import "MiniSearchViewControllerDelegate.h"
 
 @class SearchManager;
 @class DocumentViewController;
@@ -26,13 +27,13 @@
 	SearchResultView *searchResultView;
  	
 	SearchManager *dataSource;	// Data sources for the serarch.
-	DocumentViewController *documentDelegate;	// Delegate.
+	NSObject<MiniSearchViewControllerDelegate> *documentDelegate;	// Delegate.
 	
 	NSMutableArray *searchResults;	// Local copy of the search results.
 	long int currentSearchResultIndex;	// Current index of the search result.
 }
 
-@property (nonatomic,assign) DocumentViewController * documentDelegate;
+@property (nonatomic,assign) NSObject<MiniSearchViewControllerDelegate> * documentDelegate;
 @property (nonatomic,assign) SearchManager *dataSource;
 
 @property (nonatomic,retain) UIButton *nextButton;

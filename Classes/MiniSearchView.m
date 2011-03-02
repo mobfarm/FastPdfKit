@@ -129,6 +129,9 @@
 	
 	currentSearchResultIndex++;
 	
+	if(currentSearchResultIndex == [searchResults count])
+		currentSearchResultIndex = 0;
+	
 	MFTextItem *item = [searchResults objectAtIndex:currentSearchResultIndex];
 	
 	if(item==nil)
@@ -140,19 +143,19 @@
 	
 	// Update prev/next buttons.
 	
-	if(currentSearchResultIndex + 1 < [searchResults count]) {
-		
-		
-		[nextButton setEnabled:YES];
-	} else {
-		
-		[nextButton setEnabled:NO];
-	}
-	if(currentSearchResultIndex > 0) {
-		[prevButton setEnabled:YES];
-	} else {
-		[prevButton setEnabled:NO];
-	}
+	//if(currentSearchResultIndex + 1 < [searchResults count]) {
+//		
+//		
+//		[nextButton setEnabled:YES];
+//	} else {
+//		
+//		[nextButton setEnabled:NO];
+//	}
+//	if(currentSearchResultIndex > 0) {
+//		[prevButton setEnabled:YES];
+//	} else {
+//		[prevButton setEnabled:NO];
+//	}
 }
 
 -(void) moveToPrevResult {
@@ -161,6 +164,9 @@
 	
 	currentSearchResultIndex--;
 	
+	if(currentSearchResultIndex < 0)
+		currentSearchResultIndex = [searchResults count]-1;
+	
 	MFTextItem *item = [searchResults objectAtIndex:currentSearchResultIndex];
 	
 	if(item==nil)
@@ -173,19 +179,19 @@
 	
 	// Update prev/next buttons.
 	
-	if(currentSearchResultIndex + 1 < [searchResults count]) {
-		
-		
-		[nextButton setEnabled:YES];
-	} else {
-		
-		[nextButton setEnabled:NO];
-	}
-	if(currentSearchResultIndex > 0) {
-		[prevButton setEnabled:YES];
-	} else {
-		[prevButton setEnabled:NO];
-	}
+	//if(currentSearchResultIndex + 1 < [searchResults count]) {
+//		
+//		
+//		[nextButton setEnabled:YES];
+//	} else {
+//		
+//		[nextButton setEnabled:NO];
+//	}
+//	if(currentSearchResultIndex > 0) {
+//		[prevButton setEnabled:YES];
+//	} else {
+//		[prevButton setEnabled:NO];
+//	}
 }
 
 #pragma mark SearchResultDelegate
@@ -298,7 +304,6 @@
 		
 		self.autoresizesSubviews = YES;		// Yes.
 		self.opaque = NO;					// Otherwise background transparencies will be flat black.
-		
 		// Layout subviews.
 		
 		UIButton *aButton = nil;
@@ -306,11 +311,20 @@
 		CGSize size = frame.size;
 		UIFont *smallFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 		
+		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width,size.height)];
+		[image setImage:[UIImage imageNamed:@"minisearch_back.png"]];
+		[image setUserInteractionEnabled:NO];
+		[image setBackgroundColor:[UIColor clearColor]];
+		[self addSubview:image];
+		[image release];
+		
+		
 		// Next button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(size.width-34, size.height-(4+20), 30, 20);
-		[aButton setTitle:@">>" forState:UIControlStateNormal];
-		[aButton setTitle:@">>" forState:UIControlStateDisabled];
+		aButton.frame = CGRectMake(size.width-30-2, 24, 30, 20);
+		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_next.png"] forState:UIControlStateDisabled];
+		[aButton setBackgroundColor:[UIColor clearColor]];
 		[[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionNext:) forControlEvents:UIControlEventTouchUpInside];
@@ -320,12 +334,14 @@
 		[self addSubview:aButton];
 		[aButton release];
 		
-		
 		// Prev button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(4, size.height-(4+20), 30, 20);
-		[aButton setTitle:@"<<" forState:UIControlStateNormal];
-		[aButton setTitle:@"<<" forState:UIControlStateDisabled];
+		aButton.frame = CGRectMake(2, 24, 30, 20);
+		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_prev.png"] forState:UIControlStateDisabled];
+		[aButton setBackgroundColor:[UIColor clearColor]];
+		 //[aButton setTitle:@"<<" forState:UIControlStateNormal];
+		//[aButton setTitle:@"<<" forState:UIControlStateDisabled];
 		[[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionPrev:) forControlEvents:UIControlEventTouchUpInside];
@@ -338,10 +354,11 @@
 		
 		// Cancel button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(size.width*0.5-(2+60), size.height-(4+20), 60, 20);
-		[aButton setTitle:@"Cancel" forState:UIControlStateNormal];
-		[aButton setTitle:@"Cancel" forState:UIControlStateDisabled];
-		[[aButton titleLabel] setFont:smallFont];
+		aButton.frame = CGRectMake(size.width-30-2, 0, 30, 20);
+		[aButton setImage:[UIImage imageNamed:@"minisearch_cancel.png"] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_cancel.png"] forState:UIControlStateDisabled];
+		[aButton setBackgroundColor:[UIColor clearColor]];
+		 [[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionCancel:) forControlEvents:UIControlEventTouchUpInside];
 		
@@ -353,10 +370,11 @@
 		
 		// Full button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		aButton.frame = CGRectMake(size.width*0.5+2, size.height-(4+20), 60, 20);
-		[aButton setTitle:@"Full" forState:UIControlStateNormal];
-		[aButton setTitle:@"Full" forState:UIControlStateDisabled];
-		[[aButton titleLabel]setFont:smallFont];
+		aButton.frame = CGRectMake(2, 0, 30, 20);
+		[aButton setImage:[UIImage imageNamed:@"minisearch_full.png"] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageNamed:@"minisearch_full.png"] forState:UIControlStateDisabled];
+		[aButton setBackgroundColor:[UIColor clearColor]];
+		 [[aButton titleLabel]setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aButton addTarget:self action:@selector(actionFull:) forControlEvents:UIControlEventTouchUpInside];
 		
@@ -365,9 +383,10 @@
 		[self addSubview:aButton];
 		[aButton release];
 		
-		SearchResultView *aSRV = [[SearchResultView alloc]initWithFrame:CGRectMake(4, 4, size.width-8, size.height-(4+4+4+20))];
+		SearchResultView *aSRV = [[SearchResultView alloc]initWithFrame:CGRectMake(30+2,2, size.width-30*2-2*4,size.height-5)];
 		[aSRV setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
 		self.searchResultView = aSRV;
+		[aSRV setBackgroundColor:[UIColor clearColor]];
 		[self addSubview:aSRV];
 		[aSRV release];
 		

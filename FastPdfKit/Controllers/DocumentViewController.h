@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MFDocumentViewController.h"
 #import "MFDocumentViewControllerDelegate.h"
+#import "MFHorizontalSlider.h"
+#import "BookmarkViewControllerDelegate.h"
+#import "SearchViewControllerDelegate.h"
+#import "MiniSearchViewControllerDelegate.h"
+#import "OutlineViewControllerDelegate.h"
+#import "TextDisplayViewControllerDelegate.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -17,7 +23,7 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-@interface DocumentViewController : MFDocumentViewController <MFDocumentViewControllerDelegate>{
+@interface DocumentViewController : MFDocumentViewController <TextDisplayViewControllerDelegate,MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate>{
 
 	// UI elements.
 	UIButton *leadButton;
@@ -38,12 +44,12 @@
 	UIButton *textButton;
 	
 	UILabel *pageLabel;
+	UILabel *numPaginaLabel;
 	UISlider *pageSlider;
 	
 	BOOL hudHidden; // HUD status flag.
+	BOOL miniSearchVisible;
 	
-	// Thumbnail view and stuff.
-	UIImageView *thumbnailView;
 	NSUInteger thumbPage;
 	
 	// Text extraction controller and stuff.
@@ -58,10 +64,22 @@
     // Document's ID. We use this as an unique id for bookmarks and other per-document data.
     NSString * documentId;
 	
+	NSString *nomefile;
+	BOOL pdfIsOpen;
 	
+		
+
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
+//-(void)dismissBookmark:(id)sender;
+-(void)dismissOutline:(id)sender;
+-(void)dismissSearch:(id)sender;
+// Swapping search views.
+-(void)switchToMiniSearchView:(MFTextItem *)index;
+-(void)dismissMiniSearchView;
+-(void)revertToFullSearchView;
+-(void)actionDone:(id)sender;
 
 @property (nonatomic, copy) NSString * documentId;
 
@@ -77,14 +95,21 @@
 @property (nonatomic, retain) UIButton *automodeButton;
 @property (nonatomic, retain) UIButton *dismissButton;
 @property (nonatomic, retain) UILabel *pageLabel;
+@property (nonatomic, retain) UILabel *numPaginaLabel;
 @property (nonatomic, retain) UISlider *pageSlider;
 @property (nonatomic, retain) UIButton *bookmarksButton;
 @property (nonatomic, retain) UIButton *outlineButton;
 
-// Swapping search views.
--(void)switchToMiniSearchView:(MFTextItem *)index;
--(void)dismissMiniSearchView;
--(void)revertToFullSearchView;
+@property (nonatomic, retain) NSMutableArray *thumbImgArray;
+
+
+@property (nonatomic, retain) NSString *nomefile;
+@property (nonatomic) BOOL pdfIsOpen;
+@property (nonatomic,assign) BOOL miniSearchVisible;
+
+@property (nonatomic, retain) id senderSearch;
+@property (nonatomic, retain) id senderText;
+
 
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) SearchViewController *searchViewController;

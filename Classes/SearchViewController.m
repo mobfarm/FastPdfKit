@@ -10,6 +10,7 @@
 #import "MFTextItem.h"
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
+#import "DocumentViewController_Kiosk.h"
 #import "TextSearchOperation.h"
 #import "SearchManager.h"
 #import "SearchResultCellView.h"
@@ -65,7 +66,14 @@
 	
 	// Dismiss this view controller and its view from the stack.
 	
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[[self delegate]dismissSearch:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	}
+	
+	//[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
 -(void) searchDidStop {
@@ -138,6 +146,12 @@
 	}
 }
 
+
+-(IBAction)actionBack:(id)sender {
+	
+	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+}
+
 -(IBAction)actionMinimize:(id)sender {
 	
 	// We are going to use the first item to initialize the mini view.
@@ -206,6 +220,12 @@
 	[delegate switchToMiniSearchView:item];
 	
 	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[[self delegate]dismissSearch:self];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	}
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -225,7 +245,7 @@
 	
 		// Simple initialization.
 		
-		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId]autorelease];
 		
 	}
 	

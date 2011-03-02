@@ -18,18 +18,17 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	
     MenuViewController *aMenuViewController = nil;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
-		aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:[NSBundle mainBundle]];
+			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:[NSBundle mainBundle]];
 	} else {
-		aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_phone" bundle:[NSBundle mainBundle]];
+			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_phone" bundle:[NSBundle mainBundle]];
 	}
-	
 	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:aMenuViewController];
+	[aNavController setNavigationBarHidden:YES];
 	[self setNavigationController:aNavController];
 	
 	[window addSubview:[aNavController view]];
