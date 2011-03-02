@@ -18,6 +18,28 @@
 @synthesize bookmarks;
 @synthesize toolbar;
 
+
+-(void)saveBookmarks {
+	 NSString * documentId = [delegate documentId];
+    [[NSUserDefaults standardUserDefaults]setObject:bookmarks forKey:KEY_FROM_DOCUMENT_ID(documentId)];
+
+}
+
+-(NSMutableArray *) loadBookmarks {
+	
+	NSString * documentId = [delegate documentId];
+	NSMutableArray * bookmarksArray = nil;
+	NSArray * storedBookmarks = [[NSUserDefaults standardUserDefaults]objectForKey:KEY_FROM_DOCUMENT_ID(documentId)];
+	if(storedBookmarks) {
+		bookmarksArray = [[storedBookmarks mutableCopy]autorelease];
+	} else {
+		bookmarksArray = [NSMutableArray array];
+	}
+	
+	return bookmarksArray;
+	
+}
+
 -(void)enableEditing {
 	
 	NSMutableArray * items = [[toolbar items]mutableCopy];
@@ -45,19 +67,13 @@
 }
 
 -(IBAction)actionDone:(id)sender {
-	
-<<<<<<< HEAD
-    NSString * documentId = nil;
+
+	if(status == STATUS_EDITING)
+		[self disableEditing];
     
-    [self disableEditing];
-    
-    documentId = delegate.documentId;
-    [[NSUserDefaults standardUserDefaults]setObject:bookmarks forKey:KEY_FROM_DOCUMENT_ID(documentId)];
-    
+	[self saveBookmarks];
+       
 	[[self parentViewController]dismissModalViewControllerAnimated:YES];
-=======
-		[[self delegate]dismissBookmarkViewController:self];
->>>>>>> KioskMenu
 }
 
 -(IBAction)actionToggleMode:(id)sender {
@@ -67,13 +83,7 @@
 		[self enableEditing];
         
 	} else if (status == STATUS_EDITING) {
-<<<<<<< HEAD
-		
 		[self disableEditing];
-=======
-		[editButton setStyle:UIBarButtonSystemItemEdit];
-		[bookmarksTableView setEditing:NO];
->>>>>>> KioskMenu
 	}
 }
 
@@ -112,13 +122,7 @@
 //	by setting or passing to this viewcontroller an identifier for the document or tell a delegate to load/save
 //	them for us.
     
-	NSString * documentId = delegate.documentId;
-    
-	NSMutableArray *aBookmarksArray = [[[NSUserDefaults standardUserDefaults]objectForKey:KEY_FROM_DOCUMENT_ID(documentId)]mutableCopy];
-    
-	if(!aBookmarksArray) {
-        aBookmarksArray = [[NSMutableArray alloc]init];
-	}
+	NSMutableArray *aBookmarksArray = [self loadBookmarks];
 	
 	[self setBookmarks:aBookmarksArray];
 	

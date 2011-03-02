@@ -35,16 +35,13 @@
 @synthesize textButton, textDisplayViewController;
 @synthesize searchViewController, searchButton, searchManager, pdfIsOpen,miniSearchView;
 @synthesize thumbnailView;
-<<<<<<< HEAD
 @synthesize documentId;
-=======
 @synthesize thumbImgArray;
 @synthesize nomefile;
 
 @synthesize senderText;
 @synthesize senderSearch;
 @synthesize miniSearchVisible;
->>>>>>> KioskMenu
 
 #pragma mark Thumbnail utility functions
 
