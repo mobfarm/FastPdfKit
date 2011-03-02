@@ -321,27 +321,28 @@
 -(void)dismissAllPopoversFrom:(id)sender{
 	if (visibleBookmark) {
 		[popupBookmark dismissPopoverAnimated:YES];
-		visibleBookmark=NO;
+		
 	}
+	visibleBookmark=NO;
 	
 	if (visibleOutline) {
 		[popupOutline dismissPopoverAnimated:YES];
-		visibleOutline=NO;
+		
 		
 	}
+	visibleOutline=NO;
 	
 	if (visibleSearch) {
 		[popupSearch dismissPopoverAnimated:YES];
-		visibleSearch=NO;
-		
 	}
+	visibleSearch=NO;
 	
 	if (visibleText) {
 		[popupText dismissPopoverAnimated:YES];
-		visibleText=NO;
+		
 		
 	}
-	
+	visibleText=NO;
 }
 
 -(IBAction) actionBookmarks:(id)sender {
