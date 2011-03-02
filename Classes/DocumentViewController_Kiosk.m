@@ -35,6 +35,7 @@
 @synthesize senderText;
 @synthesize senderSearch;
 @synthesize heightToolbar,widthborder,heightTSHV;
+@synthesize miniSearchVisible;
 
 #pragma mark Thumbnail utility functions
 
@@ -171,6 +172,7 @@
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+			
 		}else {
 			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
@@ -200,11 +202,14 @@
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+		[self.view bringSubviewToFront:toolbar];
 	}else {
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+		[self.view bringSubviewToFront:toolbar];
 	}
 	[UIView commitAnimations];
 	
+	miniSearchVisible = YES;
 	
 	[[self view]setNeedsLayout];
 }
@@ -232,6 +237,46 @@
 	//	[miniSearchView removeFromSuperview];
 		MF_COCOA_RELEASE(miniSearchView);
 	}
+	
+	miniSearchVisible = NO;
+}
+
+-(void)showMiniSearchView {
+	
+	// Remove from the superview and release the mini search view.
+	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.15];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+		visibleSearch = NO;
+	}else {
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+		visibleSearch = NO;
+	}
+	
+	[UIView commitAnimations];
+	
+	
+}
+
+-(void)dismissMiniSearchViewNoRelease {
+	
+	// Remove from the superview and release the mini search view.
+	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.15];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+		visibleSearch = NO;
+	}else {
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+		visibleSearch = NO;
+	}
+	
+	[UIView commitAnimations];
 }
 
 -(SearchManager *)searchManager {
@@ -257,6 +302,7 @@
 -(void)switchToMiniSearchView:(MFTextItem *)item {
 	
 	// Dismiss the full view and present the minimized one.
+	miniSearchVisible = YES;
 	
 	[self dismissModalViewControllerAnimated:YES];
 	[self presentMiniSearchViewWithStartingItem:item];
@@ -765,6 +811,7 @@
 	visibleBookmark=NO;
 	visibleOutline=NO;
 	visibleSearch=NO;
+	[self dismissMiniSearchView];
 }
 
 
@@ -787,6 +834,10 @@
 			[self showToolbar];
 			[self showHorizontalThumbnails];
 			
+			if (miniSearchVisible) {
+				[self showMiniSearchView];
+			}
+			
 			[miniSearchView setHidden:NO];
 			hudHidden = NO;
 			
@@ -797,7 +848,9 @@
 			[self hideToolbar];
 			[self hideHorizontalThumbnails];
 			
-			[miniSearchView setHidden:YES];
+			
+			[self dismissMiniSearchViewNoRelease];
+			//[miniSearchView setHidden:YES];
 			
 			hudHidden = YES;
 		}
@@ -863,6 +916,7 @@
 	hudHidden=YES;
 	visibleBookmark = NO;
 	visibleOutline = NO;
+	miniSearchVisible = NO;
 	
 #ifdef UI_USER_INTERFACE_IDIOM
 	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);

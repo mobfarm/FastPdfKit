@@ -74,6 +74,7 @@
 	NSString *nomefile;
 	BOOL pdfIsOpen;
 	BOOL thumbsViewVisible;
+	BOOL miniSearchVisible;
 	
 	UIToolbar *toolbar;
 	UIBarButtonItem *changeModeBarButtonItem;
@@ -151,6 +152,7 @@
 @property  BOOL visibleOutline;
 @property  BOOL visibleSearch;
 @property  BOOL visibleText;
+@property (assign) BOOL miniSearchVisible;
 @property (nonatomic, retain) id senderSearch;
 @property (nonatomic, retain) id senderText;
 @property (nonatomic, retain) UIPopoverController *popupBookmark;

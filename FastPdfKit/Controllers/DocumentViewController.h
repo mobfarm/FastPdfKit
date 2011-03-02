@@ -48,6 +48,7 @@
 	UISlider *pageSlider;
 	
 	BOOL hudHidden; // HUD status flag.
+	BOOL miniSearchVisible;
 	
 	NSUInteger thumbPage;
 	
@@ -99,6 +100,7 @@
 
 @property (nonatomic, retain) NSString *nomefile;
 @property (nonatomic) BOOL pdfIsOpen;
+@property (nonatomic,assign) BOOL miniSearchVisible;
 
 @property (nonatomic, retain) id senderSearch;
 @property (nonatomic, retain) id senderText;

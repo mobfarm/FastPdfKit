@@ -40,6 +40,7 @@
 
 @synthesize senderText;
 @synthesize senderSearch;
+@synthesize miniSearchVisible;
 
 #pragma mark Thumbnail utility functions
 
