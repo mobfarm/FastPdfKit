@@ -2,8 +2,8 @@
 //  XMLParser.h
 //  FastPdfKit Sample
 //
-//  Created by Mac Book Pro on 04/02/11.
-//  Copyright 2011 Mobfarm s.r.l. All rights reserved.
+//  Created by Gianluca Orsini on 28/02/11.
+//  Copyright 2010 MobFarm S.r.l. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

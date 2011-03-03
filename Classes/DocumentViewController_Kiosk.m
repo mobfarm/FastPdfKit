@@ -2,8 +2,8 @@
 //  DocumentViewController_Kiosk.m
 //  FastPdfKit Sample
 //
-//  Created by Mac Book Pro on 25/02/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Gianluca Orsini on 28/02/11.
+//  Copyright 2010 MobFarm S.r.l. All rights reserved.
 //
 
 #import "DocumentViewController_Kiosk.h"
@@ -29,9 +29,9 @@
 @synthesize thumbnailView;
 @synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
 @synthesize thumbImgArray;
-@synthesize nomefile,thumbsViewVisible,visibleBookmark,visibleOutline,visibleSearch,visibleText;
+@synthesize nomefile,thumbsViewVisible,visibleBookmarkView,visibleOutlineView,visibleSearchView,visibleTextView;
 @synthesize thumbSliderView,aTSVH;
-@synthesize popupBookmark,popupOutline,popupSearch,popupText;
+@synthesize bookmarkPopover,outlinePopover,searchPopover,textPopover;
 @synthesize senderText;
 @synthesize senderSearch;
 @synthesize heightToolbar,widthborder,heightTSHV;
@@ -65,99 +65,65 @@
 }
 
 #pragma mark -
-#pragma mark TextDisplayViewController lazy init and management
+#pragma mark Actions
 
--(TextDisplayViewController *)textDisplayViewController {
+-(IBAction)actionText:(id)sender {
 	
-	// Show the text display view controller to the user.
-	
-	if(nil == textDisplayViewController) {
-		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle mainBundle]];
-		textDisplayViewController.documentManager = self.document;
+	if(!waitingForTextInput) {
+		
+		// We set the flag to YES and enable the documenter interaction. The flag is used to discard unwanted
+		// user interaction on the document elsewhere, while the document interaction will allow the document
+		// manager to notify its delegate (in this case itself) of user generated event on the document, like
+		// the tap on a certain page.
+		
+		waitingForTextInput = YES;
+		self.documentInteractionEnabled = YES;
+		
+		UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+		
+		senderText = sender;
+		
+	} else {
+		waitingForTextInput = NO;
 	}
 	
-	return textDisplayViewController;
 }
 
-#pragma mark -
-#pragma mark SearchViewController lazy initialization and management
-
-// The entire search is a bit tricky, and it is not the best implementation out of there: we are likely to move most of the
-// code inside the document view controller or the future MFDocumentView and have the developer only handle the striclty
-// necessary.
-// For now, it works like this: present a search view controller that will get a search term from the user and ask the
-// document manager to perform the search on every page. Store each result inside a search manager and use it as a data
-// source to present the result to the user. Anytime the user can "minimized" the full search view controller to a mini
-// search view to navigate the document while looking for matches. Details are here, in the SearchViewController, SearchManager
-// and MiniSearchView.
-
--(SearchViewController *)searchViewController {
+-(IBAction) actionThumbnail:(id)sender{
 	
-	// Lazily allocation when required.
-	
-	if(nil==searchViewController) {
+	if (thumbsViewVisible) {
 		
-		// We use different xib on iPhone and iPad.
-		
-		BOOL isPad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-		if(isPad) {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:[NSBundle mainBundle]];
-		} else {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
-		}
-	}
-	
-	return searchViewController;
-}
-
--(void)presentFullSearchView:(id)sender {
-	
-	// Get the full search view controller lazily, set it upt as the delegate for
-	// the search manager and present it to the user modally.
-	
-	// Get the search manager lazily and set up the document.
-	
-	SearchManager *manager = self.searchManager;
-	manager.document = self.document;
-	
-	// Get the search view controller lazily, set the delegate at self to handle
-	// document action and the search manager as data source.
-	
-	SearchViewController *controller = self.searchViewController;
-	// They implement the same methods
-	[controller setDelegate:self];
-	controller.searchManager = manager;
-	
-	// Set the search view controller as the data source delegate.
-	
-	manager.delegate = controller;
-	
-	// Enable overlay and set the search manager as the data source for
-	// overlay items.
-	self.overlayDataSource = self.searchManager;
-	self.overlayEnabled = YES;
-	
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		//se è aperto il popover slide verticale va chiuso
-		popupSearch = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
-		[popupSearch setPopoverContentSize:CGSizeMake(450, 650)];
-		[popupSearch setDelegate:self];
-		[popupSearch presentPopoverFromBarButtonItem:senderSearch permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-		visibleSearch=YES;
+		[self hideHorizontalThumbnails];
 	}else {
-		[self presentModalViewController:(UIViewController *)controller animated:YES];
-		visibleSearch=YES;
+		[self showHorizontalThumbnails];
 	}
 	
-	
-	//[self presentModalViewController:(UIViewController *)controller animated:YES];
 }
 
-// Void
+-(void)showHorizontalThumbnails{
+	if (thumbSliderViewHorizontal.frame.origin.y >= self.view.bounds.size.height) {
+		//toolbar.hidden = NO;
+		[UIView beginAnimations:@"show" context:NULL];
+		[UIView setAnimationDuration:0.35];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+		[UIView commitAnimations];
+		thumbsViewVisible = YES;
+	}
+}
+
+-(void)hideHorizontalThumbnails{
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.35];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+	[UIView commitAnimations];
+	thumbsViewVisible = NO;
+	
+}
+
 -(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
 	
 	// This could be rather tricky.
@@ -177,7 +143,7 @@
 			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 		}
-
+		
 	} else {
 		
 		// If not nil, remove it from the superview.
@@ -214,350 +180,8 @@
 	[[self view]setNeedsLayout];
 }
 
--(void)dismissMiniSearchView {
-	
-	// Remove from the superview and release the mini search view.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
-		visibleSearch = NO;
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
-		visibleSearch = NO;
-	}
-	
-	[UIView commitAnimations];
-	
-	
-	if(miniSearchView!=nil) {
-		
-	//	[miniSearchView removeFromSuperview];
-		MF_COCOA_RELEASE(miniSearchView);
-	}
-	
-	miniSearchVisible = NO;
-}
-
--(void)showMiniSearchView {
-	
-	// Remove from the superview and release the mini search view.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
-		visibleSearch = NO;
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
-		visibleSearch = NO;
-	}
-	
-	[UIView commitAnimations];
-	
-	
-}
-
--(void)dismissMiniSearchViewNoRelease {
-	
-	// Remove from the superview and release the mini search view.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
-		visibleSearch = NO;
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
-		visibleSearch = NO;
-	}
-	
-	[UIView commitAnimations];
-}
-
--(SearchManager *)searchManager {
-	
-	// Lazily allocate and instantiate the search manager.
-	
-	if(nil == searchManager) {
-		
-		searchManager = [[SearchManager alloc]init];
-	}
-	
-	return searchManager;
-}
-
--(void)revertToFullSearchView {
-	
-	// Dismiss the minimized view and present the full one.
-	
-	[self dismissMiniSearchView];
-	[self presentFullSearchView:self];
-}
-
--(void)switchToMiniSearchView:(MFTextItem *)item {
-	
-	// Dismiss the full view and present the minimized one.
-	miniSearchVisible = YES;
-	
-	[self dismissModalViewControllerAnimated:YES];
-	[self presentMiniSearchViewWithStartingItem:item];
-}
-
 #pragma mark -
 #pragma mark Actions
-
--(IBAction)actionText:(id)sender {
-	
-	if(!waitingForTextInput) {
-		
-		// We set the flag to YES and enable the documenter interaction. The flag is used to discard unwanted
-		// user interaction on the document elsewhere, while the document interaction will allow the document
-		// manager to notify its delegate (in this case itself) of user generated event on the document, like
-		// the tap on a certain page.
-		
-		waitingForTextInput = YES;
-		self.documentInteractionEnabled = YES;
-		
-		UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-		[alert show];
-		[alert release];
-		
-		senderText = sender;
-		
-	} else {
-		waitingForTextInput = NO;
-	}
-	
-}
-
--(IBAction)actionSearch:(id)sender {
-	
-	// Get the instance of the Search Manager lazily and then present a full sized search view controller
-	// to the user. The full search view controller will allow the user to type in a search term and
-	// start the search. Look at the details in the utility method implementation.
-	senderSearch = sender;
-	
-	if (visibleSearch) {
-		[self dismissAllPopoversFrom:sender];
-	}else {
-		[self presentFullSearchView:sender];
-	}
-}
-
--(IBAction)actionNext:(id)sender {
-	
-	// This would be connected to an hypotetical next page button. You can enable
-	// pageFlipOnEdgeTouch instead.
-	
-	[self moveToNextPage];
-}
-
--(IBAction)actionPrev:(id)sender {
-	
-	// Same as actionNext.
-	
-	[self moveToPreviousPage];
-}
-
--(void)dismissAllPopoversFrom:(id)sender{
-	if (visibleBookmark) {
-		[popupBookmark dismissPopoverAnimated:YES];
-		
-	}
-	visibleBookmark=NO;
-	
-	if (visibleOutline) {
-		[popupOutline dismissPopoverAnimated:YES];
-		
-		
-	}
-	visibleOutline=NO;
-	
-	if (visibleSearch) {
-		[popupSearch dismissPopoverAnimated:YES];
-	}
-	visibleSearch=NO;
-	
-	if (visibleText) {
-		[popupText dismissPopoverAnimated:YES];
-		
-		
-	}
-	visibleText=NO;
-}
-
--(IBAction) actionBookmarks:(id)sender {
-	
-	//
-	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
-	//	you can also push the controller with the navigation controller or use an UIActionSheet.
-	
-	
-	
-	if (visibleBookmark) {
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			[popupBookmark dismissPopoverAnimated:YES];
-			visibleBookmark=NO;
-		}else {
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
-			visibleBookmark=NO;
-		}
-		
-	}else {
-		
-		BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
-		bookmarksVC.delegate=self;
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			[self dismissAllPopoversFrom:sender];
-			//se è aperto il popover slide verticale va chiuso
-			popupBookmark = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
-			[popupBookmark setPopoverContentSize:CGSizeMake(372, 650)];
-			[popupBookmark presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-			[popupBookmark setDelegate:self];
-			visibleBookmark=YES;
-		}else {
-			[self presentModalViewController:bookmarksVC animated:YES];
-			visibleBookmark=YES;
-		}
-		[bookmarksVC release];
-	}
-}
-
--(IBAction) actionThumbnail:(id)sender{
-	
-	if (thumbsViewVisible) {
-		
-		[self hideHorizontalThumbnails];
-	}else {
-		[self showHorizontalThumbnails];
-	}
-	
-}
-
--(void)showHorizontalThumbnails{
-	if (thumbSliderViewHorizontal.frame.origin.y >= self.view.bounds.size.height) {
-		//toolbar.hidden = NO;
-		[UIView beginAnimations:@"show" context:NULL];
-		[UIView setAnimationDuration:0.35];
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
-		[UIView commitAnimations];
-		thumbsViewVisible = YES;
-	}
-}
-
--(void)hideHorizontalThumbnails{
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
-	[UIView commitAnimations];
-	thumbsViewVisible = NO;
-	
-}
-
--(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopoversFrom:self];
-	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		visibleBookmark=NO;
-	}
-
-}
-
--(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
-	self.page = page;
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopoversFrom:self];
-	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		visibleBookmark=NO;
-	}
-}
-
--(void)dismissOutline:(id)sender {
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopoversFrom:self];
-	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		visibleOutline=NO;
-	}
-	
-}
-
--(void)OutlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
-	self.page = page;
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopoversFrom:self];
-	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		visibleOutline=NO;
-	}
-}
-
--(void)dismissSearch:(id)sender{
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopoversFrom:self];
-	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		visibleSearch=NO;
-	}
-}
-
--(IBAction) actionOutline:(id)sender {
-	
-	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
-	// BookmarksViewController. However, you can show them in the same view with a segmented control, just
-	// switch datasources and take it into account in the various tableView delegate methods. Another thing
-	// to consider is that the view will be resetted once removed, and for an complex outline is not a nice thing.
-	// So, it would be better to store the position in the outline somewhere to present it again the very same
-	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
-	// of low memory warnings.
-	
-	
-	
-	// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
-	// this array and the openentries array somewhere and set them again before present the view to the user again.
-	
-	
-	
-	if (visibleOutline) {
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			[popupOutline dismissPopoverAnimated:YES];
-			visibleOutline=NO;
-		}else {
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
-			visibleOutline=NO;
-		}
-		
-	}else {
-		
-		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
-		[outlineVC setDelegate:self];
-		[outlineVC setOutlineEntries:[[self document] outline]];
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			[self dismissAllPopoversFrom:sender];
-			//se è aperto il popover slide verticale va chiuso
-			popupOutline = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
-			[popupOutline setPopoverContentSize:CGSizeMake(372, 650)];
-			[popupOutline presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-			[popupOutline setDelegate:self];
-			visibleOutline=YES;
-		}else {
-			[self presentModalViewController:outlineVC animated:YES];
-			visibleOutline=YES;
-		}
-		[outlineVC release];
-	}
-}
 
 -(IBAction) actionDismiss:(id)sender {
 	
@@ -788,10 +412,10 @@
 		
 		
 		
-		if (visibleText) {
+		if (visibleTextView) {
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-				[popupText dismissPopoverAnimated:YES];
-				visibleText=NO;
+				[textPopover dismissPopoverAnimated:YES];
+				visibleTextView=NO;
 			}
 		}else {
 			TextDisplayViewController *controller = self.textDisplayViewController;
@@ -800,18 +424,11 @@
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 				controller.modalPresentationStyle = UIModalPresentationFormSheet;
 			}
-			visibleText=YES;
+			visibleTextView=YES;
 			[self presentModalViewController:controller animated:YES];
 			//[controller release];
 		}
 	}
-}
-
--(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController{
-	visibleBookmark=NO;
-	visibleOutline=NO;
-	visibleSearch=NO;
-	[self dismissMiniSearchView];
 }
 
 
@@ -821,7 +438,8 @@
 	// we are free to use it to show/hide the selected HUD elements.
 	
 	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
-		[self dismissAllPopoversFrom:self];
+		
+		[self dismissAllPopovers];
 	}
 	
 	
@@ -914,8 +532,8 @@
 	BOOL isPad = NO;
 	
 	hudHidden=YES;
-	visibleBookmark = NO;
-	visibleOutline = NO;
+	visibleBookmarkView = NO;
+	visibleOutlineView = NO;
 	miniSearchVisible = NO;
 	
 #ifdef UI_USER_INTERFACE_IDIOM

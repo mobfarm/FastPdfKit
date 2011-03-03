@@ -23,55 +23,40 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-@interface DocumentViewController_Kiosk : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate,TextDisplayViewControllerDelegate>{
+@interface DocumentViewController_Kiosk : MFDocumentViewController <MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate>{
 	
 	// UI elements.
-	UIButton *leadButton;
-	UIButton *modeButton;
-	UIButton *directionButton;
-	UIButton *autozoomButton;
-	UIButton *automodeButton;
 	
-	UIButton *dismissButton;
-	UIButton *bookmarksButton;
-	UIButton *outlineButton;
-	
-	UIButton *nextButton;
-	UIButton *prevButton;
-	
-	UIButton *searchButton;
-	
-	UIButton *textButton;
-	
-	UILabel *pageLabel;
-	UILabel *numberOfPageTitleToolbar;
-	UILabel *numPaginaLabel;
-	UISlider *pageSlider;
+	UILabel * pageLabel;
+	UILabel * numberOfPageTitleToolbar;
+	UILabel * numPaginaLabel;
+	UISlider * pageSlider;
 	
 	BOOL hudHidden; // HUD status flag.
 	
 	// Thumbnail view and stuff.
-	UIImageView *thumbnailView;
+	UIImageView * thumbnailView;
 	NSUInteger thumbPage;
 	
 	// Text extraction controller and stuff.
 	BOOL waitingForTextInput;
-	TextDisplayViewController *textDisplayViewController;
+	TextDisplayViewController * textDisplayViewController;
 	
 	// Text search controller and stuff.
-	SearchViewController *searchViewController;
-	SearchManager *searchManager;
-	MiniSearchView *miniSearchView;
+	SearchViewController * searchViewController;
+	SearchManager * searchManager;
+	MiniSearchView * miniSearchView;
 	
-	MFHorizontalSlider *thumbsliderHorizontal;
-	UIView *thumbSliderViewHorizontal;
+	MFHorizontalSlider * thumbsliderHorizontal;
+	UIView * thumbSliderViewHorizontal;
 	
-	UIView *thumbSliderView;
-	UIView *aTSVH;
+	UIView * thumbSliderView;
+	UIView * aTSVH;
 	
-	NSMutableArray *thumbImgArray;
+	NSMutableArray * thumbImgArray;
 	
-	NSString *nomefile;
+	NSString * nomefile;
+	
 	BOOL pdfIsOpen;
 	BOOL thumbsViewVisible;
 	BOOL miniSearchVisible;
@@ -82,18 +67,8 @@
 	UIBarButtonItem *changeDirectionButtonItem;
 	UIBarButtonItem *changeLeadButtonItem;
 	
-	BOOL visibleBookmark;
-	BOOL visibleOutline;
-	BOOL visibleSearch;
-	BOOL visibleText;
-	
 	id senderText;
 	id senderSearch;
-	
-	UIPopoverController *popupBookmark;
-	UIPopoverController *popupOutline;
-	UIPopoverController *popupSearch;
-	UIPopoverController *popupText;
 	
 	UIImage *imgChangeMode;
 	UIImage *imgChangeModeDouble;
@@ -112,14 +87,11 @@
 	CGFloat heightTSHV;
 }
 
--(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
 -(void)initNumberOfPageToolbar;
 -(void)setNumberOfPageToolbar;
+
 -(void)showToolbar;
 -(void)hideToolbar;
-//-(void)dismissBookmark:(id)sender;
--(void)dismissOutline:(id)sender;
--(void)dismissSearch:(id)sender;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 
@@ -148,30 +120,26 @@
 @property (nonatomic, retain) NSString *nomefile;
 @property (nonatomic) BOOL pdfIsOpen;
 @property (nonatomic) BOOL thumbsViewVisible;
-@property  BOOL visibleBookmark;
-@property  BOOL visibleOutline;
-@property  BOOL visibleSearch;
-@property  BOOL visibleText;
+@property  BOOL visibleBookmarkView;
+@property  BOOL visibleOutlineView;
+@property  BOOL visibleSearchView;
+@property  BOOL visibleTextView;
 @property (assign) BOOL miniSearchVisible;
 @property (nonatomic, retain) id senderSearch;
 @property (nonatomic, retain) id senderText;
-@property (nonatomic, retain) UIPopoverController *popupBookmark;
-@property (nonatomic, retain) UIPopoverController *popupOutline;
-@property (nonatomic, retain) UIPopoverController *popupSearch;
-@property (nonatomic, retain) UIPopoverController *popupText;
+@property (nonatomic, retain) UIPopoverController *bookmarkPopover;
+@property (nonatomic, retain) UIPopoverController *outlinePopover;
+@property (nonatomic, retain) UIPopoverController *searchPopover;
+@property (nonatomic, retain) UIPopoverController *textPopover;
 @property CGFloat heightToolbar;
 @property CGFloat widthborder;
 @property CGFloat heightTSHV;
 
 // Swapping search views.
--(void)switchToMiniSearchView:(MFTextItem *)index;
--(void)dismissMiniSearchView;
--(void)revertToFullSearchView;
 -(void)showToolbar;
 -(void)hideToolbar;
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
--(void)dismissAllPopoversFrom:(id)sender;
 
 
 @property (nonatomic, retain) UIButton *searchButton;

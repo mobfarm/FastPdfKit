@@ -70,6 +70,30 @@
 	[thumbImage release];
 }
 
+-(void)dismissAllPopovers {
+	
+	if (visibleBookmarkView) {
+		[bookmarkPopover dismissPopoverAnimated:YES];
+		visibleBookmarkView=NO;	
+	}
+	
+	if (visibleOutlineView) {
+		[outlinePopover dismissPopoverAnimated:YES];
+		visibleOutlineView=NO;	
+	}
+	
+	if (visibleSearchView) {
+		[searchPopover dismissPopoverAnimated:YES];
+		visibleSearchView=NO;
+	}
+	
+	
+	if (visibleTextView) {
+		[textPopover dismissPopoverAnimated:YES];
+		visibleTextView=NO;	
+	}
+}
+
 #pragma mark -
 #pragma mark TextDisplayViewController lazy init and management
 
@@ -85,7 +109,7 @@
 }
 
 #pragma mark -
-#pragma mark SearchViewController lazy initialization and management
+#pragma mark SearchViewController, _Delegate and _Actions
 
 // The entire search is a bit tricky, and it is not the best implementation out of there: we are likely to move most of the
 // code inside the document view controller or the future MFDocumentView and have the developer only handle the striclty
@@ -123,32 +147,91 @@
 	// Get the full search view controller lazily, set it upt as the delegate for
 	// the search manager and present it to the user modally.
 	
+	SearchManager * manager = nil;
+	SearchViewController * controller = nil;
+	
+	
 	// Get the search manager lazily and set up the document.
 	
-	SearchManager *manager = self.searchManager;
+	manager = self.searchManager;
 	manager.document = self.document;
+	
 	
 	// Get the search view controller lazily, set the delegate at self to handle
 	// document action and the search manager as data source.
 	
-	SearchViewController *controller = self.searchViewController;
-	controller.delegate = self;
+	controller = self.searchViewController;
+	[controller setDelegate:self];
 	controller.searchManager = manager;
+	
 	
 	// Set the search view controller as the data source delegate.
 	
 	manager.delegate = controller;
+	
 	
 	// Enable overlay and set the search manager as the data source for
 	// overlay items.
 	self.overlayDataSource = self.searchManager;
 	self.overlayEnabled = YES;
 	
-	[self presentModalViewController:(UIViewController *)controller animated:YES];
-
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		
+		searchPopover = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
+		[searchPopover setPopoverContentSize:CGSizeMake(450, 650)];
+		[searchPopover setDelegate:self];
+		[searchPopover presentPopoverFromBarButtonItem:senderSearch permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+	 	
+		visibleSearchView = YES;
+		
+	} else {
+		
+		[self presentModalViewController:(UIViewController *)controller animated:YES];
+		visibleSearchView = YES;
+	}
 }
 
-// Void
+-(IBAction)actionSearch:(id)sender {
+	
+	// Get the instance of the Search Manager lazily and then present a full sized search view controller
+	// to the user. The full search view controller will allow the user to type in a search term and
+	// start the search. Look at the details in the utility method implementation.
+	
+	senderSearch = sender; // What's the purpose of this?
+	
+	[self presentFullSearchView:sender];	// This method will take care of everything.
+}
+
+//-(void)presentFullSearchView:(id)sender {
+//	
+//	// Get the full search view controller lazily, set it upt as the delegate for
+//	// the search manager and present it to the user modally.
+//	
+//	// Get the search manager lazily and set up the document.
+//	
+//	SearchManager *manager = self.searchManager;
+//	manager.document = self.document;
+//	
+//	// Get the search view controller lazily, set the delegate at self to handle
+//	// document action and the search manager as data source.
+//	
+//	SearchViewController *controller = self.searchViewController;
+//	controller.delegate = self;
+//	controller.searchManager = manager;
+//	
+//	// Set the search view controller as the data source delegate.
+//	
+//	manager.delegate = controller;
+//	
+//	// Enable overlay and set the search manager as the data source for
+//	// overlay items.
+//	self.overlayDataSource = self.searchManager;
+//	self.overlayEnabled = YES;
+//	
+//	[self presentModalViewController:(UIViewController *)controller animated:YES];
+//
+//}
+
 -(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
 	
 	// This could be rather tricky.
@@ -160,8 +243,14 @@
 	if(miniSearchView == nil) {
 		
 		// If nil, allocate and initialize it.
-		
-		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(10, 50, 270, 96)];
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+			
+		}else {
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+		}
 		
 	} else {
 		
@@ -181,18 +270,107 @@
 	
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:miniSearchView];
+	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.35];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+		
+	}else {
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+		
+	}
+	[UIView commitAnimations];
+	
+	miniSearchVisible = YES;
+	
 	[[self view]setNeedsLayout];
 }
+
+// OLD
+//-(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
+//	
+//	// This could be rather tricky.
+//	
+//	// This method is called only when the (Full) SearchViewController. It first instantiate the
+//	// mini search view if necessary, then set the mini search view as the delegate for the current
+//	// search manager - associated until now to the full SVC - then present it to the user.
+//	
+//	if(miniSearchView == nil) {
+//		
+//		// If nil, allocate and initialize it.
+//		
+//		self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(10, 50, 270, 96)];
+//		
+//	} else {
+//		
+//		// If not nil, remove it from the superview.
+//		if([miniSearchView superview]!=nil)
+//			[miniSearchView removeFromSuperview];
+//	}
+//	
+//	// Set up the connections.
+//	miniSearchView.dataSource = self.searchManager;
+//	miniSearchView.documentDelegate = self;
+//	self.searchManager.delegate = miniSearchView;
+//	
+//	// Update the view with the right index.
+//	[miniSearchView reloadData];
+//	[miniSearchView setCurrentTextItem:item];
+//	
+//	// Add the subview and referesh the superview.
+//	[[self view]addSubview:miniSearchView];
+//	[[self view]setNeedsLayout];
+//}
 
 -(void)dismissMiniSearchView {
 	
 	// Remove from the superview and release the mini search view.
 	
+	// Animation.
+	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.15];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+	}else {
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+	}
+	
+	[UIView commitAnimations];
+	
+	visibleSearchView = NO;
+	
+	// Actual removal.
 	if(miniSearchView!=nil) {
 		
 		[miniSearchView removeFromSuperview];
 		MF_COCOA_RELEASE(miniSearchView);
 	}
+	
+	miniSearchVisible = NO;
+}
+
+-(void)showMiniSearchView {
+	
+	// Remove from the superview and release the mini search view.
+	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.15];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+	}else {
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+	}
+	
+	visibleSearchView = NO;
+	
+	[UIView commitAnimations];
+	
+	
 }
 
 -(SearchManager *)searchManager {
@@ -223,8 +401,164 @@
 	[self presentMiniSearchViewWithStartingItem:item];
 }
 
+-(void)dismissSearchViewController:(SearchViewController *)aSearchViewController {
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopovers];
+	} else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleSearchView=NO;
+	}
+}
+
 #pragma mark -
-#pragma mark Actions
+#pragma mark BookmarkViewController, _Delegate and _Actions
+
+-(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopovers];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleBookmarkView=NO;
+	}
+	
+}
+
+-(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
+	self.page = page;
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopovers];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleBookmarkView=NO;
+	}
+}
+
+-(IBAction) actionBookmarks:(id)sender {
+	
+	//
+	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
+	//	you can also push the controller with the navigation controller or use an UIActionSheet.
+	
+	if (visibleBookmarkView) {
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[bookmarkPopover dismissPopoverAnimated:YES];
+			visibleBookmarkView=NO;
+			
+		} else {
+			
+			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			visibleBookmarkView=NO;
+		}
+		
+	}else {
+		
+		BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
+		bookmarksVC.delegate=self;
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[self dismissAllPopovers];
+			
+			bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
+			[bookmarkPopover setPopoverContentSize:CGSizeMake(372, 650)];
+			[bookmarkPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[bookmarkPopover setDelegate:self];
+			
+			visibleBookmarkView=YES;
+		}else {
+			
+			[self presentModalViewController:bookmarksVC animated:YES];
+			visibleBookmarkView=YES;
+		}
+		[bookmarksVC release];
+	}
+}
+
+#pragma mark -
+#pragma mark OutlineViewController, _Delegate and _Actions
+
+-(void)dismissOutlineViewController:(OutlineViewController *)anOutlineViewController {
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		
+		[self dismissAllPopovers];
+		
+	} else {
+		
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleOutlineView=NO;
+	}
+}
+
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
+	self.page = page;
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopovers];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		visibleOutlineView=NO;
+	}
+}
+
+-(IBAction) actionOutline:(id)sender {
+	
+	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
+	// BookmarksViewController. However, you can show them in the same view with a segmented control, just
+	// switch datasources and take it into account in the various tableView delegate methods. Another thing
+	// to consider is that the view will be resetted once removed, and for an complex outline is not a nice thing.
+	// So, it would be better to store the position in the outline somewhere to present it again the very same
+	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
+	// of low memory warnings.
+	
+	
+	if (visibleOutlineView) {
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[outlinePopover dismissPopoverAnimated:YES];
+			visibleOutlineView = NO;
+		} else {
+			
+			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			visibleOutlineView = NO;
+		}
+		
+	} else {
+		
+		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
+		[outlineVC setDelegate:self];
+		
+		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
+		// this array and the openentries array somewhere and set them again before present the view to the user again.
+		
+		[outlineVC setOutlineEntries:[[self document] outline]];
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[self dismissAllPopovers];	// Dismiss any eventual other popover.
+			
+			outlinePopover = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
+			[outlinePopover setPopoverContentSize:CGSizeMake(372, 650)];
+			[outlinePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[outlinePopover setDelegate:self];
+			visibleOutlineView=YES;
+			
+		} else {
+			
+			[self presentModalViewController:outlineVC animated:YES];
+			visibleOutlineView=YES;
+			
+		}
+		[outlineVC release];
+	}
+}
+
+#pragma mark -
+#pragma mark Common actions
 
 -(IBAction)actionText:(id)sender {
 	
@@ -250,16 +584,6 @@
 	
 }
 
--(IBAction)actionSearch:(id)sender {
-	
-	// Get the instance of the Search Manager lazily and then present a full sized search view controller
-	// to the user. The full search view controller will allow the user to type in a search term and
-	// start the search. Look at the details in the utility method implementation.
-	senderSearch = sender;
-	
-	[self presentFullSearchView:sender];
-}
-
 -(IBAction)actionNext:(id)sender {
 	
 	// This would be connected to an hypotetical next page button. You can enable
@@ -275,70 +599,6 @@
 	[self moveToPreviousPage];
 }
 
--(IBAction) actionBookmarks:(id)sender {
-	
-	//
-//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
-//	you can also push the controller with the navigation controller or use an UIActionSheet.
-		
-
-			BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
-			bookmarksVC.delegate=self;
-			[self presentModalViewController:bookmarksVC animated:YES];
-			[bookmarksVC release];
-}
-
--(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-}
-
--(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
-	self.page = page;
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
-}
-
--(void)dismissOutline:(id)sender {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-	
-}
-
--(void)OutlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
-	self.page = page;
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
-}
-
--(void)dismissSearch:(id)sender{
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];	
-}
-
-
--(IBAction)actionDone:(id)sender {
-	
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
-}
-
--(IBAction)actionOutline:(id)sender {
-	
-	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
-	// BookmarksViewController. However, you can show them in the same view with a segmented control, just
-	// switch datasources and take it into account in the various tableView delegate methods. Another thing
-	// to consider is that the view will be resetted once removed, and for an complex outline is not a nice thing.
-	// So, it would be better to store the position in the outline somewhere to present it again the very same
-	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
-	// of low memory warnings.
-	
-	
-	
-	// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
-	// this array and the openentries array somewhere and set them again before present the view to the user again.
-
-		
-		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
-		[outlineVC setDelegate:self];
-		[self presentModalViewController:outlineVC animated:YES];
-		[outlineVC release];
-
-}
 
 -(IBAction) actionDismiss:(id)sender {
 
@@ -490,7 +750,6 @@
 	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
-	
 	
 }
 
@@ -833,12 +1092,8 @@
 		[[self view]addSubview:aSlider];
 		[aSlider release];
 		
+	
  }
-
-
--(void)dismissOutline{
-
-}
 
 
 - (void)didTappedOnPage:(int)number ofType:(int)type withObject:(id)object{
@@ -868,15 +1123,13 @@
 	
 	// BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
 	
-	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
+	// BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
 	
 	if (testDirectoryCreated) {
 		NSLog(@"directory creata");
-	}else {
+	} else {
 		NSLog(@"directory gia esistente");
 	}
-	
-	
 	
 	// NSLog(@"inizio");
 	
@@ -910,13 +1163,6 @@
 	[arPool release];
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager {
 	
@@ -944,7 +1190,6 @@
 - (void)viewDidUnload {
     
 	[super viewDidUnload];
-	
 }
 
 

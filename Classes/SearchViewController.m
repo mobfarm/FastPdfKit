@@ -66,14 +66,13 @@
 	
 	// Dismiss this view controller and its view from the stack.
 	
-	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[[self delegate]dismissSearch:self];
+		
+		[[self delegate]dismissSearchViewController:self];
 	}else {
+		
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	}
-	
-	//[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
 -(void) searchDidStop {
@@ -222,8 +221,11 @@
 	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[[self delegate]dismissSearch:self];
-	}else {
+		
+		[[self delegate]dismissSearchViewController:self];
+		
+	} else {
+		
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 	}
 }
@@ -282,14 +284,6 @@
 		
 	}
     return self;
-}
-
-
--(void) viewDidDisappear:(BOOL)animated {
-	
-	// Stop the operation and save the search term. Search results are stored in the searchResults array
-	// and are not touched.
-	//[self stopSearch];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

@@ -20,7 +20,7 @@
 
 -(IBAction)actionBack:(id)sender {
 	
-	[[self delegate]dismissOutline:self];
+	[[self delegate]dismissOutlineViewController:self];
 }
 
 #pragma mark -
@@ -79,10 +79,7 @@
 	NSUInteger pageNumber = [entry pageNumber];
 	if(pageNumber != 0) {
 		
-	
-		[delegate OutlineViewController:self didRequestPage:pageNumber];
-		//[delegate dismissOutline:self];
-		//[delegate setPage:pageNumber];
+		[delegate outlineViewController:self didRequestPage:pageNumber];
 	}
 	
 }
@@ -102,7 +99,7 @@
 		// Now recursively call this method on the childrend just addded. Don't use array since
 		// it is going to me modified and you will get an exception (array being modified while
 		// being enumerated)
-		for(MFPDFOutlineEntry *e in children) {
+		for(MFPDFOutlineEntry * e in children) {
 			
 			[self recursivelyAddVisibleChildrenOfEntry:e toArray:array];
 		}
@@ -148,7 +145,7 @@
 	// is and how important is to your application: for a book is probably vital, for a catalog not
 	// so much...
 	
-	MFPDFOutlineEntry *entry = [outlineEntries objectAtIndex:indexPath.row];
+	MFPDFOutlineEntry * entry = [outlineEntries objectAtIndex:indexPath.row];
 	
 	// If the entry is a leaf (it doesn't have children), return immediately.
 	if(![[entry bookmarks]count]>0) {
@@ -162,7 +159,7 @@
 	// siebling.
 	
 	// Create and array of children with a utility method. Check of it works.
-	NSMutableArray *children = [NSMutableArray array];
+	NSMutableArray * children = [NSMutableArray array];
 	[self recursivelyAddVisibleChildrenOfEntry:entry toArray:children];
 	
 	// Then we need an NSIndexSet to update the entry array and an array of NSIndexPath to update the table view.
@@ -171,11 +168,11 @@
 	NSUInteger firstPosition = [outlineEntries indexOfObject:entry]+1;	// The position right under the selected cell.
 	
 	// This is the indexSet of the item to be added/removed from the outline array.
-	NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(firstPosition, count)];
+	NSIndexSet * indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(firstPosition, count)];
 	
 	// To update the table view we need an array of indexPaths. I don't know a factory method to generate them, 
 	// so let's do it manually...
-	NSMutableArray *indexPaths = [NSMutableArray array];				// The array.
+	NSMutableArray * indexPaths = [NSMutableArray array];				// The array.
 	NSUInteger index;
 	for (index = 0; index < count; index++) {
 		// The cell to be removed start right under the entry selected.

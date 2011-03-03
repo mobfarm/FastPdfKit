@@ -17,9 +17,8 @@
 
 -(void)switchToMiniSearchView:(MFTextItem *)item;
 
--(void)dismissSearch:(id)self;
+-(void)dismissSearchViewController:(SearchViewController *)svc;
 
 -(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
-
 
 @end

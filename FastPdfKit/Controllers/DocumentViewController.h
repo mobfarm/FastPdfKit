@@ -23,29 +23,29 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-@interface DocumentViewController : MFDocumentViewController <TextDisplayViewControllerDelegate,MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate>{
+@interface DocumentViewController : MFDocumentViewController <TextDisplayViewControllerDelegate,MFDocumentViewControllerDelegate,MFSliderDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate> {
 
 	// UI elements.
-	UIButton *leadButton;
-	UIButton *modeButton;
-	UIButton *directionButton;
-	UIButton *autozoomButton;
-	UIButton *automodeButton;
+	UIButton * leadButton;
+	UIButton * modeButton;
+	UIButton * directionButton;
+	UIButton * autozoomButton;
+	UIButton * automodeButton;
+	 
+	UIButton * dismissButton;
+	UIButton * bookmarksButton;
+	UIButton * outlineButton;
 	
-	UIButton *dismissButton;
-	UIButton *bookmarksButton;
-	UIButton *outlineButton;
+	UIButton * nextButton;
+	UIButton * prevButton;
 	
-	UIButton *nextButton;
-	UIButton *prevButton;
+	UIButton * searchButton;
 	
-	UIButton *searchButton;
+	UIButton * textButton;
 	
-	UIButton *textButton;
-	
-	UILabel *pageLabel;
-	UILabel *numPaginaLabel;
-	UISlider *pageSlider;
+	UILabel * pageLabel;
+	UILabel * numPaginaLabel;
+	UISlider * pageSlider;
 	
 	BOOL hudHidden; // HUD status flag.
 	BOOL miniSearchVisible;
@@ -57,29 +57,36 @@
 	TextDisplayViewController *textDisplayViewController;
 	
 	// Text search controller and stuff.
-	SearchViewController *searchViewController;
-	SearchManager *searchManager;
-	MiniSearchView *miniSearchView;
-    
+	SearchViewController * searchViewController;
+	SearchManager * searchManager;
+	MiniSearchView * miniSearchView;
+	
     // Document's ID. We use this as an unique id for bookmarks and other per-document data.
     NSString * documentId;
 	
-	NSString *nomefile;
+	NSString * nomefile;
 	BOOL pdfIsOpen;
 	
-		
+	
+	// Popover management.
+	
+	BOOL visibleBookmarkView;
+	BOOL visibleOutlineView;
+	BOOL visibleSearchView;
+	BOOL visibleTextView;
+	
+	UIPopoverController *bookmarkPopover;
+	UIPopoverController *outlinePopover;
+	UIPopoverController *searchPopover;
+	UIPopoverController *textPopover;
 
 }
 
--(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
-//-(void)dismissBookmark:(id)sender;
--(void)dismissOutline:(id)sender;
--(void)dismissSearch:(id)sender;
-// Swapping search views.
+-(void)dismissAllPopovers;
+
 -(void)switchToMiniSearchView:(MFTextItem *)index;
 -(void)dismissMiniSearchView;
 -(void)revertToFullSearchView;
--(void)actionDone:(id)sender;
 
 @property (nonatomic, copy) NSString * documentId;
 

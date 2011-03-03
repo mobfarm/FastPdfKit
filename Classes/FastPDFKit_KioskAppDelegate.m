@@ -2,8 +2,8 @@
 //  FastPDFKit_KioskAppDelegate.m
 //  FastPdfKit Sample
 //
-//  Created by Mac Book Pro on 25/02/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Gianluca Orsini on 28/02/11.
+//  Copyright 2010 MobFarm S.r.l. All rights reserved.
 //
 
 #import "FastPDFKit_KioskAppDelegate.h"
