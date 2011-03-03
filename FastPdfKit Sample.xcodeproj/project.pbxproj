@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014F2785131FF90E00562D49 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 014F2784131FF90E00562D49 /* libFastPDFKit.a */; };
+		014F2786131FF90E00562D49 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 014F2784131FF90E00562D49 /* libFastPDFKit.a */; };
 		0157CF7C12EF16B200DDC590 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7312EF16B200DDC590 /* SearchManager.m */; };
 		0157CF7D12EF16B200DDC590 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7512EF16B200DDC590 /* MiniSearchView.m */; };
 		0157CF7E12EF16B200DDC590 /* SearchView2_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0157CF7612EF16B200DDC590 /* SearchView2_phone.xib */; };
@@ -139,15 +141,7 @@
 		01884A31131E91000045038F /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A27131E91000045038F /* ASIInputStream.m */; };
 		01884A32131E91000045038F /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A29131E91000045038F /* ASINetworkQueue.m */; };
 		01884A33131E91000045038F /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A2B131E91000045038F /* ASINSStringAdditions.m */; };
-		01884A34131E91000045038F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A1C131E91000045038F /* ASIAuthenticationDialog.m */; };
-		01884A35131E91000045038F /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A1F131E91000045038F /* ASIDownloadCache.m */; };
-		01884A36131E91000045038F /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A21131E91000045038F /* ASIFormDataRequest.m */; };
-		01884A37131E91000045038F /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A23131E91000045038F /* ASIHTTPRequest.m */; };
-		01884A38131E91000045038F /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A27131E91000045038F /* ASIInputStream.m */; };
-		01884A39131E91000045038F /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A29131E91000045038F /* ASINetworkQueue.m */; };
-		01884A3A131E91000045038F /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A2B131E91000045038F /* ASINSStringAdditions.m */; };
 		01884A43131E92560045038F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A42131E92560045038F /* Reachability.m */; };
-		01884A44131E92560045038F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A42131E92560045038F /* Reachability.m */; };
 		01884A47131E92B30045038F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A48131E92B30045038F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -161,7 +155,6 @@
 		01884A7C131E93DB0045038F /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */; };
 		01884A83131E947C0045038F /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A82131E947C0045038F /* libz.1.2.3.dylib */; };
 		01884A86131E94AA0045038F /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */; };
-		01884A89131E94C10045038F /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D1873A130AFB4000775625 /* libFastPDFKit.a */; };
 		01884A8A131E94C70045038F /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01884A8B131E94C70045038F /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
 		01884A8E131E94DD0045038F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -179,7 +172,6 @@
 		01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC2131E96C50045038F /* SystemConfiguration.framework */; };
 		01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC6131E96CE0045038F /* MobileCoreServices.framework */; };
 		01884ACC131E96E30045038F /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
-		01D1873B130AFB4000775625 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D1873A130AFB4000775625 /* libFastPDFKit.a */; };
 		01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01E3A3061309C3D9008BB483 /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
 		01F434C412ACD94D00D08021 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
@@ -206,6 +198,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		014F2784131FF90E00562D49 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0157CF7212EF16B200DDC590 /* SearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchManager.h; sourceTree = "<group>"; };
 		0157CF7312EF16B200DDC590 /* SearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchManager.m; sourceTree = "<group>"; };
 		0157CF7412EF16B200DDC590 /* MiniSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSearchView.h; sourceTree = "<group>"; };
@@ -339,7 +332,6 @@
 		01884AA2131E950A0045038F /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		01D1873A130AFB4000775625 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01E3A3031309C3D9008BB483 /* Identity-H.cidf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Identity-H.cidf"; sourceTree = "<group>"; };
 		01E3A3041309C3D9008BB483 /* Identity-V.cidf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Identity-V.cidf"; sourceTree = "<group>"; };
 		01F434C212ACD94D00D08021 /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentViewController.h; path = ../FastPdfKit/Controllers/DocumentViewController.h; sourceTree = "<group>"; };
@@ -386,9 +378,9 @@
 				01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */,
 				01884A6C131E93C70045038F /* CoreGraphics.framework in Frameworks */,
 				01884A83131E947C0045038F /* libz.1.2.3.dylib in Frameworks */,
-				01884A89131E94C10045038F /* libFastPDFKit.a in Frameworks */,
 				01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */,
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
+				014F2785131FF90E00562D49 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +393,7 @@
 				950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */,
 				950B37D0125CBEC4007BDDA1 /* UIKit.framework in Frameworks */,
 				0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */,
-				01D1873B130AFB4000775625 /* libFastPDFKit.a in Frameworks */,
+				014F2786131FF90E00562D49 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +555,7 @@
 		01CC21CB12B907AF00E77E6E /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				01D1873A130AFB4000775625 /* libFastPDFKit.a */,
+				014F2784131FF90E00562D49 /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				016AB5C21309BE1D004563C3 /* headers */,
 			);
@@ -972,14 +964,6 @@
 				0157CF7D12EF16B200DDC590 /* MiniSearchView.m in Sources */,
 				0157CF8012EF16B200DDC590 /* SearchResultCellView.m in Sources */,
 				0157CF8112EF16B200DDC590 /* SearchResultView.m in Sources */,
-				01884A34131E91000045038F /* ASIAuthenticationDialog.m in Sources */,
-				01884A35131E91000045038F /* ASIDownloadCache.m in Sources */,
-				01884A36131E91000045038F /* ASIFormDataRequest.m in Sources */,
-				01884A37131E91000045038F /* ASIHTTPRequest.m in Sources */,
-				01884A38131E91000045038F /* ASIInputStream.m in Sources */,
-				01884A39131E91000045038F /* ASINetworkQueue.m in Sources */,
-				01884A3A131E91000045038F /* ASINSStringAdditions.m in Sources */,
-				01884A44131E92560045038F /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

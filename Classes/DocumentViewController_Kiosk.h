@@ -66,6 +66,7 @@
 	UIBarButtonItem *zoomLockBarButtonItem;
 	UIBarButtonItem *changeDirectionButtonItem;
 	UIBarButtonItem *changeLeadButtonItem;
+	UIBarButtonItem *searchBarButtonItem;
 	
 	id senderText;
 	id senderSearch;
@@ -82,7 +83,7 @@
 	UIImage *imgChangeLead;
 	UIImage *imgChangeLeadClick;
 	
-	CGFloat heightToolbar;
+	CGFloat toolbarHeight;
 	CGFloat widthborder;
 	CGFloat heightTSHV;
 }
@@ -97,6 +98,18 @@
 
 @property (nonatomic, retain) UIButton *textButton;
 @property (nonatomic, retain) TextDisplayViewController *textDisplayViewController;
+
+@property (nonatomic, retain) UIBarButtonItem * searchBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem * changeModeBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem * zoomLockBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem * changeDirectionButtonItem;
+@property (nonatomic, retain) UIBarButtonItem * changeLeadBarButtonItem;
+
+@property (nonatomic, retain) UIBarButtonItem * bookmarkBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem * textBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem * numberOfPageTitleBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem * dismissBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem * outlineBarButtonItem;
 
 @property (nonatomic, retain) UIButton *leadButton;
 @property (nonatomic, retain) UIButton *modeButton;
@@ -131,7 +144,7 @@
 @property (nonatomic, retain) UIPopoverController *outlinePopover;
 @property (nonatomic, retain) UIPopoverController *searchPopover;
 @property (nonatomic, retain) UIPopoverController *textPopover;
-@property CGFloat heightToolbar;
+@property CGFloat toolbarHeight;
 @property CGFloat widthborder;
 @property CGFloat heightTSHV;
 

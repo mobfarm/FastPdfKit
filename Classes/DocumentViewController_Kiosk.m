@@ -34,8 +34,10 @@
 @synthesize bookmarkPopover,outlinePopover,searchPopover,textPopover;
 @synthesize senderText;
 @synthesize senderSearch;
-@synthesize heightToolbar,widthborder,heightTSHV;
+@synthesize toolbarHeight,widthborder,heightTSHV;
 @synthesize miniSearchVisible;
+
+@synthesize searchBarButtonItem, changeModeBarButtonItem, zoomLockBarButtonItem, changeDirectionButtonItem, changeLeadBarButtonItem;
 
 #pragma mark Thumbnail utility functions
 
@@ -123,6 +125,153 @@
 	thumbsViewVisible = NO;
 	
 }
+
+-(void)presentFullSearchView:(id)sender {
+	
+	// Get the full search view controller lazily, set it upt as the delegate for
+	// the search manager and present it to the user modally.
+	
+	SearchManager * manager = nil;
+	SearchViewController * controller = nil;
+	
+	
+	// Get the search manager lazily and set up the document.
+	
+	manager = self.searchManager;
+	manager.document = self.document;
+	
+	
+	// Get the search view controller lazily, set the delegate at self to handle
+	// document action and the search manager as data source.
+	
+	controller = self.searchViewController;
+	[controller setDelegate:self];
+	controller.searchManager = manager;
+	
+	
+	// Set the search view controller as the data source delegate.
+	
+	manager.delegate = controller;
+	
+	
+	// Enable overlay and set the search manager as the data source for
+	// overlay items.
+	self.overlayDataSource = self.searchManager;
+	self.overlayEnabled = YES;
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		
+		searchPopover = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
+		[searchPopover setPopoverContentSize:CGSizeMake(450, 650)];
+		[searchPopover setDelegate:self];
+		[searchPopover presentPopoverFromBarButtonItem:senderSearch permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		
+		visibleSearchView = YES;
+		
+	} else {
+		
+		[self presentModalViewController:(UIViewController *)controller animated:YES];
+		visibleSearchView = YES;
+	}	
+}
+
+	
+-(IBAction) actionBookmarks:(id)sender {
+	
+	//
+	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
+	//	you can also push the controller with the navigation controller or use an UIActionSheet.
+	
+	if (visibleBookmarkView) {
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[bookmarkPopover dismissPopoverAnimated:YES];
+			visibleBookmarkView=NO;
+			
+		} else {
+			
+			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			visibleBookmarkView=NO;
+		}
+		
+	}else {
+		
+		BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
+		bookmarksVC.delegate=self;
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[self dismissAllPopovers];
+			
+			bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
+			[bookmarkPopover setPopoverContentSize:CGSizeMake(372, 650)];
+			[bookmarkPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[bookmarkPopover setDelegate:self];
+			
+			visibleBookmarkView=YES;
+		}else {
+			
+			[self presentModalViewController:bookmarksVC animated:YES];
+			visibleBookmarkView=YES;
+		}
+		[bookmarksVC release];
+	}
+}
+
+-(IBAction) actionOutline:(id)sender {
+	
+	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
+	// BookmarksViewController. However, you can show them in the same view with a segmented control, just
+	// switch datasources and take it into account in the various tableView delegate methods. Another thing
+	// to consider is that the view will be resetted once removed, and for an complex outline is not a nice thing.
+	// So, it would be better to store the position in the outline somewhere to present it again the very same
+	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
+	// of low memory warnings.
+	
+	
+	if (visibleOutlineView) {
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[outlinePopover dismissPopoverAnimated:YES];
+			visibleOutlineView = NO;
+		} else {
+			
+			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			visibleOutlineView = NO;
+		}
+		
+	} else {
+		
+		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
+		[outlineVC setDelegate:self];
+		
+		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
+		// this array and the openentries array somewhere and set them again before present the view to the user again.
+		
+		[outlineVC setOutlineEntries:[[self document] outline]];
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[self dismissAllPopovers];	// Dismiss any eventual other popover.
+			
+			outlinePopover = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
+			[outlinePopover setPopoverContentSize:CGSizeMake(372, 650)];
+			[outlinePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[outlinePopover setDelegate:self];
+			visibleOutlineView=YES;
+			
+		} else {
+			
+			[self presentModalViewController:outlineVC animated:YES];
+			visibleOutlineView=YES;
+			
+		}
+		[outlineVC release];
+	}
+}
+	
 
 -(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
 	
@@ -640,8 +789,9 @@
 	//Add ToolBar
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		
 		//Set the img for the UIBarbuttonItem that change image on click
-		heightToolbar = 44;
+		toolbarHeight = 44;
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle.png"];
 		[imgChangeMode retain];
 		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble.png"];
@@ -665,7 +815,7 @@
 		
 	}else {
 		//Iphone
-		heightToolbar = 44;
+		toolbarHeight = 44;
 		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
 		[imgChangeMode retain];
 		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
@@ -687,165 +837,237 @@
 		[imgChangeLeadClick retain];
 	}
 	
-	//set the top toolbar that include all UibarButtonItem
-	toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, heightToolbar)];
-	toolbar.hidden = YES;
-	toolbar.barStyle = UIBarStyleBlackTranslucent;
-	[toolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
-		
+	
+	NSArray * items = [[NSArray alloc]init];	// This will be the containter for the bar button items.
+	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
-		//Init UIBarButtonItem
-		UIBarButtonItem *numberOfPageTitle = [[UIBarButtonItem alloc] initWithCustomView:numberOfPageTitleToolbar];
+		UIBarButtonItem * aBarButtonItem = nil;
 		
-		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
-												  initWithImage:[UIImage imageNamed:@"bookmark_add.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		// Dismiss.
 		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"X.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		self.dismissBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		UIBarButtonItem *dismissBarButtonItem = [[UIBarButtonItem alloc]
-												 initWithImage:[UIImage imageNamed:@"X.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		// Space.
 		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		changeModeBarButtonItem = [[UIBarButtonItem alloc]
-								   initWithImage:[UIImage imageNamed:@"changeModeDouble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
+		// Zoom lock.
 		
-		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
-												 initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"zoomUnlock.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+		self.zoomLockBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		[OutlineBarButtonItem setWidth:60];
+		// Change direction.
 		
-		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
-								 initWithImage:[UIImage imageNamed:@"zoomUnlock.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"direction_r2l.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		self.changeModeBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+
+		// Change lead.
 		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pagelead.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+		self.changeLeadBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		changeDirectionButtonItem = [[UIBarButtonItem alloc]
-									 initWithImage:[UIImage imageNamed:@"direction_r2l.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		// Change mode.
 		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"changeModeDouble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
+		self.changeModeBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		changeLeadButtonItem = [[UIBarButtonItem alloc]
-								initWithImage:[UIImage imageNamed:@"pagelead.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+		// Space.
 		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]
-												initWithImage:[UIImage imageNamed:@"search.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		// Page number.
 		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:numberOfPageTitleToolbar];
+		self.numberOfPageTitleBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		UIBarButtonItem *textBarButtonItem = [[UIBarButtonItem alloc]
-											  initWithImage:[UIImage imageNamed:@"text.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
+		// Space.
 		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-																								target:nil
-																								action:nil];
+		// Search.
 		
-		//set order of BarButtonItem
-		NSArray *items = [NSArray arrayWithObjects:dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		self.searchBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		//release UIBarbuttonItem
-		[bookmarkBarButtonItem release];
-		[changeModeBarButtonItem release];
-		[changeDirectionButtonItem release],
-		[OutlineBarButtonItem release];
-		[itemSpazioBarButtnItem release];
-		[searchBarButtonItem release];
-		[zoomLockBarButtonItem release];
-		[textBarButtonItem release];
-		[numberOfPageTitle release];
-		[toolbar setItems:items animated:NO];
+		// Text.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"text.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
+		self.textBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+	
+		// Outline.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		
+		[aBarButtonItem setWidth:60];
+		self.outlineBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+		
+		// Bookmarks.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bookmark_add.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		self.bookmarkBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+		
+		// OLD
+		// NSArray *items = [NSArray arrayWithObjects:dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
 		
 	} else {
-		//iphone
-		UIBarButtonItem *bookmarkBarButtonItem = [[UIBarButtonItem alloc]
-												  initWithImage:[UIImage imageNamed:@"bookmark_add_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
 		
-		//for each UIBarButtonItem force the width
-		[bookmarkBarButtonItem setWidth:25];
+		// Iphone.
 		
-		UIBarButtonItem *dismissBarButtonItem = [[UIBarButtonItem alloc]
-												 initWithImage:[UIImage imageNamed:@"X_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		UIBarButtonItem * aBarButtonItem = nil;
 		
-		[dismissBarButtonItem setWidth:22];
+		// Dismiss.
 		
-		changeModeBarButtonItem = [[UIBarButtonItem alloc]
-								   initWithImage:[UIImage imageNamed:@"changeModeDouble_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"X_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		[aBarButtonItem setWidth:22];
+		self.dismissBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		[changeModeBarButtonItem setWidth:32];
+		// Space.
 		
-		UIBarButtonItem *OutlineBarButtonItem = [[UIBarButtonItem alloc]
-												 initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+		[aBarButtonItem setWidth:25];
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		[OutlineBarButtonItem setWidth:22];
+		// Zoom lock.
 		
-		zoomLockBarButtonItem = [[UIBarButtonItem alloc]
-								 initWithImage:[UIImage imageNamed:@"zoomUnlock_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"zoomUnlock_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+		[aBarButtonItem setWidth:22];
+		self.zoomLockBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		[zoomLockBarButtonItem setWidth:22];
+		// Change direction.
 		
-		changeDirectionButtonItem = [[UIBarButtonItem alloc]
-									 initWithImage:[UIImage imageNamed:@"direction_r2l_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"direction_r2l_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		[aBarButtonItem setWidth:22];
+		self.changeDirectionButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
-		[changeDirectionButtonItem setWidth:22];
+		// Change lead.
 		
-		changeLeadButtonItem = [[UIBarButtonItem alloc]
-								initWithImage:[UIImage imageNamed:@"pagelead_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pagelead_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+		self.changeLeadBarButtonItem = aBarButtonItem;
+		[aBarButtonItem setWidth:25];
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+		
+		// Change mode.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"changeModeDouble_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
+		[aBarButtonItem setWidth:32];
+		self.changeModeBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+		
+		// Space.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+		[aBarButtonItem setWidth:25];
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+		
+		// Search.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		[aBarButtonItem setWidth:22];
+		self.searchBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+		
+		// Text.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"text_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
+		[aBarButtonItem setWidth:22];
+		self.textBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+		
+		// Outline.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		[aBarButtonItem setWidth:22];
+		self.outlineBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
+		
+		// Bookmarks.
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bookmark_add_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		[aBarButtonItem setWidth:25];
+		self.bookmarkBarButtonItem = aBarButtonItem;
+		[items addObject:aBarButtonItem];
+		[aBarButtonItem release];
 		
 		
-		[changeLeadButtonItem setWidth:25];
+		// Old.
+		//		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
 		
-		UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]
-												initWithImage:[UIImage imageNamed:@"search_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
-		
-		[searchBarButtonItem setWidth:22];
-		
-		
-		UIBarButtonItem *textBarButtonItem = [[UIBarButtonItem alloc]
-											  initWithImage:[UIImage imageNamed:@"text_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
-		
-		[textBarButtonItem setWidth:22];
-		
-		
-		UIBarButtonItem *itemSpazioBarButtnItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-																								target:nil
-																								action:nil];
-		[itemSpazioBarButtnItem setWidth:25];
-		
-		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
-		
-		
-		[bookmarkBarButtonItem release];
-		[changeModeBarButtonItem release];
-		[changeDirectionButtonItem release],
-		[OutlineBarButtonItem release];
-		[itemSpazioBarButtnItem release];
-		[searchBarButtonItem release];
-		[zoomLockBarButtonItem release];
-		//[thumbnailBarButtonItem release];
-		[textBarButtonItem release];
-		[toolbar setItems:items animated:NO];
 	}
-	//add toolbar to view
-	[self.view addSubview:toolbar];
+	
+	
+	UIToolbar * aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, toolbarHeight)];
+	aToolbar.hidden = YES;
+	aToolbar.barStyle = UIBarStyleBlackTranslucent;
+	[aToolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
+	[aToolbar setItems:items animated:NO];
+	
+	[self.view addSubview:aToolbar];
+	
+	self.toolbar = aToolbar;
+	
+	[aToolbar release];
+	[items release];
 }
 
--(void)initNumberOfPageToolbar{
-	//Init the number of page .. it's called from MenuViewController
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
-		numberOfPageTitleToolbar.textAlignment = UITextAlignmentLeft;
-		numberOfPageTitleToolbar.backgroundColor = [UIColor clearColor];
-		numberOfPageTitleToolbar.shadowColor = [UIColor whiteColor];
-		numberOfPageTitleToolbar.shadowOffset = CGSizeMake(0, 1);
-		numberOfPageTitleToolbar.textColor = [UIColor whiteColor];
-		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-		numberOfPageTitleToolbar.text = ToolbarTextTitle;
-		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:20.0];
-	} /*else {
-		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 23)];
-		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:10.0];
-	}*/
-	
-	
-}
+// Useless?
+//-(void)initNumberOfPageToolbar{
+//	//Init the number of page .. it's called from MenuViewController
+//	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//		
+//		// TODO: what's this?
+//		
+//		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
+//		numberOfPageTitleToolbar.textAlignment = UITextAlignmentLeft;
+//		numberOfPageTitleToolbar.backgroundColor = [UIColor clearColor];
+//		numberOfPageTitleToolbar.shadowColor = [UIColor whiteColor];
+//		numberOfPageTitleToolbar.shadowOffset = CGSizeMake(0, 1);
+//		numberOfPageTitleToolbar.textColor = [UIColor whiteColor];
+//		NSString *toolbarTextTitleString = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
+//		numberOfPageTitleToolbar.text = toolbarTextTitleString;
+//		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:20.0];
+//	} 
+//}
 
 -(void)setNumberOfPageToolbar{
 	//for each change of page set the correct numer of page
@@ -869,7 +1091,7 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, heightToolbar)];
+	[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, toolbarHeight)];
 	[UIView commitAnimations];		
 }
 
@@ -878,7 +1100,7 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[toolbar setFrame:CGRectMake(0, -heightToolbar, toolbar.frame.size.width, heightToolbar)];
+	[toolbar setFrame:CGRectMake(0, -toolbarHeight, toolbar.frame.size.width, toolbarHeight)];
 	[UIView commitAnimations];
 }
 
@@ -886,6 +1108,7 @@
 -(void)createThumbToolbar{
 	// Horizontal thumb slider set dimension and position
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		
 		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(100, 124) andWidth:self.view.bounds.size.width andHeight:160 andType:1 andNomeFile:nomefile];
 		anHorizontalThumbSlider.delegate = self;	
 		self.thumbsliderHorizontal = anHorizontalThumbSlider;
@@ -937,7 +1160,7 @@
 	NSFileManager *filemanager = [[NSFileManager alloc]init];
 	
 	NSError **error ;
-	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:<#(NSString *)path#> withIntermediateDirectories:<#(BOOL)createIntermediates#> attributes:<#(NSDictionary *)attributes#> error:<#(NSError **)error#>
+	
 	BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:error];
 	
 	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
@@ -1014,6 +1237,12 @@
 
 
 - (void)dealloc {
+	
+	[searchBarButtonItem release], searchBarButtonItem = nil;
+	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
+	[changeModeBarButtonItem release], changeModeBarButtonItem = nil;
+	[changeDirectionButtonItem release], changeDirectionButtonItem = nil;
+	[changeLeadBarButtonItem release], changeLeadButtonItem = nil;
 	
 	[searchManager release], searchManager = nil;
 	

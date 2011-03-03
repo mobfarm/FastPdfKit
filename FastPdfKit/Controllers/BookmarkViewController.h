@@ -16,13 +16,13 @@
 
 @interface BookmarkViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 
-	IBOutlet UIBarButtonItem *editButton;
-	IBOutlet UITableView *bookmarksTableView;
+	IBOutlet UIBarButtonItem * editButton;
+	IBOutlet UITableView * bookmarksTableView;
 	
 	NSUInteger status;
-	NSMutableArray *bookmarks;
+	NSMutableArray * bookmarks;
 	
-	IBOutlet UIToolbar *toolbar;
+	IBOutlet UIToolbar * toolbar;
 	
 	//
 //	Delegate to get the current page and tell to show a certain page. It can also be used to

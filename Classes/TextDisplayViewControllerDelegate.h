@@ -13,6 +13,6 @@
 
 @protocol TextDisplayViewControllerDelegate
 
--(NSString *)wholeTextForPage:(NSUInteger)pageNr withProfile:(MFProfile *)p;
+-(MFDocumentManager	*)document;
 
 @end

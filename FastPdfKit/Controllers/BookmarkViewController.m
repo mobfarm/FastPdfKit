@@ -73,7 +73,7 @@
     
 	[self saveBookmarks];
        
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	[[self delegate]dismissBookmarkViewController:self];
 }
 
 -(IBAction)actionToggleMode:(id)sender {

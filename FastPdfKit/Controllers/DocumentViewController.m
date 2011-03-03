@@ -103,6 +103,7 @@
 	
 	if(nil == textDisplayViewController) {
 		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle mainBundle]];
+		textDisplayViewController.documentManager = self.document;
 	}
 	
 	return textDisplayViewController;
@@ -142,7 +143,7 @@
 	return searchViewController;
 }
 
--(void)presentFullSearchView:(id)sender {
+-(void)presentFullSearchView {
 	
 	// Get the full search view controller lazily, set it upt as the delegate for
 	// the search manager and present it to the user modally.
@@ -180,8 +181,9 @@
 		searchPopover = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
 		[searchPopover setPopoverContentSize:CGSizeMake(450, 650)];
 		[searchPopover setDelegate:self];
-		[searchPopover presentPopoverFromBarButtonItem:senderSearch permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-	 	
+		
+		[searchPopover presentPopoverFromRect:searchButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		
 		visibleSearchView = YES;
 		
 	} else {
@@ -197,9 +199,7 @@
 	// to the user. The full search view controller will allow the user to type in a search term and
 	// start the search. Look at the details in the utility method implementation.
 	
-	senderSearch = sender; // What's the purpose of this?
-	
-	[self presentFullSearchView:sender];	// This method will take care of everything.
+	[self presentFullSearchView];	// This method will take care of everything.
 }
 
 //-(void)presentFullSearchView:(id)sender {
@@ -390,14 +390,14 @@
 	// Dismiss the minimized view and present the full one.
 	
 	[self dismissMiniSearchView];
-	[self presentFullSearchView:self];
+	[self presentFullSearchView];
 }
 
 -(void)switchToMiniSearchView:(MFTextItem *)item {
 
 	// Dismiss the full view and present the minimized one.
 	
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissSearchViewController:searchViewController];
 	[self presentMiniSearchViewWithStartingItem:item];
 }
 
@@ -465,7 +465,7 @@
 			
 			bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
 			[bookmarkPopover setPopoverContentSize:CGSizeMake(372, 650)];
-			[bookmarkPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[bookmarkPopover presentPopoverFromRect:bookmarksButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 			[bookmarkPopover setDelegate:self];
 			
 			visibleBookmarkView=YES;
@@ -543,7 +543,7 @@
 			
 			outlinePopover = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
 			[outlinePopover setPopoverContentSize:CGSizeMake(372, 650)];
-			[outlinePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[outlinePopover presentPopoverFromRect:outlineButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 			[outlinePopover setDelegate:self];
 			visibleOutlineView=YES;
 			
@@ -812,21 +812,11 @@
 		
 		waitingForTextInput = NO;
 		
-		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
-		// and show it.
-	/*	TextDisplayViewController *controller = self.textDisplayViewController;
+		TextDisplayViewController *controller = self.textDisplayViewController;
 		controller.delegate = self;
 		[controller updateWithTextOfPage:page];
+		[self presentModalViewController:controller animated:YES];
 		
-		[self presentModalViewController:controller animated:YES];*/
-		
-		
-		
-			TextDisplayViewController *controller = self.textDisplayViewController;
-			controller.delegate = self;
-			[controller updateWithTextOfPage:page];
-			[self presentModalViewController:controller animated:YES];
-			//[controller release];
 	}
 }
 
@@ -1096,72 +1086,72 @@
  }
 
 
-- (void)didTappedOnPage:(int)number ofType:(int)type withObject:(id)object{
-	[self setPage:number];
-	// NSLog(@"didTappedOnPage");
-}
+//- (void)didTappedOnPage:(int)number ofType:(int)type withObject:(id)object{
+//	[self setPage:number];
+//	// NSLog(@"didTappedOnPage");
+//}
+//
+//- (void)didSelectedPage:(int)number ofType:(int)type withObject:(id)object{
+//	// NSLog(@"didSelectedPage");
+//}
 
-- (void)didSelectedPage:(int)number ofType:(int)type withObject:(id)object{
-	// NSLog(@"didSelectedPage");
-}
-
--(void)generathumbinbackground:(NSNumber *)numeropaginEPDF {
-	
-	NSAutoreleasePool *arPool = [[NSAutoreleasePool alloc] init];
-    [numeropaginEPDF retain];
-	
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	documentsDirectory = [ documentsDirectory stringByAppendingString:@"/"];
-	documentsDirectory = [documentsDirectory stringByAppendingString:nomefile];
-	
-	// NSLog(@"directory crea thumb : %@",documentsDirectory);
-	
-	NSFileManager *filemanager = [[NSFileManager alloc]init];
-	NSError *error;
-	BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:&error];
-	
-	// BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
-	
-	// BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
-	
-	if (testDirectoryCreated) {
-		NSLog(@"directory creata");
-	} else {
-		NSLog(@"directory gia esistente");
-	}
-	
-	// NSLog(@"inizio");
-	
-	CGSize thumbSize = CGSizeMake(140, 182);
-	
-	for (int i=1; i<=[[self document]numberOfPages] ; i++) {
-		
-		NSString *filename = [NSString stringWithFormat:@"png%d.png",i]; //nome del file su disco, possiamo anche chiamarlo in altro modo
-		NSString *fullPathToFile = [documentsDirectory stringByAppendingString:@"/"];
-		fullPathToFile = [ fullPathToFile stringByAppendingString:filename];
-		//fullPathToFile= [fullPathToFile stringByAppendingPathComponent:filename];
-		
-		// NSLog(@"path crea thumb : %@",fullPathToFile);
-		
-		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)
-		{
-			CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
-			UIImage *img = [[UIImage alloc] initWithCGImage:imgthumb];
-			NSData *data = UIImagePNGRepresentation(img);
-			if (pdfIsOpen) {
-				[filemanager createFileAtPath:fullPathToFile contents:data attributes:nil];
-			}
-			CGImageRelease(imgthumb);
-			[img release];
-			
-		}
-		//	[thumbImgArray insertObject:img atIndex:i];
-	}
-	// NSLog(@"fine");
-	[filemanager release];
-	[arPool release];
-}
+//-(void)generathumbinbackground:(NSNumber *)numeropaginEPDF {
+//	
+//	NSAutoreleasePool *arPool = [[NSAutoreleasePool alloc] init];
+//    [numeropaginEPDF retain];
+//	
+//	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+//	NSString *documentsDirectory = [paths objectAtIndex:0];
+//	documentsDirectory = [ documentsDirectory stringByAppendingString:@"/"];
+//	documentsDirectory = [documentsDirectory stringByAppendingString:nomefile];
+//	
+//	// NSLog(@"directory crea thumb : %@",documentsDirectory);
+//	
+//	NSFileManager *filemanager = [[NSFileManager alloc]init];
+//	NSError *error;
+//	BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:&error];
+//	
+//	// BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
+//	
+//	// BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
+//	
+//	if (testDirectoryCreated) {
+//		NSLog(@"directory creata");
+//	} else {
+//		NSLog(@"directory gia esistente");
+//	}
+//	
+//	// NSLog(@"inizio");
+//	
+//	CGSize thumbSize = CGSizeMake(140, 182);
+//	
+//	for (int i=1; i<=[[self document]numberOfPages] ; i++) {
+//		
+//		NSString *filename = [NSString stringWithFormat:@"png%d.png",i]; //nome del file su disco, possiamo anche chiamarlo in altro modo
+//		NSString *fullPathToFile = [documentsDirectory stringByAppendingString:@"/"];
+//		fullPathToFile = [ fullPathToFile stringByAppendingString:filename];
+//		//fullPathToFile= [fullPathToFile stringByAppendingPathComponent:filename];
+//		
+//		// NSLog(@"path crea thumb : %@",fullPathToFile);
+//		
+//		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)
+//		{
+//			CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
+//			UIImage *img = [[UIImage alloc] initWithCGImage:imgthumb];
+//			NSData *data = UIImagePNGRepresentation(img);
+//			if (pdfIsOpen) {
+//				[filemanager createFileAtPath:fullPathToFile contents:data attributes:nil];
+//			}
+//			CGImageRelease(imgthumb);
+//			[img release];
+//			
+//		}
+//		//	[thumbImgArray insertObject:img atIndex:i];
+//	}
+//	// NSLog(@"fine");
+//	[filemanager release];
+//	[arPool release];
+//}
 
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager {
