@@ -29,19 +29,15 @@
 
 @implementation DocumentViewController
 @synthesize leadButton, modeButton, directionButton, autozoomButton, automodeButton;
-@synthesize pageLabel, pageSlider,numPaginaLabel;
+@synthesize pageLabel, pageSlider;
 @synthesize dismissButton, bookmarksButton, outlineButton;
 @synthesize prevButton, nextButton;
 @synthesize textButton, textDisplayViewController;
-@synthesize searchViewController, searchButton, searchManager, pdfIsOpen,miniSearchView;
+@synthesize searchViewController, searchButton, searchManager,miniSearchView;
 @synthesize thumbnailView;
 @synthesize documentId;
-@synthesize thumbImgArray;
-@synthesize nomefile;
 
-@synthesize senderText;
-@synthesize senderSearch;
-@synthesize miniSearchVisible;
+@synthesize bookmarkPopover,outlinePopover,searchPopover,textPopover;
 
 #pragma mark Thumbnail utility functions
 
@@ -121,27 +117,6 @@
 // search view to navigate the document while looking for matches. Details are here, in the SearchViewController, SearchManager
 // and MiniSearchView.
 
--(SearchViewController *)searchViewController {
-	
-	// Lazily allocation when required.
-	
-	if(nil==searchViewController) {
-		
-		// We use different xib on iPhone and iPad.
-		
-		BOOL isPad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-			if(isPad) {
-				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:[NSBundle mainBundle]];
-			} else {
-				searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
-			}
-	}
-	
-	return searchViewController;
-}
 
 -(void)presentFullSearchView {
 	
@@ -571,13 +546,10 @@
 		
 		waitingForTextInput = YES;
 		self.documentInteractionEnabled = YES;
-		
+
 		UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
-		
-		senderText = sender;
-		
 	} else {
 		waitingForTextInput = NO;
 	}
@@ -914,8 +886,6 @@
 	
 	[super viewDidLoad];
 	
-	pdfIsOpen = YES;
-	
 	UIButton *aButton = nil;
 	
 	CGSize viewSize = [[self view]bounds].size;
@@ -929,9 +899,6 @@
 	// Slighty different font sizes on iPad and iPhone.
 	
 	BOOL isPad = NO;
-	
-	hudHidden=YES;
-	
 #ifdef UI_USER_INTERFACE_IDIOM
 	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
@@ -1082,7 +1049,10 @@
 		[[self view]addSubview:aSlider];
 		[aSlider release];
 		
-	
+		hudHidden = YES;
+		visibleBookmarkView = NO;
+		visibleOutlineView = NO;
+		miniSearchVisible = NO;
  }
 
 

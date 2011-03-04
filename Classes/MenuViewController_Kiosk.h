@@ -23,29 +23,32 @@
 	
 	UIAlertView *passwordAlertView;
 	
-	UIScrollView *scrollView;
-	UIView *DownloadProgress;
-	UIProgressView *downloadProgressView;
-	NSDictionary *buttonRemoveDict;
-	NSDictionary *buttonOpenDict;
-	NSDictionary *progressViewDict;
-	NSDictionary *imgDict;
+	UIScrollView * scrollView;
+	
+	UIView * DownloadProgress;
+	
+	UIProgressView * downloadProgressView;
+	
+	NSDictionary * buttonRemoveDict;
+	NSDictionary * buttonOpenDict;
+	NSDictionary * progressViewDict;
+	NSDictionary * imgDict;
 	
 	NSMutableArray *pdfHome;
 	
-	NSString *nomePdfDaAprire;
+	NSString *documentName;
 	
-	CGFloat widthThumb;
-	CGFloat heightThumb;
-	CGFloat widthButton;
-	CGFloat heightButton;
-	CGFloat widthScrollView;
-	CGFloat heightScrollView;
-	CGFloat heightViewDetail;
-	CGFloat xSxThumb;
-	CGFloat xDxThumb;
-	CGFloat heightFrame;
-	CGFloat yScrollView;
+	CGFloat thumbWidth;
+	CGFloat thumbHeight;
+	CGFloat buttonWidth;
+	CGFloat buttonHeight;
+	CGFloat scrollViewWidth;
+	CGFloat scrollViewHeight;
+	CGFloat detailViewHeight;
+	CGFloat thumbHOffsetLeft;
+	CGFloat thumHOffsetRight;
+	CGFloat frameHeight;
+	CGFloat scrollViewVOffset;
 	
 	BOOL graphicsMode;
 }
@@ -65,23 +68,23 @@
 @property (nonatomic,retain ) UIView *DownloadProgress;
 
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
-@property (nonatomic, assign) NSString *nomePdfDaAprire;
+@property (nonatomic, assign) NSString *documentName;
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 @property (nonatomic,retain ) NSDictionary *buttonOpenDict;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
 @property (nonatomic,retain ) NSDictionary *imgDict;
 @property (nonatomic,assign ) BOOL graphicsMode;
 
-@property CGFloat widthThumb;
-@property CGFloat heightThumb;
-@property CGFloat widthButton;
-@property CGFloat heightButton;
-@property CGFloat widthScrollView;
-@property CGFloat heightScrollView;
-@property CGFloat heightViewDetail;
-@property CGFloat xSxThumb;
-@property CGFloat xDxThumb;
-@property CGFloat heightFrame;
-@property CGFloat yScrollView;
+@property CGFloat thumbWidth;
+@property CGFloat thumbHeight;
+@property CGFloat buttonWidth;
+@property CGFloat buttonHeight;
+@property CGFloat scrollViewWidth;
+@property CGFloat scrollViewHeight;
+@property CGFloat detailViewHeight;
+@property CGFloat thumbHOffsetLeft;
+@property CGFloat thumHOffsetRight;
+@property CGFloat frameHeight;
+@property CGFloat scrollViewVOffset;
 
 @end

@@ -245,7 +245,7 @@
 	//Open Pdf
 	senderButton = sender;
 	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
-	[mvc setNomePdfDaAprire:pdfToDownload];
+	[mvc setDocumentName:pdfToDownload];
 	[mvc actionOpenPlainDocumentFromNewMain:self];
 }
 

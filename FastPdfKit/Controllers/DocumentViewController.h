@@ -24,7 +24,9 @@
 @class MFTextItem;
 
 @interface DocumentViewController : MFDocumentViewController <TextDisplayViewControllerDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate> {
-
+	
+	@protected
+	
 	// UI elements.
 	UIButton * leadButton;
 	UIButton * modeButton;
@@ -44,7 +46,6 @@
 	UIButton * textButton;
 	
 	UILabel * pageLabel;
-	UILabel * numPaginaLabel;
 	UISlider * pageSlider;
 	
 	BOOL hudHidden; // HUD status flag.
@@ -65,8 +66,6 @@
     NSString * documentId;
 	
 	NSString * nomefile;
-	BOOL pdfIsOpen;
-	
 	
 	// Popover management.
 	
@@ -87,6 +86,7 @@
 -(void)switchToMiniSearchView:(MFTextItem *)index;
 -(void)dismissMiniSearchView;
 -(void)revertToFullSearchView;
+-(void)showMiniSearchView;
 
 @property (nonatomic, copy) NSString * documentId;
 
@@ -102,21 +102,15 @@
 @property (nonatomic, retain) UIButton *automodeButton;
 @property (nonatomic, retain) UIButton *dismissButton;
 @property (nonatomic, retain) UILabel *pageLabel;
-@property (nonatomic, retain) UILabel *numPaginaLabel;
+
 @property (nonatomic, retain) UISlider *pageSlider;
 @property (nonatomic, retain) UIButton *bookmarksButton;
 @property (nonatomic, retain) UIButton *outlineButton;
 
-@property (nonatomic, retain) NSMutableArray *thumbImgArray;
-
-
-@property (nonatomic, retain) NSString *nomefile;
-@property (nonatomic) BOOL pdfIsOpen;
-@property (nonatomic,assign) BOOL miniSearchVisible;
-
-@property (nonatomic, retain) id senderSearch;
-@property (nonatomic, retain) id senderText;
-
+@property (nonatomic, retain) UIPopoverController *bookmarkPopover;
+@property (nonatomic, retain) UIPopoverController *outlinePopover;
+@property (nonatomic, retain) UIPopoverController *searchPopover;
+@property (nonatomic, retain) UIPopoverController *textPopover;
 
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) SearchViewController *searchViewController;
@@ -125,4 +119,5 @@
 
 @property (nonatomic, retain) UIButton *nextButton;
 @property (nonatomic, retain) UIButton *prevButton;
+
 @end

@@ -23,12 +23,12 @@
 @synthesize passwordAlertView;
 @synthesize downloadProgressView;
 @synthesize DownloadProgress;
-@synthesize nomePdfDaAprire;
+@synthesize documentName;
 @synthesize buttonRemoveDict;
 @synthesize buttonOpenDict;
 @synthesize progressViewDict,imgDict;
 @synthesize pdfHome;
-@synthesize widthThumb,heightThumb,widthButton,heightButton,widthScrollView,heightScrollView,heightViewDetail,xSxThumb,xDxThumb,heightFrame,yScrollView;
+@synthesize thumbWidth,thumbHeight,buttonWidth,buttonHeight,scrollViewWidth,scrollViewHeight,detailViewHeight,thumbHOffsetLeft,thumHOffsetRight,frameHeight,scrollViewVOffset;
 @synthesize graphicsMode;
 
 
@@ -39,23 +39,19 @@
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
 	NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
-	pdfPath = [pdfPath stringByAppendingString:nomePdfDaAprire];
+	pdfPath = [pdfPath stringByAppendingString:documentName];
 	pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 	
 	NSURL *documentUrl = [NSURL fileURLWithPath:pdfPath];
 	
-	
-	
-	
-	//
 	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class (a wrapper) and use
 	// it to initialize an MFDocumentViewController subclass 	
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
 	
 	DocumentViewController_Kiosk *aDocViewController = [[DocumentViewController_Kiosk alloc]initWithDocumentManager:aDocManager];
-	aDocViewController.nomefile=nomePdfDaAprire;
-	[aDocViewController initNumberOfPageToolbar];
-	//
+	aDocViewController.documentId = documentName;
+	// [aDocViewController initNumberOfPageToolbar];
+	
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
 	// [self presentModalViewController:aDocViewController animated:YES]; 
@@ -76,26 +72,26 @@
 	//Graphics visualization
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		widthThumb=350;
-		heightThumb=480;
-		xSxThumb = 20;
-		xDxThumb = 380;
-		heightFrame = 325;
-		widthScrollView=771;
-		heightScrollView=875;
-		heightViewDetail=665;
-		yScrollView=130;
+		thumbWidth=350;
+		thumbHeight=480;
+		thumbHOffsetLeft = 20;
+		thumHOffsetRight = 380;
+		frameHeight = 325;
+		scrollViewWidth=771;
+		scrollViewHeight=875;
+		detailViewHeight=665;
+		scrollViewVOffset=130;
 		
 	}else {
-		widthThumb=125;
-		heightThumb=170;
-		xSxThumb = 10;
-		xDxThumb = 160;
-		heightFrame = 115;
-		widthScrollView=323;
-		heightScrollView=404;
-		heightViewDetail=240;
-		yScrollView=60;
+		thumbWidth=125;
+		thumbHeight=170;
+		thumbHOffsetLeft = 10;
+		thumHOffsetRight = 160;
+		frameHeight = 115;
+		scrollViewWidth=323;
+		scrollViewHeight=404;
+		detailViewHeight=240;
+		scrollViewVOffset=60;
 	}
 	
 	XMLParser *parser = [[XMLParser alloc] init];
@@ -104,9 +100,9 @@
 	
 	[parser parseXMLFileAtURL:@"http://go.mobfarm.eu/pdf/xmldaparsare.xml"];
 	
-	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, yScrollView, widthScrollView, heightScrollView)];
+	scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewVOffset, scrollViewWidth, scrollViewHeight)];
 	scrollView.backgroundColor = [UIColor whiteColor];
-	scrollView.contentSize = CGSizeMake(widthScrollView, heightViewDetail * ((NUM_PDFTOSHOW/2)+1));
+	scrollView.contentSize = CGSizeMake(scrollViewWidth, detailViewHeight * ((NUM_PDFTOSHOW/2)+1));
 	
 	buttonRemoveDict = [[NSMutableDictionary alloc] init];
 	buttonOpenDict = [[NSMutableDictionary alloc] init];
@@ -117,18 +113,18 @@
 		NSString *titoloPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"titolo"];
 		NSString *linkPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"link"];
 		NSString *copertinaPdf = [[pdfHome objectAtIndex: i-1] objectForKey: @"copertina"];
-		MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(widthThumb, heightThumb)];
+		MFHomeListPdf *viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(thumbWidth, thumbHeight)];
 		CGRect frame = self.view.frame;
 		if ((i%2)==0) {
-			frame.origin.y = (heightFrame * 2 ) * ( (i-1) / 2 );
-			frame.origin.x = xDxThumb;
-			frame.size.width = widthThumb;
-			frame.size.height = heightViewDetail;
+			frame.origin.y = (frameHeight * 2 ) * ( (i-1) / 2 );
+			frame.origin.x = thumHOffsetRight;
+			frame.size.width = thumbWidth;
+			frame.size.height = detailViewHeight;
 		}else {
-			frame.origin.y = heightFrame *(i-1);
-			frame.origin.x = xSxThumb;
-			frame.size.width = widthThumb;
-			frame.size.height = heightViewDetail;
+			frame.origin.y = frameHeight *(i-1);
+			frame.origin.x = thumbHOffsetLeft;
+			frame.size.width = thumbWidth;
+			frame.size.height = detailViewHeight;
 		}
 		
 		viewPdf.view.frame = frame;
@@ -145,12 +141,12 @@
 	CGFloat yBorder = 0 ; 
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		yBorder = yScrollView-3 ;
+		yBorder = scrollViewVOffset-3 ;
 	}else {
-		yBorder = yScrollView-1 ;
+		yBorder = scrollViewVOffset-1 ;
 	}
 	
-	UIImageView *border = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, widthScrollView, 40)]; 
+	UIImageView *border = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, scrollViewWidth, 40)]; 
 	[border setImage:[UIImage imageNamed:@"border.png"]];
 	[self.view addSubview:border];
 	[border release];

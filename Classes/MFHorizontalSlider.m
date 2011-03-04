@@ -14,14 +14,14 @@
 @synthesize thumbnailsView, thumbnailsPageControl, thumbnailViewControllers, thumbnailNumbers,viewHeight,sliderHeight;
 @synthesize delegate;
 
-- (MFHorizontalSlider *)initWithImages:(NSArray *)images andSize:(CGSize)size andWidth:(CGFloat)_width andHeight:(CGFloat)_height andType:(int)_type andNomeFile:(NSString *)_nomecartellapdf{
+- (MFHorizontalSlider *)initWithImages:(NSArray *)images size:(CGSize)size width:(CGFloat)_width height:(CGFloat)_height type:(int)_type andFolderName:(NSString *)_nomecartellapdf{
 	thumbWidth = size.width;
 	thumbHeight = size.height;
 	sliderWidth = _width;
 	sliderHeight = _height;
 	sliderType = _type;
 	thumbnailNumbers = [[NSMutableArray alloc] initWithArray:images];
-	nomecartellathumb = _nomecartellapdf;
+	thumbFolderName = _nomecartellapdf;
 	
 	[self.view setFrame:CGRectMake(0,0, sliderWidth, sliderHeight)];
 	
@@ -192,7 +192,7 @@
 		NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *filename = [NSString stringWithFormat:@"png%d.png",page+1]; //name of the file on disk
 		NSString *fullPathToFile = [documentsDirectory stringByAppendingString: @"/"];
-		fullPathToFile = [fullPathToFile stringByAppendingString:nomecartellathumb];
+		fullPathToFile = [fullPathToFile stringByAppendingString:thumbFolderName];
 		fullPathToFile = [fullPathToFile stringByAppendingString:@"/"];
 		fullPathToFile = [fullPathToFile stringByAppendingString:filename];
 		
@@ -218,7 +218,7 @@
 		NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *filename = [NSString stringWithFormat:@"png%d.png",page+1]; //nome del file su disco, possiamo anche chiamarlo in altro modo
 		NSString *fullPathToFile = [documentsDirectory stringByAppendingString: @"/"];
-		fullPathToFile = [fullPathToFile stringByAppendingString:nomecartellathumb];
+		fullPathToFile = [fullPathToFile stringByAppendingString:thumbFolderName];
 		fullPathToFile = [fullPathToFile stringByAppendingString:@"/"];
 		fullPathToFile = [fullPathToFile stringByAppendingString:filename];
 		

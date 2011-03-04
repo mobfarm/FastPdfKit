@@ -25,9 +25,6 @@
 		0188490B131E89D90045038F /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0188490A131E89D90045038F /* DocumentViewController_Kiosk.m */; };
 		0188490E131E89EB0045038F /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0188490D131E89EB0045038F /* FastPDFKit_KioskAppDelegate.m */; };
 		01884911131E89F60045038F /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884910131E89F60045038F /* MenuViewController_Kiosk.m */; };
-		01884915131E8A230045038F /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884912131E8A230045038F /* Kiosk_ipad.xib */; };
-		01884916131E8A230045038F /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884913131E8A230045038F /* Kiosk_phone.xib */; };
-		01884917131E8A230045038F /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884914131E8A230045038F /* MainWindow_Kiosk.xib */; };
 		01884955131E8A6F0045038F /* backThumb_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884921131E8A6F0045038F /* backThumb_iphone.png */; };
 		01884956131E8A6F0045038F /* backThumb_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884922131E8A6F0045038F /* backThumb_iphone@2x.png */; };
 		01884957131E8A6F0045038F /* backThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884923131E8A6F0045038F /* backThumb.png */; };
@@ -132,7 +129,6 @@
 		018849BA131E8A6F0045038F /* zoomUnlock_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884952131E8A6F0045038F /* zoomUnlock_phone.png */; };
 		018849BB131E8A6F0045038F /* zoomUnlock_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884953131E8A6F0045038F /* zoomUnlock_phone@2x.png */; };
 		018849BC131E8A6F0045038F /* zoomUnlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884954131E8A6F0045038F /* zoomUnlock.png */; };
-		018849C3131E8B890045038F /* BookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018849C2131E8B890045038F /* BookmarkView.xib */; };
 		018849C4131E8B890045038F /* BookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018849C2131E8B890045038F /* BookmarkView.xib */; };
 		01884A2D131E91000045038F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A1C131E91000045038F /* ASIAuthenticationDialog.m */; };
 		01884A2E131E91000045038F /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01884A1F131E91000045038F /* ASIDownloadCache.m */; };
@@ -172,6 +168,20 @@
 		01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC2131E96C50045038F /* SystemConfiguration.framework */; };
 		01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC6131E96CE0045038F /* MobileCoreServices.framework */; };
 		01884ACC131E96E30045038F /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
+		01B9165513214E1400D517A6 /* BookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018849C2131E8B890045038F /* BookmarkView.xib */; };
+		01B9165613214E1400D517A6 /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884912131E8A230045038F /* Kiosk_ipad.xib */; };
+		01B9165713214E1400D517A6 /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884913131E8A230045038F /* Kiosk_phone.xib */; };
+		01B9165813214E1400D517A6 /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884914131E8A230045038F /* MainWindow_Kiosk.xib */; };
+		01B9165913214E1400D517A6 /* OutlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A35A1270A2A700F65929 /* OutlineView.xib */; };
+		01B9165A13214E1400D517A6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A1321270948600F65929 /* MainWindow.xib */; };
+		01B9165B13214E1400D517A6 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A1331270948600F65929 /* MenuView_pad.xib */; };
+		01B9165C13214E1400D517A6 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A1341270948600F65929 /* MenuView_phone.xib */; };
+		01B9165D13214E1500D517A6 /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884912131E8A230045038F /* Kiosk_ipad.xib */; };
+		01B9165E13214E1500D517A6 /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884913131E8A230045038F /* Kiosk_phone.xib */; };
+		01B9165F13214E1500D517A6 /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01884914131E8A230045038F /* MainWindow_Kiosk.xib */; };
+		01B9166013214E1D00D517A6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
+		01B9166113214E1D00D517A6 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
+		01B9166213214E1D00D517A6 /* Icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon144.png */; };
 		01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01E3A3061309C3D9008BB483 /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
 		01F434C412ACD94D00D08021 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F434C312ACD94D00D08021 /* DocumentViewController.m */; };
@@ -504,7 +514,7 @@
 				01884953131E8A6F0045038F /* zoomUnlock_phone@2x.png */,
 				01884954131E8A6F0045038F /* zoomUnlock.png */,
 			);
-			name = img;
+			path = img;
 			sourceTree = "<group>";
 		};
 		01884A1A131E91000045038F /* ASIHTTP */ = {
@@ -768,9 +778,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01884915131E8A230045038F /* Kiosk_ipad.xib in Resources */,
-				01884916131E8A230045038F /* Kiosk_phone.xib in Resources */,
-				01884917131E8A230045038F /* MainWindow_Kiosk.xib in Resources */,
 				01884955131E8A6F0045038F /* backThumb_iphone.png in Resources */,
 				01884956131E8A6F0045038F /* backThumb_iphone@2x.png in Resources */,
 				01884957131E8A6F0045038F /* backThumb.png in Resources */,
@@ -823,11 +830,21 @@
 				01884986131E8A6F0045038F /* zoomUnlock_phone.png in Resources */,
 				01884987131E8A6F0045038F /* zoomUnlock_phone@2x.png in Resources */,
 				01884988131E8A6F0045038F /* zoomUnlock.png in Resources */,
-				018849C3131E8B890045038F /* BookmarkView.xib in Resources */,
 				01884A8A131E94C70045038F /* Identity-H.cidf in Resources */,
 				01884A8B131E94C70045038F /* Identity-V.cidf in Resources */,
 				01884AAD131E95550045038F /* SearchView_phone.xib in Resources */,
 				01884AAE131E955A0045038F /* SearchView_pad.xib in Resources */,
+				01B9165513214E1400D517A6 /* BookmarkView.xib in Resources */,
+				01B9165613214E1400D517A6 /* Kiosk_ipad.xib in Resources */,
+				01B9165713214E1400D517A6 /* Kiosk_phone.xib in Resources */,
+				01B9165813214E1400D517A6 /* MainWindow_Kiosk.xib in Resources */,
+				01B9165913214E1400D517A6 /* OutlineView.xib in Resources */,
+				01B9165A13214E1400D517A6 /* MainWindow.xib in Resources */,
+				01B9165B13214E1400D517A6 /* MenuView_pad.xib in Resources */,
+				01B9165C13214E1400D517A6 /* MenuView_phone.xib in Resources */,
+				01B9166013214E1D00D517A6 /* Icon.png in Resources */,
+				01B9166113214E1D00D517A6 /* Icon72.png in Resources */,
+				01B9166213214E1D00D517A6 /* Icon144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,6 +922,9 @@
 				018849BB131E8A6F0045038F /* zoomUnlock_phone@2x.png in Resources */,
 				018849BC131E8A6F0045038F /* zoomUnlock.png in Resources */,
 				018849C4131E8B890045038F /* BookmarkView.xib in Resources */,
+				01B9165D13214E1500D517A6 /* Kiosk_ipad.xib in Resources */,
+				01B9165E13214E1500D517A6 /* Kiosk_phone.xib in Resources */,
+				01B9165F13214E1500D517A6 /* MainWindow_Kiosk.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,6 +935,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01884ACC131E96E30045038F /* DocumentViewController.m in Sources */,
 				0188490B131E89D90045038F /* DocumentViewController_Kiosk.m in Sources */,
 				0188490E131E89EB0045038F /* FastPDFKit_KioskAppDelegate.m in Sources */,
 				01884911131E89F60045038F /* MenuViewController_Kiosk.m in Sources */,
@@ -942,7 +963,6 @@
 				01884AAC131E95440045038F /* SearchResultCellView.m in Sources */,
 				01884AAF131E95600045038F /* TextSearchOperation.m in Sources */,
 				01884AB2131E95720045038F /* MenuViewController.m in Sources */,
-				01884ACC131E96E30045038F /* DocumentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,12 +1006,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
 				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
+				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
@@ -1014,12 +1029,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
 				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
+				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
@@ -1040,12 +1050,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
 				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
+				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
@@ -1110,6 +1115,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
@@ -1154,6 +1160,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
@@ -1171,6 +1178,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
