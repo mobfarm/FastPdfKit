@@ -28,6 +28,7 @@
 #define TITLE_AUTOZOOM_NO @"Zo/om"
 
 @implementation DocumentViewController
+
 @synthesize leadButton, modeButton, directionButton, autozoomButton, automodeButton;
 @synthesize pageLabel, pageSlider;
 @synthesize dismissButton, bookmarksButton, outlineButton;
