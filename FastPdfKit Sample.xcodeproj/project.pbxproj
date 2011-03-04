@@ -915,6 +915,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01884ACC131E96E30045038F /* DocumentViewController.m in Sources */,
 				0188490B131E89D90045038F /* DocumentViewController_Kiosk.m in Sources */,
 				0188490E131E89EB0045038F /* FastPDFKit_KioskAppDelegate.m in Sources */,
 				01884911131E89F60045038F /* MenuViewController_Kiosk.m in Sources */,
@@ -942,7 +943,6 @@
 				01884AAC131E95440045038F /* SearchResultCellView.m in Sources */,
 				01884AAF131E95600045038F /* TextSearchOperation.m in Sources */,
 				01884AB2131E95720045038F /* MenuViewController.m in Sources */,
-				01884ACC131E96E30045038F /* DocumentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,12 +986,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
 				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
+				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
@@ -1014,12 +1009,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
 				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
+				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
@@ -1040,12 +1030,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
 				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
+				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
@@ -1110,6 +1095,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
@@ -1154,6 +1140,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
@@ -1171,6 +1158,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;

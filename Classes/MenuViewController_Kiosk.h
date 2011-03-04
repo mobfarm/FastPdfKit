@@ -23,17 +23,17 @@
 	
 	UIAlertView *passwordAlertView;
 	
-	UIScrollView *scrollView;
-	UIView *DownloadProgress;
-	UIProgressView *downloadProgressView;
-	NSDictionary *buttonRemoveDict;
-	NSDictionary *buttonOpenDict;
-	NSDictionary *progressViewDict;
-	NSDictionary *imgDict;
+	UIScrollView * scrollView;
+	UIView * DownloadProgress;
+	UIProgressView * downloadProgressView;
+	NSDictionary * buttonRemoveDict;
+	NSDictionary * buttonOpenDict;
+	NSDictionary * progressViewDict;
+	NSDictionary * imgDict;
 	
 	NSMutableArray *pdfHome;
 	
-	NSString *nomePdfDaAprire;
+	NSString *documentName;
 	
 	CGFloat widthThumb;
 	CGFloat heightThumb;
@@ -65,7 +65,7 @@
 @property (nonatomic,retain ) UIView *DownloadProgress;
 
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
-@property (nonatomic, assign) NSString *nomePdfDaAprire;
+@property (nonatomic, assign) NSString *documentName;
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 @property (nonatomic,retain ) NSDictionary *buttonOpenDict;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;

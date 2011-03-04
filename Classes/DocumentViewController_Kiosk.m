@@ -16,58 +16,98 @@
 #import "MiniSearchView.h"
 #import "mfprofile.h"
 
-
-
 @implementation DocumentViewController_Kiosk
 
-@synthesize leadButton, modeButton, directionButton, autozoomButton, automodeButton;
-@synthesize pageLabel, pageSlider,numPaginaLabel;
-@synthesize dismissButton, bookmarksButton, outlineButton;
-@synthesize prevButton, nextButton;
-@synthesize textButton, textDisplayViewController;
-@synthesize searchViewController, searchButton, searchManager, pdfIsOpen,miniSearchView;
-@synthesize thumbnailView;
 @synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
 @synthesize thumbImgArray;
-@synthesize nomefile,thumbsViewVisible,visibleBookmarkView,visibleOutlineView,visibleSearchView,visibleTextView;
-@synthesize thumbSliderView,aTSVH;
-@synthesize bookmarkPopover,outlinePopover,searchPopover,textPopover;
-@synthesize senderText;
-@synthesize senderSearch;
-@synthesize toolbarHeight,widthborder,heightTSHV;
-@synthesize miniSearchVisible;
+@synthesize rollawayToolbar;
 
-@synthesize searchBarButtonItem, changeModeBarButtonItem, zoomLockBarButtonItem, changeDirectionButtonItem, changeLeadBarButtonItem;
+@synthesize searchBarButtonItem, changeModeBarButtonItem, zoomLockBarButtonItem, changeDirectionBarButtonItem, changeLeadBarButtonItem;
+@synthesize bookmarkBarButtonItem, textBarButtonItem, numberOfPageTitleBarButtonItem, dismissBarButtonItem, outlineBarButtonItem;
+@synthesize numberOfPageTitleToolbar;
+@synthesize pageNumLabel;
+@synthesize documentId;
+@synthesize textDisplayViewController;
+@synthesize searchViewController;
+@synthesize searchManager;
+@synthesize miniSearchView;
+@synthesize pageSlider;
 
-#pragma mark Thumbnail utility functions
+@synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft;
 
--(void)hideThumbnailView {
+-(void)dismissAllPopovers {
 	
-	// Hide the thumbnail.
+	// Utility method to quickly dispatch any poopover visible on screen.
 	
-	self.thumbnailView.hidden = YES;
-}
-
--(void)showThumbnailView {
+	if (bookmarkViewVisible) {
+		[bookmarkPopover dismissPopoverAnimated:YES];
+		bookmarkViewVisible = NO;	
+	}
 	
-	CGSize thumbSize = CGSizeMake(60, 80);
+	if (outlineViewVisible) {
+		[outlinePopover dismissPopoverAnimated:YES];
+		outlineViewVisible = NO;	
+	}
 	
-	// Get the thumbnail image from the document. Remember to release the CGImage.
+	if (searchViewVisible) {
+		[searchPopover dismissPopoverAnimated:YES];
+		searchViewVisible = NO;
+	}
 	
-	CGImageRef img = [self.document createImageForThumbnailOfPageNumber:thumbPage ofSize:thumbSize andScale:1.0];
-	UIImage *thumbImage = [[UIImage alloc]initWithCGImage:img];
-	CGImageRelease(img);
 	
-	// Set the image as the data of the thumbnail image view and hunide it.
-	
-	self.thumbnailView.image = thumbImage;
-	self.thumbnailView.hidden = NO;
-	
-	[thumbImage release];
+	if (textViewVisible) {
+		[textPopover dismissPopoverAnimated:YES];
+		textViewVisible = NO;	
+	}
 }
 
 #pragma mark -
-#pragma mark Actions
+#pragma mark ThumbnailSlider
+
+-(IBAction) actionThumbnail:(id)sender{
+	
+	if (thumbsViewVisible) {
+		[self hideHorizontalThumbnails];
+	}else {
+		[self showHorizontalThumbnails];
+	}
+}
+
+-(void)showHorizontalThumbnails{
+	if (thumbSliderViewHorizontal.frame.origin.y >= self.view.bounds.size.height) {
+		//toolbar.hidden = NO;
+		[UIView beginAnimations:@"show" context:NULL];
+		[UIView setAnimationDuration:0.35];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+		[UIView commitAnimations];
+		thumbsViewVisible = YES;
+	}
+}
+
+-(void)hideHorizontalThumbnails {
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.35];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+	[UIView commitAnimations];
+	thumbsViewVisible = NO;
+}
+
+#pragma mark -
+#pragma mark TextDisplayViewController, _Delegate and _Actions
+
+-(TextDisplayViewController *)textDisplayViewController {
+	
+	// Show the text display view controller to the user.
+	
+	if(nil == textDisplayViewController) {
+		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle mainBundle]];
+		textDisplayViewController.documentManager = self.document;
+	}
+	
+	return textDisplayViewController;
+}
 
 -(IBAction)actionText:(id)sender {
 	
@@ -93,40 +133,157 @@
 	
 }
 
--(IBAction) actionThumbnail:(id)sender{
+#pragma mark -
+#pragma mark BookmarkViewController, _Delegate and _Actions
+
+-(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
 	
-	if (thumbsViewVisible) {
-		
-		[self hideHorizontalThumbnails];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopovers];
 	}else {
-		[self showHorizontalThumbnails];
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		bookmarkViewVisible = NO;
 	}
 	
 }
 
--(void)showHorizontalThumbnails{
-	if (thumbSliderViewHorizontal.frame.origin.y >= self.view.bounds.size.height) {
-		//toolbar.hidden = NO;
-		[UIView beginAnimations:@"show" context:NULL];
-		[UIView setAnimationDuration:0.35];
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
-		[UIView commitAnimations];
-		thumbsViewVisible = YES;
+-(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
+	self.page = page;
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopovers];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		bookmarkViewVisible = NO;
 	}
 }
 
--(void)hideHorizontalThumbnails{
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
-	[UIView commitAnimations];
-	thumbsViewVisible = NO;
+-(IBAction) actionBookmarks:(id)sender {
 	
+	//
+	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
+	//	you can also push the controller with the navigation controller or use an UIActionSheet.
+	
+	if (bookmarkViewVisible) {
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[bookmarkPopover dismissPopoverAnimated:YES];
+			bookmarkViewVisible=NO;
+			
+		} else {
+			
+			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			bookmarkViewVisible=NO;
+		}
+		
+	}else {
+		
+		BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
+		bookmarksVC.delegate=self;
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[self dismissAllPopovers];
+			
+			bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
+			[bookmarkPopover setPopoverContentSize:CGSizeMake(372, 650)];
+			[bookmarkPopover presentPopoverFromBarButtonItem:bookmarkBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[bookmarkPopover setDelegate:self];
+			
+			bookmarkViewVisible=YES;
+		}else {
+			
+			[self presentModalViewController:bookmarksVC animated:YES];
+			bookmarkViewVisible=YES;
+		}
+		[bookmarksVC release];
+	}
 }
 
--(void)presentFullSearchView:(id)sender {
+
+#pragma mark -
+#pragma mark OutlineViewController, _Delegate and _Actions
+
+-(void)dismissOutlineViewController:(OutlineViewController *)anOutlineViewController {
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		
+		[self dismissAllPopovers];
+		
+	} else {
+		
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		outlineViewVisible=NO;
+	}
+}
+
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
+	self.page = page;
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopovers];
+	}else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		outlineViewVisible=NO;
+	}
+}
+
+-(IBAction) actionOutline:(id)sender {
+	
+	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
+	// BookmarksViewController. However, you can show them in the same view with a segmented control, just
+	// switch datasources and take it into account in the various tableView delegate methods. Another thing
+	// to consider is that the view will be resetted once removed, and for an complex outline is not a nice thing.
+	// So, it would be better to store the position in the outline somewhere to present it again the very same
+	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
+	// of low memory warnings.
+	
+	
+	if (outlineViewVisible) {
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[outlinePopover dismissPopoverAnimated:YES];
+			outlineViewVisible = NO;
+		} else {
+			
+			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			outlineViewVisible = NO;
+		}
+		
+	} else {
+		
+		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
+		[outlineVC setDelegate:self];
+		
+		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
+		// this array and the openentries array somewhere and set them again before present the view to the user again.
+		
+		[outlineVC setOutlineEntries:[[self document] outline]];
+		
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			
+			[self dismissAllPopovers];	// Dismiss any eventual other popover.
+			
+			outlinePopover = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
+			[outlinePopover setPopoverContentSize:CGSizeMake(372, 650)];
+			[outlinePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+			[outlinePopover setDelegate:self];
+			outlineViewVisible=YES;
+			
+		} else {
+			
+			[self presentModalViewController:outlineVC animated:YES];
+			outlineViewVisible=YES;
+			
+		}
+		[outlineVC release];
+	}
+}
+	
+#pragma mark -
+#pragma mark SearchViewController, _Delegate and _Action
+
+-(void)presentFullSearchView {
 	
 	// Get the full search view controller lazily, set it upt as the delegate for
 	// the search manager and present it to the user modally.
@@ -164,114 +321,16 @@
 		searchPopover = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
 		[searchPopover setPopoverContentSize:CGSizeMake(450, 650)];
 		[searchPopover setDelegate:self];
-		[searchPopover presentPopoverFromBarButtonItem:senderSearch permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		[searchPopover presentPopoverFromBarButtonItem:searchBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 		
-		visibleSearchView = YES;
+		searchViewVisible = YES;
 		
 	} else {
 		
 		[self presentModalViewController:(UIViewController *)controller animated:YES];
-		visibleSearchView = YES;
+		searchViewVisible = YES;
 	}	
 }
-
-	
--(IBAction) actionBookmarks:(id)sender {
-	
-	//
-	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
-	//	you can also push the controller with the navigation controller or use an UIActionSheet.
-	
-	if (visibleBookmarkView) {
-		
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
-			[bookmarkPopover dismissPopoverAnimated:YES];
-			visibleBookmarkView=NO;
-			
-		} else {
-			
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
-			visibleBookmarkView=NO;
-		}
-		
-	}else {
-		
-		BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
-		bookmarksVC.delegate=self;
-		
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
-			[self dismissAllPopovers];
-			
-			bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
-			[bookmarkPopover setPopoverContentSize:CGSizeMake(372, 650)];
-			[bookmarkPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-			[bookmarkPopover setDelegate:self];
-			
-			visibleBookmarkView=YES;
-		}else {
-			
-			[self presentModalViewController:bookmarksVC animated:YES];
-			visibleBookmarkView=YES;
-		}
-		[bookmarksVC release];
-	}
-}
-
--(IBAction) actionOutline:(id)sender {
-	
-	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
-	// BookmarksViewController. However, you can show them in the same view with a segmented control, just
-	// switch datasources and take it into account in the various tableView delegate methods. Another thing
-	// to consider is that the view will be resetted once removed, and for an complex outline is not a nice thing.
-	// So, it would be better to store the position in the outline somewhere to present it again the very same
-	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
-	// of low memory warnings.
-	
-	
-	if (visibleOutlineView) {
-		
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
-			[outlinePopover dismissPopoverAnimated:YES];
-			visibleOutlineView = NO;
-		} else {
-			
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
-			visibleOutlineView = NO;
-		}
-		
-	} else {
-		
-		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
-		[outlineVC setDelegate:self];
-		
-		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
-		// this array and the openentries array somewhere and set them again before present the view to the user again.
-		
-		[outlineVC setOutlineEntries:[[self document] outline]];
-		
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
-			[self dismissAllPopovers];	// Dismiss any eventual other popover.
-			
-			outlinePopover = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
-			[outlinePopover setPopoverContentSize:CGSizeMake(372, 650)];
-			[outlinePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-			[outlinePopover setDelegate:self];
-			visibleOutlineView=YES;
-			
-		} else {
-			
-			[self presentModalViewController:outlineVC animated:YES];
-			visibleOutlineView=YES;
-			
-		}
-		[outlineVC release];
-	}
-}
-	
 
 -(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
 	
@@ -317,16 +376,134 @@
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
-		[self.view bringSubviewToFront:toolbar];
+		[self.view bringSubviewToFront:rollawayToolbar];
 	}else {
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
-		[self.view bringSubviewToFront:toolbar];
+		[self.view bringSubviewToFront:rollawayToolbar];
 	}
 	[UIView commitAnimations];
 	
-	miniSearchVisible = YES;
+	miniSearchViewVisible = YES;
 	
 	[[self view]setNeedsLayout];
+}
+
+-(SearchViewController *)searchViewController {
+	
+	// Lazily allocation when required.
+	
+	if(nil==searchViewController) {
+		
+		// We use different xib on iPhone and iPad.
+		
+		BOOL isPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+		if(isPad) {
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:[NSBundle mainBundle]];
+		} else {
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
+		}
+	}
+	
+	return searchViewController;
+}
+
+-(IBAction)actionSearch:(id)sender {
+	
+	// Get the instance of the Search Manager lazily and then present a full sized search view controller
+	// to the user. The full search view controller will allow the user to type in a search term and
+	// start the search. Look at the details in the utility method implementation.
+	
+	[self presentFullSearchView];	// This method will take care of everything.
+}
+
+-(void)dismissMiniSearchView {
+	
+	// Remove from the superview and release the mini search view.
+	
+	// Animation.
+	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.15];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+	}else {
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+	}
+	
+	[UIView commitAnimations];
+	
+	searchViewVisible = NO;
+	
+	// Actual removal.
+	if(miniSearchView!=nil) {
+		
+		[miniSearchView removeFromSuperview];
+		MF_COCOA_RELEASE(miniSearchView);
+	}
+	
+	searchViewVisible = NO;
+}
+
+-(void)showMiniSearchView {
+	
+	// Remove from the superview and release the mini search view.
+	
+	[UIView beginAnimations:@"show" context:NULL];
+	[UIView setAnimationDuration:0.15];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+	}else {
+		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+	}
+	
+	searchViewVisible = NO;
+	
+	[UIView commitAnimations];
+	
+	
+}
+
+-(SearchManager *)searchManager {
+	
+	// Lazily allocate and instantiate the search manager.
+	
+	if(nil == searchManager) {
+		
+		searchManager = [[SearchManager alloc]init];
+	}
+	
+	return searchManager;
+}
+
+-(void)revertToFullSearchView {
+	
+	// Dismiss the minimized view and present the full one.
+	
+	[self dismissMiniSearchView];
+	[self presentFullSearchView];
+}
+
+-(void)switchToMiniSearchView:(MFTextItem *)item {
+	
+	// Dismiss the full view and present the minimized one.
+	
+	[self dismissSearchViewController:searchViewController];
+	[self presentMiniSearchViewWithStartingItem:item];
+}
+
+-(void)dismissSearchViewController:(SearchViewController *)aSearchViewController {
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[self dismissAllPopovers];
+	} else {
+		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		searchViewVisible=NO;
+	}
 }
 
 #pragma mark -
@@ -350,13 +527,20 @@
 	// [[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
+-(IBAction) actionPageSliderSlided:(id)sender {
+	
+	// When the user move the slider, we update the label.
+	
+	// Get the slider value.
+	UISlider *slider = (UISlider *)sender;
+	NSNumber *number = [NSNumber numberWithFloat:[slider value]];
+	NSUInteger pageNumber = [number unsignedIntValue];
+	
+	// Update the label.
+	[pageNumLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
+}
+
 -(IBAction) actionPageSliderStopped:(id)sender {
-	
-	// We move to the page only if the user release the slider (on UITouchUpInside).
-	
-	// Cancel the previous request for thumbnail, we don't need it.
-	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showThumbnailView) object:nil];
-	[self hideThumbnailView];
 	
 	// Get the requested page number from the slider.
 	UISlider *slider = (UISlider *)sender;
@@ -366,32 +550,6 @@
 	// Go to the page.
 	[self setPage:pageNumber];
 }
-
--(IBAction) actionPageSliderSlided:(id)sender {
-	
-	// When the user move the slider, we update the label and queue a selector to generate a thumbnail for the page if
-	// the user hold the slider for at least 1 second without moving it.
-	
-	// Cancel the previous request if any.
-	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showThumbnailView) object:nil];
-	[self hideThumbnailView];
-	
-	// Start a new one.
-	[self performSelector:@selector(showThumbnailView) withObject:nil afterDelay:1.0];
-	
-	// Get the slider value.
-	UISlider *slider = (UISlider *)sender;
-	NSNumber *number = [NSNumber numberWithFloat:[slider value]];
-	NSUInteger pageNumber = [number unsignedIntValue];
-	
-	//We use the instance's thumbPage variable to avoid passing a number to the selector each time.
-	thumbPage = pageNumber;
-	
-	// Update the label.
-	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
-	
-}
-
 
 -(IBAction)actionChangeMode:(id)sender {
 	
@@ -419,10 +577,10 @@
 	
 	if(lead == MFDocumentLeadLeft) {
 		[self setLead:MFDocumentLeadRight];
-		[changeLeadButtonItem setImage:imgChangeLead];
+		
 	} else if (lead == MFDocumentLeadRight) {
 		[self setLead:MFDocumentLeadLeft];
-		[changeLeadButtonItem setImage:imgChangeLeadClick];
+		
 	}
 }
 
@@ -431,12 +589,13 @@
 	// Look at actionChangeMode:
 	
 	MFDocumentDirection direction = [self direction];
+	
 	if(direction == MFDocumentDirectionL2R) {
 		[self setDirection:MFDocumentDirectionR2L];
-		[changeDirectionButtonItem setImage:imgl2r];
+		
 	} else if (direction == MFDocumentDirectionR2L) {
 		[self setDirection:MFDocumentDirectionL2R];
-		[changeDirectionButtonItem setImage:imgr2l];
+		
 	}
 }
 
@@ -484,7 +643,7 @@
 	//	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 	//	in this callback.
 	
-	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
+	[pageNumLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
@@ -502,11 +661,10 @@
 	//	You can also choose to change/update the UI when the setter is called instead, just be sure that you keep track
 	//	of the changes in your own variables and check for inconsitencies in the internal state somewhere in your code.
 	
-	
 	if(mode == MFDocumentModeSingle) {
-		[changeModeBarButtonItem setImage:imgChangeModeDouble];
+		[changeModeBarButtonItem setImage:imgModeSingle];
 	} else if (mode == MFDocumentModeDouble) {
-		[changeModeBarButtonItem setImage:imgChangeMode];
+		[changeModeBarButtonItem setImage:imgModeDouble];
 	}
 }
 
@@ -517,11 +675,11 @@
 	
 	if(direction == MFDocumentDirectionL2R) {
 		
-		
+		[changeDirectionBarButtonItem setImage:imgl2r];
 		
 	} else if (direction == MFDocumentDirectionR2L) {
 		
-
+		[changeDirectionBarButtonItem setImage:imgr2l];
 	}
 	
 }
@@ -533,10 +691,11 @@
 	
 	if(lead == MFDocumentLeadLeft) {
 		
+		[changeLeadBarButtonItem setImage:imgLeadLeft];
 		
 	} else if (lead == MFDocumentLeadRight) {
 		
-
+		[changeLeadBarButtonItem setImage:imgLeadRight];
 	}
 }
 
@@ -544,7 +703,7 @@
 	
 	
 	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
-		[self dismissAllPopoversFrom:self];
+		[self dismissAllPopovers];
 	}
 	
 	if(waitingForTextInput) {
@@ -553,29 +712,27 @@
 		
 		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
 		// and show it.
-		/*	TextDisplayViewController *controller = self.textDisplayViewController;
-		 controller.delegate = self;
-		 [controller updateWithTextOfPage:page];
-		 
-		 [self presentModalViewController:controller animated:YES];*/
 		
-		
-		
-		if (visibleTextView) {
+		if (textViewVisible) {
+			
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+				
 				[textPopover dismissPopoverAnimated:YES];
-				visibleTextView=NO;
+				textViewVisible=NO;
 			}
-		}else {
+			
+		} else {
+			
 			TextDisplayViewController *controller = self.textDisplayViewController;
 			controller.delegate = self;
 			[controller updateWithTextOfPage:page];
+			
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 				controller.modalPresentationStyle = UIModalPresentationFormSheet;
 			}
-			visibleTextView=YES;
+			
+			textViewVisible=YES;
 			[self presentModalViewController:controller animated:YES];
-			//[controller release];
 		}
 	}
 }
@@ -601,11 +758,8 @@
 			[self showToolbar];
 			[self showHorizontalThumbnails];
 			
-			if (miniSearchVisible) {
-				[self showMiniSearchView];
-			}
-			
 			[miniSearchView setHidden:NO];
+			
 			hudHidden = NO;
 			
 		} else {
@@ -615,9 +769,7 @@
 			[self hideToolbar];
 			[self hideHorizontalThumbnails];
 			
-			
-			[self dismissMiniSearchViewNoRelease];
-			//[miniSearchView setHidden:YES];
+			[miniSearchView setHidden:YES];
 			
 			hudHidden = YES;
 		}
@@ -672,18 +824,19 @@
 	
 	[super viewDidLoad];
 	
+	// A few flags.
+	
 	pdfIsOpen = YES;
-		
-	UIFont *font = nil;
+	hudHidden=YES;
+	bookmarkViewVisible = NO;
+	outlineViewVisible = NO;
+	miniSearchViewVisible = NO;
 	
 	// Slighty different font sizes on iPad and iPhone.
 	
-	BOOL isPad = NO;
+	UIFont *font = nil;
 	
-	hudHidden=YES;
-	visibleBookmarkView = NO;
-	visibleOutlineView = NO;
-	miniSearchVisible = NO;
+	BOOL isPad = NO;
 	
 #ifdef UI_USER_INTERFACE_IDIOM
 	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
@@ -695,40 +848,47 @@
 		font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 	}
 		
-	CGFloat ySlider = 0 ;
-	CGFloat heightSlider = 0;
-	CGFloat yToolbarThumb = 0;
-	CGFloat heightToolbarThumb = 0;
+	CGFloat thumbSliderOffsetX = 0 ;
+	CGFloat thumbSliderHeight = 0;
+	CGFloat thumbSliderOffsetY = 0;
+	CGFloat thumbSliderToolbarHeight= 0;
+	
+	UIView * aThumbSliderView = nil;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		//init the horizontal view thumb 
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
-		heightToolbarThumb = 44; //height of the thumb that inclued the UISlider
-		widthborder = 100;
-		heightSlider = 20 ; //height of slider
 		
-		yToolbarThumb = aTSVH.frame.size.height-44; //y position Of Toolbar
-		ySlider = yToolbarThumb + 10; // y position of slider
-	}else {
-		aTSVH = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
-		heightToolbarThumb = 44;
-		widthborder = 50;
-		heightSlider = 10;
-		yToolbarThumb = aTSVH.frame.size.height-44;
-		ySlider = yToolbarThumb + 10;
+		// Initialize the thumb slider containter view. 
+		
+		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
+		thumbSliderToolbarHeight = 44; // Height of the thumb that include the slider.
+		thumbSliderViewBorderWidth = 100;
+		thumbSliderHeight = 20 ; // Height of the slider.
+		
+		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44; // Vertical offset of the toolbar.
+		thumbSliderOffsetX = thumbSliderOffsetY + 10; // Horizontal offset of the toolbar.
+		
+	} else {
+		
+		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
+		thumbSliderToolbarHeight = 44;
+		thumbSliderViewBorderWidth = 50;
+		thumbSliderHeight = 10;
+		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44;
+		thumbSliderOffsetX = thumbSliderOffsetY + 10;
+		
 	}
 	
 	
-	[aTSVH setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
-	[aTSVH setAutoresizesSubviews:YES];
-	[aTSVH setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
+	[aThumbSliderView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+	[aThumbSliderView setAutoresizesSubviews:YES];
+	[aThumbSliderView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
 	
-	UIToolbar *toolbarThumb = [[UIToolbar alloc] initWithFrame:CGRectMake(0, yToolbarThumb, self.view.frame.size.width, heightToolbarThumb)];
-	[toolbarThumb setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
-	toolbarThumb.barStyle = UIBarStyleBlackTranslucent;
+	UIToolbar *aThumbSliderToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, thumbSliderOffsetY, self.view.frame.size.width, thumbSliderToolbarHeight)];
+	[aThumbSliderToolbar setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
+	aThumbSliderToolbar.barStyle = UIBarStyleBlackTranslucent;
 	
-	[aTSVH addSubview:toolbarThumb];
-	[toolbarThumb release];
+	[aThumbSliderView addSubview:aThumbSliderToolbar];
+	[aThumbSliderToolbar release];
 	
 	int paddingSlider = 0;
 	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
@@ -737,7 +897,7 @@
 	
 	
 	//Page slider.
-	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake((widthborder/2)-paddingSlider, ySlider, aTSVH.frame.size.width-widthborder-(paddingSlider*2),heightSlider)];
+	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)-paddingSlider, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
 	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
 	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
 	[aSlider setMinimumValue:1.0];
@@ -745,102 +905,97 @@
 	[aSlider setContinuous:YES];
 	[aSlider addTarget:self action:@selector(actionPageSliderSlided:) forControlEvents:UIControlEventValueChanged];
 	[aSlider addTarget:self action:@selector(actionPageSliderStopped:) forControlEvents:UIControlEventTouchUpInside];
+	
 	[self setPageSlider:aSlider];
-	[aTSVH addSubview:aSlider];
+	
+	[aThumbSliderView addSubview:aSlider];
+	
 	[aSlider release];
 	
 	
 	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-		//set the number of page into the toolbar at right of UIslider .. only in Iphone
-		numPaginaLabel = [[UILabel alloc]initWithFrame:CGRectMake((widthborder/2)+(aTSVH.frame.size.width-widthborder)-25, ySlider+6, 55, heightSlider)];
-		[numPaginaLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-		numPaginaLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
-		numPaginaLabel.textAlignment = UITextAlignmentLeft;
-		numPaginaLabel.backgroundColor = [UIColor clearColor];
+		
+		// Set the number of page into the toolbar at the right the slider on iPhone.
+		UILabel * aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-25, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
+		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
+		aLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
+		aLabel.textAlignment = UITextAlignmentLeft;
+		aLabel.backgroundColor = [UIColor clearColor];
 		//numPaginaLabel.shadowColor = [UIColor whiteColor];
 		//numPaginaLabel.shadowOffset = CGSizeMake(0, 1);
-		numPaginaLabel.textColor = [UIColor whiteColor];
-		numPaginaLabel.font = [UIFont boldSystemFontOfSize:11.0];
-		[aTSVH addSubview:numPaginaLabel];
-		[numPaginaLabel release];
+		aLabel.textColor = [UIColor whiteColor];
+		aLabel.font = [UIFont boldSystemFontOfSize:11.0];
+		[aThumbSliderView addSubview:aLabel];
+		self.pageNumLabel = aLabel;
+		[aLabel release];
 	}
 	
-	[self.view addSubview:aTSVH];
-	self.thumbSliderViewHorizontal = aTSVH;
-	[aTSVH release];
+	[self.view addSubview:aThumbSliderView];
 	
-	/*Array of test img*/
+	self.thumbSliderViewHorizontal = aThumbSliderView;
+	
+	[aThumbSliderView release];
+	
+	
+	// Now prepare an image array to display as placeholder for the thumbs.
+	
 	NSMutableArray * aThumbImgArray  = [[NSMutableArray alloc]init];
 	
+	NSUInteger pagesCount = [[self document]numberOfPages];
 	
-	// NSLog(@"inizio thumb");
+	UIImage *img = [UIImage imageNamed:@"Icon.png"];
 	
-	NSUInteger numpagePDF = [[self document]numberOfPages];
-	for (int i=0; i<numpagePDF ; i++) {
-		UIImage *img = [UIImage imageNamed:@"Icon.png"];
+	for (int i=0; i<pagesCount ; i++) {
 		[aThumbImgArray insertObject:img atIndex:i];
 	}	
 	
 	self.thumbImgArray = aThumbImgArray;
+	
 	[aThumbImgArray release];
 	
-	[self performSelector:@selector(createThumbToolbar) withObject:nil afterDelay:0.1];
+	// Utility method to prepare the rollaway toolbar.
 	
-	//Add ToolBar
+	[self prepareToolbar];
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+}
+
+-(void)prepareToolbar {
+
+	toolbarHeight = 44;
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // IPad.
 		
-		//Set the img for the UIBarbuttonItem that change image on click
-		toolbarHeight = 44;
-		imgChangeMode =[UIImage imageNamed:@"changeModeSingle.png"];
-		[imgChangeMode retain];
-		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble.png"];
-		[imgChangeModeDouble retain];
+		self.imgModeSingle = [UIImage imageNamed:@"changeModeSingle.png"];
+		self.imgModeDouble = [UIImage imageNamed:@"changeModeDouble.png"];
 		
-		imgZoomLock =[UIImage imageNamed:@"zoomLock.png"];
-		[imgZoomLock retain];
-		imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock.png"];
-		[imgZoomUnlock retain];
+		self.imgZoomLock =[UIImage imageNamed:@"zoomLock.png"];
+		self.imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock.png"];
 		
-		imgl2r =[UIImage imageNamed:@"direction_l2r.png"];
-		[imgl2r retain];
-		imgr2l =[UIImage imageNamed:@"direction_r2l.png"];
-		[imgr2l retain];
+		self.imgl2r =[UIImage imageNamed:@"direction_l2r.png"];
+		self.imgr2l =[UIImage imageNamed:@"direction_r2l.png"];
 		
-		imgChangeLead =[UIImage imageNamed:@"pagelead.png"];
-		[imgChangeLead retain];
-		imgChangeLeadClick =[UIImage imageNamed:@"pagelead.png"];
-		[imgChangeLeadClick retain];
+		self.imgLeadRight =[UIImage imageNamed:@"pagelead.png"];
+		self.imgLeadLeft =[UIImage imageNamed:@"pagelead.png"];
 		
+	} else { // IPhone.
 		
-	}else {
-		//Iphone
-		toolbarHeight = 44;
-		imgChangeMode =[UIImage imageNamed:@"changeModeSingle_phone.png"];
-		[imgChangeMode retain];
-		imgChangeModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
-		[imgChangeModeDouble retain];
+		self.imgModeSingle =[UIImage imageNamed:@"changeModeSingle_phone.png"];
+		self.imgModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
 		
-		imgZoomLock =[UIImage imageNamed:@"zoomLock_phone.png"];
-		[imgZoomLock retain];
-		imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock_phone.png"];
-		[imgZoomUnlock retain];
+		self.imgZoomLock =[UIImage imageNamed:@"zoomLock_phone.png"];
+		self.imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock_phone.png"];
+		self.imgl2r =[UIImage imageNamed:@"direction_l2r_phone.png"];
+		self.imgr2l =[UIImage imageNamed:@"direction_r2l_phone.png"];
 		
-		imgl2r =[UIImage imageNamed:@"direction_l2r_phone.png"];
-		[imgl2r retain];
-		imgr2l =[UIImage imageNamed:@"direction_r2l_phone.png"];
-		[imgr2l retain];
+		self.imgLeadRight =[UIImage imageNamed:@"pagelead_phone.png"];
+		self.imgLeadLeft =[UIImage imageNamed:@"pagelead_phone.png"];
 		
-		imgChangeLead =[UIImage imageNamed:@"pagelead_phone.png"];
-		[imgChangeLead retain];
-		imgChangeLeadClick =[UIImage imageNamed:@"pagelead_phone.png"];
-		[imgChangeLeadClick retain];
 	}
 	
 	
-	NSArray * items = [[NSArray alloc]init];	// This will be the containter for the bar button items.
+	NSMutableArray * items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // Ipad.
 		
 		UIBarButtonItem * aBarButtonItem = nil;
 		
@@ -859,28 +1014,28 @@
 		
 		// Zoom lock.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"zoomUnlock.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgZoomUnlock style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
 		self.zoomLockBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
 		// Change direction.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"direction_r2l.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
-		self.changeModeBarButtonItem = aBarButtonItem;
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		self.changeDirectionBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
-
+		
 		// Change lead.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pagelead.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgLeadRight style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
 		self.changeLeadBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
 		// Change mode.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"changeModeDouble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgModeSingle style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
@@ -917,7 +1072,7 @@
 		self.textBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
-	
+		
 		// Outline.
 		
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
@@ -934,12 +1089,7 @@
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
-		// OLD
-		// NSArray *items = [NSArray arrayWithObjects:dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,numberOfPageTitle,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
-		
-	} else {
-		
-		// Iphone.
+	} else { // Iphone.
 		
 		UIBarButtonItem * aBarButtonItem = nil;
 		
@@ -960,7 +1110,7 @@
 		
 		// Zoom lock.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"zoomUnlock_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgZoomLock style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
 		[aBarButtonItem setWidth:22];
 		self.zoomLockBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -968,15 +1118,15 @@
 		
 		// Change direction.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"direction_r2l_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
 		[aBarButtonItem setWidth:22];
-		self.changeDirectionButtonItem = aBarButtonItem;
+		self.changeDirectionBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
 		// Change lead.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pagelead_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgLeadRight style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeLead:)];
 		self.changeLeadBarButtonItem = aBarButtonItem;
 		[aBarButtonItem setWidth:25];
 		[items addObject:aBarButtonItem];
@@ -984,7 +1134,7 @@
 		
 		// Change mode.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"changeModeDouble_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgModeSingle style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeMode:)];
 		[aBarButtonItem setWidth:32];
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1029,10 +1179,6 @@
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
-		
-		// Old.
-		//		NSArray *items = [NSArray arrayWithObjects: dismissBarButtonItem,itemSpazioBarButtnItem,zoomLockBarButtonItem,changeDirectionButtonItem,changeLeadButtonItem,changeModeBarButtonItem,itemSpazioBarButtnItem,itemSpazioBarButtnItem,searchBarButtonItem,textBarButtonItem,OutlineBarButtonItem,bookmarkBarButtonItem,nil];
-		
 	}
 	
 	
@@ -1044,13 +1190,15 @@
 	
 	[self.view addSubview:aToolbar];
 	
-	self.toolbar = aToolbar;
+	self.rollawayToolbar = aToolbar;
 	
 	[aToolbar release];
 	[items release];
+	
+	
 }
 
-// Useless?
+// Useless? It is not called anywhere.
 //-(void)initNumberOfPageToolbar{
 //	//Init the number of page .. it's called from MenuViewController
 //	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -1075,64 +1223,73 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		//Ipad on toolbar
 		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-		numberOfPageTitleToolbar.text = ToolbarTextTitle;
+		self.numberOfPageTitleToolbar.text = ToolbarTextTitle;
 		[ToolbarTextTitle release];
 	}else {
 		//Iphone on Label at right of UISlider
 		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
-		numPaginaLabel.text = ToolbarTextTitle;
+		pageNumLabel.text = ToolbarTextTitle;
 		[ToolbarTextTitle release];
 	}
 }
 
--(void)showToolbar{
-	//Show toolbar on tap
-	toolbar.hidden = NO;
+-(void)showToolbar {
+	
+	// Show toolbar, with animation.
+	
+	rollawayToolbar.hidden = NO;
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[toolbar setFrame:CGRectMake(0, 0, toolbar.frame.size.width, toolbarHeight)];
+	[rollawayToolbar setFrame:CGRectMake(0, 0, rollawayToolbar.frame.size.width, toolbarHeight)];
 	[UIView commitAnimations];		
 }
 
 -(void)hideToolbar{
-	//hide toolbar on tap
+	
+	// Hide the toolbar, with animation.	
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[toolbar setFrame:CGRectMake(0, -toolbarHeight, toolbar.frame.size.width, toolbarHeight)];
+	[rollawayToolbar setFrame:CGRectMake(0, -toolbarHeight, rollawayToolbar.frame.size.width, toolbarHeight)];
 	[UIView commitAnimations];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
 
--(void)createThumbToolbar{
-	// Horizontal thumb slider set dimension and position
+	[super viewWillAppear:animated];
+	
+	[self prepareThumbSlider];
+}
+
+-(void)prepareThumbSlider {
+	
+	// Create the actual thumb slider controller. The controller view will be added manually to the view stack, so you need to call viewDidLoad esplicitely.
+	
+	MFHorizontalSlider * anHorizontalThumbSlider = nil;
+	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(100, 124) andWidth:self.view.bounds.size.width andHeight:160 andType:1 andNomeFile:nomefile];
-		anHorizontalThumbSlider.delegate = self;	
-		self.thumbsliderHorizontal = anHorizontalThumbSlider;
-		
-		[self.thumbSliderViewHorizontal addSubview:thumbsliderHorizontal.view];
-		[anHorizontalThumbSlider viewDidLoad];
-		
-		[anHorizontalThumbSlider release];
-		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
-		
-	}else {
-		MFHorizontalSlider *anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray andSize:CGSizeMake(50, 64) andWidth:self.view.frame.size.width andHeight:70 andType:1 andNomeFile:nomefile];
+		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(100, 124) width:self.view.bounds.size.width height:160 type:1 andFolderName:documentId];
 		anHorizontalThumbSlider.delegate = self;
 		
-		self.thumbsliderHorizontal = anHorizontalThumbSlider;
-		[self.thumbSliderViewHorizontal addSubview:thumbsliderHorizontal.view];
-		[anHorizontalThumbSlider viewDidLoad];
+	}	else {
 		
-		[anHorizontalThumbSlider release];
-		[self performSelectorInBackground:@selector(generathumbinbackground:) withObject:nil];
+		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(50, 64) width:self.view.frame.size.width height:70 type:1 andFolderName:documentId];
+		anHorizontalThumbSlider.delegate = self;
 		
 	}
 	
+	self.thumbsliderHorizontal = anHorizontalThumbSlider;
 	
+	[self.thumbSliderViewHorizontal addSubview:thumbsliderHorizontal.view];
+	
+	[anHorizontalThumbSlider viewDidLoad];
+	[anHorizontalThumbSlider release];
+	
+	// Start generating the thumbs in background.
+	
+	[self performSelectorInBackground:@selector(generateThumbInBackground:) withObject:self.documentId];
 }
 
 
@@ -1144,16 +1301,14 @@
 }
 
 
--(void)generathumbinbackground:(NSNumber *)numeropaginEPDF {
+-(void)generateThumbInBackground:(NSString *)thumbFolderName {
 	
-	NSAutoreleasePool *arPool = [[NSAutoreleasePool alloc] init];
-    [numeropaginEPDF retain];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	documentsDirectory = [ documentsDirectory stringByAppendingString:@"/"];
-	documentsDirectory = [documentsDirectory stringByAppendingString:nomefile];
-	
+	documentsDirectory = [documentsDirectory stringByAppendingString:thumbFolderName];
 	
 	// NSLog(@"directory crea thumb : %@",documentsDirectory);
 	
@@ -1178,24 +1333,25 @@
 		NSString *fullPathToFile = [documentsDirectory stringByAppendingString:@"/"];
 		fullPathToFile = [ fullPathToFile stringByAppendingString:filename];
 		
-		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen)
-		//if file exist and a pdf is open create the thumbnail
-		{
+		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen) {
+			
 			CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
 			UIImage *img = [[UIImage alloc] initWithCGImage:imgthumb];
 			NSData *data = UIImagePNGRepresentation(img);
+			
 			if (pdfIsOpen) {
+
 				[filemanager createFileAtPath:fullPathToFile contents:data attributes:nil];
-				//NSLog(@"directory crea thumb : %@",fullPathToFile);
+
 			}
 			
 			CGImageRelease(imgthumb);
 			[img release];
 		}
 	}
-	// NSLog(@"fine");
+	
 	[filemanager release];
-	[arPool release];
+	[pool release];
 }
 
 /*
@@ -1238,41 +1394,35 @@
 
 - (void)dealloc {
 	
+	[imgModeSingle release];
+	[imgModeDouble release];
+	[imgZoomLock release];
+	[imgZoomUnlock release];
+	[imgl2r release];
+	[imgr2l release];
+	[imgLeadRight release];
+	[imgLeadLeft release];
+	
+	[rollawayToolbar release];
+	
+	[documentId release];
+	
 	[searchBarButtonItem release], searchBarButtonItem = nil;
 	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
 	[changeModeBarButtonItem release], changeModeBarButtonItem = nil;
-	[changeDirectionButtonItem release], changeDirectionButtonItem = nil;
-	[changeLeadBarButtonItem release], changeLeadButtonItem = nil;
+	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
+	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
 	
-	[searchManager release], searchManager = nil;
-	
-	[searchButton release], searchButton = nil;
-	[searchViewController release],searchViewController = nil;
-	
-	[textButton release];
-	[textDisplayViewController release],textDisplayViewController = nil;
+	[searchViewController release];
+	[textDisplayViewController release];
+	[BookmarkViewController release];
+	[miniSearchView release];
+	[searchManager release];
 	
 	[thumbnailView release];
 	
-	[modeButton release];
-	[leadButton release];
-	[directionButton release];
-	
-	[pageLabel release];
-	[pageSlider release];
-	
-	[autozoomButton release];
-	[automodeButton release];
-	
-	[outlineButton release];
-	[bookmarksButton release];
-	[dismissButton release];
-	
-	[nextButton release];
-	[prevButton release];
-	
-	[imgChangeModeDouble release];
-	[imgChangeMode release];
+	[imgModeDouble release];
+	[imgModeSingle release];
 	
     [super dealloc];
 }

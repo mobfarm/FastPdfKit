@@ -9,7 +9,6 @@
 #import "XMLParser.h"
 #import "MenuViewController_Kiosk.h"
 
-
 @implementation XMLParser
 
 @synthesize mvc;

@@ -64,18 +64,18 @@
 	// Disable/enabled the next and previous button depeding on the current index
 	// inside the result array.
 	
-	if(currentSearchResultIndex + 1 < [searchResults count]) {
-		
-		[nextButton setEnabled:YES];
-	} else {
-		
-		[nextButton setEnabled:NO];
-	}
-	if(currentSearchResultIndex > 0) {
-		[prevButton setEnabled:YES];
-	} else {
-		[prevButton setEnabled:NO];
-	}	
+	//if(currentSearchResultIndex + 1 < [searchResults count]) {
+//		
+//		[nextButton setEnabled:YES];
+//	} else {
+//		
+//		[nextButton setEnabled:NO];
+//	}
+//	if(currentSearchResultIndex > 0) {
+//		[prevButton setEnabled:YES];
+//	} else {
+//		[prevButton setEnabled:NO];
+//	}	
 }
 
 -(void)setCurrentResultIndex:(NSUInteger)index {
@@ -96,20 +96,20 @@
 	
 	[self updateSearchResultViewWithItem:item];
 	
-	if(currentSearchResultIndex + 1 < [searchResults count]) {
-		
-		[nextButton setEnabled:YES];
-	} else {
-		
-		[nextButton setEnabled:NO];
-	}
-	if(currentSearchResultIndex > 0) {
-		
-		[prevButton setEnabled:YES];
-	} else {
-		
-		[prevButton setEnabled:NO];
-	}
+	//if(currentSearchResultIndex + 1 < [searchResults count]) {
+//		
+//		[nextButton setEnabled:YES];
+//	} else {
+//		
+//		[nextButton setEnabled:NO];
+//	}
+//	if(currentSearchResultIndex > 0) {
+//		
+//		[prevButton setEnabled:YES];
+//	} else {
+//		
+//		[prevButton setEnabled:NO];
+//	}
 }
 
 -(void)setCurrentTextItem:(MFTextItem *)item {
@@ -207,19 +207,19 @@
 		// Update prev/next buttons, for example by enabling buttons disabled
 		// due to being on the bound before the update.
 		
-		if(currentSearchResultIndex + 1 < [searchResults count]) {
-			
-			
-			[nextButton setEnabled:YES];
-		} else {
-			
-			[nextButton setEnabled:NO];
-		}
-		if(currentSearchResultIndex > 0) {
-			[prevButton setEnabled:YES];
-		} else {
-			[prevButton setEnabled:NO];
-		}
+		//if(currentSearchResultIndex + 1 < [searchResults count]) {
+//			
+//			
+//			[nextButton setEnabled:YES];
+//		} else {
+//			
+//			[nextButton setEnabled:NO];
+//		}
+//		if(currentSearchResultIndex > 0) {
+//			[prevButton setEnabled:YES];
+//		} else {
+//			[prevButton setEnabled:NO];
+//		}
 		
 	} else {
 			// Do nothing.

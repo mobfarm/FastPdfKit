@@ -34,7 +34,7 @@
 	
 	UIImageView *border;
 	int sliderType;
-	NSString *nomecartellathumb;
+	NSString *thumbFolderName;
 }
 @property (nonatomic, retain) UIScrollView *thumbnailsView;
 @property (nonatomic, retain) UIPageControl *thumbnailsPageControl;
@@ -45,7 +45,7 @@
 @property (nonatomic, assign) CGFloat sliderHeight;
 
 
-- (MFHorizontalSlider *)initWithImages:(NSArray *)images andSize:(CGSize)size andWidth:(CGFloat)_width andHeight:(CGFloat)_height andType:(int)_type andNomeFile:(NSString *)_nomecartellapdf;
+- (MFHorizontalSlider *)initWithImages:(NSArray *)images size:(CGSize)size width:(CGFloat)_width height:(CGFloat)_height type:(int)_type andFolderName:(NSString *)_nomecartellapdf;
 - (void)goToPage:(int)page animated:(BOOL)animated;
 - (void)thumbTapped:(int)number withObject:(id)object;
 

@@ -123,7 +123,7 @@
 		DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:document];
         [aDocViewController setDocumentId:DOC_ENCRYPTED]; // We know that in this sample that the file can only be this one.
 		[[self navigationController]pushViewController:aDocViewController animated:YES];
-		aDocViewController.nomefile=DOC_PLAIN;
+		aDocViewController.documentId = DOC_ENCRYPTED;
 		[aDocViewController release];
 		
 	} else {

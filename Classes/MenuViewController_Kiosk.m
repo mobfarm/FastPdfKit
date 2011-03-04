@@ -23,7 +23,7 @@
 @synthesize passwordAlertView;
 @synthesize downloadProgressView;
 @synthesize DownloadProgress;
-@synthesize nomePdfDaAprire;
+@synthesize documentName;
 @synthesize buttonRemoveDict;
 @synthesize buttonOpenDict;
 @synthesize progressViewDict,imgDict;
@@ -39,23 +39,19 @@
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
 	NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
-	pdfPath = [pdfPath stringByAppendingString:nomePdfDaAprire];
+	pdfPath = [pdfPath stringByAppendingString:documentName];
 	pdfPath = [pdfPath stringByAppendingString:@".pdf"];
 	
 	NSURL *documentUrl = [NSURL fileURLWithPath:pdfPath];
 	
-	
-	
-	
-	//
 	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class (a wrapper) and use
 	// it to initialize an MFDocumentViewController subclass 	
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
 	
 	DocumentViewController_Kiosk *aDocViewController = [[DocumentViewController_Kiosk alloc]initWithDocumentManager:aDocManager];
-	aDocViewController.nomefile=nomePdfDaAprire;
-	[aDocViewController initNumberOfPageToolbar];
-	//
+	aDocViewController.documentId = documentName;
+	// [aDocViewController initNumberOfPageToolbar];
+	
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
 	// [self presentModalViewController:aDocViewController animated:YES]; 
