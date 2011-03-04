@@ -1046,10 +1046,29 @@
 		
 		// Page number.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:numberOfPageTitleToolbar];
+		UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
+		
+		aLabel.textAlignment = UITextAlignmentLeft;
+		aLabel.backgroundColor = [UIColor clearColor];
+		aLabel.shadowColor = [UIColor whiteColor];
+		aLabel.shadowOffset = CGSizeMake(0, 1);
+		aLabel.textColor = [UIColor whiteColor];
+		aLabel.font = [UIFont boldSystemFontOfSize:20.0];
+		
+		NSString *labelText = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
+		
+		aLabel.text = labelText;
+		[labelText release];
+		
+		self.pageNumLabel = aLabel;
+		[aLabel release];
+		
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aLabel];
 		self.numberOfPageTitleBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
+		
+		[aLabel release];
 		
 		// Space.
 		
@@ -1196,38 +1215,24 @@
 	
 }
 
-// Useless? It is not called anywhere.
-//-(void)initNumberOfPageToolbar{
-//	//Init the number of page .. it's called from MenuViewController
-//	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-//		
-//		// TODO: what's this?
-//		
-//		numberOfPageTitleToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
-//		numberOfPageTitleToolbar.textAlignment = UITextAlignmentLeft;
-//		numberOfPageTitleToolbar.backgroundColor = [UIColor clearColor];
-//		numberOfPageTitleToolbar.shadowColor = [UIColor whiteColor];
-//		numberOfPageTitleToolbar.shadowOffset = CGSizeMake(0, 1);
-//		numberOfPageTitleToolbar.textColor = [UIColor whiteColor];
-//		NSString *toolbarTextTitleString = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-//		numberOfPageTitleToolbar.text = toolbarTextTitleString;
-//		numberOfPageTitleToolbar.font = [UIFont boldSystemFontOfSize:20.0];
-//	} 
-//}
-
 -(void)setNumberOfPageToolbar{
-	//for each change of page set the correct numer of page
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+	BOOL isIpad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+	isIpad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+	
+	if(isIpad) {
 		//Ipad on toolbar
-		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-		self.numberOfPageTitleToolbar.text = ToolbarTextTitle;
-		[ToolbarTextTitle release];
-	}else {
+		NSString *labelTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
+		self.pageNumLabel.text = labelTitle;
+		[labelTitle release];
+		
+	} else {
 		//Iphone on Label at right of UISlider
-		NSString *ToolbarTextTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
-		pageNumLabel.text = ToolbarTextTitle;
-		[ToolbarTextTitle release];
+		NSString *labelTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
+		pageNumLabel.text = labelTitle;
+		[labelTitle release];
 	}
 }
 

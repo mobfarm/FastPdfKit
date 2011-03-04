@@ -17,9 +17,6 @@
 
  
 - (void)viewDidLoad {
-	// Add the following line if you want the list to be editable
-	// self.navigationItem.leftBarButtonItem = self.editButtonItem;
-	//downloadInProgress.hidden=YES;
 	pdfInDownload = NO;
 	errorDownload = NO;
 }
@@ -51,8 +48,7 @@
 }
 
 -(void)requestStarted:(ASIHTTPRequest *)request{
-	NSLog(@"requestStarted");
-	//[downloadInProgress setHidden:NO];
+	
 	pdfInDownload = YES;
 }
 
@@ -60,14 +56,13 @@
 	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD FINISHED" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];
-	NSLog(@"requestFinished");
-	//[downloadInProgress setHidden:YES];
+
 	pdfInDownload = NO;
-	//devo salvare il doc ..
+
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request{
-	NSLog(@"requestFailed");
+
 	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERROR DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];
@@ -91,7 +86,6 @@
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser{	
-	NSLog(@"found file and started parsing");
 	
 }
 
