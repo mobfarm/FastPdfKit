@@ -44,8 +44,6 @@
 	
 	[super viewDidLoad];
 	
-	NSLog(@":D");
-	
 	[self.view setBackgroundColor:[UIColor clearColor]];
 	
 	UIButton * aButton = nil;

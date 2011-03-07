@@ -540,7 +540,6 @@
 	
 	// Update the label.
 	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(pageNumber,[[self document]numberOfPages])];
-	//[pageNumLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
 }
 
 -(IBAction) actionPageSliderStopped:(id)sender {
@@ -647,7 +646,6 @@
 	//	in this callback.
 	
 	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(page,[[self document]numberOfPages])];
-	//[pageNumLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
@@ -722,7 +720,7 @@
 			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 				
 				[textPopover dismissPopoverAnimated:YES];
-				textViewVisible=NO;
+				textViewVisible = NO;
 			}
 			
 		} else {
@@ -735,7 +733,7 @@
 				controller.modalPresentationStyle = UIModalPresentationFormSheet;
 			}
 			
-			textViewVisible=YES;
+			textViewVisible = YES;
 			[self presentModalViewController:controller animated:YES];
 		}
 	}
@@ -1057,13 +1055,9 @@
 		aLabel.textColor = [UIColor whiteColor];
 		aLabel.font = [UIFont boldSystemFontOfSize:20.0];
 		
-		NSString *labelText = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-		
+		NSString *labelText = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);		
 		aLabel.text = labelText;
-		[labelText release];
-		
 		self.pageNumLabel = aLabel;
-		[aLabel release];
 		
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aLabel];
 		self.numberOfPageTitleBarButtonItem = aBarButtonItem;
@@ -1219,23 +1213,8 @@
 
 -(void)setNumberOfPageToolbar{
 	
-	BOOL isIpad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-	isIpad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-	
-	if(isIpad) {
-		//Ipad on toolbar
-		NSString *labelTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u of %u",[self page],[[self document]numberOfPages]]];
-		self.pageNumLabel.text = labelTitle;
-		[labelTitle release];
-		
-	} else {
-		//Iphone on Label at right of UISlider
-		NSString *labelTitle = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
-		pageNumLabel.text = labelTitle;
-		[labelTitle release];
-	}
+	NSString *labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+	self.pageNumLabel.text = labelTitle;
 }
 
 -(void)showToolbar {
@@ -1396,7 +1375,6 @@
 	[super viewDidUnload];
 	
 }
-
 
 - (void)dealloc {
 	
