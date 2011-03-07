@@ -146,7 +146,6 @@
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 		bookmarkViewVisible = NO;
 	}
-	
 }
 
 -(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
@@ -181,7 +180,7 @@
 	}else {
 		
 		BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
-		bookmarksVC.delegate=self;
+		bookmarksVC.delegate = self;
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			
@@ -1248,6 +1247,9 @@
 
 -(void)prepareThumbSlider {
 	
+	if(thumbsliderHorizontal)
+		return;
+	
 	// Create the actual thumb slider controller. The controller view will be added manually to the view stack, so you need to call viewDidLoad esplicitely.
 	
 	MFHorizontalSlider * anHorizontalThumbSlider = nil;
@@ -1399,7 +1401,6 @@
 	
 	[searchViewController release];
 	[textDisplayViewController release];
-	[BookmarkViewController release];
 	[miniSearchView release];
 	[searchManager release];
 	
