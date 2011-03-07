@@ -16,6 +16,8 @@
 #import "MiniSearchView.h"
 #import "mfprofile.h"
 
+#define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"%d/%d",(x),(y)]
+
 @implementation DocumentViewController_Kiosk
 
 @synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
@@ -537,7 +539,8 @@
 	NSUInteger pageNumber = [number unsignedIntValue];
 	
 	// Update the label.
-	[pageNumLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
+	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(pageNumber,[[self document]numberOfPages])];
+	//[pageNumLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
 }
 
 -(IBAction) actionPageSliderStopped:(id)sender {
@@ -643,7 +646,8 @@
 	//	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 	//	in this callback.
 	
-	[pageNumLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
+	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(page,[[self document]numberOfPages])];
+	//[pageNumLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
@@ -918,11 +922,9 @@
 		// Set the number of page into the toolbar at the right the slider on iPhone.
 		UILabel * aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-25, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-		aLabel.text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%u",[self page]]];
-		aLabel.textAlignment = UITextAlignmentLeft;
+		aLabel.text = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+		aLabel.textAlignment = UITextAlignmentCenter;
 		aLabel.backgroundColor = [UIColor clearColor];
-		//numPaginaLabel.shadowColor = [UIColor whiteColor];
-		//numPaginaLabel.shadowOffset = CGSizeMake(0, 1);
 		aLabel.textColor = [UIColor whiteColor];
 		aLabel.font = [UIFont boldSystemFontOfSize:11.0];
 		[aThumbSliderView addSubview:aLabel];
@@ -1309,52 +1311,52 @@
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	documentsDirectory = [ documentsDirectory stringByAppendingString:@"/"];
-	documentsDirectory = [documentsDirectory stringByAppendingString:thumbFolderName];
+	NSFileManager * fileManager = nil;
+	NSError **error = NULL;
 	
-	// NSLog(@"directory crea thumb : %@",documentsDirectory);
+	NSArray *paths = nil;
+	NSString *documentsDirectory = nil;
 	
-	NSFileManager *filemanager = [[NSFileManager alloc]init];
+	NSString * filename = nil;
+	NSString * fullPathToFile = nil;
 	
-	NSError **error ;
-	
-	BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:error];
-	
-	//BOOL testDirectoryCreated = [filemanager createDirectoryAtPath:documentsDirectory attributes:nil];
-	
-	if (testDirectoryCreated) {
-		//NSLog(@"directory creata");
-	}else {
-		//NSLog(@"directory gia esistente");
-	}
+	CGImageRef thumbImage = NULL;
+	UIImage * image = nil;
+	NSData * imageData = nil;
 	CGSize thumbSize = CGSizeMake(140, 182);
 	
-	for (int i=1; i<=[[self document]numberOfPages] ; i++) {
+	NSUInteger count;
+	
+	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	documentsDirectory = [[paths objectAtIndex:0]stringByAppendingPathComponent:thumbFolderName];
+	
+	fileManager = [[NSFileManager alloc]init];
+	[fileManager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:error];
+	
+	count = [[self document]numberOfPages];
+	for (int i=1; i<=count; i++) {
 		
-		NSString *filename = [NSString stringWithFormat:@"png%d.png",i];
-		NSString *fullPathToFile = [documentsDirectory stringByAppendingString:@"/"];
-		fullPathToFile = [ fullPathToFile stringByAppendingString:filename];
+		filename = [NSString stringWithFormat:@"png%d.png",i];
+		fullPathToFile = [documentsDirectory stringByAppendingPathComponent:filename];
 		
-		if((![filemanager fileExistsAtPath: fullPathToFile]) && pdfIsOpen) {
+		if((![fileManager fileExistsAtPath: fullPathToFile]) && pdfIsOpen) {
 			
-			CGImageRef imgthumb = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
-			UIImage *img = [[UIImage alloc] initWithCGImage:imgthumb];
-			NSData *data = UIImagePNGRepresentation(img);
+			thumbImage = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
+			image = [[UIImage alloc] initWithCGImage:thumbImage];
+			imageData = UIImagePNGRepresentation(image);
 			
 			if (pdfIsOpen) {
 
-				[filemanager createFileAtPath:fullPathToFile contents:data attributes:nil];
+				[fileManager createFileAtPath:fullPathToFile contents:imageData attributes:nil];
 
 			}
 			
-			CGImageRelease(imgthumb);
-			[img release];
+			CGImageRelease(thumbImage);
+			[image release];
 		}
 	}
 	
-	[filemanager release];
+	[fileManager release];
 	[pool release];
 }
 
@@ -1425,10 +1427,7 @@
 	
 	[thumbnailView release];
 	
-	[imgModeDouble release];
-	[imgModeSingle release];
-	
-    [super dealloc];
+	[super dealloc];
 }
 
 @end
