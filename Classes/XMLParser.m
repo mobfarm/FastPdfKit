@@ -11,40 +11,48 @@
 
 @implementation XMLParser
 
-@synthesize mvc;
-@synthesize pdfInDownload,errorDownload;
+@synthesize menuViewController;
+@synthesize pdfInDownload,downloadError;
 @synthesize currentString;
+@synthesize documents;
+@synthesize currentItem;
+@synthesize httpRequest;
 
- 
 - (void)viewDidLoad {
 	pdfInDownload = NO;
-	errorDownload = NO;
+	downloadError = NO;
 }
 
-
--(void)downloadPDF:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf{
+-(void)downloadPDF:(id)sender withUrl:(NSString *)sourceURL andName:(NSString *)destinationFileName {
 	
 	
-	 NSURL *url = [NSURL URLWithString:_url];
-	 request = [ASIHTTPRequest requestWithURL:url];
-	 [request setDelegate:self];
-	 
-	 // Filename Path
-	 
-	 NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	 NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSURL *url = [NSURL URLWithString:sourceURL];
 	
-	 
-	 NSString *pdfPath = [documentsDirectory stringByAppendingString:@"/"];
-	 pdfPath = [pdfPath stringByAppendingString:nomefilepdf];
-	 pdfPath = [pdfPath stringByAppendingString:@".pdf"];
-	 [request setUseKeychainPersistence:YES];
-	 [request setDownloadDestinationPath:pdfPath];
-	 [request setDidFinishSelector:@selector(requestFinished:)];
-	 [request setDidFailSelector:@selector(requestFailed:)];
-	 [request setShouldPresentAuthenticationDialog:YES];
-	 [request setDownloadDestinationPath:pdfPath];
-	 [request startAsynchronous];
+	ASIHTTPRequest * request = nil;
+	
+	NSArray * paths = nil;
+	NSString * documentsDirectory = nil;
+	NSString * pdfPath = nil;
+	
+	// Destination filename path.
+	
+	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	documentsDirectory = [paths objectAtIndex:0];
+	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",destinationFileName]];
+	
+	request = [ASIHTTPRequest requestWithURL:url];
+	[request setDelegate:self];
+	[request setUseKeychainPersistence:YES];
+	[request setDownloadDestinationPath:pdfPath];
+	[request setDidFinishSelector:@selector(requestFinished:)];
+	[request setDidFailSelector:@selector(requestFailed:)];
+	[request setShouldPresentAuthenticationDialog:YES];
+	[request setDownloadDestinationPath:pdfPath];
+	
+	
+	self.httpRequest = request;
+	
+	[request startAsynchronous];
 }
 
 -(void)requestStarted:(ASIHTTPRequest *)request{
@@ -53,110 +61,125 @@
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
-	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD FINISHED" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
-	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-	[popupQuery showInView:self.view];
+	//UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD FINISHED" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
+//	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+//	[popupQuery showInView:self.view];
 
 	pdfInDownload = NO;
 
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request{
-
-	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERROR DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
-	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-	[popupQuery showInView:self.view];
+//
+//	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERROR DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
+//	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+//	[popupQuery showInView:self.view];
 	pdfInDownload = NO;
 }
 
 
-
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-}
+//
+//- (void)viewWillAppear:(BOOL)animated {
+//	[super viewWillAppear:animated];
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//	[super viewDidAppear:animated];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated {
+//}
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser{	
 	
 }
 
-- (void)parseXMLFileAtURL:(NSString *)URL
-{	
+- (void)parseXMLFileAtURL:(NSString *)URL {	
+	
+	NSXMLParser * xmlParser = nil;
+	NSString * filePath = nil;
+	NSData * fileData = nil;
+	NSURL * xmlURL = nil;
+	NSMutableArray * storiesArray = nil;
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
-	stories = [[NSMutableArray alloc] init];
+	// Allocate a new array to store the entries (just in case somebody call parse twice).
 	
-    //you must then convert the path to a proper NSURL or it won't work
-    NSURL *xmlURL = [NSURL URLWithString:URL];
+	storiesArray = [[NSMutableArray alloc] init];
+	self.documents = storiesArray;
+	[storiesArray release];
 	
-    // here, for some reason you have to use NSClassFromString when trying to alloc NSXMLParser, otherwise you will get an object not found error
-    // this may be necessary only for the toolchain
+    // String URL's to actual NSURL.
 	
-	if (errorDownload) {
-		//if and error fo download occured we get the xml included into the project as default 
-		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"homePdf" ofType:@"xml"];  
-		NSData *fileData = [NSData dataWithContentsOfFile:filePath]; 
+    xmlURL = [NSURL URLWithString:URL];
+	
+    if (downloadError) {
+		
+		// If an error occurred while downloading, we default to the bundled xml.
+		
+		filePath = [[NSBundle mainBundle] pathForResource:DEF_XML_NAME ofType:@"xml"];  
+		fileData = [NSData dataWithContentsOfFile:filePath]; 
 		xmlParser = [[NSXMLParser alloc] initWithData:fileData];
-	}else {
+		
+	} else {
 		xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
 	}
 	
-    // Set self as the delegate of the parser so that it will receive the parser delegate methods callbacks.
-    [xmlParser setDelegate:self];
+    // Set self as the delegate of the parser.
+    
+	[xmlParser setDelegate:self];
 	
-    // Depending on the XML document you're parsing, you may want to enable these features of NSXMLParser.
+    // Not intrested in advanced features.
+	
     [xmlParser setShouldProcessNamespaces:NO];
     [xmlParser setShouldReportNamespacePrefixes:NO];
     [xmlParser setShouldResolveExternalEntities:NO];
 	
-    [xmlParser parse];
+    [xmlParser parse]; // Parse.
+	
+	// Cleanup.
+	
+	[xmlParser release];
 	[pool release];
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-	//NSString * errorString = [NSString stringWithFormat:@"Unable to download story feed from web site (Error code %i )", [parseError code]];
-	errorDownload = YES;
-	//LInk of the xml it must be set 
-	//and axample of xml is in the resource filename : HomePdf.xml
-	[self parseXMLFileAtURL:@"http://go.mobfarm.eu/pdf/xmldaparsare.xml"];
+	
+	downloadError = YES;
+	
+	[self parseXMLFileAtURL:DEF_XML_URL];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{            
 	
-	if ([elementName isEqualToString:@"pdf"]) {
+	if ([elementName isEqualToString:KEY_PDF]) {
 		
-		item = [[NSMutableDictionary alloc] init];
+		self.currentItem = [[NSMutableDictionary alloc] init];
 	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{     
 	//parse the xml with the element included into the xml.
-	if ([elementName isEqualToString:@"titolo"]) {
+	if ([elementName isEqualToString:KEY_TITLE]) {
 		
-		[item setValue:currentString forKey:@"titolo"];
+		[currentItem setValue:currentString forKey:KEY_TITLE];
 		
-	} else if ([elementName isEqualToString:@"link"]) {
+	} else if ([elementName isEqualToString:KEY_LINK]) {
 		
-		[item setValue:currentString forKey:@"link"];
+		[currentItem setValue:currentString forKey:KEY_LINK];
 		
-	} else if ([elementName isEqualToString:@"copertina"]) {
+	} else if ([elementName isEqualToString:KEY_COVER]) {
 		
-		[item setValue:currentString forKey:@"copertina"];
+		[currentItem setValue:currentString forKey:KEY_COVER];
 		
-	} else if ([elementName isEqualToString:@"pdf"]) {
+	} else if ([elementName isEqualToString:KEY_PDF]) {
 		
-		[stories addObject:item];
-		[item release];
+		[documents addObject:currentItem];
+		[currentItem release];
 	}
 }
 
@@ -167,11 +190,7 @@
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
 	
-	//return stories;
-	
-	mvc.pdfHome = stories;
-	
-	errorDownload = NO;
+	downloadError = NO;
 }
 
 
@@ -180,21 +199,18 @@
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-}
-
-
 - (void)dealloc {
 	
+	[documents release];
+	
 	[currentElement release];
-	[xmlParser release];
-	[stories release];
-	[item release];
+	[currentItem release];
 	[currentTitle release];
 	[currentCopertina release];
 	[currentLink release];
+	[currentUrl release];
+	
+	[httpRequest release];
 	
 	[super dealloc];
 }

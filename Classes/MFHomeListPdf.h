@@ -11,6 +11,7 @@
 #import "MenuViewController_Kiosk.h"
 
 @interface MFHomeListPdf : UIViewController <UIActionSheetDelegate>{
+	
 	id object;
 	NSString *thumbnail;
 	CGSize size;
@@ -18,11 +19,12 @@
 	NSString *linkDownloadPdf;
 	id delegate;
 	id dataSource;
-	id senderButton;
 	UIImageView *corner;
 	BOOL temp;
 	int numDocumento;
-	ASIHTTPRequest *request;
+	
+	ASIHTTPRequest *httpRequest;
+	
 	BOOL pdfInDownload;
 	MenuViewController_Kiosk *mvc;
 	NSString *pdfToDownload;
@@ -32,18 +34,10 @@
 	UIProgressView *progressDownload;
 	UIImageView *imgThumb;
 	
-	CGFloat yProgressBar;
-	CGFloat xBtnRemove;
-	CGFloat yBtnRemove;
-	CGFloat xBtnOpen;
-	CGFloat yBtnOpen;
-	CGFloat widthButton;
-	CGFloat heightButton;
 }
 
 @property (nonatomic,assign) id object;
 @property (nonatomic,assign) id dataSource;
-@property (nonatomic,assign) id senderButton;
 @property (nonatomic,retain) UIImageView *corner;
 @property (nonatomic,retain) NSString *pdfToDownload;
 @property (nonatomic,retain) NSString *linkDownloadPdf;
@@ -56,13 +50,14 @@
 @property (nonatomic,retain ) UIButton *openButtonFromImage;
 @property (nonatomic,retain ) UIProgressView *progressDownload;
 @property (nonatomic,retain ) UIImageView *imgThumb;
-@property CGFloat yProgressBar;
-@property CGFloat xBtnRemove;
-@property CGFloat yBtnRemove;
-@property CGFloat widthButton;
-@property CGFloat heightButton;
-@property CGFloat xBtnOpen;
-@property CGFloat yBtnOpen;
+//@property CGFloat yProgressBar;
+//@property CGFloat xBtnRemove;
+//@property CGFloat yBtnRemove;
+//@property CGFloat widthButton;
+//@property CGFloat heightButton;
+//@property CGFloat xBtnOpen;
+//@property CGFloat yBtnOpen;
+@property (nonatomic,retain) ASIHTTPRequest * httpRequest;
 
 - (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size;
 - (void)setSelected:(BOOL)selected;

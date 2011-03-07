@@ -66,13 +66,15 @@
 	
 	// Dismiss this view controller and its view from the stack.
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
-		[[self delegate]dismissSearchViewController:self];
-	}else {
-		
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-	}
+	[[self delegate]dismissSearchViewController:self];
+	
+	//if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//		
+//		[[self delegate]dismissSearchViewController:self];
+//	}else {
+//		
+//		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+//	}
 }
 
 -(void) searchDidStop {
@@ -220,14 +222,6 @@
 	
 	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
-		[[self delegate]dismissSearchViewController:self];
-		
-	} else {
-		
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-	}
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -306,6 +300,9 @@
 	[searchBar setText:[searchManager searchTerm]];
 	self.searchResults = [[searchManager searchResults]mutableCopy];
 	[searchTableView reloadData];
+	
+	if([searchResults count] == 0)
+		[searchBar becomeFirstResponder];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

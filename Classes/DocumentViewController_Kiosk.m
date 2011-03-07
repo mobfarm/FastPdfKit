@@ -151,7 +151,7 @@
 	self.page = page;
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopovers];
-	}else {
+	} else {
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 		bookmarkViewVisible = NO;
 	}
@@ -159,7 +159,7 @@
 
 -(IBAction) actionBookmarks:(id)sender {
 	
-	//
+		//
 	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 	//	you can also push the controller with the navigation controller or use an UIActionSheet.
 	
@@ -1274,14 +1274,15 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
 		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(100, 124) width:self.view.bounds.size.width height:160 type:1 andFolderName:documentId];
-		anHorizontalThumbSlider.delegate = self;
+		
 		
 	}	else {
 		
 		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(50, 64) width:self.view.frame.size.width height:70 type:1 andFolderName:documentId];
-		anHorizontalThumbSlider.delegate = self;
 		
 	}
+	
+	anHorizontalThumbSlider.delegate = self;
 	
 	self.thumbsliderHorizontal = anHorizontalThumbSlider;
 	

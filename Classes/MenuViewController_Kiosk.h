@@ -25,30 +25,19 @@
 	
 	UIScrollView * scrollView;
 	
-	UIView * DownloadProgress;
+	UIView * downloadProgressContainerView;
 	
 	UIProgressView * downloadProgressView;
 	
-	NSDictionary * buttonRemoveDict;
-	NSDictionary * buttonOpenDict;
-	NSDictionary * progressViewDict;
-	NSDictionary * imgDict;
+	NSMutableArray * homeListPdfs;
+	NSMutableDictionary * buttonRemoveDict;
+	NSMutableDictionary * openButtons;
+	NSMutableDictionary * progressViewDict;
+	NSMutableDictionary * imgDict;
 	
-	NSMutableArray *pdfHome;
+	NSMutableArray *documentsList;
 	
 	NSString *documentName;
-	
-	CGFloat thumbWidth;
-	CGFloat thumbHeight;
-	CGFloat buttonWidth;
-	CGFloat buttonHeight;
-	CGFloat scrollViewWidth;
-	CGFloat scrollViewHeight;
-	CGFloat detailViewHeight;
-	CGFloat thumbHOffsetLeft;
-	CGFloat thumHOffsetRight;
-	CGFloat frameHeight;
-	CGFloat scrollViewVOffset;
 	
 	BOOL graphicsMode;
 }
@@ -63,28 +52,16 @@
 @property (nonatomic, retain) IBOutlet UITextView *manualTextView;
 
 @property (nonatomic, retain) MFDocumentManager *document;
-@property (nonatomic, assign) NSMutableArray *pdfHome;
+@property (nonatomic, retain) NSMutableArray *documentsList;
 @property (nonatomic,retain ) UIProgressView *downloadProgressView;
-@property (nonatomic,retain ) UIView *DownloadProgress;
+@property (nonatomic,retain ) UIView *downloadProgressContainerView;
 
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
 @property (nonatomic, assign) NSString *documentName;
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
-@property (nonatomic,retain ) NSDictionary *buttonOpenDict;
+@property (nonatomic,retain ) NSDictionary *openButtons;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
 @property (nonatomic,retain ) NSDictionary *imgDict;
 @property (nonatomic,assign ) BOOL graphicsMode;
-
-@property CGFloat thumbWidth;
-@property CGFloat thumbHeight;
-@property CGFloat buttonWidth;
-@property CGFloat buttonHeight;
-@property CGFloat scrollViewWidth;
-@property CGFloat scrollViewHeight;
-@property CGFloat detailViewHeight;
-@property CGFloat thumbHOffsetLeft;
-@property CGFloat thumHOffsetRight;
-@property CGFloat frameHeight;
-@property CGFloat scrollViewVOffset;
 
 @end
