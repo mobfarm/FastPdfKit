@@ -116,7 +116,7 @@
 	[textView release],textView = nil;
 	[activityIndicatorView release],activityIndicatorView = nil;
 	[text release],text = nil;
-	[documentManager dealloc];
+	[documentManager release];
 	
     [super dealloc];
 }

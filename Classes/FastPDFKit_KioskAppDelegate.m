@@ -19,7 +19,13 @@
     
     MenuViewController_Kiosk *aMenuViewController = nil;
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+	BOOL isPad = NO;
+	
+#ifdef UI_USER_INTERFACE_IDIOM
+	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+	
+	if(isPad) {
 			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_ipad" bundle:[NSBundle mainBundle]];
 	} else {
 			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:[NSBundle mainBundle]];
@@ -38,6 +44,11 @@
 	[aMenuViewController release];
 	
 	return YES;
+}
+
+-(void)dealloc {
+
+	[super dealloc];
 }
 
 @end

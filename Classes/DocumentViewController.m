@@ -118,6 +118,27 @@
 // search view to navigate the document while looking for matches. Details are here, in the SearchViewController, SearchManager
 // and MiniSearchView.
 
+-(SearchViewController *)searchViewController {
+	
+	// Lazily allocation when required.
+	
+	if(nil==searchViewController) {
+		
+		// We use different xib on iPhone and iPad.
+		
+		BOOL isPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+		if(isPad) {
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:[NSBundle mainBundle]];
+		} else {
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
+		}
+	}
+	
+	return searchViewController;
+}
 
 -(void)presentFullSearchView {
 	
@@ -318,6 +339,7 @@
 	[UIView commitAnimations];
 	
 	visibleSearchView = NO;
+	miniSearchVisible = NO;
 	
 	// Actual removal.
 	if(miniSearchView!=nil) {
@@ -326,7 +348,7 @@
 		MF_COCOA_RELEASE(miniSearchView);
 	}
 	
-	miniSearchVisible = NO;
+	
 }
 
 -(void)showMiniSearchView {
@@ -364,7 +386,6 @@
 -(void)revertToFullSearchView {
 
 	// Dismiss the minimized view and present the full one.
-	
 	[self dismissMiniSearchView];
 	[self presentFullSearchView];
 }
@@ -578,6 +599,8 @@
 	// For simplicity, the DocumentViewController will remove itself. If you need to pass some
 	// values you can just set up a delegate and implement in a delegate method both the
 	// removal of the DocumentViweController and the processing of the values.
+	
+	[self dismissAllPopovers];
 	
 	// Call this function to stop the worker threads and release the associated resources.
 	[self cleanUp];

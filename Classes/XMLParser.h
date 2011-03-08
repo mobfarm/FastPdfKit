@@ -27,7 +27,7 @@
 	
 	NSString * currentElement;
 	NSString * currentUrl ;
-	NSMutableString * currentTitle, * currentCopertina, * currentLink;
+	NSMutableString * currentTitle, * currentCover, * currentLink;
 	
 	ASIHTTPRequest * httpRequest;
 	
@@ -42,7 +42,7 @@
 @property (nonatomic, assign) MenuViewController_Kiosk *menuViewController;
 @property (readwrite) BOOL pdfInDownload;
 @property (readwrite) BOOL downloadError;
-@property (nonatomic,retain ) NSString *currentString;
+@property (nonatomic,copy ) NSString *currentString;
 @property (nonatomic, retain) NSMutableArray * documents;
 @property (nonatomic, retain) NSMutableDictionary * currentItem;
 @property (nonatomic, retain) ASIHTTPRequest * httpRequest;

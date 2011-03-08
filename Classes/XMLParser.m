@@ -61,37 +61,13 @@
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
-	//UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"DOWNLOAD FINISHED" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil,nil];
-//	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-//	[popupQuery showInView:self.view];
-
 	pdfInDownload = NO;
 
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request{
-//
-//	UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"ERROR DOWNLOAD" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"OK" otherButtonTitles:nil,nil];
-//	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-//	[popupQuery showInView:self.view];
 	pdfInDownload = NO;
 }
-
-
-//
-//- (void)viewWillAppear:(BOOL)animated {
-//	[super viewWillAppear:animated];
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated {
-//	[super viewDidAppear:animated];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated {
-//}
-//
-//- (void)viewDidDisappear:(BOOL)animated {
-//}
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser{	
 	
@@ -103,15 +79,15 @@
 	NSString * filePath = nil;
 	NSData * fileData = nil;
 	NSURL * xmlURL = nil;
-	NSMutableArray * storiesArray = nil;
+	NSMutableArray * documentsArray = nil;
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
 	// Allocate a new array to store the entries (just in case somebody call parse twice).
 	
-	storiesArray = [[NSMutableArray alloc] init];
-	self.documents = storiesArray;
-	[storiesArray release];
+	documentsArray = [[NSMutableArray alloc] init];
+	self.documents = documentsArray;
+	[documentsArray release];
 	
     // String URL's to actual NSURL.
 	
@@ -158,12 +134,14 @@
 	
 	if ([elementName isEqualToString:KEY_PDF]) {
 		
+		// Create a new dictionary and release the old one (if necessary).
+		
 		self.currentItem = [[NSMutableDictionary alloc] init];
 	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{     
-	//parse the xml with the element included into the xml.
+	
 	if ([elementName isEqualToString:KEY_TITLE]) {
 		
 		[currentItem setValue:currentString forKey:KEY_TITLE];
@@ -179,13 +157,13 @@
 	} else if ([elementName isEqualToString:KEY_PDF]) {
 		
 		[documents addObject:currentItem];
-		[currentItem release];
 	}
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
 	
-	self.currentString = [string copy];
+	self.currentString = string;
+	
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
@@ -194,11 +172,6 @@
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 - (void)dealloc {
 	
 	[documents release];
@@ -206,9 +179,10 @@
 	[currentElement release];
 	[currentItem release];
 	[currentTitle release];
-	[currentCopertina release];
+	[currentCover release];
 	[currentLink release];
 	[currentUrl release];
+	[currentString release];
 	
 	[httpRequest release];
 	

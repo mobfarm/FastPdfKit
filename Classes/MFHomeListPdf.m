@@ -14,26 +14,26 @@
 #define TITLE_REMOVE @"Remove"
 
 @implementation MFHomeListPdf
-@synthesize object, temp, dataSource ,corner,pdfToDownload,numDocumento;
-@synthesize mvc;
+@synthesize object, temp, dataSource ,corner,documentNumber;
+@synthesize menuViewController;
 @synthesize page;
 @synthesize removeButton,openButton,openButtonFromImage;
 @synthesize progressDownload;
 // @synthesize yProgressBar,xBtnRemove,yBtnRemove,xBtnOpen,yBtnOpen,widthButton,heightButton;
-@synthesize imgThumb;
-@synthesize linkDownloadPdf;
+@synthesize thumbImage;
+@synthesize downloadUrl;
 @synthesize httpRequest;
-
+@synthesize thumbName;
 // Load the view and initialize the pageNumber ivar.
 
 - (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
 
 	size = _size;
-	linkDownloadPdf = linkpdf;
-	thumbnail = _image;
+	self.downloadUrl = linkpdf;
+	self.thumbName = _image;
 	self.page=Page;
-	[self downloadImage:self withUrl:thumbnail andName:Page];
-	numDocumento = numDoc;
+	[self downloadImage:self withUrl:thumbName andName:Page];
+	documentNumber = numDoc;
 	temp = NO;
 	return self;
 }
@@ -132,9 +132,9 @@
 		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, size.width-24, size.height-24)];
 		[anImageView setImage:[UIImage imageWithContentsOfFile:thumbPath]];
 		[anImageView setUserInteractionEnabled:YES];
-		[anImageView setTag:numDocumento];
+		[anImageView setTag:documentNumber];
 		[[self view] addSubview:anImageView];
-		self.imgThumb = anImageView;
+		self.thumbImage = anImageView;
 		[anImageView release];
 		
 	} else {
@@ -151,9 +151,9 @@
 		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(17, 12, size.width-14, size.height-14)];
 		[anImageView setImage:[UIImage imageWithContentsOfFile:thumbPath]];
 		[anImageView setUserInteractionEnabled:YES];
-		[anImageView setTag:numDocumento];
+		[anImageView setTag:documentNumber];
 		[[self view] addSubview:anImageView];
-		self.imgThumb = anImageView;
+		self.thumbImage = anImageView;
 		[anImageView release];
 	}
 	
@@ -161,7 +161,7 @@
 	
 	aButton= [UIButton buttonWithType:UIButtonTypeCustom];
 	[aButton setFrame:CGRectMake(20, 15, size.width-20, size.height-20)];
-	[aButton setTag:numDocumento];
+	[aButton setTag:documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	
 	// Open or download action, depend if the file is already present or not.
@@ -191,7 +191,7 @@
 	
 	aButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	[aButton setFrame:CGRectMake(openButtonHOffset, openButtonVOffset, buttonWidth, buttonHeight)];
-	[aButton setTag:numDocumento];
+	[aButton setTag:documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
 	
@@ -221,7 +221,7 @@
 	[aButton setFrame:CGRectMake(removeButtonHOffset, removeButtonVOffset, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_REMOVE forState:UIControlStateNormal];
 	[aButton setImage:[UIImage imageNamed:@"remove.png"] forState:UIControlStateNormal];
-	[aButton setTag:numDocumento];
+	[aButton setTag:documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton addTarget:self action:@selector(actionremovePdf:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
@@ -282,22 +282,22 @@
 	[filemanager release];
 	
 	// Hide the remove button.
-	aButton = [mvc.buttonRemoveDict objectForKey:page];
+	aButton = [menuViewController.buttonRemoveDict objectForKey:page];
 	aButton.hidden = YES;
 
 	// Change the open/download button to download.
 	
-	aButton = [mvc.openButtons objectForKey:page];
+	aButton = [menuViewController.openButtons objectForKey:page];
 	[aButton setTitle:TITLE_DOWNLOAD forState:UIControlStateNormal];
 	[aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
-	[aButton setTag:numDocumento];
+	[aButton setTag:documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton removeTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 	// Change the action on the cover from open to download.
 	
-	aButton = [mvc.imgDict objectForKey:page];
+	aButton = [menuViewController.imgDict objectForKey:page];
 	[aButton removeTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -305,16 +305,16 @@
 							   
 -(void)visualizzaButtonRemove{
 	//show btnRemove
-	UIButton *btnRemoveSel = [mvc.buttonRemoveDict objectForKey:page];
+	UIButton *btnRemoveSel = [menuViewController.buttonRemoveDict objectForKey:page];
 	btnRemoveSel.hidden = NO;
 }
 
 -(void)actionOpenPdf:(id)sender {
 	//Open Pdf
 	//senderButton = sender;
-	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
-	[mvc setDocumentName:pdfToDownload];
-	[mvc actionOpenPlainDocumentFromNewMain:self];
+	//NSString * [NSString stringWithFormat:@"%@", page];
+	//[mvc setDocumentName:pdfToDownload];
+	[menuViewController actionOpenPlainDocument:page];
 }
 
 -(void)actionDownloadPdf:(id)sender {
@@ -323,8 +323,8 @@
 		return;
 	
 	//senderButton = sender;
-	self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
-	[self downloadPDF:self withUrl:linkDownloadPdf andName:pdfToDownload];
+	//self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
+	[self downloadPDF:self withUrl:downloadUrl andName:page];
 }
 
 
@@ -358,7 +358,7 @@
 	
 	// Get the progressview from the mainviewcontroller and set it as the progress delegate.
 	
-	progressView = [mvc.progressViewDict objectForKey:page];
+	progressView = [menuViewController.progressViewDict objectForKey:page];
 	[request setDownloadProgressDelegate:progressView];
 	
 	[request setShouldPresentAuthenticationDialog:YES];
@@ -419,7 +419,7 @@
 	
 	pdfInDownload = YES;
 	
-	UIProgressView *progressView = [mvc.progressViewDict objectForKey:page];
+	UIProgressView *progressView = [menuViewController.progressViewDict objectForKey:page];
 	progressView.hidden = NO;
 }
 
@@ -446,7 +446,7 @@
 	
 	// Download/open button.
 	
-	aButton =[mvc.openButtons objectForKey:page];
+	aButton =[menuViewController.openButtons objectForKey:page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
 	[aButton removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton setImage:[UIImage imageNamed:@"view.png"] forState:UIControlStateNormal];
@@ -454,7 +454,7 @@
 	
 	// Cover button.
 	
-	aButton = [mvc.imgDict objectForKey:page];
+	aButton = [menuViewController.imgDict objectForKey:page];
 	[aButton removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -462,7 +462,7 @@
 	
 	// Hide the progress view.
 	
-	aProgressView = [mvc.progressViewDict objectForKey:page];
+	aProgressView = [menuViewController.progressViewDict objectForKey:page];
 	aProgressView.hidden = YES;
 }
 
@@ -470,7 +470,7 @@
 	
 	pdfInDownload = NO;
 	
-	UIProgressView *aProgressView = [mvc.progressViewDict objectForKey:page];
+	UIProgressView *aProgressView = [menuViewController.progressViewDict objectForKey:page];
 	aProgressView.hidden = YES;
 }
 
@@ -493,13 +493,14 @@
 	
 	[corner release];
 	[httpRequest release];
-	[thumbnail release];
+	[thumbName release];
 	[page release];
-	[linkDownloadPdf release];
+	[downloadUrl release];
 	
+	[thumbName release];
 	[removeButton release];
 	[openButton release];
-	[imgThumb release];
+	[thumbImage release];
 	[openButtonFromImage release];
 	[progressDownload release];
 	

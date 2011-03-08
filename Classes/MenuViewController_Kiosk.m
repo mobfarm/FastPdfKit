@@ -16,12 +16,12 @@
 
 @implementation MenuViewController_Kiosk
 
-@synthesize referenceButton, manualButton, referenceTextView, manualTextView;
-@synthesize document;
-@synthesize passwordAlertView;
-@synthesize downloadProgressView;
-@synthesize downloadProgressContainerView;
-@synthesize documentName;
+//@synthesize referenceButton, manualButton, referenceTextView, manualTextView;
+//@synthesize document;
+//@synthesize passwordAlertView;
+//@synthesize downloadProgressView;
+//@synthesize downloadProgressContainerView;
+//@synthesize documentName;
 @synthesize buttonRemoveDict;
 @synthesize openButtons;
 @synthesize progressViewDict,imgDict;
@@ -29,7 +29,7 @@
 @synthesize graphicsMode;
 
 
--(IBAction)actionOpenPlainDocumentFromNewMain:(id)sender {
+-(IBAction)actionOpenPlainDocument:(NSString *)documentName {
 	
 	MFDocumentManager * documentManager = nil;
 	DocumentViewController_Kiosk * documentViewController = nil;
@@ -44,7 +44,7 @@
 	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",documentName]];
 	documentUrl = [NSURL fileURLWithPath:pdfPath];
 	
-	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class (a wrapper) and use
+	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class and use
 	// it to initialize an MFDocumentViewController subclass 	
 	
 	documentManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
@@ -137,6 +137,7 @@
 	[parser parseXMLFileAtURL:DEF_XML_URL];
 	
 	self.documentsList = [parser documents];
+	
 	[parser release];
 	
 	documentsCount = [documentsList count]; 
@@ -168,7 +169,7 @@
 		}
 		
 		viewPdf.view.frame = frame;
-		viewPdf.mvc = self;
+		viewPdf.menuViewController = self;
 		[aScrollView addSubview:viewPdf.view];
 		
 		// Adding stuff to their respective containers.
@@ -202,25 +203,25 @@
 	
 }
 
--(void)showViewDownload{
-	
-	downloadProgressContainerView.hidden = NO;
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.10];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[downloadProgressContainerView setFrame:CGRectMake(0, self.view.frame.size.height-200, self.view.frame.size.width, 200)];
-	[UIView commitAnimations];
-}
-
--(void)hideViewDownload{
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[downloadProgressContainerView setFrame:CGRectMake(0, downloadProgressContainerView.frame.origin.y+downloadProgressContainerView.frame.size.height, downloadProgressContainerView.frame.size.width, downloadProgressContainerView.frame.size.height)];
-	[UIView commitAnimations];
-}
+//-(void)showViewDownload{
+//	
+//	downloadProgressContainerView.hidden = NO;
+//	
+//	[UIView beginAnimations:@"show" context:NULL];
+//	[UIView setAnimationDuration:0.10];
+//	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//	[downloadProgressContainerView setFrame:CGRectMake(0, self.view.frame.size.height-200, self.view.frame.size.width, 200)];
+//	[UIView commitAnimations];
+//}
+//
+//-(void)hideViewDownload{
+//	
+//	[UIView beginAnimations:@"show" context:NULL];
+//	[UIView setAnimationDuration:0.35];
+//	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//	[downloadProgressContainerView setFrame:CGRectMake(0, downloadProgressContainerView.frame.origin.y+downloadProgressContainerView.frame.size.height, downloadProgressContainerView.frame.size.width, downloadProgressContainerView.frame.size.height)];
+//	[UIView commitAnimations];
+//}
 
 
 
@@ -247,10 +248,10 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 	
-	[self setManualButton:nil];
-	[self setManualTextView:nil];
-	[self setReferenceButton:nil];
-	[self setReferenceTextView:nil];
+	//[self setManualButton:nil];
+//	[self setManualTextView:nil];
+//	[self setReferenceButton:nil];
+//	[self setReferenceTextView:nil];
 	
 	[buttonRemoveDict removeAllObjects];
 	[openButtons removeAllObjects];
@@ -262,6 +263,10 @@
 
 
 - (void)dealloc {
+	
+	//[referenceButton release];
+//	[manualButton release];
+//	[referenceTextView release];
 	
 	[documentsList release];
 	

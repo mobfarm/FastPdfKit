@@ -14,17 +14,6 @@
 
 @interface MenuViewController_Kiosk : UIViewController {
 
-	IBOutlet UIButton *referenceButton;
-	IBOutlet UIButton *manualButton;
-	IBOutlet UITextView *referenceTextView;
-	IBOutlet UITextView *manualTextView;
-	
-	MFDocumentManager *document;
-	
-	UIAlertView *passwordAlertView;
-	
-	UIScrollView * scrollView;
-	
 	UIView * downloadProgressContainerView;
 	
 	UIProgressView * downloadProgressView;
@@ -37,27 +26,20 @@
 	
 	NSMutableArray *documentsList;
 	
-	NSString *documentName;
-	
 	BOOL graphicsMode;
 }
 
--(IBAction)actionOpenPlainDocumentFromNewMain:(id)sender;
--(void)showViewDownload;
--(void)hideViewDownload;
+-(IBAction)actionOpenPlainDocument:(NSString *)documentName;
+//-(void)showViewDownload;
+//-(void)hideViewDownload;
 
-@property (nonatomic, retain) IBOutlet UIButton *referenceButton;
-@property (nonatomic, retain) IBOutlet UIButton *manualButton;
-@property (nonatomic, retain) IBOutlet UITextView *referenceTextView;
-@property (nonatomic, retain) IBOutlet UITextView *manualTextView;
-
-@property (nonatomic, retain) MFDocumentManager *document;
+//@property (nonatomic, retain) MFDocumentManager *document;
 @property (nonatomic, retain) NSMutableArray *documentsList;
-@property (nonatomic,retain ) UIProgressView *downloadProgressView;
-@property (nonatomic,retain ) UIView *downloadProgressContainerView;
+//@property (nonatomic,retain ) UIProgressView *downloadProgressView;
+//@property (nonatomic,retain ) UIView *downloadProgressContainerView;
 
-@property (nonatomic, assign) UIAlertView *passwordAlertView;
-@property (nonatomic, assign) NSString *documentName;
+//@property (nonatomic, assign) UIAlertView *passwordAlertView;
+//@property (nonatomic, assign) NSString *documentName;
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 @property (nonatomic,retain ) NSDictionary *openButtons;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;

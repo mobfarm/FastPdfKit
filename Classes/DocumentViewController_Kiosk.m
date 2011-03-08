@@ -1399,12 +1399,15 @@
 	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
 	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
 	
+	[numberOfPageTitleBarButtonItem release];
+	
 	[searchViewController release];
 	[textDisplayViewController release];
 	[miniSearchView release];
 	[searchManager release];
 	
 	[thumbnailView release];
+	[thumbImgArray release];
 	
 	[super dealloc];
 }
