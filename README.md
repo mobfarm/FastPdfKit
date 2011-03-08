@@ -2,7 +2,7 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
-### Update: 1.0.0 (Mar 8th, 2011)
+### Update: 1.0RC1 (Mar 8th, 2011)
 * Kiosk application target added. Kiosk is a demo application with a customizable list of document to choose from. Viewer is enhanced with a scrollable list of page thumbnail and nicer interface.
 
 ### Update: 0.9.5 (Feb 14th, 2011)
