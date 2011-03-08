@@ -2,6 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDisplayName</key>
+	<string>FastPdfKit Kiosk</string>
+	<key>CFBundleName</key>
+	<string>$[PRODUCT_NAME]</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>Application requires iPhone environment</key>
+	<true/>
+	<key>Icon alread includes gloss effects</key>
+	<true/>
+	<key>Icon files</key>
+	<array>
+		<string>Icon.png</string>
+		<string>Icon72.png</string>
+		<string>Icon144.png</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>

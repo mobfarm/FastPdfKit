@@ -194,6 +194,8 @@
 		01B916C01321526F00D517A6 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916BE1321526F00D517A6 /* DocumentViewController.m */; };
 		01B916C31321527500D517A6 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916C21321527500D517A6 /* OutlineViewController.m */; };
 		01B916C41321527500D517A6 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916C21321527500D517A6 /* OutlineViewController.m */; };
+		01C9428A13263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */; };
+		01C9428B13263A6E000364B4 /* FastPdfKit-1.0RC1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */; };
 		01CF7356132532FC00E42146 /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
 		01CF74AA13254E0E00E42146 /* minisearch_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CF74A613254E0E00E42146 /* minisearch_cancel@2x.png */; };
 		01CF74AB13254E0E00E42146 /* minisearch_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CF74A713254E0E00E42146 /* minisearch_full@2x.png */; };
@@ -216,8 +218,6 @@
 		9598FDD212337F0F008D7198 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
 		9598FDD412337F24008D7198 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		9598FDE612338042008D7198 /* Icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon144.png */; };
-		95F5A36F1270A2A700F65929 /* gitmanual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A3661270A2A700F65929 /* gitmanual.pdf */; };
-		95F5A3701270A2A700F65929 /* gitmanualcrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95F5A3671270A2A700F65929 /* gitmanualcrypt.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -367,6 +367,8 @@
 		01B916BE1321526F00D517A6 /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
 		01B916C11321527500D517A6 /* OutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewController.h; sourceTree = "<group>"; };
 		01B916C21321527500D517A6 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
+		01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FastPdfKit-1.0RC1crypt.pdf"; sourceTree = "<group>"; };
+		01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FastPdfKit-1.0RC1.pdf"; sourceTree = "<group>"; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
 		01CF74A613254E0E00E42146 /* minisearch_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_cancel@2x.png"; sourceTree = "<group>"; };
 		01CF74A713254E0E00E42146 /* minisearch_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_full@2x.png"; sourceTree = "<group>"; };
@@ -390,8 +392,6 @@
 		9598FDD112337F0F008D7198 /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
 		9598FDD312337F24008D7198 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		9598FDE512338042008D7198 /* Icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon144.png; sourceTree = "<group>"; };
-		95F5A3661270A2A700F65929 /* gitmanual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = gitmanual.pdf; sourceTree = "<group>"; };
-		95F5A3671270A2A700F65929 /* gitmanualcrypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = gitmanualcrypt.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -671,8 +671,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				01884AC2131E96C50045038F /* SystemConfiguration.framework */,
-				01884AC6131E96CE0045038F /* MobileCoreServices.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -705,6 +703,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01884AC2131E96C50045038F /* SystemConfiguration.framework */,
+				01884AC6131E96CE0045038F /* MobileCoreServices.framework */,
 				01884A66131E93A80045038F /* CFNetwork.framework */,
 				01884A82131E947C0045038F /* libz.1.2.3.dylib */,
 				0174E2AF12EF24CA003699A8 /* CoreText.framework */,
@@ -728,8 +728,8 @@
 		95F5A3651270A2A700F65929 /* PDFs */ = {
 			isa = PBXGroup;
 			children = (
-				95F5A3661270A2A700F65929 /* gitmanual.pdf */,
-				95F5A3671270A2A700F65929 /* gitmanualcrypt.pdf */,
+				01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */,
+				01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */,
 			);
 			path = PDFs;
 			sourceTree = "<group>";
@@ -887,8 +887,6 @@
 				9598FDD412337F24008D7198 /* Icon.png in Resources */,
 				9598FDE612338042008D7198 /* Icon144.png in Resources */,
 				9597F995125D17E400E17B47 /* iTunesArtwork in Resources */,
-				95F5A36F1270A2A700F65929 /* gitmanual.pdf in Resources */,
-				95F5A3701270A2A700F65929 /* gitmanualcrypt.pdf in Resources */,
 				01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */,
 				01E3A3061309C3D9008BB483 /* Identity-V.cidf in Resources */,
 				01884989131E8A6F0045038F /* backThumb_iphone.png in Resources */,
@@ -960,6 +958,8 @@
 				01CF74AF13254E0E00E42146 /* minisearch_full@2x.png in Resources */,
 				01CF74B013254E0E00E42146 /* minisearch_next@2x.png in Resources */,
 				01CF74B113254E0E00E42146 /* minisearch_prev@2x.png in Resources */,
+				01C9428A13263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf in Resources */,
+				01C9428B13263A6E000364B4 /* FastPdfKit-1.0RC1.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

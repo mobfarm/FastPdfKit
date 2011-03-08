@@ -18,8 +18,8 @@
 #define TITLE_PLAIN @"Open"
 #define TITLE_ENCRYPTED @"Open"
 
-#define DOC_PLAIN @"gitmanual"
-#define DOC_ENCRYPTED @"gitmanualcrypt"
+#define DOC_PLAIN @"FastPdfKit-1.0RC1"
+#define DOC_ENCRYPTED @"FastPdfKit-1.0RC1crypt"
 
 
 @implementation MenuViewController
@@ -91,6 +91,7 @@
 		[passwordField setSecureTextEntry:YES];
 		[passwordField setKeyboardAppearance:UIKeyboardAppearanceAlert];
 		[passwordField setBackgroundColor:[UIColor whiteColor]];
+		[passwordField setTag:TAG_PASSWORDFIELD];
 		
 		//
 		// Now show it
