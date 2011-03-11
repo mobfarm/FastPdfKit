@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		011F42D7132A26B700DBF1D4 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011F42D6132A26B700DBF1D4 /* libFastPDFKit.a */; };
-		011F42D8132A26B700DBF1D4 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011F42D6132A26B700DBF1D4 /* libFastPDFKit.a */; };
+		011F42E1132A6FF800DBF1D4 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011F42E0132A6FF800DBF1D4 /* libFastPDFKit.a */; };
+		011F42E2132A6FF800DBF1D4 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011F42E0132A6FF800DBF1D4 /* libFastPDFKit.a */; };
 		0157CF7C12EF16B200DDC590 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7312EF16B200DDC590 /* SearchManager.m */; };
 		0157CF7D12EF16B200DDC590 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7512EF16B200DDC590 /* MiniSearchView.m */; };
 		0157CF8012EF16B200DDC590 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0157CF7912EF16B200DDC590 /* SearchResultCellView.m */; };
@@ -221,7 +221,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		011F42D6132A26B700DBF1D4 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
+		011F42E0132A6FF800DBF1D4 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0157CF7212EF16B200DDC590 /* SearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchManager.h; sourceTree = "<group>"; };
 		0157CF7312EF16B200DDC590 /* SearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchManager.m; sourceTree = "<group>"; };
 		0157CF7412EF16B200DDC590 /* MiniSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniSearchView.h; sourceTree = "<group>"; };
@@ -408,7 +408,7 @@
 				01884A83131E947C0045038F /* libz.1.2.3.dylib in Frameworks */,
 				01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */,
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
-				011F42D8132A26B700DBF1D4 /* libFastPDFKit.a in Frameworks */,
+				011F42E2132A6FF800DBF1D4 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +421,7 @@
 				950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */,
 				950B37D0125CBEC4007BDDA1 /* UIKit.framework in Frameworks */,
 				0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */,
-				011F42D7132A26B700DBF1D4 /* libFastPDFKit.a in Frameworks */,
+				011F42E1132A6FF800DBF1D4 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +602,7 @@
 		01CC21CB12B907AF00E77E6E /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				011F42D6132A26B700DBF1D4 /* libFastPDFKit.a */,
+				011F42E0132A6FF800DBF1D4 /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				016AB5C21309BE1D004563C3 /* headers */,
 			);
