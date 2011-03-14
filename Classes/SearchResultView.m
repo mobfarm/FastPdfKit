@@ -72,20 +72,54 @@
 	CGRect contentRect = self.bounds;
 	
 	if(!self.editing) {
+        
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
+        
+        NSString * pageNumberString = nil;
+        CFMutableAttributedStringRef labelAttrString = NULL;
+        
+        CTFontRef helveticaBold = NULL;
+        CGColorSpaceRef rgbColorSpace = NULL;
+        CGFloat whiteComponents [] = {1.0,1.0,1.0,1.0};
+        CGColorRef whiteColor = NULL;
+        
+        CTTextAlignment alignment = kCTCenterTextAlignment;
+		CTParagraphStyleSetting _settings[] = {{kCTParagraphStyleSpecifierAlignment, sizeof(alignment), &alignment} };
+		CTParagraphStyleRef paragraphStyle = NULL;
 		
-		CGRect labelRect = CGRectMake(0, 0, rect.size.height*1.5,rect.size.height);
+        // Label variables.
+        
+        CGRect labelRect = CGRectNull;
+        CGFloat labelRadius = 0.0f;
+        CTFramesetterRef labelFramesetter = NULL;
+        CTFrameRef labelFrame = NULL;
+        CGMutablePathRef labelPath = NULL;
+        
+        // Snippet variables.
+        
+        CGRect snippetRect = CGRectNull;
+        CFStringRef snippetString = NULL;
+        CTFramesetterRef snippetFramesetter = NULL;
+        CFRange snippetFitRange = CFRangeMake(0, 0);
+        CGMutablePathRef snippetPath = NULL;
+		CTFrameRef snippetFrame = NULL;
+        CFMutableAttributedStringRef snippetAttrString = NULL;
+        
+        // Calculate label size and position.
+        
+		labelRect = CGRectMake(0, 0, rect.size.height*1.5,rect.size.height);
 		labelRect.size.height *= 0.5;
 		labelRect.origin.x += 10;
 		labelRect.origin.y = labelRect.size.height * 0.5;
 		labelRect.size.width -=20;
 		
-		CGRect snippetRect = CGRectMake(rect.size.height*1.5, 0, rect.size.width-(rect.size.height*1.5), rect.size.height);
+		snippetRect = CGRectMake(rect.size.height*1.5, 0, rect.size.width-(rect.size.height*1.5), rect.size.height);
 		snippetRect.size.height *= 0.5;
 		snippetRect.origin.y = snippetRect.size.height * 0.5;
 	
 		
-		// Get the current context and push it.
-		CGContextRef ctx = UIGraphicsGetCurrentContext();
+		// Save the current context.
+		
 		CGContextSaveGState(ctx);
 		
 		// Flip on the vertical axis.
@@ -108,92 +142,103 @@
 		CGContextSetRGBStrokeColor(ctx, 0.85, 0.85, 0.85, 1.0);
 		CGContextSetAllowsAntialiasing(ctx, 1);
 		
-		CGFloat radius = labelRect.size.height*0.5;	// Radius of the corners.
+		labelRadius = labelRect.size.height*0.5;	// Radius of the corners.
 		
 		// Draw a path resembling a rounded rect.
 		
 		CGContextTranslateCTM(ctx, labelRect.origin.x, labelRect.origin.y);
 		CGContextBeginPath(ctx);
-		CGContextAddArc(ctx, radius, radius, radius, M_PI, M_PI*3*0.5, 0);
-		CGContextAddArc(ctx, labelRect.size.width-radius, radius, radius, M_PI*3*0.5, 0,0);
-		CGContextAddArc(ctx, labelRect.size.width-radius, labelRect.size.height-radius, radius, 0, M_PI*0.5, 0);
-		CGContextAddArc(ctx, radius, labelRect.size.height-radius, radius, M_PI*0.5, M_PI, 0);
+		CGContextAddArc(ctx, labelRadius, labelRadius, labelRadius, M_PI, M_PI*3*0.5, 0);
+		CGContextAddArc(ctx, labelRect.size.width-labelRadius, labelRadius, labelRadius, M_PI*3*0.5, 0,0);
+		CGContextAddArc(ctx, labelRect.size.width-labelRadius, labelRect.size.height-labelRadius, labelRadius, 0, M_PI*0.5, 0);
+		CGContextAddArc(ctx, labelRadius, labelRect.size.height-labelRadius, labelRadius, M_PI*0.5, M_PI, 0);
 		CGContextClosePath(ctx);
 		CGContextDrawPath(ctx, kCGPathFillStroke);
 		
-		CGContextRestoreGState(ctx);
+		CGContextRestoreGState(ctx); // Pop.
 		
+        
+		pageNumberString= [[NSString alloc]initWithFormat:@"%d",page];
 		
-		NSString *pageNumberString= [[NSString alloc]initWithFormat:@"%d",page];
-		
-		CFMutableAttributedStringRef labelAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
+		labelAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(labelAttrString, CFRangeMake(0, 0), (CFStringRef) pageNumberString);
-		
+	    
 		// Bold.
 		
-		CTFontRef helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 12.0, NULL);
+		helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 12.0, NULL);
 		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, CFAttributedStringGetLength(labelAttrString)), kCTFontAttributeName, helveticaBold);
-		
-		
+        
 		// White color.
 		
-		CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-		CGFloat components [] = {1.0,1.0,1.0,1.0};
-		CGColorRef white = CGColorCreate(rgbColorSpace, components);
+		rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+		
+		whiteColor = CGColorCreate(rgbColorSpace, whiteComponents);
 		CGColorSpaceRelease(rgbColorSpace);
 		
-		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, pageNumberString.length), kCTForegroundColorAttributeName, white);
-		CGColorRelease(white);
+		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, pageNumberString.length), kCTForegroundColorAttributeName, whiteColor);
+		CGColorRelease(whiteColor);
 		
 		
 		// Align to center.
 		
-		CTTextAlignment alignment = kCTCenterTextAlignment;
-		CTParagraphStyleSetting _settings[] = {{kCTParagraphStyleSpecifierAlignment, sizeof(alignment), &alignment} };
-		CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(_settings, sizeof(_settings) / sizeof(_settings[0]));
-		     
+		paragraphStyle = CTParagraphStyleCreate(_settings, sizeof(_settings) / sizeof(_settings[0]));
+        
 		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, CFAttributedStringGetLength(labelAttrString)), kCTParagraphStyleAttributeName, paragraphStyle);
-		CFRelease(paragraphStyle);
 		
 		// Framesetter.
-		CTFramesetterRef labelFramesetter = CTFramesetterCreateWithAttributedString(labelAttrString);
+		labelFramesetter = CTFramesetterCreateWithAttributedString(labelAttrString);
 		
 		// Create the pat.
-		CGMutablePathRef labelPath = CGPathCreateMutable();
+		labelPath = CGPathCreateMutable();
 		CGPathAddRect(labelPath, NULL, labelRect);
 		
 		// Create the frame.
-		CTFrameRef labelFrame = CTFramesetterCreateFrame(labelFramesetter, CFRangeMake(0, pageNumberString.length), labelPath, NULL);
-		
+		labelFrame = CTFramesetterCreateFrame(labelFramesetter, CFRangeMake(0, pageNumberString.length), labelPath, NULL);
 		
 		// Draw the frame.
 		CTFrameDraw(labelFrame,ctx);
 		
-		CFRelease(labelFrame);
-		CGPathRelease(labelPath);
-		CFRelease(labelAttrString);
-		CFRelease(labelFramesetter);
+        // Label cleanup.
+        
+        if(labelFrame)
+            CFRelease(labelFrame);
+        
+        if(labelPath)
+            CGPathRelease(labelPath);
+        
+        if(labelAttrString)
+            CFRelease(labelAttrString);
+        
+        if(paragraphStyle)
+            CFRelease(paragraphStyle);
 		
+        if(labelFramesetter)
+            CFRelease(labelFramesetter);
+    
+        [pageNumberString release];
+        
+        
 		// 2) Now let's proceed with the snippet.
 		
 		// Reset the text matrix first.
-		CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
 		
-		CFStringRef snippetString = (CFStringRef)text;
+        CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
 		
-		CFMutableAttributedStringRef snippetAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
+		snippetString = (CFStringRef)text;
+		
+		snippetAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(snippetAttrString, CFRangeMake(0, 0), snippetString);
 		
 		// Bold.
 		
 		CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTFontAttributeName, helveticaBold);
-		
+       
 		// Now the framesetter.
 		
-		CTFramesetterRef snippetFramesetter = CTFramesetterCreateWithAttributedString(snippetAttrString);
+		snippetFramesetter = CTFramesetterCreateWithAttributedString(snippetAttrString);
 		
 		// Cut and trim if necessary to be sure the bold show up in the view.
-		CFRange snippetFitRange;
+        
 		CTFramesetterSuggestFrameSizeWithConstraints(snippetFramesetter, CFRangeMake(0, (CFAttributedStringGetLength(snippetAttrString))), NULL, snippetRect.size, &snippetFitRange);
 	
 		if (!(snippetFitRange.length> boldRange.location+boldRange.length)) {
@@ -201,20 +246,33 @@
 		}
 		
 		// Create the path.
-		CGMutablePathRef snippetPath = CGPathCreateMutable();
+		snippetPath = CGPathCreateMutable();
 		CGPathAddRect(snippetPath, NULL, snippetRect);
 		
 		// Create the frame.
-		CTFrameRef snippetFrame = CTFramesetterCreateFrame(snippetFramesetter, snippetFitRange, snippetPath, NULL);
+		snippetFrame = CTFramesetterCreateFrame(snippetFramesetter, snippetFitRange, snippetPath, NULL);
 		
 		// Draw the frame.
 		CTFrameDraw(snippetFrame,ctx);
-		
-		CFRelease(snippetFramesetter);
-		CFRelease(snippetFrame);
-		CGPathRelease(snippetPath);
-		CFRelease(snippetAttrString);
-		
+       
+        
+        // Snippet frame cleanup.
+        
+        if(snippetFrame)
+            CFRelease(snippetFrame);
+        
+        if(snippetPath)
+            CGPathRelease(snippetPath);
+        
+        if(snippetFramesetter)
+            CFRelease(snippetFramesetter);
+        
+        if(snippetAttrString)
+            CFRelease(snippetAttrString);
+        
+        if(helveticaBold)
+            CFRelease(helveticaBold);
+        
 		// Pop the stored context state.
 		CGContextRestoreGState(ctx);
 	}
