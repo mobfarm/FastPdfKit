@@ -18,7 +18,7 @@
 #define TITLE_PLAIN @"Open"
 #define TITLE_ENCRYPTED @"Open"
 
-#define DOC_PLAIN @"FastPdfKit-1.0RC1"
+#define DOC_PLAIN @"emporioarmani2011"
 #define DOC_ENCRYPTED @"FastPdfKit-1.0RC1crypt"
 
 
@@ -34,14 +34,17 @@
 	//	We are using NSBundle to lookup the file for us, but if you store the pdf somewhere else than the application
 	//	bundle, you should use the NSFileManager instead or be able to provide the right file path for the file.
 	
-	NSString *documentPath = [[NSBundle mainBundle]pathForResource:DOC_PLAIN ofType:@"pdf"];
-	NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
+    NSString * resourcePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/emporioarmani2011"];
+    NSString * filePath = [resourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",DOC_PLAIN]];
+	//NSString *documentPath = [[NSBundle mainBundle]pathForResource:DOC_PLAIN ofType:@"pdf"];
+	NSURL *documentUrl = [NSURL fileURLWithPath:filePath];
 	
 	//
 	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class (a wrapper) and use
 	// it to initialize an MFDocumentViewController subclass 	
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
-	
+	aDocManager.resourceFolder = resourcePath;
+    
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	[aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
 	//

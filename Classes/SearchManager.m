@@ -35,6 +35,8 @@
 
 -(NSArray *)documentViewController:(MFDocumentViewController *)dvc drawablesForPage:(NSUInteger)page {
 	
+    NSLog(@"Hi");
+    
 	// This method will get called when the document view controller will ask for drawables for the
 	// page being displayed. In our case, the drawables - overlay items - are the highlighted bounding
 	// box of the search result items.
