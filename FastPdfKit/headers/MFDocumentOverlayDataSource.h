@@ -10,7 +10,7 @@
 
 
 @class MFDocumentViewController;
-@protocol MFDocumentOverlayDataSource
+@protocol MFDocumentOverlayDataSource <NSObject>
 
 
 @optional
@@ -21,5 +21,16 @@
  drawn on the page as overlay.
  */
 -(NSArray *)documentViewController:(MFDocumentViewController *)dvc drawablesForPage:(NSUInteger)page;
+
+-(NSArray *)documentViewController:(MFDocumentViewController *)dvc overlayViewsForPage:(NSUInteger)page;
+
+-(void)documentViewController:(MFDocumentViewController *)dvc willRemoveOverlayView:(UIView *)ov;
+
+-(void)documentViewController:(MFDocumentViewController *)dvc didRemoveOverlayView:(UIView *)ov;
+
+-(void)documentViewController:(MFDocumentViewController *)dvc willAddOverlayView:(UIView *)ov;
+
+-(void)documentViewController:(MFDocumentViewController *)dvc didAddOverlayView:(UIView *)ov;
+
 
 @end

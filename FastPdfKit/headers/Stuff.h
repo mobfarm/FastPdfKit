@@ -19,6 +19,8 @@ free((x)),(x)=NULL; \
 }					\
 
 
+#define PRINT_TRANSFORM(t) NSLog(@"%.3f %.3f %.3f %.3f %.3f %.3f",(t).a,(t).b,(t).c,(t).d,(t).tx,(t).ty)
+
 /**
  When the lead property of the MFDocumentViewController is set to MFDocumentLeadLeft, the odd numbered page is shown
  on the left side of the view. MFDocumentLeadRight move the odd page on the right, and this should be the default behaviour

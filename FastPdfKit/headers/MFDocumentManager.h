@@ -20,6 +20,8 @@
 	CGPDFDocumentRef document;
 	NSLock * lock;
 	NSURL * url;
+    
+    NSString * resourceFolder;  /* If nil, will default to Documents folder */
 	
 	NSUInteger numberOfPages;
 	
@@ -102,5 +104,7 @@
  a NULL profile is passed to the search and extraction methods.
  */
 @property (nonatomic,readwrite) MFProfile defaultProfile;
+
+@property (nonatomic,retain) NSString * resourceFolder;
 
 @end

@@ -314,9 +314,9 @@
 	
 	// Enable overlay and set the search manager as the data source for
 	// overlay items.
-	self.overlayDataSource = self.searchManager;
+	[self addOverlayDataSource:searchManager];
 	self.overlayEnabled = YES;
-	
+    
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
 		searchPopover = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
@@ -362,6 +362,8 @@
 	
 	// Set up the connections.
 	miniSearchView.dataSource = self.searchManager;
+    [self addOverlayDataSource:self.searchManager];
+    
 	miniSearchView.documentDelegate = self;
 	self.searchManager.delegate = miniSearchView;
 	
@@ -438,7 +440,8 @@
 	[UIView commitAnimations];
 	
 	searchViewVisible = NO;
-	
+	miniSearchViewVisible = NO;
+    
 	// Actual removal.
 	if(miniSearchView!=nil) {
 		
@@ -446,7 +449,8 @@
 		MF_COCOA_RELEASE(miniSearchView);
 	}
 	
-	searchViewVisible = NO;
+	[self removeOverlayDataSource:self.searchManager];
+    [self reloadOverlay];
 }
 
 -(void)showMiniSearchView {
@@ -505,6 +509,9 @@
 		[[self parentViewController]dismissModalViewControllerAnimated:YES];
 		searchViewVisible=NO;
 	}
+    
+    [self removeOverlayDataSource:self.searchManager];
+    [self reloadOverlay];
 }
 
 #pragma mark -

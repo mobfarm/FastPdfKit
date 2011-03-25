@@ -21,8 +21,9 @@
 	
 	// Mode change callback delegate
 	NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
-	NSObject<MFDocumentOverlayDataSource> *overlayDataSource;
 	
+    NSMutableSet * overlayDataSources;
+    
 	// Resources.
 	NSOperationQueue * operationQueue;
 	
@@ -73,9 +74,23 @@
 	
 }
 
-@property (assign) NSObject<MFDocumentOverlayDataSource> *overlayDataSource;
 @property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
-@property (readonly) MFDocumentManager *document;
+@property (readonly) MFDocumentManager * document;
+
+/**
+ Add an Overlay Datasource.
+ */
+-(void)addOverlayDataSource:(id<MFDocumentOverlayDataSource>)ods;
+
+/**
+ Remove an Overlay Datasource.
+ */
+-(void)removeOverlayDataSource:(id<MFDocumentOverlayDataSource>)ods;
+
+/**
+ This method will provoke the redraw of the overlay. Overlay Datasources will be asked to provide drawables.
+ */
+-(void)reloadOverlay;
 
 /**
  Set the starting page of the document. It is valid only after initialization and before the view is
