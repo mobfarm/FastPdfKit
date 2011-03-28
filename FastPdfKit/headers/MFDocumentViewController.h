@@ -92,6 +92,12 @@
  */
 -(void)reloadOverlay;
 
+/*
+ This will return the appropriate zoom level to perfectly zoom onto an annotation. If return 0, there's no available
+ page data to compute the zoom yet.
+ */
+-(float)zoomLevelForAnnotationRect:(CGRect)rect ofPage:(NSUInteger)page;
+
 /**
  Set the starting page of the document. It is valid only after initialization and before the view is
  displayed on the screen. Tipically you want to set this just after the init of the viewController.

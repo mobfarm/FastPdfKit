@@ -73,4 +73,9 @@
  */
 -(void)documentViewControllerDidUnfocus:(MFDocumentViewController *)dvc;
 
+/**
+ This method will be called when user double tap on an annotation.
+ */
+-(void)documentViewController:(MFDocumentViewController *)dvc didReceiveDoubleTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri;
+
 @end

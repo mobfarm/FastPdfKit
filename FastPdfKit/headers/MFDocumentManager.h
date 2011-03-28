@@ -105,6 +105,9 @@
  */
 @property (nonatomic,readwrite) MFProfile defaultProfile;
 
+/**
+ Resouce folder for the document. Video, audio and other files referenced in the pdf are contained here.
+ */
 @property (nonatomic,retain) NSString * resourceFolder;
 
 @end
