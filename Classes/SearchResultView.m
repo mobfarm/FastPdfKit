@@ -238,14 +238,20 @@
 		snippetFramesetter = CTFramesetterCreateWithAttributedString(snippetAttrString);
 		
 		// Cut and trim if necessary to be sure the bold show up in the view.
-        
-		CTFramesetterSuggestFrameSizeWithConstraints(snippetFramesetter, CFRangeMake(0, (CFAttributedStringGetLength(snippetAttrString))), NULL, snippetRect.size, &snippetFitRange);
+    	CTFramesetterSuggestFrameSizeWithConstraints(snippetFramesetter, CFRangeMake(0, (CFAttributedStringGetLength(snippetAttrString))), NULL, snippetRect.size, &snippetFitRange);
 	
-		if (!(snippetFitRange.length> boldRange.location+boldRange.length)) {
-			snippetFitRange.location = boldRange.location-((snippetFitRange.length-boldRange.length)/2);
+		if (!(snippetFitRange.length > (boldRange.location + boldRange.length))) {
+            
+            if(snippetFitRange.length < boldRange.length) {
+                snippetFitRange.location = boldRange.location;
+            } else {
+                
+                snippetFitRange.location = boldRange.location + (snippetFitRange.length - boldRange.length)/2;
+                
+            }
 		}
 		
-		// Create the path.
+    	// Create the path.
 		snippetPath = CGPathCreateMutable();
 		CGPathAddRect(snippetPath, NULL, snippetRect);
 		

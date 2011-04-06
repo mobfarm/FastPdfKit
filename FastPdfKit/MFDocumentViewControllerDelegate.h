@@ -76,6 +76,11 @@
 /**
  This method will be called when user double tap on an annotation.
  */
--(void)documentViewController:(MFDocumentViewController *)dvc didReceiveDoubleTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri;
+-(void)documentViewController:(MFDocumentViewController *)dvc didReceiveDoubleTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri onPage:(NSUInteger)page;
+
+/**
+ This method will be called to ask the delegate if the video player needs to start automatically once visible.
+ */
+-(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayVideo:(NSString*)videoUri;
 
 @end

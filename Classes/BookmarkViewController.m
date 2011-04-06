@@ -93,6 +93,8 @@
 	
 	[bookmarks addObject:[NSNumber numberWithUnsignedInt:currentPage]];
 	
+    [self saveBookmarks];
+    
 	[bookmarksTableView reloadData];
 }
 
