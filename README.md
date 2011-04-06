@@ -2,6 +2,9 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0RC2 (Apr 6th, 2011)
+* Fixed a crash when the searched string will not fit in the mini search view. Bookmarks not being saved when the popover is dismissed by clicking outside fixed. Double tap to zoom out will now work even when the zoom in has been performed manually. Added a callback to ask the documentviewcontroller delegate if a video will have to autoplay or not. Added page parameter to the double tap annotation callback. Removed a few unneeded logs and minor tweaks.
+
 ### Update: 1.0RC1 (Mar 8th, 2011)
 * Kiosk application target added. Kiosk is a demo application with a customizable list of document to choose from. Viewer is enhanced with a scrollable list of page thumbnail and nicer interface.
 
