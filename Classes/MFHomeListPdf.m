@@ -8,6 +8,7 @@
 
 #import "MFHomeListPdf.h"
 #import "MenuViewController_Kiosk.h"
+#import "ZipArchive.h"
 
 #define TITLE_DOWNLOAD @"Download"
 #define TITLE_OPEN @"Open"
@@ -24,6 +25,7 @@
 @synthesize downloadUrl;
 @synthesize httpRequest;
 @synthesize thumbName;
+@synthesize isPdfLink;
 // Load the view and initialize the pageNumber ivar.
 
 - (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
@@ -101,13 +103,19 @@
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];	
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",page]];
+	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",page,page]];
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	cacheDirectory = [paths objectAtIndex:0];
 	thumbPath = [cacheDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",page]];
 	
 	fileManager = [[NSFileManager alloc]init];
+    
+    //create the temp directory used for the resume of pdf.
+    
+    NSString *pdfPathTempForResume = [documentsDirectory stringByAppendingPathComponent:@"/temp"];
+	
+	[fileManager createDirectoryAtPath:pdfPathTempForResume withIntermediateDirectories:YES attributes:nil error:nil];
 	
 	if ([fileManager fileExistsAtPath:pdfPath]) {
 		fileAlreadyExists = YES;
@@ -339,12 +347,40 @@
 	NSString * pdfPath = nil;
 	
 	UIProgressView * progressView = nil;
+    
+    isPdfLink = YES;
 	
 	// Filename path.
-	
-	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",destinationFilePath]];
+
+    
+    NSString *PathContainPdf = [NSString stringWithString:[NSString stringWithFormat:@"/%@/",destinationFilePath]];
+	PathContainPdf = [documentsDirectory stringByAppendingString:PathContainPdf];
+	
+	NSFileManager *filemanager = [[NSFileManager alloc]init];
+	
+	NSError **error ;
+	[filemanager createDirectoryAtPath:PathContainPdf withIntermediateDirectories:YES attributes:nil error:error];
+	
+
+    if (isPdfLink) {
+        pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",destinationFilePath,destinationFilePath]];
+    }else{
+        pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.fpk",destinationFilePath,destinationFilePath]];
+    }
+
+    
+    //This Directory Contains the temp file in download . it's used when resume is supported.
+    NSString *pdfPathTempForResume = [documentsDirectory stringByAppendingString:@"/temp"];
+	
+	if (isPdfLink) {
+		pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",destinationFilePath]];
+	}else {
+		pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.fpk",destinationFilePath]];
+		
+	}
 	
 	url = [NSURL URLWithString:sourceURL];
 	
@@ -363,6 +399,8 @@
 	
 	[request setShouldPresentAuthenticationDialog:YES];
 	[request setDownloadDestinationPath:pdfPath];
+    [request setAllowResumeForFileDownloads:YES];
+	[request setTemporaryFileDownloadPath:pdfPathTempForResume];
 	
 	self.httpRequest = request;
 	
@@ -464,6 +502,31 @@
 	
 	aProgressView = [menuViewController.progressViewDict objectForKey:page];
 	aProgressView.hidden = YES;
+    
+    if (!isPdfLink) {
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
+		NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",page,page]];
+		
+		ZipArchive* zipFile = [[ZipArchive alloc] init];
+		[zipFile UnzipOpenFile:saveLocation];
+		[zipFile UnzipFileTo:unzippedDestination overWrite:YES];
+		//[zipFile UnzipFileTo:unzippedDestination overwrite:YES];
+		[zipFile UnzipCloseFile];
+		[zipFile release];
+		
+		//
+		
+		NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
+		for (NSString *tString in dirContents) {
+			if ([tString hasSuffix:@".pdf"]) {
+				NSString *oldPath =[unzippedDestination stringByAppendingString:tString];
+				NSString *newPath = [unzippedDestination stringByAppendingString:[NSString stringWithFormat:@"%@.pdf",page]];
+				[[NSFileManager defaultManager] moveItemAtPath:oldPath toPath:newPath error:nil];				
+			}
+		}
+	}
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request{

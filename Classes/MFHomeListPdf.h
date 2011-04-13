@@ -26,6 +26,7 @@
 	ASIHTTPRequest *httpRequest;
 	
 	BOOL pdfInDownload;
+    BOOL isPdfLink;
 	MenuViewController_Kiosk *menuViewController;
 	NSString *pdfToDownload;
 	UIButton *removeButton;
@@ -43,6 +44,7 @@
 
 @property (nonatomic,copy) NSString *downloadUrl;
 @property (nonatomic) BOOL temp;
+@property (nonatomic) BOOL isPdfLink;
 @property (nonatomic, assign) MenuViewController_Kiosk *menuViewController;
 @property (nonatomic, assign) int documentNumber;
 @property (nonatomic,copy) NSString *page;

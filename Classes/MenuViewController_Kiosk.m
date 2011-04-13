@@ -41,7 +41,7 @@
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",documentName]];
+	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",documentName,documentName]];
 	documentUrl = [NSURL fileURLWithPath:pdfPath];
 	
 	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class and use

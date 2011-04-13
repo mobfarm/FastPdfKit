@@ -15,6 +15,7 @@
 #import "SearchManager.h"
 #import "MiniSearchView.h"
 #import "mfprofile.h"
+#import "WebBrowser.h"
 
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"%d/%d",(x),(y)]
 
@@ -34,6 +35,7 @@
 @synthesize searchManager;
 @synthesize miniSearchView;
 @synthesize pageSlider;
+@synthesize visibleMultimedia;
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft;
 
@@ -644,6 +646,48 @@
 // the controller changes, rather than query or keep track of it when the user press a button. Just listen for
 // the right event and update the UI accordingly.
 
+
+-(void) documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri{
+    
+    //uri = @"fpkz://go.mobfarm.eu/pdf/astra.mp4";
+	//uri = @"fpke://video/astra.mp4";
+	
+	NSMutableArray *ArrayParameter = [[NSMutableArray alloc] initWithCapacity:3];
+	
+	[ArrayParameter setArray:[uri componentsSeparatedByString:@"://"]];
+	
+	NSString *typeOfAction = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:0]];
+	
+	//NSLog(@"typeOfAction %@",uri);
+	
+	if ([typeOfAction isEqualToString:@"fpkz"]) {
+		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
+		
+		NSString *documentPath = [@"http://" stringByAppendingString:urlFile];
+		
+        [self playvideo:documentPath isLocal:NO];
+		
+	}
+	
+	if ([typeOfAction isEqualToString:@"fpke"]) {
+		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
+		
+		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
+		
+		[self playvideo:documentPath isLocal:YES];
+    }
+    
+	if ([typeOfAction isEqualToString:@"http"]){
+		WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:uri];
+		webBrowser.docVc = self;
+		[[self parentViewController]presentModalViewController:webBrowser animated:YES];
+	}
+	
+	visibleMultimedia = YES;
+
+
+}
+
 -(void) documentViewController:(MFDocumentViewController *)dvc didGoToPage:(NSUInteger)page {
 	
 	//
@@ -839,6 +883,7 @@
 	bookmarkViewVisible = NO;
 	outlineViewVisible = NO;
 	miniSearchViewVisible = NO;
+    visibleMultimedia = NO;
 	
 	// Slighty different font sizes on iPad and iPhone.
 	
@@ -1346,6 +1391,52 @@
 	
 	[fileManager release];
 	[pool release];
+}
+
+- (void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal{
+	
+	NSURL *url = nil;
+	BOOL openVideo = NO;
+	
+	//NSLog(@"url %@",url);
+	if (_isLocal) {
+		
+		NSFileManager *fileManager = [[NSFileManager alloc]init];
+		
+		if ([fileManager fileExistsAtPath:_path]) {
+			openVideo = YES;
+			url = [NSURL fileURLWithPath:_path];
+		}else {
+			openVideo = NO;
+		}
+		[fileManager release];
+		
+	}else {
+		url = [NSURL URLWithString:_path];
+		openVideo = YES;
+	}
+	
+	//NSLog(@"url %@",url);
+	
+	if (openVideo) {
+        
+        MPMoviePlayerViewController *tmpMoviePlayViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:url];
+		
+		if (tmpMoviePlayViewController) {
+			[self presentMoviePlayerViewControllerAnimated:tmpMoviePlayViewController]; 
+			tmpMoviePlayViewController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieViewFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:[tmpMoviePlayViewController moviePlayer]];
+			
+			[tmpMoviePlayViewController.moviePlayer play];
+		}
+	}
+}
+
+-(void)myMovieViewFinishedCallback:(NSNotification *)aNotification{
+	MPMoviePlayerController *theMovie=[aNotification object];
+	//[theMovie.moviePlayer stop];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:theMovie];
+	visibleMultimedia = NO;
 }
 
 /*

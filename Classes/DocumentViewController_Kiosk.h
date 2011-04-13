@@ -16,6 +16,7 @@
 #import "OutlineViewControllerDelegate.h"
 #import "MFHorizontalSlider.h"
 #import "TextDisplayViewControllerDelegate.h"
+#import "MediaPlayer/MediaPlayer.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -84,6 +85,7 @@
 	BOOL outlineViewVisible;
 	BOOL searchViewVisible;
 	BOOL textViewVisible;
+    BOOL visibleMultimedia;
 	
 	UIPopoverController *bookmarkPopover;
 	UIPopoverController *outlinePopover;
@@ -137,10 +139,12 @@
 @property (nonatomic, retain) SearchManager * searchManager;
 @property (nonatomic, retain) MiniSearchView * miniSearchView;
 @property (nonatomic, retain) TextDisplayViewController * textDisplayViewController;
+@property BOOL visibleMultimedia;
 
 -(void)showToolbar;
 -(void)hideToolbar;
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
+-(void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal;
 
 @end
