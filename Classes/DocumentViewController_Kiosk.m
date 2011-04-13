@@ -647,6 +647,10 @@
 // the right event and update the UI accordingly.
 
 
+-(BOOL) documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayVideo:(NSString *)videoUri{
+    return YES;
+}
+
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri{
     
     //uri = @"fpkz://go.mobfarm.eu/pdf/astra.mp4";
@@ -657,8 +661,6 @@
 	[ArrayParameter setArray:[uri componentsSeparatedByString:@"://"]];
 	
 	NSString *typeOfAction = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:0]];
-	
-	//NSLog(@"typeOfAction %@",uri);
 	
 	if ([typeOfAction isEqualToString:@"fpkz"]) {
 		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
@@ -684,8 +686,6 @@
 	}
 	
 	visibleMultimedia = YES;
-
-
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didGoToPage:(NSUInteger)page {
@@ -804,27 +804,30 @@
 	if(!waitingForTextInput) {
 		
 		//	We are using this callback to selectively hide/unhide some UI components like the buttons.
+        
+        if(!visibleMultimedia){
 		
-		if(hudHidden) {
+            if(hudHidden) {
 			
-			[self showToolbar];
-			[self showHorizontalThumbnails];
+                [self showToolbar];
+                [self showHorizontalThumbnails];
 			
-			[miniSearchView setHidden:NO];
+                [miniSearchView setHidden:NO];
 			
-			hudHidden = NO;
+                hudHidden = NO;
 			
-		} else {
+            } else {
 			
-			// Hide
+                // Hide
 			
-			[self hideToolbar];
-			[self hideHorizontalThumbnails];
+                [self hideToolbar];
+                [self hideHorizontalThumbnails];
 			
-			[miniSearchView setHidden:YES];
+                [miniSearchView setHidden:YES];
 			
-			hudHidden = YES;
-		}
+                hudHidden = YES;
+            }
+        }
 	}
 }
 
@@ -1455,7 +1458,7 @@
 	//	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
 	//	as long as you pass an instance of it to the superclass initializer.
 	
-	if(self = [super initWithDocumentManager:aDocumentManager]) {
+	if((self = [super initWithDocumentManager:aDocumentManager])) {
 		[self setDocumentDelegate:self];
 	}
 	return self;

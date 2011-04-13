@@ -146,5 +146,7 @@
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
 -(void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal;
+-(void)prepareToolbar;
+-(void)prepareThumbSlider;
 
 @end

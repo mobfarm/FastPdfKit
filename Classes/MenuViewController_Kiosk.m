@@ -43,11 +43,17 @@
 	documentsDirectory = [paths objectAtIndex:0];
 	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",documentName,documentName]];
 	documentUrl = [NSURL fileURLWithPath:pdfPath];
+    
+    pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",documentName]];
+	
+	
 	
 	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class and use
 	// it to initialize an MFDocumentViewController subclass 	
 	
 	documentManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
+    
+    documentManager.resourceFolder = pdfPath;
 	
 	documentViewController = [[DocumentViewController_Kiosk alloc]initWithDocumentManager:documentManager];
 	documentViewController.documentId = documentName;
