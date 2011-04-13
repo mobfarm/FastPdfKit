@@ -89,6 +89,7 @@
 	
 	CGRect frame;
 	NSString * titoloPdf = nil;
+    NSString * titoloPdfNoSpace = nil;
 	NSString * linkPdf = nil;
 	NSString * copertinaPdf = nil;
 	MFHomeListPdf * viewPdf = nil;
@@ -150,10 +151,12 @@
 	for (int i=1; i<= documentsCount ; i++) {
 		
 		titoloPdf = [[documentsList objectAtIndex: i-1] objectForKey: @"title"];
+        titoloPdfNoSpace = [titoloPdf stringByReplacingOccurrencesOfString:@" " withString:@""];
 		linkPdf = [[documentsList objectAtIndex: i-1] objectForKey: @"link"];
 		copertinaPdf = [[documentsList objectAtIndex: i-1] objectForKey: @"cover"];
-		viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(thumbWidth, thumbHeight)];
-		
+        
+        viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdfNoSpace andTitoloPdf:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(thumbWidth, thumbHeight)];
+        
 		frame = self.view.frame;
 		
 		if ((i%2)==0) {
@@ -174,10 +177,10 @@
 		
 		// Adding stuff to their respective containers.
 		
-		[imgDict setValue:viewPdf.openButtonFromImage forKey:titoloPdf];
-		[openButtons setValue:viewPdf.openButton forKey:titoloPdf];
-		[buttonRemoveDict setValue:viewPdf.removeButton forKey:titoloPdf];
-		[progressViewDict setValue:viewPdf.progressDownload forKey:titoloPdf];
+		[imgDict setValue:viewPdf.openButtonFromImage forKey:titoloPdfNoSpace];
+		[openButtons setValue:viewPdf.openButton forKey:titoloPdfNoSpace];
+		[buttonRemoveDict setValue:viewPdf.removeButton forKey:titoloPdfNoSpace];
+		[progressViewDict setValue:viewPdf.progressDownload forKey:titoloPdfNoSpace];
 		
 		[homeListPdfs addObject:viewPdf];
 		[viewPdf release];

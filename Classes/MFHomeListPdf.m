@@ -17,7 +17,7 @@
 @implementation MFHomeListPdf
 @synthesize object, temp, dataSource ,corner,documentNumber;
 @synthesize menuViewController;
-@synthesize page;
+@synthesize page,titleOfPdf;
 @synthesize removeButton,openButton,openButtonFromImage;
 @synthesize progressDownload;
 // @synthesize yProgressBar,xBtnRemove,yBtnRemove,xBtnOpen,yBtnOpen,widthButton,heightButton;
@@ -28,12 +28,13 @@
 @synthesize isPdfLink;
 // Load the view and initialize the pageNumber ivar.
 
-- (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
+- (id)initWithName:(NSString *)Page andTitoloPdf:(NSString *)titlePdf andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
 
 	size = _size;
 	self.downloadUrl = linkpdf;
 	self.thumbName = _image;
 	self.page=Page;
+    self.titleOfPdf = titlePdf;
 	[self downloadImage:self withUrl:thumbName andName:Page];
 	documentNumber = numDoc;
 	temp = NO;
@@ -260,7 +261,7 @@
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)];
 	}
 	
-	aLabelTitle = [NSString stringWithFormat:@"%@",page];
+	aLabelTitle = [NSString stringWithFormat:@"%@",self.titleOfPdf];
 	[aLabel setText:aLabelTitle]; 
 	[[self view] addSubview:aLabel];
 	[aLabel release];
@@ -348,7 +349,9 @@
 	
 	UIProgressView * progressView = nil;
     
-    isPdfLink = YES;
+    
+    //check if the download url is a link to a pdf file or pfk file.
+    isPdfLink = [self checkIfPDfLink:sourceURL];
 	
 	// Filename path.
     
@@ -383,7 +386,7 @@
 	}
 	
 	url = [NSURL URLWithString:sourceURL];
-	
+    
 	request = [ASIHTTPRequest requestWithURL:url];
 	[request setDelegate:self];
 	
@@ -399,8 +402,8 @@
 	
 	[request setShouldPresentAuthenticationDialog:YES];
 	[request setDownloadDestinationPath:pdfPath];
-    [request setAllowResumeForFileDownloads:YES];
-	[request setTemporaryFileDownloadPath:pdfPathTempForResume];
+    [request setAllowResumeForFileDownloads:YES]; //set YEs if resume is supported 
+	[request setTemporaryFileDownloadPath:pdfPathTempForResume]; // if resume is supported set the temporary Path
 	
 	self.httpRequest = request;
 	
@@ -504,6 +507,8 @@
 	aProgressView.hidden = YES;
     
     if (!isPdfLink) {
+        
+        //set the directory for the Unzip and use ZipArchive library to unzip the file and the multimedia file
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 		NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
@@ -512,11 +517,11 @@
 		ZipArchive* zipFile = [[ZipArchive alloc] init];
 		[zipFile UnzipOpenFile:saveLocation];
 		[zipFile UnzipFileTo:unzippedDestination overWrite:YES];
-		//[zipFile UnzipFileTo:unzippedDestination overwrite:YES];
 		[zipFile UnzipCloseFile];
 		[zipFile release];
 		
-		//
+		// rename the file pdf ( only one must be exists in the fpk folder ) correctly 
+        // With this rename of the pdf we are sure that the pdf name is correct.  
 		
 		NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
 		for (NSString *tString in dirContents) {
@@ -535,6 +540,24 @@
 	
 	UIProgressView *aProgressView = [menuViewController.progressViewDict objectForKey:page];
 	aProgressView.hidden = YES;
+}
+
+-(BOOL)checkIfPDfLink:(NSString *)url{
+	
+	//url example in xml
+	//link pdf:  <link>http://go.mobfarm.eu/pdf/Aperture.pdf</link>
+    //link fpk:  <link>http://go.mobfarm.eu/pdf/Aperture.fpk</link>
+	
+	NSArray *listItems = [url componentsSeparatedByString:@"."];
+	NSString *doctype = [listItems objectAtIndex:listItems.count-1];
+	
+	if ([doctype isEqualToString:@"pdf"]) {
+		NSLog(@"Is Pdf");
+		return YES;
+	}else{
+		NSLog(@"Is fpk");
+		return NO;
+	}
 }
 
 - (void)updateCorner{
