@@ -14,12 +14,14 @@
 @synthesize webView;
 @synthesize uri;
 @synthesize docVc;
+@synthesize isLocal;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil link:(NSString *)_uri
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil link:(NSString *)_uri isLocal:(BOOL)_isLocal
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+		isLocal = _isLocal;
 		uri = _uri;
     }
     return self;
@@ -47,10 +49,12 @@
 	docVc.visibleMultimedia = NO;
 	
 	NSURL *url = [[NSURL alloc] initWithString:uri];
-	NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
+	NSLog(@"url %@",url);
+	NSURLRequest *request = [[NSURLRequest alloc ]initWithURL:url];
 	[webView loadRequest:request];
 	[url release];
 	[request release];
+
 }
 
 -(IBAction)actionDismiss{

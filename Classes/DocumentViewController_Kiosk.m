@@ -659,6 +659,8 @@
 	//uri = @"fpka://video/start.caf";
 	//uri = @"fpkb://go.mobfarm.eu/pdf/start.caf";
 	
+	NSLog(@"url :%@",uri);
+	
 	NSMutableArray *ArrayParameter = [[NSMutableArray alloc] initWithCapacity:3];
 	
 	[ArrayParameter setArray:[uri componentsSeparatedByString:@"://"]];
@@ -704,8 +706,23 @@
 		
 	}
 	
+	if ([typeOfAction isEqualToString:@"fpki"]){
+		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
+		
+		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
+		
+		documentPath =@"/var/mobile/Applications/8311139E-6140-4216-AA8D-59FE383E2FAB/Documents/FastPdfKit/html/360.com/index.html";
+		
+		WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:documentPath isLocal:YES];
+		
+		webBrowser.docVc = self;
+		[[self parentViewController]presentModalViewController:webBrowser animated:YES];
+	}
+	
 	if ([typeOfAction isEqualToString:@"http"]){
-		WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:uri];
+		
+		WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:uri isLocal:NO];
+		
 		webBrowser.docVc = self;
 		[[self parentViewController]presentModalViewController:webBrowser animated:YES];
 	}
