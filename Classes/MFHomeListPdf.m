@@ -13,6 +13,7 @@
 #define TITLE_DOWNLOAD @"Download"
 #define TITLE_OPEN @"Open"
 #define TITLE_REMOVE @"Remove"
+#define TITLE_RESUME @"Resume"
 
 @implementation MFHomeListPdf
 @synthesize object, temp, dataSource ,corner,documentNumber;
@@ -26,6 +27,7 @@
 @synthesize httpRequest;
 @synthesize thumbName;
 @synthesize isPdfLink;
+@synthesize downloadPdfStopped;
 // Load the view and initialize the pageNumber ivar.
 
 - (id)initWithName:(NSString *)Page andTitoloPdf:(NSString *)titlePdf andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
@@ -123,7 +125,6 @@
 	}else {
 		fileAlreadyExists = NO;
 	}
-	[fileManager release];
 	
 	// Cover image. We add a background and the overlaying cover image directly onto the controller's view.
 	
@@ -205,12 +206,21 @@
 	[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
 	
 	if (!fileAlreadyExists) {
+        
+        if ([fileManager fileExistsAtPath:[pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",page]]]) {
+			// Resume.
+			
+			[aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
+			[aButton setImage:[UIImage imageNamed:@"resume.png"] forState:UIControlStateNormal];
+            
+		}else {
 		
-		// Download.
+            // Download.
 		
-		[aButton setTitle:TITLE_DOWNLOAD forState:UIControlStateNormal];
-		[aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
-		[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+            [aButton setTitle:TITLE_DOWNLOAD forState:UIControlStateNormal];
+            [aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
+        }
+        [aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	} else {
 		
 		// Open.
@@ -250,9 +260,8 @@
 		aLabel.textColor = [UIColor blackColor];
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(25.0)];
-		
-		
-	}else {
+	
+    }else {
 		
 		aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 170, 105, 20) ];
 		aLabel.textAlignment =  UITextAlignmentCenter;
@@ -265,6 +274,7 @@
 	[aLabel setText:aLabelTitle]; 
 	[[self view] addSubview:aLabel];
 	[aLabel release];
+    [fileManager release];
 	
 }
 
@@ -324,6 +334,25 @@
 	//NSString * [NSString stringWithFormat:@"%@", page];
 	//[mvc setDocumentName:pdfToDownload];
 	[menuViewController actionOpenPlainDocument:page];
+}
+
+-(void)actionStopPdf:(id)sender {
+	//Open Pdf
+	downloadPdfStopped = YES;
+	[self.httpRequest cancel];
+	UIButton * aButton = nil; 
+	aButton =[menuViewController.openButtons objectForKey:page];
+	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
+	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton setImage:[UIImage imageNamed:@"resume.png"] forState:UIControlStateNormal];
+	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
+	// Cover button.
+	
+	aButton = [menuViewController.imgDict objectForKey:page];
+	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
 }
 
 -(void)actionDownloadPdf:(id)sender {
@@ -462,6 +491,20 @@
 	
 	UIProgressView *progressView = [menuViewController.progressViewDict objectForKey:page];
 	progressView.hidden = NO;
+    
+    UIButton *aButton =[menuViewController.openButtons objectForKey:page];
+	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
+	[aButton removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton setImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
+	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
+	// Cover button.
+	
+	aButton = [menuViewController.imgDict objectForKey:page];
+	[aButton removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [aButton release];
 }
 
 //-(void)requestFinishedDownloadImg:(ASIHTTPRequest *)request{
@@ -539,7 +582,16 @@
 	pdfInDownload = NO;
 	
 	UIProgressView *aProgressView = [menuViewController.progressViewDict objectForKey:page];
-	aProgressView.hidden = YES;
+	aProgressView.hidden = !downloadPdfStopped;
+    
+    [[menuViewController.openButtons objectForKey:page] setTitle:TITLE_RESUME forState:UIControlStateNormal];
+    [[menuViewController.openButtons objectForKey:page] setImage:[UIImage imageNamed:@"resume.png"] forState:UIControlStateNormal];
+    [[menuViewController.openButtons objectForKey:page] removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[[menuViewController.openButtons objectForKey:page] addTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	
+	if (downloadPdfStopped) {
+		downloadPdfStopped=NO;
+	}
 }
 
 -(BOOL)checkIfPDfLink:(NSString *)url{

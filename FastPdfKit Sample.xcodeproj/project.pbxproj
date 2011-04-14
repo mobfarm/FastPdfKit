@@ -212,6 +212,7 @@
 		01FB0F95125CB46A002D4337 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
 		1D3623260D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9FBD191356F2CD006884F5 /* AVFoundation.framework */; };
 		6FA0FC6D1355E6AA007F51EE /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA0FC6C1355E6AA007F51EE /* libziparchive.a */; };
 		6FFCFA001355D4640028DD38 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFCF9FE1355D4640028DD38 /* WebBrowser.m */; };
 		6FFCFA011355D4640028DD38 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCF9FF1355D4640028DD38 /* WebBrowser.xib */; };
@@ -220,6 +221,10 @@
 		6FFCFA261355F57B0028DD38 /* prew.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA221355F57B0028DD38 /* prew.png */; };
 		6FFCFA271355F57B0028DD38 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA231355F57B0028DD38 /* stop.png */; };
 		6FFCFA291355F5AE0028DD38 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA281355F5AE0028DD38 /* reload.png */; };
+		6FFCFA2B1356EC200028DD38 /* resume.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2A1356EC200028DD38 /* resume.png */; };
+		6FFCFA2D1356EC920028DD38 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2C1356EC920028DD38 /* pause.png */; };
+		6FFCFA311356F11A0028DD38 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2F1356F1020028DD38 /* AudioViewController.m */; };
+		6FFCFA321356F11A0028DD38 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA301356F10F0028DD38 /* AudioViewController.xib */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -394,6 +399,7 @@
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* FastPDFKit_Sample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_Sample_Prefix.pch; sourceTree = "<group>"; };
+		6F9FBD191356F2CD006884F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6FA0FC6C1355E6AA007F51EE /* libziparchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libziparchive.a; sourceTree = "<group>"; };
 		6FFCF9FD1355D4640028DD38 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
 		6FFCF9FE1355D4640028DD38 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
@@ -413,6 +419,11 @@
 		6FFCFA221355F57B0028DD38 /* prew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prew.png; sourceTree = "<group>"; };
 		6FFCFA231355F57B0028DD38 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		6FFCFA281355F5AE0028DD38 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
+		6FFCFA2A1356EC200028DD38 /* resume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resume.png; sourceTree = "<group>"; };
+		6FFCFA2C1356EC920028DD38 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		6FFCFA2E1356F0FD0028DD38 /* AudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
+		6FFCFA2F1356F1020028DD38 /* AudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
+		6FFCFA301356F10F0028DD38 /* AudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Sample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		950B37C1125CBEA5007BDDA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -441,6 +452,7 @@
 				01E2BC37133D14BB00CCED33 /* MediaPlayer.framework in Frameworks */,
 				01A4E910134E05FB00594370 /* libFastPDFKit.a in Frameworks */,
 				6FA0FC6D1355E6AA007F51EE /* libziparchive.a in Frameworks */,
+				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +519,8 @@
 		0188491A131E8A630045038F /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6FFCFA2C1356EC920028DD38 /* pause.png */,
+				6FFCFA2A1356EC200028DD38 /* resume.png */,
 				6FFCFA281355F5AE0028DD38 /* reload.png */,
 				6FFCFA201355F57B0028DD38 /* close.png */,
 				6FFCFA211355F57B0028DD38 /* next.png */,
@@ -693,6 +707,9 @@
 				6FFCF9FE1355D4640028DD38 /* WebBrowser.m */,
 				1D3623240D0F684500981E51 /* FastPDFKit_SampleAppDelegate.h */,
 				1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */,
+				6FFCFA2E1356F0FD0028DD38 /* AudioViewController.h */,
+				6FFCFA2F1356F1020028DD38 /* AudioViewController.m */,
+				6FFCFA301356F10F0028DD38 /* AudioViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -757,6 +774,7 @@
 				950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */,
 				950B37C1125CBEA5007BDDA1 /* Foundation.framework */,
 				950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */,
+				6F9FBD191356F2CD006884F5 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -943,6 +961,9 @@
 				6FFCFA261355F57B0028DD38 /* prew.png in Resources */,
 				6FFCFA271355F57B0028DD38 /* stop.png in Resources */,
 				6FFCFA291355F5AE0028DD38 /* reload.png in Resources */,
+				6FFCFA2B1356EC200028DD38 /* resume.png in Resources */,
+				6FFCFA2D1356EC920028DD38 /* pause.png in Resources */,
+				6FFCFA321356F11A0028DD38 /* AudioViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,6 +1088,7 @@
 				01B916BF1321526F00D517A6 /* DocumentViewController.m in Sources */,
 				01B916C31321527500D517A6 /* OutlineViewController.m in Sources */,
 				6FFCFA001355D4640028DD38 /* WebBrowser.m in Sources */,
+				6FFCFA311356F11A0028DD38 /* AudioViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

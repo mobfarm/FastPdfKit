@@ -36,6 +36,7 @@
 	UIProgressView *progressDownload;
 	UIImageView *thumbImage;
 	
+    BOOL downloadPdfStopped;
 }
 
 @property (nonatomic,copy) NSString *thumbName;
@@ -46,6 +47,7 @@
 @property (nonatomic,copy) NSString *downloadUrl;
 @property (nonatomic) BOOL temp;
 @property (nonatomic) BOOL isPdfLink;
+@property (nonatomic) BOOL downloadPdfStopped;
 @property (nonatomic, assign) MenuViewController_Kiosk *menuViewController;
 @property (nonatomic, assign) int documentNumber;
 @property (nonatomic,copy) NSString *page;

@@ -16,6 +16,7 @@
 #import "MiniSearchView.h"
 #import "mfprofile.h"
 #import "WebBrowser.h"
+#import "AudioViewController.h"
 
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"%d/%d",(x),(y)]
 
@@ -655,12 +656,44 @@
     
     //uri = @"fpkz://go.mobfarm.eu/pdf/astra.mp4";
 	//uri = @"fpke://video/astra.mp4";
+	//uri = @"fpka://video/start.caf";
+	//uri = @"fpkb://go.mobfarm.eu/pdf/start.caf";
 	
 	NSMutableArray *ArrayParameter = [[NSMutableArray alloc] initWithCapacity:3];
 	
 	[ArrayParameter setArray:[uri componentsSeparatedByString:@"://"]];
 	
 	NSString *typeOfAction = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:0]];
+	
+	
+	if ([typeOfAction isEqualToString:@"fpka"]) {
+		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
+		
+		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
+		
+		NSLog(@"documentPath : %@",documentPath);
+		
+        [self playAudio:documentPath isLocal:YES];
+		
+	}
+	
+	if ([typeOfAction isEqualToString:@"fpkb"]) {
+		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
+		
+		NSString *documentPath = [@"http://" stringByAppendingString:urlFile];
+		
+		[self playAudio:documentPath isLocal:NO];
+	
+	}
+	
+	
+	if ([typeOfAction isEqualToString:@"fpke"]) {
+		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
+		
+		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
+		
+		[self playvideo:documentPath isLocal:YES];
+    }
 	
 	if ([typeOfAction isEqualToString:@"fpkz"]) {
 		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
@@ -671,14 +704,6 @@
 		
 	}
 	
-	if ([typeOfAction isEqualToString:@"fpke"]) {
-		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
-		
-		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
-		
-		[self playvideo:documentPath isLocal:YES];
-    }
-    
 	if ([typeOfAction isEqualToString:@"http"]){
 		WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:uri];
 		webBrowser.docVc = self;
@@ -1394,6 +1419,15 @@
 	
 	[fileManager release];
 	[pool release];
+}
+
+- (void)playAudio:(NSString *)_path isLocal:(BOOL)_isLocal{
+
+	AudioViewController *AudioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:[NSBundle mainBundle] audioFilePath:_path isLocal:_isLocal];
+	
+	[AudioVC.view setFrame:CGRectMake(0, 0, 350, 70)];
+	
+	[self.view addSubview:AudioVC.view];
 }
 
 - (void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal{
