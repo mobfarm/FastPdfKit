@@ -152,7 +152,7 @@
 	
 	aScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewVOffset, scrollViewWidth, scrollViewHeight)];
 	aScrollView.backgroundColor = [UIColor whiteColor];
-	aScrollView.contentSize = CGSizeMake(scrollViewWidth, detailViewHeight * ((documentsCount/2)+1));
+	aScrollView.contentSize = CGSizeMake(scrollViewWidth, detailViewHeight * ((documentsCount/2)+(documentsCount%2)));
 	
 	for (int i=1; i<= documentsCount ; i++) {
 		
