@@ -15,6 +15,7 @@
 @synthesize isLocal;
 @synthesize url;
 @synthesize audioPlayer;
+@synthesize docVc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil audioFilePath:(NSString *)_audioFilePath isLocal:(BOOL)_isLocal{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -82,12 +83,13 @@
 }
 
 -(void)closeController{
+	docVc.visibleMultimedia=NO;
     [audioPlayer stop];
     [[self view] removeFromSuperview];
 }
 
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-	
+	docVc.visibleMultimedia=NO;
 	[[self view] removeFromSuperview];
 	
 }

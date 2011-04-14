@@ -640,7 +640,7 @@
 
 
 #pragma mark -
-#pragma mark MFDocumentViewControllerDelegate methods implementation
+#pragma mark MFDocumentViewControllerDelegate methods implementation Support for Multimedia
 
 
 // The nice things about delegate callbacks is that we can use them to update the UI when the internal status of
@@ -712,6 +712,66 @@
 	
 	visibleMultimedia = YES;
 }
+
+- (void)playAudio:(NSString *)_path isLocal:(BOOL)_isLocal{
+    
+	AudioViewController *AudioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:[NSBundle mainBundle] audioFilePath:_path isLocal:_isLocal];
+	
+	AudioVC.docVc = self;
+	
+	[AudioVC.view setFrame:CGRectMake(0, 0, 350, 70)];
+	
+	[self.view addSubview:AudioVC.view];
+}
+
+- (void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal{
+	
+	NSURL *url = nil;
+	BOOL openVideo = NO;
+	
+	//NSLog(@"url %@",url);
+	if (_isLocal) {
+		
+		NSFileManager *fileManager = [[NSFileManager alloc]init];
+		
+		if ([fileManager fileExistsAtPath:_path]) {
+			openVideo = YES;
+			url = [NSURL fileURLWithPath:_path];
+		}else {
+			openVideo = NO;
+		}
+		[fileManager release];
+		
+	}else {
+		url = [NSURL URLWithString:_path];
+		openVideo = YES;
+	}
+	
+	//NSLog(@"url %@",url);
+	
+	if (openVideo) {
+        
+        MPMoviePlayerViewController *tmpMoviePlayViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:url];
+		
+		if (tmpMoviePlayViewController) {
+			[self presentMoviePlayerViewControllerAnimated:tmpMoviePlayViewController]; 
+			tmpMoviePlayViewController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieViewFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:[tmpMoviePlayViewController moviePlayer]];
+			
+			[tmpMoviePlayViewController.moviePlayer play];
+		}
+	}
+}
+
+-(void)myMovieViewFinishedCallback:(NSNotification *)aNotification{
+	MPMoviePlayerController *theMovie=[aNotification object];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:theMovie];
+	visibleMultimedia = NO;
+}
+
+
+#pragma mark -
+#pragma mark MFDocumentViewControllerDelegate methods implementation
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didGoToPage:(NSUInteger)page {
 	
@@ -1419,61 +1479,6 @@
 	
 	[fileManager release];
 	[pool release];
-}
-
-- (void)playAudio:(NSString *)_path isLocal:(BOOL)_isLocal{
-
-	AudioViewController *AudioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:[NSBundle mainBundle] audioFilePath:_path isLocal:_isLocal];
-	
-	[AudioVC.view setFrame:CGRectMake(0, 0, 350, 70)];
-	
-	[self.view addSubview:AudioVC.view];
-}
-
-- (void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal{
-	
-	NSURL *url = nil;
-	BOOL openVideo = NO;
-	
-	//NSLog(@"url %@",url);
-	if (_isLocal) {
-		
-		NSFileManager *fileManager = [[NSFileManager alloc]init];
-		
-		if ([fileManager fileExistsAtPath:_path]) {
-			openVideo = YES;
-			url = [NSURL fileURLWithPath:_path];
-		}else {
-			openVideo = NO;
-		}
-		[fileManager release];
-		
-	}else {
-		url = [NSURL URLWithString:_path];
-		openVideo = YES;
-	}
-	
-	//NSLog(@"url %@",url);
-	
-	if (openVideo) {
-        
-        MPMoviePlayerViewController *tmpMoviePlayViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:url];
-		
-		if (tmpMoviePlayViewController) {
-			[self presentMoviePlayerViewControllerAnimated:tmpMoviePlayViewController]; 
-			tmpMoviePlayViewController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
-			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieViewFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:[tmpMoviePlayViewController moviePlayer]];
-			
-			[tmpMoviePlayViewController.moviePlayer play];
-		}
-	}
-}
-
--(void)myMovieViewFinishedCallback:(NSNotification *)aNotification{
-	MPMoviePlayerController *theMovie=[aNotification object];
-	//[theMovie.moviePlayer stop];
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:theMovie];
-	visibleMultimedia = NO;
 }
 
 /*
