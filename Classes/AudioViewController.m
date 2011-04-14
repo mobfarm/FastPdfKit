@@ -40,12 +40,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	NSLog(@"url : %@",url);
-	
 	NSError *error;
-	
-    
-	
 	if (isLocal) {
 		audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
 	}else {

@@ -658,19 +658,21 @@
 	//uri = @"fpke://video/astra.mp4";
 	//uri = @"fpka://video/start.caf";
 	//uri = @"fpkb://go.mobfarm.eu/pdf/start.caf";
+	//uri = @"fpki://html/360.com/index.html";
 	
-	NSLog(@"url :%@",uri);
+	NSLog(@"uri Received :%@",uri);
 	
-	NSMutableArray *ArrayParameter = [[NSMutableArray alloc] initWithCapacity:3];
+	NSMutableArray *ArrayParameter = [[NSMutableArray alloc] initWithCapacity:2];
 	
 	[ArrayParameter setArray:[uri componentsSeparatedByString:@"://"]];
 	
 	NSString *typeOfAction = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:0]];
 	
+	NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
+	
 	
 	if ([typeOfAction isEqualToString:@"fpka"]) {
-		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
-		
+				
 		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
 		
 		NSLog(@"documentPath : %@",documentPath);
@@ -680,7 +682,7 @@
 	}
 	
 	if ([typeOfAction isEqualToString:@"fpkb"]) {
-		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
+		
 		
 		NSString *documentPath = [@"http://" stringByAppendingString:urlFile];
 		
@@ -690,7 +692,6 @@
 	
 	
 	if ([typeOfAction isEqualToString:@"fpke"]) {
-		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
 		
 		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
 		
@@ -698,7 +699,6 @@
     }
 	
 	if ([typeOfAction isEqualToString:@"fpkz"]) {
-		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
 		
 		NSString *documentPath = [@"http://" stringByAppendingString:urlFile];
 		
@@ -707,24 +707,17 @@
 	}
 	
 	if ([typeOfAction isEqualToString:@"fpki"]){
-		NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
 		
 		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
 		
-		documentPath =@"/var/mobile/Applications/8311139E-6140-4216-AA8D-59FE383E2FAB/Documents/FastPdfKit/html/360.com/index.html";
+		[self viewWebView:documentPath isLocal:YES];
 		
-		WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:documentPath isLocal:YES];
-		
-		webBrowser.docVc = self;
-		[[self parentViewController]presentModalViewController:webBrowser animated:YES];
 	}
 	
 	if ([typeOfAction isEqualToString:@"http"]){
 		
-		WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:uri isLocal:NO];
+		[self viewWebView:uri isLocal:NO];
 		
-		webBrowser.docVc = self;
-		[[self parentViewController]presentModalViewController:webBrowser animated:YES];
 	}
 	
 	visibleMultimedia = YES;
@@ -783,7 +776,18 @@
 -(void)myMovieViewFinishedCallback:(NSNotification *)aNotification{
 	MPMoviePlayerController *theMovie=[aNotification object];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:theMovie];
+	[theMovie stop];
 	visibleMultimedia = NO;
+}
+
+-(void)viewWebView:(NSString *)_path isLocal:(BOOL)_isLocal{
+
+	WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:_path isLocal:_isLocal];
+	
+	webBrowser.docVc = self;
+	[[self parentViewController]presentModalViewController:webBrowser animated:YES];
+	
+	[webBrowser release];
 }
 
 

@@ -147,6 +147,7 @@
 -(void)showHorizontalThumbnails;
 -(void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal;
 -(void)playAudio:(NSString *)_path isLocal:(BOOL)_isLocal;
+-(void)viewWebView:(NSString *)_path isLocal:(BOOL)_isLocal;
 -(void)prepareToolbar;
 -(void)prepareThumbSlider;
 
