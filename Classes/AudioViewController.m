@@ -81,6 +81,11 @@
     }
 }
 
+-(void)closeController{
+    [audioPlayer stop];
+    [[self view] removeFromSuperview];
+}
+
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
 	
 	[[self view] removeFromSuperview];

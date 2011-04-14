@@ -26,6 +26,7 @@
 
 - (IBAction) playAudio;
 - (IBAction) stopAudio;
+- (IBAction) closeController;
 - (IBAction) adjustVolume;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil audioFilePath:(NSString *)_audioFilePath isLocal:(BOOL)_isLocal;
 
