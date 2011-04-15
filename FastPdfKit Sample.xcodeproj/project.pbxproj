@@ -225,7 +225,9 @@
 		6FFCFA2D1356EC920028DD38 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2C1356EC920028DD38 /* pause.png */; };
 		6FFCFA311356F11A0028DD38 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2F1356F1020028DD38 /* AudioViewController.m */; };
 		6FFCFA321356F11A0028DD38 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA301356F10F0028DD38 /* AudioViewController.xib */; };
-		71C601371358755A00873F5A /* hud_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C601361358755A00873F5A /* hud_player.png */; };
+		711169BC135879ED00DE0C39 /* play_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 711169BB135879ED00DE0C39 /* play_player.png */; };
+		711169BE13587A0900DE0C39 /* close_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 711169BD13587A0900DE0C39 /* close_player.png */; };
+		711169C813587AE700DE0C39 /* hud_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 711169C713587AE700DE0C39 /* hud_player.png */; };
 		71C6013A1358770200873F5A /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C601391358770200873F5A /* next.png */; };
 		71C6013C135877A000873F5A /* pause_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C6013B135877A000873F5A /* pause_player.png */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
@@ -427,7 +429,9 @@
 		6FFCFA2E1356F0FD0028DD38 /* AudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
 		6FFCFA2F1356F1020028DD38 /* AudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
 		6FFCFA301356F10F0028DD38 /* AudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioViewController.xib; sourceTree = "<group>"; };
-		71C601361358755A00873F5A /* hud_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_player.png; sourceTree = "<group>"; };
+		711169BB135879ED00DE0C39 /* play_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_player.png; sourceTree = "<group>"; };
+		711169BD13587A0900DE0C39 /* close_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_player.png; sourceTree = "<group>"; };
+		711169C713587AE700DE0C39 /* hud_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_player.png; sourceTree = "<group>"; };
 		71C601391358770200873F5A /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		71C6013B135877A000873F5A /* pause_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_player.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Sample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -525,9 +529,11 @@
 		0188491A131E8A630045038F /* img */ = {
 			isa = PBXGroup;
 			children = (
+				711169C713587AE700DE0C39 /* hud_player.png */,
+				711169BD13587A0900DE0C39 /* close_player.png */,
+				711169BB135879ED00DE0C39 /* play_player.png */,
 				71C6013B135877A000873F5A /* pause_player.png */,
 				71C601391358770200873F5A /* next.png */,
-				71C601361358755A00873F5A /* hud_player.png */,
 				6FFCFA2C1356EC920028DD38 /* pause.png */,
 				6FFCFA2A1356EC200028DD38 /* resume.png */,
 				6FFCFA281355F5AE0028DD38 /* reload.png */,
@@ -973,6 +979,9 @@
 				6FFCFA2B1356EC200028DD38 /* resume.png in Resources */,
 				6FFCFA2D1356EC920028DD38 /* pause.png in Resources */,
 				6FFCFA321356F11A0028DD38 /* AudioViewController.xib in Resources */,
+				711169BC135879ED00DE0C39 /* play_player.png in Resources */,
+				711169BE13587A0900DE0C39 /* close_player.png in Resources */,
+				711169C813587AE700DE0C39 /* hud_player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,7 +1066,6 @@
 				01CF74B113254E0E00E42146 /* minisearch_prev@2x.png in Resources */,
 				01C9428A13263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf in Resources */,
 				01C9428B13263A6E000364B4 /* FastPdfKit-1.0RC1.pdf in Resources */,
-				71C601371358755A00873F5A /* hud_player.png in Resources */,
 				71C6013A1358770200873F5A /* next.png in Resources */,
 				71C6013C135877A000873F5A /* pause_player.png in Resources */,
 			);

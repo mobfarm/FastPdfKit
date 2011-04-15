@@ -731,7 +731,7 @@
 	
 	AudioVC.docVc = self;
 	
-	[AudioVC.view setFrame:CGRectMake(0, 0, 350, 70)];
+	[AudioVC.view setFrame:CGRectMake(0, 0, 272, 40)];
 	
 	[self.view addSubview:AudioVC.view];
 }
