@@ -725,11 +725,11 @@
 		[self viewWebView:uri isLocal:NO];
 		
 	}
-	
-	visibleMultimedia = YES;
 }
 
 - (void)playAudio:(NSString *)_path isLocal:(BOOL)_isLocal{
+	
+	visibleMultimedia = YES;
     
 	AudioViewController *AudioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:[NSBundle mainBundle] audioFilePath:_path isLocal:_isLocal];
 	
@@ -741,6 +741,8 @@
 }
 
 - (void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal{
+	
+	visibleMultimedia = YES;
 	
 	NSURL *url = nil;
 	BOOL openVideo = NO;
@@ -787,6 +789,8 @@
 }
 
 -(void)viewWebView:(NSString *)_path isLocal:(BOOL)_isLocal{
+	
+	visibleMultimedia = YES;
 
 	WebBrowser *webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:_path isLocal:_isLocal];
 	
