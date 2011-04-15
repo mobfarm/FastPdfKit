@@ -648,6 +648,10 @@
 // the right event and update the UI accordingly.
 
 
+-(BOOL) documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString *)audioUri{
+	return YES;
+}
+
 -(BOOL) documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayVideo:(NSString *)videoUri{
     return YES;
 }
@@ -763,14 +767,13 @@
 	
 	if (openVideo) {
         
-        MPMoviePlayerViewController *tmpMoviePlayViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:url];
+		MPMoviePlayerViewController *tmpMoviePlayViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:url];
 		
 		if (tmpMoviePlayViewController) {
 			[self presentMoviePlayerViewControllerAnimated:tmpMoviePlayViewController];
-			[self setWantsFullScreenLayout:NO]; 
+			[self setWantsFullScreenLayout:NO];
 			tmpMoviePlayViewController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
 			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieViewFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:[tmpMoviePlayViewController moviePlayer]];
-			
 			[tmpMoviePlayViewController.moviePlayer play];
 		}
 	}

@@ -26,7 +26,6 @@
 			url = [NSURL fileURLWithPath:_audioFilePath];
 		}else {
 			url = [NSURL URLWithString:_audioFilePath];
-
 		}
 
 				
@@ -46,16 +45,16 @@
 	}else {
 		NSData *audioData = [[NSData alloc] initWithContentsOfURL:url];
 		audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
+		[audioData release];
 	}
 
-	
 	if (error)
 	{
 		NSLog(@"Error in audioPlayer: %@", 
 			  [error localizedDescription]);
 	} else {
 		[audioPlayer setDelegate:self];
-		[audioPlayer prepareToPlay];
+		//[audioPlayer prepareToPlay];
         [audioPlayer play];
 	}
 	

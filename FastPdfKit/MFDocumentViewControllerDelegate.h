@@ -83,4 +83,9 @@
  */
 -(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayVideo:(NSString*)videoUri;
 
+/**
+ Implement this method to return whether the audio clip should play automatically once loaded.
+ */
+-(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString*)audioUri;
+
 @end
