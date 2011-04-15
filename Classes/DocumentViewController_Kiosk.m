@@ -710,6 +710,8 @@
 		
 		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
 		
+		NSLog(@"resourcePath : %@",documentPath);
+		
 		[self viewWebView:documentPath isLocal:YES];
 		
 	}
@@ -764,7 +766,8 @@
         MPMoviePlayerViewController *tmpMoviePlayViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:url];
 		
 		if (tmpMoviePlayViewController) {
-			[self presentMoviePlayerViewControllerAnimated:tmpMoviePlayViewController]; 
+			[self presentMoviePlayerViewControllerAnimated:tmpMoviePlayViewController];
+			[self setWantsFullScreenLayout:NO]; 
 			tmpMoviePlayViewController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
 			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieViewFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:[tmpMoviePlayViewController moviePlayer]];
 			

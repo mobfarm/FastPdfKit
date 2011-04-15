@@ -98,11 +98,6 @@
 	
 }
 
-
-
-
-
-
 - (void)dealloc{
 	[audioPlayer release];
     [volumeControl release];

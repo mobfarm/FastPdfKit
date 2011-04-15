@@ -20,7 +20,7 @@
 
 @property (nonatomic,retain)IBOutlet UIBarButtonItem *btnClose;
 @property (nonatomic,retain)IBOutlet UIWebView *webView;
-@property (nonatomic,retain) NSString *uri;
+@property (nonatomic,copy) NSString *uri;
 @property (nonatomic,retain) DocumentViewController_Kiosk *docVc;
 @property (nonatomic,assign) BOOL isLocal;
 

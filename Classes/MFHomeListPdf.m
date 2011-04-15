@@ -292,7 +292,7 @@
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",page]];
+	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",page]];
 	
 	// Remove the file form disk (ignore the error).
 	

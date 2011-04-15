@@ -46,15 +46,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	docVc.visibleMultimedia = NO;
 	
-	NSURL *url = [[NSURL alloc] initWithString:uri];
-	NSLog(@"url %@",url);
-	NSURLRequest *request = [[NSURLRequest alloc ]initWithURL:url];
-	[webView loadRequest:request];
-	[url release];
-	[request release];
+	if (isLocal) {
+		NSURL *url = [[NSURL alloc] initFileURLWithPath:uri];
+		NSLog(@"url %@",uri);
+		NSURLRequest *request = [[NSURLRequest alloc ]initWithURL:url];
+		[webView loadRequest:request];
+		[url release];
+		[request release];
+		
+	}else {
+		NSURL *url = [[NSURL alloc] initWithString:uri];
+		NSLog(@"url %@",uri);
+		NSURLRequest *request = [[NSURLRequest alloc ]initWithURL:url];
+		[webView loadRequest:request];
+		[url release];
+		[request release];		
+	}
 
+	
 }
 
 -(IBAction)actionDismiss{
