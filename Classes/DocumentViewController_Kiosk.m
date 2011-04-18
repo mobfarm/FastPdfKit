@@ -675,7 +675,7 @@
 	NSString *urlFile = [NSString stringWithFormat:@"%@", [ArrayParameter objectAtIndex:1]];
 	
 	
-	if ([typeOfAction isEqualToString:@"fpka"]) {
+	/*if ([typeOfAction isEqualToString:@"fpka"]) {
 				
 		NSString *documentPath = [self.document.resourceFolder stringByAppendingPathComponent:urlFile];
 		
@@ -692,7 +692,7 @@
 		
 		[self playAudio:documentPath isLocal:NO];
 	
-	}
+	}*/
 	
 	
 	if ([typeOfAction isEqualToString:@"fpke"]) {
