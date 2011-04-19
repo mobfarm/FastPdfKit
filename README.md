@@ -2,6 +2,12 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0 (Apr 19th, 2011)
+
+* Fixed ignored optional flag for the didChangeMode: callback.
+* Added didReceiveTapOnAnnotationRect:wither:onPage: method. This replaces
+didReceiveURIRequest:, but the latter is still called.
+
 ### Update: 1.0RC2 (Apr 6th, 2011)
 * Fixed a crash when the searched string will not fit in the mini search view. Bookmarks not being saved when the popover is dismissed by clicking outside fixed. Double tap to zoom out will now work even when the zoom in has been performed manually. Added a callback to ask the documentviewcontroller delegate if a video will have to autoplay or not. Added page parameter to the double tap annotation callback. Removed a few unneeded logs and minor tweaks.
 

@@ -18,7 +18,6 @@
 #define TITLE_PLAIN @"Open"
 #define TITLE_ENCRYPTED @"Open"
 
-
 #define DOC_PLAIN @"FastPdfKit-1.0RC1"
 #define DOC_ENCRYPTED @"FastPdfKit-1.0RC1crypt"
 
@@ -41,7 +40,6 @@
 	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class (a wrapper) and use
 	// it to initialize an MFDocumentViewController subclass 	
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
-	// aDocManager.resourceFolder = resourcePath;
     
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	[aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
@@ -184,11 +182,7 @@
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-	if(interfaceOrientation == UIDeviceOrientationPortrait){
-		return YES;
-	}else {
-		return NO;
-	}
+	return YES;
 }
 
 
