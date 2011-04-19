@@ -17,6 +17,7 @@
 #import "mfprofile.h"
 #import "WebBrowser.h"
 #import "AudioViewController.h"
+#import "MFAudioPlayerViewImpl.h"
 
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"%d/%d",(x),(y)]
 
@@ -646,6 +647,10 @@
 // The nice things about delegate callbacks is that we can use them to update the UI when the internal status of
 // the controller changes, rather than query or keep track of it when the user press a button. Just listen for
 // the right event and update the UI accordingly.
+
+-(Class<MFAudioPlayerViewProtocol>)classForAudioPlayerView{
+    return [MFAudioPlayerViewImpl class];
+}
 
 
 -(BOOL) documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString *)audioUri{

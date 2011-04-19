@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Stuff.h"
+#import "MFAudioPlayerViewProtocol.h"
+
 @class MFDocumentViewController;
 
 @protocol MFDocumentViewControllerDelegate
@@ -79,6 +81,11 @@
 -(void)documentViewController:(MFDocumentViewController *)dvc didReceiveDoubleTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri onPage:(NSUInteger)page;
 
 /**
+ This method will be called when an user tap on an annotation.
+ */
+-(void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri onPage:(NSUInteger)page;
+
+/**
  This method will be called to ask the delegate if the video player needs to start automatically once visible.
  */
 -(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayVideo:(NSString*)videoUri;
@@ -87,5 +94,11 @@
  Implement this method to return whether the audio clip should play automatically once loaded.
  */
 -(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString*)audioUri;
+
+/**
+ This method will be called to provide a class of the view to use as player audio control. You can use the default class provide in the sample
+ or develop your own to suit the look and feel of you application better.
+ */
+-(Class<MFAudioPlayerViewProtocol>)classForAudioPlayerView;
 
 @end

@@ -212,6 +212,8 @@
 		01FB0F95125CB46A002D4337 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
 		1D3623260D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		6F5B9279135DD2BA00A48431 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B9278135DD2BA00A48431 /* MFAudioPlayerViewImpl.m */; };
+		6F5B927A135DE18000A48431 /* pause_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C6013B135877A000873F5A /* pause_player.png */; };
 		6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9FBD191356F2CD006884F5 /* AVFoundation.framework */; };
 		6FA0FC6D1355E6AA007F51EE /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA0FC6C1355E6AA007F51EE /* libziparchive.a */; };
 		6FFCFA001355D4640028DD38 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFCF9FE1355D4640028DD38 /* WebBrowser.m */; };
@@ -229,7 +231,6 @@
 		711169BE13587A0900DE0C39 /* close_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 711169BD13587A0900DE0C39 /* close_player.png */; };
 		711169C813587AE700DE0C39 /* hud_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 711169C713587AE700DE0C39 /* hud_player.png */; };
 		71C6013A1358770200873F5A /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C601391358770200873F5A /* next.png */; };
-		71C6013C135877A000873F5A /* pause_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C6013B135877A000873F5A /* pause_player.png */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -404,6 +405,10 @@
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* FastPDFKit_Sample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_Sample_Prefix.pch; sourceTree = "<group>"; };
+		6F5B9275135DD21F00A48431 /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
+		6F5B9276135DD21F00A48431 /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
+		6F5B9277135DD2BA00A48431 /* MFAudioPlayerViewImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewImpl.h; sourceTree = "<group>"; };
+		6F5B9278135DD2BA00A48431 /* MFAudioPlayerViewImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAudioPlayerViewImpl.m; sourceTree = "<group>"; };
 		6F9FBD191356F2CD006884F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6FA0FC6C1355E6AA007F51EE /* libziparchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libziparchive.a; sourceTree = "<group>"; };
 		6FFCF9FD1355D4640028DD38 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
@@ -486,6 +491,8 @@
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				6F5B9275135DD21F00A48431 /* MFAudioPlayerViewProtocol.h */,
+				6F5B9276135DD21F00A48431 /* MFAudioProvider.h */,
 				01448A0E134C70B900FD83D8 /* MFDocumentManager.h */,
 				01448A0F134C70B900FD83D8 /* MFDocumentOverlayDataSource.h */,
 				01448A10134C70B900FD83D8 /* MFDocumentViewController.h */,
@@ -725,6 +732,8 @@
 				6FFCFA2E1356F0FD0028DD38 /* AudioViewController.h */,
 				6FFCFA2F1356F1020028DD38 /* AudioViewController.m */,
 				6FFCFA301356F10F0028DD38 /* AudioViewController.xib */,
+				6F5B9277135DD2BA00A48431 /* MFAudioPlayerViewImpl.h */,
+				6F5B9278135DD2BA00A48431 /* MFAudioPlayerViewImpl.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -982,6 +991,7 @@
 				711169BC135879ED00DE0C39 /* play_player.png in Resources */,
 				711169BE13587A0900DE0C39 /* close_player.png in Resources */,
 				711169C813587AE700DE0C39 /* hud_player.png in Resources */,
+				6F5B927A135DE18000A48431 /* pause_player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,7 +1077,6 @@
 				01C9428A13263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf in Resources */,
 				01C9428B13263A6E000364B4 /* FastPdfKit-1.0RC1.pdf in Resources */,
 				71C6013A1358770200873F5A /* next.png in Resources */,
-				71C6013C135877A000873F5A /* pause_player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1109,6 +1118,7 @@
 				01B916C31321527500D517A6 /* OutlineViewController.m in Sources */,
 				6FFCFA001355D4640028DD38 /* WebBrowser.m in Sources */,
 				6FFCFA311356F11A0028DD38 /* AudioViewController.m in Sources */,
+				6F5B9279135DD2BA00A48431 /* MFAudioPlayerViewImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
