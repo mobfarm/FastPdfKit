@@ -12,6 +12,8 @@
 @protocol MFAudioProvider <NSObject>
 
 -(void)togglePlay;
+-(BOOL)isPlaying;
 -(void)setVolumeLevel:(float)volume;
+-(float)volumeLevel;
 
 @end

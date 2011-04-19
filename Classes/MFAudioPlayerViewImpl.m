@@ -9,6 +9,9 @@
 #import "MFAudioPlayerViewImpl.h"
 #import "MFAudioProvider.h"
 
+#define PLAY_IMG @"play_player.png"
+#define PAUSE_IMG @"pause_player.png"
+#define BCKGR_IMG @"hud_player.png"
 
 @implementation MFAudioPlayerViewImpl
 
@@ -23,14 +26,14 @@
         
         // Initialization code
         
-        UIImageView *backgroundImageView =[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"hud_player.png"]];
+        UIImageView *backgroundImageView =[[UIImageView alloc]initWithImage:[UIImage imageNamed:BCKGR_IMG]];
         [backgroundImageView setFrame:CGRectMake(0, 0, 272, 40)];
         [self addSubview:backgroundImageView];
         [backgroundImageView release];
         
         UIButton *aBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        [aBtn setBackgroundImage:[UIImage imageNamed:@"play_player.png"] forState:UIControlStateNormal];
+        [aBtn setBackgroundImage:[UIImage imageNamed:PLAY_IMG] forState:UIControlStateNormal];
         [aBtn addTarget:self action:@selector(actionTogglePlay:) forControlEvents:UIControlEventTouchUpInside];
         [aBtn setFrame:CGRectMake(8, 2, 33, 33)];
         [self addSubview:aBtn];
@@ -68,8 +71,19 @@
 
 -(void)setAudioProvider:(id<MFAudioProvider>)provider{
     
-    self.audioProvider = provider;
-
+    float volumeLevel = 0;
+    
+    audioProvider = provider;
+    
+    if([audioProvider isPlaying]) {
+         [startStopButton setBackgroundImage:[UIImage imageNamed:PAUSE_IMG] forState:UIControlStateNormal];
+    } else {
+         [startStopButton setBackgroundImage:[UIImage imageNamed:PLAY_IMG] forState:UIControlStateNormal];
+    }
+    
+    volumeLevel = [audioProvider volumeLevel];
+    [volumeSlider setValue:volumeLevel];
+    
 }
 
 /**
@@ -78,7 +92,7 @@
 
 -(void)audioProviderDidStart:(id<MFAudioProvider>)mfeap{
 
-    [self.startStopButton setBackgroundImage:[UIImage imageNamed:@"pause_player.png"] forState:UIControlStateNormal];
+    [self.startStopButton setBackgroundImage:[UIImage imageNamed:PAUSE_IMG] forState:UIControlStateNormal];
     
     
 }
@@ -90,20 +104,9 @@
 
 -(void)audioProviderDidStop:(id<MFAudioProvider>)mfeap{
     
-    NSLog(@"audioProviderDidStop");
-    
-    [self.startStopButton setBackgroundImage:[UIImage imageNamed:@"play_player.png"] forState:UIControlStateNormal];
+    [self.startStopButton setBackgroundImage:[UIImage imageNamed:PLAY_IMG] forState:UIControlStateNormal];
 
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 - (void)dealloc
 {
