@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MFOverlayTouchable.h"
 
 @class MFDocumentViewController;
+
 @protocol MFDocumentOverlayDataSource <NSObject>
 
 
@@ -22,14 +23,22 @@
  */
 -(NSArray *)documentViewController:(MFDocumentViewController *)dvc drawablesForPage:(NSUInteger)page;
 
+/**
+ This method is invoked when a new detail page is going to be drawn and overlayEnables is set to YES. Objects added as overlay
+ data sources are required to submit touchables element to be tested against user input events.
+ */
+-(NSArray *)documentViewController:(MFDocumentViewController *)dvc touchablesForPage:(NSUInteger)page;
+
+/**
+ This method will be called when an user does tap on an overlay touchable element.
+ */
+-(void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnTouchable:(id<MFOverlayTouchable>)touchable;
+
+
 -(NSArray *)documentViewController:(MFDocumentViewController *)dvc overlayViewsForPage:(NSUInteger)page;
-
 -(void)documentViewController:(MFDocumentViewController *)dvc willRemoveOverlayView:(UIView *)ov;
-
 -(void)documentViewController:(MFDocumentViewController *)dvc didRemoveOverlayView:(UIView *)ov;
-
 -(void)documentViewController:(MFDocumentViewController *)dvc willAddOverlayView:(UIView *)ov;
-
 -(void)documentViewController:(MFDocumentViewController *)dvc didAddOverlayView:(UIView *)ov;
 
 
