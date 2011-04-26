@@ -50,6 +50,13 @@
     //Enable this line for bounce locked .
     //[[[webView subviews] lastObject]setScrollEnabled:NO];
     
+    //[[[webView subviews] lastObject]bounces:NO];
+    
+    for (id subview in webView.subviews){
+        if ([[subview class] isSubclassOfClass: [UIScrollView class]])
+            ((UIScrollView *)subview).bounces = NO;
+    }
+    
 	if (isLocal) {
 		NSURL *url = [[NSURL alloc] initFileURLWithPath:uri];
 		NSLog(@"url %@",uri);

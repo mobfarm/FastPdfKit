@@ -670,7 +670,7 @@
 	//uri = @"fpka://video/start.caf";
 	//uri = @"fpkb://go.mobfarm.eu/pdf/start.caf";
 	//uri = @"fpki://html/360.com/index.html";
-    //uri= @"http://www.mobfarm.eu";
+    //uri= @"http://www.tgcom.it";
 	
 	NSLog(@"uri Received :%@",uri);
 	
