@@ -530,6 +530,8 @@
 	// Call this function to stop the worker threads and release the associated resources.
 	pdfIsOpen = NO;
 	[self cleanUp];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
 	
 	//
 	//	Just remove this controller from the navigation stack.
@@ -668,6 +670,7 @@
 	//uri = @"fpka://video/start.caf";
 	//uri = @"fpkb://go.mobfarm.eu/pdf/start.caf";
 	//uri = @"fpki://html/360.com/index.html";
+    //uri= @"http://www.mobfarm.eu";
 	
 	NSLog(@"uri Received :%@",uri);
 	
@@ -1001,7 +1004,8 @@
 	[super viewDidLoad];
 	
 	// A few flags.
-	
+	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
+    
 	pdfIsOpen = YES;
 	hudHidden=YES;
 	bookmarkViewVisible = NO;

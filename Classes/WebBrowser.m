@@ -46,7 +46,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	
+    
+    //Enable this line for bounce locked .
+    //[[[webView subviews] lastObject]setScrollEnabled:NO];
+    
 	if (isLocal) {
 		NSURL *url = [[NSURL alloc] initFileURLWithPath:uri];
 		NSLog(@"url %@",uri);

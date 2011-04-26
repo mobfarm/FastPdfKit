@@ -219,6 +219,7 @@
 		6FB8D2FA1366CE7B0010A558 /* Default-Pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB8D2F71366CE7B0010A558 /* Default-Pad.png */; };
 		6FB8D2FB1366CE7B0010A558 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB8D2F81366CE7B0010A558 /* Default.png */; };
 		6FB8D2FC1366CE7B0010A558 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB8D2F91366CE7B0010A558 /* Default@2x.png */; };
+		6FB8D31413671E690010A558 /* blackslider.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB8D31313671E690010A558 /* blackslider.png */; };
 		6FFCFA001355D4640028DD38 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFCF9FE1355D4640028DD38 /* WebBrowser.m */; };
 		6FFCFA011355D4640028DD38 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCF9FF1355D4640028DD38 /* WebBrowser.xib */; };
 		6FFCFA241355F57B0028DD38 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA201355F57B0028DD38 /* close.png */; };
@@ -417,6 +418,7 @@
 		6FB8D2F71366CE7B0010A558 /* Default-Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Pad.png"; sourceTree = "<group>"; };
 		6FB8D2F81366CE7B0010A558 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6FB8D2F91366CE7B0010A558 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		6FB8D31313671E690010A558 /* blackslider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackslider.png; sourceTree = "<group>"; };
 		6FFCF9FD1355D4640028DD38 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
 		6FFCF9FE1355D4640028DD38 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
 		6FFCF9FF1355D4640028DD38 /* WebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebBrowser.xib; path = ../Classes/WebBrowser.xib; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 		0188491A131E8A630045038F /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6FB8D31313671E690010A558 /* blackslider.png */,
 				6FB8D2F71366CE7B0010A558 /* Default-Pad.png */,
 				6FB8D2F81366CE7B0010A558 /* Default.png */,
 				6FB8D2F91366CE7B0010A558 /* Default@2x.png */,
@@ -1004,6 +1007,7 @@
 				6FB8D2FA1366CE7B0010A558 /* Default-Pad.png in Resources */,
 				6FB8D2FB1366CE7B0010A558 /* Default.png in Resources */,
 				6FB8D2FC1366CE7B0010A558 /* Default@2x.png in Resources */,
+				6FB8D31413671E690010A558 /* blackslider.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

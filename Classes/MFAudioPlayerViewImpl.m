@@ -41,7 +41,7 @@
         
         UISlider *aSlider = [[UISlider alloc] initWithFrame:CGRectMake(48, 8, 117, 23)];
         [aSlider addTarget:self action:@selector(actionAdjustVolume:) forControlEvents:UIControlEventValueChanged];
-        [aSlider setOpaque:YES];
+        [aSlider setMinimumTrackImage:[[UIImage imageNamed:@"blackslider.png"] stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0] forState:UIControlStateNormal];
         [self addSubview:aSlider];
         self.volumeSlider = aSlider;
         [aSlider release];
