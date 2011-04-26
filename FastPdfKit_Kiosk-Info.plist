@@ -34,5 +34,11 @@
 	<string>1.0RC1</string>
 	<key>NSMainNibFile</key>
 	<string>MainWindow_Kiosk</string>
+	<key>UILaunchImageFile</key>
+	<string>Deafult.png</string>
+	<key>UILaunchImageFile~ipad</key>
+	<string>Default-Pad.png</string>
+	<key>UILaunchImageFile~iphone</key>
+	<string>Deafult.png</string>
 </dict>
 </plist>

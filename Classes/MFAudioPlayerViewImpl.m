@@ -41,6 +41,7 @@
         
         UISlider *aSlider = [[UISlider alloc] initWithFrame:CGRectMake(48, 8, 117, 23)];
         [aSlider addTarget:self action:@selector(actionAdjustVolume:) forControlEvents:UIControlEventValueChanged];
+        [aSlider setOpaque:YES];
         [self addSubview:aSlider];
         self.volumeSlider = aSlider;
         [aSlider release];

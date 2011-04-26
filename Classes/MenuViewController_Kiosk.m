@@ -59,7 +59,7 @@
 	documentViewController.documentId = documentName;
 	
 	[[self navigationController]pushViewController:documentViewController animated:YES];
-	
+    
 	[documentViewController release];
 	[documentManager release];
 	
