@@ -20,6 +20,7 @@
 	CGPDFDocumentRef document;
 	NSLock * lock;
 	NSURL * url;
+    CGDataProviderRef provider;
     
     NSString * resourceFolder;  /* If nil, will default to Documents folder */
 	
@@ -38,6 +39,11 @@
 // These method are used internally.
 -(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage andRight:(NSInteger)rightPage size:(CGSize)size andScale:(CGFloat)scale useLegacy:(BOOL)legacy;
 -(CGImageRef)createImageFromPDFPage:(NSInteger)page size:(CGSize)size  andScale:(CGFloat)scale useLegacy:(BOOL)legacy;
+
+-(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage andRight:(NSInteger)rightPage size:(CGSize)size andScale:(CGFloat)scale useLegacy:(BOOL)legacy showShadow:(BOOL)shadow andPadding:(CGFloat)padding;
+-(CGImageRef)createImageFromPDFPage:(NSInteger)page size:(CGSize)size  andScale:(CGFloat)scale useLegacy:(BOOL)legacy showShadow:(BOOL)shadow andPadding:(CGFloat)padding;
+
+
 -(void)drawPageNumber:(NSInteger)pageNumber onContext:(CGContextRef)ctx;
 -(void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber;
 
@@ -61,6 +67,11 @@
  Initializer. You can also use the factory method above. 
  */
 -(id)initWithFileUrl:(NSURL*)anUrl;
+
+/**
+ Initializer with data provider.
+ */
+-(id)initWithDataProvider:(CGDataProviderRef)dataProvider;
 	
 /** 
  Check if a document is encrypted and blocked by a password or not.

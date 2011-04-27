@@ -2,6 +2,14 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.1 (Apr 27th, 2011)
+
+* Replaced URLForResource with pathForResources for 3.X compatibility;
+* Added (float)zoomScale and (CGPoint)zoomOffset methods to MFDocumentViewController to get zoom position;
+* Added support for CGPDFDocumentCreateWithProvider with method initWithDataProvider:(CGDataProviderRef)provider;
+* Option to remove shadow and render the page fullscreen on MFDocumentViewController using (float)padding and (BOOL)showShadow methods;
+* Fixed another crash with search results.
+
 ### Update: 1.0 (Apr 19th, 2011)
 
 * Fixed ignored optional flag for the didChangeMode: callback.

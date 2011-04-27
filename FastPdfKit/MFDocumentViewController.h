@@ -71,11 +71,24 @@
 	BOOL zoomInOnDoubleTapEnabled;
 	BOOL documentInteractionEnabled;
 	BOOL overlayEnabled;
+    
+    BOOL showShadow;
+    CGFloat padding;
 	
 }
 
 @property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
 @property (readonly) MFDocumentManager * document;
+
+/**
+ Set this flag to NO if you don't want the dropdown shadow under the pages. Default is YES.
+ */
+@property (nonatomic,readwrite) BOOL showShadow;
+
+/**
+ Set the amount of minimum padding between the pages and the screen edge. Default is 5.0. Values are clipped between 0 and 100.
+ */
+@property (nonatomic,readwrite) CGFloat padding;
 
 /**
  Add an Overlay Datasource.
@@ -92,11 +105,21 @@
  */
 -(void)reloadOverlay;
 
-/*
+/**
  This will return the appropriate zoom level to perfectly zoom onto an annotation. If return 0, there's no available
  page data to compute the zoom yet.
  */
 -(float)zoomLevelForAnnotationRect:(CGRect)rect ofPage:(NSUInteger)page;
+
+/**
+ Return the zoom scale of the page scroll view.
+ */
+-(float)zoomScale;
+
+/**
+ Return the offset of the page scroll view.
+ */
+-(CGPoint)zoomOffset;
 
 /**
  Set the starting page of the document. It is valid only after initialization and before the view is
