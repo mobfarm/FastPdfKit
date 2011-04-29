@@ -122,6 +122,16 @@
 -(CGPoint)zoomOffset;
 
 /**
+ This method will return the page number of the left page displayed. If the mode is single page, the left page number is the current page.
+ */
+-(NSUInteger)leftPage;
+
+/**
+ This method will return the page number of the right page displayed. If the mode is single, right page number is invalid.
+ */
+-(NSUInteger)rightPage;
+
+/**
  Set the starting page of the document. It is valid only after initialization and before the view is
  displayed on the screen. Tipically you want to set this just after the init of the viewController.
  Default is 1.
