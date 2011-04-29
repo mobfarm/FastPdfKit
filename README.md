@@ -2,6 +2,14 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.2 (Apr 29th, 2011)
+
+* Fixed a bug where right drawables were not displayed.
+* Zoom animation for setPage:withZoomLevel:onRect: is now correct. Moreover, passing 0 as the level of zoom will let the application try to fit the rect on screen.
+* Fixed a crash when an annotation with an uri shorter than 7 char is found.
+* Added leftPageNumber and rightPageNumber variables to the MFDocumentViewController.
+* Fixed the autoMode on rotation not being considered at startup.
+
 ### Update: 1.0.1 (Apr 27th, 2011)
 
 * Replaced URLForResource with pathForResources for 3.X compatibility;
