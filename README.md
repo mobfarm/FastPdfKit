@@ -2,6 +2,9 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.3 (May 2nd, 2011)
+* Better handling of the device orientation at startup.
+
 ### Update: 1.0.2 (Apr 29th, 2011)
 
 * Fixed a bug where right drawables were not displayed.
