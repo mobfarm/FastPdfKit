@@ -2,6 +2,9 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.4 (May 3rd, 2011)
+* Fixed the floating page issue, when the page is changed when zoomed in.
+
 ### Update: 1.0.3 (May 2nd, 2011)
 * Better handling of the device orientation at startup.
 
