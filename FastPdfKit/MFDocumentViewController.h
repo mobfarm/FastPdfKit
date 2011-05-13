@@ -81,6 +81,11 @@
 @property (readonly) MFDocumentManager * document;
 
 /**
+ Use this property to hide or show the horizontal scroller under the pages.
+ */
+@property (nonatomic,readwrite) BOOL showHorizontalScroller;
+
+/**
  Set this flag to NO if you don't want the dropdown shadow under the pages. Default is YES.
  */
 @property (nonatomic,readwrite) BOOL showShadow;
@@ -191,7 +196,8 @@
 -(void)setPage:(NSUInteger)page;
 
 /**
- This metod will set the current page of the document and jump to the specified page, while trying to zoom in on the specified rect */
+ This metod will set the current page of the document and jump to the specified page, while trying to zoom in on the specified rect. Pass 0.0 as zoomLevel to let the application try to calculate
+ the appropriate zoom level to fit the rectangle on screen. */
 -(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
 
 /**

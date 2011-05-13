@@ -18,7 +18,9 @@ if((x)!=NULL) {		\
 free((x)),(x)=NULL; \
 }					\
 
-#define PRINT_TRANSFORM(t) NSLog(@"%.3f %.3f %.3f %.3f %.3f %.3f",(t).a,(t).b,(t).c,(t).d,(t).tx,(t).ty)
+#define PRINT_TRANSFORM(c,t) NSLog(@"%@ - [%.3f %.3f %.3f %.3f %.3f %.3f]",(c),(t).a,(t).b,(t).c,(t).d,(t).tx,(t).ty)
+#define PRINT_RECT(c,r) NSLog(@"%@ - (%.3f, %.3f)[%.3f x %.3f]",(c),(r).origin.x,(r).origin.y,(r).size.width,(r).size.height)
+#define PRINT_SIZE(c,s) NSLog(@"%@ - (%.3f, %.3f)",(c),(s).width,(s).height)
 
 /**
  When the lead property of the MFDocumentViewController is set to MFDocumentLeadLeft, the odd numbered page is shown
