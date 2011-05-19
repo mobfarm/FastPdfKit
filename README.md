@@ -2,6 +2,12 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.5 (May 19th, 2011)
+* Added two alternative methods in MFDocumentManager for text search and extraction. The methods are 
+-(void)test_searchResultOnPage:(NSUInteger)page forSearchTerms:(NSString *)searchTerms
+-(void)test_wholeTextForPage:(NSUInteger)page
+They return the same results of the non _test versions. To use them, replace the occurrence of the older methods in the project, as exemplified in comments of TextSearchOperation's main() method and TextDisplayViewController's selectorWholeTextForPage: method.
+
 ### Update: 1.0.4 (May 3rd, 2011)
 * Fixed the floating page issue, when the page is changed when zoomed in.
 

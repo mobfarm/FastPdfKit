@@ -102,12 +102,21 @@
  */
 -(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm withProfile:(MFProfile *)p;
 
+/**
+ This method return the same result as the above, but uses a differnt search engine. Look at the readme for instructions.
+ */
+-(NSArray *)test_searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm;
 
 /**
  Return a string representation of the text contained in a pdf page. Profile is not retained, so be sure to keep
  it in memory until the function returns. You can pass NULL to use the default profile.
  */
 -(NSString *)wholeTextForPage:(NSUInteger)pageNr withProfile:(MFProfile *)p;
+
+/**
+ This method return the same result as the above, but uses a differnt extraction engine. Look at the readme for instructions.
+ */
+-(NSString *)test_wholeTextForPage:(NSUInteger)pageNr;
 
 /**
  This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can

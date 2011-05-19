@@ -14,11 +14,9 @@
 
 @interface SearchManager()
 
-@property (nonatomic,retain) NSMutableArray * searchResults;
 -(void)startSearchOperationForSearchTerm:(NSString*)term andPage:(NSUInteger)page;
 
 @end
-
 
 @implementation SearchManager
 

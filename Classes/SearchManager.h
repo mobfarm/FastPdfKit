@@ -39,7 +39,7 @@
 @property (nonatomic,retain) NSOperation * currentSearchOperation;
 @property (nonatomic,retain) MFDocumentManager * document;
 @property (nonatomic,copy) NSString * searchTerm;
-@property (nonatomic,readonly) NSMutableArray * searchResults;
+@property (nonatomic,retain) NSMutableArray * searchResults;
 @property (nonatomic,copy) NSString *currentSearchTerm;
 @property (nonatomic,assign) id<SearchResultDelegate> delegate;
 @property (nonatomic,readwrite,getter=isRunning) BOOL running;

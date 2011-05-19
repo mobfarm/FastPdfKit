@@ -39,9 +39,12 @@
 	
 	// Just call the -wholeTextForPage: method of MFDocumentManager. Pass NULL as profile to use the default profile.
 	// If you want to use a different profile pass a reference to a MFProfile.
+    
+    // Use -(void)test_wholeTextForPage:(NSUInteger)page if you want to test the new text extraction engine instead.
+    // NSString *someText = [[documentManager test_wholeTextForPage:[page intValue]]copy];
+	
 	NSString *someText = [[documentManager wholeTextForPage:[page intValue] withProfile:NULL]copy];
-	//
-	//NSString *someText = [[self.delegate.document wholeTextForPage:[page intValue] withProfile:NULL]copy];
+	
 	
 	// Call back performed on the main thread.
 	[self performSelectorOnMainThread:@selector(updateTextToTextDisplayView:) withObject:someText  waitUntilDone:YES];
