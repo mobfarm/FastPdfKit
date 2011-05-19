@@ -822,149 +822,8 @@
 	
 	[aView release];
 }
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    
-	// 
-	//	Let the superclass do its stuff (setting up the views), then you can begin to add your own custom subviews
-	//	like buttons.
-	
-	[super viewDidLoad];
-	
-	// A few flags.
-	
-	pdfIsOpen = YES;
-	hudHidden=YES;
-	bookmarkViewVisible = NO;
-	outlineViewVisible = NO;
-	miniSearchViewVisible = NO;
-	
-	// Slighty different font sizes on iPad and iPhone.
-	
-	UIFont *font = nil;
-	
-	BOOL isPad = NO;
-	
-#ifdef UI_USER_INTERFACE_IDIOM
-	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-	
- 	if(isPad) {
-		font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-	} else {
-		font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-	}
-		
-	CGFloat thumbSliderOffsetX = 0 ;
-	CGFloat thumbSliderHeight = 0;
-	CGFloat thumbSliderOffsetY = 0;
-	CGFloat thumbSliderToolbarHeight= 0;
-	
-	UIView * aThumbSliderView = nil;
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
-		// Initialize the thumb slider containter view. 
-		
-		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
-		thumbSliderToolbarHeight = 44; // Height of the thumb that include the slider.
-		thumbSliderViewBorderWidth = 100;
-		thumbSliderHeight = 20 ; // Height of the slider.
-		
-		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44; // Vertical offset of the toolbar.
-		thumbSliderOffsetX = thumbSliderOffsetY + 10; // Horizontal offset of the toolbar.
-		
-	} else {
-		
-		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
-		thumbSliderToolbarHeight = 44;
-		thumbSliderViewBorderWidth = 50;
-		thumbSliderHeight = 10;
-		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44;
-		thumbSliderOffsetX = thumbSliderOffsetY + 10;
-		
-	}
-	
-	
-	[aThumbSliderView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
-	[aThumbSliderView setAutoresizesSubviews:YES];
-	[aThumbSliderView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
-	
-	UIToolbar *aThumbSliderToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, thumbSliderOffsetY, self.view.frame.size.width, thumbSliderToolbarHeight)];
-	[aThumbSliderToolbar setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
-	aThumbSliderToolbar.barStyle = UIBarStyleBlackTranslucent;
-	
-	[aThumbSliderView addSubview:aThumbSliderToolbar];
-	[aThumbSliderToolbar release];
-	
-	int paddingSlider = 0;
-	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-		paddingSlider = 10;
-	}
-	
-	
-	//Page slider.
-	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)-paddingSlider, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
-	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
-	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
-	[aSlider setMinimumValue:1.0];
-	[aSlider setMaximumValue:[[self document] numberOfPages]];
-	[aSlider setContinuous:YES];
-	[aSlider addTarget:self action:@selector(actionPageSliderSlided:) forControlEvents:UIControlEventValueChanged];
-	[aSlider addTarget:self action:@selector(actionPageSliderStopped:) forControlEvents:UIControlEventTouchUpInside];
-	
-	[self setPageSlider:aSlider];
-	
-	[aThumbSliderView addSubview:aSlider];
-	
-	[aSlider release];
-	
-	
-	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-		
-		// Set the number of page into the toolbar at the right the slider on iPhone.
-		UILabel * aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-25, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
-		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-		aLabel.text = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
-		aLabel.textAlignment = UITextAlignmentCenter;
-		aLabel.backgroundColor = [UIColor clearColor];
-		aLabel.textColor = [UIColor whiteColor];
-		aLabel.font = [UIFont boldSystemFontOfSize:11.0];
-		[aThumbSliderView addSubview:aLabel];
-		self.pageNumLabel = aLabel;
-		[aLabel release];
-	}
-	
-	[self.view addSubview:aThumbSliderView];
-	
-	self.thumbSliderViewHorizontal = aThumbSliderView;
-	
-	[aThumbSliderView release];
-	
-	
-	// Now prepare an image array to display as placeholder for the thumbs.
-	
-	NSMutableArray * aThumbImgArray  = [[NSMutableArray alloc]init];
-	
-	NSUInteger pagesCount = [[self document]numberOfPages];
-	
-	for (int i=0; i<pagesCount ; i++) {
-		[aThumbImgArray insertObject:[NSNull null] atIndex:i];
-	}	
-	
-	self.thumbImgArray = aThumbImgArray;
-	
-	[aThumbImgArray release];
-	
-	// Utility method to prepare the rollaway toolbar.
-	
-	[self prepareToolbar];
-	
-}
-
 -(void)prepareToolbar {
-
+    
 	toolbarHeight = 44;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // IPad.
@@ -1217,6 +1076,147 @@
 	
 }
 
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    
+	// 
+	//	Let the superclass do its stuff (setting up the views), then you can begin to add your own custom subviews
+	//	like buttons.
+	
+	[super viewDidLoad];
+	
+	// A few flags.
+	
+	pdfIsOpen = YES;
+	hudHidden=YES;
+	bookmarkViewVisible = NO;
+	outlineViewVisible = NO;
+	miniSearchViewVisible = NO;
+	
+	// Slighty different font sizes on iPad and iPhone.
+	
+	UIFont *font = nil;
+	
+	BOOL isPad = NO;
+	
+#ifdef UI_USER_INTERFACE_IDIOM
+	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+	
+ 	if(isPad) {
+		font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+	} else {
+		font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+	}
+		
+	CGFloat thumbSliderOffsetX = 0 ;
+	CGFloat thumbSliderHeight = 0;
+	CGFloat thumbSliderOffsetY = 0;
+	CGFloat thumbSliderToolbarHeight= 0;
+	
+	UIView * aThumbSliderView = nil;
+	
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		
+		// Initialize the thumb slider containter view. 
+		
+		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
+		thumbSliderToolbarHeight = 44; // Height of the thumb that include the slider.
+		thumbSliderViewBorderWidth = 100;
+		thumbSliderHeight = 20 ; // Height of the slider.
+		
+		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44; // Vertical offset of the toolbar.
+		thumbSliderOffsetX = thumbSliderOffsetY + 10; // Horizontal offset of the toolbar.
+		
+	} else {
+		
+		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
+		thumbSliderToolbarHeight = 44;
+		thumbSliderViewBorderWidth = 50;
+		thumbSliderHeight = 10;
+		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44;
+		thumbSliderOffsetX = thumbSliderOffsetY + 10;
+		
+	}
+	
+	
+	[aThumbSliderView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+	[aThumbSliderView setAutoresizesSubviews:YES];
+	[aThumbSliderView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
+	
+	UIToolbar *aThumbSliderToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, thumbSliderOffsetY, self.view.frame.size.width, thumbSliderToolbarHeight)];
+	[aThumbSliderToolbar setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
+	aThumbSliderToolbar.barStyle = UIBarStyleBlackTranslucent;
+	
+	[aThumbSliderView addSubview:aThumbSliderToolbar];
+	[aThumbSliderToolbar release];
+	
+	int paddingSlider = 0;
+	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+		paddingSlider = 10;
+	}
+	
+	
+	//Page slider.
+	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)-paddingSlider, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
+	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
+	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
+	[aSlider setMinimumValue:1.0];
+	[aSlider setMaximumValue:[[self document] numberOfPages]];
+	[aSlider setContinuous:YES];
+	[aSlider addTarget:self action:@selector(actionPageSliderSlided:) forControlEvents:UIControlEventValueChanged];
+	[aSlider addTarget:self action:@selector(actionPageSliderStopped:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self setPageSlider:aSlider];
+	
+	[aThumbSliderView addSubview:aSlider];
+	
+	[aSlider release];
+	
+	
+	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+		
+		// Set the number of page into the toolbar at the right the slider on iPhone.
+		UILabel * aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-25, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
+		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
+		aLabel.text = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+		aLabel.textAlignment = UITextAlignmentCenter;
+		aLabel.backgroundColor = [UIColor clearColor];
+		aLabel.textColor = [UIColor whiteColor];
+		aLabel.font = [UIFont boldSystemFontOfSize:11.0];
+		[aThumbSliderView addSubview:aLabel];
+		self.pageNumLabel = aLabel;
+		[aLabel release];
+	}
+	
+	[self.view addSubview:aThumbSliderView];
+	
+	self.thumbSliderViewHorizontal = aThumbSliderView;
+	
+	[aThumbSliderView release];
+	
+	
+	// Now prepare an image array to display as placeholder for the thumbs.
+	
+	NSMutableArray * aThumbImgArray  = [[NSMutableArray alloc]init];
+	
+	NSUInteger pagesCount = [[self document]numberOfPages];
+	
+	for (int i=0; i<pagesCount ; i++) {
+		[aThumbImgArray insertObject:[NSNull null] atIndex:i];
+	}	
+	
+	self.thumbImgArray = aThumbImgArray;
+	
+	[aThumbImgArray release];
+	
+	// Utility method to prepare the rollaway toolbar.
+	
+	[self prepareToolbar];
+	
+}
+
+
 -(void)setNumberOfPageToolbar{
 	
 	NSString *labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
@@ -1243,13 +1243,6 @@
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	[rollawayToolbar setFrame:CGRectMake(0, -toolbarHeight, rollawayToolbar.frame.size.width, toolbarHeight)];
 	[UIView commitAnimations];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-
-	[super viewWillAppear:animated];
-	
-	[self prepareThumbSlider];
 }
 
 -(void)prepareThumbSlider {
@@ -1284,6 +1277,14 @@
 	// Start generating the thumbs in background.
 	
 	[self performSelectorInBackground:@selector(generateThumbInBackground:) withObject:self.documentId];
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+
+	[super viewWillAppear:animated];
+	
+	[self prepareThumbSlider];
 }
 
 
@@ -1364,7 +1365,7 @@
 	//	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
 	//	as long as you pass an instance of it to the superclass initializer.
 	
-	if(self = [super initWithDocumentManager:aDocumentManager]) {
+	if((self = [super initWithDocumentManager:aDocumentManager])) {
 		[self setDocumentDelegate:self];
 	}
 	return self;
