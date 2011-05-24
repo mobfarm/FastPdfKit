@@ -11,6 +11,7 @@
 #import "TextSearchOperation.h"
 #import "MFTextItem.h"
 #import "MFDocumentViewController.h"
+#import "NotificationFactory.h"
 
 @interface SearchManager()
 
@@ -24,7 +25,6 @@
 @synthesize searchTerm;
 @synthesize searchResults;
 @synthesize currentSearchOperation;
-@synthesize delegate;
 @synthesize currentSearchTerm;
 @synthesize running;
 
@@ -103,7 +103,8 @@ int calculateNextSearchPage(currentPage,maxPage) {
 -(void)cancelSearch {
 
 	// Cancel the search.
-	
+	NSNotification * notification = nil;
+    
 	if(running) {
 		
 		[self stopSearch];
@@ -121,14 +122,19 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	
 	// Inform the delegate of the cancel event, so it can
 	// update itself.
-	[delegate searchGotCancelled];
+    
+    notification = [NotificationFactory notificationSearchGotCancelledWithSearchTerm:searchTerm fromSender:self];
+    [[NSNotificationCenter defaultCenter]postNotification:notification];
+    
+	// [delegate searchGotCancelled];
 }
 
 -(void)stopSearch {
 	
 	// Stop the search, but keep in memory the status of the operation. We are likely to
 	// keep accessing it even after the search has been stopped.
-	
+	NSNotification * notification = nil;
+    
 	if(!(running)) 
 	   return;
 	   
@@ -137,13 +143,18 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	
 	[self.currentSearchOperation cancel], self.currentSearchOperation = nil;
 	
-	[delegate searchDidStop];
+    notification = [NotificationFactory notificationSearchDidStopWithSearchTerm:searchTerm fromSender:self];
+    [[NSNotificationCenter defaultCenter]postNotification:notification];
+    
+	//[delegate searchDidStop];
 }
 
 
 // Callback for the op.
 -(void)handleSearchResult:(NSArray *)searchResult {
 
+    NSNotification * notification = nil;
+    
 	if (stopped) {
 	
 		// Ignore the result.
@@ -153,8 +164,11 @@ int calculateNextSearchPage(currentPage,maxPage) {
 		// Append the result and notify the delegate.
 		
 		if(searchResult!=nil) {
-			[searchResults addObject:searchResult];
-			[delegate updateResults:searchResults withResults:searchResult forPage:currentPage];
+			
+            [searchResults addObject:searchResult];
+            
+            notification = [NotificationFactory notificationSearchResultsAvailable:searchResults forSearchTerm:searchTerm onPage:[NSNumber numberWithInt:currentPage] fromSender:self];
+            [[NSNotificationCenter defaultCenter]postNotification:notification];
 		}
 		
 		// If we endend up on the starting page we can stop, otherwise take the next page and 
@@ -174,8 +188,10 @@ int calculateNextSearchPage(currentPage,maxPage) {
 			
 			stopped = YES;
 			running = NO;
-			
-			[delegate searchDidStop];
+            
+            notification = [NotificationFactory notificationSearchDidStopWithSearchTerm:searchTerm fromSender:self];
+            [[NSNotificationCenter defaultCenter]postNotification:notification];
+            
 		}
 		
 	} 
@@ -215,6 +231,9 @@ int calculateNextSearchPage(currentPage,maxPage) {
 
 -(void)startSearchOfTerm:(NSString *)term fromPage:(NSUInteger)aStartingPage {
 	
+    NSNotification * notification = nil;
+    NSMutableArray * tmpArray = nil;
+    
 	// Start the sarch.
 	
 	// Save the sarch term and set the starting and current page to the page passed as argument. We will
@@ -232,15 +251,18 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	
 	// Allocate a new mutable array to not modify the precedent one in the case it has been
 	// retained by another object.
-	NSMutableArray *tmpArray = [[NSMutableArray alloc]init];
+	tmpArray = [[NSMutableArray alloc]init];
 	self.searchResults = tmpArray;
 	[tmpArray release];
 	
-	// Call the utility method to start a search operation.
+	// Call the utility method to start a search operation and notify the event.
+    
+    notification = [NotificationFactory notificationSearchDidStartWithSearchTerm:searchTerm onPage:[NSNumber numberWithInt:aStartingPage] fromSender:self];
+    
 	[self startSearchOperationForSearchTerm:term andPage:aStartingPage];
 	
-	// Notify the delegate.
-	[delegate searchDidStart];
+    [[NSNotificationCenter defaultCenter]postNotification:notification];
+    
 }
 
 #pragma mark -
@@ -265,8 +287,6 @@ int calculateNextSearchPage(currentPage,maxPage) {
 
 
 - (void)dealloc {
-	
-	delegate = nil;
 	
 	MF_COCOA_RELEASE(document);
 	

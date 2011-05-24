@@ -205,6 +205,8 @@
 		01CF74AF13254E0E00E42146 /* minisearch_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CF74A713254E0E00E42146 /* minisearch_full@2x.png */; };
 		01CF74B013254E0E00E42146 /* minisearch_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CF74A813254E0E00E42146 /* minisearch_next@2x.png */; };
 		01CF74B113254E0E00E42146 /* minisearch_prev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CF74A913254E0E00E42146 /* minisearch_prev@2x.png */; };
+		01D85E4B138BE08400F02268 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D85E4A138BE08400F02268 /* NotificationFactory.m */; };
+		01D85E4C138BE08400F02268 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D85E4A138BE08400F02268 /* NotificationFactory.m */; };
 		01E0C3F21385780400FF0E12 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E0C3F11385780400FF0E12 /* libFastPDFKit.a */; };
 		01E0C3F31385780400FF0E12 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E0C3F11385780400FF0E12 /* libFastPDFKit.a */; };
 		01E2BC37133D14BB00CCED33 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E3C421133D1410009E9D4C /* MediaPlayer.framework */; };
@@ -369,6 +371,8 @@
 		01CF74A713254E0E00E42146 /* minisearch_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_full@2x.png"; sourceTree = "<group>"; };
 		01CF74A813254E0E00E42146 /* minisearch_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_next@2x.png"; sourceTree = "<group>"; };
 		01CF74A913254E0E00E42146 /* minisearch_prev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_prev@2x.png"; sourceTree = "<group>"; };
+		01D85E49138BE08400F02268 /* NotificationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationFactory.h; sourceTree = "<group>"; };
+		01D85E4A138BE08400F02268 /* NotificationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationFactory.m; sourceTree = "<group>"; };
 		01E0C3F11385780400FF0E12 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01E0C3F41385783800FF0E12 /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
 		01E0C3F51385783800FF0E12 /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
@@ -482,6 +486,8 @@
 				015EF60812CA29EE0098E4B6 /* SearchViewController.m */,
 				015EF60912CA29EE0098E4B6 /* TextSearchOperation.h */,
 				015EF60A12CA29EE0098E4B6 /* TextSearchOperation.m */,
+				01D85E49138BE08400F02268 /* NotificationFactory.h */,
+				01D85E4A138BE08400F02268 /* NotificationFactory.m */,
 			);
 			name = TextSearch;
 			sourceTree = "<group>";
@@ -1017,6 +1023,7 @@
 				01B916BB1321526700D517A6 /* BookmarkViewController.m in Sources */,
 				01B916BF1321526F00D517A6 /* DocumentViewController.m in Sources */,
 				01B916C31321527500D517A6 /* OutlineViewController.m in Sources */,
+				01D85E4C138BE08400F02268 /* NotificationFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1038,6 +1045,7 @@
 				01B916BC1321526700D517A6 /* BookmarkViewController.m in Sources */,
 				01B916C01321526F00D517A6 /* DocumentViewController.m in Sources */,
 				01B916C41321527500D517A6 /* OutlineViewController.m in Sources */,
+				01D85E4B138BE08400F02268 /* NotificationFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SearchResultDelegate.h"
 #import "MiniSearchViewControllerDelegate.h"
 
 @class SearchManager;
@@ -15,7 +14,7 @@
 @class MFTextItem;
 @class SearchResultView;
 
-@interface MiniSearchView : UIView <SearchResultDelegate> {
+@interface MiniSearchView : UIView {
 	
 	// UI elements.
 	UIButton *nextButton;
@@ -29,7 +28,6 @@
 	SearchManager *dataSource;	// Data sources for the serarch.
 	NSObject<MiniSearchViewControllerDelegate> *documentDelegate;	// Delegate.
 	
-	NSMutableArray *searchResults;	// Local copy of the search results.
 	long int currentSearchResultIndex;	// Current index of the search result.
 }
 

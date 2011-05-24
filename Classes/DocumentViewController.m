@@ -162,12 +162,6 @@
 	[controller setDelegate:self];
 	controller.searchManager = manager;
 	
-	
-	// Set the search view controller as the data source delegate.
-	
-	manager.delegate = controller;
-	
-	
 	// Enable overlay and set the search manager as the data source for
 	// overlay items.
 	[self addOverlayDataSource:searchManager];
@@ -261,7 +255,6 @@
     [self addOverlayDataSource:self.searchManager];
     
 	miniSearchView.documentDelegate = self;
-	self.searchManager.delegate = miniSearchView;
 	
 	// Update the view with the right index.
 	[miniSearchView reloadData];

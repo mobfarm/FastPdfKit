@@ -16,7 +16,7 @@
 @class DocumentViewController;
 @class SearchManager;
 
-@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SearchResultDelegate, UISearchBarDelegate> {
+@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
 
 	// UI elements.
 	IBOutlet UISearchBar *searchBar;
@@ -26,11 +26,6 @@
 	
 	IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
 	IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
-	
-	// Data.
-	NSMutableArray *searchResults;	// Local copy. It is an array of array.
-	NSUInteger totalItems;		// Counter of the total amount of item.
-	NSUInteger maxItems;		// Max number of items.
 	
 	NSObject<SearchViewControllerDelegate> *delegate; // A delegate to change the page.
 	

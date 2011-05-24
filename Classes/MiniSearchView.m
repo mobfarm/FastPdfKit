@@ -12,6 +12,7 @@
 #import "SearchManager.h"
 #import "MFTextItem.h"
 #import "SearchResultView.h"
+#import "NotificationFactory.h"
 
 #define ZOOM_LEVEL 4.0
 
@@ -19,8 +20,6 @@
 
 -(void)moveToNextResult;
 -(void)moveToPrevResult;
-
-@property (nonatomic,retain) NSMutableArray * searchResults;
 
 @end
 
@@ -36,7 +35,6 @@
 @synthesize snippetLabel;
 
 @synthesize documentDelegate, dataSource;
-@synthesize searchResults;
 @synthesize searchResultView;
 
 -(void)updateSearchResultViewWithItem:(MFTextItem *)item {
@@ -51,31 +49,23 @@
 	// This method basically set the current appaerance of the view to 
 	// present the content of the Search Result pointed by currentSearchResultIndex.
 
-	self.searchResults = [[dataSource searchResultsAsPlainArray]mutableCopy];
+    MFTextItem * item = nil;
+	NSArray * searchResults = nil;
+    
+    searchResults = [dataSource searchResultsAsPlainArray];
 	
-	MFTextItem *item = [searchResults objectAtIndex:currentSearchResultIndex];
-	if(item==nil)
+    if(currentSearchResultIndex >= [searchResults count]) {
+        currentSearchResultIndex = [searchResults count] - 1;
+    }
+    
+	item = [searchResults objectAtIndex:currentSearchResultIndex];
+    
+	if(!item)
 		return;
 	
 	// Update the content view.
 	[self updateSearchResultViewWithItem:item];
-	
-	
-	// Disable/enabled the next and previous button depeding on the current index
-	// inside the result array.
-	
-	//if(currentSearchResultIndex + 1 < [searchResults count]) {
-//		
-//		[nextButton setEnabled:YES];
-//	} else {
-//		
-//		[nextButton setEnabled:NO];
-//	}
-//	if(currentSearchResultIndex > 0) {
-//		[prevButton setEnabled:YES];
-//	} else {
-//		[prevButton setEnabled:NO];
-//	}	
+    
 }
 
 -(void)setCurrentResultIndex:(NSUInteger)index {
@@ -83,40 +73,30 @@
 	// This is more or less the same as the method above, just set the index
 	// passed as parameter as the current index and then proceed accordingly.
 	
+    MFTextItem * item = nil;
+    NSArray * searchResults = nil;
+    
+    searchResults = [dataSource searchResultsAsPlainArray];
+	
 	if(index >= [searchResults count]) {
-		return;
+		index = [searchResults count] - 1;
 	}
 	
 	currentSearchResultIndex = index;
 	
-	MFTextItem *item = [searchResults objectAtIndex:currentSearchResultIndex];
+	item = [searchResults objectAtIndex:currentSearchResultIndex];
 	
-	if(item==nil)
+	if(!item)
 		return;
 	
 	[self updateSearchResultViewWithItem:item];
-	
-	//if(currentSearchResultIndex + 1 < [searchResults count]) {
-//		
-//		[nextButton setEnabled:YES];
-//	} else {
-//		
-//		[nextButton setEnabled:NO];
-//	}
-//	if(currentSearchResultIndex > 0) {
-//		
-//		[prevButton setEnabled:YES];
-//	} else {
-//		
-//		[prevButton setEnabled:NO];
-//	}
 }
 
 -(void)setCurrentTextItem:(MFTextItem *)item {
 	
 	// Just an utility method to set the current index when just the item is know.
 	
-	NSUInteger index = [searchResults indexOfObject:item];
+	NSUInteger index = [[dataSource searchResultsAsPlainArray] indexOfObject:item];
 	
 	[self setCurrentResultIndex:index];
 }
@@ -126,133 +106,57 @@
 	
 	// The same as the two similar methods above. It only differs in the fact that increase
 	// the index by one, then proceed the same.
-	
+	NSArray * searchResults = [dataSource searchResultsAsPlainArray];
+    MFTextItem * item = nil;
+    
 	currentSearchResultIndex++;
 	
 	if(currentSearchResultIndex == [searchResults count])
 		currentSearchResultIndex = 0;
 	
-	MFTextItem *item = [searchResults objectAtIndex:currentSearchResultIndex];
+	item = [searchResults objectAtIndex:currentSearchResultIndex];
 	
-	if(item==nil)
+	if(!item)
 		return;
 	
 	[self updateSearchResultViewWithItem:item];
 	
 	[documentDelegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
 	
-	// Update prev/next buttons.
-	
-	//if(currentSearchResultIndex + 1 < [searchResults count]) {
-//		
-//		
-//		[nextButton setEnabled:YES];
-//	} else {
-//		
-//		[nextButton setEnabled:NO];
-//	}
-//	if(currentSearchResultIndex > 0) {
-//		[prevButton setEnabled:YES];
-//	} else {
-//		[prevButton setEnabled:NO];
-//	}
 }
 
 -(void) moveToPrevResult {
 
 	// As the above method, but it decrease the index instead.
-	
+	NSArray * searchResults = [dataSource searchResultsAsPlainArray];
+    MFTextItem * item = nil;
+    
 	currentSearchResultIndex--;
 	
 	if(currentSearchResultIndex < 0)
 		currentSearchResultIndex = [searchResults count]-1;
 	
-	MFTextItem *item = [searchResults objectAtIndex:currentSearchResultIndex];
+	item = [searchResults objectAtIndex:currentSearchResultIndex];
 	
-	if(item==nil)
+	if(!item)
 		return;
 	
 	[self updateSearchResultViewWithItem:item];
 	
 	[documentDelegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
-	
-	
-	// Update prev/next buttons.
-	
-	//if(currentSearchResultIndex + 1 < [searchResults count]) {
-//		
-//		
-//		[nextButton setEnabled:YES];
-//	} else {
-//		
-//		[nextButton setEnabled:NO];
-//	}
-//	if(currentSearchResultIndex > 0) {
-//		[prevButton setEnabled:YES];
-//	} else {
-//		[prevButton setEnabled:NO];
-//	}
 }
 
-#pragma mark SearchResultDelegate
+#pragma mark - Search notification listeners
 
--(void) updateResults:(NSArray *)aSearchResult withResults:(NSArray *)addedResult forPage:(NSUInteger)page {
-	
-	// When a new array of results arrives, its content is added to searchResults array, then the view is updated.
-	
-	if([addedResult count] > 0) {
-		
-		[searchResults addObjectsFromArray:addedResult];
-		
-		// Update prev/next buttons, for example by enabling buttons disabled
-		// due to being on the bound before the update.
-		
-		//if(currentSearchResultIndex + 1 < [searchResults count]) {
-//			
-//			
-//			[nextButton setEnabled:YES];
-//		} else {
-//			
-//			[nextButton setEnabled:NO];
-//		}
-//		if(currentSearchResultIndex > 0) {
-//			[prevButton setEnabled:YES];
-//		} else {
-//			[prevButton setEnabled:NO];
-//		}
-		
-	} else {
-			// Do nothing.
-	}
+-(void)handleSearchDidStopNotification:(NSNotification *)notification {
+    
+   [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
 }
 
-#pragma mark -
-#pragma mark SearchManager callbacks
-
--(void) searchDidPause {
-	// Unsupported.
-}
-
--(void) searchDidStart {
-	// Never called with the mini view in place.
-}
-
--(void) searchDidResume {
-	// Unsupported.
-}
-
--(void) searchGotCancelled {
-	
-	// We are going to remove this view from the stack.
+-(void)handleSearchGotCancelledNotification:(NSNotification *)notification {
+    // Setup the view accordingly.
 	
 	[documentDelegate dismissMiniSearchView];
-}
-
--(void) searchDidStop {
-	
-	// Searching is going on no more, set the cancel button title accordingly.
-	
-	[cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
 }
 
 #pragma mark Actions
@@ -300,7 +204,6 @@
     if (self) {
 		
         // Initialization code.
-		searchResults = [[NSMutableArray alloc]init];
 		
 		self.autoresizesSubviews = YES;		// Yes.
 		self.opaque = NO;					// Otherwise background transparencies will be flat black.
@@ -389,7 +292,12 @@
 		[aSRV setBackgroundColor:[UIColor clearColor]];
 		[self addSubview:aSRV];
 		[aSRV release];
-		
+        
+        
+        // Register notification listeners.
+        
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleSearchDidStopNotification:) name:kNotificationSearchDidStop object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleSearchGotCancelledNotification:) name:kNotificationSearchGotCancelled object:nil];
 	}
 	
     return self;
@@ -427,8 +335,8 @@
 
 - (void)dealloc {
 	
-	MF_COCOA_RELEASE(searchResults);
-	
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    
 	MF_COCOA_RELEASE(nextButton);
 	MF_COCOA_RELEASE(prevButton);
 	MF_COCOA_RELEASE(fullButton);

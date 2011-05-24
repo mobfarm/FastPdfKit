@@ -32,8 +32,6 @@
 	MFDocumentManager * document;	// Our document.
 	
 	NSMutableArray * searchResults;	// Array of results. It's an array of array.
-	
-	id<SearchResultDelegate> delegate;	// The delegate that will be notified of search events.
 }
 
 @property (nonatomic,retain) NSOperation * currentSearchOperation;
@@ -41,7 +39,6 @@
 @property (nonatomic,copy) NSString * searchTerm;
 @property (nonatomic,retain) NSMutableArray * searchResults;
 @property (nonatomic,copy) NSString *currentSearchTerm;
-@property (nonatomic,assign) id<SearchResultDelegate> delegate;
 @property (nonatomic,readwrite,getter=isRunning) BOOL running;
 
 -(NSArray *)searchResultsAsPlainArray;
