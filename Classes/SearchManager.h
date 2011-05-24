@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SearchResultDelegate.h"
 #import "MFDocumentOverlayDataSource.h"
 
 @class MFDocumentManager;

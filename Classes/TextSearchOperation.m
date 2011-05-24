@@ -33,7 +33,7 @@
 	if(![self isCancelled]) {
 		
 		if([delegate respondsToSelector:@selector(handleSearchResult:)])
-			[delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
+			[(NSObject *)delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
 	}
 	
 	

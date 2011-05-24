@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SearchResultDelegate.h"
 #import "SearchResultDataSource.h"
 #import "MFDocumentOverlayDataSource.h"
 #import "SearchViewControllerDelegate.h"

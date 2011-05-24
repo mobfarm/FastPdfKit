@@ -236,7 +236,6 @@
 		0157CF7A12EF16B200DDC590 /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
 		0157CF7B12EF16B200DDC590 /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
 		015EF60312CA29EE0098E4B6 /* SearchResultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDataSource.h; sourceTree = "<group>"; };
-		015EF60412CA29EE0098E4B6 /* SearchResultDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDelegate.h; sourceTree = "<group>"; };
 		015EF60712CA29EE0098E4B6 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		015EF60812CA29EE0098E4B6 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		015EF60912CA29EE0098E4B6 /* TextSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSearchOperation.h; sourceTree = "<group>"; };
@@ -481,7 +480,6 @@
 				015EF6C512CA474B0098E4B6 /* TextDisplayViewController.h */,
 				015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */,
 				015EF60312CA29EE0098E4B6 /* SearchResultDataSource.h */,
-				015EF60412CA29EE0098E4B6 /* SearchResultDelegate.h */,
 				015EF60712CA29EE0098E4B6 /* SearchViewController.h */,
 				015EF60812CA29EE0098E4B6 /* SearchViewController.m */,
 				015EF60912CA29EE0098E4B6 /* TextSearchOperation.h */,
