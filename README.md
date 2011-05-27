@@ -2,6 +2,12 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.6 (May 27th, 2011)
+
+* Added an optional tiled version of the overlay view. If you want sharp drawables when zoomed in, set MFDocumentViewController's useTiledOverlayView to YES. Keep in mind that tiled layer rendering is slower, and memory usage is higher.
+* Dropped search view controller and mini search view local copy of search manager delegate's results. They now directly access the data source results. Crash caused by inconsistency between the local copy and the data source data should be fixed.
+* Replaced inner rendering parameters data class with a simpler struct together with a better synchronization between threads. Crash on CALayer status error with NAN origin should be fixed.
+
 ### Update: 1.0.5 (May 19th, 2011)
 * Added two alternative methods in MFDocumentManager for text search and extraction. The methods are 
 -(void)test_searchResultOnPage:(NSUInteger)page forSearchTerms:(NSString *)searchTerms

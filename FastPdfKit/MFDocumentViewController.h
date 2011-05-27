@@ -75,10 +75,16 @@
     BOOL showShadow;
     CGFloat padding;
 	
+    BOOL useTiledOverlayView;
 }
 
 @property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
 @property (readonly) MFDocumentManager * document;
+
+/**
+ This propery will enable an CATiledLayer version of the overlay view. This means overlay drawables will be drawn sharp, no matter the zoom of the scroll view.
+ */
+@property (readwrite) BOOL useTiledOverlayView;
 
 /**
  Use this property to hide or show the horizontal scroller under the pages.
