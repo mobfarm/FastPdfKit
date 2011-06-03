@@ -194,8 +194,8 @@
 		01B916C01321526F00D517A6 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916BE1321526F00D517A6 /* DocumentViewController.m */; };
 		01B916C31321527500D517A6 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916C21321527500D517A6 /* OutlineViewController.m */; };
 		01B916C41321527500D517A6 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916C21321527500D517A6 /* OutlineViewController.m */; };
-		01BE8BDB13979E6900C22000 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BE8BDA13979E6900C22000 /* libFastPDFKit.a */; };
-		01BE8BDC13979E6900C22000 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BE8BDA13979E6900C22000 /* libFastPDFKit.a */; };
+		01BA2BC21398EB4F00A6FE75 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BA2BC11398EB4F00A6FE75 /* libFastPDFKit.a */; };
+		01BA2BC31398EB4F00A6FE75 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BA2BC11398EB4F00A6FE75 /* libFastPDFKit.a */; };
 		01C9428A13263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */; };
 		01C9428B13263A6E000364B4 /* FastPdfKit-1.0RC1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */; };
 		01CF7356132532FC00E42146 /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
@@ -364,7 +364,7 @@
 		01B916BE1321526F00D517A6 /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
 		01B916C11321527500D517A6 /* OutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewController.h; sourceTree = "<group>"; };
 		01B916C21321527500D517A6 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
-		01BE8BDA13979E6900C22000 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
+		01BA2BC11398EB4F00A6FE75 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FastPdfKit-1.0RC1crypt.pdf"; sourceTree = "<group>"; };
 		01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FastPdfKit-1.0RC1.pdf"; sourceTree = "<group>"; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
@@ -422,7 +422,7 @@
 				01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */,
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
 				01E2BC37133D14BB00CCED33 /* MediaPlayer.framework in Frameworks */,
-				01BE8BDC13979E6900C22000 /* libFastPDFKit.a in Frameworks */,
+				01BA2BC31398EB4F00A6FE75 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +437,7 @@
 				950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */,
 				950B37D0125CBEC4007BDDA1 /* UIKit.framework in Frameworks */,
 				0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */,
-				01BE8BDB13979E6900C22000 /* libFastPDFKit.a in Frameworks */,
+				01BA2BC21398EB4F00A6FE75 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +621,7 @@
 		01CC21CB12B907AF00E77E6E /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				01BE8BDA13979E6900C22000 /* libFastPDFKit.a */,
+				01BA2BC11398EB4F00A6FE75 /* libFastPDFKit.a */,
 				01448A0D134C70A700FD83D8 /* headers */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 			);
