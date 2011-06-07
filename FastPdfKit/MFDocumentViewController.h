@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MFDocumentViewControllerDelegate.h"
 #import "MFDocumentOverlayDataSource.h"
+#import "FPKOverlayViewDataSource.h"
 
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
@@ -23,6 +24,7 @@
 	NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
 	
     NSMutableSet * overlayDataSources;
+    NSMutableSet * overlayViewDataSources;
     
 	// Resources.
 	NSOperationQueue * operationQueue;
@@ -102,14 +104,16 @@
 @property (nonatomic,readwrite) CGFloat padding;
 
 /**
- Add an Overlay Datasource.
+ Add and remove an Overlay Datasource for Drawables and Touchables.
  */
 -(void)addOverlayDataSource:(id<MFDocumentOverlayDataSource>)ods;
+-(void)removeOverlayDataSource:(id<MFDocumentOverlayDataSource>)ods;
 
 /**
- Remove an Overlay Datasource.
- */
--(void)removeOverlayDataSource:(id<MFDocumentOverlayDataSource>)ods;
+ Add and remove an Overlay View Datasource for overlay UIViews.
+*/
+-(void)addOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
+-(void)removeOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
 
 /**
  This method will provoke the redraw of the overlay. Overlay Datasources will be asked to provide drawables.
