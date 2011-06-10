@@ -89,7 +89,8 @@
 	UIPopoverController *outlinePopover;
 	UIPopoverController *searchPopover;
 	UIPopoverController *textPopover;
-	
+	UIPopoverController *reusablePopover;
+    
 	UILabel * pageLabel;
 	UISlider * pageSlider;
 }
@@ -137,6 +138,8 @@
 @property (nonatomic, retain) SearchManager * searchManager;
 @property (nonatomic, retain) MiniSearchView * miniSearchView;
 @property (nonatomic, retain) TextDisplayViewController * textDisplayViewController;
+
+@property (nonatomic, retain) UIPopoverController * reusablePopover;
 
 -(void)showToolbar;
 -(void)hideToolbar;

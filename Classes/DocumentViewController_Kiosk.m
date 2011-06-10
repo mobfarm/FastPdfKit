@@ -34,33 +34,35 @@
 @synthesize searchManager;
 @synthesize miniSearchView;
 @synthesize pageSlider;
+@synthesize reusablePopover;
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft;
 
 -(void)dismissAllPopovers {
 	
 	// Utility method to quickly dispatch any poopover visible on screen.
-	
-	if (bookmarkViewVisible) {
-		[bookmarkPopover dismissPopoverAnimated:YES];
-		bookmarkViewVisible = NO;	
-	}
-	
-	if (outlineViewVisible) {
-		[outlinePopover dismissPopoverAnimated:YES];
-		outlineViewVisible = NO;	
-	}
-	
-	if (searchViewVisible) {
-		[searchPopover dismissPopoverAnimated:YES];
-		searchViewVisible = NO;
-	}
-	
-	
-	if (textViewVisible) {
-		[textPopover dismissPopoverAnimated:YES];
-		textViewVisible = NO;	
-	}
+
+	[reusablePopover dismissPopoverAnimated:YES];
+    
+//	if (bookmarkViewVisible) {
+//		[bookmarkPopover dismissPopoverAnimated:YES];
+//		bookmarkViewVisible = NO;	
+//	}
+//	
+//	if (outlineViewVisible) {
+//		[outlinePopover dismissPopoverAnimated:YES];
+//		outlineViewVisible = NO;	
+//	}
+//	
+//	if (searchViewVisible) {
+//		[searchPopover dismissPopoverAnimated:YES];
+//		searchViewVisible = NO;
+//	}
+//	
+//	if (textViewVisible) {
+//		[textPopover dismissPopoverAnimated:YES];
+//		textViewVisible = NO;	
+//	}
 }
 
 #pragma mark -
@@ -143,7 +145,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopovers];
 	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		bookmarkViewVisible = NO;
 	}
 }
@@ -153,7 +155,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopovers];
 	} else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		bookmarkViewVisible = NO;
 	}
 }
@@ -164,6 +166,8 @@
 	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 	//	you can also push the controller with the navigation controller or use an UIActionSheet.
 	
+    BookmarkViewController *bookmarksVC = nil;
+    
 	if (bookmarkViewVisible) {
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -173,18 +177,16 @@
 			
 		} else {
 			
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			[self dismissModalViewControllerAnimated:YES];
 			bookmarkViewVisible=NO;
 		}
 		
 	}else {
 		
-		BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
+		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
 		bookmarksVC.delegate = self;
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
-			[self dismissAllPopovers];
 			
 			bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
 			[bookmarkPopover setPopoverContentSize:CGSizeMake(372, 650)];
@@ -213,7 +215,7 @@
 		
 	} else {
 		
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		outlineViewVisible=NO;
 	}
 }
@@ -223,7 +225,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopovers];
 	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		outlineViewVisible=NO;
 	}
 }
@@ -247,7 +249,7 @@
 			outlineViewVisible = NO;
 		} else {
 			
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			[self dismissModalViewControllerAnimated:YES];
 			outlineViewVisible = NO;
 		}
 		
@@ -370,6 +372,7 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
 		[self.view bringSubviewToFront:rollawayToolbar];
@@ -388,7 +391,7 @@
 	
 	// Lazily allocation when required.
 	
-	if(nil==searchViewController) {
+	if(!searchViewController) {
 		
 		// We use different xib on iPhone and iPad.
 		
@@ -402,7 +405,6 @@
 			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
 		}
 	}
-	
 	return searchViewController;
 }
 
@@ -432,7 +434,6 @@
 	
 	[UIView commitAnimations];
 	
-	searchViewVisible = NO;
 	miniSearchViewVisible = NO;
     
 	// Actual removal.
@@ -459,18 +460,14 @@
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
 	}
 	
-	searchViewVisible = NO;
-	
 	[UIView commitAnimations];
-	
-	
 }
 
 -(SearchManager *)searchManager {
 	
 	// Lazily allocate and instantiate the search manager.
 	
-	if(nil == searchManager) {
+	if(!searchManager) {
 		
 		searchManager = [[SearchManager alloc]init];
 	}
@@ -497,9 +494,13 @@
 -(void)dismissSearchViewController:(SearchViewController *)aSearchViewController {
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopovers];
+		
+        [searchPopover dismissPopoverAnimated:YES];
+        searchViewVisible = NO;
+        
 	} else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		
+        [self dismissModalViewControllerAnimated:YES];
 		searchViewVisible=NO;
 	}
     
@@ -519,7 +520,9 @@
 	// Call this function to stop the worker threads and release the associated resources.
 	pdfIsOpen = NO;
 	[self cleanUp];
-	
+    
+    [self.searchManager cancelSearch];
+    
 	//
 	//	Just remove this controller from the navigation stack.
 	[[self navigationController]popViewControllerAnimated:YES];	
@@ -1381,6 +1384,8 @@
 
 - (void)dealloc {
 	
+    // UI elements.
+    
 	[imgModeSingle release];
 	[imgModeDouble release];
 	[imgZoomLock release];
@@ -1389,16 +1394,23 @@
 	[imgr2l release];
 	[imgLeadRight release];
 	[imgLeadLeft release];
+    
+    [rollawayToolbar release];
+	[thumbnailView release];
+	[thumbImgArray release];
 	
-	[rollawayToolbar release];
-	
-	[documentId release];
-	
-	[searchBarButtonItem release], searchBarButtonItem = nil;
+    [searchBarButtonItem release], searchBarButtonItem = nil;
 	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
 	[changeModeBarButtonItem release], changeModeBarButtonItem = nil;
 	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
 	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
+	
+    // Popovers.
+    
+    [searchPopover release];
+    [bookmarkPopover release];
+    [outlinePopover release];
+    [textPopover release];
 	
 	[numberOfPageTitleBarButtonItem release];
 	
@@ -1407,8 +1419,7 @@
 	[miniSearchView release];
 	[searchManager release];
 	
-	[thumbnailView release];
-	[thumbImgArray release];
+    [documentId release];
 	
 	[super dealloc];
 }

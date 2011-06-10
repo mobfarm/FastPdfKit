@@ -277,7 +277,7 @@
 	
 	miniSearchVisible = YES;
 	
-	[[self view]setNeedsLayout];
+	//[[self view]setNeedsLayout];
 }
 
 // OLD
@@ -399,7 +399,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopovers];
 	} else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		visibleSearchView=NO;
 	}
     
@@ -415,7 +415,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopovers];
 	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		visibleBookmarkView=NO;
 	}
 	
@@ -426,7 +426,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopovers];
 	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		visibleBookmarkView=NO;
 	}
 }
@@ -446,7 +446,7 @@
 			
 		} else {
 			
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			[self dismissModalViewControllerAnimated:YES];
 			visibleBookmarkView=NO;
 		}
 		
@@ -485,7 +485,7 @@
 		
 	} else {
 		
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		visibleOutlineView=NO;
 	}
 }
@@ -495,7 +495,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self dismissAllPopovers];
 	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
+		[self dismissModalViewControllerAnimated:YES];
 		visibleOutlineView=NO;
 	}
 }
@@ -519,7 +519,7 @@
 			visibleOutlineView = NO;
 		} else {
 			
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
+			[self dismissModalViewControllerAnimated:YES];
 			visibleOutlineView = NO;
 		}
 		
@@ -595,21 +595,25 @@
 
 -(IBAction) actionDismiss:(id)sender {
 
-	// For simplicity, the DocumentViewController will remove itself. If you need to pass some
-	// values you can just set up a delegate and implement in a delegate method both the
-	// removal of the DocumentViweController and the processing of the values.
+	//  For simplicity, the DocumentViewController will remove itself. If you need to pass some
+	//  values you can just set up a delegate and implement in a delegate method both the
+	//  removal of the DocumentViweController and the processing of the values.
 	
+	//  Call this function to stop the worker threads and release the associated resources.
+	
+    [self cleanUp];
+	
+    //  Cancel the search if it is in progress.
+    
+    [self.searchManager cancelSearch];
+    
 	[self dismissAllPopovers];
 	
-	// Call this function to stop the worker threads and release the associated resources.
-	[self cleanUp];
-	
-	//
 	//	Just remove this controller from the navigation stack.
+    //  or, if presented as modalviewcontroller, tell the parent to dismiss it.
+	//  [[self parentViewController]dismissModalViewControllerAnimated:YES];
+    
 	[[self navigationController]popViewControllerAnimated:YES];	
-	
-	// Or, if presented as modalviewcontroller, tell the parent to dismiss it.
-	// [[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction) actionPageSliderStopped:(id)sender {
