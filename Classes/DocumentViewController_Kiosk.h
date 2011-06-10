@@ -24,6 +24,13 @@
 @class MiniSearchView;
 @class MFTextItem;
 
+#define FPK_REUSABLE_VIEW_NONE 0
+#define FPK_REUSABLE_VIEW_SEARCHF 1
+#define FPK_REUSABLE_VIEW_TEXT 2
+#define FPK_REUSABLE_VIEW_OUTLINE 3
+#define FPK_REUSABLE_VIEW_BOOKMARK 4
+#define FPK_REUSABLE_VIEW_SEARCHM 5
+
 @interface DocumentViewController_Kiosk : MFDocumentViewController <MFSliderDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate> {
 	
 	// Thumbnail view and stuff.
@@ -80,16 +87,10 @@
 	
 	BOOL hudHidden;
 	BOOL miniSearchViewVisible;
-	BOOL bookmarkViewVisible;
-	BOOL outlineViewVisible;
-	BOOL searchViewVisible;
-	BOOL textViewVisible;
 	
-	UIPopoverController *bookmarkPopover;
-	UIPopoverController *outlinePopover;
-	UIPopoverController *searchPopover;
-	UIPopoverController *textPopover;
 	UIPopoverController *reusablePopover;
+    BOOL reusableViewVisible;
+    NSUInteger currentReusableView;
     
 	UILabel * pageLabel;
 	UISlider * pageSlider;
@@ -145,5 +146,6 @@
 -(void)hideToolbar;
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
+-(void)dismissReusablePopover;
 
 @end

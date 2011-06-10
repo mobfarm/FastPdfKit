@@ -277,7 +277,7 @@
 	
 	miniSearchVisible = YES;
 	
-	//[[self view]setNeedsLayout];
+	[[self view]setNeedsLayout];
 }
 
 // OLD
