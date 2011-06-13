@@ -25,11 +25,13 @@
 @class MFTextItem;
 
 #define FPK_REUSABLE_VIEW_NONE 0
-#define FPK_REUSABLE_VIEW_SEARCHF 1
+#define FPK_REUSABLE_VIEW_SEARCH 1
 #define FPK_REUSABLE_VIEW_TEXT 2
 #define FPK_REUSABLE_VIEW_OUTLINE 3
 #define FPK_REUSABLE_VIEW_BOOKMARK 4
-#define FPK_REUSABLE_VIEW_SEARCHM 5
+
+#define FPK_SEARCH_VIEW_MODE_MINI 0
+#define FPK_SEARCH_VIEW_MODE_FULL 1
 
 @interface DocumentViewController_Kiosk : MFDocumentViewController <MFSliderDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate> {
 	
@@ -88,9 +90,9 @@
 	BOOL hudHidden;
 	BOOL miniSearchViewVisible;
 	
-	UIPopoverController *reusablePopover;
-    BOOL reusableViewVisible;
-    NSUInteger currentReusableView;
+	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller.
+    NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user.
+    NSUInteger currentSearchViewMode;
     
 	UILabel * pageLabel;
 	UISlider * pageSlider;
@@ -146,6 +148,6 @@
 -(void)hideToolbar;
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
--(void)dismissReusablePopover;
+-(void)dismissAlternateViewController;
 
 @end

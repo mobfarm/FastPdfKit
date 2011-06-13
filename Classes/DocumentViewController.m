@@ -418,7 +418,6 @@
 		[self dismissModalViewControllerAnimated:YES];
 		visibleBookmarkView=NO;
 	}
-	
 }
 
 -(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{

@@ -120,7 +120,7 @@
 	} else {
 		
 		// Cancel.
-		[self cancelSearch];
+		[delegate dismissSearchViewController:self];
 	}
 }
 
