@@ -79,7 +79,7 @@
 	
 	BOOL waitingForTextInput;
 	
-	NSString * documentId;
+	NSString * documentId;  // Keep an unique reference to the document in the application (could be an ID, the name, etc).
 	
 	// Text search controller and stuff.
 	SearchViewController * searchViewController;
@@ -87,15 +87,14 @@
 	MiniSearchView * miniSearchView;
 	TextDisplayViewController * textDisplayViewController;
 	
-	BOOL hudHidden;
-	BOOL miniSearchViewVisible;
+	BOOL hudHidden; // General HUD visible flag.
 	
 	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller.
     NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user.
-    NSUInteger currentSearchViewMode;
+    NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini.
     
-	UILabel * pageLabel;
-	UISlider * pageSlider;
+	UILabel * pageLabel;    // Page label at the bottom of the screen.
+	UISlider * pageSlider;  // Page slider at the bottom of the screen.
 }
 
 @property (nonatomic,retain) UIImage * imgModeSingle;

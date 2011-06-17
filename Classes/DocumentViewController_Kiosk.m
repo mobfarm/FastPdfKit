@@ -94,7 +94,6 @@
                 break;
                 // Same as above, but also cancel the search.
                 
-                
             default: break;
         }
     }
@@ -523,8 +522,6 @@
 	}
 	[UIView commitAnimations];
 	
-	miniSearchViewVisible = NO;
-    
 	// Actual removal.
 	if(miniSearchView!=nil) {
 		

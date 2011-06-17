@@ -23,6 +23,15 @@
 @class MiniSearchView;
 @class MFTextItem;
 
+#define FPK_REUSABLE_VIEW_NONE 0
+#define FPK_REUSABLE_VIEW_SEARCH 1
+#define FPK_REUSABLE_VIEW_TEXT 2
+#define FPK_REUSABLE_VIEW_OUTLINE 3
+#define FPK_REUSABLE_VIEW_BOOKMARK 4
+
+#define FPK_SEARCH_VIEW_MODE_MINI 0
+#define FPK_SEARCH_VIEW_MODE_FULL 1
+
 @interface DocumentViewController : MFDocumentViewController <TextDisplayViewControllerDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate> {
 	
 	@protected
@@ -49,7 +58,6 @@
 	UISlider * pageSlider;
 	
 	BOOL hudHidden; // HUD status flag.
-	BOOL miniSearchVisible;
 	
 	NSUInteger thumbPage;
 	
@@ -69,15 +77,9 @@
 	
 	// Popover management.
 	
-	BOOL visibleBookmarkView;
-	BOOL visibleOutlineView;
-	BOOL visibleSearchView;
-	BOOL visibleTextView;
-	
-	UIPopoverController *bookmarkPopover;
-	UIPopoverController *outlinePopover;
-	UIPopoverController *searchPopover;
-	UIPopoverController *textPopover;
+	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller.
+    NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user.
+    NSUInteger currentSearchViewMode;
 
 }
 
@@ -107,11 +109,6 @@
 @property (nonatomic, retain) UIButton *bookmarksButton;
 @property (nonatomic, retain) UIButton *outlineButton;
 
-@property (nonatomic, retain) UIPopoverController *bookmarkPopover;
-@property (nonatomic, retain) UIPopoverController *outlinePopover;
-@property (nonatomic, retain) UIPopoverController *searchPopover;
-@property (nonatomic, retain) UIPopoverController *textPopover;
-
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) SearchViewController *searchViewController;
 @property (nonatomic, retain) SearchManager *searchManager;
@@ -119,5 +116,7 @@
 
 @property (nonatomic, retain) UIButton *nextButton;
 @property (nonatomic, retain) UIButton *prevButton;
+
+@property (nonatomic, retain) UIPopoverController * reusablePopover;
 
 @end
