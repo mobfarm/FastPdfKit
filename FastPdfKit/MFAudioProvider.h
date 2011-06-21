@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MFAudioPlayerViewProtocol.h"
+//#import "MFAudioPlayerViewProtocol.h"
 
 @protocol MFAudioProvider <NSObject>
 
