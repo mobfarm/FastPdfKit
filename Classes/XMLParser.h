@@ -14,7 +14,8 @@
 #define KEY_LINK @"link"
 #define KEY_TITLE @"title"
 #define KEY_PDF @"pdf"
-#define DEF_XML_URL @"http://fastpdfkit.com/kiosk/kiosk_list.xml"
+//#define DEF_XML_URL @"http://fastpdfkit.com/kiosk/kiosk_list.xml"
+#define DEF_XML_URL @"http://go.mobfarm.eu/pdf/kiosk_list.xml"
 #define DEF_XML_NAME @"kiosk_list"
 
 @interface XMLParser : NSObject <ASIHTTPRequestDelegate,UIActionSheetDelegate,NSXMLParserDelegate>{

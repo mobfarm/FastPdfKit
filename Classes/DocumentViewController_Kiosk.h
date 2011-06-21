@@ -16,6 +16,7 @@
 #import "OutlineViewControllerDelegate.h"
 #import "MFHorizontalSlider.h"
 #import "TextDisplayViewControllerDelegate.h"
+#import "MediaPlayer/MediaPlayer.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -140,6 +141,7 @@
 @property (nonatomic, retain) SearchManager * searchManager;
 @property (nonatomic, retain) MiniSearchView * miniSearchView;
 @property (nonatomic, retain) TextDisplayViewController * textDisplayViewController;
+@property BOOL visibleMultimedia;
 
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
 
@@ -148,5 +150,10 @@
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
 -(void)dismissAlternateViewController;
+-(void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal;
+-(void)playAudio:(NSString *)_path isLocal:(BOOL)_isLocal;
+-(void)viewWebView:(NSString *)_path isLocal:(BOOL)_isLocal;
+-(void)prepareToolbar;
+-(void)prepareThumbSlider;
 
 @end

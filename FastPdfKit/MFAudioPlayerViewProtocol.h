@@ -24,7 +24,11 @@
 -(void)setAudioProvider:(id<MFAudioProvider>)provider;
 
 /**
+<<<<<<< HEAD
  Playback and status event methods.
+=======
+ Playback event methods.
+>>>>>>> master_extra
  */
 -(void)audioProviderDidStart:(id<MFAudioProvider>)mfeap;
 -(void)audioProviderDidStop:(id<MFAudioProvider>)mfeap;
