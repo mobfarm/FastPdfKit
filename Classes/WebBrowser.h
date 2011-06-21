@@ -9,21 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "DocumentViewController_Kiosk.h"
 
-
 @interface WebBrowser : UIViewController {
-    IBOutlet UIBarButtonItem *btnClose;
+    IBOutlet UIBarButtonItem *closeButton;
 	IBOutlet UIWebView *webView;
 	NSString *uri;
-	DocumentViewController_Kiosk *docVc;
-	BOOL isLocal;
+	DocumentViewController_Kiosk *docViewController;
+	BOOL local;
 }
 
-@property (nonatomic,retain)IBOutlet UIBarButtonItem *btnClose;
+@property (nonatomic,retain)IBOutlet UIBarButtonItem *closeButton;
 @property (nonatomic,retain)IBOutlet UIWebView *webView;
 @property (nonatomic,copy) NSString *uri;
-@property (nonatomic,retain) DocumentViewController_Kiosk *docVc;
-@property (nonatomic,assign) BOOL isLocal;
+@property (nonatomic,assign) DocumentViewController_Kiosk *docViewController;
+@property (nonatomic,readwrite,getter = isLocal) BOOL local;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil link:(NSString *)_uri isLocal:(BOOL)_isLocal;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil link:(NSString *)uri local:(BOOL)isLocal;
 - (IBAction)actionDismiss;
+
 @end

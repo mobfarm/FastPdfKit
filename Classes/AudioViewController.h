@@ -15,21 +15,21 @@
 	
 	AVAudioPlayer *audioPlayer;
 	UISlider *volumeControl;
-	BOOL isLocal;
+	BOOL local;
 	NSURL *url;
-	DocumentViewController_Kiosk *docVc;
+	DocumentViewController_Kiosk *documentViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UISlider *volumeControl;
 @property (nonatomic, assign) AVAudioPlayer *audioPlayer;
-@property BOOL isLocal;
+@property (nonatomic, readwrite, getter = isLocal) BOOL local;
 @property (nonatomic, retain) NSURL *url; 
-@property (nonatomic,retain) DocumentViewController_Kiosk *docVc;
+@property (nonatomic,assign) DocumentViewController_Kiosk *documentViewController;
 
 - (IBAction) playAudio;
 - (IBAction) stopAudio;
 - (IBAction) closeController;
 - (IBAction) adjustVolume;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil audioFilePath:(NSString *)_audioFilePath isLocal:(BOOL)_isLocal;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil audioFilePath:(NSString *)anAudioFilePath local:(BOOL)isLocal;
 
 @end

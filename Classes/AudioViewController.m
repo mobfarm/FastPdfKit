@@ -12,78 +12,85 @@
 @implementation AudioViewController
 
 @synthesize volumeControl;
-@synthesize isLocal;
+@synthesize local;
 @synthesize url;
 @synthesize audioPlayer;
-@synthesize docVc;
+@synthesize documentViewController;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil audioFilePath:(NSString *)_audioFilePath isLocal:(BOOL)_isLocal{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil audioFilePath:(NSString *)_audioFilePath local:(BOOL)_isLocal{
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self) {
+        
         // Custom initialization
-		isLocal = _isLocal;
-		if (isLocal) {
+		local = _isLocal;
+		if (local) {
 			url = [NSURL fileURLWithPath:_audioFilePath];
-		}else {
+		} else {
 			url = [NSURL URLWithString:_audioFilePath];
 		}
-
-				
     }
+    
     return self;
 }
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
+    NSData * audioData = nil;
+    NSError *error = nil;
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-	NSError *error;
-	if (isLocal) {
+    
+	if (local) {
+        
 		audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-	}else {
-		NSData *audioData = [[NSData alloc] initWithContentsOfURL:url];
+	} else {
+		
+        audioData = [[NSData alloc] initWithContentsOfURL:url];
 		audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
 		[audioData release];
 	}
 
-	if (error)
-	{
+	if (error) {
+        
 		NSLog(@"Error in audioPlayer: %@", 
 			  [error localizedDescription]);
 	} else {
+        
 		[audioPlayer setDelegate:self];
-		//[audioPlayer prepareToPlay];
         [audioPlayer play];
 	}
 	
 }
 
 
--(void)playAudio{
+-(void)playAudio {
     [audioPlayer play];
 }
 
--(void)stopAudio{
+-(void)stopAudio {
     [audioPlayer stop];
 }
 
--(void)adjustVolume{
-    if (audioPlayer != nil)
-    {
+-(void)adjustVolume {
+    
+    if (audioPlayer) {
+        
 		audioPlayer.volume = volumeControl.value;
     }
 }
 
 -(void)closeController{
-	docVc.visibleMultimedia=NO;
+	documentViewController.multimediaVisible=NO;
     [audioPlayer stop];
     [[self view] removeFromSuperview];
 }
 
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-	docVc.visibleMultimedia=NO;
+	documentViewController.multimediaVisible=NO;
 	[[self view] removeFromSuperview];
 	
 }
@@ -98,8 +105,11 @@
 }
 
 - (void)dealloc{
-	[audioPlayer release];
+	
+    [audioPlayer release];
     [volumeControl release];
+    [url release];
+    
     [super dealloc];
 	
 }
@@ -117,9 +127,8 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	audioPlayer = nil;
+    
+    audioPlayer = nil;
     volumeControl = nil;
 
 }

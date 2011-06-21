@@ -3680,8 +3680,8 @@ static NSOperationQueue *sharedQueue = nil;
 	[bandwidthThrottlingLock unlock];
 }
 
-+ (void)recordBandwidthUsage
-{
++ (void)recordBandwidthUsage {
+    
 	if (bandwidthUsedInLastSecond == 0) {
 		[bandwidthUsageTracker removeAllObjects];
 	} else {
@@ -3691,9 +3691,11 @@ static NSOperationQueue *sharedQueue = nil;
 			interval++;
 		}
 	}
-	#if DEBUG_THROTTLING
+	
+#if DEBUG_THROTTLING
 	NSLog(@"===Used: %u bytes of bandwidth in last measurement period===",bandwidthUsedInLastSecond);
-	#endif
+#endif
+    
 	[bandwidthUsageTracker addObject:[NSNumber numberWithUnsignedLong:bandwidthUsedInLastSecond]];
 	[bandwidthMeasurementDate release];
 	bandwidthMeasurementDate = [[NSDate dateWithTimeIntervalSinceNow:1] retain];
@@ -3707,16 +3709,15 @@ static NSOperationQueue *sharedQueue = nil;
 	averageBandwidthUsedPerSecond = totalBytes/measurements;		
 }
 
-+ (unsigned long)averageBandwidthUsedPerSecond
-{
++ (unsigned long)averageBandwidthUsedPerSecond {
 	[bandwidthThrottlingLock lock];
 	unsigned long amount = 	averageBandwidthUsedPerSecond;
 	[bandwidthThrottlingLock unlock];
 	return amount;
 }
 
-+ (void)measureBandwidthUsage
-{
++ (void)measureBandwidthUsage {
+    
 	// Other requests may have to wait for this lock if we're sleeping, but this is fine, since in that case we already know they shouldn't be sending or receiving data
 	[bandwidthThrottlingLock lock];
 
@@ -3797,20 +3798,19 @@ static NSOperationQueue *sharedQueue = nil;
 
 #pragma mark reachability
 
-+ (void)registerForNetworkReachabilityNotifications
-{
++ (void)registerForNetworkReachabilityNotifications {
+    
 	[[Reachability reachabilityForInternetConnection] startNotifier];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:@"kNetworkReachabilityChangedNotification" object:nil];
 }
 
-
-+ (void)unsubscribeFromNetworkReachabilityNotifications
-{
++ (void)unsubscribeFromNetworkReachabilityNotifications {
+    
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:@"kNetworkReachabilityChangedNotification" object:nil];
 }
 
-+ (BOOL)isNetworkReachableViaWWAN
-{
++ (BOOL)isNetworkReachableViaWWAN {
+    
 	return ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == ReachableViaWWAN);	
 }
 

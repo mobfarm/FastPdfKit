@@ -45,7 +45,7 @@
 	
 	NSMutableArray * thumbImgArray;
 	
-	BOOL pdfIsOpen;
+	BOOL pdfOpen;
 	BOOL thumbsViewVisible;
 	
 	UIBarButtonItem *changeModeBarButtonItem;
@@ -89,7 +89,8 @@
 	TextDisplayViewController * textDisplayViewController;
 	
 	BOOL hudHidden; // General HUD visible flag.
-	
+	BOOL multimediaVisible;
+    
 	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller.
     NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user.
     NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini.
@@ -141,18 +142,20 @@
 @property (nonatomic, retain) SearchManager * searchManager;
 @property (nonatomic, retain) MiniSearchView * miniSearchView;
 @property (nonatomic, retain) TextDisplayViewController * textDisplayViewController;
-@property BOOL visibleMultimedia;
+
+@property (nonatomic, readwrite, getter = isMultimediaVisible) BOOL multimediaVisible;
 
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
 
--(void)showToolbar;
--(void)hideToolbar;
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
 -(void)dismissAlternateViewController;
--(void)playvideo:(NSString *)_path isLocal:(BOOL)_isLocal;
--(void)playAudio:(NSString *)_path isLocal:(BOOL)_isLocal;
--(void)viewWebView:(NSString *)_path isLocal:(BOOL)_isLocal;
+-(void)playVideo:(NSString *)path local:(BOOL)isLocal;
+-(void)playAudio:(NSString *)path local:(BOOL)isLocal;
+-(void)showWebView:(NSString *)path local:(BOOL)isLocal;
+
+-(void)showToolbar;
+-(void)hideToolbar;
 -(void)prepareToolbar;
 -(void)prepareThumbSlider;
 

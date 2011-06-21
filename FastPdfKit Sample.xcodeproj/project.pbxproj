@@ -194,13 +194,13 @@
 		01B916C01321526F00D517A6 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916BE1321526F00D517A6 /* DocumentViewController.m */; };
 		01B916C31321527500D517A6 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916C21321527500D517A6 /* OutlineViewController.m */; };
 		01B916C41321527500D517A6 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B916C21321527500D517A6 /* OutlineViewController.m */; };
-		01BBD88D13A17FC800E9EE89 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBD88C13A17FC800E9EE89 /* libFastPDFKit.a */; };
-		01BBD88E13A17FC800E9EE89 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBD88C13A17FC800E9EE89 /* libFastPDFKit.a */; };
 		01BBD89213A17FEE00E9EE89 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBD88F13A17FEE00E9EE89 /* AudioToolbox.framework */; };
 		01BBD89613A17FFF00E9EE89 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBD89313A17FFF00E9EE89 /* AudioToolbox.framework */; };
 		01BBD89713A17FFF00E9EE89 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBD89413A17FFF00E9EE89 /* CFNetwork.framework */; };
 		01C9428A13263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */; };
 		01C9428B13263A6E000364B4 /* FastPdfKit-1.0RC1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */; };
+		01CF528613B0A20D0055919D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CF528513B0A20D0055919D /* AVFoundation.framework */; };
+		01CF528813B0C97B0055919D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CF528713B0C97B0055919D /* MediaPlayer.framework */; };
 		01CF7356132532FC00E42146 /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
 		01CF74AA13254E0E00E42146 /* minisearch_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CF74A613254E0E00E42146 /* minisearch_cancel@2x.png */; };
 		01CF74AB13254E0E00E42146 /* minisearch_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CF74A713254E0E00E42146 /* minisearch_full@2x.png */; };
@@ -212,7 +212,6 @@
 		01CF74B113254E0E00E42146 /* minisearch_prev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CF74A913254E0E00E42146 /* minisearch_prev@2x.png */; };
 		01D85E4B138BE08400F02268 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D85E4A138BE08400F02268 /* NotificationFactory.m */; };
 		01D85E4C138BE08400F02268 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D85E4A138BE08400F02268 /* NotificationFactory.m */; };
-		01E2BC37133D14BB00CCED33 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E3C421133D1410009E9D4C /* MediaPlayer.framework */; };
 		01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01E3A3061309C3D9008BB483 /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
 		01E3C422133D1410009E9D4C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E3C421133D1410009E9D4C /* MediaPlayer.framework */; };
@@ -366,8 +365,6 @@
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		019E90A4135DF7FC00541DE4 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
-		019E90A7135DF82A00541DE4 /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
-		019E90A8135DF82A00541DE4 /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
 		01B916791321507500D517A6 /* SearchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewControllerDelegate.h; sourceTree = "<group>"; };
 		01B9168A1321516D00D517A6 /* BookmarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkView.xib; sourceTree = "<group>"; };
 		01B9168B1321516D00D517A6 /* Kiosk_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Kiosk_ipad.xib; sourceTree = "<group>"; };
@@ -390,28 +387,30 @@
 		01B916BE1321526F00D517A6 /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
 		01B916C11321527500D517A6 /* OutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewController.h; sourceTree = "<group>"; };
 		01B916C21321527500D517A6 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
-		01BBD88C13A17FC800E9EE89 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01BBD88F13A17FEE00E9EE89 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		01BBD89013A17FEE00E9EE89 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		01BBD89113A17FEE00E9EE89 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01BBD89313A17FFF00E9EE89 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		01BBD89413A17FFF00E9EE89 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		01BBD89513A17FFF00E9EE89 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		01C59465139E8E43007B82E7 /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
-		01C59466139E8E43007B82E7 /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
-		01C59467139E8E43007B82E7 /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
-		01C59468139E8E43007B82E7 /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
-		01C59469139E8E43007B82E7 /* MFDocumentOverlayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentOverlayDataSource.h; sourceTree = "<group>"; };
-		01C5946A139E8E43007B82E7 /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
-		01C5946B139E8E43007B82E7 /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
-		01C5946C139E8E43007B82E7 /* MFOverlayDrawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOverlayDrawable.h; sourceTree = "<group>"; };
-		01C5946D139E8E43007B82E7 /* MFOverlayTouchable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOverlayTouchable.h; sourceTree = "<group>"; };
-		01C5946E139E8E43007B82E7 /* MFPDFOutlineEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPDFOutlineEntry.h; sourceTree = "<group>"; };
-		01C5946F139E8E43007B82E7 /* mfprofile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mfprofile.h; sourceTree = "<group>"; };
-		01C59470139E8E43007B82E7 /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
-		01C59471139E8E43007B82E7 /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
 		01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FastPdfKit-1.0RC1crypt.pdf"; sourceTree = "<group>"; };
 		01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FastPdfKit-1.0RC1.pdf"; sourceTree = "<group>"; };
+		01CF527713B0A1A30055919D /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
+		01CF527813B0A1A30055919D /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
+		01CF527913B0A1A30055919D /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
+		01CF527A13B0A1A30055919D /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
+		01CF527B13B0A1A30055919D /* MFDocumentOverlayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentOverlayDataSource.h; sourceTree = "<group>"; };
+		01CF527C13B0A1A30055919D /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
+		01CF527D13B0A1A30055919D /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
+		01CF527E13B0A1A30055919D /* MFOverlayDrawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOverlayDrawable.h; sourceTree = "<group>"; };
+		01CF527F13B0A1A30055919D /* MFOverlayTouchable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOverlayTouchable.h; sourceTree = "<group>"; };
+		01CF528013B0A1A30055919D /* MFPDFOutlineEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPDFOutlineEntry.h; sourceTree = "<group>"; };
+		01CF528113B0A1A30055919D /* mfprofile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mfprofile.h; sourceTree = "<group>"; };
+		01CF528213B0A1A30055919D /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
+		01CF528313B0A1A30055919D /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
+		01CF528413B0A1E80055919D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		01CF528513B0A20D0055919D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		01CF528713B0C97B0055919D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
 		01CF74A613254E0E00E42146 /* minisearch_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_cancel@2x.png"; sourceTree = "<group>"; };
 		01CF74A713254E0E00E42146 /* minisearch_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_full@2x.png"; sourceTree = "<group>"; };
@@ -481,10 +480,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CF528813B0C97B0055919D /* MediaPlayer.framework in Frameworks */,
 				01BBD89213A17FEE00E9EE89 /* AudioToolbox.framework in Frameworks */,
 				01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */,
-				01E2BC37133D14BB00CCED33 /* MediaPlayer.framework in Frameworks */,
-				01B0C7B413596C2A00CB3D29 /* AVFoundation.framework in Frameworks */,
 				01884A47131E92B30045038F /* CoreText.framework in Frameworks */,
 				01884A48131E92B30045038F /* Foundation.framework in Frameworks */,
 				01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */,
@@ -493,7 +491,6 @@
 				01884A83131E947C0045038F /* libz.1.2.3.dylib in Frameworks */,
 				01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */,
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
-				01E2BC37133D14BB00CCED33 /* MediaPlayer.framework in Frameworks */,
 				6FA0FC6D1355E6AA007F51EE /* libziparchive.a in Frameworks */,
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				019E90A6135DF7FC00541DE4 /* libFastPDFKit.a in Frameworks */,
@@ -504,10 +501,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CF528613B0A20D0055919D /* AVFoundation.framework in Frameworks */,
+				01E3C422133D1410009E9D4C /* MediaPlayer.framework in Frameworks */,
 				01BBD89613A17FFF00E9EE89 /* AudioToolbox.framework in Frameworks */,
 				01BBD89713A17FFF00E9EE89 /* CFNetwork.framework in Frameworks */,
-				01E3C422133D1410009E9D4C /* MediaPlayer.framework in Frameworks */,
-				01B0C7B213596C2400CB3D29 /* AVFoundation.framework in Frameworks */,
 				950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */,
 				950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */,
 				950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */,
@@ -523,18 +520,6 @@
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
 			children = (
-				019E90A7135DF82A00541DE4 /* MFAudioPlayerViewProtocol.h */,
-				019E90A8135DF82A00541DE4 /* MFAudioProvider.h */,
-				01448A0E134C70B900FD83D8 /* MFDocumentManager.h */,
-				01448A0F134C70B900FD83D8 /* MFDocumentOverlayDataSource.h */,
-				01448A10134C70B900FD83D8 /* MFDocumentViewController.h */,
-				01448A11134C70B900FD83D8 /* MFDocumentViewControllerDelegate.h */,
-				01448A12134C70B900FD83D8 /* MFOverlayDrawable.h */,
-				01448A13134C70B900FD83D8 /* MFOverlayTouchable.h */,
-				01448A14134C70B900FD83D8 /* MFPDFOutlineEntry.h */,
-				01448A15134C70B900FD83D8 /* mfprofile.h */,
-				01448A16134C70B900FD83D8 /* MFTextItem.h */,
-				01448A17134C70B900FD83D8 /* Stuff.h */,
 			);
 			name = headers;
 			sourceTree = "<group>";
@@ -714,6 +699,19 @@
 		01CC21CB12B907AF00E77E6E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				01CF527713B0A1A30055919D /* FPKOverlayViewDataSource.h */,
+				01CF527813B0A1A30055919D /* MFAudioPlayerViewProtocol.h */,
+				01CF527913B0A1A30055919D /* MFAudioProvider.h */,
+				01CF527A13B0A1A30055919D /* MFDocumentManager.h */,
+				01CF527B13B0A1A30055919D /* MFDocumentOverlayDataSource.h */,
+				01CF527C13B0A1A30055919D /* MFDocumentViewController.h */,
+				01CF527D13B0A1A30055919D /* MFDocumentViewControllerDelegate.h */,
+				01CF527E13B0A1A30055919D /* MFOverlayDrawable.h */,
+				01CF527F13B0A1A30055919D /* MFOverlayTouchable.h */,
+				01CF528013B0A1A30055919D /* MFPDFOutlineEntry.h */,
+				01CF528113B0A1A30055919D /* mfprofile.h */,
+				01CF528213B0A1A30055919D /* MFTextItem.h */,
+				01CF528313B0A1A30055919D /* Stuff.h */,
 				019E90A4135DF7FC00541DE4 /* libFastPDFKit.a */,
 				6FA0FC6C1355E6AA007F51EE /* libziparchive.a */,
 				01448A0D134C70A700FD83D8 /* headers */,
@@ -787,14 +785,15 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				01CF528713B0C97B0055919D /* MediaPlayer.framework */,
+				01CF528513B0A20D0055919D /* AVFoundation.framework */,
+				01CF528413B0A1E80055919D /* MediaPlayer.framework */,
 				01BBD89313A17FFF00E9EE89 /* AudioToolbox.framework */,
 				01BBD89413A17FFF00E9EE89 /* CFNetwork.framework */,
 				01BBD89513A17FFF00E9EE89 /* MediaPlayer.framework */,
 				01BBD88F13A17FEE00E9EE89 /* AudioToolbox.framework */,
 				01BBD89013A17FEE00E9EE89 /* CFNetwork.framework */,
 				01BBD89113A17FEE00E9EE89 /* MediaPlayer.framework */,
-				01B0C7B313596C2A00CB3D29 /* AVFoundation.framework */,
-				01B0C7B113596C2400CB3D29 /* AVFoundation.framework */,
 				95F5A3511270A2A700F65929 /* FastPdfKit */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,

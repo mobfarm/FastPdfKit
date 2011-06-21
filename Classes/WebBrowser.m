@@ -10,26 +10,34 @@
 
 @implementation WebBrowser
 
-@synthesize btnClose;
+@synthesize closeButton;
 @synthesize webView;
 @synthesize uri;
-@synthesize docVc;
-@synthesize isLocal;
+@synthesize docViewController;
+@synthesize local;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil link:(NSString *)_uri isLocal:(BOOL)_isLocal
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil link:(NSString *)anUri local:(BOOL)isLocal
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self) {
-        // Custom initialization
-		isLocal = _isLocal;
-		uri = _uri;
+        
+		self.local = isLocal;
+		self.uri = anUri;
     }
+    
     return self;
 }
 
 - (void)dealloc
 {
     [super dealloc];
+    
+    docViewController = nil;
+    
+    [closeButton release];
+    [webView release];
+    [uri release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,42 +52,40 @@
 
 - (void)viewDidLoad
 {
+    
+    NSURL * url = nil;
+    NSURLRequest * request = nil;
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    //Enable this line for bounce locked .
-    //[[[webView subviews] lastObject]setScrollEnabled:NO];
-    
-    //[[[webView subviews] lastObject]bounces:NO];
     
     for (id subview in webView.subviews){
         if ([[subview class] isSubclassOfClass: [UIScrollView class]])
             ((UIScrollView *)subview).bounces = NO;
     }
     
-	if (isLocal) {
-		NSURL *url = [[NSURL alloc] initFileURLWithPath:uri];
-		NSLog(@"url %@",uri);
-		NSURLRequest *request = [[NSURLRequest alloc ]initWithURL:url];
+	if (local) {
+		
+        url = [[NSURL alloc] initFileURLWithPath:uri];
+		
+		request = [[NSURLRequest alloc ]initWithURL:url];
 		[webView loadRequest:request];
 		[url release];
 		[request release];
 		
-	}else {
-		NSURL *url = [[NSURL alloc] initWithString:uri];
-		NSLog(@"url %@",uri);
-		NSURLRequest *request = [[NSURLRequest alloc ]initWithURL:url];
+	} else {
+		
+        url = [[NSURL alloc] initWithString:uri];
+        
+		request = [[NSURLRequest alloc ]initWithURL:url];
 		[webView loadRequest:request];
 		[url release];
 		[request release];		
 	}
-
-	
 }
 
 -(IBAction)actionDismiss{
-	//docVc.visibleWebView = NO;
-	docVc.visibleMultimedia=NO;
+	
+	docViewController.multimediaVisible = NO;
 	[[self parentViewController]dismissModalViewControllerAnimated:YES];
 }
 
