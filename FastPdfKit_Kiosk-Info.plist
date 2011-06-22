@@ -10,8 +10,14 @@
 	<string>FastPdfKit Kiosk</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon.png</string>
+		<string>Icon114.png</string>
+		<string>Icon72.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.mobfarm.fastpdfkitkiosk</string>
+	<string>com.mobfarm.fastpdfkiosk</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,7 +29,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.7</string>
+	<string>1.0.8</string>
 	<key>Icon alread includes gloss effects</key>
 	<true/>
 	<key>Icon files</key>

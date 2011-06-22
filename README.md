@@ -2,6 +2,11 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.9 (Jun 22th, 2011)
+* Added directional lock to the page scroll view.
+* Changed popover behavior in the DocumentViewControllerKiosk. This should fix crash when reopening a document when dismissed with an open popover.
+* Fixed a few more leaks.
+
 ### Update: 1.0.8 (Jun 10th, 2011)
 * Thumbnails are laid out correctly upon rotation.
 

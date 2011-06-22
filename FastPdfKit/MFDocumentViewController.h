@@ -84,7 +84,12 @@
 @property (readonly) MFDocumentManager * document;
 
 /**
- This propery will enable an CATiledLayer version of the overlay view. This means overlay drawables will be drawn sharp, no matter the zoom of the scroll view.
+ This property enable or disable the directional lock in the inner (document) scroll view. Default is NO.
+ */
+@property (nonatomic,readwrite,getter = isDirectionLockEnabled) BOOL directionalLockEnabled;
+
+/**
+ This property will enable an CATiledLayer version of the overlay view. This means overlay drawables will be drawn sharp, no matter the zoom of the scroll view.
  */
 @property (readwrite) BOOL useTiledOverlayView;
 
