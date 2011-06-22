@@ -14,5 +14,6 @@
 @protocol TextDisplayViewControllerDelegate
 
 -(MFDocumentManager	*)document;
+-(void)dismissTextDisplayViewController:(TextDisplayViewController *)controller;
 
 @end

@@ -120,7 +120,7 @@
 	} else {
 		
 		// Cancel.
-		[self cancelSearch];
+		[delegate dismissSearchViewController:self];
 	}
 }
 
@@ -180,7 +180,7 @@
 
 -(void) searchBarTextDidBeginEditing:(UISearchBar *)sBar {
 	
-	// Let the cancelSearch helper function stop the pending operation.
+	// Let the stopSearch helper function stop the pending operation.
 	
 	[self stopSearch];
 }
@@ -254,7 +254,7 @@
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-       
+        searchManager = nil;
 		switchToMiniBarButtonItem.enabled = NO;
 	}
     return self;
@@ -297,6 +297,9 @@
 	
     [super viewDidLoad];
     
+    
+    NSLog(@"SVC didLoad");
+    
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(handleSearchDidStartNotification:) name:kNotificationSearchDidStart object:nil];
     [notificationCenter addObserver:self selector:@selector(handleSearchDidStopNotification:) name:kNotificationSearchDidStop object:nil];
@@ -319,6 +322,10 @@
 }
 
 - (void)viewDidUnload {
+    
+    
+    NSLog(@"SVC didUnload");
+    
     [super viewDidUnload];
     
 	[self setSearchBar:nil];
@@ -332,6 +339,8 @@
 
 - (void)dealloc {
 	
+    NSLog(@"SVC dealloc");
+    
 	searchManager = nil;
 	
 	[switchToMiniBarButtonItem release],switchToMiniBarButtonItem = nil;

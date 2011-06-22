@@ -13,6 +13,18 @@
 #import "MFDocumentViewController.h"
 #import "NotificationFactory.h"
 
+#define FPK_SRCMGR_STATUS_CANCELLED 0
+#define FPK_SRCMGR_STATUS_ONGOING 1
+#define FPK_SRCMGR_STATUS_STOPPED 2
+
+#define FPK_SRCMGR_STATUS_IS_CANCELLED(x) ((x) == FPK_SRCMGR_STATUS_CANCELLED)
+#define FPK_SRCMGR_STATUS_IS_GOING_ON(x) ((x) == FPK_SRCMGR_STATUS_ONGOING)
+#define FPK_SRCMGR_STATUS_IS_STOPPED(x) ((x) == FPK_SRCMGR_STATUS_STOPPED)
+
+#define FPK_SRCMGR_STATUS_CANCEL(x) ((x) = FPK_SRCMGR_STATUS_CANCELLED)
+#define FPK_SRCMGR_STATUS_GO_ON(x) ((x) = FPK_SRCMGR_STATUS_ONGOING)
+#define FPK_SRCMGR_STATUS_STOP(x) ((x) = FPK_SRCMGR_STATUS_STOPPED)
+
 @interface SearchManager()
 
 -(void)startSearchOperationForSearchTerm:(NSString*)term andPage:(NSUInteger)page;
@@ -26,7 +38,6 @@
 @synthesize searchResults;
 @synthesize currentSearchOperation;
 @synthesize currentSearchTerm;
-@synthesize running;
 
 #pragma mark -
 #pragma mark SearchResultDelegate 
@@ -37,11 +48,16 @@
 	// page being displayed. In our case, the drawables - overlay items - are the highlighted bounding
 	// box of the search result items.
 	
-	// Work on a copy of the current search results.
+	NSArray *results = nil; 
+    NSMutableArray * drawables = nil;
+    MFTextItem * item = nil;
+    
+    if(FPK_SRCMGR_STATUS_IS_CANCELLED(status))
+        return nil;
+    
+    results = [searchResults copy]; // We are going to enumerate the array while the search is going on, so a copy is necessary.
 	
-	NSArray *results = [searchResults copy];
-	
-	NSMutableArray *drawables = [[NSMutableArray alloc]init];
+	drawables = [[NSMutableArray alloc]init];
 	
 	// Now we will check the first element of each sub-array. Since every element in the array lay on
 	// same page, if the first element is not on the right page we can discard the whole array.
@@ -50,9 +66,9 @@
 	
 	for(NSArray * array in results) {
 		
-		MFTextItem *item = [array objectAtIndex:0];
-		
-		if([item page]==page)			
+		item = [array objectAtIndex:0];
+        
+		if([item page] == page)			
 			[drawables addObjectsFromArray:array];
 	}
 	
@@ -64,6 +80,18 @@
 
 #pragma mark -
 #pragma mark Setters and getters
+
+-(BOOL)isRunning {
+    return FPK_SRCMGR_STATUS_IS_GOING_ON(status);
+}
+
+-(BOOL)isCancelled {
+    return FPK_SRCMGR_STATUS_IS_CANCELLED(status);
+}
+
+-(BOOL)isStopped {
+    return FPK_SRCMGR_STATUS_IS_STOPPED(status);
+}
 
 -(void)setDocument:(MFDocumentManager *)adocument{
 
@@ -79,6 +107,8 @@
 }
 
 -(NSArray *)searchResultsAsPlainArray {
+    
+    // As the name suggest, we are going to 'un-nest' the search result items.
 
 	NSMutableArray *plainResults = [NSMutableArray array];
 	
@@ -105,11 +135,13 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	// Cancel the search.
 	NSNotification * notification = nil;
     
-	if(running) {
+	if(FPK_SRCMGR_STATUS_IS_GOING_ON(status)) {
 		
 		[self stopSearch];
 	}
 	
+    FPK_SRCMGR_STATUS_CANCEL(status);
+    
 	// Reset the status of the search. 
 	
 	currentPage = 0;
@@ -118,35 +150,32 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	// Reset the data.
 	
 	self.searchTerm = nil;
-	[searchResults removeAllObjects];
+    self.searchResults = nil;
 	
-	// Inform the delegate of the cancel event, so it can
+	// Send a notification of the cancel event, so it can
 	// update itself.
     
     notification = [NotificationFactory notificationSearchGotCancelledWithSearchTerm:searchTerm fromSender:self];
     [[NSNotificationCenter defaultCenter]postNotification:notification];
-    
-	// [delegate searchGotCancelled];
 }
 
 -(void)stopSearch {
 	
 	// Stop the search, but keep in memory the status of the operation. We are likely to
 	// keep accessing it even after the search has been stopped.
+    
 	NSNotification * notification = nil;
     
-	if(!(running)) 
-	   return;
+	if(FPK_SRCMGR_STATUS_IS_GOING_ON(status)) {
 	   
-	running = NO;
-	stopped = YES;
+        FPK_SRCMGR_STATUS_STOP(status);
 	
-	[self.currentSearchOperation cancel], self.currentSearchOperation = nil;
+        [self.currentSearchOperation cancel], self.currentSearchOperation = nil;
 	
-    notification = [NotificationFactory notificationSearchDidStopWithSearchTerm:searchTerm fromSender:self];
-    [[NSNotificationCenter defaultCenter]postNotification:notification];
-    
-	//[delegate searchDidStop];
+        notification = [NotificationFactory notificationSearchDidStopWithSearchTerm:searchTerm fromSender:self];
+        [[NSNotificationCenter defaultCenter]postNotification:notification];
+        
+    }
 }
 
 
@@ -155,11 +184,11 @@ int calculateNextSearchPage(currentPage,maxPage) {
 
     NSNotification * notification = nil;
     
-	if (stopped) {
+	if (FPK_SRCMGR_STATUS_IS_STOPPED(status)) {
 	
 		// Ignore the result.
 		
-	} else if (running) {
+	} else if (FPK_SRCMGR_STATUS_IS_GOING_ON(status)) {
 
 		// Append the result and notify the delegate.
 		
@@ -185,9 +214,7 @@ int calculateNextSearchPage(currentPage,maxPage) {
 		} else {
 			
 			// Just stop.
-			
-			stopped = YES;
-			running = NO;
+			FPK_SRCMGR_STATUS_STOP(status);
             
             notification = [NotificationFactory notificationSearchDidStopWithSearchTerm:searchTerm fromSender:self];
             [[NSNotificationCenter defaultCenter]postNotification:notification];
@@ -203,6 +230,10 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	
 	TextSearchOperation * operation = [[TextSearchOperation alloc]init];
 	
+    // Save the search term.
+	
+    self.currentSearchTerm = term;		
+	
 	// We use a local profile to configure the operation profile that will be used with the document
 	// manager search method. The profile is copied to TextOperation, so we would be also able to use
 	// a dynamically allocated one and release it afterwards.
@@ -215,11 +246,7 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	operation.searchTerm = term;		// Search term.
 	operation.delegate = self;			// Delegate for handling the results.
 	operation.document = self.document;	// Document.
-	operation.profile = profile;
-	
-	// Save the search term.
-	
-	self.currentSearchTerm = term;		
+	operation.profile = profile;        // This is going to be ignored if you use the test_ version of the search.
 	
 	// Set the operation as the current one and add it to the operation queue.
 	
@@ -246,8 +273,7 @@ int calculateNextSearchPage(currentPage,maxPage) {
 	
 	// Set the status flags.
 	
-	running = YES;
-	stopped = NO;
+    FPK_SRCMGR_STATUS_GO_ON(status);
 	
 	// Allocate a new mutable array to not modify the precedent one in the case it has been
 	// retained by another object.
@@ -277,11 +303,9 @@ int calculateNextSearchPage(currentPage,maxPage) {
         searchOperationQueue = [[NSOperationQueue alloc]init];
 		[searchOperationQueue setMaxConcurrentOperationCount:1];
 		
-		// This will be allocated anew when a search operation begin, but
-		// is better be safe than sorry.
-		searchResults = [[NSMutableArray alloc]init];
-		
+		status = FPK_SRCMGR_STATUS_CANCELLED;
     }
+    
     return self;
 }
 
