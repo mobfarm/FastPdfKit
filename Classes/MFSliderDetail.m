@@ -49,7 +49,7 @@
 		
 	} else {
 		//set the image
-		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, size.width-10, size.height-10)]; // dimension of image
+		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, size.width-10, size.height-10)]; // dimension of image
 		[image setImage:[UIImage imageWithContentsOfFile:thumbnail]];
 		[image	setBackgroundColor:[UIColor clearColor]];
 		[image setUserInteractionEnabled:YES];

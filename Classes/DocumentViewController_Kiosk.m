@@ -15,6 +15,9 @@
 #import "SearchManager.h"
 #import "MiniSearchView.h"
 #import "mfprofile.h"
+#import "WebBrowser.h"
+#import "AudioViewController.h"
+#import "MFAudioPlayerViewImpl.h"
 
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"%d/%d",(x),(y)]
 
@@ -43,6 +46,7 @@
 @synthesize miniSearchView;
 @synthesize pageSlider;
 @synthesize reusablePopover;
+@synthesize multimediaVisible;
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft;
 
@@ -215,8 +219,6 @@
 		alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
-		
-		senderText = sender;
 		
 	} else {
         
@@ -604,11 +606,13 @@
 	// removal of the DocumentViweController and the processing of the values.
 	
 	// Call this function to stop the worker threads and release the associated resources.
-	pdfIsOpen = NO;
+	pdfOpen = NO;
 	[self cleanUp];
     
     [self.searchManager cancelSearch];
     
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES]; // Hide the status bar.
+	
 	//
 	//	Just remove this controller from the navigation stack.
 	[[self navigationController]popViewControllerAnimated:YES];	
@@ -719,16 +723,163 @@
 
 
 #pragma mark -
-#pragma mark MFDocumentViewControllerDelegate methods implementation
+#pragma mark MFDocumentViewControllerDelegate methods implementation Support for Multimedia
 
 
 // The nice things about delegate callbacks is that we can use them to update the UI when the internal status of
 // the controller changes, rather than query or keep track of it when the user press a button. Just listen for
 // the right event and update the UI accordingly.
 
+-(Class<MFAudioPlayerViewProtocol>)classForAudioPlayerView{
+    return [MFAudioPlayerViewImpl class];
+}
+
+
+-(BOOL) documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString *)audioUri{
+	return YES;
+}
+
+-(BOOL) documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayVideo:(NSString *)videoUri{
+    return YES;
+}
+
+-(void) documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri{
+    
+    //uri = @"fpkz://go.mobfarm.eu/pdf/astra.mp4";
+	//uri = @"fpke://video/astra.mp4";
+	//uri = @"fpka://video/start.caf";
+	//uri = @"fpkb://go.mobfarm.eu/pdf/start.caf";
+	//uri = @"fpki://html/360.com/index.html";
+    //uri= @"http://www.tgcom.it";
+	
+	NSArray *arrayParameter = nil;
+	NSString *uriType = nil;
+    NSString *uriResource = nil;
+    
+    NSString * documentPath = nil;
+    
+    arrayParameter = [uri componentsSeparatedByString:@"://"];
+	
+    uriType = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:0]];
+	
+	uriResource = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:1]];
+	
+	if ([uriType isEqualToString:@"fpke"]) {
+		
+		documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+		
+		[self playVideo:documentPath local:YES];
+    }
+	
+	if ([uriType isEqualToString:@"fpkz"]) {
+		
+		documentPath = [@"http://" stringByAppendingString:uriResource];
+		
+        [self playVideo:documentPath local:NO];
+	}
+	
+	if ([uriType isEqualToString:@"fpki"]){
+		
+		documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+		
+		[self showWebView:documentPath local:YES];
+	}
+	
+	if ([uriType isEqualToString:@"http"]){
+		
+		[self showWebView:uri local:NO];
+	}
+}
+
+- (void)playAudio:(NSString *)audioURL local:(BOOL)_isLocal{
+	
+    AudioViewController *audioVC = nil;
+    
+	multimediaVisible = YES;
+    
+	audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:[NSBundle mainBundle] audioFilePath:audioURL local:_isLocal];
+	
+	audioVC.documentViewController = self;
+	
+	[audioVC.view setFrame:CGRectMake(0, 0, 272, 40)];
+	
+	[self.view addSubview:audioVC.view];
+}
+
+- (void)playVideo:(NSString *)videoPath local:(BOOL)isLocal{
+	
+    NSURL *url = nil;
+	BOOL openVideo = NO;
+	MPMoviePlayerViewController *moviePlayViewController = nil;
+    NSFileManager * fileManager = nil;
+    
+	multimediaVisible = YES;
+	
+	if (isLocal) {
+		
+		fileManager = [[NSFileManager alloc]init];
+		
+		if ([fileManager fileExistsAtPath:videoPath]) {
+            
+			openVideo = YES;
+			url = [NSURL fileURLWithPath:videoPath];
+		} else {
+            
+			openVideo = NO;
+		}
+        
+		[fileManager release];
+		
+	} else {
+        
+		url = [NSURL URLWithString:videoPath];
+		openVideo = YES;
+	}
+	
+	if (openVideo) {
+        
+		moviePlayViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:url];
+		
+		if (moviePlayViewController) {
+			[self presentMoviePlayerViewControllerAnimated:moviePlayViewController];
+			[self setWantsFullScreenLayout:NO];
+			moviePlayViewController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieViewFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:[moviePlayViewController moviePlayer]];
+			[moviePlayViewController.moviePlayer play];
+		}
+	}
+}
+
+-(void)myMovieViewFinishedCallback:(NSNotification *)aNotification{
+	
+    MPMoviePlayerController *moviePlayerController = nil;
+    
+    moviePlayerController = [aNotification object];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:moviePlayerController];
+	[moviePlayerController stop];
+	
+    multimediaVisible = NO;
+}
+
+-(void)showWebView:(NSString *)url local:(BOOL)isLocal{
+	
+    WebBrowser * webBrowser = nil;
+    
+	multimediaVisible = YES;
+    
+	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:url local:isLocal];
+	
+	webBrowser.docViewController = self;
+	[[self parentViewController]presentModalViewController:webBrowser animated:YES];
+	
+	[webBrowser release];
+}
+
+#pragma mark -
+#pragma mark MFDocumentViewControllerDelegate methods implementation
+
 -(void) documentViewController:(MFDocumentViewController *)dvc didGoToPage:(NSUInteger)page {
 	
-	//
 	//	Page has changed, either by user input or an internal change upon an event: update the label and the 
 	//	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 	//	in this callback.
@@ -745,7 +896,6 @@
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didChangeModeTo:(MFDocumentMode)mode automatic:(BOOL)automatically {
 	
-	//
 	//	The mode has changed, for example from single to double. Update the UI with the right title, image, etc for
 	//	the right componenets: in this case a button.
 	//	You can also choose to change/update the UI when the setter is called instead, just be sure that you keep track
@@ -801,9 +951,7 @@
     if(currentReusableView != FPK_REUSABLE_VIEW_NONE) {
         
         [self dismissAlternateViewController];
-        
     }
-    
     
     controller = self.textDisplayViewController;
     controller.delegate = self;
@@ -852,27 +1000,30 @@
 	if(!waitingForTextInput) {
 		
 		//	We are using this callback to selectively hide/unhide some UI components like the buttons.
+        
+        if(!multimediaVisible){
 		
-		if(hudHidden) {
+            if(hudHidden) {
 			
-			[self showToolbar];
-			[self showHorizontalThumbnails];
+                [self showToolbar];
+                [self showHorizontalThumbnails];
 			
-			[miniSearchView setHidden:NO];
+                [miniSearchView setHidden:NO];
 			
-			hudHidden = NO;
+                hudHidden = NO;
 			
-		} else {
+            } else {
 			
-			// Hide
+                // Hide
 			
-			[self hideToolbar];
-			[self hideHorizontalThumbnails];
+                [self hideToolbar];
+                [self hideHorizontalThumbnails];
 			
-			[miniSearchView setHidden:YES];
+                [miniSearchView setHidden:YES];
 			
-			hudHidden = YES;
-		}
+                hudHidden = YES;
+            }
+        }
 	}
 }
 
@@ -914,7 +1065,16 @@
 	
 	[aView release];
 }
+
+
+
 -(void)prepareToolbar {
+
+    NSMutableArray * items = nil;
+    UIBarButtonItem * aBarButtonItem = nil;
+    UILabel * aLabel = nil;
+    NSString *labelText = nil;
+    UIToolbar * aToolbar = nil;
     
 	toolbarHeight = 44;
 	
@@ -944,15 +1104,13 @@
 		
 		self.imgLeadRight =[UIImage imageNamed:@"pagelead_phone.png"];
 		self.imgLeadLeft =[UIImage imageNamed:@"pagelead_phone.png"];
-		
 	}
 	
-	
-	NSMutableArray * items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
+	items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // Ipad.
 		
-		UIBarButtonItem * aBarButtonItem = nil;
+		aBarButtonItem = nil;
 		
 		// Dismiss.
 		
@@ -1003,7 +1161,7 @@
 		
 		// Page number.
 		
-		UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
+		aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 23)];
 		
 		aLabel.textAlignment = UITextAlignmentLeft;
 		aLabel.backgroundColor = [UIColor clearColor];
@@ -1012,7 +1170,7 @@
 		aLabel.textColor = [UIColor whiteColor];
 		aLabel.font = [UIFont boldSystemFontOfSize:20.0];
 		
-		NSString *labelText = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);		
+		labelText = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);		
 		aLabel.text = labelText;
 		self.pageNumLabel = aLabel;
 		
@@ -1060,9 +1218,8 @@
 		[aBarButtonItem release];
 		
 	} else { // Iphone.
-		
-		UIBarButtonItem * aBarButtonItem = nil;
-		
+        
+        
 		// Dismiss.
 		
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"X_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
@@ -1151,8 +1308,7 @@
 		
 	}
 	
-	
-	UIToolbar * aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, toolbarHeight)];
+	aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, toolbarHeight)];
 	aToolbar.hidden = YES;
 	aToolbar.barStyle = UIBarStyleBlackTranslucent;
 	[aToolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
@@ -1164,48 +1320,46 @@
 	
 	[aToolbar release];
 	[items release];
-	
-	
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     
-	// 
+    //UIFont *font = nil;
+	UIView * aThumbSliderView = nil;
+    
+    UIToolbar *aThumbSliderToolbar = nil;
+    UISlider *aSlider = nil;
+    UILabel * aLabel = nil;
+    
+    NSMutableArray * aThumbImgArray = nil;
+    
+    CGFloat thumbSliderOffsetX = 0 ;
+	CGFloat thumbSliderHeight = 0;
+	CGFloat thumbSliderOffsetY = 0;
+	CGFloat thumbSliderToolbarHeight= 0;
+    
+    NSUInteger pagesCount = 0;
+    int paddingSlider = 0;
+    
+    BOOL isPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    
+    // Defaulting the flags.
+    
+    pdfOpen = YES;
+	hudHidden = YES;
+	currentReusableView = FPK_REUSABLE_VIEW_NONE;
+    multimediaVisible = NO;
+    
 	//	Let the superclass do its stuff (setting up the views), then you can begin to add your own custom subviews
 	//	like buttons.
 	
 	[super viewDidLoad];
 	
-	// A few flags.
-	
-	pdfIsOpen = YES;
-	hudHidden=YES;
-	currentReusableView = FPK_REUSABLE_VIEW_NONE;
     
-	// Slighty different font sizes on iPad and iPhone.
-	
-	UIFont *font = nil;
-	
-	BOOL isPad = NO;
-	
-#ifdef UI_USER_INTERFACE_IDIOM
-	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-	
- 	if(isPad) {
-		font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-	} else {
-		font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
-	}
-		
-	CGFloat thumbSliderOffsetX = 0 ;
-	CGFloat thumbSliderHeight = 0;
-	CGFloat thumbSliderOffsetY = 0;
-	CGFloat thumbSliderToolbarHeight= 0;
-	
-	UIView * aThumbSliderView = nil;
-	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
 		// Initialize the thumb slider containter view. 
@@ -1232,21 +1386,19 @@
 	[aThumbSliderView setAutoresizesSubviews:YES];
 	[aThumbSliderView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
 	
-	UIToolbar *aThumbSliderToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, thumbSliderOffsetY, self.view.frame.size.width, thumbSliderToolbarHeight)];
+	aThumbSliderToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, thumbSliderOffsetY, self.view.frame.size.width, thumbSliderToolbarHeight)];
 	[aThumbSliderToolbar setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
 	aThumbSliderToolbar.barStyle = UIBarStyleBlackTranslucent;
 	
 	[aThumbSliderView addSubview:aThumbSliderToolbar];
 	[aThumbSliderToolbar release];
 	
-	int paddingSlider = 0;
-	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+	if(isPad) {
 		paddingSlider = 10;
 	}
-	
-	
+    
 	//Page slider.
-	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)-paddingSlider, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
+	aSlider = [[UISlider alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)-paddingSlider, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
 	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
 	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
 	[aSlider setMinimumValue:1.0];
@@ -1261,11 +1413,10 @@
 	
 	[aSlider release];
 	
-	
-	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+	if(!isPad) {
 		
 		// Set the number of page into the toolbar at the right the slider on iPhone.
-		UILabel * aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-25, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
+		aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-25, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
 		aLabel.text = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
 		aLabel.textAlignment = UITextAlignmentCenter;
@@ -1283,12 +1434,12 @@
 	
 	[aThumbSliderView release];
 	
-	
+    
 	// Now prepare an image array to display as placeholder for the thumbs.
 	
-	NSMutableArray * aThumbImgArray  = [[NSMutableArray alloc]init];
+	aThumbImgArray  = [[NSMutableArray alloc]init];
 	
-	NSUInteger pagesCount = [[self document]numberOfPages];
+	pagesCount = [[self document]numberOfPages];
 	
 	for (int i=0; i<pagesCount ; i++) {
 		[aThumbImgArray insertObject:[NSNull null] atIndex:i];
@@ -1298,16 +1449,157 @@
 	
 	[aThumbImgArray release];
 	
+    
 	// Utility method to prepare the rollaway toolbar.
 	
 	[self prepareToolbar];
-	
 }
+
+
+//-(void)viewDidLoad {
+//    
+//	// 
+//	//	Let the superclass do its stuff (setting up the views), then you can begin to add your own custom subviews
+//	//	like buttons.
+//	
+//	[super viewDidLoad];
+//	
+//	// A few flags.
+//	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
+//    
+//	pdfIsOpen = YES;
+//	hudHidden=YES;
+//	visibleMultimedia = NO;
+//	
+//	// Slighty different font sizes on iPad and iPhone.
+//	
+//	UIFont *font = nil;
+//	
+//	BOOL isPad = NO;
+//	
+//#ifdef UI_USER_INTERFACE_IDIOM
+//	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+//#endif
+//	
+// 	if(isPad) {
+//		font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+//	} else {
+//		font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
+//	}
+//    
+//	CGFloat thumbSliderOffsetX = 0 ;
+//	CGFloat thumbSliderHeight = 0;
+//	CGFloat thumbSliderOffsetY = 0;
+//	CGFloat thumbSliderToolbarHeight= 0;
+//	
+//	UIView * aThumbSliderView = nil;
+//	
+//	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//		
+//		// Initialize the thumb slider containter view. 
+//		
+//		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
+//		thumbSliderToolbarHeight = 44; // Height of the thumb that include the slider.
+//		thumbSliderViewBorderWidth = 100;
+//		thumbSliderHeight = 20 ; // Height of the slider.
+//		
+//		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44; // Vertical offset of the toolbar.
+//		thumbSliderOffsetX = thumbSliderOffsetY + 10; // Horizontal offset of the toolbar.
+//		
+//	} else {
+//		
+//		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
+//		thumbSliderToolbarHeight = 44;
+//		thumbSliderViewBorderWidth = 50;
+//		thumbSliderHeight = 10;
+//		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44;
+//		thumbSliderOffsetX = thumbSliderOffsetY + 10;
+//		
+//	}
+//	
+//	
+//	[aThumbSliderView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+//	[aThumbSliderView setAutoresizesSubviews:YES];
+//	[aThumbSliderView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
+//	
+//	UIToolbar *aThumbSliderToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, thumbSliderOffsetY, self.view.frame.size.width, thumbSliderToolbarHeight)];
+//	[aThumbSliderToolbar setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
+//	aThumbSliderToolbar.barStyle = UIBarStyleBlackTranslucent;
+//	
+//	[aThumbSliderView addSubview:aThumbSliderToolbar];
+//	[aThumbSliderToolbar release];
+//	
+//	int paddingSlider = 0;
+//	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+//		paddingSlider = 10;
+//	}
+//	
+//	
+//	//Page slider.
+//	UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)-paddingSlider, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
+//	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
+//	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
+//	[aSlider setMinimumValue:1.0];
+//	[aSlider setMaximumValue:[[self document] numberOfPages]];
+//	[aSlider setContinuous:YES];
+//	[aSlider addTarget:self action:@selector(actionPageSliderSlided:) forControlEvents:UIControlEventValueChanged];
+//	[aSlider addTarget:self action:@selector(actionPageSliderStopped:) forControlEvents:UIControlEventTouchUpInside];
+//	
+//	[self setPageSlider:aSlider];
+//	
+//	[aThumbSliderView addSubview:aSlider];
+//	
+//	[aSlider release];
+//	
+//	
+//	if(UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+//		
+//		// Set the number of page into the toolbar at the right the slider on iPhone.
+//		UILabel * aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-25, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
+//		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
+//		aLabel.text = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+//		aLabel.textAlignment = UITextAlignmentCenter;
+//		aLabel.backgroundColor = [UIColor clearColor];
+//		aLabel.textColor = [UIColor whiteColor];
+//		aLabel.font = [UIFont boldSystemFontOfSize:11.0];
+//		[aThumbSliderView addSubview:aLabel];
+//		self.pageNumLabel = aLabel;
+//		[aLabel release];
+//	}
+//	
+//	[self.view addSubview:aThumbSliderView];
+//	
+//	self.thumbSliderViewHorizontal = aThumbSliderView;
+//	
+//	[aThumbSliderView release];
+//	
+//	
+//	// Now prepare an image array to display as placeholder for the thumbs.
+//	
+//	NSMutableArray * aThumbImgArray  = [[NSMutableArray alloc]init];
+//	
+//	NSUInteger pagesCount = [[self document]numberOfPages];
+//	
+//	for (int i=0; i<pagesCount ; i++) {
+//		[aThumbImgArray insertObject:[NSNull null] atIndex:i];
+//	}	
+//	
+//	self.thumbImgArray = aThumbImgArray;
+//	
+//	[aThumbImgArray release];
+//	
+//	// Utility method to prepare the rollaway toolbar.
+//	
+//	[self prepareToolbar];
+//	
+//}
 
 
 -(void)setNumberOfPageToolbar{
 	
-	NSString *labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+	NSString *labelTitle = nil;
+    
+    labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
 	self.pageNumLabel.text = labelTitle;
 }
 
@@ -1335,22 +1627,20 @@
 
 -(void)prepareThumbSlider {
 	
+    MFHorizontalSlider * anHorizontalThumbSlider = nil;
+    
 	if(thumbsliderHorizontal)
 		return;
 	
 	// Create the actual thumb slider controller. The controller view will be added manually to the view stack, so you need to call viewDidLoad esplicitely.
 	
-	MFHorizontalSlider * anHorizontalThumbSlider = nil;
-	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
 		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(100, 124) width:self.view.bounds.size.width height:160 type:1 andFolderName:documentId];
 		
-		
 	}	else {
 		
 		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(50, 64) width:self.view.frame.size.width height:70 type:1 andFolderName:documentId];
-		
 	}
 	
 	anHorizontalThumbSlider.delegate = self;
@@ -1416,13 +1706,13 @@
 		filename = [NSString stringWithFormat:@"png%d.png",i];
 		fullPathToFile = [documentsDirectory stringByAppendingPathComponent:filename];
 		
-		if((![fileManager fileExistsAtPath: fullPathToFile]) && pdfIsOpen) {
+		if((![fileManager fileExistsAtPath: fullPathToFile]) && pdfOpen) {
 			
 			thumbImage = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
 			image = [[UIImage alloc] initWithCGImage:thumbImage];
 			imageData = UIImagePNGRepresentation(image);
 			
-			if (pdfIsOpen) {
+			if (pdfOpen) {
 
 				[fileManager createFileAtPath:fullPathToFile contents:imageData attributes:nil];
 
@@ -1447,7 +1737,6 @@
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager {
 	
-	//
 	//	Here we call the superclass initWithDocumentManager passing the very same MFDocumentManager
 	//	we used to initialize this class. However, since you probably want to track which document are
 	//	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager

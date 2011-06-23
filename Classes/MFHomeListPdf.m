@@ -8,15 +8,17 @@
 
 #import "MFHomeListPdf.h"
 #import "MenuViewController_Kiosk.h"
+#import "ZipArchive.h"
 
 #define TITLE_DOWNLOAD @"Download"
 #define TITLE_OPEN @"Open"
 #define TITLE_REMOVE @"Remove"
+#define TITLE_RESUME @"Resume"
 
 @implementation MFHomeListPdf
 @synthesize object, temp, dataSource ,corner,documentNumber;
 @synthesize menuViewController;
-@synthesize page;
+@synthesize page,titleOfPdf;
 @synthesize removeButton,openButton,openButtonFromImage;
 @synthesize progressDownload;
 // @synthesize yProgressBar,xBtnRemove,yBtnRemove,xBtnOpen,yBtnOpen,widthButton,heightButton;
@@ -24,14 +26,17 @@
 @synthesize downloadUrl;
 @synthesize httpRequest;
 @synthesize thumbName;
+@synthesize isPdfLink;
+@synthesize downloadPdfStopped;
 // Load the view and initialize the pageNumber ivar.
 
-- (id)initWithName:(NSString *)Page andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
+- (id)initWithName:(NSString *)Page andTitoloPdf:(NSString *)titlePdf andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
 
 	size = _size;
 	self.downloadUrl = linkpdf;
 	self.thumbName = _image;
 	self.page=Page;
+    self.titleOfPdf = titlePdf;
 	[self downloadImage:self withUrl:thumbName andName:Page];
 	documentNumber = numDoc;
 	temp = NO;
@@ -101,20 +106,25 @@
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];	
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",page]];
+	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",page,page]];
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	cacheDirectory = [paths objectAtIndex:0];
 	thumbPath = [cacheDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",page]];
 	
 	fileManager = [[NSFileManager alloc]init];
+    
+    //create the temp directory used for the resume of pdf.
+    
+    NSString *pdfPathTempForResume = [documentsDirectory stringByAppendingPathComponent:@"/temp"];
+	
+	[fileManager createDirectoryAtPath:pdfPathTempForResume withIntermediateDirectories:YES attributes:nil error:nil];
 	
 	if ([fileManager fileExistsAtPath:pdfPath]) {
 		fileAlreadyExists = YES;
 	}else {
 		fileAlreadyExists = NO;
 	}
-	[fileManager release];
 	
 	// Cover image. We add a background and the overlaying cover image directly onto the controller's view.
 	
@@ -196,12 +206,21 @@
 	[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
 	
 	if (!fileAlreadyExists) {
+        
+        if ([fileManager fileExistsAtPath:[pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",page]]]) {
+			// Resume.
+			
+			[aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
+			[aButton setImage:[UIImage imageNamed:@"resume.png"] forState:UIControlStateNormal];
+            
+		}else {
 		
-		// Download.
+            // Download.
 		
-		[aButton setTitle:TITLE_DOWNLOAD forState:UIControlStateNormal];
-		[aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
-		[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+            [aButton setTitle:TITLE_DOWNLOAD forState:UIControlStateNormal];
+            [aButton setImage:[UIImage imageNamed:@"download.png"] forState:UIControlStateNormal];
+        }
+        [aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	} else {
 		
 		// Open.
@@ -241,9 +260,8 @@
 		aLabel.textColor = [UIColor blackColor];
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(25.0)];
-		
-		
-	}else {
+	
+    }else {
 		
 		aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 170, 105, 20) ];
 		aLabel.textAlignment =  UITextAlignmentCenter;
@@ -252,10 +270,11 @@
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)];
 	}
 	
-	aLabelTitle = [NSString stringWithFormat:@"%@",page];
+	aLabelTitle = [NSString stringWithFormat:@"%@",self.titleOfPdf];
 	[aLabel setText:aLabelTitle]; 
 	[[self view] addSubview:aLabel];
 	[aLabel release];
+    [fileManager release];
 	
 }
 
@@ -273,7 +292,7 @@
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",page]];
+	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",page]];
 	
 	// Remove the file form disk (ignore the error).
 	
@@ -317,6 +336,25 @@
 	[menuViewController actionOpenPlainDocument:page];
 }
 
+-(void)actionStopPdf:(id)sender {
+	//Open Pdf
+	downloadPdfStopped = YES;
+	[self.httpRequest cancel];
+	UIButton * aButton = nil; 
+	aButton =[menuViewController.openButtons objectForKey:page];
+	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
+	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton setImage:[UIImage imageNamed:@"resume.png"] forState:UIControlStateNormal];
+	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
+	// Cover button.
+	
+	aButton = [menuViewController.imgDict objectForKey:page];
+	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
+}
+
 -(void)actionDownloadPdf:(id)sender {
 	
 	if(pdfInDownload)
@@ -339,15 +377,45 @@
 	NSString * pdfPath = nil;
 	
 	UIProgressView * progressView = nil;
+    
+    
+    //check if the download url is a link to a pdf file or pfk file.
+    isPdfLink = [self checkIfPDfLink:sourceURL];
 	
 	// Filename path.
-	
-	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",destinationFilePath]];
+
+    
+    NSString *PathContainPdf = [NSString stringWithString:[NSString stringWithFormat:@"/%@/",destinationFilePath]];
+	PathContainPdf = [documentsDirectory stringByAppendingString:PathContainPdf];
+	
+	NSFileManager *filemanager = [[NSFileManager alloc]init];
+	
+	NSError **error ;
+	[filemanager createDirectoryAtPath:PathContainPdf withIntermediateDirectories:YES attributes:nil error:error];
+	
+
+    if (isPdfLink) {
+        pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",destinationFilePath,destinationFilePath]];
+    }else{
+        pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.fpk",destinationFilePath,destinationFilePath]];
+    }
+
+    
+    //This Directory Contains the temp file in download . it's used when resume is supported.
+    NSString *pdfPathTempForResume = [documentsDirectory stringByAppendingString:@"/temp"];
+	
+	if (isPdfLink) {
+		pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",destinationFilePath]];
+	}else {
+		pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.fpk",destinationFilePath]];
+		
+	}
 	
 	url = [NSURL URLWithString:sourceURL];
-	
+    
 	request = [ASIHTTPRequest requestWithURL:url];
 	[request setDelegate:self];
 	
@@ -363,6 +431,8 @@
 	
 	[request setShouldPresentAuthenticationDialog:YES];
 	[request setDownloadDestinationPath:pdfPath];
+    [request setAllowResumeForFileDownloads:YES]; //set YEs if resume is supported 
+	[request setTemporaryFileDownloadPath:pdfPathTempForResume]; // if resume is supported set the temporary Path
 	
 	self.httpRequest = request;
 	
@@ -421,6 +491,20 @@
 	
 	UIProgressView *progressView = [menuViewController.progressViewDict objectForKey:page];
 	progressView.hidden = NO;
+    
+    UIButton *aButton =[menuViewController.openButtons objectForKey:page];
+	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
+	[aButton removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton setImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
+	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
+	// Cover button.
+	
+	aButton = [menuViewController.imgDict objectForKey:page];
+	[aButton removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [aButton release];
 }
 
 //-(void)requestFinishedDownloadImg:(ASIHTTPRequest *)request{
@@ -464,6 +548,33 @@
 	
 	aProgressView = [menuViewController.progressViewDict objectForKey:page];
 	aProgressView.hidden = YES;
+    
+    if (!isPdfLink) {
+        
+        //set the directory for the Unzip and use ZipArchive library to unzip the file and the multimedia file
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
+		NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",page,page]];
+		
+		ZipArchive* zipFile = [[ZipArchive alloc] init];
+		[zipFile UnzipOpenFile:saveLocation];
+		[zipFile UnzipFileTo:unzippedDestination overWrite:YES];
+		[zipFile UnzipCloseFile];
+		[zipFile release];
+		
+		// rename the file pdf ( only one must be exists in the fpk folder ) correctly 
+        // With this rename of the pdf we are sure that the pdf name is correct.  
+		
+		NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
+		for (NSString *tString in dirContents) {
+			if ([tString hasSuffix:@".pdf"]) {
+				NSString *oldPath =[unzippedDestination stringByAppendingString:tString];
+				NSString *newPath = [unzippedDestination stringByAppendingString:[NSString stringWithFormat:@"%@.pdf",page]];
+				[[NSFileManager defaultManager] moveItemAtPath:oldPath toPath:newPath error:nil];				
+			}
+		}
+	}
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request{
@@ -471,7 +582,34 @@
 	pdfInDownload = NO;
 	
 	UIProgressView *aProgressView = [menuViewController.progressViewDict objectForKey:page];
-	aProgressView.hidden = YES;
+	aProgressView.hidden = !downloadPdfStopped;
+    
+    [[menuViewController.openButtons objectForKey:page] setTitle:TITLE_RESUME forState:UIControlStateNormal];
+    [[menuViewController.openButtons objectForKey:page] setImage:[UIImage imageNamed:@"resume.png"] forState:UIControlStateNormal];
+    [[menuViewController.openButtons objectForKey:page] removeTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[[menuViewController.openButtons objectForKey:page] addTarget:self action:@selector(downloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	
+	if (downloadPdfStopped) {
+		downloadPdfStopped=NO;
+	}
+}
+
+-(BOOL)checkIfPDfLink:(NSString *)url{
+	
+	//url example in xml
+	//link pdf:  <link>http://go.mobfarm.eu/pdf/Aperture.pdf</link>
+    //link fpk:  <link>http://go.mobfarm.eu/pdf/Aperture.fpk</link>
+	
+	NSArray *listItems = [url componentsSeparatedByString:@"."];
+	NSString *doctype = [listItems objectAtIndex:listItems.count-1];
+	
+	if ([doctype isEqualToString:@"pdf"]) {
+		NSLog(@"Is Pdf");
+		return YES;
+	}else{
+		NSLog(@"Is fpk");
+		return NO;
+	}
 }
 
 - (void)updateCorner{

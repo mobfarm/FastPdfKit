@@ -1,9 +1,9 @@
-    //
-//  RssViewController.m
-//  FastPDF
 //
-//  Created by Mac Book Pro on 04/02/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  XMLParser.m
+//  FastPdfKit Sample
+//
+//  Created by Gianluca Orsini on 28/02/11.
+//  Copyright 2010 MobFarm S.r.l. All rights reserved.
 //
 
 #import "XMLParser.h"

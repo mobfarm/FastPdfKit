@@ -90,6 +90,8 @@
 
 -(void)viewDidLoad{
 	[self performSelector:@selector(loadControllers) withObject:nil afterDelay:0.1];
+    [self performSelector:@selector(loadControllers) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(loadControllers) withObject:nil afterDelay:3.0];
 }
 
 - (void)loadControllers{
