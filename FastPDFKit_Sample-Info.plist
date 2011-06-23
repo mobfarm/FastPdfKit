@@ -32,7 +32,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
-	<string>MainWindow_Kiosk</string>
+	<string>MainWindow</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 </dict>
