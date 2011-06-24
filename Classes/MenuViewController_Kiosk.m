@@ -212,34 +212,16 @@
 	
 }
 
-//-(void)showViewDownload{
-//	
-//	downloadProgressContainerView.hidden = NO;
-//	
-//	[UIView beginAnimations:@"show" context:NULL];
-//	[UIView setAnimationDuration:0.10];
-//	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//	[downloadProgressContainerView setFrame:CGRectMake(0, self.view.frame.size.height-200, self.view.frame.size.width, 200)];
-//	[UIView commitAnimations];
-//}
-//
-//-(void)hideViewDownload{
-//	
-//	[UIView beginAnimations:@"show" context:NULL];
-//	[UIView setAnimationDuration:0.35];
-//	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-//	[downloadProgressContainerView setFrame:CGRectMake(0, downloadProgressContainerView.frame.origin.y+downloadProgressContainerView.frame.size.height, downloadProgressContainerView.frame.size.width, downloadProgressContainerView.frame.size.height)];
-//	[UIView commitAnimations];
-//}
-
-
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-	if(interfaceOrientation == UIDeviceOrientationPortrait){
+    
+    if(interfaceOrientation == UIDeviceOrientationPortrait){
+        
 		return YES;
-	}else {
+        
+	} else {
+        
 		return NO;
 	}
 }
@@ -252,17 +234,10 @@
 }
 
 - (void)viewDidUnload {
+    
     [super viewDidUnload];
 	
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	
-	//[self setManualButton:nil];
-//	[self setManualTextView:nil];
-//	[self setReferenceButton:nil];
-//	[self setReferenceTextView:nil];
-	
-	[buttonRemoveDict removeAllObjects];
+    [buttonRemoveDict removeAllObjects];
 	[openButtons removeAllObjects];
 	[progressViewDict removeAllObjects];
 	[imgDict removeAllObjects];
@@ -273,17 +248,15 @@
 
 - (void)dealloc {
 	
-	//[referenceButton release];
-//	[manualButton release];
-//	[referenceTextView release];
-	
 	[documentsList release];
 	
 	[buttonRemoveDict release];
 	[openButtons release];
 	[progressViewDict release];
 	[imgDict release];
-	
+	[downloadProgressContainerView release];
+    [downloadProgressView release];
+    
 	[homeListPdfs release];
 	
     [super dealloc];

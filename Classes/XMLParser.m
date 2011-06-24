@@ -49,7 +49,6 @@
 	[request setShouldPresentAuthenticationDialog:YES];
 	[request setDownloadDestinationPath:pdfPath];
 	
-	
 	self.httpRequest = request;
 	
 	[request startAsynchronous];
@@ -97,11 +96,13 @@
 		
 		// If an error occurred while downloading, we default to the bundled xml.
 		
-		filePath = [[NSBundle mainBundle] pathForResource:DEF_XML_NAME ofType:@"xml"];  
+		filePath = [[NSBundle mainBundle] pathForResource:DEF_XML_NAME ofType:@"xml"];
+        
 		fileData = [NSData dataWithContentsOfFile:filePath]; 
 		xmlParser = [[NSXMLParser alloc] initWithData:fileData];
 		
 	} else {
+        
 		xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
 	}
 	
@@ -185,7 +186,9 @@
 	[currentUrl release];
 	[currentString release];
 	
-	[httpRequest release];
+    httpRequest.delegate = nil;
+    [httpRequest cancel];
+	[httpRequest release], httpRequest = nil;
 	
 	[super dealloc];
 }
