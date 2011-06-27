@@ -23,51 +23,6 @@
 	downloadError = NO;
 }
 
--(void)downloadPDF:(id)sender withUrl:(NSString *)sourceURL andName:(NSString *)destinationFileName {
-	
-	
-	NSURL *url = [NSURL URLWithString:sourceURL];
-	
-	ASIHTTPRequest * request = nil;
-	
-	NSArray * paths = nil;
-	NSString * documentsDirectory = nil;
-	NSString * pdfPath = nil;
-	
-	// Destination filename path.
-	
-	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	documentsDirectory = [paths objectAtIndex:0];
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",destinationFileName]];
-	
-	request = [ASIHTTPRequest requestWithURL:url];
-	[request setDelegate:self];
-	[request setUseKeychainPersistence:YES];
-	[request setDownloadDestinationPath:pdfPath];
-	[request setDidFinishSelector:@selector(requestFinished:)];
-	[request setDidFailSelector:@selector(requestFailed:)];
-	[request setShouldPresentAuthenticationDialog:YES];
-	[request setDownloadDestinationPath:pdfPath];
-	
-	self.httpRequest = request;
-	
-	[request startAsynchronous];
-}
-
--(void)requestStarted:(ASIHTTPRequest *)request{
-	
-	pdfInDownload = YES;
-}
-
--(void)requestFinished:(ASIHTTPRequest *)request{
-	pdfInDownload = NO;
-
-}
-
--(void)requestFailed:(ASIHTTPRequest *)request{
-	pdfInDownload = NO;
-}
-
 - (void)parserDidStartDocument:(NSXMLParser *)parser{	
 	
 }
@@ -119,7 +74,7 @@
     [xmlParser parse]; // Parse.
 	
 	// Cleanup.
-	
+	[xmlURL release];
 	[xmlParser release];
 	[pool release];
 }
