@@ -25,7 +25,7 @@
 
 @synthesize referenceButton, manualButton, referenceTextView, manualTextView;
 @synthesize passwordAlertView;
-@synthesize nomePdfDaAprire;
+@synthesize pdfToOpen;
 @synthesize document;
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
