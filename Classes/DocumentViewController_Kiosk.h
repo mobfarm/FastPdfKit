@@ -24,6 +24,15 @@
 @class MiniSearchView;
 @class MFTextItem;
 
+#define FPK_REUSABLE_VIEW_NONE 0
+#define FPK_REUSABLE_VIEW_SEARCH 1
+#define FPK_REUSABLE_VIEW_TEXT 2
+#define FPK_REUSABLE_VIEW_OUTLINE 3
+#define FPK_REUSABLE_VIEW_BOOKMARK 4
+
+#define FPK_SEARCH_VIEW_MODE_MINI 0
+#define FPK_SEARCH_VIEW_MODE_FULL 1
+
 @interface DocumentViewController_Kiosk : MFDocumentViewController <MFSliderDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate> {
 	
 	// Thumbnail view and stuff.
@@ -70,7 +79,7 @@
 	
 	BOOL waitingForTextInput;
 	
-	NSString * documentId;
+	NSString * documentId;  // Keep an unique reference to the document in the application (could be an ID, the name, etc).
 	
 	// Text search controller and stuff.
 	SearchViewController * searchViewController;
@@ -78,20 +87,14 @@
 	MiniSearchView * miniSearchView;
 	TextDisplayViewController * textDisplayViewController;
 	
-	BOOL hudHidden;
-	BOOL miniSearchViewVisible;
-	BOOL bookmarkViewVisible;
-	BOOL outlineViewVisible;
-	BOOL searchViewVisible;
-	BOOL textViewVisible;
+	BOOL hudHidden; // General HUD visible flag.
 	
-	UIPopoverController *bookmarkPopover;
-	UIPopoverController *outlinePopover;
-	UIPopoverController *searchPopover;
-	UIPopoverController *textPopover;
-	
-	UILabel * pageLabel;
-	UISlider * pageSlider;
+	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller.
+    NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user.
+    NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini.
+    
+	UILabel * pageLabel;    // Page label at the bottom of the screen.
+	UISlider * pageSlider;  // Page slider at the bottom of the screen.
 }
 
 @property (nonatomic,retain) UIImage * imgModeSingle;
@@ -138,9 +141,12 @@
 @property (nonatomic, retain) MiniSearchView * miniSearchView;
 @property (nonatomic, retain) TextDisplayViewController * textDisplayViewController;
 
+@property (nonatomic, retain) UIPopoverController * reusablePopover;
+
 -(void)showToolbar;
 -(void)hideToolbar;
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
+-(void)dismissAlternateViewController;
 
 @end

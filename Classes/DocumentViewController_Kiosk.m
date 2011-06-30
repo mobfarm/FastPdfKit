@@ -18,6 +18,14 @@
 
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"%d/%d",(x),(y)]
 
+@interface DocumentViewController_Kiosk()
+
+-(void)dismissMiniSearchView;
+-(void)presentTextDisplayViewControllerForPage:(NSUInteger)page;
+-(void)revertToFullSearchView;
+
+@end
+
 @implementation DocumentViewController_Kiosk
 
 @synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
@@ -34,33 +42,108 @@
 @synthesize searchManager;
 @synthesize miniSearchView;
 @synthesize pageSlider;
+@synthesize reusablePopover;
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft;
 
--(void)dismissAllPopovers {
-	
-	// Utility method to quickly dispatch any poopover visible on screen.
-	
-	if (bookmarkViewVisible) {
-		[bookmarkPopover dismissPopoverAnimated:YES];
-		bookmarkViewVisible = NO;	
-	}
-	
-	if (outlineViewVisible) {
-		[outlinePopover dismissPopoverAnimated:YES];
-		outlineViewVisible = NO;	
-	}
-	
-	if (searchViewVisible) {
-		[searchPopover dismissPopoverAnimated:YES];
-		searchViewVisible = NO;
-	}
-	
-	
-	if (textViewVisible) {
-		[textPopover dismissPopoverAnimated:YES];
-		textViewVisible = NO;	
-	}
+-(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
+
+    UIPopoverController * popoverController = nil;
+    
+    if(!reusablePopover) {
+        
+        popoverController = [[UIPopoverController alloc]initWithContentViewController:controller];
+        popoverController.delegate = self;
+        self.reusablePopover = popoverController;
+        self.reusablePopover.delegate = self;
+        [popoverController release];
+        
+    } else {
+        
+        [reusablePopover setContentViewController:controller animated:YES];
+    }
+
+    return reusablePopover;
+}
+
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    
+    if(popoverController == reusablePopover) {  // Only on reusablePopover dismissal.
+        
+        switch(currentReusableView) {
+                
+            case FPK_REUSABLE_VIEW_NONE: // This should never happens.
+                break;
+                
+            case FPK_REUSABLE_VIEW_OUTLINE:
+            case FPK_REUSABLE_VIEW_BOOKMARK:
+                
+                // The popover has been already dismissed, just set the flag accordingly.
+                
+                currentReusableView = FPK_REUSABLE_VIEW_NONE;
+                break;
+                
+            case FPK_REUSABLE_VIEW_SEARCH:
+                
+                if(currentSearchViewMode == FPK_SEARCH_VIEW_MODE_FULL) {
+                
+                    [searchManager cancelSearch];
+                    
+                    currentReusableView = FPK_REUSABLE_VIEW_NONE;
+                }
+                break;
+                // Same as above, but also cancel the search.
+                
+            default: break;
+        }
+    }
+}
+
+-(void)dismissAlternateViewController {
+    
+    // This is just an utility method that will call the appropriate dismissal procedure depending
+    // on which alternate controller is visible to the user.
+    
+    switch(currentReusableView) {
+            
+        case FPK_REUSABLE_VIEW_NONE:
+            break;
+            
+        case FPK_REUSABLE_VIEW_OUTLINE:
+        case FPK_REUSABLE_VIEW_BOOKMARK:
+            
+            // Same procedure for both outline and bookmark.
+            
+            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                
+                [reusablePopover dismissPopoverAnimated:YES];
+                
+            } else {
+                
+                [self dismissModalViewControllerAnimated:YES];
+            }
+            currentReusableView = FPK_REUSABLE_VIEW_NONE;
+            break;
+            
+        case FPK_REUSABLE_VIEW_SEARCH:
+            
+            if(currentSearchViewMode == FPK_SEARCH_VIEW_MODE_FULL) {
+           
+                [searchManager cancelSearch];
+                [self dismissSearchViewController:searchViewController];            
+                currentReusableView = FPK_REUSABLE_VIEW_NONE;
+                
+            } else if (currentSearchViewMode == FPK_SEARCH_VIEW_MODE_MINI) {
+                [searchManager cancelSearch];
+                [self dismissMiniSearchView];
+                currentReusableView = FPK_REUSABLE_VIEW_NONE;
+            }
+            
+            // Cancel search and remove the controller.
+            
+            break;
+        default: break;
+    }
 }
 
 #pragma mark -
@@ -76,8 +159,9 @@
 }
 
 -(void)showHorizontalThumbnails{
+    
 	if (thumbSliderViewHorizontal.frame.origin.y >= self.view.bounds.size.height) {
-		//toolbar.hidden = NO;
+	
 		[UIView beginAnimations:@"show" context:NULL];
 		[UIView setAnimationDuration:0.35];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -88,6 +172,7 @@
 }
 
 -(void)hideHorizontalThumbnails {
+    
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -113,6 +198,10 @@
 
 -(IBAction)actionText:(id)sender {
 	
+    UIAlertView * alert = nil;
+    
+    [self dismissAlternateViewController];
+    
 	if(!waitingForTextInput) {
 		
 		// We set the flag to YES and enable the documenter interaction. The flag is used to discard unwanted
@@ -123,16 +212,16 @@
 		waitingForTextInput = YES;
 		self.documentInteractionEnabled = YES;
 		
-		UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 		
 		senderText = sender;
 		
 	} else {
+        
 		waitingForTextInput = NO;
 	}
-	
 }
 
 #pragma mark -
@@ -140,22 +229,19 @@
 
 -(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopovers];
-	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		bookmarkViewVisible = NO;
-	}
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [reusablePopover dismissPopoverAnimated:YES];
+    } else {
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    currentReusableView = FPK_REUSABLE_VIEW_NONE;
 }
 
 -(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
-	self.page = page;
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopovers];
-	} else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		bookmarkViewVisible = NO;
-	}
+	
+    self.page = page;
+    
+    [self dismissAlternateViewController];
 }
 
 -(IBAction) actionBookmarks:(id)sender {
@@ -164,39 +250,31 @@
 	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 	//	you can also push the controller with the navigation controller or use an UIActionSheet.
 	
-	if (bookmarkViewVisible) {
+    BookmarkViewController *bookmarksVC = nil;
+    
+	if (currentReusableView == FPK_REUSABLE_VIEW_BOOKMARK) {
+        
+		[self dismissAlternateViewController];
 		
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
-			[bookmarkPopover dismissPopoverAnimated:YES];
-			bookmarkViewVisible=NO;
-			
-		} else {
-			
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
-			bookmarkViewVisible=NO;
-		}
+	} else {
 		
-	}else {
-		
-		BookmarkViewController *bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
+        currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
+        
+		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
 		bookmarksVC.delegate = self;
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
-			[self dismissAllPopovers];
-			
-			bookmarkPopover = [[UIPopoverController alloc] initWithContentViewController:bookmarksVC];
-			[bookmarkPopover setPopoverContentSize:CGSizeMake(372, 650)];
-			[bookmarkPopover presentPopoverFromBarButtonItem:bookmarkBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-			[bookmarkPopover setDelegate:self];
-			
-			bookmarkViewVisible=YES;
-		}else {
+            
+            [self prepareReusablePopoverControllerWithController:bookmarksVC];
+            
+			[reusablePopover setPopoverContentSize:CGSizeMake(372, 650) animated:YES];
+			[reusablePopover presentPopoverFromBarButtonItem:bookmarkBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            
+		} else {
 			
 			[self presentModalViewController:bookmarksVC animated:YES];
-			bookmarkViewVisible=YES;
 		}
+        
 		[bookmarksVC release];
 	}
 }
@@ -208,24 +286,22 @@
 -(void)dismissOutlineViewController:(OutlineViewController *)anOutlineViewController {
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
-		[self dismissAllPopovers];
-		
-	} else {
-		
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		outlineViewVisible=NO;
-	}
+        
+        [reusablePopover dismissPopoverAnimated:YES];
+        
+    } else {
+        
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    
+    currentReusableView = FPK_REUSABLE_VIEW_NONE;
 }
 
 -(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
-	self.page = page;
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopovers];
-	}else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		outlineViewVisible=NO;
-	}
+	
+    self.page = page;
+	
+    [self dismissAlternateViewController];
 }
 
 -(IBAction) actionOutline:(id)sender {
@@ -238,23 +314,14 @@
 	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
 	// of low memory warnings.
 	
-	
-	if (outlineViewVisible) {
+	OutlineViewController *outlineVC = nil;
+    
+	if (currentReusableView != FPK_REUSABLE_VIEW_OUTLINE) {
 		
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
-			[outlinePopover dismissPopoverAnimated:YES];
-			outlineViewVisible = NO;
-		} else {
-			
-			[[self parentViewController]dismissModalViewControllerAnimated:YES];
-			outlineViewVisible = NO;
-		}
+        currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
 		
-	} else {
-		
-		OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
-		[outlineVC setDelegate:self];
+        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
+        [outlineVC setDelegate:self];
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
 		// this array and the openentries array somewhere and set them again before present the view to the user again.
@@ -263,22 +330,23 @@
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			
-			[self dismissAllPopovers];	// Dismiss any eventual other popover.
-			
-			outlinePopover = [[UIPopoverController alloc] initWithContentViewController:outlineVC];
-			[outlinePopover setPopoverContentSize:CGSizeMake(372, 650)];
-			[outlinePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-			[outlinePopover setDelegate:self];
-			outlineViewVisible=YES;
-			
+            [self prepareReusablePopoverControllerWithController:outlineVC];
+            
+			[reusablePopover setPopoverContentSize:CGSizeMake(372, 650) animated:YES];
+			[reusablePopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            
 		} else {
 			
 			[self presentModalViewController:outlineVC animated:YES];
-			outlineViewVisible=YES;
-			
 		}
+        
 		[outlineVC release];
-	}
+
+	} else {
+        
+        [self dismissAlternateViewController];
+
+    }
 }
 	
 #pragma mark -
@@ -292,12 +360,10 @@
 	SearchManager * manager = nil;
 	SearchViewController * controller = nil;
 	
-	
 	// Get the search manager lazily and set up the document.
 	
 	manager = self.searchManager;
 	manager.document = self.document;
-	
 	
 	// Get the search view controller lazily, set the delegate at self to handle
 	// document action and the search manager as data source.
@@ -313,18 +379,18 @@
     
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
-		searchPopover = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)controller];
-		[searchPopover setPopoverContentSize:CGSizeMake(450, 650)];
-		[searchPopover setDelegate:self];
-		[searchPopover presentPopoverFromBarButtonItem:searchBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-		
-		searchViewVisible = YES;
+        [self prepareReusablePopoverControllerWithController:controller];
+        
+		[reusablePopover setPopoverContentSize:CGSizeMake(450, 650) animated:YES];
+		[reusablePopover presentPopoverFromBarButtonItem:searchBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 		
 	} else {
 		
 		[self presentModalViewController:(UIViewController *)controller animated:YES];
-		searchViewVisible = YES;
-	}	
+    }
+	
+    currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
+    currentSearchViewMode = FPK_SEARCH_VIEW_MODE_FULL;
 }
 
 -(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
@@ -370,25 +436,29 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+		
+        [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
 		[self.view bringSubviewToFront:rollawayToolbar];
+        
 	}else {
+        
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
 		[self.view bringSubviewToFront:rollawayToolbar];
 	}
+    
 	[UIView commitAnimations];
 	
-	miniSearchViewVisible = YES;
-	
-	[[self view]setNeedsLayout];
+    currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
+    currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
 }
 
 -(SearchViewController *)searchViewController {
 	
 	// Lazily allocation when required.
 	
-	if(nil==searchViewController) {
+	if(!searchViewController) {
 		
 		// We use different xib on iPhone and iPad.
 		
@@ -402,7 +472,6 @@
 			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
 		}
 	}
-	
 	return searchViewController;
 }
 
@@ -411,8 +480,30 @@
 	// Get the instance of the Search Manager lazily and then present a full sized search view controller
 	// to the user. The full search view controller will allow the user to type in a search term and
 	// start the search. Look at the details in the utility method implementation.
-	
-	[self presentFullSearchView];	// This method will take care of everything.
+    
+    if(currentReusableView!= FPK_REUSABLE_VIEW_SEARCH) {
+        
+        if(currentSearchViewMode == FPK_SEARCH_VIEW_MODE_MINI) {
+            
+            [self revertToFullSearchView];
+        
+        } else {
+            
+            [self presentFullSearchView];
+        }
+        
+    } else {
+        
+        if(currentSearchViewMode == FPK_SEARCH_VIEW_MODE_MINI) {
+            
+            [self revertToFullSearchView];
+            
+        } else if (currentSearchViewMode == FPK_SEARCH_VIEW_MODE_FULL) {
+            
+            [self dismissAlternateViewController];    
+            
+        }
+    }
 }
 
 -(void)dismissMiniSearchView {
@@ -429,12 +520,8 @@
 	}else {
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
 	}
-	
 	[UIView commitAnimations];
 	
-	searchViewVisible = NO;
-	miniSearchViewVisible = NO;
-    
 	// Actual removal.
 	if(miniSearchView!=nil) {
 		
@@ -443,7 +530,7 @@
 	}
 	
 	[self removeOverlayDataSource:self.searchManager];
-    [self reloadOverlay];
+    [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
 }
 
 -(void)showMiniSearchView {
@@ -459,18 +546,14 @@
 		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
 	}
 	
-	searchViewVisible = NO;
-	
 	[UIView commitAnimations];
-	
-	
 }
 
 -(SearchManager *)searchManager {
 	
 	// Lazily allocate and instantiate the search manager.
 	
-	if(nil == searchManager) {
+	if(!searchManager) {
 		
 		searchManager = [[SearchManager alloc]init];
 	}
@@ -482,14 +565,14 @@
 	
 	// Dismiss the minimized view and present the full one.
 	
-	[self dismissMiniSearchView];
+    [self dismissMiniSearchView];
 	[self presentFullSearchView];
 }
 
 -(void)switchToMiniSearchView:(MFTextItem *)item {
 	
 	// Dismiss the full view and present the minimized one.
-	
+    
 	[self dismissSearchViewController:searchViewController];
 	[self presentMiniSearchViewWithStartingItem:item];
 }
@@ -497,14 +580,18 @@
 -(void)dismissSearchViewController:(SearchViewController *)aSearchViewController {
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[self dismissAllPopovers];
+		
+        [reusablePopover dismissPopoverAnimated:YES];
+        
 	} else {
-		[[self parentViewController]dismissModalViewControllerAnimated:YES];
-		searchViewVisible=NO;
+		
+        [self dismissModalViewControllerAnimated:YES];
 	}
     
     [self removeOverlayDataSource:self.searchManager];
     [self reloadOverlay];
+    
+    currentReusableView = FPK_REUSABLE_VIEW_NONE;
 }
 
 #pragma mark -
@@ -519,7 +606,9 @@
 	// Call this function to stop the worker threads and release the associated resources.
 	pdfIsOpen = NO;
 	[self cleanUp];
-	
+    
+    [self.searchManager cancelSearch];
+    
 	//
 	//	Just remove this controller from the navigation stack.
 	[[self navigationController]popViewControllerAnimated:YES];	
@@ -682,7 +771,6 @@
 		
 		[changeDirectionBarButtonItem setImage:imgr2l];
 	}
-	
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didChangeLeadTo:(MFDocumentLead)lead {
@@ -700,11 +788,42 @@
 	}
 }
 
+-(void)dismissTextDisplayViewController:(TextDisplayViewController *)controller {
+    
+    [self dismissModalViewControllerAnimated:YES];
+    currentReusableView = FPK_REUSABLE_VIEW_NONE;
+}
+
+-(void)presentTextDisplayViewControllerForPage:(NSUInteger)page {
+    
+    TextDisplayViewController * controller = nil;
+    
+    if(currentReusableView != FPK_REUSABLE_VIEW_NONE) {
+        
+        [self dismissAlternateViewController];
+        
+    }
+    
+    
+    controller = self.textDisplayViewController;
+    controller.delegate = self;
+    [controller updateWithTextOfPage:page];
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        controller.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
+    
+    [self presentModalViewController:controller animated:YES];
+   
+    currentReusableView = FPK_REUSABLE_VIEW_TEXT;
+}
+
+
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point {
 	
 	
 	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
-		[self dismissAllPopovers];
+		[self dismissAlternateViewController];
 	}
 	
 	if(waitingForTextInput) {
@@ -714,28 +833,8 @@
 		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
 		// and show it.
 		
-		if (textViewVisible) {
-			
-			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-				
-				[textPopover dismissPopoverAnimated:YES];
-				textViewVisible = NO;
-			}
-			
-		} else {
-			
-			TextDisplayViewController *controller = self.textDisplayViewController;
-			controller.delegate = self;
-			[controller updateWithTextOfPage:page];
-			
-			if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-				controller.modalPresentationStyle = UIModalPresentationFormSheet;
-			}
-			
-			textViewVisible = YES;
-			[self presentModalViewController:controller animated:YES];
-		}
-	}
+        [self presentTextDisplayViewControllerForPage:page];
+    }
 }
 
 
@@ -746,7 +845,7 @@
 	
 	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
 		
-		[self dismissAllPopovers];
+		[self dismissAlternateViewController];
 	}
 	
 	
@@ -1082,10 +1181,8 @@
 	
 	pdfIsOpen = YES;
 	hudHidden=YES;
-	bookmarkViewVisible = NO;
-	outlineViewVisible = NO;
-	miniSearchViewVisible = NO;
-	
+	currentReusableView = FPK_REUSABLE_VIEW_NONE;
+    
 	// Slighty different font sizes on iPad and iPhone.
 	
 	UIFont *font = nil;
@@ -1129,9 +1226,7 @@
 		thumbSliderHeight = 10;
 		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44;
 		thumbSliderOffsetX = thumbSliderOffsetY + 10;
-		
 	}
-	
 	
 	[aThumbSliderView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
 	[aThumbSliderView setAutoresizesSubviews:YES];
@@ -1381,6 +1476,8 @@
 
 - (void)dealloc {
 	
+    // UI elements.
+    
 	[imgModeSingle release];
 	[imgModeDouble release];
 	[imgZoomLock release];
@@ -1389,17 +1486,20 @@
 	[imgr2l release];
 	[imgLeadRight release];
 	[imgLeadLeft release];
+    
+    [rollawayToolbar release];
+	[thumbnailView release];
+	[thumbImgArray release];
 	
-	[rollawayToolbar release];
-	
-	[documentId release];
-	
-	[searchBarButtonItem release], searchBarButtonItem = nil;
+    [searchBarButtonItem release], searchBarButtonItem = nil;
 	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
 	[changeModeBarButtonItem release], changeModeBarButtonItem = nil;
 	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
 	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
 	
+    // Popovers.
+    [reusablePopover release];
+   
 	[numberOfPageTitleBarButtonItem release];
 	
 	[searchViewController release];
@@ -1407,8 +1507,7 @@
 	[miniSearchView release];
 	[searchManager release];
 	
-	[thumbnailView release];
-	[thumbImgArray release];
+    [documentId release];
 	
 	[super dealloc];
 }

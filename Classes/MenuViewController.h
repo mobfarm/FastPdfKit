@@ -23,7 +23,7 @@
 	
 	UIAlertView *passwordAlertView;
 	
-	NSString *nomePdfDaAprire;
+	NSString *pdfToOpen;
 	
 }
 
@@ -38,7 +38,7 @@
 
 @property (nonatomic, retain) MFDocumentManager *document;
 @property (nonatomic, assign) UIAlertView *passwordAlertView;
-@property (nonatomic, assign) NSString *nomePdfDaAprire;
+@property (nonatomic, assign) NSString *pdfToOpen;
 
 
 

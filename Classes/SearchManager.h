@@ -15,6 +15,8 @@
 
 	// Status.
 	
+    NSUInteger status;
+    
 	BOOL stopped;
 	BOOL running;
 	
@@ -38,7 +40,10 @@
 @property (nonatomic,copy) NSString * searchTerm;
 @property (nonatomic,retain) NSMutableArray * searchResults;
 @property (nonatomic,copy) NSString *currentSearchTerm;
-@property (nonatomic,readwrite,getter=isRunning) BOOL running;
+
+-(BOOL)isRunning;
+-(BOOL)isCancelled;
+-(BOOL)isStopped;
 
 -(NSArray *)searchResultsAsPlainArray;
 -(void)stopSearch;

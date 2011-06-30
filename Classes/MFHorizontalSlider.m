@@ -199,12 +199,14 @@
 		NSFileManager *filemanager = [[NSFileManager alloc]init];
 		if([filemanager fileExistsAtPath: fullPathToFile]){
 			controller = [[MFSliderDetail alloc] initWithPageNumber:page andImage:fullPathToFile andSize:CGSizeMake(thumbWidth, thumbHeight) andObject:[thumbnailNumbers objectAtIndex:page] andDataSource:self.delegate];
+			[controller.view setAutoresizingMask:UIViewAutoresizingNone];
 			controller.delegate = self;
 			[thumbnailViewControllers replaceObjectAtIndex:page withObject:controller];
 			
 			[controller release];
 		}else {
 			controller = [[MFSliderDetail alloc] initWithPageNumberNoThumb:page andImage:@"png0.png" andSize:CGSizeMake(thumbWidth, thumbHeight) andObject:[thumbnailNumbers objectAtIndex:page] andDataSource:self.delegate];
+			[controller.view setAutoresizingMask:UIViewAutoresizingNone];
 			controller.delegate = self;
 			[thumbnailViewControllers replaceObjectAtIndex:page withObject:controller];
 			[controller release];

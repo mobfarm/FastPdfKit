@@ -135,8 +135,9 @@
 	if ([elementName isEqualToString:KEY_PDF]) {
 		
 		// Create a new dictionary and release the old one (if necessary).
-		
-		self.currentItem = [[NSMutableDictionary alloc] init];
+		NSMutableDictionary * dictionary = [[NSMutableDictionary alloc] init];
+		self.currentItem = dictionary;
+        [dictionary release];
 	}
 }
 

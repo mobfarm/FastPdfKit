@@ -2,6 +2,17 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.9 (Jun 22th, 2011)
+* Added directional lock to the page scroll view.
+* Changed popover behavior in the DocumentViewControllerKiosk. This should fix crash when reopening a document when dismissed with an open popover.
+* Fixed a few more leaks.
+
+### Update: 1.0.8 (Jun 10th, 2011)
+* Thumbnails are laid out correctly upon rotation.
+
+### Update: 1.0.7 (Jun 07th, 2011)
+* Fixed a nasty bug in the parser of True Type font. CMap parser redone on the ground up to be formatting agnostic. Most of the search/extraction related crash should be fixed now. Remember to try the test_ versions of search and extraction function.
+
 ### Update: 1.0.6 (May 27th, 2011)
 
 * Added an optional tiled version of the overlay view. If you want sharp drawables when zoomed in, set MFDocumentViewController's useTiledOverlayView to YES. Keep in mind that tiled layer rendering is slower, and memory usage is higher.
