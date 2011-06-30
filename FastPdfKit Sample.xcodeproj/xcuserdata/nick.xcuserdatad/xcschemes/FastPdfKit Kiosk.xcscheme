@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F4BA8BB1317BE8E008C5A7E"
+               BlueprintIdentifier = "018848E6131E89570045038F"
                BuildableName = "FastPdfKit Kiosk.app"
                BlueprintName = "FastPdfKit Kiosk"
                ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
@@ -40,12 +40,19 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6F4BA8BB1317BE8E008C5A7E"
+            BlueprintIdentifier = "018848E6131E89570045038F"
             BuildableName = "FastPdfKit Kiosk.app"
             BlueprintName = "FastPdfKit Kiosk"
             ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "NSZombieEnabled"
+            value = "YES"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -59,7 +66,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6F4BA8BB1317BE8E008C5A7E"
+            BlueprintIdentifier = "018848E6131E89570045038F"
             BuildableName = "FastPdfKit Kiosk.app"
             BlueprintName = "FastPdfKit Kiosk"
             ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">

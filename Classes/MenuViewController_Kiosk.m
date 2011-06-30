@@ -14,14 +14,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define FPK_KIOSK_XML_URL @"http://go.mobfarm.eu/pdf/kiosk_list.xml"
+#define FPK_KIOSK_XML_NAME @"kiosk_list"
+
 @implementation MenuViewController_Kiosk
 
-//@synthesize referenceButton, manualButton, referenceTextView, manualTextView;
-//@synthesize document;
-//@synthesize passwordAlertView;
-//@synthesize downloadProgressView;
-//@synthesize downloadProgressContainerView;
-//@synthesize documentName;
 @synthesize buttonRemoveDict;
 @synthesize openButtons;
 @synthesize progressViewDict,imgDict;
@@ -88,6 +85,7 @@
 	[super viewDidLoad];
 	
 	XMLParser *parser = nil;
+    NSURL * xmlUrl = nil;
 	
 	UIScrollView * aScrollView = nil;
 	CGFloat yBorder = 0 ; 
@@ -98,8 +96,10 @@
     NSString * titoloPdfNoSpace = nil;
 	NSString * linkPdf = nil;
 	NSString * copertinaPdf = nil;
+    
 	MFHomeListPdf * viewPdf = nil;
-	int documentsCount;
+    
+	int documentsCount; // Used to iterate over each item in the list.
 	
 	//Graphics visualization
 	
@@ -140,15 +140,28 @@
 	
 	
 	parser = [[XMLParser alloc] init];
-	parser.menuViewController = self;
-	[parser parseXMLFileAtURL:DEF_XML_URL];
+	xmlUrl = [NSURL URLWithString:FPK_KIOSK_XML_URL];
+    [parser parseXMLFileAtURL:xmlUrl];
 	
-	self.documentsList = [parser documents];
+    // Try to parse the remote URL. If it fails, fallback to the local xml.
+    
+    if([parser isDone]) {
+        
+        self.documentsList = [parser parsedItems];    
+        
+    } else {
+        
+        xmlUrl = [[NSBundle mainBundle]URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
+        [parser parseXMLFileAtURL:xmlUrl];
+        
+        if([parser isDone]) {
+            self.documentsList = [parser parsedItems];
+        }
+    }
 	
 	[parser release];
 	
 	documentsCount = [documentsList count]; 
-	
 	
 	aScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewVOffset, scrollViewWidth, scrollViewHeight)];
 	aScrollView.backgroundColor = [UIColor whiteColor];

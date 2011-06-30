@@ -7,48 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASIHTTPRequest.h"
-#import "MenuViewController_Kiosk.h"
 
-#define KEY_COVER @"cover"
-#define KEY_LINK @"link"
-#define KEY_TITLE @"title"
-#define KEY_PDF @"pdf"
-//#define DEF_XML_URL @"http://fastpdfkit.com/kiosk/kiosk_list.xml"
-#define DEF_XML_URL @"http://go.mobfarm.eu/pdf/kiosk_list.xml"
-#define DEF_XML_NAME @"kiosk_list"
-
-@interface XMLParser : NSObject <ASIHTTPRequestDelegate,UIActionSheetDelegate,NSXMLParserDelegate>{
+@interface XMLParser : NSObject <NSXMLParserDelegate>{
 	
-	NSMutableArray * documents;
-	
-	// Temporary item, added to the "stories" array one at a time, and cleared for the next one
-	NSMutableDictionary * currentItem;
-	NSString *currentString;
-	
-	NSString * currentElement;
-	NSString * currentUrl ;
-	NSMutableString * currentTitle, * currentCover, * currentLink;
-	
-	ASIHTTPRequest * httpRequest;
-	
-	// id delegate;
-	
-	MenuViewController_Kiosk *menuViewController ;
-	
-	BOOL pdfInDownload;
-	BOOL downloadError;
 }
 
-@property (nonatomic, assign) MenuViewController_Kiosk *menuViewController;
-@property (readwrite) BOOL pdfInDownload;
-@property (readwrite) BOOL downloadError;
-@property (nonatomic,copy ) NSString *currentString;
-@property (nonatomic, retain) NSMutableArray * documents;
-@property (nonatomic, retain) NSMutableDictionary * currentItem;
-@property (nonatomic, retain) ASIHTTPRequest * httpRequest;
-
--(void)downloadPDF:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf;
--(void)parseXMLFileAtURL:(NSString *)URL;
+-(void)parseXMLFileAtURL:(NSURL *)URL;
+-(BOOL)isDone;
+-(NSMutableArray *)parsedItems;
 
 @end

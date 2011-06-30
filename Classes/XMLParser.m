@@ -9,89 +9,84 @@
 #import "XMLParser.h"
 #import "MenuViewController_Kiosk.h"
 
+#define FPK_XML_COVER @"cover"
+#define FPK_XML_LINK @"link"
+#define FPK_XML_TITLE @"title"
+#define FPK_XML_PDF @"pdf"
+// #define DEF_XML_URL @"http://fastpdfkit.com/kiosk/kiosk_list.xml"
+
+@interface XMLParser()
+
+@property (nonatomic, retain) NSMutableArray * documents;
+@property (nonatomic, retain) NSMutableDictionary * currentItem;
+@property (nonatomic, copy ) NSString *currentString;
+@property (nonatomic, readwrite) BOOL downloadError;
+@property (nonatomic, readwrite) BOOL endOfDocumentReached;
+
+@end
+
 @implementation XMLParser
 
-@synthesize menuViewController;
-@synthesize pdfInDownload,downloadError;
 @synthesize currentString;
 @synthesize documents;
 @synthesize currentItem;
-@synthesize httpRequest;
+@synthesize downloadError, endOfDocumentReached;
 
-- (void)viewDidLoad {
-	pdfInDownload = NO;
-	downloadError = NO;
+-(BOOL)isDone {
+    
+    return ((!self.downloadError)&&(self.endOfDocumentReached)&&(self.documents));
 }
 
-- (void)parserDidStartDocument:(NSXMLParser *)parser{	
-	
+-(NSMutableArray *)parsedItems {
+    
+    return self.documents;
 }
 
-- (void)parseXMLFileAtURL:(NSString *)URL {	
+- (void)parseXMLFileAtURL:(NSURL *)url {	
 	
 	NSXMLParser * xmlParser = nil;
-	NSString * filePath = nil;
-	NSData * fileData = nil;
-	NSURL * xmlURL = nil;
-	NSMutableArray * documentsArray = nil;
+    NSData * xmlData = nil;
 	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-	// Allocate a new array to store the entries (just in case somebody call parse twice).
-	
-	documentsArray = [[NSMutableArray alloc] init];
-	self.documents = documentsArray;
-	[documentsArray release];
-	
-    // String URL's to actual NSURL.
-	
-    xmlURL = [NSURL URLWithString:URL];
-	
-    if (downloadError) {
-		
-		// If an error occurred while downloading, we default to the bundled xml.
-		
-		filePath = [[NSBundle mainBundle] pathForResource:DEF_XML_NAME ofType:@"xml"];
-        
-		fileData = [NSData dataWithContentsOfFile:filePath]; 
-		xmlParser = [[NSXMLParser alloc] initWithData:fileData];
-		
-	} else {
-        
-		xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
-	}
-	
-    // Set self as the delegate of the parser.
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
-	[xmlParser setDelegate:self];
+    self.downloadError = NO;
+    self.endOfDocumentReached = NO;
+
+    xmlData = [NSData dataWithContentsOfURL:url];
+    xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
 	
-    // Not intrested in advanced features.
+	[xmlParser setDelegate:self];
 	
     [xmlParser setShouldProcessNamespaces:NO];
     [xmlParser setShouldReportNamespacePrefixes:NO];
     [xmlParser setShouldResolveExternalEntities:NO];
 	
-    [xmlParser parse]; // Parse.
+    [xmlParser parse]; // Start parsing.
 	
-	// Cleanup.
-	[xmlURL release];
 	[xmlParser release];
 	[pool release];
 }
 
+-(void)parserDidStartDocument:(NSXMLParser *)parser {
+    
+    NSMutableArray * documentsArray = [[NSMutableArray alloc] init];
+	self.documents = documentsArray;
+	[documentsArray release];
+}
+
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
 	
-	downloadError = YES;
-	
-	[self parseXMLFileAtURL:DEF_XML_URL];
+	self.downloadError = YES;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{            
 	
-	if ([elementName isEqualToString:KEY_PDF]) {
+    NSMutableDictionary * dictionary = nil;
+    
+	if ([elementName isEqualToString:FPK_XML_PDF]) {
 		
 		// Create a new dictionary and release the old one (if necessary).
-		NSMutableDictionary * dictionary = [[NSMutableDictionary alloc] init];
+		dictionary = [[NSMutableDictionary alloc] init];
 		self.currentItem = dictionary;
         [dictionary release];
 	}
@@ -99,21 +94,21 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{     
 	
-	if ([elementName isEqualToString:KEY_TITLE]) {
+	if ([elementName isEqualToString:FPK_XML_TITLE]) {
 		
-		[currentItem setValue:currentString forKey:KEY_TITLE];
+		[self.currentItem setValue:currentString forKey:FPK_XML_TITLE];
 		
-	} else if ([elementName isEqualToString:KEY_LINK]) {
+	} else if ([elementName isEqualToString:FPK_XML_LINK]) {
 		
-		[currentItem setValue:currentString forKey:KEY_LINK];
+		[self.currentItem setValue:currentString forKey:FPK_XML_LINK];
 		
-	} else if ([elementName isEqualToString:KEY_COVER]) {
+	} else if ([elementName isEqualToString:FPK_XML_COVER]) {
 		
-		[currentItem setValue:currentString forKey:KEY_COVER];
+		[self.currentItem setValue:currentString forKey:FPK_XML_COVER];
 		
-	} else if ([elementName isEqualToString:KEY_PDF]) {
+	} else if ([elementName isEqualToString:FPK_XML_PDF]) {
 		
-		[documents addObject:currentItem];
+		[self.documents addObject:currentItem];
 	}
 }
 
@@ -125,7 +120,7 @@
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
 	
-	downloadError = NO;
+    self.endOfDocumentReached = YES;
 }
 
 
@@ -133,19 +128,10 @@
 	
 	[documents release];
 	
-	[currentElement release];
 	[currentItem release];
-	[currentTitle release];
-	[currentCover release];
-	[currentLink release];
-	[currentUrl release];
 	[currentString release];
 	
-    httpRequest.delegate = nil;
-    [httpRequest cancel];
-	[httpRequest release], httpRequest = nil;
-	
-	[super dealloc];
+    [super dealloc];
 }
 
 
