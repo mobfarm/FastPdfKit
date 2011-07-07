@@ -148,7 +148,6 @@
 		01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
 		01884A6C131E93C70045038F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		01884A7C131E93DB0045038F /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */; };
-		01884A83131E947C0045038F /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A82131E947C0045038F /* libz.1.2.3.dylib */; };
 		01884A86131E94AA0045038F /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */; };
 		01884A8A131E94C70045038F /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01884A8B131E94C70045038F /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
@@ -163,6 +162,9 @@
 		01884AB2131E95720045038F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
 		01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC2131E96C50045038F /* SystemConfiguration.framework */; };
 		01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC6131E96CE0045038F /* MobileCoreServices.framework */; };
+		01B312B713C5A1B300B659B2 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B312B613C5A1B300B659B2 /* libz.1.2.5.dylib */; };
+		01B312B913C5A20E00B659B2 /* libFastPDFKit-iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B312B813C5A20E00B659B2 /* libFastPDFKit-iphoneos.a */; };
+		01B3132213C5E00900B659B2 /* libFastPDFKit-iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B312B813C5A20E00B659B2 /* libFastPDFKit-iphoneos.a */; };
 		01B9166013214E1D00D517A6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		01B9166113214E1D00D517A6 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
 		01B9166213214E1D00D517A6 /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
@@ -370,11 +372,12 @@
 		01884A5A131E932A0045038F /* MFSliderDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSliderDetail.h; sourceTree = "<group>"; };
 		01884A5B131E932A0045038F /* MFSliderDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSliderDetail.m; sourceTree = "<group>"; };
 		01884A66131E93A80045038F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		01884A82131E947C0045038F /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		01884AA1131E950A0045038F /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		01884AA2131E950A0045038F /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		01B312B613C5A1B300B659B2 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		01B312B813C5A20E00B659B2 /* libFastPDFKit-iphoneos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libFastPDFKit-iphoneos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B916791321507500D517A6 /* SearchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewControllerDelegate.h; sourceTree = "<group>"; };
 		01B9168A1321516D00D517A6 /* BookmarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkView.xib; sourceTree = "<group>"; };
 		01B9168B1321516D00D517A6 /* Kiosk_ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Kiosk_ipad.xib; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B312B913C5A20E00B659B2 /* libFastPDFKit-iphoneos.a in Frameworks */,
+				01B312B713C5A1B300B659B2 /* libz.1.2.5.dylib in Frameworks */,
 				01CF528813B0C97B0055919D /* MediaPlayer.framework in Frameworks */,
 				01BBD89213A17FEE00E9EE89 /* AudioToolbox.framework in Frameworks */,
 				01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */,
@@ -497,7 +502,6 @@
 				01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */,
 				01884A4A131E92B30045038F /* UIKit.framework in Frameworks */,
 				01884A6C131E93C70045038F /* CoreGraphics.framework in Frameworks */,
-				01884A83131E947C0045038F /* libz.1.2.3.dylib in Frameworks */,
 				01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */,
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
 				6FA0FC6D1355E6AA007F51EE /* libziparchive.a in Frameworks */,
@@ -510,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CF528613B0A20D0055919D /* AVFoundation.framework in Frameworks */,
+				01B3132213C5E00900B659B2 /* libFastPDFKit-iphoneos.a in Frameworks */,
 				01E3C422133D1410009E9D4C /* MediaPlayer.framework in Frameworks */,
 				01BBD89613A17FFF00E9EE89 /* AudioToolbox.framework in Frameworks */,
 				01BBD89713A17FFF00E9EE89 /* CFNetwork.framework in Frameworks */,
@@ -795,6 +800,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				01B312B813C5A20E00B659B2 /* libFastPDFKit-iphoneos.a */,
+				01B312B613C5A1B300B659B2 /* libz.1.2.5.dylib */,
 				01CF528713B0C97B0055919D /* MediaPlayer.framework */,
 				01CF528513B0A20D0055919D /* AVFoundation.framework */,
 				01CF528413B0A1E80055919D /* MediaPlayer.framework */,
@@ -846,7 +853,6 @@
 				01884AC2131E96C50045038F /* SystemConfiguration.framework */,
 				01884AC6131E96CE0045038F /* MobileCoreServices.framework */,
 				01884A66131E93A80045038F /* CFNetwork.framework */,
-				01884A82131E947C0045038F /* libz.1.2.3.dylib */,
 				0174E2AF12EF24CA003699A8 /* CoreText.framework */,
 				950B37CF125CBEC4007BDDA1 /* UIKit.framework */,
 				950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */,

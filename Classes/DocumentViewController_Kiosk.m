@@ -1627,6 +1627,11 @@
 
 -(void)prepareThumbSlider {
 	
+    NSString * sysver = [[UIDevice currentDevice]systemVersion];
+    
+    if([sysver isEqualToString:@"5.0"]) // Skip thumbnail slider and thumbnails generation on 5.0.
+        return;
+    
     MFHorizontalSlider * anHorizontalThumbSlider = nil;
     
 	if(thumbsliderHorizontal)
