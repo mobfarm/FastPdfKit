@@ -163,7 +163,6 @@
 		01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC2131E96C50045038F /* SystemConfiguration.framework */; };
 		01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC6131E96CE0045038F /* MobileCoreServices.framework */; };
 		01B312B713C5A1B300B659B2 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B312B613C5A1B300B659B2 /* libz.1.2.5.dylib */; };
-		01B312B913C5A20E00B659B2 /* libFastPDFKit-iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B312B813C5A20E00B659B2 /* libFastPDFKit-iphoneos.a */; };
 		01B3132213C5E00900B659B2 /* libFastPDFKit-iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B312B813C5A20E00B659B2 /* libFastPDFKit-iphoneos.a */; };
 		01B9166013214E1D00D517A6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		01B9166113214E1D00D517A6 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
@@ -492,7 +491,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B312B913C5A20E00B659B2 /* libFastPDFKit-iphoneos.a in Frameworks */,
 				01B312B713C5A1B300B659B2 /* libz.1.2.5.dylib in Frameworks */,
 				01CF528813B0C97B0055919D /* MediaPlayer.framework in Frameworks */,
 				01BBD89213A17FEE00E9EE89 /* AudioToolbox.framework in Frameworks */,

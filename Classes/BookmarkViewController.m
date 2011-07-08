@@ -51,6 +51,7 @@
 	
     [bookmarksTableView setEditing:YES];
     status = STATUS_EDITING;
+    [items release];
 }
 
 -(void)disableEditing {
@@ -64,6 +65,8 @@
 	
     [bookmarksTableView setEditing:NO];
     status = STATUS_NORMAL;
+    
+    [items release];
 }
 
 -(IBAction)actionDone:(id)sender {

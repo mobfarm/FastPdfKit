@@ -73,7 +73,8 @@
 	if([aDocManager isLocked]) {
 		
 		[self setDocument:aDocManager];
-		
+        [aDocManager release];
+        
 		// 
 		//	Create and alert a reference (assign) to it
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Insert Password" message:[NSString stringWithFormat:@"This get covered"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];

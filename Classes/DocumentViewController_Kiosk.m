@@ -407,11 +407,11 @@
 		
 		// If nil, allocate and initialize it.
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)]autorelease];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 			
 		}else {
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)]autorelease];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 		}
 		
@@ -804,6 +804,8 @@
 	[audioVC.view setFrame:CGRectMake(0, 0, 272, 40)];
 	
 	[self.view addSubview:audioVC.view];
+    
+    [audioVC release];
 }
 
 - (void)playVideo:(NSString *)videoPath local:(BOOL)isLocal{
@@ -1361,7 +1363,7 @@
 	
     
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
+        
 		// Initialize the thumb slider containter view. 
 		
 		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
