@@ -4,30 +4,50 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FasfPDFKit Kiosk.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 		<key>FastPdfKit Kiosk.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>FastPdfKit Sample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>FastPdfKit Sample.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>FastPdfKitKiosk.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>FastPdfKitReader.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>01598DA513CAE783007344EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>01598DD913CAE917007344EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>018848E6131E89570045038F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>019697C01317B0A000CBBD60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>01F8B51D13C76B0C00B89F6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
