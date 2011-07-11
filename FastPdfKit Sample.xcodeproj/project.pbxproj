@@ -15,6 +15,19 @@
 		010D14B713CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 010D14B613CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf */; };
 		010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */; };
 		010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */; };
+		010D14D013CAFFD800FD6F08 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CD13CAFFD800FD6F08 /* MFHorizontalSlider.m */; };
+		010D14D113CAFFD800FD6F08 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CF13CAFFD800FD6F08 /* MFSliderDetail.m */; };
+		010D14DE13CB002300FD6F08 /* BasicLauncherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D413CB002300FD6F08 /* BasicLauncherController.m */; };
+		010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D613CB002300FD6F08 /* DocumentViewController.m */; };
+		010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */; };
+		010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14D913CB002300FD6F08 /* MainWindow.xib */; };
+		010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DA13CB002300FD6F08 /* MenuView_pad.xib */; };
+		010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DB13CB002300FD6F08 /* MenuView_phone.xib */; };
+		010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14DD13CB002300FD6F08 /* MenuViewController.m */; };
+		010D14E513CB003000FD6F08 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CD13CAFFD800FD6F08 /* MFHorizontalSlider.m */; };
+		010D14E613CB003300FD6F08 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CF13CAFFD800FD6F08 /* MFSliderDetail.m */; };
+		010D14E713CB004E00FD6F08 /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D14CE13CAFFD800FD6F08 /* MFSliderDetail.h */; };
+		010D14E813CB005200FD6F08 /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D14CC13CAFFD800FD6F08 /* MFHorizontalSlider.h */; };
 		0130A3D213B230F700F9956E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0130A3D113B230F600F9956E /* Default.png */; };
 		0130A3D413B2311900F9956E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0130A3D313B2311900F9956E /* Default@2x.png */; };
 		0130A3D613B2312E00F9956E /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0130A3D513B2312D00F9956E /* Default-Portrait~ipad.png */; };
@@ -37,8 +50,6 @@
 		01598DC713CAE7E4007344EE /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E113C756130077CE63 /* DocumentViewController_Kiosk.m */; };
 		01598DC813CAE7E4007344EE /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E313C756130077CE63 /* MFAudioPlayerViewImpl.m */; };
 		01598DC913CAE7E4007344EE /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E513C756130077CE63 /* WebBrowser.m */; };
-		01598DCA13CAE7F8007344EE /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC079B13C754B90077CE63 /* MFHorizontalSlider.m */; };
-		01598DCB13CAE7F8007344EE /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC079D13C754B90077CE63 /* MFSliderDetail.m */; };
 		01598DD313CAE8DB007344EE /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01598DD213CAE8DB007344EE /* libFastPDFKit.a */; };
 		01598DD413CAE8DB007344EE /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01598DD213CAE8DB007344EE /* libFastPDFKit.a */; };
 		01598DD513CAE8DB007344EE /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01598DD213CAE8DB007344EE /* libFastPDFKit.a */; };
@@ -128,10 +139,6 @@
 		01598E3613CAEC8B007344EE /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07B313C755610077CE63 /* ASIProgressDelegate.h */; };
 		01598E3713CAEC8B007344EE /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07BF13C755610077CE63 /* Reachability.h */; };
 		01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07C113C755610077CE63 /* ZipArchive.h */; };
-		01598E3913CAEC8B007344EE /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC079A13C754B90077CE63 /* MFHorizontalSlider.h */; };
-		01598E3A13CAEC8B007344EE /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC079C13C754B90077CE63 /* MFSliderDetail.h */; };
-		01598E3B13CAECC5007344EE /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC079A13C754B90077CE63 /* MFHorizontalSlider.h */; };
-		01598E3C13CAECC5007344EE /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC079C13C754B90077CE63 /* MFSliderDetail.h */; };
 		01598E4813CAEDD2007344EE /* backThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 01598E3E13CAEDD2007344EE /* backThumb.png */; };
 		01598E4913CAEDD2007344EE /* backThumb_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 01598E3F13CAEDD2007344EE /* backThumb_iphone.png */; };
 		01598E4A13CAEDD2007344EE /* backThumb_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01598E4013CAEDD2007344EE /* backThumb_iphone@2x.png */; };
@@ -241,8 +248,6 @@
 		01B9166013214E1D00D517A6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		01B9166113214E1D00D517A6 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
 		01B9166213214E1D00D517A6 /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
-		01BC079E13C754B90077CE63 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC079B13C754B90077CE63 /* MFHorizontalSlider.m */; };
-		01BC079F13C754B90077CE63 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC079D13C754B90077CE63 /* MFSliderDetail.m */; };
 		01BC07C313C755610077CE63 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A313C755610077CE63 /* ASIAuthenticationDialog.m */; };
 		01BC07C513C755610077CE63 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A613C755610077CE63 /* ASIDownloadCache.m */; };
 		01BC07C713C755610077CE63 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A813C755610077CE63 /* ASIFormDataRequest.m */; };
@@ -262,13 +267,6 @@
 		01BC07EA13C756130077CE63 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E313C756130077CE63 /* MFAudioPlayerViewImpl.m */; };
 		01BC07EB13C756130077CE63 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E513C756130077CE63 /* WebBrowser.m */; };
 		01BC07EC13C756130077CE63 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07E613C756130077CE63 /* WebBrowser.xib */; };
-		01BC07F913C75AB00077CE63 /* BasicLauncherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07EF13C75AB00077CE63 /* BasicLauncherController.m */; };
-		01BC07FA13C75AB00077CE63 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07F113C75AB00077CE63 /* DocumentViewController.m */; };
-		01BC07FB13C75AB00077CE63 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07F313C75AB00077CE63 /* FastPDFKit_SampleAppDelegate.m */; };
-		01BC07FC13C75AB00077CE63 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07F413C75AB00077CE63 /* MainWindow.xib */; };
-		01BC07FD13C75AB00077CE63 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07F513C75AB00077CE63 /* MenuView_pad.xib */; };
-		01BC07FE13C75AB00077CE63 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07F613C75AB00077CE63 /* MenuView_phone.xib */; };
-		01BC07FF13C75AB00077CE63 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07F813C75AB00077CE63 /* MenuViewController.m */; };
 		01BC080C13C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */; };
 		01BC080D13C75B310077CE63 /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080313C75B310077CE63 /* Kiosk_ipad.xib */; };
 		01BC080E13C75B310077CE63 /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080413C75B310077CE63 /* Kiosk_phone.xib */; };
@@ -359,6 +357,21 @@
 		010D14B613CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "FastPdfKit Manual Encrypted.pdf"; path = "FastPdfKit/PDFs/FastPdfKit Manual Encrypted.pdf"; sourceTree = "<group>"; };
 		010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitKiosk-Prefix.pch"; sourceTree = "<group>"; };
 		010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitReader-Prefix.pch"; sourceTree = "<group>"; };
+		010D14CC13CAFFD800FD6F08 /* MFHorizontalSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHorizontalSlider.h; sourceTree = "<group>"; };
+		010D14CD13CAFFD800FD6F08 /* MFHorizontalSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHorizontalSlider.m; sourceTree = "<group>"; };
+		010D14CE13CAFFD800FD6F08 /* MFSliderDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSliderDetail.h; sourceTree = "<group>"; };
+		010D14CF13CAFFD800FD6F08 /* MFSliderDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSliderDetail.m; sourceTree = "<group>"; };
+		010D14D313CB002300FD6F08 /* BasicLauncherController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicLauncherController.h; sourceTree = "<group>"; };
+		010D14D413CB002300FD6F08 /* BasicLauncherController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicLauncherController.m; sourceTree = "<group>"; };
+		010D14D513CB002300FD6F08 /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
+		010D14D613CB002300FD6F08 /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
+		010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_SampleAppDelegate.h; sourceTree = "<group>"; };
+		010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_SampleAppDelegate.m; sourceTree = "<group>"; };
+		010D14D913CB002300FD6F08 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		010D14DA13CB002300FD6F08 /* MenuView_pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_pad.xib; sourceTree = "<group>"; };
+		010D14DB13CB002300FD6F08 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
+		010D14DC13CB002300FD6F08 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		010D14DD13CB002300FD6F08 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		0130A3D113B230F600F9956E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		0130A3D313B2311900F9956E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		0130A3D513B2312D00F9956E /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
@@ -424,10 +437,6 @@
 		01884A66131E93A80045038F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		01BC079A13C754B90077CE63 /* MFHorizontalSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHorizontalSlider.h; sourceTree = "<group>"; };
-		01BC079B13C754B90077CE63 /* MFHorizontalSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHorizontalSlider.m; sourceTree = "<group>"; };
-		01BC079C13C754B90077CE63 /* MFSliderDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSliderDetail.h; sourceTree = "<group>"; };
-		01BC079D13C754B90077CE63 /* MFSliderDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSliderDetail.m; sourceTree = "<group>"; };
 		01BC07A213C755610077CE63 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		01BC07A313C755610077CE63 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		01BC07A413C755610077CE63 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -469,17 +478,6 @@
 		01BC07E413C756130077CE63 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
 		01BC07E513C756130077CE63 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
 		01BC07E613C756130077CE63 /* WebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebBrowser.xib; sourceTree = "<group>"; };
-		01BC07EE13C75AB00077CE63 /* BasicLauncherController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicLauncherController.h; sourceTree = "<group>"; };
-		01BC07EF13C75AB00077CE63 /* BasicLauncherController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicLauncherController.m; sourceTree = "<group>"; };
-		01BC07F013C75AB00077CE63 /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
-		01BC07F113C75AB00077CE63 /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
-		01BC07F213C75AB00077CE63 /* FastPDFKit_SampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_SampleAppDelegate.h; sourceTree = "<group>"; };
-		01BC07F313C75AB00077CE63 /* FastPDFKit_SampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_SampleAppDelegate.m; sourceTree = "<group>"; };
-		01BC07F413C75AB00077CE63 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		01BC07F513C75AB00077CE63 /* MenuView_pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_pad.xib; sourceTree = "<group>"; };
-		01BC07F613C75AB00077CE63 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
-		01BC07F713C75AB00077CE63 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		01BC07F813C75AB00077CE63 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_KioskAppDelegate.h; sourceTree = "<group>"; };
 		01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_KioskAppDelegate.m; sourceTree = "<group>"; };
 		01BC080313C75B310077CE63 /* Kiosk_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kiosk_ipad.xib; sourceTree = "<group>"; };
@@ -638,6 +636,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010D14CB13CAFFD800FD6F08 /* Thumbnail Slider */ = {
+			isa = PBXGroup;
+			children = (
+				010D14CC13CAFFD800FD6F08 /* MFHorizontalSlider.h */,
+				010D14CD13CAFFD800FD6F08 /* MFHorizontalSlider.m */,
+				010D14CE13CAFFD800FD6F08 /* MFSliderDetail.h */,
+				010D14CF13CAFFD800FD6F08 /* MFSliderDetail.m */,
+			);
+			path = "Thumbnail Slider";
+			sourceTree = "<group>";
+		};
+		010D14D213CB002300FD6F08 /* Simple App */ = {
+			isa = PBXGroup;
+			children = (
+				010D14D313CB002300FD6F08 /* BasicLauncherController.h */,
+				010D14D413CB002300FD6F08 /* BasicLauncherController.m */,
+				010D14D513CB002300FD6F08 /* DocumentViewController.h */,
+				010D14D613CB002300FD6F08 /* DocumentViewController.m */,
+				010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */,
+				010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */,
+				010D14D913CB002300FD6F08 /* MainWindow.xib */,
+				010D14DA13CB002300FD6F08 /* MenuView_pad.xib */,
+				010D14DB13CB002300FD6F08 /* MenuView_phone.xib */,
+				010D14DC13CB002300FD6F08 /* MenuViewController.h */,
+				010D14DD13CB002300FD6F08 /* MenuViewController.m */,
+			);
+			path = "Simple App";
+			sourceTree = "<group>";
+		};
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,17 +775,6 @@
 			path = img;
 			sourceTree = "<group>";
 		};
-		01BC079913C754B90077CE63 /* Thumbnail Slider */ = {
-			isa = PBXGroup;
-			children = (
-				01BC079A13C754B90077CE63 /* MFHorizontalSlider.h */,
-				01BC079B13C754B90077CE63 /* MFHorizontalSlider.m */,
-				01BC079C13C754B90077CE63 /* MFSliderDetail.h */,
-				01BC079D13C754B90077CE63 /* MFSliderDetail.m */,
-			);
-			path = "Thumbnail Slider";
-			sourceTree = "<group>";
-		};
 		01BC07A013C755610077CE63 /* Third Parties */ = {
 			isa = PBXGroup;
 			children = (
@@ -831,25 +847,6 @@
 			path = Reader;
 			sourceTree = "<group>";
 		};
-		01BC07ED13C75AB00077CE63 /* Simple App */ = {
-			isa = PBXGroup;
-			children = (
-				01BC07EE13C75AB00077CE63 /* BasicLauncherController.h */,
-				01BC07EF13C75AB00077CE63 /* BasicLauncherController.m */,
-				01BC07F013C75AB00077CE63 /* DocumentViewController.h */,
-				01BC07F113C75AB00077CE63 /* DocumentViewController.m */,
-				01BC07F213C75AB00077CE63 /* FastPDFKit_SampleAppDelegate.h */,
-				01BC07F313C75AB00077CE63 /* FastPDFKit_SampleAppDelegate.m */,
-				01BC07F413C75AB00077CE63 /* MainWindow.xib */,
-				01BC07F513C75AB00077CE63 /* MenuView_pad.xib */,
-				01BC07F613C75AB00077CE63 /* MenuView_phone.xib */,
-				01BC07F713C75AB00077CE63 /* MenuViewController.h */,
-				01BC07F813C75AB00077CE63 /* MenuViewController.m */,
-			);
-			name = "Simple App";
-			path = "Simple Sample App";
-			sourceTree = "<group>";
-		};
 		01BC080013C75B310077CE63 /* Kiosk */ = {
 			isa = PBXGroup;
 			children = (
@@ -872,6 +869,7 @@
 		01BC081313C75D3A0077CE63 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				010D14CB13CAFFD800FD6F08 /* Thumbnail Slider */,
 				01BC081413C75D3A0077CE63 /* Bookmarks */,
 				01BC081913C75D3A0077CE63 /* Outline */,
 				01BC081E13C75D3A0077CE63 /* Text Search */,
@@ -945,12 +943,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				010D14D213CB002300FD6F08 /* Simple App */,
 				01BC081313C75D3A0077CE63 /* Shared */,
 				01BC080013C75B310077CE63 /* Kiosk */,
-				01BC07ED13C75AB00077CE63 /* Simple App */,
 				01BC07DC13C756130077CE63 /* Reader */,
 				01BC07A013C755610077CE63 /* Third Parties */,
-				01BC079913C754B90077CE63 /* Thumbnail Slider */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1054,8 +1051,6 @@
 				01598E0613CAEBCF007344EE /* NotificationFactory.h in Headers */,
 				01598E0713CAEBCF007344EE /* SearchManager.h in Headers */,
 				01598E0813CAEBCF007344EE /* SearchResultCellView.h in Headers */,
-				01598E3B13CAECC5007344EE /* MFHorizontalSlider.h in Headers */,
-				01598E3C13CAECC5007344EE /* MFSliderDetail.h in Headers */,
 				01598E0913CAEBCF007344EE /* SearchResultDataSource.h in Headers */,
 				01598E0A13CAEBCF007344EE /* SearchResultView.h in Headers */,
 				01598E0B13CAEBCF007344EE /* SearchViewController.h in Headers */,
@@ -1111,9 +1106,9 @@
 				01598E3613CAEC8B007344EE /* ASIProgressDelegate.h in Headers */,
 				01598E3713CAEC8B007344EE /* Reachability.h in Headers */,
 				01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */,
-				01598E3913CAEC8B007344EE /* MFHorizontalSlider.h in Headers */,
-				01598E3A13CAEC8B007344EE /* MFSliderDetail.h in Headers */,
 				010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */,
+				010D14E713CB004E00FD6F08 /* MFSliderDetail.h in Headers */,
+				010D14E813CB005200FD6F08 /* MFHorizontalSlider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1383,9 +1378,6 @@
 				0130A3DB13B231BC00F9956E /* Default-Portrait~ipad.png in Resources */,
 				0130A3DE13B2362300F9956E /* Default-Landscape~ipad.png in Resources */,
 				71C6013A1358770200873F5A /* next.png in Resources */,
-				01BC07FC13C75AB00077CE63 /* MainWindow.xib in Resources */,
-				01BC07FD13C75AB00077CE63 /* MenuView_pad.xib in Resources */,
-				01BC07FE13C75AB00077CE63 /* MenuView_phone.xib in Resources */,
 				01BC083813C75D3A0077CE63 /* BookmarkView.xib in Resources */,
 				01BC083C13C75D3A0077CE63 /* OutlineView.xib in Resources */,
 				01BC084A13C75D3A0077CE63 /* SearchView2_pad.xib in Resources */,
@@ -1394,6 +1386,9 @@
 				01BC085013C75D3A0077CE63 /* SearchView_phone.xib in Resources */,
 				01BC085413C75D3A0077CE63 /* TextDisplayView.xib in Resources */,
 				010D14B713CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf in Resources */,
+				010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */,
+				010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */,
+				010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1404,8 +1399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01598DCA13CAE7F8007344EE /* MFHorizontalSlider.m in Sources */,
-				01598DCB13CAE7F8007344EE /* MFSliderDetail.m in Sources */,
 				01598DC613CAE7E4007344EE /* AudioViewController.m in Sources */,
 				01598DC713CAE7E4007344EE /* DocumentViewController_Kiosk.m in Sources */,
 				01598DC813CAE7E4007344EE /* MFAudioPlayerViewImpl.m in Sources */,
@@ -1419,6 +1412,8 @@
 				01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */,
 				01598DC413CAE7CD007344EE /* TextDisplayViewController.m in Sources */,
 				01598DC513CAE7CD007344EE /* TextSearchOperation.m in Sources */,
+				010D14E513CB003000FD6F08 /* MFHorizontalSlider.m in Sources */,
+				010D14E613CB003300FD6F08 /* MFSliderDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1460,8 +1455,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01884A8E131E94DD0045038F /* main.m in Sources */,
-				01BC079E13C754B90077CE63 /* MFHorizontalSlider.m in Sources */,
-				01BC079F13C754B90077CE63 /* MFSliderDetail.m in Sources */,
 				01BC07C313C755610077CE63 /* ASIAuthenticationDialog.m in Sources */,
 				01BC07C513C755610077CE63 /* ASIDownloadCache.m in Sources */,
 				01BC07C713C755610077CE63 /* ASIFormDataRequest.m in Sources */,
@@ -1492,6 +1485,8 @@
 				01BC085313C75D3A0077CE63 /* SearchViewController.m in Sources */,
 				01BC085713C75D3A0077CE63 /* TextDisplayViewController.m in Sources */,
 				01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
+				010D14D013CAFFD800FD6F08 /* MFHorizontalSlider.m in Sources */,
+				010D14D113CAFFD800FD6F08 /* MFSliderDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1500,10 +1495,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				01BC07F913C75AB00077CE63 /* BasicLauncherController.m in Sources */,
-				01BC07FA13C75AB00077CE63 /* DocumentViewController.m in Sources */,
-				01BC07FB13C75AB00077CE63 /* FastPDFKit_SampleAppDelegate.m in Sources */,
-				01BC07FF13C75AB00077CE63 /* MenuViewController.m in Sources */,
 				01BC083A13C75D3A0077CE63 /* BookmarkViewController.m in Sources */,
 				01BC083E13C75D3A0077CE63 /* OutlineViewController.m in Sources */,
 				01BC084013C75D3A0077CE63 /* MiniSearchView.m in Sources */,
@@ -1514,6 +1505,10 @@
 				01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */,
 				01BC085613C75D3A0077CE63 /* TextDisplayViewController.m in Sources */,
 				01BC085813C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
+				010D14DE13CB002300FD6F08 /* BasicLauncherController.m in Sources */,
+				010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */,
+				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
+				010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
