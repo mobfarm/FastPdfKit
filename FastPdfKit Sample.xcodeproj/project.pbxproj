@@ -700,7 +700,7 @@
 				01598E4713CAEDD2007344EE /* view.png */,
 			);
 			name = Images;
-			path = Classes/Reader/Images;
+			path = "Classes/Kiosk App/Images";
 			sourceTree = SOURCE_ROOT;
 		};
 		0188491A131E8A630045038F /* img */ = {
@@ -834,7 +834,6 @@
 		01BC07DC13C756130077CE63 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				01598E3D13CAEDD2007344EE /* Images */,
 				01BC07DD13C756130077CE63 /* AudioViewController.h */,
 				01BC07DE13C756130077CE63 /* AudioViewController.m */,
 				01BC07DF13C756130077CE63 /* AudioViewController.xib */,
@@ -852,6 +851,7 @@
 		01BC080013C75B310077CE63 /* Kiosk App */ = {
 			isa = PBXGroup;
 			children = (
+				01598E3D13CAEDD2007344EE /* Images */,
 				01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */,
 				01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */,
 				01BC080313C75B310077CE63 /* Kiosk_ipad.xib */,
