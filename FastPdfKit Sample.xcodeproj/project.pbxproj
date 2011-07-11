@@ -13,6 +13,8 @@
 		010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9FBD191356F2CD006884F5 /* AVFoundation.framework */; };
 		010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
 		010D14B713CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 010D14B613CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf */; };
+		010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */; };
+		010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */; };
 		0130A3D213B230F700F9956E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0130A3D113B230F600F9956E /* Default.png */; };
 		0130A3D413B2311900F9956E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0130A3D313B2311900F9956E /* Default@2x.png */; };
 		0130A3D613B2312E00F9956E /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0130A3D513B2312D00F9956E /* Default-Portrait~ipad.png */; };
@@ -355,14 +357,14 @@
 		010D14AD13CAF5CE00FD6F08 /* libFastPdfKitReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastPdfKitReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14AE13CAF5CE00FD6F08 /* libFastPdfKitKiosk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastPdfKitKiosk.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14B613CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "FastPdfKit Manual Encrypted.pdf"; path = "FastPdfKit/PDFs/FastPdfKit Manual Encrypted.pdf"; sourceTree = "<group>"; };
+		010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitKiosk-Prefix.pch"; sourceTree = "<group>"; };
+		010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitReader-Prefix.pch"; sourceTree = "<group>"; };
 		0130A3D113B230F600F9956E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		0130A3D313B2311900F9956E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		0130A3D513B2312D00F9956E /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0130A3D713B2313C00F9956E /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		0130A3ED13B23CCC00F9956E /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
-		01598DAA13CAE783007344EE /* FastPDFKitReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FastPDFKitReader-Prefix.pch"; path = "FastPDFKitReader/FastPDFKitReader-Prefix.pch"; sourceTree = "<group>"; };
 		01598DD213CAE8DB007344EE /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
-		01598DDE13CAE917007344EE /* FastPDFKitKiosk-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FastPDFKitKiosk-Prefix.pch"; path = "FastPDFKitKiosk/FastPDFKitKiosk-Prefix.pch"; sourceTree = "<group>"; };
 		01598E3E13CAEDD2007344EE /* backThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backThumb.png; sourceTree = "<group>"; };
 		01598E3F13CAEDD2007344EE /* backThumb_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backThumb_iphone.png; sourceTree = "<group>"; };
 		01598E4013CAEDD2007344EE /* backThumb_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backThumb_iphone@2x.png"; sourceTree = "<group>"; };
@@ -980,8 +982,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				01598DAA13CAE783007344EE /* FastPDFKitReader-Prefix.pch */,
-				01598DDE13CAE917007344EE /* FastPDFKitKiosk-Prefix.pch */,
+				010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */,
+				010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */,
 				32CA4F630368D1EE00C91783 /* FastPDFKit_Sample_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -1064,6 +1066,7 @@
 				01598E1013CAEBDF007344EE /* AudioViewController.h in Headers */,
 				01598E1213CAEBDF007344EE /* MFAudioPlayerViewImpl.h in Headers */,
 				01598E1313CAEBDF007344EE /* WebBrowser.h in Headers */,
+				010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1113,7 @@
 				01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */,
 				01598E3913CAEC8B007344EE /* MFHorizontalSlider.h in Headers */,
 				01598E3A13CAEC8B007344EE /* MFSliderDetail.h in Headers */,
+				010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
