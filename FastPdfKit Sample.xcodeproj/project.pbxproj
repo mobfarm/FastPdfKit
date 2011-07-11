@@ -547,7 +547,7 @@
 		01F65FC613CAF4BA00BEBBC1 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* FastPDFKit_Sample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_Sample_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* FastPDFKit_Sample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_Sample_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		6F9FBD191356F2CD006884F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6FB8D2F71366CE7B0010A558 /* Default-Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Pad.png"; sourceTree = "<group>"; };
 		6FB8D2F81366CE7B0010A558 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -847,7 +847,7 @@
 			path = Reader;
 			sourceTree = "<group>";
 		};
-		01BC080013C75B310077CE63 /* Kiosk */ = {
+		01BC080013C75B310077CE63 /* Kiosk App */ = {
 			isa = PBXGroup;
 			children = (
 				01598E3D13CAEDD2007344EE /* Images */,
@@ -863,8 +863,9 @@
 				01BC080A13C75B310077CE63 /* XMLParser.h */,
 				01BC080B13C75B310077CE63 /* XMLParser.m */,
 			);
-			path = Kiosk;
-			sourceTree = "<group>";
+			name = "Kiosk App";
+			path = "Classes/Kiosk App";
+			sourceTree = SOURCE_ROOT;
 		};
 		01BC081313C75D3A0077CE63 /* Shared */ = {
 			isa = PBXGroup;
@@ -945,7 +946,7 @@
 			children = (
 				010D14D213CB002300FD6F08 /* Simple App */,
 				01BC081313C75D3A0077CE63 /* Shared */,
-				01BC080013C75B310077CE63 /* Kiosk */,
+				01BC080013C75B310077CE63 /* Kiosk App */,
 				01BC07DC13C756130077CE63 /* Reader */,
 				01BC07A013C755610077CE63 /* Third Parties */,
 			);
