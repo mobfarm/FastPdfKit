@@ -1657,6 +1657,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1676,6 +1677,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1695,6 +1697,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = "Ad Hoc";
 		};
@@ -1718,6 +1721,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1738,6 +1742,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1758,6 +1763,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = "Ad Hoc";
 		};
@@ -1783,6 +1789,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -1807,6 +1814,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1830,6 +1838,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 			};
 			name = "Ad Hoc";
 		};
@@ -1857,6 +1866,7 @@
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -1885,6 +1895,7 @@
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
@@ -1913,6 +1924,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -1936,6 +1948,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -1959,6 +1972,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -1985,6 +1999,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -2007,6 +2022,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -2029,6 +2045,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -2075,6 +2092,7 @@
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
