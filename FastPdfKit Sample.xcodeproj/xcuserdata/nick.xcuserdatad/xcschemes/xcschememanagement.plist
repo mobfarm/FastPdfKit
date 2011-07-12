@@ -4,32 +4,32 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FPKKioskApp.xcscheme</key>
+		<key>FPKKioskApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>FPKKioskBundle.xcscheme</key>
+		<key>FPKKioskBundle.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>FPKKioskLib.xcscheme</key>
+		<key>FPKKioskLib.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>FPKReaderBundle.xcscheme</key>
+		<key>FPKReaderBundle.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>FPKReaderLib.xcscheme</key>
+		<key>FPKReaderLib.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>FPKSimpleApp.xcscheme</key>
+		<key>FPKSimpleApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
