@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/MFDocumentViewControllerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/MFDocumentViewControllerDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didChangeDirectionTo:</TokenIdentifier>
+			<Abstract type="html"> This method will notify a change in the direction used to present the document. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didChangeDirectionTo:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didGoToPage:</TokenIdentifier>
+			<Abstract type="html"> This method will be called to notify the transition to a new page. Use this to update page number related UI&apos;s elements or synchronize selected actions. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didGoToPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didChangeLeadTo:</TokenIdentifier>
+			<Abstract type="html"> This method will notify a change in the lead used to present the document. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didChangeLeadTo:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didChangeModeTo:automatic:</TokenIdentifier>
+			<Abstract type="html"> This method will notify a change in the mode of the document, either by esplicity setting it or automatic on rotation. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didChangeModeTo:automatic:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveTapAtPoint:</TokenIdentifier>
+			<Abstract type="html"> This method will notify if the user has tapped the document view at a point different from a document element, like an annotation. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didReceiveTapAtPoint:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveURIRequest:</TokenIdentifier>
+			<Abstract type="html"> This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
+link is activated and an internet browser should be open to show the link&apos;s content. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didReceiveURIRequest:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveTapOnPage:atPoint:</TokenIdentifier>
+			<Abstract type="html"> This method will notify if and where the user has tapped on a page bounds. Coordinates of the point are in document&apos;s user space. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didReceiveTapOnPage:atPoint:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didEndZoomingAtScale:</TokenIdentifier>
+			<Abstract type="html"> This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
+that report the current zoom to the user. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didEndZoomingAtScale:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:willFocusOnPage:</TokenIdentifier>
+			<Abstract type="html"> This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:willFocusOnPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didFocusOnPage:</TokenIdentifier>
+			<Abstract type="html"> This method will be called upon the showing up of the high definition version of the current page. Could be used to stop and Activity Indicator. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewController:didFocusOnPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewControllerDidUnfocus:</TokenIdentifier>
+			<Abstract type="html"> This method will be called when the high definition version of the page is removed from the view. </Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
+			
+			<Anchor>//api/name/documentViewControllerDidUnfocus:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

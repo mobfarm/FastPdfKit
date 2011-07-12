@@ -1,0 +1,1006 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MFDocumentViewControllerDelegate Protocol Reference</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<meta name="generator" content="appledoc 2.0.3 (build 687)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MFDocumentViewControllerDelegate Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/classForAudioPlayerView">&nbsp;&nbsp;&nbsp;&nbsp;- classForAudioPlayerView</option>
+	
+	<option value="//api/name/documentViewController:didChangeDirectionTo:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didChangeDirectionTo:</option>
+	
+	<option value="//api/name/documentViewController:didChangeLeadTo:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didChangeLeadTo:</option>
+	
+	<option value="//api/name/documentViewController:didChangeModeTo:automatic:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didChangeModeTo:automatic:</option>
+	
+	<option value="//api/name/documentViewController:didEndZoomingAtScale:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didEndZoomingAtScale:</option>
+	
+	<option value="//api/name/documentViewController:didFocusOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didFocusOnPage:</option>
+	
+	<option value="//api/name/documentViewController:didGoToPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didGoToPage:</option>
+	
+	<option value="//api/name/documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:</option>
+	
+	<option value="//api/name/documentViewController:didReceiveTapAtPoint:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveTapAtPoint:</option>
+	
+	<option value="//api/name/documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:</option>
+	
+	<option value="//api/name/documentViewController:didReceiveTapOnPage:atPoint:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveTapOnPage:atPoint:</option>
+	
+	<option value="//api/name/documentViewController:didReceiveURIRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveURIRequest:</option>
+	
+	<option value="//api/name/documentViewController:doesHaveToAutoplayAudio:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:doesHaveToAutoplayAudio:</option>
+	
+	<option value="//api/name/documentViewController:doesHaveToAutoplayVideo:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:doesHaveToAutoplayVideo:</option>
+	
+	<option value="//api/name/documentViewController:willFocusOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:willFocusOnPage:</option>
+	
+	<option value="//api/name/documentViewControllerDidUnfocus:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewControllerDidUnfocus:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/classForAudioPlayerView">classForAudioPlayerView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didChangeDirectionTo:">documentViewController:didChangeDirectionTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didChangeLeadTo:">documentViewController:didChangeLeadTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didChangeModeTo:automatic:">documentViewController:didChangeModeTo:automatic:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didEndZoomingAtScale:">documentViewController:didEndZoomingAtScale:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didFocusOnPage:">documentViewController:didFocusOnPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didGoToPage:">documentViewController:didGoToPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:">documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveTapAtPoint:">documentViewController:didReceiveTapAtPoint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:">documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveTapOnPage:atPoint:">documentViewController:didReceiveTapOnPage:atPoint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveURIRequest:">documentViewController:didReceiveURIRequest:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:doesHaveToAutoplayAudio:">documentViewController:doesHaveToAutoplayAudio:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:doesHaveToAutoplayVideo:">documentViewController:doesHaveToAutoplayVideo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:willFocusOnPage:">documentViewController:willFocusOnPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewControllerDidUnfocus:">documentViewControllerDidUnfocus:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MFDocumentViewControllerDelegate Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MFDocumentViewControllerDelegate Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MFDocumentViewControllerDelegate.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didChangeDirectionTo:">&ndash;&nbsp;documentViewController:didChangeDirectionTo:</a></code>
+		<span class="tooltip"><p>This method will notify a change in the direction used to present the document.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didGoToPage:">&ndash;&nbsp;documentViewController:didGoToPage:</a></code>
+		<span class="tooltip"><p>This method will be called to notify the transition to a new page. Use this to update page number related UI&rsquo;s elements or synchronize selected actions.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didChangeLeadTo:">&ndash;&nbsp;documentViewController:didChangeLeadTo:</a></code>
+		<span class="tooltip"><p>This method will notify a change in the lead used to present the document.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didChangeModeTo:automatic:">&ndash;&nbsp;documentViewController:didChangeModeTo:automatic:</a></code>
+		<span class="tooltip"><p>This method will notify a change in the mode of the document, either by esplicity setting it or automatic on rotation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveTapAtPoint:">&ndash;&nbsp;documentViewController:didReceiveTapAtPoint:</a></code>
+		<span class="tooltip"><p>This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveURIRequest:">&ndash;&nbsp;documentViewController:didReceiveURIRequest:</a></code>
+		<span class="tooltip"><p>This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
+link is activated and an internet browser should be open to show the link&rsquo;s content.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveTapOnPage:atPoint:">&ndash;&nbsp;documentViewController:didReceiveTapOnPage:atPoint:</a></code>
+		<span class="tooltip"><p>This method will notify if and where the user has tapped on a page bounds. Coordinates of the point are in document&rsquo;s user space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didEndZoomingAtScale:">&ndash;&nbsp;documentViewController:didEndZoomingAtScale:</a></code>
+		<span class="tooltip"><p>This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
+that report the current zoom to the user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:willFocusOnPage:">&ndash;&nbsp;documentViewController:willFocusOnPage:</a></code>
+		<span class="tooltip"><p>This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didFocusOnPage:">&ndash;&nbsp;documentViewController:didFocusOnPage:</a></code>
+		<span class="tooltip"><p>This method will be called upon the showing up of the high definition version of the current page. Could be used to stop and Activity Indicator.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewControllerDidUnfocus:">&ndash;&nbsp;documentViewControllerDidUnfocus:</a></code>
+		<span class="tooltip"><p>This method will be called when the high definition version of the page is removed from the view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:">&ndash;&nbsp;documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:</a></code>
+		<span class="tooltip"><p>This method will be called when user double tap on an annotation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:">&ndash;&nbsp;documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:</a></code>
+		<span class="tooltip"><p>This method will be called when an user tap on an annotation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:doesHaveToAutoplayVideo:">&ndash;&nbsp;documentViewController:doesHaveToAutoplayVideo:</a></code>
+		<span class="tooltip"><p>This method will be called to ask the delegate if the video player needs to start automatically once visible.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:doesHaveToAutoplayAudio:">&ndash;&nbsp;documentViewController:doesHaveToAutoplayAudio:</a></code>
+		<span class="tooltip"><p>Implement this method to return whether the audio clip should play automatically once loaded.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/classForAudioPlayerView">&ndash;&nbsp;classForAudioPlayerView</a></code>
+		<span class="tooltip"><p>This method will be called to provide a class of the view to use as player audio control. You can use the default class provide in the sample
+or develop your own to suit the look and feel of you application better.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/classForAudioPlayerView" title="classForAudioPlayerView"></a>
+	<h3 class="subsubtitle method-title">classForAudioPlayerView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called to provide a class of the view to use as player audio control. You can use the default class provide in the sample
+or develop your own to suit the look and feel of you application better.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (Class&lt;MFAudioPlayerViewProtocol&gt;)classForAudioPlayerView</code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be called to provide a class of the view to use as player audio control. You can use the default class provide in the sample
+or develop your own to suit the look and feel of you application better.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didChangeDirectionTo:" title="documentViewController:didChangeDirectionTo:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didChangeDirectionTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify a change in the direction used to present the document.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didChangeDirectionTo:(MFDocumentDirection)<em>direction</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will notify a change in the direction used to present the document.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didChangeLeadTo:" title="documentViewController:didChangeLeadTo:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didChangeLeadTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify a change in the lead used to present the document.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didChangeLeadTo:(MFDocumentLead)<em>lead</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will notify a change in the lead used to present the document.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didChangeModeTo:automatic:" title="documentViewController:didChangeModeTo:automatic:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didChangeModeTo:automatic:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify a change in the mode of the document, either by esplicity setting it or automatic on rotation.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didChangeModeTo:(MFDocumentMode)<em>mode</em> automatic:(BOOL)<em>automatically</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will notify a change in the mode of the document, either by esplicity setting it or automatic on rotation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didEndZoomingAtScale:" title="documentViewController:didEndZoomingAtScale:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didEndZoomingAtScale:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
+that report the current zoom to the user.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didEndZoomingAtScale:(float)<em>level</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
+that report the current zoom to the user.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didFocusOnPage:" title="documentViewController:didFocusOnPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didFocusOnPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called upon the showing up of the high definition version of the current page. Could be used to stop and Activity Indicator.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didFocusOnPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be called upon the showing up of the high definition version of the current page. Could be used to stop and Activity Indicator.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didGoToPage:" title="documentViewController:didGoToPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didGoToPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called to notify the transition to a new page. Use this to update page number related UI&rsquo;s elements or synchronize selected actions.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didGoToPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be called to notify the transition to a new page. Use this to update page number related UI&rsquo;s elements or synchronize selected actions.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:" title="documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called when user double tap on an annotation.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveDoubleTapOnAnnotationRect:(CGRect)<em>rect</em> withUri:(NSString *)<em>uri</em> onPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be called when user double tap on an annotation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveTapAtPoint:" title="documentViewController:didReceiveTapAtPoint:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveTapAtPoint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveTapAtPoint:(CGPoint)<em>point</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:" title="documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called when an user tap on an annotation.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveTapOnAnnotationRect:(CGRect)<em>rect</em> withUri:(NSString *)<em>uri</em> onPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be called when an user tap on an annotation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveTapOnPage:atPoint:" title="documentViewController:didReceiveTapOnPage:atPoint:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveTapOnPage:atPoint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify if and where the user has tapped on a page bounds. Coordinates of the point are in document&rsquo;s user space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveTapOnPage:(NSUInteger)<em>page</em> atPoint:(CGPoint)<em>point</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will notify if and where the user has tapped on a page bounds. Coordinates of the point are in document&rsquo;s user space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveURIRequest:" title="documentViewController:didReceiveURIRequest:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveURIRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
+link is activated and an internet browser should be open to show the link&rsquo;s content.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveURIRequest:(NSString *)<em>uri</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
+link is activated and an internet browser should be open to show the link&rsquo;s content.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:doesHaveToAutoplayAudio:" title="documentViewController:doesHaveToAutoplayAudio:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:doesHaveToAutoplayAudio:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Implement this method to return whether the audio clip should play automatically once loaded.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)documentViewController:(MFDocumentViewController *)<em>dvc</em> doesHaveToAutoplayAudio:(NSString *)<em>audioUri</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Implement this method to return whether the audio clip should play automatically once loaded.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:doesHaveToAutoplayVideo:" title="documentViewController:doesHaveToAutoplayVideo:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:doesHaveToAutoplayVideo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called to ask the delegate if the video player needs to start automatically once visible.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)documentViewController:(MFDocumentViewController *)<em>dvc</em> doesHaveToAutoplayVideo:(NSString *)<em>videoUri</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be called to ask the delegate if the video player needs to start automatically once visible.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:willFocusOnPage:" title="documentViewController:willFocusOnPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:willFocusOnPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> willFocusOnPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewControllerDidUnfocus:" title="documentViewControllerDidUnfocus:"></a>
+	<h3 class="subsubtitle method-title">documentViewControllerDidUnfocus:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be called when the high definition version of the page is removed from the view.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewControllerDidUnfocus:(MFDocumentViewController *)<em>dvc</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be called when the high definition version of the page is removed from the view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2011 MobFarm S.r.l.. All rights reserved. (Last updated: 2011-07-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.3 (build 687)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

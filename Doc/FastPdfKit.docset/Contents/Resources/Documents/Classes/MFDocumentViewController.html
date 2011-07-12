@@ -1,0 +1,982 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MFDocumentViewController Class Reference</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<meta name="generator" content="appledoc 2.0.1 (build 530)" />
+	</head>
+	<body>
+		<article>
+			<div class="main-navigation navigation-top">
+				<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+			</div>
+			<div id="header">
+				<div class="section-header">
+					<h1 class="title title-header">MFDocumentViewController Class Reference</h1>
+				</div>		
+			</div>
+			<div id="container">	
+				
+				<div class="section section-specification"><table cellspacing="0"><tbody>
+					<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">UIViewController</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">UIScrollViewDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MFDocumentViewController.h</td>
+</tr>
+					</tbody></table></div>
+				
+				
+				
+				
+				
+				
+				<div class="section section-tasks">
+					<h2 class="subtitle subtitle-tasks">Tasks</h2>
+					
+					
+
+					<ul class="task-list">
+						<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startingPage"> startingPage</a></code>
+		<span class="tooltip">Set the starting <a href="#//api/name/page">page</a> of the <a href="#//api/name/document">document</a>. It is valid only after initialization and before the view is
+displayed on the screen. Tipically you want to set this just after the init of the viewController.
+Default is 1.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pageFlipOnEdgeTouchEnabled"> pageFlipOnEdgeTouchEnabled</a></code>
+		<span class="tooltip">Enable the <a href="#//api/name/page">page</a> flip when the user touch the edges of the screen.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/zoomInOnDoubleTapEnabled"> zoomInOnDoubleTapEnabled</a></code>
+		<span class="tooltip">Enabled the zoom in when the user double tap on the screen.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentInteractionEnabled"> documentInteractionEnabled</a></code>
+		<span class="tooltip">Enabled the zoom in when the user double tap on the screen.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/overlayEnabled"> overlayEnabled</a></code>
+		<span class="tooltip">Enable or disable the display of overlay item over the <a href="#//api/name/document">document</a>. Default is disabled.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/legacyModeEnabled"> legacyModeEnabled</a></code>
+		<span class="tooltip">Enabled or force the legacy <a href="#//api/name/mode">mode</a>, or let the app choose to enable it or not depending on the device.
+Default is disabled.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithDocumentManager:">- initWithDocumentManager:</a></code>
+		<span class="tooltip">Enabled or force the legacy <a href="#//api/name/mode">mode</a>, or let the app choose to enable it or not depending on the device.
+Default is disabled.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/automodeOnRotation">- automodeOnRotation</a></code>
+		<span class="tooltip">This metod enable or disable the automatic <a href="#//api/name/mode">mode</a> switching upon rotation. If enabled, the <a href="#//api/name/page">page</a> <a href="#//api/name/mode">mode</a> will be automatically
+changed to single <a href="#//api/name/page">page</a> in portrait and side-by-side (double) on landscape. Setting the <a href="#//api/name/mode">mode</a> manually will disable the automode.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setAutomodeOnRotation:">- setAutomodeOnRotation:</a></code>
+		<span class="tooltip">Returns whether automode is enabled or not.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setMode:">- setMode:</a></code>
+		<span class="tooltip">Set how the pages are presented to the user. MFDocumentModeSingle present a single <a href="#//api/name/page">page</a> to the user, centered on the screen. MFDocumentModeDouble present two pages side-by-side, as they would appear on a magazine or a books. This will allow to preserve content split between the pages, for example a large background image.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mode">- mode</a></code>
+		<span class="tooltip">Returns the current <a href="#//api/name/mode">mode</a> used to display the <a href="#//api/name/document">document</a>.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPage:">- setPage:</a></code>
+		<span class="tooltip">This metod will set the current <a href="#//api/name/page">page</a> of the <a href="#//api/name/document">document</a> and jump to the specified <a href="#//api/name/page">page</a>. Current <a href="#//api/name/page">page</a> is used to determine bookmarks position. On side-by-side (double) <a href="#//api/name/mode">mode</a>, it is usually the left-most <a href="#//api/name/page">page</a> of the two.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPage:withZoomOfLevel:onRect:">- setPage:withZoomOfLevel:onRect:</a></code>
+		<span class="tooltip">This metod will set the current <a href="#//api/name/page">page</a> of the <a href="#//api/name/document">document</a> and jump to the specified <a href="#//api/name/page">page</a>, while trying to zoom in on the specified rect</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/page">- page</a></code>
+		<span class="tooltip">Returns the current <a href="#//api/name/page">page</a> of the <a href="#//api/name/document">document</a>.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLead:">- setLead:</a></code>
+		<span class="tooltip">This method will set the <a href="#//api/name/lead">lead</a> used to present the pages in side-by-side (double) <a href="#//api/name/mode">mode</a>. With MFDocumentLeadLeft, the
+cover will appear on the left side in side-by-side <a href="#//api/name/mode">mode</a>, whereas with MFDocumentLeadRight will appear on the right side. Use this method to keep pairing between pages for books and magazines. Single <a href="#//api/name/page">page</a> <a href="#//api/name/mode">mode</a> is not affected by this setting.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lead">- lead</a></code>
+		<span class="tooltip">Returns the current <a href="#//api/name/lead">lead</a> used when presenting the <a href="#//api/name/document">document</a>.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDirection:">- setDirection:</a></code>
+		<span class="tooltip">This method is used to set the <a href="#//api/name/page">page</a> reading direction: left to right or right to left.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/direction">- direction</a></code>
+		<span class="tooltip">Return the current <a href="#//api/name/direction">direction</a> used by the <a href="#//api/name/document">document</a>.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setAutozoomOnPageChange:">- setAutozoomOnPageChange:</a></code>
+		<span class="tooltip">This method will turn on or off the autozoom feature. If on, the current zoom level will be kept between pages,
+otherwise will be rest to 100% on <a href="#//api/name/page">page</a> change.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/autozoomOnPageChange">- autozoomOnPageChange</a></code>
+		<span class="tooltip">Returns whether the autozoom feature is enabled or not.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/moveToNextPage">- moveToNextPage</a></code>
+		<span class="tooltip">This method will begin an animated transition to the next <a href="#//api/name/page">page</a>, if available.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/moveToPreviousPage">- moveToPreviousPage</a></code>
+		<span class="tooltip">This method will begin an animated transition to the previous <a href="#//api/name/page">page</a>, if available.</span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cleanUp">- cleanUp</a></code>
+		<span class="tooltip">Call this method rightly after dismissing this <a href="MFDocumentViewController.html">MFDocumentViewController</a> instance. It will release all the resources
+and stop the background threads. Once this method has been called, the <a href="MFDocumentViewController.html">MFDocumentViewController</a> instance cannot be
+considered valid anymore and should be released.</span>
+	</span>
+	
+</li>
+					</ul>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				<div class="section section-methods">
+					<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+					
+					<div class="section-method">
+	<a name="//api/name/automodeOnRotation" title="automodeOnRotation"></a>
+	<h3 class="subsubtitle method-title">automodeOnRotation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This metod enable or disable the automatic <a href="#//api/name/mode">mode</a> switching upon rotation. If enabled, the <a href="#//api/name/page">page</a> <a href="#//api/name/mode">mode</a> will be automatically
+changed to single <a href="#//api/name/page">page</a> in portrait and side-by-side (double) on landscape. Setting the <a href="#//api/name/mode">mode</a> manually will disable the automode.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)automodeOnRotation</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/autozoomOnPageChange" title="autozoomOnPageChange"></a>
+	<h3 class="subsubtitle method-title">autozoomOnPageChange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the autozoom feature is enabled or not.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)autozoomOnPageChange</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/cleanUp" title="cleanUp"></a>
+	<h3 class="subsubtitle method-title">cleanUp</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Call this method rightly after dismissing this <a href="MFDocumentViewController.html">MFDocumentViewController</a> instance. It will release all the resources
+and stop the background threads. Once this method has been called, the <a href="MFDocumentViewController.html">MFDocumentViewController</a> instance cannot be
+considered valid anymore and should be released.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)cleanUp</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/direction" title="direction"></a>
+	<h3 class="subsubtitle method-title">direction</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the current <a href="#//api/name/direction">direction</a> used by the <a href="#//api/name/document">document</a>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (MFDocumentDirection)direction</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/initWithDocumentManager:" title="initWithDocumentManager:"></a>
+	<h3 class="subsubtitle method-title">initWithDocumentManager:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enabled or force the legacy <a href="#//api/name/mode">mode</a>, or let the app choose to enable it or not depending on the device.
+Default is disabled.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithDocumentManager:(MFDocumentManager *)<em>aDocumentManager</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/lead" title="lead"></a>
+	<h3 class="subsubtitle method-title">lead</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current <a href="#//api/name/lead">lead</a> used when presenting the <a href="#//api/name/document">document</a>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (MFDocumentLead)lead</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/mode" title="mode"></a>
+	<h3 class="subsubtitle method-title">mode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current <a href="#//api/name/mode">mode</a> used to display the <a href="#//api/name/document">document</a>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (MFDocumentMode)mode</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/moveToNextPage" title="moveToNextPage"></a>
+	<h3 class="subsubtitle method-title">moveToNextPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will begin an animated transition to the next <a href="#//api/name/page">page</a>, if available.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)moveToNextPage</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/moveToPreviousPage" title="moveToPreviousPage"></a>
+	<h3 class="subsubtitle method-title">moveToPreviousPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will begin an animated transition to the previous <a href="#//api/name/page">page</a>, if available.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)moveToPreviousPage</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/page" title="page"></a>
+	<h3 class="subsubtitle method-title">page</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current <a href="#//api/name/page">page</a> of the <a href="#//api/name/document">document</a>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)page</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/setAutomodeOnRotation:" title="setAutomodeOnRotation:"></a>
+	<h3 class="subsubtitle method-title">setAutomodeOnRotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether automode is enabled or not.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setAutomodeOnRotation:(BOOL)<em>automode</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/setAutozoomOnPageChange:" title="setAutozoomOnPageChange:"></a>
+	<h3 class="subsubtitle method-title">setAutozoomOnPageChange:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will turn on or off the autozoom feature. If on, the current zoom level will be kept between pages,
+otherwise will be rest to 100% on <a href="#//api/name/page">page</a> change.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setAutozoomOnPageChange:(BOOL)<em>autozoom</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/setDirection:" title="setDirection:"></a>
+	<h3 class="subsubtitle method-title">setDirection:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is used to set the <a href="#//api/name/page">page</a> reading direction: left to right or right to left.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setDirection:(MFDocumentDirection)<em>newDirection</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/setLead:" title="setLead:"></a>
+	<h3 class="subsubtitle method-title">setLead:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will set the <a href="#//api/name/lead">lead</a> used to present the pages in side-by-side (double) <a href="#//api/name/mode">mode</a>. With MFDocumentLeadLeft, the
+cover will appear on the left side in side-by-side <a href="#//api/name/mode">mode</a>, whereas with MFDocumentLeadRight will appear on the right side. Use this method to keep pairing between pages for books and magazines. Single <a href="#//api/name/page">page</a> <a href="#//api/name/mode">mode</a> is not affected by this setting.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setLead:(MFDocumentLead)<em>newLead</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/setMode:" title="setMode:"></a>
+	<h3 class="subsubtitle method-title">setMode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set how the pages are presented to the user. MFDocumentModeSingle present a single <a href="#//api/name/page">page</a> to the user, centered on the screen. MFDocumentModeDouble present two pages side-by-side, as they would appear on a magazine or a books. This will allow to preserve content split between the pages, for example a large background image.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setMode:(MFDocumentMode)<em>newMode</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/setPage:" title="setPage:"></a>
+	<h3 class="subsubtitle method-title">setPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This metod will set the current <a href="#//api/name/page">page</a> of the <a href="#//api/name/document">document</a> and jump to the specified <a href="#//api/name/page">page</a>. Current <a href="#//api/name/page">page</a> is used to determine bookmarks position. On side-by-side (double) <a href="#//api/name/mode">mode</a>, it is usually the left-most <a href="#//api/name/page">page</a> of the two.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/setPage:withZoomOfLevel:onRect:" title="setPage:withZoomOfLevel:onRect:"></a>
+	<h3 class="subsubtitle method-title">setPage:withZoomOfLevel:onRect:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This metod will set the current <a href="#//api/name/page">page</a> of the <a href="#//api/name/document">document</a> and jump to the specified <a href="#//api/name/page">page</a>, while trying to zoom in on the specified rect</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setPage:(NSUInteger)<em>page</em> withZoomOfLevel:(float)<em>zoomLevel</em> onRect:(CGRect)<em>rect</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+				</div>
+				
+				
+				
+				<div class="section section-methods">
+					<h2 class="subtitle subtitle-methods">Properties</h2>
+					
+					<div class="section-method">
+	<a name="//api/name/documentInteractionEnabled" title="documentInteractionEnabled"></a>
+	<h3 class="subsubtitle method-title">documentInteractionEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enabled the zoom in when the user double tap on the screen.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign, readwrite, getter=isDocumentInteractionEnabled) BOOL documentInteractionEnabled</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/legacyModeEnabled" title="legacyModeEnabled"></a>
+	<h3 class="subsubtitle method-title">legacyModeEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enabled or force the legacy <a href="#//api/name/mode">mode</a>, or let the app choose to enable it or not depending on the device.
+Default is disabled.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (readwrite) BOOL legacyModeEnabled</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/overlayEnabled" title="overlayEnabled"></a>
+	<h3 class="subsubtitle method-title">overlayEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enable or disable the display of overlay item over the <a href="#//api/name/document">document</a>. Default is disabled.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (readwrite) BOOL overlayEnabled</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/pageFlipOnEdgeTouchEnabled" title="pageFlipOnEdgeTouchEnabled"></a>
+	<h3 class="subsubtitle method-title">pageFlipOnEdgeTouchEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enable the <a href="#//api/name/page">page</a> flip when the user touch the edges of the screen.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign, readwrite, getter=isPageFlipOnEdgeTouchEnabled) BOOL pageFlipOnEdgeTouchEnabled</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/startingPage" title="startingPage"></a>
+	<h3 class="subsubtitle method-title">startingPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the starting <a href="#//api/name/page">page</a> of the <a href="#//api/name/document">document</a>. It is valid only after initialization and before the view is
+displayed on the screen. Tipically you want to set this just after the init of the viewController.
+Default is 1.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) NSUInteger startingPage</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/zoomInOnDoubleTapEnabled" title="zoomInOnDoubleTapEnabled"></a>
+	<h3 class="subsubtitle method-title">zoomInOnDoubleTapEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enabled the zoom in when the user double tap on the screen.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign, readwrite, getter=isZoomInOnDoubleTapEnabled) BOOL zoomInOnDoubleTapEnabled</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+				</div>
+				
+				
+			</div>
+			<div class="main-navigation navigation-bottom">
+				<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+			</div>
+			<div id="footer">
+				<hr />
+				<div class="footer-copyright">
+					<p><span class="copyright">&copy; 2011 MobFarm S.r.l.. All rights reserved. (Last updated: 2011-01-26)</span><br />
+					
+					<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.1 (build 530)</a>.</span></p>
+					
+				</div>
+			</div>
+		</article>
+	</body>
+</html>
