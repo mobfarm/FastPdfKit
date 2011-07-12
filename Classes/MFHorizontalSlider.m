@@ -33,7 +33,8 @@
 - (void)loadView {
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
 	
-    for (unsigned k = 0; k < [thumbnailNumbers count]; k++) {
+    unsigned k;
+    for (k = 0; k < [thumbnailNumbers count]; k++) {
         [controllers addObject:[NSNull null]];
     }
 	
