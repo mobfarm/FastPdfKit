@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6FB9770813CB6E76007C368C"
-               BuildableName = "KioskBundle.bundle"
+               BuildableName = "FPKKioskBundle.bundle"
                BlueprintName = "FPKKioskBundle"
                ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
             </BuildableReference>

@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "01598DA513CAE783007344EE"
-               BuildableName = "libFastPdfKitReader.a"
+               BuildableName = "libFPKReaderLib.a"
                BlueprintName = "FPKReaderLib"
                ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
             </BuildableReference>
