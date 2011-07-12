@@ -1872,7 +1872,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SYMROOT = /Users/lifeplus/Desktop/Build;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -1895,7 +1895,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SYMROOT = /Users/lifeplus/Desktop/Build;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -1918,7 +1918,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SYMROOT = /Users/lifeplus/Desktop/Build;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Ad Hoc";
@@ -2123,6 +2123,7 @@
 				6FB9771613CB6E76007C368C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "ReaderBundle" */ = {
 			isa = XCConfigurationList;
@@ -2132,6 +2133,7 @@
 				6FB9772713CB6E8A007C368C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FastPdfKit Sample" */ = {
 			isa = XCConfigurationList;

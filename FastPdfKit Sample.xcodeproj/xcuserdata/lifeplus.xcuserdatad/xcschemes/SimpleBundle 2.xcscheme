@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6FB9771A13CB6E8A007C368C"
-               BuildableName = "SimpleBundle.bundle"
+               BuildableName = "ReaderBundle.bundle"
                BlueprintName = "ReaderBundle"
                ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
             </BuildableReference>
