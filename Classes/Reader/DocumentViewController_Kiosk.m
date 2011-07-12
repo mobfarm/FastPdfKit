@@ -797,7 +797,7 @@
     
 	multimediaVisible = YES;
     
-	audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle") audioFilePath:audioURL local:_isLocal];
+	audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") audioFilePath:audioURL local:_isLocal];
 	
 	audioVC.documentViewController = self;
 	

@@ -25,40 +25,25 @@
 		010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14DD13CB002300FD6F08 /* MenuViewController.m */; };
 		010D14E513CB003000FD6F08 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CD13CAFFD800FD6F08 /* MFHorizontalSlider.m */; };
 		010D14E613CB003300FD6F08 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CF13CAFFD800FD6F08 /* MFSliderDetail.m */; };
-		010D14E713CB004E00FD6F08 /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D14CE13CAFFD800FD6F08 /* MFSliderDetail.h */; };
-		010D14E813CB005200FD6F08 /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D14CC13CAFFD800FD6F08 /* MFHorizontalSlider.h */; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602C13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
 		0123603013CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
 		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
-		0123603D13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
 		0123603E13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123603F13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123604013CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
-		0123604113CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
-		0123604213CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
 		0123604313CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
 		0123604413CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */; };
-		0123604513CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */; };
 		0123604713CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
 		0123604813CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
-		0123604913CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
 		0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; };
-		0123604B13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; };
-		0123604C13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
 		0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
 		0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
-		0123604F13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
 		0123605013CC917600861EB7 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; };
-		0123605113CC917600861EB7 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; };
-		0123605213CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		0123605313CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		0123605413CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
-		0123605513CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
-		0123605613CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
 		0123605713CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
-		0123605A13CC957B00861EB7 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
 		0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
 		0123607113CCA18700861EB7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606D13CCA18700861EB7 /* Default@2x.png */; };
 		0123607213CCA18700861EB7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606D13CCA18700861EB7 /* Default@2x.png */; };
@@ -96,16 +81,6 @@
 		01598DEF13CAEB09007344EE /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */; };
 		01598DF013CAEB09007344EE /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* MFHomeListPdf.m */; };
 		01598DF113CAEB09007344EE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080B13C75B310077CE63 /* XMLParser.m */; };
-		01598DF213CAEB2E007344EE /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
-		01598DF313CAEB2E007344EE /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081C13C75D3A0077CE63 /* OutlineViewController.m */; };
-		01598DF413CAEB2E007344EE /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
-		01598DF513CAEB2E007344EE /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
-		01598DF613CAEB2E007344EE /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
-		01598DF713CAEB2E007344EE /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
-		01598DF813CAEB2E007344EE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082A13C75D3A0077CE63 /* SearchResultView.m */; };
-		01598DF913CAEB2E007344EE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
-		01598DFA13CAEB2E007344EE /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
-		01598DFB13CAEB2E007344EE /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
 		01598E0013CAEBCF007344EE /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; };
 		01598E0113CAEBCF007344EE /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; };
 		01598E0213CAEBCF007344EE /* OutlineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */; };
@@ -121,21 +96,6 @@
 		01598E0D13CAEBCF007344EE /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; };
 		01598E0E13CAEBCF007344EE /* TextDisplayViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */; };
 		01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; };
-		01598E1413CAEC8B007344EE /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; };
-		01598E1513CAEC8B007344EE /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; };
-		01598E1613CAEC8B007344EE /* OutlineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */; };
-		01598E1713CAEC8B007344EE /* OutlineViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081D13C75D3A0077CE63 /* OutlineViewControllerDelegate.h */; };
-		01598E1813CAEC8B007344EE /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; };
-		01598E1913CAEC8B007344EE /* MiniSearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */; };
-		01598E1B13CAEC8B007344EE /* SearchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082413C75D3A0077CE63 /* SearchManager.h */; };
-		01598E1C13CAEC8B007344EE /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; };
-		01598E1D13CAEC8B007344EE /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; };
-		01598E1E13CAEC8B007344EE /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082913C75D3A0077CE63 /* SearchResultView.h */; };
-		01598E1F13CAEC8B007344EE /* SearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082F13C75D3A0077CE63 /* SearchViewController.h */; };
-		01598E2013CAEC8B007344EE /* SearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */; };
-		01598E2113CAEC8B007344EE /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; };
-		01598E2213CAEC8B007344EE /* TextDisplayViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */; };
-		01598E2313CAEC8B007344EE /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; };
 		01598E2413CAEC8B007344EE /* FastPDFKit_KioskAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */; };
 		01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		01598E2613CAEC8B007344EE /* MFHomeListPdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080813C75B310077CE63 /* MFHomeListPdf.h */; };
@@ -224,8 +184,6 @@
 		6FB9773B13CB7125007C368C /* OutlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC081A13C75D3A0077CE63 /* OutlineView.xib */; };
 		6FB9773C13CB713F007C368C /* SearchView2_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082B13C75D3A0077CE63 /* SearchView2_pad.xib */; };
 		6FB9773D13CB713F007C368C /* SearchView2_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082C13C75D3A0077CE63 /* SearchView2_phone.xib */; };
-		6FB9773E13CB713F007C368C /* SearchView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082D13C75D3A0077CE63 /* SearchView_pad.xib */; };
-		6FB9773F13CB713F007C368C /* SearchView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082E13C75D3A0077CE63 /* SearchView_phone.xib */; };
 		6FB9774013CB713F007C368C /* TextDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC083213C75D3A0077CE63 /* TextDisplayView.xib */; };
 		6FB9774513CC3BF5007C368C /* blackslider.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB8D31313671E690010A558 /* blackslider.png */; };
 		6FB9774613CC3BF5007C368C /* Default-Pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB8D2F71366CE7B0010A558 /* Default-Pad.png */; };
@@ -300,6 +258,11 @@
 		6FE7E4CF13CC6595006A7E68 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		6FE7E4D013CC6597006A7E68 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
 		6FE7E4D113CC659A006A7E68 /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
+		9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
+		9505BB1713CCB156003163D2 /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D14CC13CAFFD800FD6F08 /* MFHorizontalSlider.h */; };
+		9505BB1813CCB167003163D2 /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D14CE13CAFFD800FD6F08 /* MFSliderDetail.h */; };
+		9505BB1913CCB187003163D2 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
+		9505BB1B13CCB1A6003163D2 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -486,8 +449,6 @@
 		01BC082A13C75D3A0077CE63 /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
 		01BC082B13C75D3A0077CE63 /* SearchView2_pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView2_pad.xib; sourceTree = "<group>"; };
 		01BC082C13C75D3A0077CE63 /* SearchView2_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView2_phone.xib; sourceTree = "<group>"; };
-		01BC082D13C75D3A0077CE63 /* SearchView_pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView_pad.xib; sourceTree = "<group>"; };
-		01BC082E13C75D3A0077CE63 /* SearchView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView_phone.xib; sourceTree = "<group>"; };
 		01BC082F13C75D3A0077CE63 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		01BC083013C75D3A0077CE63 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -562,6 +523,8 @@
 		9598FDE512338042008D7198 /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
 		95B8BD5E13CCA59800195F0F /* Manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Manual.pdf; path = Doc/Manual.pdf; sourceTree = SOURCE_ROOT; };
 		95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ManualCrypt.pdf; path = Doc/ManualCrypt.pdf; sourceTree = SOURCE_ROOT; };
+		95B8BDB613CCAB3200195F0F /* FPKKioskBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FPKKioskBundle.bundle; path = Bundle/FPKKioskBundle.bundle; sourceTree = SOURCE_ROOT; };
+		95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FPKReaderBundle.bundle; path = Bundle/FPKReaderBundle.bundle; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -939,8 +902,6 @@
 				01BC082A13C75D3A0077CE63 /* SearchResultView.m */,
 				01BC082B13C75D3A0077CE63 /* SearchView2_pad.xib */,
 				01BC082C13C75D3A0077CE63 /* SearchView2_phone.xib */,
-				01BC082D13C75D3A0077CE63 /* SearchView_pad.xib */,
-				01BC082E13C75D3A0077CE63 /* SearchView_phone.xib */,
 				01BC082F13C75D3A0077CE63 /* SearchViewController.h */,
 				01BC083013C75D3A0077CE63 /* SearchViewController.m */,
 				01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */,
@@ -1032,6 +993,8 @@
 				9598FDE512338042008D7198 /* Icon114.png */,
 				018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */,
 				8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */,
+				95B8BDB613CCAB3200195F0F /* FPKKioskBundle.bundle */,
+				95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */,
 			);
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
@@ -1094,6 +1057,8 @@
 				0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
 				0123605013CC917600861EB7 /* WebBrowser.h in Headers */,
 				0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */,
+				9505BB1713CCB156003163D2 /* MFHorizontalSlider.h in Headers */,
+				9505BB1813CCB167003163D2 /* MFSliderDetail.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1102,21 +1067,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */,
-				01598E1413CAEC8B007344EE /* BookmarkViewController.h in Headers */,
-				01598E1513CAEC8B007344EE /* BookmarkViewControllerDelegate.h in Headers */,
-				01598E1613CAEC8B007344EE /* OutlineViewController.h in Headers */,
-				01598E1713CAEC8B007344EE /* OutlineViewControllerDelegate.h in Headers */,
-				01598E1813CAEC8B007344EE /* MiniSearchView.h in Headers */,
-				01598E1913CAEC8B007344EE /* MiniSearchViewControllerDelegate.h in Headers */,
-				01598E1B13CAEC8B007344EE /* SearchManager.h in Headers */,
-				01598E1C13CAEC8B007344EE /* SearchResultCellView.h in Headers */,
-				01598E1D13CAEC8B007344EE /* SearchResultDataSource.h in Headers */,
-				01598E1E13CAEC8B007344EE /* SearchResultView.h in Headers */,
-				01598E1F13CAEC8B007344EE /* SearchViewController.h in Headers */,
-				01598E2013CAEC8B007344EE /* SearchViewControllerDelegate.h in Headers */,
-				01598E2113CAEC8B007344EE /* TextDisplayViewController.h in Headers */,
-				01598E2213CAEC8B007344EE /* TextDisplayViewControllerDelegate.h in Headers */,
-				01598E2313CAEC8B007344EE /* TextSearchOperation.h in Headers */,
 				01598E2413CAEC8B007344EE /* FastPDFKit_KioskAppDelegate.h in Headers */,
 				01598E2613CAEC8B007344EE /* MFHomeListPdf.h in Headers */,
 				01598E2713CAEC8B007344EE /* XMLParser.h in Headers */,
@@ -1134,13 +1084,6 @@
 				01598E3713CAEC8B007344EE /* Reachability.h in Headers */,
 				01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */,
 				010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */,
-				010D14E713CB004E00FD6F08 /* MFSliderDetail.h in Headers */,
-				010D14E813CB005200FD6F08 /* MFHorizontalSlider.h in Headers */,
-				0123603D13CC917600861EB7 /* AudioViewController.h in Headers */,
-				0123604513CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */,
-				0123604B13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
-				0123605113CC917600861EB7 /* WebBrowser.h in Headers */,
-				0123605A13CC957B00861EB7 /* NotificationFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1323,8 +1266,6 @@
 				6FB977A013CC4CBA007C368C /* Icon114.png in Resources */,
 				0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */,
 				0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */,
-				0123604213CC917600861EB7 /* AudioViewController.xib in Resources */,
-				0123605613CC917600861EB7 /* WebBrowser.xib in Resources */,
 				0123607113CCA18700861EB7 /* Default@2x.png in Resources */,
 				0123607313CCA18700861EB7 /* Default.png in Resources */,
 				0123607513CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */,
@@ -1366,8 +1307,6 @@
 				6FB9773B13CB7125007C368C /* OutlineView.xib in Resources */,
 				6FB9773C13CB713F007C368C /* SearchView2_pad.xib in Resources */,
 				6FB9773D13CB713F007C368C /* SearchView2_phone.xib in Resources */,
-				6FB9773E13CB713F007C368C /* SearchView_pad.xib in Resources */,
-				6FB9773F13CB713F007C368C /* SearchView_phone.xib in Resources */,
 				6FB9774013CB713F007C368C /* TextDisplayView.xib in Resources */,
 				6FB9774513CC3BF5007C368C /* blackslider.png in Resources */,
 				6FB9774613CC3BF5007C368C /* Default-Pad.png in Resources */,
@@ -1429,6 +1368,8 @@
 				6FB9778013CC3BF5007C368C /* zoomUnlock_phone@2x.png in Resources */,
 				6FB9778113CC3BF5007C368C /* zoomUnlock.png in Resources */,
 				0123603013CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */,
+				9505BB1913CCB187003163D2 /* AudioViewController.xib in Resources */,
+				9505BB1B13CCB1A6003163D2 /* WebBrowser.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1487,6 +1428,7 @@
 				0123604813CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
 				0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
 				0123605413CC917600861EB7 /* WebBrowser.m in Sources */,
+				9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1496,16 +1438,6 @@
 			files = (
 				01598DE513CAEA78007344EE /* ASIAuthenticationDialog.m in Sources */,
 				01598DE613CAEA78007344EE /* ASIDownloadCache.m in Sources */,
-				01598DF213CAEB2E007344EE /* BookmarkViewController.m in Sources */,
-				01598DF313CAEB2E007344EE /* OutlineViewController.m in Sources */,
-				01598DF413CAEB2E007344EE /* MiniSearchView.m in Sources */,
-				01598DF513CAEB2E007344EE /* NotificationFactory.m in Sources */,
-				01598DF613CAEB2E007344EE /* SearchManager.m in Sources */,
-				01598DF713CAEB2E007344EE /* SearchResultCellView.m in Sources */,
-				01598DF813CAEB2E007344EE /* SearchResultView.m in Sources */,
-				01598DF913CAEB2E007344EE /* SearchViewController.m in Sources */,
-				01598DFA13CAEB2E007344EE /* TextDisplayViewController.m in Sources */,
-				01598DFB13CAEB2E007344EE /* TextSearchOperation.m in Sources */,
 				01598DEE13CAEB09007344EE /* FastPDFKit_KioskAppDelegate.m in Sources */,
 				01598DEF13CAEB09007344EE /* MenuViewController_Kiosk.m in Sources */,
 				01598DF013CAEB09007344EE /* MFHomeListPdf.m in Sources */,
@@ -1516,10 +1448,6 @@
 				01598DED13CAEAA6007344EE /* Reachability.m in Sources */,
 				01598DEA13CAEA78007344EE /* ASINetworkQueue.m in Sources */,
 				01598DEB13CAEA78007344EE /* ASINSStringAdditions.m in Sources */,
-				0123604113CC917600861EB7 /* AudioViewController.m in Sources */,
-				0123604913CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
-				0123604F13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
-				0123605513CC917600861EB7 /* WebBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1583,8 +1511,6 @@
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
 				010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */,
 				0123603E13CC917600861EB7 /* AudioViewController.m in Sources */,
-				0123604C13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
-				0123605213CC917600861EB7 /* WebBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
