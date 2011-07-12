@@ -323,8 +323,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		010D14AD13CAF5CE00FD6F08 /* libFastPdfKitReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastPdfKitReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		010D14AE13CAF5CE00FD6F08 /* libFastPdfKitKiosk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastPdfKitKiosk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKReaderLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKKioskLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14B613CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "FastPdfKit Manual Encrypted.pdf"; path = "FastPdfKit/PDFs/FastPdfKit Manual Encrypted.pdf"; sourceTree = "<group>"; };
 		010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitKiosk-Prefix.pch"; sourceTree = "<group>"; };
 		010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitReader-Prefix.pch"; sourceTree = "<group>"; };
@@ -955,8 +955,8 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */,
 				018848E7131E89570045038F /* FastPdfKit Kiosk.app */,
-				010D14AD13CAF5CE00FD6F08 /* libFastPdfKitReader.a */,
-				010D14AE13CAF5CE00FD6F08 /* libFastPdfKitKiosk.a */,
+				010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */,
+				010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */,
 				6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */,
 				6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */,
 			);
@@ -1168,7 +1168,7 @@
 			);
 			name = FPKReaderLib;
 			productName = FastPDFKitReader;
-			productReference = 010D14AD13CAF5CE00FD6F08 /* libFastPdfKitReader.a */;
+			productReference = 010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		01598DD913CAE917007344EE /* FPKKioskLib */ = {
@@ -1185,7 +1185,7 @@
 			);
 			name = FPKKioskLib;
 			productName = FastPDFKitKiosk;
-			productReference = 010D14AE13CAF5CE00FD6F08 /* libFastPdfKitKiosk.a */;
+			productReference = 010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		018848E6131E89570045038F /* FPKKioskApp */ = {
@@ -1615,7 +1615,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
@@ -1634,7 +1634,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FastPDFKitReader-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
@@ -1653,7 +1653,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FastPDFKitReader-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
@@ -1675,7 +1675,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
@@ -1695,7 +1695,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FastPDFKitKiosk-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
@@ -1715,7 +1715,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FastPDFKitKiosk-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
