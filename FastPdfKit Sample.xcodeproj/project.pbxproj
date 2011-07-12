@@ -28,6 +28,38 @@
 		010D14E613CB003300FD6F08 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CF13CAFFD800FD6F08 /* MFSliderDetail.m */; };
 		010D14E713CB004E00FD6F08 /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D14CE13CAFFD800FD6F08 /* MFSliderDetail.h */; };
 		010D14E813CB005200FD6F08 /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D14CC13CAFFD800FD6F08 /* MFHorizontalSlider.h */; };
+		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
+		0123602C13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
+		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
+		0123603013CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
+		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
+		0123603D13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
+		0123603E13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
+		0123603F13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
+		0123604013CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
+		0123604113CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
+		0123604213CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
+		0123604313CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
+		0123604413CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */; };
+		0123604513CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */; };
+		0123604613CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
+		0123604713CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
+		0123604813CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
+		0123604913CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
+		0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; };
+		0123604B13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; };
+		0123604C13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
+		0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
+		0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
+		0123604F13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
+		0123605013CC917600861EB7 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; };
+		0123605113CC917600861EB7 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; };
+		0123605213CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
+		0123605313CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
+		0123605413CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
+		0123605513CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
+		0123605613CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
+		0123605713CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
 		01598DA713CAE783007344EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01598DBD13CAE7CD007344EE /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081C13C75D3A0077CE63 /* OutlineViewController.m */; };
 		01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
@@ -38,10 +70,6 @@
 		01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		01598DC413CAE7CD007344EE /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
 		01598DC513CAE7CD007344EE /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
-		01598DC613CAE7E4007344EE /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07DE13C756130077CE63 /* AudioViewController.m */; };
-		01598DC713CAE7E4007344EE /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E113C756130077CE63 /* DocumentViewController_Kiosk.m */; };
-		01598DC813CAE7E4007344EE /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E313C756130077CE63 /* MFAudioPlayerViewImpl.m */; };
-		01598DC913CAE7E4007344EE /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E513C756130077CE63 /* WebBrowser.m */; };
 		01598DD313CAE8DB007344EE /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01598DD213CAE8DB007344EE /* libFastPDFKit.a */; };
 		01598DD413CAE8DB007344EE /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01598DD213CAE8DB007344EE /* libFastPDFKit.a */; };
 		01598DD513CAE8DB007344EE /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01598DD213CAE8DB007344EE /* libFastPDFKit.a */; };
@@ -70,10 +98,6 @@
 		01598DF913CAEB2E007344EE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		01598DFA13CAEB2E007344EE /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
 		01598DFB13CAEB2E007344EE /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
-		01598DFC13CAEB79007344EE /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07DE13C756130077CE63 /* AudioViewController.m */; };
-		01598DFD13CAEB79007344EE /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E113C756130077CE63 /* DocumentViewController_Kiosk.m */; };
-		01598DFE13CAEB79007344EE /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E313C756130077CE63 /* MFAudioPlayerViewImpl.m */; };
-		01598DFF13CAEB79007344EE /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E513C756130077CE63 /* WebBrowser.m */; };
 		01598E0013CAEBCF007344EE /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; };
 		01598E0113CAEBCF007344EE /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; };
 		01598E0213CAEBCF007344EE /* OutlineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */; };
@@ -90,10 +114,6 @@
 		01598E0D13CAEBCF007344EE /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; };
 		01598E0E13CAEBCF007344EE /* TextDisplayViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */; };
 		01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; };
-		01598E1013CAEBDF007344EE /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07DD13C756130077CE63 /* AudioViewController.h */; };
-		01598E1113CAEBDF007344EE /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07E013C756130077CE63 /* DocumentViewController_Kiosk.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		01598E1213CAEBDF007344EE /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07E213C756130077CE63 /* MFAudioPlayerViewImpl.h */; };
-		01598E1313CAEBDF007344EE /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07E413C756130077CE63 /* WebBrowser.h */; };
 		01598E1413CAEC8B007344EE /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; };
 		01598E1513CAEC8B007344EE /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; };
 		01598E1613CAEC8B007344EE /* OutlineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */; };
@@ -114,10 +134,6 @@
 		01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		01598E2613CAEC8B007344EE /* MFHomeListPdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080813C75B310077CE63 /* MFHomeListPdf.h */; };
 		01598E2713CAEC8B007344EE /* XMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080A13C75B310077CE63 /* XMLParser.h */; };
-		01598E2813CAEC8B007344EE /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07DD13C756130077CE63 /* AudioViewController.h */; };
-		01598E2913CAEC8B007344EE /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07E013C756130077CE63 /* DocumentViewController_Kiosk.h */; };
-		01598E2A13CAEC8B007344EE /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07E213C756130077CE63 /* MFAudioPlayerViewImpl.h */; };
-		01598E2B13CAEC8B007344EE /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07E413C756130077CE63 /* WebBrowser.h */; };
 		01598E2C13CAEC8B007344EE /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A213C755610077CE63 /* ASIAuthenticationDialog.h */; };
 		01598E2D13CAEC8B007344EE /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A413C755610077CE63 /* ASICacheDelegate.h */; };
 		01598E2E13CAEC8B007344EE /* ASIDownloadCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A513C755610077CE63 /* ASIDownloadCache.h */; };
@@ -154,10 +170,6 @@
 		01BC07D713C755610077CE63 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BB13C755610077CE63 /* unzip.c */; };
 		01BC07D913C755610077CE63 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BD13C755610077CE63 /* zip.c */; };
 		01BC07DB13C755610077CE63 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07C013C755610077CE63 /* Reachability.m */; };
-		01BC07E713C756130077CE63 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07DE13C756130077CE63 /* AudioViewController.m */; };
-		01BC07E913C756130077CE63 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E113C756130077CE63 /* DocumentViewController_Kiosk.m */; };
-		01BC07EA13C756130077CE63 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E313C756130077CE63 /* MFAudioPlayerViewImpl.m */; };
-		01BC07EB13C756130077CE63 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E513C756130077CE63 /* WebBrowser.m */; };
 		01BC080C13C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */; };
 		01BC081013C75B310077CE63 /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */; };
 		01BC081113C75B310077CE63 /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* MFHomeListPdf.m */; };
@@ -192,9 +204,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9FBD191356F2CD006884F5 /* AVFoundation.framework */; };
 		6FB9770B13CB6E76007C368C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB9770A13CB6E76007C368C /* CoreFoundation.framework */; };
-		6FB9771113CB6E76007C368C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9770F13CB6E76007C368C /* InfoPlist.strings */; };
 		6FB9771C13CB6E8A007C368C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB9770A13CB6E76007C368C /* CoreFoundation.framework */; };
-		6FB9772213CB6E8A007C368C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9772013CB6E8A007C368C /* InfoPlist.strings */; };
 		6FB9772C13CB6EB7007C368C /* backThumb_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F113CB6E63007C368C /* backThumb_iphone.png */; };
 		6FB9772D13CB6EB7007C368C /* backThumb_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F213CB6E63007C368C /* backThumb_iphone@2x.png */; };
 		6FB9772E13CB6EB7007C368C /* backThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F313CB6E63007C368C /* backThumb.png */; };
@@ -205,7 +215,6 @@
 		6FB9773313CB6EB7007C368C /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F813CB6E63007C368C /* remove.png */; };
 		6FB9773413CB6EB7007C368C /* resume.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F913CB6E63007C368C /* resume.png */; };
 		6FB9773513CB6EB7007C368C /* view.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976FA13CB6E63007C368C /* view.png */; };
-		6FB9773913CB70C1007C368C /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07E613C756130077CE63 /* WebBrowser.xib */; };
 		6FB9773A13CB70D8007C368C /* BookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC081513C75D3A0077CE63 /* BookmarkView.xib */; };
 		6FB9773B13CB7125007C368C /* OutlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC081A13C75D3A0077CE63 /* OutlineView.xib */; };
 		6FB9773C13CB713F007C368C /* SearchView2_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082B13C75D3A0077CE63 /* SearchView2_pad.xib */; };
@@ -279,7 +288,6 @@
 		6FB9779113CC3EA6007C368C /* FPKKioskBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */; };
 		6FB9779213CC3EA6007C368C /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */; };
 		6FB9779613CC3F7F007C368C /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2C1356EC920028DD38 /* pause.png */; };
-		6FB9779713CC45F1007C368C /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07DF13C756130077CE63 /* AudioViewController.xib */; };
 		6FB9779B13CC4CA1007C368C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		6FB9779F13CC4CBA007C368C /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
 		6FB977A013CC4CBA007C368C /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
@@ -343,6 +351,20 @@
 		010D14DB13CB002300FD6F08 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
 		010D14DC13CB002300FD6F08 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		010D14DD13CB002300FD6F08 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
+		0123602813CC908E00861EB7 /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
+		0123602913CC90C800861EB7 /* KioskBundle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KioskBundle-Info.plist"; sourceTree = "<group>"; };
+		0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReaderBundle-Info.plist"; sourceTree = "<group>"; };
+		0123603213CC917600861EB7 /* AudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
+		0123603313CC917600861EB7 /* AudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
+		0123603413CC917600861EB7 /* AudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioViewController.xib; sourceTree = "<group>"; };
+		0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController_Kiosk.h; sourceTree = "<group>"; };
+		0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController_Kiosk.m; sourceTree = "<group>"; };
+		0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewImpl.h; sourceTree = "<group>"; };
+		0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAudioPlayerViewImpl.m; sourceTree = "<group>"; };
+		0123603913CC917600861EB7 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
+		0123603A13CC917600861EB7 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
+		0123603B13CC917600861EB7 /* WebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebBrowser.xib; sourceTree = "<group>"; };
 		0130A3D113B230F600F9956E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		0130A3D313B2311900F9956E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		0130A3D513B2312D00F9956E /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
@@ -429,16 +451,6 @@
 		01BC07BF13C755610077CE63 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		01BC07C013C755610077CE63 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		01BC07C113C755610077CE63 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
-		01BC07DD13C756130077CE63 /* AudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
-		01BC07DE13C756130077CE63 /* AudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
-		01BC07DF13C756130077CE63 /* AudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioViewController.xib; sourceTree = "<group>"; };
-		01BC07E013C756130077CE63 /* DocumentViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController_Kiosk.h; sourceTree = "<group>"; };
-		01BC07E113C756130077CE63 /* DocumentViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController_Kiosk.m; sourceTree = "<group>"; };
-		01BC07E213C756130077CE63 /* MFAudioPlayerViewImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewImpl.h; sourceTree = "<group>"; };
-		01BC07E313C756130077CE63 /* MFAudioPlayerViewImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAudioPlayerViewImpl.m; sourceTree = "<group>"; };
-		01BC07E413C756130077CE63 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
-		01BC07E513C756130077CE63 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
-		01BC07E613C756130077CE63 /* WebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebBrowser.xib; sourceTree = "<group>"; };
 		01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_KioskAppDelegate.h; sourceTree = "<group>"; };
 		01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_KioskAppDelegate.m; sourceTree = "<group>"; };
 		01BC080313C75B310077CE63 /* Kiosk_ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kiosk_ipad.xib; sourceTree = "<group>"; };
@@ -526,13 +538,7 @@
 		6FB976FA13CB6E63007C368C /* view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view.png; sourceTree = "<group>"; };
 		6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPKKioskBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB9770A13CB6E76007C368C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		6FB9770E13CB6E76007C368C /* KioskBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KioskBundle-Info.plist"; sourceTree = "<group>"; };
-		6FB9771013CB6E76007C368C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6FB9771213CB6E76007C368C /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
 		6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPKReaderBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FB9771F13CB6E8A007C368C /* SimpleBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleBundle-Info.plist"; sourceTree = "<group>"; };
-		6FB9772113CB6E8A007C368C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6FB9772313CB6E8A007C368C /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
 		6FFCFA201355F57B0028DD38 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		6FFCFA211355F57B0028DD38 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		6FFCFA221355F57B0028DD38 /* prew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prew.png; sourceTree = "<group>"; };
@@ -646,20 +652,63 @@
 		010D14D213CB002300FD6F08 /* Simple App */ = {
 			isa = PBXGroup;
 			children = (
-				010D14D313CB002300FD6F08 /* BasicLauncherController.h */,
-				010D14D413CB002300FD6F08 /* BasicLauncherController.m */,
-				010D14D513CB002300FD6F08 /* DocumentViewController.h */,
-				010D14D613CB002300FD6F08 /* DocumentViewController.m */,
 				010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */,
 				010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */,
+				0123605813CC93B700861EB7 /* Controllers */,
+			);
+			path = "Simple App";
+			sourceTree = "<group>";
+		};
+		0123603113CC917600861EB7 /* Multimedia */ = {
+			isa = PBXGroup;
+			children = (
+				0123603213CC917600861EB7 /* AudioViewController.h */,
+				0123603313CC917600861EB7 /* AudioViewController.m */,
+				0123603413CC917600861EB7 /* AudioViewController.xib */,
+				0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */,
+				0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */,
+				0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */,
+				0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */,
+				0123603913CC917600861EB7 /* WebBrowser.h */,
+				0123603A13CC917600861EB7 /* WebBrowser.m */,
+				0123603B13CC917600861EB7 /* WebBrowser.xib */,
+			);
+			path = Multimedia;
+			sourceTree = "<group>";
+		};
+		0123605813CC93B700861EB7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				010D14D913CB002300FD6F08 /* MainWindow.xib */,
 				010D14DA13CB002300FD6F08 /* MenuView_pad.xib */,
 				010D14DB13CB002300FD6F08 /* MenuView_phone.xib */,
 				010D14DC13CB002300FD6F08 /* MenuViewController.h */,
 				010D14DD13CB002300FD6F08 /* MenuViewController.m */,
+				010D14D313CB002300FD6F08 /* BasicLauncherController.h */,
+				010D14D413CB002300FD6F08 /* BasicLauncherController.m */,
+				010D14D513CB002300FD6F08 /* DocumentViewController.h */,
+				010D14D613CB002300FD6F08 /* DocumentViewController.m */,
 			);
-			path = "Simple App";
-			sourceTree = "<group>";
+			name = Controllers;
+			path = "Classes/Simple App/Controllers";
+			sourceTree = SOURCE_ROOT;
+		};
+		0123605913CC93F600861EB7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01BC080313C75B310077CE63 /* Kiosk_ipad.xib */,
+				01BC080413C75B310077CE63 /* Kiosk_phone.xib */,
+				01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */,
+				01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */,
+				01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */,
+				01BC080813C75B310077CE63 /* MFHomeListPdf.h */,
+				01BC080913C75B310077CE63 /* MFHomeListPdf.m */,
+				01BC080A13C75B310077CE63 /* XMLParser.h */,
+				01BC080B13C75B310077CE63 /* XMLParser.m */,
+			);
+			name = Controllers;
+			path = "Classes/Kiosk App/Controllers";
+			sourceTree = SOURCE_ROOT;
 		};
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
@@ -830,16 +879,11 @@
 		01BC07DC13C756130077CE63 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				01BC07DD13C756130077CE63 /* AudioViewController.h */,
-				01BC07DE13C756130077CE63 /* AudioViewController.m */,
-				01BC07DF13C756130077CE63 /* AudioViewController.xib */,
-				01BC07E013C756130077CE63 /* DocumentViewController_Kiosk.h */,
-				01BC07E113C756130077CE63 /* DocumentViewController_Kiosk.m */,
-				01BC07E213C756130077CE63 /* MFAudioPlayerViewImpl.h */,
-				01BC07E313C756130077CE63 /* MFAudioPlayerViewImpl.m */,
-				01BC07E413C756130077CE63 /* WebBrowser.h */,
-				01BC07E513C756130077CE63 /* WebBrowser.m */,
-				01BC07E613C756130077CE63 /* WebBrowser.xib */,
+				01BC081E13C75D3A0077CE63 /* Text Search */,
+				01BC081913C75D3A0077CE63 /* Outline */,
+				01BC081413C75D3A0077CE63 /* Bookmarks */,
+				010D14CB13CAFFD800FD6F08 /* Thumbnail Slider */,
+				0123603113CC917600861EB7 /* Multimedia */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -847,33 +891,14 @@
 		01BC080013C75B310077CE63 /* Kiosk App */ = {
 			isa = PBXGroup;
 			children = (
-				01598E3D13CAEDD2007344EE /* Images */,
 				01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */,
 				01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */,
-				01BC080313C75B310077CE63 /* Kiosk_ipad.xib */,
-				01BC080413C75B310077CE63 /* Kiosk_phone.xib */,
-				01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */,
-				01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */,
-				01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */,
-				01BC080813C75B310077CE63 /* MFHomeListPdf.h */,
-				01BC080913C75B310077CE63 /* MFHomeListPdf.m */,
-				01BC080A13C75B310077CE63 /* XMLParser.h */,
-				01BC080B13C75B310077CE63 /* XMLParser.m */,
+				01598E3D13CAEDD2007344EE /* Images */,
+				0123605913CC93F600861EB7 /* Controllers */,
 			);
 			name = "Kiosk App";
 			path = "Classes/Kiosk App";
 			sourceTree = SOURCE_ROOT;
-		};
-		01BC081313C75D3A0077CE63 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				010D14CB13CAFFD800FD6F08 /* Thumbnail Slider */,
-				01BC081413C75D3A0077CE63 /* Bookmarks */,
-				01BC081913C75D3A0077CE63 /* Outline */,
-				01BC081E13C75D3A0077CE63 /* Text Search */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
 		};
 		01BC081413C75D3A0077CE63 /* Bookmarks */ = {
 			isa = PBXGroup;
@@ -942,7 +967,6 @@
 			isa = PBXGroup;
 			children = (
 				010D14D213CB002300FD6F08 /* Simple App */,
-				01BC081313C75D3A0077CE63 /* Shared */,
 				01BC080013C75B310077CE63 /* Kiosk App */,
 				01BC07DC13C756130077CE63 /* Reader */,
 				01BC07A013C755610077CE63 /* Third Parties */,
@@ -970,8 +994,6 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
-				6FB9770C13CB6E76007C368C /* KioskBundle */,
-				6FB9771D13CB6E8A007C368C /* SimpleBundle */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -981,6 +1003,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */,
+				0123602813CC908E00861EB7 /* SimpleBundle-Prefix.pch */,
 				010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */,
 				010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */,
 				32CA4F630368D1EE00C91783 /* FastPDFKit_Sample_Prefix.pch */,
@@ -992,6 +1016,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0123602913CC90C800861EB7 /* KioskBundle-Info.plist */,
+				0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */,
 				010D14B613CAFA5D00FD6F08 /* FastPdfKit Manual Encrypted.pdf */,
 				01C9428713263A6E000364B4 /* FastPdfKit Manual.pdf */,
 				01CF7355132532FC00E42146 /* kiosk_list.xml */,
@@ -1026,42 +1052,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6FB9770C13CB6E76007C368C /* KioskBundle */ = {
-			isa = PBXGroup;
-			children = (
-				6FB9770D13CB6E76007C368C /* Supporting Files */,
-			);
-			path = KioskBundle;
-			sourceTree = "<group>";
-		};
-		6FB9770D13CB6E76007C368C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6FB9770E13CB6E76007C368C /* KioskBundle-Info.plist */,
-				6FB9770F13CB6E76007C368C /* InfoPlist.strings */,
-				6FB9771213CB6E76007C368C /* KioskBundle-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6FB9771D13CB6E8A007C368C /* SimpleBundle */ = {
-			isa = PBXGroup;
-			children = (
-				6FB9771E13CB6E8A007C368C /* Supporting Files */,
-			);
-			path = SimpleBundle;
-			sourceTree = "<group>";
-		};
-		6FB9771E13CB6E8A007C368C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6FB9771F13CB6E8A007C368C /* SimpleBundle-Info.plist */,
-				6FB9772013CB6E8A007C368C /* InfoPlist.strings */,
-				6FB9772313CB6E8A007C368C /* SimpleBundle-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		95F5A3511270A2A700F65929 /* FastPdfKit Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -1080,7 +1070,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01598E1113CAEBDF007344EE /* DocumentViewController_Kiosk.h in Headers */,
 				01598E0013CAEBCF007344EE /* BookmarkViewController.h in Headers */,
 				01598E0113CAEBCF007344EE /* BookmarkViewControllerDelegate.h in Headers */,
 				01598E0213CAEBCF007344EE /* OutlineViewController.h in Headers */,
@@ -1097,10 +1086,11 @@
 				01598E0D13CAEBCF007344EE /* TextDisplayViewController.h in Headers */,
 				01598E0E13CAEBCF007344EE /* TextDisplayViewControllerDelegate.h in Headers */,
 				01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */,
-				01598E1013CAEBDF007344EE /* AudioViewController.h in Headers */,
-				01598E1213CAEBDF007344EE /* MFAudioPlayerViewImpl.h in Headers */,
-				01598E1313CAEBDF007344EE /* WebBrowser.h in Headers */,
 				010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */,
+				0123603C13CC917600861EB7 /* AudioViewController.h in Headers */,
+				0123604413CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */,
+				0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
+				0123605013CC917600861EB7 /* WebBrowser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,10 +1118,6 @@
 				01598E2413CAEC8B007344EE /* FastPDFKit_KioskAppDelegate.h in Headers */,
 				01598E2613CAEC8B007344EE /* MFHomeListPdf.h in Headers */,
 				01598E2713CAEC8B007344EE /* XMLParser.h in Headers */,
-				01598E2813CAEC8B007344EE /* AudioViewController.h in Headers */,
-				01598E2913CAEC8B007344EE /* DocumentViewController_Kiosk.h in Headers */,
-				01598E2A13CAEC8B007344EE /* MFAudioPlayerViewImpl.h in Headers */,
-				01598E2B13CAEC8B007344EE /* WebBrowser.h in Headers */,
 				01598E2C13CAEC8B007344EE /* ASIAuthenticationDialog.h in Headers */,
 				01598E2D13CAEC8B007344EE /* ASICacheDelegate.h in Headers */,
 				01598E2E13CAEC8B007344EE /* ASIDownloadCache.h in Headers */,
@@ -1148,6 +1134,10 @@
 				010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */,
 				010D14E713CB004E00FD6F08 /* MFSliderDetail.h in Headers */,
 				010D14E813CB005200FD6F08 /* MFHorizontalSlider.h in Headers */,
+				0123603D13CC917600861EB7 /* AudioViewController.h in Headers */,
+				0123604513CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */,
+				0123604B13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
+				0123605113CC917600861EB7 /* WebBrowser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1306,6 +1296,8 @@
 				6FE7E4CF13CC6595006A7E68 /* Icon.png in Resources */,
 				6FE7E4D013CC6597006A7E68 /* Icon72.png in Resources */,
 				6FE7E4D113CC659A006A7E68 /* Icon114.png in Resources */,
+				0123604313CC917600861EB7 /* AudioViewController.xib in Resources */,
+				0123605713CC917600861EB7 /* WebBrowser.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1324,6 +1316,10 @@
 				6FB9779B13CC4CA1007C368C /* Icon.png in Resources */,
 				6FB9779F13CC4CBA007C368C /* Icon72.png in Resources */,
 				6FB977A013CC4CBA007C368C /* Icon114.png in Resources */,
+				0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */,
+				0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */,
+				0123604213CC917600861EB7 /* AudioViewController.xib in Resources */,
+				0123605613CC917600861EB7 /* WebBrowser.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1331,7 +1327,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB9771113CB6E76007C368C /* InfoPlist.strings in Resources */,
 				6FB9772C13CB6EB7007C368C /* backThumb_iphone.png in Resources */,
 				6FB9772D13CB6EB7007C368C /* backThumb_iphone@2x.png in Resources */,
 				6FB9772E13CB6EB7007C368C /* backThumb.png in Resources */,
@@ -1348,6 +1343,7 @@
 				6FE7E4A813CC5EB0006A7E68 /* Kiosk_ipad.xib in Resources */,
 				6FE7E4A913CC5EB4006A7E68 /* Kiosk_phone.xib in Resources */,
 				6FE7E4AA13CC5EB7006A7E68 /* MainWindow_Kiosk.xib in Resources */,
+				0123602C13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1355,8 +1351,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB9772213CB6E8A007C368C /* InfoPlist.strings in Resources */,
-				6FB9773913CB70C1007C368C /* WebBrowser.xib in Resources */,
 				6FB9773A13CB70D8007C368C /* BookmarkView.xib in Resources */,
 				6FB9773B13CB7125007C368C /* OutlineView.xib in Resources */,
 				6FB9773C13CB713F007C368C /* SearchView2_pad.xib in Resources */,
@@ -1427,7 +1421,7 @@
 				6FB9777F13CC3BF5007C368C /* zoomUnlock_phone.png in Resources */,
 				6FB9778013CC3BF5007C368C /* zoomUnlock_phone@2x.png in Resources */,
 				6FB9778113CC3BF5007C368C /* zoomUnlock.png in Resources */,
-				6FB9779713CC45F1007C368C /* AudioViewController.xib in Resources */,
+				0123603013CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1471,10 +1465,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01598DC613CAE7E4007344EE /* AudioViewController.m in Sources */,
-				01598DC713CAE7E4007344EE /* DocumentViewController_Kiosk.m in Sources */,
-				01598DC813CAE7E4007344EE /* MFAudioPlayerViewImpl.m in Sources */,
-				01598DC913CAE7E4007344EE /* WebBrowser.m in Sources */,
 				01598DBD13CAE7CD007344EE /* OutlineViewController.m in Sources */,
 				01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */,
 				01598DBF13CAE7CD007344EE /* NotificationFactory.m in Sources */,
@@ -1486,6 +1476,10 @@
 				01598DC513CAE7CD007344EE /* TextSearchOperation.m in Sources */,
 				010D14E513CB003000FD6F08 /* MFHorizontalSlider.m in Sources */,
 				010D14E613CB003300FD6F08 /* MFSliderDetail.m in Sources */,
+				0123604013CC917600861EB7 /* AudioViewController.m in Sources */,
+				0123604813CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
+				0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
+				0123605413CC917600861EB7 /* WebBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1501,10 +1495,6 @@
 				01598DF513CAEB2E007344EE /* NotificationFactory.m in Sources */,
 				01598DF613CAEB2E007344EE /* SearchManager.m in Sources */,
 				01598DF713CAEB2E007344EE /* SearchResultCellView.m in Sources */,
-				01598DFC13CAEB79007344EE /* AudioViewController.m in Sources */,
-				01598DFD13CAEB79007344EE /* DocumentViewController_Kiosk.m in Sources */,
-				01598DFE13CAEB79007344EE /* MFAudioPlayerViewImpl.m in Sources */,
-				01598DFF13CAEB79007344EE /* WebBrowser.m in Sources */,
 				01598DF813CAEB2E007344EE /* SearchResultView.m in Sources */,
 				01598DF913CAEB2E007344EE /* SearchViewController.m in Sources */,
 				01598DFA13CAEB2E007344EE /* TextDisplayViewController.m in Sources */,
@@ -1519,6 +1509,10 @@
 				01598DED13CAEAA6007344EE /* Reachability.m in Sources */,
 				01598DEA13CAEA78007344EE /* ASINetworkQueue.m in Sources */,
 				01598DEB13CAEA78007344EE /* ASINSStringAdditions.m in Sources */,
+				0123604113CC917600861EB7 /* AudioViewController.m in Sources */,
+				0123604913CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
+				0123604F13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
+				0123605513CC917600861EB7 /* WebBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1539,10 +1533,6 @@
 				01BC07D713C755610077CE63 /* unzip.c in Sources */,
 				01BC07D913C755610077CE63 /* zip.c in Sources */,
 				01BC07DB13C755610077CE63 /* Reachability.m in Sources */,
-				01BC07E713C756130077CE63 /* AudioViewController.m in Sources */,
-				01BC07E913C756130077CE63 /* DocumentViewController_Kiosk.m in Sources */,
-				01BC07EA13C756130077CE63 /* MFAudioPlayerViewImpl.m in Sources */,
-				01BC07EB13C756130077CE63 /* WebBrowser.m in Sources */,
 				01BC080C13C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m in Sources */,
 				01BC081013C75B310077CE63 /* MenuViewController_Kiosk.m in Sources */,
 				01BC081113C75B310077CE63 /* MFHomeListPdf.m in Sources */,
@@ -1559,6 +1549,10 @@
 				01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
 				010D14D013CAFFD800FD6F08 /* MFHorizontalSlider.m in Sources */,
 				010D14D113CAFFD800FD6F08 /* MFSliderDetail.m in Sources */,
+				0123603F13CC917600861EB7 /* AudioViewController.m in Sources */,
+				0123604713CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
+				0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
+				0123605313CC917600861EB7 /* WebBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1581,6 +1575,10 @@
 				010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */,
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
 				010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */,
+				0123603E13CC917600861EB7 /* AudioViewController.m in Sources */,
+				0123604613CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
+				0123604C13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
+				0123605213CC917600861EB7 /* WebBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1617,25 +1615,6 @@
 			targetProxy = 6FB9778F13CC3D45007C368C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		6FB9770F13CB6E76007C368C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6FB9771013CB6E76007C368C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6FB9772013CB6E8A007C368C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6FB9772113CB6E8A007C368C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		01598DAB13CAE783007344EE /* Debug */ = {
@@ -1918,7 +1897,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "KioskBundle/KioskBundle-Info.plist";
+				INFOPLIST_FILE = "KioskBundle-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1943,7 +1922,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KioskBundle/KioskBundle-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "KioskBundle/KioskBundle-Info.plist";
+				INFOPLIST_FILE = "KioskBundle-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1967,7 +1946,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KioskBundle/KioskBundle-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "KioskBundle/KioskBundle-Info.plist";
+				INFOPLIST_FILE = "KioskBundle-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1993,7 +1972,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "SimpleBundle/SimpleBundle-Info.plist";
+				INFOPLIST_FILE = "ReaderBundle-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2017,7 +1996,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleBundle/SimpleBundle-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "SimpleBundle/SimpleBundle-Info.plist";
+				INFOPLIST_FILE = "ReaderBundle-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2040,7 +2019,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleBundle/SimpleBundle-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "SimpleBundle/SimpleBundle-Info.plist";
+				INFOPLIST_FILE = "ReaderBundle-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
