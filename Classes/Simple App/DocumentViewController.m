@@ -177,7 +177,7 @@
 	// Show the text display view controller to the user.
 	
 	if(nil == textDisplayViewController) {
-		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle mainBundle]];
+		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
 		textDisplayViewController.documentManager = self.document;
 	}
 	
@@ -209,9 +209,9 @@
 		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
 		if(isPad) {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:[NSBundle mainBundle]];
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
 		} else {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
 		}
 	}
 	
@@ -455,7 +455,7 @@
 		
         currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
         
-		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
+		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
 		bookmarksVC.delegate = self;
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -514,7 +514,7 @@
 		
         currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
 		
-        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
+        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
         [outlineVC setDelegate:self];
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing

@@ -193,7 +193,7 @@
 	// Show the text display view controller to the user.
 	
 	if(nil == textDisplayViewController) {
-		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle mainBundle]];
+		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
 		textDisplayViewController.documentManager = self.document;
 	}
 	
@@ -262,7 +262,7 @@
 		
         currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
         
-		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle mainBundle]];
+		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
 		bookmarksVC.delegate = self;
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -322,7 +322,7 @@
 		
         currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
 		
-        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle mainBundle]];
+        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
         [outlineVC setDelegate:self];
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
@@ -469,9 +469,9 @@
 		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
 		if(isPad) {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:[NSBundle mainBundle]];
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
 		} else {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle mainBundle]];
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
 		}
 	}
 	return searchViewController;
@@ -797,7 +797,7 @@
     
 	multimediaVisible = YES;
     
-	audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:[NSBundle mainBundle] audioFilePath:audioURL local:_isLocal];
+	audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:MF_BUNDLED_BUNDLE(@"KioskBundle") audioFilePath:audioURL local:_isLocal];
 	
 	audioVC.documentViewController = self;
 	
@@ -869,7 +869,7 @@
     
 	multimediaVisible = YES;
     
-	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle mainBundle] link:url local:isLocal];
+	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle") link:url local:isLocal];
 	
 	webBrowser.docViewController = self;
 	[[self parentViewController]presentModalViewController:webBrowser animated:YES];
@@ -1081,31 +1081,40 @@
 	toolbarHeight = 44;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // IPad.
-		
-		self.imgModeSingle = [UIImage imageNamed:@"changeModeSingle.png"];
-		self.imgModeDouble = [UIImage imageNamed:@"changeModeDouble.png"];
-		
-		self.imgZoomLock =[UIImage imageNamed:@"zoomLock.png"];
-		self.imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock.png"];
-		
-		self.imgl2r =[UIImage imageNamed:@"direction_l2r.png"];
-		self.imgr2l =[UIImage imageNamed:@"direction_r2l.png"];
-		
-		self.imgLeadRight =[UIImage imageNamed:@"pagelead.png"];
-		self.imgLeadLeft =[UIImage imageNamed:@"pagelead.png"];
+        
+        self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"changeModeSingle",@"png")];
+        
+        self.imgModeDouble = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"changeModeDouble",@"png")];
+        
+        self.imgZoomLock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"zoomLock",@"png")];
+        
+        self.imgZoomUnlock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"zoomUnlock",@"png")];
+        
+        self.imgl2r = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"direction_l2r",@"png")];
+        
+        self.imgr2l = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"direction_r2l",@"png")];
+        
+        self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"pagelead",@"png")];
+        
+        self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"pagelead",@"png")];
 		
 	} else { // IPhone.
-		
-		self.imgModeSingle =[UIImage imageNamed:@"changeModeSingle_phone.png"];
-		self.imgModeDouble =[UIImage imageNamed:@"changeModeDouble_phone.png"];
-		
-		self.imgZoomLock =[UIImage imageNamed:@"zoomLock_phone.png"];
-		self.imgZoomUnlock =[UIImage imageNamed:@"zoomUnlock_phone.png"];
-		self.imgl2r =[UIImage imageNamed:@"direction_l2r_phone.png"];
-		self.imgr2l =[UIImage imageNamed:@"direction_r2l_phone.png"];
-		
-		self.imgLeadRight =[UIImage imageNamed:@"pagelead_phone.png"];
-		self.imgLeadLeft =[UIImage imageNamed:@"pagelead_phone.png"];
+        
+        self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"changeModeSingle_phone",@"png")];
+        
+        self.imgModeDouble = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"changeModeDouble_phone",@"png")];
+        
+        self.imgZoomLock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"zoomLock_phone",@"png")];
+        
+        self.imgZoomUnlock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"zoomUnlock_phone",@"png")];
+        
+        self.imgl2r = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"direction_l2r_phone",@"png")];
+        
+        self.imgr2l = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"direction_r2l_phone",@"png")];
+        
+        self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"pagelead_phone",@"png")];
+        
+        self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"pagelead_phone",@"png")];
 	}
 	
 	items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
@@ -1116,7 +1125,7 @@
 		
 		// Dismiss.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"X.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"X",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
 		self.dismissBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
@@ -1191,21 +1200,21 @@
 		
 		// Search.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"search",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
 		self.searchBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
 		// Text.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"text.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"text",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
 		self.textBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
 		// Outline.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"indice.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"indice",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		
 		[aBarButtonItem setWidth:60];
 		self.outlineBarButtonItem = aBarButtonItem;
@@ -1214,7 +1223,7 @@
 		
 		// Bookmarks.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bookmark_add.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"bookmark_add",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
 		self.bookmarkBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
@@ -1224,7 +1233,7 @@
         
 		// Dismiss.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"X_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"X_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
 		[aBarButtonItem setWidth:22];
 		self.dismissBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1278,7 +1287,7 @@
 		
 		// Search.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"search_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
 		[aBarButtonItem setWidth:22];
 		self.searchBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1286,7 +1295,7 @@
 		
 		// Text.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"text_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"text_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
 		[aBarButtonItem setWidth:22];
 		self.textBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1294,7 +1303,7 @@
 		
 		// Outline.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"indice_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"indice_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		[aBarButtonItem setWidth:22];
 		self.outlineBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1302,7 +1311,7 @@
 		
 		// Bookmarks.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bookmark_add_phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"bookmark_add_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
 		[aBarButtonItem setWidth:25];
 		self.bookmarkBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];

@@ -151,7 +151,7 @@
         
     } else {
         
-        xmlUrl = [[NSBundle mainBundle]URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
+        xmlUrl = [MF_BUNDLED_BUNDLE(@"SimpleBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
         [parser parseXMLFileAtURL:xmlUrl];
         
         if([parser isDone]) {

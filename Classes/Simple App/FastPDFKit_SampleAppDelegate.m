@@ -23,9 +23,9 @@
     MenuViewController *aMenuViewController = nil;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:[NSBundle mainBundle]];
+			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:MF_BUNDLED_BUNDLE(@"KioskBundle")];
 	} else {
-			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_phone" bundle:[NSBundle mainBundle]];
+			aMenuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_phone" bundle:MF_BUNDLED_BUNDLE(@"KioskBundle")];
 	}
 	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:aMenuViewController];
 	[aNavController setNavigationBarHidden:YES];
