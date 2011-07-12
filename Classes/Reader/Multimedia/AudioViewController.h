@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "DocumentViewController_Kiosk.h"
+#import "ReaderViewController.h"
 
 
 @interface AudioViewController : UIViewController <AVAudioPlayerDelegate>{
@@ -17,14 +17,14 @@
 	UISlider *volumeControl;
 	BOOL local;
 	NSURL *url;
-	DocumentViewController_Kiosk *documentViewController;
+	ReaderViewController *documentViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UISlider *volumeControl;
 @property (nonatomic, assign) AVAudioPlayer *audioPlayer;
 @property (nonatomic, readwrite, getter = isLocal) BOOL local;
 @property (nonatomic, retain) NSURL *url; 
-@property (nonatomic,assign) DocumentViewController_Kiosk *documentViewController;
+@property (nonatomic,assign) ReaderViewController *documentViewController;
 
 - (IBAction) playAudio;
 - (IBAction) stopAudio;

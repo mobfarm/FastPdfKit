@@ -8,7 +8,7 @@
 
 #import "MenuViewController_Kiosk.h"
 #import "MFDocumentManager.h"
-#import "DocumentViewController_Kiosk.h"
+#import "ReaderViewController.h"
 #import "MFHomeListPdf.h"
 #import "XMLParser.h"
 #include <stdio.h>
@@ -29,7 +29,7 @@
 -(IBAction)actionOpenPlainDocument:(NSString *)documentName {
 	
 	MFDocumentManager * documentManager = nil;
-	DocumentViewController_Kiosk * documentViewController = nil;
+	ReaderViewController * documentViewController = nil;
 	
 	NSArray *paths = nil;
 	NSString *documentsDirectory = nil;
@@ -52,7 +52,7 @@
     
     documentManager.resourceFolder = pdfPath;
 	
-	documentViewController = [[DocumentViewController_Kiosk alloc]initWithDocumentManager:documentManager];
+	documentViewController = [[ReaderViewController alloc]initWithDocumentManager:documentManager];
 	documentViewController.documentId = documentName;
 	
 	[[self navigationController]pushViewController:documentViewController animated:YES];

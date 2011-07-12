@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController_Kiosk.h"
-#import "DocumentViewController_Kiosk.h"
+#import "ReaderViewController.h"
 
 @class MFDocumentManager;
 

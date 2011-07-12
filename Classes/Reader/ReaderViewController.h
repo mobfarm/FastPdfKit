@@ -34,7 +34,7 @@
 #define FPK_SEARCH_VIEW_MODE_MINI 0
 #define FPK_SEARCH_VIEW_MODE_FULL 1
 
-@interface DocumentViewController_Kiosk : MFDocumentViewController <MFSliderDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
+@interface ReaderViewController : MFDocumentViewController <MFSliderDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
 	
 	// Thumbnail view and stuff.
 	UIImageView * thumbnailView;

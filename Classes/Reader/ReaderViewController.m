@@ -6,7 +6,7 @@
 //  Copyright 2010 MobFarm S.r.l. All rights reserved.
 //
 
-#import "DocumentViewController_Kiosk.h"
+#import "ReaderViewController.h"
 #import "BookmarkViewController.h"
 #import "OutlineViewController.h"
 #import "MFDocumentManager.h"
@@ -21,7 +21,7 @@
 
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"%d/%d",(x),(y)]
 
-@interface DocumentViewController_Kiosk()
+@interface ReaderViewController()
 
 -(void)dismissMiniSearchView;
 -(void)presentTextDisplayViewControllerForPage:(NSUInteger)page;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation DocumentViewController_Kiosk
+@implementation ReaderViewController
 
 @synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
 @synthesize thumbImgArray;

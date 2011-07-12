@@ -34,9 +34,9 @@
 		0123603F13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123604013CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123604313CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
-		0123604413CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */; };
-		0123604713CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
-		0123604813CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
+		0123604413CC917600861EB7 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; };
+		0123604713CC917600861EB7 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* ReaderViewController.m */; };
+		0123604813CC917600861EB7 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* ReaderViewController.m */; };
 		0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; };
 		0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
 		0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
@@ -323,8 +323,8 @@
 		0123603213CC917600861EB7 /* AudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
 		0123603313CC917600861EB7 /* AudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
 		0123603413CC917600861EB7 /* AudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioViewController.xib; sourceTree = "<group>"; };
-		0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController_Kiosk.h; sourceTree = "<group>"; };
-		0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController_Kiosk.m; sourceTree = "<group>"; };
+		0123603513CC917600861EB7 /* ReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderViewController.h; sourceTree = "<group>"; };
+		0123603613CC917600861EB7 /* ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderViewController.m; sourceTree = "<group>"; };
 		0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewImpl.h; sourceTree = "<group>"; };
 		0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAudioPlayerViewImpl.m; sourceTree = "<group>"; };
 		0123603913CC917600861EB7 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
@@ -840,8 +840,8 @@
 		01BC07DC13C756130077CE63 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */,
-				0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */,
+				0123603513CC917600861EB7 /* ReaderViewController.h */,
+				0123603613CC917600861EB7 /* ReaderViewController.m */,
 				01BC081E13C75D3A0077CE63 /* Text Search */,
 				01BC081913C75D3A0077CE63 /* Outline */,
 				01BC081413C75D3A0077CE63 /* Bookmarks */,
@@ -1053,7 +1053,7 @@
 				01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */,
 				010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */,
 				0123603C13CC917600861EB7 /* AudioViewController.h in Headers */,
-				0123604413CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */,
+				0123604413CC917600861EB7 /* ReaderViewController.h in Headers */,
 				0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
 				0123605013CC917600861EB7 /* WebBrowser.h in Headers */,
 				0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */,
@@ -1425,7 +1425,7 @@
 				010D14E513CB003000FD6F08 /* MFHorizontalSlider.m in Sources */,
 				010D14E613CB003300FD6F08 /* MFSliderDetail.m in Sources */,
 				0123604013CC917600861EB7 /* AudioViewController.m in Sources */,
-				0123604813CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
+				0123604813CC917600861EB7 /* ReaderViewController.m in Sources */,
 				0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
 				0123605413CC917600861EB7 /* WebBrowser.m in Sources */,
 				9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */,
@@ -1485,7 +1485,7 @@
 				010D14D013CAFFD800FD6F08 /* MFHorizontalSlider.m in Sources */,
 				010D14D113CAFFD800FD6F08 /* MFSliderDetail.m in Sources */,
 				0123603F13CC917600861EB7 /* AudioViewController.m in Sources */,
-				0123604713CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
+				0123604713CC917600861EB7 /* ReaderViewController.m in Sources */,
 				0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
 				0123605313CC917600861EB7 /* WebBrowser.m in Sources */,
 			);
