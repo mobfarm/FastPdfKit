@@ -977,22 +977,22 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */,
+				8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */,
+				0123602913CC90C800861EB7 /* KioskBundle-Info.plist */,
+				0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */,
 				95B8BD5E13CCA59800195F0F /* Manual.pdf */,
 				95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */,
-				0188491A131E8A630045038F /* img */,
 				0123606D13CCA18700861EB7 /* Default@2x.png */,
 				0123606E13CCA18700861EB7 /* Default.png */,
 				0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */,
 				0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */,
-				0123602913CC90C800861EB7 /* KioskBundle-Info.plist */,
-				0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */,
 				01CF7355132532FC00E42146 /* kiosk_list.xml */,
 				9597F994125D17E400E17B47 /* iTunesArtwork */,
 				9598FDD312337F24008D7198 /* Icon.png */,
 				9598FDD112337F0F008D7198 /* Icon72.png */,
 				9598FDE512338042008D7198 /* Icon114.png */,
-				018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */,
-				8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */,
+				0188491A131E8A630045038F /* img */,
 				95B8BDB613CCAB3200195F0F /* FPKKioskBundle.bundle */,
 				95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */,
 			);
@@ -1694,6 +1694,7 @@
 				);
 				INFOPLIST_FILE = "Resources/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Classes/Third parties/\"",
 					"\"$(SRCROOT)/FastPdfKit Library\"",
@@ -1720,6 +1721,7 @@
 				);
 				INFOPLIST_FILE = "Resources/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Classes/Third parties/\"",
 					"\"$(SRCROOT)/FastPdfKit Library\"",
@@ -1745,6 +1747,7 @@
 				);
 				INFOPLIST_FILE = "Resources/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Classes/Third parties/\"",
 					"\"$(SRCROOT)/FastPdfKit Library\"",

@@ -157,7 +157,7 @@
 		// Background.
 		
 		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)];
-		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"backThumb_phone",@"png")]];
+		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"backThumb_iphone",@"png")]];
 		[[self view] addSubview:anImageView];
 		[anImageView release];
 
