@@ -151,7 +151,7 @@
         
     } else {
         
-        xmlUrl = [MF_BUNDLED_BUNDLE(@"KioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
+        xmlUrl = [MF_BUNDLED_BUNDLE(@"FPKKioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
         [parser parseXMLFileAtURL:xmlUrl];
         
         if([parser isDone]) {
@@ -219,7 +219,7 @@
 	}
 	
 	anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, scrollViewWidth, 40)]; 
-	[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"border",@"png")]];
+	[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"border",@"png")]];
 	[self.view addSubview:anImageView];
 	[anImageView release];
 	

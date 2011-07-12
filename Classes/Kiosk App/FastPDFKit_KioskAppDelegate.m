@@ -24,9 +24,9 @@
 #endif
 	
 	if(isPad) {
-			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_ipad" bundle:MF_BUNDLED_BUNDLE(@"KioskBundle")];
+			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_ipad" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
 	} else {
-			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"KioskBundle")];
+			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
 	}
 		
 	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:aMenuViewController];

@@ -15,7 +15,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "018848E6131E89570045038F"
                BuildableName = "FastPdfKit Kiosk.app"
-               BlueprintName = "FastPdfKit Kiosk"
+               BlueprintName = "FPKKioskApp"
                ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,7 +42,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "018848E6131E89570045038F"
             BuildableName = "FastPdfKit Kiosk.app"
-            BlueprintName = "FastPdfKit Kiosk"
+            BlueprintName = "FPKKioskApp"
             ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,7 +61,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "018848E6131E89570045038F"
             BuildableName = "FastPdfKit Kiosk.app"
-            BlueprintName = "FastPdfKit Kiosk"
+            BlueprintName = "FPKKioskApp"
             ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

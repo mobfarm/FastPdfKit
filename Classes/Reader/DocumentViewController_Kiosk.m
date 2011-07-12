@@ -193,7 +193,7 @@
 	// Show the text display view controller to the user.
 	
 	if(nil == textDisplayViewController) {
-		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
+		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
 		textDisplayViewController.documentManager = self.document;
 	}
 	
@@ -262,7 +262,7 @@
 		
         currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
         
-		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
+		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
 		bookmarksVC.delegate = self;
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -322,7 +322,7 @@
 		
         currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
 		
-        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
+        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
         [outlineVC setDelegate:self];
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
@@ -469,9 +469,9 @@
 		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
 		if(isPad) {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
 		} else {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
 		}
 	}
 	return searchViewController;
@@ -797,7 +797,7 @@
     
 	multimediaVisible = YES;
     
-	audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:MF_BUNDLED_BUNDLE(@"KioskBundle") audioFilePath:audioURL local:_isLocal];
+	audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle") audioFilePath:audioURL local:_isLocal];
 	
 	audioVC.documentViewController = self;
 	
@@ -869,7 +869,7 @@
     
 	multimediaVisible = YES;
     
-	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle") link:url local:isLocal];
+	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") link:url local:isLocal];
 	
 	webBrowser.docViewController = self;
 	[[self parentViewController]presentModalViewController:webBrowser animated:YES];
@@ -1082,39 +1082,39 @@
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // IPad.
         
-        self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"changeModeSingle",@"png")];
+        self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeSingle",@"png")];
         
-        self.imgModeDouble = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"changeModeDouble",@"png")];
+        self.imgModeDouble = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeDouble",@"png")];
         
-        self.imgZoomLock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"zoomLock",@"png")];
+        self.imgZoomLock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"zoomLock",@"png")];
         
-        self.imgZoomUnlock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"zoomUnlock",@"png")];
+        self.imgZoomUnlock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"zoomUnlock",@"png")];
         
-        self.imgl2r = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"direction_l2r",@"png")];
+        self.imgl2r = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"direction_l2r",@"png")];
         
-        self.imgr2l = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"direction_r2l",@"png")];
+        self.imgr2l = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"direction_r2l",@"png")];
         
-        self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"pagelead",@"png")];
+        self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead",@"png")];
         
-        self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"pagelead",@"png")];
+        self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead",@"png")];
 		
 	} else { // IPhone.
         
-        self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"changeModeSingle_phone",@"png")];
+        self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeSingle_phone",@"png")];
         
-        self.imgModeDouble = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"changeModeDouble_phone",@"png")];
+        self.imgModeDouble = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeDouble_phone",@"png")];
         
-        self.imgZoomLock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"zoomLock_phone",@"png")];
+        self.imgZoomLock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"zoomLock_phone",@"png")];
         
-        self.imgZoomUnlock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"zoomUnlock_phone",@"png")];
+        self.imgZoomUnlock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"zoomUnlock_phone",@"png")];
         
-        self.imgl2r = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"direction_l2r_phone",@"png")];
+        self.imgl2r = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"direction_l2r_phone",@"png")];
         
-        self.imgr2l = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"direction_r2l_phone",@"png")];
+        self.imgr2l = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"direction_r2l_phone",@"png")];
         
-        self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"pagelead_phone",@"png")];
+        self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead_phone",@"png")];
         
-        self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"pagelead_phone",@"png")];
+        self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead_phone",@"png")];
 	}
 	
 	items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
@@ -1125,7 +1125,7 @@
 		
 		// Dismiss.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"X",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"X",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
 		self.dismissBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
@@ -1200,21 +1200,21 @@
 		
 		// Search.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"search",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"search",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
 		self.searchBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
 		// Text.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"text",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"text",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
 		self.textBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
 		// Outline.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"indice",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"indice",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		
 		[aBarButtonItem setWidth:60];
 		self.outlineBarButtonItem = aBarButtonItem;
@@ -1223,7 +1223,7 @@
 		
 		// Bookmarks.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"bookmark_add",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"bookmark_add",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
 		self.bookmarkBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
@@ -1233,7 +1233,7 @@
         
 		// Dismiss.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"X_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"X_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionDismiss:)];
 		[aBarButtonItem setWidth:22];
 		self.dismissBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1287,7 +1287,7 @@
 		
 		// Search.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"search_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"search_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionSearch:)];
 		[aBarButtonItem setWidth:22];
 		self.searchBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1295,7 +1295,7 @@
 		
 		// Text.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"text_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"text_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionText:)];
 		[aBarButtonItem setWidth:22];
 		self.textBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1303,7 +1303,7 @@
 		
 		// Outline.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"indice_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"indice_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionOutline:)];
 		[aBarButtonItem setWidth:22];
 		self.outlineBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1311,7 +1311,7 @@
 		
 		// Bookmarks.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"bookmark_add_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
+		aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"bookmark_add_phone",@"png")] style:UIBarButtonItemStylePlain target:self action:@selector(actionBookmarks:)];
 		[aBarButtonItem setWidth:25];
 		self.bookmarkBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];

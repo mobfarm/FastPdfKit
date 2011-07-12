@@ -13,9 +13,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "01598DA513CAE783007344EE"
-               BuildableName = "libFastPdfKitReader.a"
-               BlueprintName = "FastPdfKitReader"
+               BlueprintIdentifier = "6FB9770813CB6E76007C368C"
+               BuildableName = "KioskBundle.bundle"
+               BlueprintName = "FPKKioskBundle"
                ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -276,8 +276,8 @@
 		6FB9777F13CC3BF5007C368C /* zoomUnlock_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884952131E8A6F0045038F /* zoomUnlock_phone.png */; };
 		6FB9778013CC3BF5007C368C /* zoomUnlock_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884953131E8A6F0045038F /* zoomUnlock_phone@2x.png */; };
 		6FB9778113CC3BF5007C368C /* zoomUnlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884954131E8A6F0045038F /* zoomUnlock.png */; };
-		6FB9779113CC3EA6007C368C /* KioskBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9770913CB6E76007C368C /* KioskBundle.bundle */; };
-		6FB9779213CC3EA6007C368C /* ReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */; };
+		6FB9779113CC3EA6007C368C /* FPKKioskBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */; };
+		6FB9779213CC3EA6007C368C /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */; };
 		6FB9779613CC3F7F007C368C /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2C1356EC920028DD38 /* pause.png */; };
 		6FB9779713CC45F1007C368C /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07DF13C756130077CE63 /* AudioViewController.xib */; };
 		6FB9779B13CC4CA1007C368C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
@@ -288,6 +288,9 @@
 		6FE7E4A813CC5EB0006A7E68 /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080313C75B310077CE63 /* Kiosk_ipad.xib */; };
 		6FE7E4A913CC5EB4006A7E68 /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080413C75B310077CE63 /* Kiosk_phone.xib */; };
 		6FE7E4AA13CC5EB7006A7E68 /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */; };
+		6FE7E4CF13CC6595006A7E68 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
+		6FE7E4D013CC6597006A7E68 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
+		6FE7E4D113CC659A006A7E68 /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -521,12 +524,12 @@
 		6FB976F813CB6E63007C368C /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove.png; sourceTree = "<group>"; };
 		6FB976F913CB6E63007C368C /* resume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resume.png; sourceTree = "<group>"; };
 		6FB976FA13CB6E63007C368C /* view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view.png; sourceTree = "<group>"; };
-		6FB9770913CB6E76007C368C /* KioskBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KioskBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPKKioskBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB9770A13CB6E76007C368C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		6FB9770E13CB6E76007C368C /* KioskBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KioskBundle-Info.plist"; sourceTree = "<group>"; };
 		6FB9771013CB6E76007C368C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6FB9771213CB6E76007C368C /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
-		6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaderBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPKReaderBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB9771F13CB6E8A007C368C /* SimpleBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleBundle-Info.plist"; sourceTree = "<group>"; };
 		6FB9772113CB6E8A007C368C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6FB9772313CB6E8A007C368C /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
@@ -954,8 +957,8 @@
 				018848E7131E89570045038F /* FastPdfKit Kiosk.app */,
 				010D14AD13CAF5CE00FD6F08 /* libFastPdfKitReader.a */,
 				010D14AE13CAF5CE00FD6F08 /* libFastPdfKitKiosk.a */,
-				6FB9770913CB6E76007C368C /* KioskBundle.bundle */,
-				6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */,
+				6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */,
+				6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1151,9 +1154,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		01598DA513CAE783007344EE /* FastPdfKitReader */ = {
+		01598DA513CAE783007344EE /* FPKReaderLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01598DAE13CAE783007344EE /* Build configuration list for PBXNativeTarget "FastPdfKitReader" */;
+			buildConfigurationList = 01598DAE13CAE783007344EE /* Build configuration list for PBXNativeTarget "FPKReaderLib" */;
 			buildPhases = (
 				01598DA213CAE783007344EE /* Sources */,
 				01598DA313CAE783007344EE /* Frameworks */,
@@ -1163,14 +1166,14 @@
 			);
 			dependencies = (
 			);
-			name = FastPdfKitReader;
+			name = FPKReaderLib;
 			productName = FastPDFKitReader;
 			productReference = 010D14AD13CAF5CE00FD6F08 /* libFastPdfKitReader.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		01598DD913CAE917007344EE /* FastPdfKitKiosk */ = {
+		01598DD913CAE917007344EE /* FPKKioskLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01598DDF13CAE917007344EE /* Build configuration list for PBXNativeTarget "FastPdfKitKiosk" */;
+			buildConfigurationList = 01598DDF13CAE917007344EE /* Build configuration list for PBXNativeTarget "FPKKioskLib" */;
 			buildPhases = (
 				01598DD613CAE917007344EE /* Sources */,
 				01598DD713CAE917007344EE /* Frameworks */,
@@ -1180,14 +1183,14 @@
 			);
 			dependencies = (
 			);
-			name = FastPdfKitKiosk;
+			name = FPKKioskLib;
 			productName = FastPDFKitKiosk;
 			productReference = 010D14AE13CAF5CE00FD6F08 /* libFastPdfKitKiosk.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		018848E6131E89570045038F /* FastPdfKit Kiosk */ = {
+		018848E6131E89570045038F /* FPKKioskApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 018848ED131E89570045038F /* Build configuration list for PBXNativeTarget "FastPdfKit Kiosk" */;
+			buildConfigurationList = 018848ED131E89570045038F /* Build configuration list for PBXNativeTarget "FPKKioskApp" */;
 			buildPhases = (
 				018848E3131E89570045038F /* Resources */,
 				018848E4131E89570045038F /* Sources */,
@@ -1199,14 +1202,14 @@
 				6FB9779013CC3D45007C368C /* PBXTargetDependency */,
 				6FB9772913CB6E97007C368C /* PBXTargetDependency */,
 			);
-			name = "FastPdfKit Kiosk";
+			name = FPKKioskApp;
 			productName = "FastPDFKit Kiosk";
 			productReference = 018848E7131E89570045038F /* FastPdfKit Kiosk.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1D6058900D05DD3D006BFB54 /* FastPdfKit Sample */ = {
+		1D6058900D05DD3D006BFB54 /* FPKSimpleApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FastPdfKit Sample" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FPKSimpleApp" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -1217,14 +1220,14 @@
 			dependencies = (
 				6FB9772B13CB6EA3007C368C /* PBXTargetDependency */,
 			);
-			name = "FastPdfKit Sample";
+			name = FPKSimpleApp;
 			productName = "FastPDFKit Sample";
 			productReference = 1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6FB9770813CB6E76007C368C /* KioskBundle */ = {
+		6FB9770813CB6E76007C368C /* FPKKioskBundle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6FB9771313CB6E76007C368C /* Build configuration list for PBXNativeTarget "KioskBundle" */;
+			buildConfigurationList = 6FB9771313CB6E76007C368C /* Build configuration list for PBXNativeTarget "FPKKioskBundle" */;
 			buildPhases = (
 				6FB9770513CB6E76007C368C /* Sources */,
 				6FB9770613CB6E76007C368C /* Frameworks */,
@@ -1234,14 +1237,14 @@
 			);
 			dependencies = (
 			);
-			name = KioskBundle;
+			name = FPKKioskBundle;
 			productName = KioskBundle;
-			productReference = 6FB9770913CB6E76007C368C /* KioskBundle.bundle */;
+			productReference = 6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		6FB9771A13CB6E8A007C368C /* ReaderBundle */ = {
+		6FB9771A13CB6E8A007C368C /* FPKReaderBundle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "ReaderBundle" */;
+			buildConfigurationList = 6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "FPKReaderBundle" */;
 			buildPhases = (
 				6FB9771713CB6E8A007C368C /* Sources */,
 				6FB9771813CB6E8A007C368C /* Frameworks */,
@@ -1251,9 +1254,9 @@
 			);
 			dependencies = (
 			);
-			name = ReaderBundle;
+			name = FPKReaderBundle;
 			productName = SimpleBundle;
-			productReference = 6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */;
+			productReference = 6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -1279,12 +1282,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* FastPdfKit Sample */,
-				018848E6131E89570045038F /* FastPdfKit Kiosk */,
-				01598DA513CAE783007344EE /* FastPdfKitReader */,
-				01598DD913CAE917007344EE /* FastPdfKitKiosk */,
-				6FB9770813CB6E76007C368C /* KioskBundle */,
-				6FB9771A13CB6E8A007C368C /* ReaderBundle */,
+				1D6058900D05DD3D006BFB54 /* FPKSimpleApp */,
+				018848E6131E89570045038F /* FPKKioskApp */,
+				01598DA513CAE783007344EE /* FPKReaderLib */,
+				01598DD913CAE917007344EE /* FPKKioskLib */,
+				6FB9770813CB6E76007C368C /* FPKKioskBundle */,
+				6FB9771A13CB6E8A007C368C /* FPKReaderBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -1294,10 +1297,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB9779113CC3EA6007C368C /* KioskBundle.bundle in Resources */,
-				6FB9779213CC3EA6007C368C /* ReaderBundle.bundle in Resources */,
+				6FB9779113CC3EA6007C368C /* FPKKioskBundle.bundle in Resources */,
+				6FB9779213CC3EA6007C368C /* FPKReaderBundle.bundle in Resources */,
 				01884A8A131E94C70045038F /* Identity-H.cidf in Resources */,
 				01884A8B131E94C70045038F /* Identity-V.cidf in Resources */,
+				6FE7E4CF13CC6595006A7E68 /* Icon.png in Resources */,
+				6FE7E4D013CC6597006A7E68 /* Icon72.png in Resources */,
+				6FE7E4D113CC659A006A7E68 /* Icon114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1562,17 +1568,17 @@
 /* Begin PBXTargetDependency section */
 		6FB9772913CB6E97007C368C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6FB9770813CB6E76007C368C /* KioskBundle */;
+			target = 6FB9770813CB6E76007C368C /* FPKKioskBundle */;
 			targetProxy = 6FB9772813CB6E97007C368C /* PBXContainerItemProxy */;
 		};
 		6FB9772B13CB6EA3007C368C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6FB9771A13CB6E8A007C368C /* ReaderBundle */;
+			target = 6FB9771A13CB6E8A007C368C /* FPKReaderBundle */;
 			targetProxy = 6FB9772A13CB6EA3007C368C /* PBXContainerItemProxy */;
 		};
 		6FB9779013CC3D45007C368C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6FB9771A13CB6E8A007C368C /* ReaderBundle */;
+			target = 6FB9771A13CB6E8A007C368C /* FPKReaderBundle */;
 			targetProxy = 6FB9778F13CC3D45007C368C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2078,7 +2084,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01598DAE13CAE783007344EE /* Build configuration list for PBXNativeTarget "FastPdfKitReader" */ = {
+		01598DAE13CAE783007344EE /* Build configuration list for PBXNativeTarget "FPKReaderLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01598DAB13CAE783007344EE /* Debug */,
@@ -2088,7 +2094,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		01598DDF13CAE917007344EE /* Build configuration list for PBXNativeTarget "FastPdfKitKiosk" */ = {
+		01598DDF13CAE917007344EE /* Build configuration list for PBXNativeTarget "FPKKioskLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01598DE013CAE917007344EE /* Debug */,
@@ -2098,7 +2104,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		018848ED131E89570045038F /* Build configuration list for PBXNativeTarget "FastPdfKit Kiosk" */ = {
+		018848ED131E89570045038F /* Build configuration list for PBXNativeTarget "FPKKioskApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				018848EA131E89570045038F /* Debug */,
@@ -2108,7 +2114,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FastPdfKit Sample" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FPKSimpleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -2118,7 +2124,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FB9771313CB6E76007C368C /* Build configuration list for PBXNativeTarget "KioskBundle" */ = {
+		6FB9771313CB6E76007C368C /* Build configuration list for PBXNativeTarget "FPKKioskBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6FB9771413CB6E76007C368C /* Debug */,
@@ -2128,7 +2134,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "ReaderBundle" */ = {
+		6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "FPKReaderBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6FB9772513CB6E8A007C368C /* Debug */,

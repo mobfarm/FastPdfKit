@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'KioskBundle' target in the 'KioskBundle' project
+// Prefix header for all source files of the 'FPKKioskBundle' target in the 'FPKKioskBundle' project
 //
 
 #ifdef __OBJC__

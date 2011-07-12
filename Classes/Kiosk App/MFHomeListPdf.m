@@ -138,7 +138,7 @@
 		// Background.
 		
 		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)];
-		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"backThumb",@"png")]];
+		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"backThumb",@"png")]];
 		[[self view] addSubview:anImageView];
 		[anImageView release];
 
@@ -157,7 +157,7 @@
 		// Background.
 		
 		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)];
-		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"backThumb_phone",@"png")]];
+		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"backThumb_phone",@"png")]];
 		[[self view] addSubview:anImageView];
 		[anImageView release];
 
@@ -216,14 +216,14 @@
 			// Resume.
 			
 			[aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
-			[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
+			[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
             
 		}else {
 		
             // Download.
 		
             [aButton setTitle:TITLE_DOWNLOAD forState:UIControlStateNormal];
-            [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"download",@"png")] forState:UIControlStateNormal];
+            [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"download",@"png")] forState:UIControlStateNormal];
         }
         [aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	} else {
@@ -231,7 +231,7 @@
 		// Open.
 		
 		[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"view",@"png")] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"view",@"png")] forState:UIControlStateNormal];
 		[aButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	
@@ -244,7 +244,7 @@
 	aButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	[aButton setFrame:CGRectMake(removeButtonHOffset, removeButtonVOffset, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_REMOVE forState:UIControlStateNormal];
-	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"remove",@"png")] forState:UIControlStateNormal];
+	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"remove",@"png")] forState:UIControlStateNormal];
 	[aButton setTag:documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton addTarget:self action:@selector(actionremovePdf:) forControlEvents:UIControlEventTouchUpInside];
@@ -313,7 +313,7 @@
 	
 	aButton = [menuViewController.openButtons objectForKey:page];
 	[aButton setTitle:TITLE_DOWNLOAD forState:UIControlStateNormal];
-	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"download",@"png")] forState:UIControlStateNormal];
+	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"download",@"png")] forState:UIControlStateNormal];
 	[aButton setTag:documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton removeTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
@@ -351,7 +351,7 @@
 	aButton = [menuViewController.openButtons objectForKey:page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
 	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
-	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
+	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
 	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 	// Cover button.
@@ -502,7 +502,7 @@
     aButton =[menuViewController.openButtons objectForKey:page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
 	[aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
-	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"pause",@"png")] forState:UIControlStateNormal];
+	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"pause",@"png")] forState:UIControlStateNormal];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 	// Cover button.
@@ -529,7 +529,7 @@
 	aButton =[menuViewController.openButtons objectForKey:page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
 	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
-	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"view",@"png")] forState:UIControlStateNormal];
+	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"view",@"png")] forState:UIControlStateNormal];
 	[aButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 	// Cover button.
@@ -595,7 +595,7 @@
     
     aButton = [menuViewController.openButtons objectForKey:page];
     [aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
-    [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"KioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
+    [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
     [aButton removeTarget:self action:@selector(actionStopPDF:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
 	

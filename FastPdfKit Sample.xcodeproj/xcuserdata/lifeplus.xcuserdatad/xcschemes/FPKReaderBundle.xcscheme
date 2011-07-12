@@ -13,9 +13,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "FastPdfKit Sample.app"
-               BlueprintName = "FastPdfKit Sample"
+               BlueprintIdentifier = "6FB9771A13CB6E8A007C368C"
+               BuildableName = "ReaderBundle.bundle"
+               BlueprintName = "FPKReaderBundle"
                ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -37,15 +37,6 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "FastPdfKit Sample.app"
-            BlueprintName = "FastPdfKit Sample"
-            ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -56,15 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "FastPdfKit Sample.app"
-            BlueprintName = "FastPdfKit Sample"
-            ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
