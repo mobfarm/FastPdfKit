@@ -42,7 +42,6 @@
 		0123604313CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
 		0123604413CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */; };
 		0123604513CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* DocumentViewController_Kiosk.h */; };
-		0123604613CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
 		0123604713CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
 		0123604813CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
 		0123604913CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* DocumentViewController_Kiosk.m */; };
@@ -60,6 +59,8 @@
 		0123605513CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		0123605613CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
 		0123605713CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
+		0123605A13CC957B00861EB7 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
+		0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
 		01598DA713CAE783007344EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01598DBD13CAE7CD007344EE /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081C13C75D3A0077CE63 /* OutlineViewController.m */; };
 		01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
@@ -104,7 +105,6 @@
 		01598E0313CAEBCF007344EE /* OutlineViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081D13C75D3A0077CE63 /* OutlineViewControllerDelegate.h */; };
 		01598E0413CAEBCF007344EE /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; };
 		01598E0513CAEBCF007344EE /* MiniSearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */; };
-		01598E0613CAEBCF007344EE /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
 		01598E0713CAEBCF007344EE /* SearchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082413C75D3A0077CE63 /* SearchManager.h */; };
 		01598E0813CAEBCF007344EE /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; };
 		01598E0913CAEBCF007344EE /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; };
@@ -120,7 +120,6 @@
 		01598E1713CAEC8B007344EE /* OutlineViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081D13C75D3A0077CE63 /* OutlineViewControllerDelegate.h */; };
 		01598E1813CAEC8B007344EE /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; };
 		01598E1913CAEC8B007344EE /* MiniSearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */; };
-		01598E1A13CAEC8B007344EE /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
 		01598E1B13CAEC8B007344EE /* SearchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082413C75D3A0077CE63 /* SearchManager.h */; };
 		01598E1C13CAEC8B007344EE /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; };
 		01598E1D13CAEC8B007344EE /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; };
@@ -1076,7 +1075,6 @@
 				01598E0313CAEBCF007344EE /* OutlineViewControllerDelegate.h in Headers */,
 				01598E0413CAEBCF007344EE /* MiniSearchView.h in Headers */,
 				01598E0513CAEBCF007344EE /* MiniSearchViewControllerDelegate.h in Headers */,
-				01598E0613CAEBCF007344EE /* NotificationFactory.h in Headers */,
 				01598E0713CAEBCF007344EE /* SearchManager.h in Headers */,
 				01598E0813CAEBCF007344EE /* SearchResultCellView.h in Headers */,
 				01598E0913CAEBCF007344EE /* SearchResultDataSource.h in Headers */,
@@ -1091,6 +1089,7 @@
 				0123604413CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */,
 				0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
 				0123605013CC917600861EB7 /* WebBrowser.h in Headers */,
+				0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,7 +1104,6 @@
 				01598E1713CAEC8B007344EE /* OutlineViewControllerDelegate.h in Headers */,
 				01598E1813CAEC8B007344EE /* MiniSearchView.h in Headers */,
 				01598E1913CAEC8B007344EE /* MiniSearchViewControllerDelegate.h in Headers */,
-				01598E1A13CAEC8B007344EE /* NotificationFactory.h in Headers */,
 				01598E1B13CAEC8B007344EE /* SearchManager.h in Headers */,
 				01598E1C13CAEC8B007344EE /* SearchResultCellView.h in Headers */,
 				01598E1D13CAEC8B007344EE /* SearchResultDataSource.h in Headers */,
@@ -1138,6 +1136,7 @@
 				0123604513CC917600861EB7 /* DocumentViewController_Kiosk.h in Headers */,
 				0123604B13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
 				0123605113CC917600861EB7 /* WebBrowser.h in Headers */,
+				0123605A13CC957B00861EB7 /* NotificationFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1576,7 +1575,6 @@
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
 				010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */,
 				0123603E13CC917600861EB7 /* AudioViewController.m in Sources */,
-				0123604613CC917600861EB7 /* DocumentViewController_Kiosk.m in Sources */,
 				0123604C13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
 				0123605213CC917600861EB7 /* WebBrowser.m in Sources */,
 			);
