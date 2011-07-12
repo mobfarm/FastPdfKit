@@ -280,14 +280,14 @@
 		6FB9779213CC3EA6007C368C /* ReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */; };
 		6FB9779613CC3F7F007C368C /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2C1356EC920028DD38 /* pause.png */; };
 		6FB9779713CC45F1007C368C /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07DF13C756130077CE63 /* AudioViewController.xib */; };
-		6FB9779A13CC4607007C368C /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */; };
 		6FB9779B13CC4CA1007C368C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		6FB9779F13CC4CBA007C368C /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
 		6FB977A013CC4CBA007C368C /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
-		6FB977A313CC4D57007C368C /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080313C75B310077CE63 /* Kiosk_ipad.xib */; };
-		6FB977A413CC4D5D007C368C /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080413C75B310077CE63 /* Kiosk_phone.xib */; };
 		6FB977A613CC4DE2007C368C /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884927131E8A6F0045038F /* border.png */; };
 		6FB977A713CC4E5E007C368C /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
+		6FE7E4A813CC5EB0006A7E68 /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080313C75B310077CE63 /* Kiosk_ipad.xib */; };
+		6FE7E4A913CC5EB4006A7E68 /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080413C75B310077CE63 /* Kiosk_phone.xib */; };
+		6FE7E4AA13CC5EB7006A7E68 /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -1298,9 +1298,6 @@
 				6FB9779213CC3EA6007C368C /* ReaderBundle.bundle in Resources */,
 				01884A8A131E94C70045038F /* Identity-H.cidf in Resources */,
 				01884A8B131E94C70045038F /* Identity-V.cidf in Resources */,
-				6FB9779A13CC4607007C368C /* MainWindow_Kiosk.xib in Resources */,
-				6FB977A313CC4D57007C368C /* Kiosk_ipad.xib in Resources */,
-				6FB977A413CC4D5D007C368C /* Kiosk_phone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1340,6 +1337,9 @@
 				6FB9779613CC3F7F007C368C /* pause.png in Resources */,
 				6FB977A613CC4DE2007C368C /* border.png in Resources */,
 				6FB977A713CC4E5E007C368C /* kiosk_list.xml in Resources */,
+				6FE7E4A813CC5EB0006A7E68 /* Kiosk_ipad.xib in Resources */,
+				6FE7E4A913CC5EB4006A7E68 /* Kiosk_phone.xib in Resources */,
+				6FE7E4AA13CC5EB7006A7E68 /* MainWindow_Kiosk.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
