@@ -1232,6 +1232,7 @@
 				6FB9770513CB6E76007C368C /* Sources */,
 				6FB9770613CB6E76007C368C /* Frameworks */,
 				6FB9770713CB6E76007C368C /* Resources */,
+				01235FEB13CC7F9B00861EB7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1249,6 +1250,7 @@
 				6FB9771713CB6E8A007C368C /* Sources */,
 				6FB9771813CB6E8A007C368C /* Frameworks */,
 				6FB9771913CB6E8A007C368C /* Resources */,
+				01235FE913CC7F7F00861EB7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1430,6 +1432,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01235FE913CC7F7F00861EB7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(CONTENTS_FOLDER_PATH)",
+			);
+			outputPaths = (
+				"$(PROJECT_DIR)/Bundle/$(CONTENTS_FOLDER_PATH)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle/${CONTENTS_FOLDER_PATH}";
+		};
+		01235FEB13CC7F9B00861EB7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(CONTENTS_FOLDER_PATH)",
+			);
+			outputPaths = (
+				"$(PROJECT_DIR)/Bundle/$(CONTENTS_FOLDER_PATH)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle/${CONTENTS_FOLDER_PATH}";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01598DA213CAE783007344EE /* Sources */ = {
