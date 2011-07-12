@@ -155,11 +155,9 @@
 		01BC07D913C755610077CE63 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BD13C755610077CE63 /* zip.c */; };
 		01BC07DB13C755610077CE63 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07C013C755610077CE63 /* Reachability.m */; };
 		01BC07E713C756130077CE63 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07DE13C756130077CE63 /* AudioViewController.m */; };
-		01BC07E813C756130077CE63 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07DF13C756130077CE63 /* AudioViewController.xib */; };
 		01BC07E913C756130077CE63 /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E113C756130077CE63 /* DocumentViewController_Kiosk.m */; };
 		01BC07EA13C756130077CE63 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E313C756130077CE63 /* MFAudioPlayerViewImpl.m */; };
 		01BC07EB13C756130077CE63 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07E513C756130077CE63 /* WebBrowser.m */; };
-		01BC07EC13C756130077CE63 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07E613C756130077CE63 /* WebBrowser.xib */; };
 		01BC080C13C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */; };
 		01BC081013C75B310077CE63 /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */; };
 		01BC081113C75B310077CE63 /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* MFHomeListPdf.m */; };
@@ -187,7 +185,6 @@
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
 		01C9428B13263A6E000364B4 /* FastPdfKit Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428713263A6E000364B4 /* FastPdfKit Manual.pdf */; };
-		01CF7356132532FC00E42146 /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
 		01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01E3A3061309C3D9008BB483 /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
@@ -208,9 +205,6 @@
 		6FB9773313CB6EB7007C368C /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F813CB6E63007C368C /* remove.png */; };
 		6FB9773413CB6EB7007C368C /* resume.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F913CB6E63007C368C /* resume.png */; };
 		6FB9773513CB6EB7007C368C /* view.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976FA13CB6E63007C368C /* view.png */; };
-		6FB9773613CB6EC5007C368C /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080313C75B310077CE63 /* Kiosk_ipad.xib */; };
-		6FB9773713CB6EC5007C368C /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080413C75B310077CE63 /* Kiosk_phone.xib */; };
-		6FB9773813CB70B8007C368C /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */; };
 		6FB9773913CB70C1007C368C /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07E613C756130077CE63 /* WebBrowser.xib */; };
 		6FB9773A13CB70D8007C368C /* BookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC081513C75D3A0077CE63 /* BookmarkView.xib */; };
 		6FB9773B13CB7125007C368C /* OutlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC081A13C75D3A0077CE63 /* OutlineView.xib */; };
@@ -243,7 +237,6 @@
 		6FB9775713CC3BF5007C368C /* bookmark_add_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884924131E8A6F0045038F /* bookmark_add_phone.png */; };
 		6FB9775813CC3BF5007C368C /* bookmark_add_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884925131E8A6F0045038F /* bookmark_add_phone@2x.png */; };
 		6FB9775913CC3BF5007C368C /* bookmark_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884926131E8A6F0045038F /* bookmark_add.png */; };
-		6FB9775A13CC3BF5007C368C /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884927131E8A6F0045038F /* border.png */; };
 		6FB9775B13CC3BF5007C368C /* changeModeDouble_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884928131E8A6F0045038F /* changeModeDouble_phone.png */; };
 		6FB9775C13CC3BF5007C368C /* changeModeDouble_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884929131E8A6F0045038F /* changeModeDouble_phone@2x.png */; };
 		6FB9775D13CC3BF5007C368C /* changeModeDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 0188492A131E8A6F0045038F /* changeModeDouble.png */; };
@@ -284,11 +277,17 @@
 		6FB9778013CC3BF5007C368C /* zoomUnlock_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884953131E8A6F0045038F /* zoomUnlock_phone@2x.png */; };
 		6FB9778113CC3BF5007C368C /* zoomUnlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884954131E8A6F0045038F /* zoomUnlock.png */; };
 		6FB9779113CC3EA6007C368C /* KioskBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9770913CB6E76007C368C /* KioskBundle.bundle */; };
-		6FB9779213CC3EA6007C368C /* SimpleBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9771B13CB6E8A007C368C /* SimpleBundle.bundle */; };
-		6FB9779313CC3F1B007C368C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
-		6FB9779413CC3F1B007C368C /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
-		6FB9779513CC3F1B007C368C /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
+		6FB9779213CC3EA6007C368C /* ReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */; };
 		6FB9779613CC3F7F007C368C /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA2C1356EC920028DD38 /* pause.png */; };
+		6FB9779713CC45F1007C368C /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC07DF13C756130077CE63 /* AudioViewController.xib */; };
+		6FB9779A13CC4607007C368C /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */; };
+		6FB9779B13CC4CA1007C368C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
+		6FB9779F13CC4CBA007C368C /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
+		6FB977A013CC4CBA007C368C /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
+		6FB977A313CC4D57007C368C /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080313C75B310077CE63 /* Kiosk_ipad.xib */; };
+		6FB977A413CC4D5D007C368C /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080413C75B310077CE63 /* Kiosk_phone.xib */; };
+		6FB977A613CC4DE2007C368C /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 01884927131E8A6F0045038F /* border.png */; };
+		6FB977A713CC4E5E007C368C /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -353,7 +352,7 @@
 		01884924131E8A6F0045038F /* bookmark_add_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_add_phone.png; sourceTree = "<group>"; };
 		01884925131E8A6F0045038F /* bookmark_add_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark_add_phone@2x.png"; sourceTree = "<group>"; };
 		01884926131E8A6F0045038F /* bookmark_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_add.png; sourceTree = "<group>"; };
-		01884927131E8A6F0045038F /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = border.png; sourceTree = "<group>"; };
+		01884927131E8A6F0045038F /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = border.png; path = ../../../img/border.png; sourceTree = "<group>"; };
 		01884928131E8A6F0045038F /* changeModeDouble_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeModeDouble_phone.png; sourceTree = "<group>"; };
 		01884929131E8A6F0045038F /* changeModeDouble_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "changeModeDouble_phone@2x.png"; sourceTree = "<group>"; };
 		0188492A131E8A6F0045038F /* changeModeDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeModeDouble.png; sourceTree = "<group>"; };
@@ -527,7 +526,7 @@
 		6FB9770E13CB6E76007C368C /* KioskBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KioskBundle-Info.plist"; sourceTree = "<group>"; };
 		6FB9771013CB6E76007C368C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6FB9771213CB6E76007C368C /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
-		6FB9771B13CB6E8A007C368C /* SimpleBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaderBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB9771F13CB6E8A007C368C /* SimpleBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleBundle-Info.plist"; sourceTree = "<group>"; };
 		6FB9772113CB6E8A007C368C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6FB9772313CB6E8A007C368C /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
@@ -693,6 +692,7 @@
 				6FB976F913CB6E63007C368C /* resume.png */,
 				6FB976FA13CB6E63007C368C /* view.png */,
 				6FFCFA2C1356EC920028DD38 /* pause.png */,
+				01884927131E8A6F0045038F /* border.png */,
 			);
 			name = Images;
 			path = "Classes/Kiosk App/Images";
@@ -726,7 +726,6 @@
 				01884924131E8A6F0045038F /* bookmark_add_phone.png */,
 				01884925131E8A6F0045038F /* bookmark_add_phone@2x.png */,
 				01884926131E8A6F0045038F /* bookmark_add.png */,
-				01884927131E8A6F0045038F /* border.png */,
 				01884928131E8A6F0045038F /* changeModeDouble_phone.png */,
 				01884929131E8A6F0045038F /* changeModeDouble_phone@2x.png */,
 				0188492A131E8A6F0045038F /* changeModeDouble.png */,
@@ -956,7 +955,7 @@
 				010D14AD13CAF5CE00FD6F08 /* libFastPdfKitReader.a */,
 				010D14AE13CAF5CE00FD6F08 /* libFastPdfKitKiosk.a */,
 				6FB9770913CB6E76007C368C /* KioskBundle.bundle */,
-				6FB9771B13CB6E8A007C368C /* SimpleBundle.bundle */,
+				6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1240,9 +1239,9 @@
 			productReference = 6FB9770913CB6E76007C368C /* KioskBundle.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		6FB9771A13CB6E8A007C368C /* SimpleBundle */ = {
+		6FB9771A13CB6E8A007C368C /* ReaderBundle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "SimpleBundle" */;
+			buildConfigurationList = 6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "ReaderBundle" */;
 			buildPhases = (
 				6FB9771713CB6E8A007C368C /* Sources */,
 				6FB9771813CB6E8A007C368C /* Frameworks */,
@@ -1252,9 +1251,9 @@
 			);
 			dependencies = (
 			);
-			name = SimpleBundle;
+			name = ReaderBundle;
 			productName = SimpleBundle;
-			productReference = 6FB9771B13CB6E8A007C368C /* SimpleBundle.bundle */;
+			productReference = 6FB9771B13CB6E8A007C368C /* ReaderBundle.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -1285,7 +1284,7 @@
 				01598DA513CAE783007344EE /* FastPdfKitReader */,
 				01598DD913CAE917007344EE /* FastPdfKitKiosk */,
 				6FB9770813CB6E76007C368C /* KioskBundle */,
-				6FB9771A13CB6E8A007C368C /* SimpleBundle */,
+				6FB9771A13CB6E8A007C368C /* ReaderBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -1296,12 +1295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FB9779113CC3EA6007C368C /* KioskBundle.bundle in Resources */,
-				6FB9779213CC3EA6007C368C /* SimpleBundle.bundle in Resources */,
+				6FB9779213CC3EA6007C368C /* ReaderBundle.bundle in Resources */,
 				01884A8A131E94C70045038F /* Identity-H.cidf in Resources */,
 				01884A8B131E94C70045038F /* Identity-V.cidf in Resources */,
-				01CF7356132532FC00E42146 /* kiosk_list.xml in Resources */,
-				01BC07E813C756130077CE63 /* AudioViewController.xib in Resources */,
-				01BC07EC13C756130077CE63 /* WebBrowser.xib in Resources */,
+				6FB9779A13CC4607007C368C /* MainWindow_Kiosk.xib in Resources */,
+				6FB977A313CC4D57007C368C /* Kiosk_ipad.xib in Resources */,
+				6FB977A413CC4D5D007C368C /* Kiosk_phone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1317,6 +1316,9 @@
 				010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */,
 				010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */,
 				010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */,
+				6FB9779B13CC4CA1007C368C /* Icon.png in Resources */,
+				6FB9779F13CC4CBA007C368C /* Icon72.png in Resources */,
+				6FB977A013CC4CBA007C368C /* Icon114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1335,10 +1337,9 @@
 				6FB9773313CB6EB7007C368C /* remove.png in Resources */,
 				6FB9773413CB6EB7007C368C /* resume.png in Resources */,
 				6FB9773513CB6EB7007C368C /* view.png in Resources */,
-				6FB9773613CB6EC5007C368C /* Kiosk_ipad.xib in Resources */,
-				6FB9773713CB6EC5007C368C /* Kiosk_phone.xib in Resources */,
-				6FB9773813CB70B8007C368C /* MainWindow_Kiosk.xib in Resources */,
 				6FB9779613CC3F7F007C368C /* pause.png in Resources */,
+				6FB977A613CC4DE2007C368C /* border.png in Resources */,
+				6FB977A713CC4E5E007C368C /* kiosk_list.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1379,7 +1380,6 @@
 				6FB9775713CC3BF5007C368C /* bookmark_add_phone.png in Resources */,
 				6FB9775813CC3BF5007C368C /* bookmark_add_phone@2x.png in Resources */,
 				6FB9775913CC3BF5007C368C /* bookmark_add.png in Resources */,
-				6FB9775A13CC3BF5007C368C /* border.png in Resources */,
 				6FB9775B13CC3BF5007C368C /* changeModeDouble_phone.png in Resources */,
 				6FB9775C13CC3BF5007C368C /* changeModeDouble_phone@2x.png in Resources */,
 				6FB9775D13CC3BF5007C368C /* changeModeDouble.png in Resources */,
@@ -1419,9 +1419,7 @@
 				6FB9777F13CC3BF5007C368C /* zoomUnlock_phone.png in Resources */,
 				6FB9778013CC3BF5007C368C /* zoomUnlock_phone@2x.png in Resources */,
 				6FB9778113CC3BF5007C368C /* zoomUnlock.png in Resources */,
-				6FB9779313CC3F1B007C368C /* Icon.png in Resources */,
-				6FB9779413CC3F1B007C368C /* Icon72.png in Resources */,
-				6FB9779513CC3F1B007C368C /* Icon114.png in Resources */,
+				6FB9779713CC45F1007C368C /* AudioViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1569,12 +1567,12 @@
 		};
 		6FB9772B13CB6EA3007C368C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6FB9771A13CB6E8A007C368C /* SimpleBundle */;
+			target = 6FB9771A13CB6E8A007C368C /* ReaderBundle */;
 			targetProxy = 6FB9772A13CB6EA3007C368C /* PBXContainerItemProxy */;
 		};
 		6FB9779013CC3D45007C368C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6FB9771A13CB6E8A007C368C /* SimpleBundle */;
+			target = 6FB9771A13CB6E8A007C368C /* ReaderBundle */;
 			targetProxy = 6FB9778F13CC3D45007C368C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1857,6 +1855,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1873,6 +1872,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SYMROOT = /Users/lifeplus/Desktop/Build;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -1882,6 +1882,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1894,6 +1895,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SYMROOT = /Users/lifeplus/Desktop/Build;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -1903,6 +1905,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1915,6 +1918,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SYMROOT = /Users/lifeplus/Desktop/Build;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Ad Hoc";
@@ -2120,7 +2124,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "SimpleBundle" */ = {
+		6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "ReaderBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6FB9772513CB6E8A007C368C /* Debug */,

@@ -215,7 +215,7 @@
 		UIFont *smallFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 		
 		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width,size.height)];
-		[image setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_back",@"png")]];
+		[image setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_back",@"png")]];
 		[image setUserInteractionEnabled:NO];
 		[image setBackgroundColor:[UIColor clearColor]];
 		[self addSubview:image];
@@ -225,8 +225,8 @@
 		// Next button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(size.width-30-2, 24, 30, 20);
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_next",@"png")] forState:UIControlStateNormal];
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_next",@"png")] forState:UIControlStateDisabled];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_next",@"png")] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_next",@"png")] forState:UIControlStateDisabled];
 		[aButton setBackgroundColor:[UIColor clearColor]];
 		[[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
@@ -240,8 +240,8 @@
 		// Prev button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(2, 24, 30, 20);
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_prev",@"png")] forState:UIControlStateNormal];
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_prev",@"png")] forState:UIControlStateDisabled];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_prev",@"png")] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_prev",@"png")] forState:UIControlStateDisabled];
 		[aButton setBackgroundColor:[UIColor clearColor]];
 		 //[aButton setTitle:@"<<" forState:UIControlStateNormal];
 		//[aButton setTitle:@"<<" forState:UIControlStateDisabled];
@@ -258,8 +258,8 @@
 		// Cancel button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(size.width-30-2, 0, 30, 20);
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_cancel",@"png")] forState:UIControlStateNormal];
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_cancel",@"png")] forState:UIControlStateDisabled];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_cancel",@"png")] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_cancel",@"png")] forState:UIControlStateDisabled];
 		[aButton setBackgroundColor:[UIColor clearColor]];
 		 [[aButton titleLabel] setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin];
@@ -274,8 +274,8 @@
 		// Full button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		aButton.frame = CGRectMake(2, 0, 30, 20);
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_full",@"png")] forState:UIControlStateNormal];
-		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"SimpleBundle",@"minisearch_full",@"png")] forState:UIControlStateDisabled];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_full",@"png")] forState:UIControlStateNormal];
+		[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"ReaderBundle",@"minisearch_full",@"png")] forState:UIControlStateDisabled];
 		[aButton setBackgroundColor:[UIColor clearColor]];
 		 [[aButton titleLabel]setFont:smallFont];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];

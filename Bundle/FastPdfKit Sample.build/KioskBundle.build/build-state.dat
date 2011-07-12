@@ -1,0 +1,367 @@
+TKioskBundle
+v3
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/Info.plist KioskBundle/KioskBundle-Info.plist
+cCopyStringsFile /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/en.lproj/InfoPlist.strings KioskBundle/en.lproj/InfoPlist.strings
+cCpResource "Classes/Kiosk App/Images/backThumb_iphone.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone.png
+cCpResource "Classes/Kiosk App/Images/backThumb_iphone@2x.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png
+cCpResource "Classes/Kiosk App/Images/backThumb.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb.png
+cCpResource "Classes/Kiosk App/Images/download.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/download.png
+cCpResource "Classes/Kiosk App/Images/header_iphone.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone.png
+cCpResource "Classes/Kiosk App/Images/header_iphone@2x.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png
+cCpResource "Classes/Kiosk App/Images/header.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/header.png
+cCpResource "Classes/Kiosk App/Images/remove.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/remove.png
+cCpResource "Classes/Kiosk App/Images/resume.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/resume.png
+cCpResource "Classes/Kiosk App/Images/view.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/view.png
+cCpResource "Classes/Kiosk App/Images/../../../img/pause.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/pause.png
+cTouch /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/Info.plist
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/download.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/en.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/header.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/pause.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/remove.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/resume.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/view.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/Info.plist
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/backThumb.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/backThumb_iphone.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/download.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/en.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/header.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/header_iphone.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/pause.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/remove.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/resume.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/view.png
+t2
+s0
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/../../../img/pause.png
+c000000004E1ACD220000000000001746
+t1310379298
+s5958
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/backThumb.png
+c000000004DA709900000000000000B8E
+t1302792592
+s2958
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/backThumb_iphone.png
+c000000004DA7099000000000000005C5
+t1302792592
+s1477
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/backThumb_iphone@2x.png
+c000000004DA709900000000000000915
+t1302792592
+s2325
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/download.png
+c000000004DA7099000000000000010EE
+t1302792592
+s4334
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/header.png
+c000000004DA709900000000000007DBC
+t1302792592
+s32188
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/header_iphone.png
+c000000004DA70990000000000000376A
+t1302792592
+s14186
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/header_iphone@2x.png
+c000000004DA709900000000000007E9C
+t1302792592
+s32412
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/remove.png
+c000000004DA70990000000000000143A
+t1302792592
+s5178
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/resume.png
+c000000004E085C970000000000000FA9
+t1309170839
+s4009
+
+N/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/view.png
+c000000004DA709900000000000000D6D
+t1302792592
+s3437
+
+N/Users/lifeplus/Desktop/progetti/kitSample/KioskBundle/en.lproj/InfoPlist.strings
+c000000004E1B36F6000000000000002D
+t1310406390
+s45
+
+NKioskBundle/KioskBundle-Info.plist
+c000000004E1B36F60000000000000577
+t1310406390
+s1399
+
+CCheck dependencies
+r0
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies4fc98dc347ccb341^dfc5b7c347ccb341^---0#1#0#--18"Check dependencies
+
+CCopyStringsFile /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/en.lproj/InfoPlist.strings KioskBundle/en.lproj/InfoPlist.strings
+s332154819.777316
+e332154819.793694
+r1
+xCopyStringsFile
+x/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/en.lproj/InfoPlist.strings
+xKioskBundle/en.lproj/InfoPlist.strings
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection43"Copy KioskBundle/en.lproj/InfoPlist.strings2713c7c347ccb341^8b70cbc347ccb341^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/KioskBundle/en.lproj/InfoPlist.strings0000000000000000^545"CopyStringsFile Bundle/Debug-iphonesimulator/KioskBundle.bundle/en.lproj/InfoPlist.strings KioskBundle/en.lproj/InfoPlist.strings    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/en.lproj -- KioskBundle/en.lproj/InfoPlist.strings
+
+CCopyStringsFile /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/en.lproj/InfoPlist.strings KioskBundle/en.lproj/InfoPlist.strings
+r0
+
+CCpResource "Classes/Kiosk App/Images/../../../img/pause.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/pause.png
+s332154820.099475
+e332154820.108398
+r1
+xCpResource
+xClasses/Kiosk App/Images/../../../img/pause.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/pause.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection62"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/pause.pngfab519c447ccb341^6ccc1bc447ccb341^---0#0#0#-19%DVTDocumentLocation2@116"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/pause.png0000204d2205f041^585"CpResource "Classes/Kiosk App/Images/../../../img/pause.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/pause.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/../../../img/pause.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/../../../img/pause.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/pause.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/backThumb.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb.png
+s332154819.793982
+e332154819.802163
+r1
+xCpResource
+xClasses/Kiosk App/Images/backThumb.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb.png4b58cbc347ccb341^15e6cdc347ccb341^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb.png0000204d2205f041^571"CpResource "Classes/Kiosk App/Images/backThumb.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/backThumb.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/backThumb.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/backThumb.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/backThumb_iphone.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone.png
+s332154819.777898
+e332154819.780963
+r1
+xCpResource
+xClasses/Kiosk App/Images/backThumb_iphone.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone.pnge335c7c347ccb341^bcb1c8c347ccb341^---0#0#0#-19%DVTDocumentLocation2@127"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone.png0000204d2205f041^592"CpResource "Classes/Kiosk App/Images/backThumb_iphone.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/backThumb_iphone.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/backThumb_iphone.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/backThumb_iphone.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/backThumb_iphone@2x.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png
+s332154819.784279
+e332154819.793897
+r1
+xCpResource
+xClasses/Kiosk App/Images/backThumb_iphone@2x.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png3cdac8c347ccb341^c975cbc347ccb341^---0#0#0#-19%DVTDocumentLocation2@130"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png0000204d2205f041^603"CpResource "Classes/Kiosk App/Images/backThumb_iphone@2x.png" "Bundle/Debug-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png"    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/backThumb_iphone@2x.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/backThumb_iphone@2x.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/backThumb_iphone@2x.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/download.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/download.png
+s332154819.794923
+e332154819.804332
+r1
+xCpResource
+xClasses/Kiosk App/Images/download.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/download.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/download.pngb3eecbc347ccb341^79eacdc347ccb341^---0#0#0#-19%DVTDocumentLocation2@119"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/download.png0000204d2205f041^568"CpResource "Classes/Kiosk App/Images/download.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/download.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/download.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/download.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/download.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/header.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/header.png
+s332154819.815501
+e332154820.029127
+r1
+xCpResource
+xClasses/Kiosk App/Images/header.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/header.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/header.png772bd7c347ccb341^b68507c447ccb341^---0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/header.png0000204d2205f041^562"CpResource "Classes/Kiosk App/Images/header.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/header.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/header.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/header.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/header.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/header_iphone.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone.png
+s332154819.802366
+e332154819.813442
+r1
+xCpResource
+xClasses/Kiosk App/Images/header_iphone.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone.png6aa0cdc347ccb341^3274d0c347ccb341^---0#0#0#-19%DVTDocumentLocation2@124"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone.png0000204d2205f041^583"CpResource "Classes/Kiosk App/Images/header_iphone.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/header_iphone.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/header_iphone.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/header_iphone.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/header_iphone@2x.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png
+s332154819.804513
+e332154819.813023
+r1
+xCpResource
+xClasses/Kiosk App/Images/header_iphone@2x.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png0708cec347ccb341^1170d0c347ccb341^---0#0#0#-19%DVTDocumentLocation2@127"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png0000204d2205f041^594"CpResource "Classes/Kiosk App/Images/header_iphone@2x.png" "Bundle/Debug-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png"    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/header_iphone@2x.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/header_iphone@2x.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/header_iphone@2x.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/remove.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/remove.png
+s332154819.840936
+e332154820.033930
+r1
+xCpResource
+xClasses/Kiosk App/Images/remove.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/remove.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/remove.png406ad7c347ccb341^164c0cc447ccb341^---0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/remove.png0000204d2205f041^562"CpResource "Classes/Kiosk App/Images/remove.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/remove.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/remove.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/remove.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/remove.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/resume.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/resume.png
+s332154820.055824
+e332154820.087597
+r1
+xCpResource
+xClasses/Kiosk App/Images/resume.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/resume.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/resume.png785e0ec447ccb341^a3b116c447ccb341^---0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/resume.png0000204d2205f041^562"CpResource "Classes/Kiosk App/Images/resume.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/resume.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/resume.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/resume.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/resume.png
+r0
+
+CCpResource "Classes/Kiosk App/Images/view.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/view.png
+s332154820.061415
+e332154820.103148
+r1
+xCpResource
+xClasses/Kiosk App/Images/view.png
+xBundle/Debug-iphonesimulator/KioskBundle.bundle/view.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Copy Bundle/Debug-iphonesimulator/KioskBundle.bundle/view.pnge1d40fc447ccb341^48371ac447ccb341^---0#0#0#-19%DVTDocumentLocation2@115"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/view.png0000204d2205f041^556"CpResource "Classes/Kiosk App/Images/view.png" Bundle/Debug-iphonesimulator/KioskBundle.bundle/view.png    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/lifeplus/Desktop/progetti/kitSample/Classes/Kiosk App/Images/view.png" /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CCpResource "Classes/Kiosk App/Images/view.png" Bundle/Release-iphonesimulator/KioskBundle.bundle/view.png
+r0
+
+CProcessInfoPlistFile /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/Info.plist KioskBundle/KioskBundle-Info.plist
+s332154819.734959
+e332154819.773096
+r1
+xProcessInfoPlistFile
+x/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/Info.plist
+xKioskBundle/KioskBundle-Info.plist
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Process KioskBundle/KioskBundle-Info.plistbc41bcc347ccb341^3d2ac6c347ccb341^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/lifeplus/Desktop/progetti/kitSample/KioskBundle/KioskBundle-Info.plist0000000000000000^529"ProcessInfoPlistFile Bundle/Debug-iphonesimulator/KioskBundle.bundle/Info.plist KioskBundle/KioskBundle-Info.plist    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility KioskBundle/KioskBundle-Info.plist -expandbuildsettings -format binary -platform iphonesimulator -o /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle/Info.plist
+
+CProcessInfoPlistFile /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle/Info.plist KioskBundle/KioskBundle-Info.plist
+r0
+
+CTouch /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+s332154820.111522
+e332154820.133137
+r1
+xTouch
+x/Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Touch /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle0aa01cc447ccb341^76fe21c447ccb341^---0#0#0#--350"Touch Bundle/Debug-iphonesimulator/KioskBundle.bundle    cd /Users/lifeplus/Desktop/progetti/kitSample    setenv PATH "/Developer4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Debug-iphonesimulator/KioskBundle.bundle
+
+CTouch /Users/lifeplus/Desktop/progetti/kitSample/Bundle/Release-iphonesimulator/KioskBundle.bundle
+r0
+

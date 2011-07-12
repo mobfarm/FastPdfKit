@@ -177,7 +177,7 @@
 	// Show the text display view controller to the user.
 	
 	if(nil == textDisplayViewController) {
-		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
+		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
 		textDisplayViewController.documentManager = self.document;
 	}
 	
@@ -209,9 +209,9 @@
 		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
 		if(isPad) {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
 		} else {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
+			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
 		}
 	}
 	
@@ -455,7 +455,7 @@
 		
         currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
         
-		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
+		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
 		bookmarksVC.delegate = self;
 		
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -514,7 +514,7 @@
 		
         currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
 		
-        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"SimpleBundle")];
+        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"ReaderBundle")];
         [outlineVC setDelegate:self];
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
