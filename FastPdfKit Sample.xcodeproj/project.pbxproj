@@ -1944,6 +1944,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -1965,6 +1966,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -1986,6 +1988,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Ad Hoc";
