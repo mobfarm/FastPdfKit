@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+	<list>
+        <pdf>
+		    <title>Aperture</title>
+			<link>http://go.mobfarm.eu/pdf/Aperture.pdf</link>
+			<cover>http://go.mobfarm.eu/pdf/Aperture.png</cover>
+		</pdf>
+        <pdf>
+            <title>MacBook Air</title>
+			<link>http://go.mobfarm.eu/pdf/MacBookAir.pdf</link>
+			<cover>http://go.mobfarm.eu/pdf/MacBookAir.png</cover>
+		</pdf>
+        <pdf>
+            <title>iMac</title>
+			<link>http://go.mobfarm.eu/pdf/iMac.pdf</link>
+			<cover>http://go.mobfarm.eu/pdf/iMac.png</cover>
+		</pdf>
+		<pdf>
+            <title>iPad</title>
+			<link>http://go.mobfarm.eu/pdf/iPad.pdf</link>
+			<cover>http://go.mobfarm.eu/pdf/iPad.png</cover>
+		</pdf>
+		<pdf>
+            <title>iPhone</title>
+			<link>http://go.mobfarm.eu/pdf/iPhone.pdf</link>
+			<cover>http://go.mobfarm.eu/pdf/iPhone.png</cover>
+		</pdf>
+	</list>
+</response>
