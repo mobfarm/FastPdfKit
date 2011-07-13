@@ -10,7 +10,7 @@
 #import "MFTextItem.h"
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
-#import "DocumentViewController_Kiosk.h"
+#import "ReaderViewController.h"
 #import "TextSearchOperation.h"
 #import "SearchManager.h"
 #import "SearchResultCellView.h"

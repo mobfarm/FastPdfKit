@@ -8,7 +8,7 @@
 
 #import "BookmarkViewController.h"
 #import "DocumentViewController.h"
-#import "DocumentViewController_Kiosk.h"
+#import "ReaderViewController.h"
 
 #define KEY_FROM_DOCUMENT_ID(doc_id) [NSString stringWithFormat:@"bookmarks_%@",(doc_id)]
 

@@ -9,7 +9,7 @@
 #import "OutlineViewController.h"
 #import "MFPDFOutlineEntry.h"
 #import "DocumentViewController.h"
-#import "DocumentViewController_Kiosk.h"
+#import "ReaderViewController.h"
 
 @implementation OutlineViewController
 
