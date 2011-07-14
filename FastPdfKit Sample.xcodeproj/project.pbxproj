@@ -512,6 +512,7 @@
 		711169C713587AE700DE0C39 /* hud_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_player.png; sourceTree = "<group>"; };
 		71C601391358770200873F5A /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		71C6013B135877A000873F5A /* pause_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_player.png; sourceTree = "<group>"; };
+		890986A913CECF0F00656A49 /* Snippets.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Snippets.strings; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Sample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		9505BB1C13CCB941003163D2 /* FastPdfKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastPdfKit.xcconfig; sourceTree = "<group>"; };
 		950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -972,6 +973,7 @@
 				010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */,
 				32CA4F630368D1EE00C91783 /* FastPDFKit_Sample-Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				890986A913CECF0F00656A49 /* Snippets.strings */,
 			);
 			path = "Other Sources";
 			sourceTree = SOURCE_ROOT;
