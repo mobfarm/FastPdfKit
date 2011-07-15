@@ -15,7 +15,7 @@
 		<string>Icon72.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.mobfarm.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.mobfarm.faspdfkitresizingsample</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -27,7 +27,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.0.10</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
