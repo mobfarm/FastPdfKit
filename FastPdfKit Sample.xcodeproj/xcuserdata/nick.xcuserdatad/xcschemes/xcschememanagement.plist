@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FasfPDFKit Kiosk.xcscheme</key>
+		<key>FastPdfKit Kiosk.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>FastPdfKit Kiosk.xcscheme</key>
+		<key>FastPdfKit Resizing Sample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
@@ -28,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>019697C01317B0A000CBBD60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>01B822A613D07A8D006BE6EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>01B822C413D07D2C006BE6EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
