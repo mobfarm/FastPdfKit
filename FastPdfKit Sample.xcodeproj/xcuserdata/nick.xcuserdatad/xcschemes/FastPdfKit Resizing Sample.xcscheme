@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "01B822C413D07D2C006BE6EE"
-               BuildableName = "ResizingSample.app"
+               BuildableName = "FastPdfKit Resizing Sample.app"
                BlueprintName = "FastPdfKit Resizing Sample"
                ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
             </BuildableReference>
@@ -41,7 +41,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "01B822C413D07D2C006BE6EE"
-            BuildableName = "ResizingSample.app"
+            BuildableName = "FastPdfKit Resizing Sample.app"
             BlueprintName = "FastPdfKit Resizing Sample"
             ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
          </BuildableReference>
@@ -60,7 +60,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "01B822C413D07D2C006BE6EE"
-            BuildableName = "ResizingSample.app"
+            BuildableName = "FastPdfKit Resizing Sample.app"
             BlueprintName = "FastPdfKit Resizing Sample"
             ReferencedContainer = "container:FastPdfKit Sample.xcodeproj">
          </BuildableReference>
