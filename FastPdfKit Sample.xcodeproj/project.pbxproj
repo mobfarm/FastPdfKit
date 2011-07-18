@@ -167,6 +167,8 @@
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		01F65FC713CAF4BA00BEBBC1 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC613CAF4BA00BEBBC1 /* libz.1.2.3.dylib */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		6F27B52713D47CEC00C8C18F /* img_outline_triangleright.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F27B52613D47B3E00C8C18F /* img_outline_triangleright.png */; };
+		6F27B52813D4806400C8C18F /* img_outline_triangledown.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F27B52513D47B3E00C8C18F /* img_outline_triangledown.png */; };
 		6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9FBD191356F2CD006884F5 /* AVFoundation.framework */; };
 		6FB9770B13CB6E76007C368C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB9770A13CB6E76007C368C /* CoreFoundation.framework */; };
 		6FB9771C13CB6E8A007C368C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB9770A13CB6E76007C368C /* CoreFoundation.framework */; };
@@ -483,6 +485,8 @@
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* FastPDFKit_Sample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FastPDFKit_Sample-Prefix.pch"; path = "Other Sources/FastPDFKit_Sample-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		6F27B52513D47B3E00C8C18F /* img_outline_triangledown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_outline_triangledown.png; path = "../../../../Library/Mail Downloads/triangle/img_outline_triangledown.png"; sourceTree = "<group>"; };
+		6F27B52613D47B3E00C8C18F /* img_outline_triangleright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_outline_triangleright.png; path = "../../../../Library/Mail Downloads/triangle/img_outline_triangleright.png"; sourceTree = "<group>"; };
 		6F9FBD191356F2CD006884F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6FB8D2F71366CE7B0010A558 /* Default-Pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Pad.png"; sourceTree = "<group>"; };
 		6FB8D2F81366CE7B0010A558 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -719,6 +723,8 @@
 		0188491A131E8A630045038F /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6F27B52513D47B3E00C8C18F /* img_outline_triangledown.png */,
+				6F27B52613D47B3E00C8C18F /* img_outline_triangleright.png */,
 				6FB8D31313671E690010A558 /* blackslider.png */,
 				6FB8D2F71366CE7B0010A558 /* Default-Pad.png */,
 				6FB8D2F81366CE7B0010A558 /* Default.png */,
@@ -1374,6 +1380,8 @@
 				0123603013CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */,
 				9505BB1913CCB187003163D2 /* AudioViewController.xib in Resources */,
 				9505BB1B13CCB1A6003163D2 /* WebBrowser.xib in Resources */,
+				6F27B52713D47CEC00C8C18F /* img_outline_triangleright.png in Resources */,
+				6F27B52813D4806400C8C18F /* img_outline_triangledown.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

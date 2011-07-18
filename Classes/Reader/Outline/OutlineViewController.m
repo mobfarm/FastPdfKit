@@ -57,7 +57,10 @@
 	if([entry pageNumber] == 0) {
 		[cell setAccessoryType:UITableViewCellAccessoryNone];
 	} else {
-		[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        
+        [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangleright",@"png")]];
+
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	}
 	
 	[cell setIndentationLevel:[entry indentation]];
@@ -146,6 +149,8 @@
 	// so much...
 	
 	MFPDFOutlineEntry * entry = [outlineEntries objectAtIndex:indexPath.row];
+    
+    
 	
 	// If the entry is a leaf (it doesn't have children), return immediately.
 	if(![[entry bookmarks]count]>0) {
@@ -201,6 +206,12 @@
 		
 	} else {
 		
+        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangledown",@"png")]];
+        
+        
 		// Add the visible children of the selected entry to the outlineEntries array and update
 		// the tableview by addind the cell at the corresponding indexPaths
 		

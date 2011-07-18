@@ -526,7 +526,7 @@
 			
             [self prepareReusablePopoverControllerWithController:outlineVC];
             
-			[reusablePopover setPopoverContentSize:CGSizeMake(372, 650) animated:YES];
+			[reusablePopover setPopoverContentSize:CGSizeMake(372, 530) animated:YES];
             [reusablePopover presentPopoverFromRect:self.outlineButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             
 		} else {

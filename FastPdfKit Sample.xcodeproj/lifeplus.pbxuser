@@ -1,0 +1,237 @@
+// !$*UTF8*$!
+{
+	010D14D613CB002300FD6F08 /* DocumentViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1193, 14547}}";
+			sepNavSelRange = "{17509, 0}";
+			sepNavVisRange = "{17232, 590}";
+		};
+	};
+	0123603613CC917600861EB7 /* ReaderViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {633, 24037}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 199}";
+		};
+	};
+	01598DA513CAE783007344EE /* FPKReaderLib */ = {
+		activeExec = 0;
+	};
+	01598DD913CAE917007344EE /* FPKKioskLib */ = {
+		activeExec = 0;
+	};
+	018848E6131E89570045038F /* FPKKioskApp */ = {
+		activeExec = 0;
+		executables = (
+			6F5A591713D472CC007872FE /* FPKKioskApp */,
+		);
+	};
+	01BC081B13C75D3A0077CE63 /* OutlineViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {910, 451}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 813}";
+		};
+	};
+	01BC081C13C75D3A0077CE63 /* OutlineViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {910, 3744}}";
+			sepNavSelRange = "{1871, 19}";
+			sepNavVisRange = "{1975, 1623}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* FPKSimpleApp */ = {
+		activeExec = 0;
+		executables = (
+			6F5A591613D472CC007872FE /* FPKSimpleApp */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 6F5A591613D472CC007872FE /* FPKSimpleApp */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* FPKSimpleApp */;
+		codeSenseManager = 6F5A59B913D472EC007872FE /* Code sense */;
+		executables = (
+			6F5A591613D472CC007872FE /* FPKSimpleApp */,
+			6F5A591713D472CC007872FE /* FPKKioskApp */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					455,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 332690124;
+			PBXWorkspaceStateSaveDate = 332690124;
+		};
+		perUserProjectItems = {
+			6F5A59CD13D473F0007872FE /* PBXTextBookmark */ = 6F5A59CD13D473F0007872FE /* PBXTextBookmark */;
+			6F5A59FA13D478EE007872FE /* PBXTextBookmark */ = 6F5A59FA13D478EE007872FE /* PBXTextBookmark */;
+			6F5A59FB13D478EE007872FE /* PBXTextBookmark */ = 6F5A59FB13D478EE007872FE /* PBXTextBookmark */;
+			6F5A59FC13D478EE007872FE /* PBXTextBookmark */ = 6F5A59FC13D478EE007872FE /* PBXTextBookmark */;
+			6F5A59FE13D478EE007872FE /* PBXTextBookmark */ = 6F5A59FE13D478EE007872FE /* PBXTextBookmark */;
+			6F5A59FF13D478EE007872FE /* PBXTextBookmark */ = 6F5A59FF13D478EE007872FE /* PBXTextBookmark */;
+		};
+		sourceControlManager = 6F5A59B813D472EC007872FE /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	6F5A591613D472CC007872FE /* FPKSimpleApp */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = FPKSimpleApp;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	6F5A591713D472CC007872FE /* FPKKioskApp */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = FPKKioskApp;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	6F5A59B813D472EC007872FE /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	6F5A59B913D472EC007872FE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	6F5A59CD13D473F0007872FE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0123603613CC917600861EB7 /* ReaderViewController.m */;
+		name = "ReaderViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 199;
+		vrLoc = 0;
+	};
+	6F5A59FA13D478EE007872FE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 010D14D613CB002300FD6F08 /* DocumentViewController.m */;
+		name = "DocumentViewController.m: 529";
+		rLen = 0;
+		rLoc = 17509;
+		rType = 0;
+		vrLen = 1236;
+		vrLoc = 16670;
+	};
+	6F5A59FB13D478EE007872FE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */;
+		name = "OutlineViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 813;
+		vrLoc = 0;
+	};
+	6F5A59FC13D478EE007872FE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 6F5A59FD13D478EE007872FE /* UITableViewCell.h */;
+		name = "UITableViewCell.h: 170";
+		rLen = 119;
+		rLoc = 9281;
+		rType = 0;
+		vrLen = 3353;
+		vrLoc = 8142;
+	};
+	6F5A59FD13D478EE007872FE /* UITableViewCell.h */ = {
+		isa = PBXFileReference;
+		name = UITableViewCell.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h;
+		sourceTree = "<absolute>";
+	};
+	6F5A59FE13D478EE007872FE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01BC081C13C75D3A0077CE63 /* OutlineViewController.m */;
+		name = "OutlineViewController.m: 63";
+		rLen = 19;
+		rLoc = 1871;
+		rType = 0;
+		vrLen = 1276;
+		vrLoc = 1104;
+	};
+	6F5A59FF13D478EE007872FE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01BC081C13C75D3A0077CE63 /* OutlineViewController.m */;
+		name = "OutlineViewController.m: 63";
+		rLen = 19;
+		rLoc = 1871;
+		rType = 0;
+		vrLen = 1623;
+		vrLoc = 1975;
+	};
+	6FB9770813CB6E76007C368C /* FPKKioskBundle */ = {
+		activeExec = 0;
+	};
+	6FB9771A13CB6E8A007C368C /* FPKReaderBundle */ = {
+		activeExec = 0;
+	};
+}
