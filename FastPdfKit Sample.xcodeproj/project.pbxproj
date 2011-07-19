@@ -25,10 +25,6 @@
 		010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14DD13CB002300FD6F08 /* MenuViewController.m */; };
 		010D14E513CB003000FD6F08 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CD13CAFFD800FD6F08 /* MFHorizontalSlider.m */; };
 		010D14E613CB003300FD6F08 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14CF13CAFFD800FD6F08 /* MFSliderDetail.m */; };
-		0111D10913D49E9600AA3D18 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0111D10813D49E9600AA3D18 /* libFastPDFKit.a */; };
-		0111D10A13D49E9600AA3D18 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0111D10813D49E9600AA3D18 /* libFastPDFKit.a */; };
-		0111D10B13D49E9600AA3D18 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0111D10813D49E9600AA3D18 /* libFastPDFKit.a */; };
-		0111D10C13D49E9600AA3D18 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0111D10813D49E9600AA3D18 /* libFastPDFKit.a */; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602C13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
@@ -114,6 +110,10 @@
 		01598E3713CAEC8B007344EE /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07BF13C755610077CE63 /* Reachability.h */; };
 		01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07C113C755610077CE63 /* ZipArchive.h */; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
+		01778D9113D5C53C00214DCB /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01778D9013D5C53C00214DCB /* libFastPDFKit.a */; };
+		01778D9213D5C53C00214DCB /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01778D9013D5C53C00214DCB /* libFastPDFKit.a */; };
+		01778D9313D5C53C00214DCB /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01778D9013D5C53C00214DCB /* libFastPDFKit.a */; };
+		01778D9413D5C53C00214DCB /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01778D9013D5C53C00214DCB /* libFastPDFKit.a */; };
 		01884A47131E92B30045038F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
 		01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
@@ -318,7 +318,6 @@
 		010D14DB13CB002300FD6F08 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
 		010D14DC13CB002300FD6F08 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		010D14DD13CB002300FD6F08 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		0111D10813D49E9600AA3D18 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
 		0123602813CC908E00861EB7 /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
 		0123602913CC90C800861EB7 /* KioskBundle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KioskBundle-Info.plist"; sourceTree = "<group>"; };
@@ -339,6 +338,7 @@
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		0130A3ED13B23CCC00F9956E /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		01778D9013D5C53C00214DCB /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		018848E7131E89570045038F /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Kiosk-Info.plist"; sourceTree = "<group>"; };
 		01884924131E8A6F0045038F /* bookmark_add_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_add_phone.png; sourceTree = "<group>"; };
@@ -539,7 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				0111D10B13D49E9600AA3D18 /* libFastPDFKit.a in Frameworks */,
+				01778D9313D5C53C00214DCB /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +549,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				01598DEC13CAEA90007344EE /* libziparchive.a in Frameworks */,
-				0111D10C13D49E9600AA3D18 /* libFastPDFKit.a in Frameworks */,
+				01778D9413D5C53C00214DCB /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +570,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				01BC07D113C755610077CE63 /* libziparchive.a in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
-				0111D10A13D49E9600AA3D18 /* libFastPDFKit.a in Frameworks */,
+				01778D9213D5C53C00214DCB /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +587,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				0111D10913D49E9600AA3D18 /* libFastPDFKit.a in Frameworks */,
+				01778D9113D5C53C00214DCB /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1032,7 +1032,7 @@
 		95F5A3511270A2A700F65929 /* FastPdfKit Library */ = {
 			isa = PBXGroup;
 			children = (
-				0111D10813D49E9600AA3D18 /* libFastPDFKit.a */,
+				01778D9013D5C53C00214DCB /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
@@ -1401,7 +1401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle/${CONTENTS_FOLDER_PATH}";
+			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle";
 		};
 		01235FEB13CC7F9B00861EB7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1416,7 +1416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle/${CONTENTS_FOLDER_PATH}";
+			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle";
 		};
 /* End PBXShellScriptBuildPhase section */
 
