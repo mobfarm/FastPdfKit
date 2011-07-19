@@ -50,7 +50,7 @@
 
 -(void)handleSearchDidStopNotification:(NSNotification *)notification {
     
-    [cancelStopBarButtonItem setTitle:@"Cancel"];
+    [cancelStopBarButtonItem setTitle:NSLocalizedString(@"SEARCH_CANCEL_BTN_TITLE", @"Cancel")];
 	[activityIndicatorView stopAnimating];
 }
 
@@ -62,7 +62,7 @@
 		
 	// Set up the view status accordingly.
 	
-	[cancelStopBarButtonItem setTitle:@"Stop"];
+	[cancelStopBarButtonItem setTitle:NSLocalizedString(@"SEARCH_STOP_BTN_TITLE", @"Stop")];
 	[activityIndicatorView startAnimating];
 	[cancelStopBarButtonItem setEnabled:YES];
 	[switchToMiniBarButtonItem setEnabled:YES];
@@ -268,11 +268,11 @@
 	if([searchManager isRunning]) {
 		
 		[activityIndicatorView startAnimating];
-		[cancelStopBarButtonItem setTitle:@"Stop"];
+		[cancelStopBarButtonItem setTitle:NSLocalizedString(@"SEARCH_STOP_BTN_TITLE", @"Stop")];
 		
 	} else {
 	
-		[cancelStopBarButtonItem setTitle:@"Cancel"];
+		[cancelStopBarButtonItem setTitle:NSLocalizedString(@"SEARCH_CANCEL_BTN_TITLE", @"Cancel")];
 		
 	} 
 	
@@ -297,9 +297,6 @@
 	
     [super viewDidLoad];
     
-    
-    NSLog(@"SVC didLoad");
-    
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(handleSearchDidStartNotification:) name:kNotificationSearchDidStart object:nil];
     [notificationCenter addObserver:self selector:@selector(handleSearchDidStopNotification:) name:kNotificationSearchDidStop object:nil];
@@ -323,9 +320,6 @@
 
 - (void)viewDidUnload {
     
-    
-    NSLog(@"SVC didUnload");
-    
     [super viewDidUnload];
     
 	[self setSearchBar:nil];
@@ -339,8 +333,6 @@
 
 - (void)dealloc {
 	
-    NSLog(@"SVC dealloc");
-    
 	searchManager = nil;
 	
 	[switchToMiniBarButtonItem release],switchToMiniBarButtonItem = nil;
