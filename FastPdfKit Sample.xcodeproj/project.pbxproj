@@ -1397,7 +1397,7 @@
 				"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(CONTENTS_FOLDER_PATH)",
 			);
 			outputPaths = (
-				"$(PROJECT_DIR)/Bundle/$(CONTENTS_FOLDER_PATH)",
+				"$(PROJECT_DIR)/Bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1412,7 +1412,7 @@
 				"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(CONTENTS_FOLDER_PATH)",
 			);
 			outputPaths = (
-				"$(PROJECT_DIR)/Bundle/$(CONTENTS_FOLDER_PATH)",
+				"$(PROJECT_DIR)/Bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
