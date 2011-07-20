@@ -744,14 +744,6 @@
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri{
-    
-    //uri = @"fpkz://go.mobfarm.eu/pdf/astra.mp4";
-	//uri = @"fpke://video/astra.mp4";
-	//uri = @"fpka://video/start.caf";
-	//uri = @"fpkb://go.mobfarm.eu/pdf/start.caf";
-	//uri = @"fpki://html/360.com/index.html";
-    //uri= @"http://www.tgcom.it";
-	
 	NSArray *arrayParameter = nil;
 	NSString *uriType = nil;
     NSString *uriResource = nil;
