@@ -158,10 +158,10 @@
 		01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
-		01CB47FA13D72B1B0027B86E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB47F913D72B1B0027B86E /* libFastPDFKit.a */; };
-		01CB47FB13D72B1B0027B86E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB47F913D72B1B0027B86E /* libFastPDFKit.a */; };
-		01CB47FC13D72B1B0027B86E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB47F913D72B1B0027B86E /* libFastPDFKit.a */; };
-		01CB47FD13D72B1B0027B86E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB47F913D72B1B0027B86E /* libFastPDFKit.a */; };
+		01CB480F13D72F140027B86E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB480E13D72F140027B86E /* libFastPDFKit.a */; };
+		01CB481013D72F140027B86E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB480E13D72F140027B86E /* libFastPDFKit.a */; };
+		01CB481113D72F140027B86E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB480E13D72F140027B86E /* libFastPDFKit.a */; };
+		01CB481213D72F140027B86E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB480E13D72F140027B86E /* libFastPDFKit.a */; };
 		01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01E3A3061309C3D9008BB483 /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
@@ -459,7 +459,7 @@
 		01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewControllerDelegate.h; sourceTree = "<group>"; };
 		01BC083613C75D3A0077CE63 /* TextSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSearchOperation.h; sourceTree = "<group>"; };
 		01BC083713C75D3A0077CE63 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
-		01CB47F913D72B1B0027B86E /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
+		01CB480E13D72F140027B86E /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01CF52B213B0F9D80055919D /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
 		01CF52B313B0F9D80055919D /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
 		01CF52B413B0F9D80055919D /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
@@ -539,7 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				01CB47FC13D72B1B0027B86E /* libFastPDFKit.a in Frameworks */,
+				01CB481113D72F140027B86E /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +549,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				01598DEC13CAEA90007344EE /* libziparchive.a in Frameworks */,
-				01CB47FD13D72B1B0027B86E /* libFastPDFKit.a in Frameworks */,
+				01CB481213D72F140027B86E /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +570,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				01BC07D113C755610077CE63 /* libziparchive.a in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
-				01CB47FB13D72B1B0027B86E /* libFastPDFKit.a in Frameworks */,
+				01CB481013D72F140027B86E /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +587,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				01CB47FA13D72B1B0027B86E /* libFastPDFKit.a in Frameworks */,
+				01CB480F13D72F140027B86E /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1032,7 +1032,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				01CB47F913D72B1B0027B86E /* libFastPDFKit.a */,
+				01CB480E13D72F140027B86E /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
