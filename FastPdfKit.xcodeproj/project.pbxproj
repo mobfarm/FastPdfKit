@@ -794,11 +794,11 @@
 			isa = PBXGroup;
 			children = (
 				01BC07A113C755610077CE63 /* ASIHTTP */,
-				01BC07B413C755610077CE63 /* libziparchive.a */,
 				01BC07B513C755610077CE63 /* minizip */,
 				01BC07BF13C755610077CE63 /* Reachability.h */,
 				01BC07C013C755610077CE63 /* Reachability.m */,
 				01BC07C113C755610077CE63 /* ZipArchive.h */,
+				01BC07B413C755610077CE63 /* libziparchive.a */,
 			);
 			name = "Third Parties";
 			path = "Third parties";
@@ -959,8 +959,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				95F5A3511270A2A700F65929 /* FastPdfKit Library */,
 				080E96DDFE201D6D7F000001 /* Classes */,
+				95F5A3511270A2A700F65929 /* FPKCore */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -1029,13 +1029,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		95F5A3511270A2A700F65929 /* FastPdfKit Library */ = {
+		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
 				01778D9013D5C53C00214DCB /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
+			name = FPKCore;
 			path = "FastPdfKit Library";
 			sourceTree = SOURCE_ROOT;
 		};
@@ -1215,7 +1216,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FastPdfKit Sample" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FastPdfKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -2122,7 +2123,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FastPdfKit Sample" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FastPdfKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
