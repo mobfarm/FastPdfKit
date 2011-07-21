@@ -2,6 +2,9 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.12 (Jul 21th, 2011)
+* Fixed the bleeding of the pdf, usually on the front and back covers, introduced with the previous fixes.
+
 ### Update: 1.0.11 (Jul 18th, 2011)
 * Fixed a bug where disabling the shadow, the page resulted with a transparent backing
 * Fixed a rare occurrence of a crash while searching due to array boundaries miscalculation
