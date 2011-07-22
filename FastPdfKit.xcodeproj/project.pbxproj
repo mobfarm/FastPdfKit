@@ -678,12 +678,13 @@
 				01BC080B13C75B310077CE63 /* XMLParser.m */,
 			);
 			name = Controllers;
-			path = "Classes/Kiosk App/Controllers";
+			path = Classes/KioskApp/Controllers;
 			sourceTree = SOURCE_ROOT;
 		};
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				0174690113D736B8001D3F39 /* libFastPDFKit.a */,
 				0130A3ED13B23CCC00F9956E /* MFDocumentViewController.h */,
 				01CF52B213B0F9D80055919D /* FPKOverlayViewDataSource.h */,
 				01CF52B313B0F9D80055919D /* MFAudioPlayerViewProtocol.h */,
@@ -718,7 +719,7 @@
 				01884927131E8A6F0045038F /* border.png */,
 			);
 			name = Images;
-			path = "Classes/Kiosk App/Images";
+			path = Classes/KioskApp/Images;
 			sourceTree = SOURCE_ROOT;
 		};
 		0188491A131E8A630045038F /* img */ = {
@@ -1032,7 +1033,6 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				0174690113D736B8001D3F39 /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
