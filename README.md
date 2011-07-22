@@ -7,6 +7,10 @@ This repository contains the FastPdfKit library with a sample project. This libr
 Activated libraries won't be pushed here if not expressly requested
 Feel free to comment on the [Support Site](http://support.fastpdfkit.com)
 
+### Update 2.0.1 (July 21th, 2011)
+* Bleeding of the pdf cover images fixed.
+* The embedded UIWebView is now embedded a bit better.
+
 ### Update 2.0.0-devel (July 12th, 2011)
 * Multimedia support
 * Reorganized project
