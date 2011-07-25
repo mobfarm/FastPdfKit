@@ -18,12 +18,12 @@ if((x)!=NULL) {		\
 free((x)),(x)=NULL; \
 }					\
 
+#define MF_BUNDLED_BUNDLE(x) [NSBundle bundleWithPath:[[NSBundle mainBundle]pathForResource:(x) ofType:@"bundle"]]
+#define MF_BUNDLED_RESOURCE(x,k,z) [(MF_BUNDLED_BUNDLE(x))pathForResource:(k) ofType:(z)]
+
 #define PRINT_TRANSFORM(c,t) NSLog(@"%@ - [%.3f %.3f %.3f %.3f %.3f %.3f]",(c),(t).a,(t).b,(t).c,(t).d,(t).tx,(t).ty)
 #define PRINT_RECT(c,r) NSLog(@"%@ - (%.3f, %.3f)[%.3f x %.3f]",(c),(r).origin.x,(r).origin.y,(r).size.width,(r).size.height)
 #define PRINT_SIZE(c,s) NSLog(@"%@ - (%.3f, %.3f)",(c),(s).width,(s).height)
-
-#define MF_BUNDLED_BUNDLE(x) [NSBundle bundleWithPath:[[NSBundle mainBundle]pathForResource:(x) ofType:@"bundle"]]
-#define MF_BUNDLED_RESOURCE(x,k,z) [(MF_BUNDLED_BUNDLE(x))pathForResource:(k) ofType:(z)]
 
 /**
  When the lead property of the MFDocumentViewController is set to MFDocumentLeadLeft, the odd numbered page is shown
@@ -63,6 +63,7 @@ typedef NSUInteger MFDocumentDirection;
 //#define MFDocumentDirectionR2L 1
 
 #define IS_DEVICE_PAD ([UIDevice instancesRespondToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
 
 static inline int normalize_angle(int degs) {
 	while( degs < 0) {
@@ -238,5 +239,4 @@ static inline CGRect rectForPosition(NSInteger position, CGSize pageSize) {
 	return CGRectMake(position * pageSize.width, 0, pageSize.width, pageSize.height);
 	
 }
-
 
