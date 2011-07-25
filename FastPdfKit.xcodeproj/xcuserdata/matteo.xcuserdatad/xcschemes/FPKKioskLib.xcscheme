@@ -34,8 +34,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
-      debugDocumentVersioning = "YES">
+      buildConfiguration = "Debug">
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -43,8 +42,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
-      debugDocumentVersioning = "YES">
+      buildConfiguration = "Release">
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
