@@ -164,6 +164,14 @@
 @property (assign,readwrite,getter=isPageFlipOnEdgeTouchEnabled) BOOL pageFlipOnEdgeTouchEnabled;
 
 /**
+ Set and get the percentage of the screen associated with the page flip on edge touch action. Default value is 0.1, this mean
+ that the 10% of the width of the screen on either side will receive such events. Values are clipped between 0.0 and 0.5 to prevent
+ overlap.
+ */
+-(void)setEdgeFlipWidth:(CGFloat)edgeFlipWidth;
+-(CGFloat)edgeFlipWidth;
+
+/**
  Enabled the zoom in when the user double tap on the screen.
  */
 @property (assign,readwrite,getter=isZoomInOnDoubleTapEnabled) BOOL zoomInOnDoubleTapEnabled;

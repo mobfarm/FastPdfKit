@@ -119,6 +119,11 @@
 -(NSString *)test_wholeTextForPage:(NSUInteger)pageNr;
 
 /**
+ Build version of this library. Useful for debugging purposes.
+ */
++(NSString *)version;
+
+/**
  This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
  set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it. This is the default profile used as fallback when
  a NULL profile is passed to the search and extraction methods.
