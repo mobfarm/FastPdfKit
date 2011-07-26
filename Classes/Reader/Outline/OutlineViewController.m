@@ -187,6 +187,10 @@
 	// Now we will proceed differently if we are collapsing the node or not.
 	
 	if([openOutlineEntries containsObject:entry]) {
+        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangleright",@"png")]];
 		
 		// Remove the entry selected and all of its visible children from the outlineEntries array
 		// and update the tableview by removing the cell at the corresponding indexPaths.
