@@ -107,6 +107,10 @@
 		01598E3713CAEC8B007344EE /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07BF13C755610077CE63 /* Reachability.h */; };
 		01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07C113C755610077CE63 /* ZipArchive.h */; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
+		0181ABD913DF17890036BAE8 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181ABD813DF17890036BAE8 /* libFastPDFKit.a */; };
+		0181ABDA13DF17890036BAE8 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181ABD813DF17890036BAE8 /* libFastPDFKit.a */; };
+		0181ABDB13DF17890036BAE8 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181ABD813DF17890036BAE8 /* libFastPDFKit.a */; };
+		0181ABDC13DF17890036BAE8 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181ABD813DF17890036BAE8 /* libFastPDFKit.a */; };
 		01884A47131E92B30045038F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
 		01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
@@ -178,10 +182,6 @@
 		01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
-		01C7980713DED20F00724324 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7980613DED20F00724324 /* libFastPDFKit.a */; };
-		01C7980813DED20F00724324 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7980613DED20F00724324 /* libFastPDFKit.a */; };
-		01C7980913DED20F00724324 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7980613DED20F00724324 /* libFastPDFKit.a */; };
-		01C7980A13DED20F00724324 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7980613DED20F00724324 /* libFastPDFKit.a */; };
 		01C7980C13DED22300724324 /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C7980B13DED22300724324 /* MFDocumentViewController.h */; };
 		01C7980D13DED22300724324 /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C7980B13DED22300724324 /* MFDocumentViewController.h */; };
 		01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
@@ -361,6 +361,7 @@
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0181ABD813DF17890036BAE8 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		018848E7131E89570045038F /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Kiosk-Info.plist"; sourceTree = "<group>"; };
 		01884924131E8A6F0045038F /* bookmark_add_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_add_phone.png; sourceTree = "<group>"; };
@@ -494,7 +495,6 @@
 		01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewControllerDelegate.h; sourceTree = "<group>"; };
 		01BC083613C75D3A0077CE63 /* TextSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSearchOperation.h; sourceTree = "<group>"; };
 		01BC083713C75D3A0077CE63 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
-		01C7980613DED20F00724324 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01C7980B13DED22300724324 /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
 		01CF74A613254E0E00E42146 /* minisearch_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_cancel@2x.png"; sourceTree = "<group>"; };
@@ -563,7 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				01C7980913DED20F00724324 /* libFastPDFKit.a in Frameworks */,
+				0181ABDB13DF17890036BAE8 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +573,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
-				01C7980A13DED20F00724324 /* libFastPDFKit.a in Frameworks */,
+				0181ABDC13DF17890036BAE8 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +594,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
-				01C7980813DED20F00724324 /* libFastPDFKit.a in Frameworks */,
+				0181ABDA13DF17890036BAE8 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,7 +611,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				01C7980713DED20F00724324 /* libFastPDFKit.a in Frameworks */,
+				0181ABD913DF17890036BAE8 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,7 +1056,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				01C7980613DED20F00724324 /* libFastPDFKit.a */,
+				0181ABD813DF17890036BAE8 /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
@@ -1917,7 +1917,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = "";
+				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -1941,7 +1941,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = "";
+				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -1965,7 +1965,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = "";
+				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Ad Hoc";
@@ -1992,7 +1992,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = "";
+				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -2015,7 +2015,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = "";
+				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -2038,7 +2038,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = "";
+				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Ad Hoc";
