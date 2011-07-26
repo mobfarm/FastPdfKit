@@ -2,6 +2,11 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.13 (Jul 26th, 2011)
+* Finally fixed the bad behavior of the detail (tiled) view on retina device.
+* Fixed a bug involving rendering of the preview pages at low res on retina display introduced a few updates ago.
+* The -didGoToPage callback is now called once when a page is changed on user scroll input.
+
 ### Update: 1.0.12 (Jul 21th, 2011)
 * Fixed the bleeding of the pdf, usually on the front and back covers, introduced with the previous fixes.
 
