@@ -73,11 +73,11 @@
 	
 }
 
-- (void)parseXMLFileAtURL:(NSString *)URL {	
+- (void)parseXMLFileAtURL:(NSString *)fileURL {	
 	
 	NSXMLParser * xmlParser = nil;
 	NSString * filePath = nil;
-	NSData * fileData = nil;
+	NSData * xmlData = nil;
 	NSURL * xmlURL = nil;
 	NSMutableArray * documentsArray = nil;
 	
@@ -91,18 +91,20 @@
 	
     // String URL's to actual NSURL.
 	
-    xmlURL = [NSURL URLWithString:URL];
+    xmlURL = [NSURL URLWithString:fileURL];
 	
     if (downloadError) {
 		
 		// If an error occurred while downloading, we default to the bundled xml.
 		
 		filePath = [[NSBundle mainBundle] pathForResource:DEF_XML_NAME ofType:@"xml"];  
-		fileData = [NSData dataWithContentsOfFile:filePath]; 
-		xmlParser = [[NSXMLParser alloc] initWithData:fileData];
+		xmlData = [NSData dataWithContentsOfFile:filePath]; 
+		xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
 		
 	} else {
-		xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+        
+        xmlData = [NSData dataWithContentsOfURL:xmlURL];
+		xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
 	}
 	
     // Set self as the delegate of the parser.

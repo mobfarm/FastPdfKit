@@ -1290,7 +1290,8 @@
 	
 	NSUInteger pagesCount = [[self document]numberOfPages];
 	
-	for (int i=0; i<pagesCount ; i++) {
+    int i;
+	for (i=0; i<pagesCount ; i++) {
 		[aThumbImgArray insertObject:[NSNull null] atIndex:i];
 	}	
 	
@@ -1411,7 +1412,8 @@
 	[fileManager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:error];
 	
 	count = [[self document]numberOfPages];
-	for (int i=1; i<=count; i++) {
+    int i;
+	for (i=1; i<=count; i++) {
 		
 		filename = [NSString stringWithFormat:@"png%d.png",i];
 		fullPathToFile = [documentsDirectory stringByAppendingPathComponent:filename];

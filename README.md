@@ -2,6 +2,21 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.13 (Jul 26th, 2011)
+* Finally fixed the bad behavior of the detail (tiled) view on retina device.
+* Fixed a bug involving rendering of the preview pages at low res on retina display introduced a few updates ago.
+* The -didGoToPage callback is now called once when a page is changed on user scroll input.
+
+### Update: 1.0.12 (Jul 21th, 2011)
+* Fixed the bleeding of the pdf, usually on the front and back covers, introduced with the previous fixes.
+
+### Update: 1.0.11 (Jul 18th, 2011)
+* Fixed a bug where disabling the shadow, the page resulted with a transparent backing
+* Fixed a rare occurrence of a crash while searching due to array boundaries miscalculation
+
+### Update: 1.0.10 (Jul 15th, 2011)
+* Added a sample application (FastPdfKit Resizing Sample) to illustrate how to handle the situation where the MFDocumentViewController's view is added as a subview of another view. The MFDocumentViewController has not been created to used that way, but there's a simple workaround to getting things work in most cases.
+
 ### Update: 1.0.9 (Jun 22th, 2011)
 * Added directional lock to the page scroll view.
 * Changed popover behavior in the DocumentViewControllerKiosk. This should fix crash when reopening a document when dismissed with an open popover.
@@ -136,54 +151,51 @@ didReceiveURIRequest:, but the latter is still called.
 * Compatible with every iPad, iPhone and iPod touch.
 
 
-
 ## How-To use on existing projects
 
 ### Add required files to existing project
 
-* Download and extract the last [sample project](https://github.com/mobfarm/FastPdfKit);
+* Download and extract the last sample project;
 
-* Open your existing app XCode project, open **Project** menu and choose **Add to Project... ⌥⌘A**, then locate **FastPdfKit** folder inside the downloaded package and click **Add**, be sure to check **Copy items into destination group's folder (if needed)**;
+* Open your existing app XCode project, open Project menu and choose Add to Project… ⌥⌘A, then locate FastPdfKit folder inside the downloaded package and click Add ( this folder include the file MFDocumentViewController.h , libFastPDFKit.a and many other file ), be sure to check Copy items into destination group’s folder (if needed);
 
-* Right click on the **Framework** group and select **Add** and then **Existing Framework...**, then choose `QuartzCore.framework` from the list and press **Add**;
+* Right click on the Framework group and select Add and then Existing Framework…, then choose QuartzCore.framework from the list and press Add;
+
+* With the same method Add all of this framework : UIKit.framework , CoreText.framework , libz.1.2.3.dylib , AVFoundation.framework , MediaPlayer.framework , CFNetwork.framework , AudioToolbox.framework , Foundation.framework and CoreGraphics.framework.
 
 ### Start coding
 
-* Choose or add a new controller (we will call it `LauncherController`) to manage pdf documents and in the .h file add and add lines **3** and **7** to the controller
-
-	   //  LauncherController.h
-	   #import <UIKit/UIKit.h>
-	   @class MFDocumentManager;
-	   @interface LauncherController : UIViewController {
-
-	   }
-	   -(IBAction)actionOpenPlainDocument:(id)sender;
-	   @end
-
-
+* Choose or add a new controller (we will call it LauncherController) to manage pdf documents and in the .h file add and add lines 3 and 7 to the controller
+ 
+ 		//  LauncherController.h
+ 		#import <UIKit/UIKit.h>
+ 		@class MFDocumentManager;
+ 		@interface LauncherController : UIViewController {
+ 		}
+ 		-(IBAction)actionOpenPlainDocument:(id)sender;
+ 		@end
+ 		
 * Add this code before the @implementation line in the .m file
-
-	   #import "MFDocumentManager.h"
-	   #import "DocumentViewController.h"
-	   #define DOC_PLAIN @"gitmanual"
-
+ 
+ 		#import "MFDocumentManager.h"
+ 		#import "MFDocumentViewController.h"
+ 		#define DOC_PLAIN @"FastPdfKit-1.0RC1"
 
 * Implement at least this method in the .m file
 
-	   //  LauncherController.m
-	   -(IBAction)actionOpenPlainDocument:(id)sender {
-	       NSString *documentPath = [[NSBundle mainBundle]pathForResource:DOC_PLAIN ofType:@"pdf"];
-	       NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];	
-	       MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
-	       DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
-	       [self presentModalViewController:aDocViewController animated:YES]; 
-	       [aDocViewController release];
-	   }
+		 //  LauncherController.m	
+		-(IBAction)actionOpenPlainDocument:(id)sender {
+     		NSString *documentPath = [[NSBundle mainBundle]pathForResource:DOC_PLAIN ofType:@"pdf"];
+     		NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];	
+     		MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
+     		MFDocumentViewController *aDocViewController = [[MFDocumentViewController alloc]initWithDocumentManager:aDocManager];
+     		[self presentModalViewController:aDocViewController animated:YES]; 
+     		[aDocViewController release];
+ 		}
+ 		
+* Now call the above action to open the pdf. You can find the code above with comments in the BasicLauncherController class.
 
+Within FastPdfKit folder there are many other sample controllers (in the Controllers group) where you can find methods (heavily commented) to manage every feature.
 
-* Now call the above action to open the pdf. You can find the code above with comments in the `BasicLauncherController` class.
-
-Within `FastPdfKit` folder there are many other sample controllers (in the `Controllers` group) where you can find methods (heavily commented) to manage every feature.
-
-If you have any other question please post it in the [Forum](http://support.mobfarm.eu/projects/fastpdfkit/boards)
+If you have any other question please contact us at [Support](http://support.fastpdfkit.com/)
 

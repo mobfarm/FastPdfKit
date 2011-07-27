@@ -147,7 +147,8 @@
 	aScrollView.backgroundColor = [UIColor whiteColor];
 	aScrollView.contentSize = CGSizeMake(scrollViewWidth, detailViewHeight * ((documentsCount/2)+1));
 	
-	for (int i=1; i<= documentsCount ; i++) {
+    int i;
+	for (i=1; i<= documentsCount ; i++) {
 		
 		titoloPdf = [[documentsList objectAtIndex: i-1] objectForKey: @"title"];
 		linkPdf = [[documentsList objectAtIndex: i-1] objectForKey: @"link"];
