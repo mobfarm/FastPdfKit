@@ -1887,7 +1887,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1905,7 +1905,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -1915,7 +1915,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1929,7 +1929,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -1939,7 +1939,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1953,7 +1953,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Ad Hoc";
@@ -1980,7 +1980,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -2003,7 +2003,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -2026,7 +2026,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SYMROOT = /Users/nick/Workspaces/.xcodebuildproducts;
+				SYMROOT = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Ad Hoc";
