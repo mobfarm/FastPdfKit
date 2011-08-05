@@ -2,6 +2,10 @@
 
 This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
 
+### Update: 1.0.14 (Aug 05th, 2011)
+* Added methods to convert points and rect to and from different coordinate systems. Take a look at the MFDocumentViewController for details.
+* Documented the method to get the cropbox and rotation angle for each document page.
+
 ### Update: 1.0.13 (Jul 26th, 2011)
 * Finally fixed the bad behavior of the detail (tiled) view on retina device.
 * Fixed a bug involving rendering of the preview pages at low res on retina display introduced a few updates ago.
