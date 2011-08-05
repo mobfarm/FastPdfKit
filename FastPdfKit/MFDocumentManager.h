@@ -45,6 +45,10 @@
 
 
 -(void)drawPageNumber:(NSInteger)pageNumber onContext:(CGContextRef)ctx;
+
+/**
+ Use this method to get the cropbox and the rotation of a certain pdf page.
+ */
 -(void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber;
 
 /**
