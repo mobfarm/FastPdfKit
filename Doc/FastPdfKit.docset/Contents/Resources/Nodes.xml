@@ -28,6 +28,9 @@
 						<NodeRef refid="6"/>
 						<NodeRef refid="7"/>
 						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
 						
 					</Subnodes>
 				</Node>
@@ -55,18 +58,30 @@
 		
 		
 		<Node id="5">
+			<Name>FPKOverlayViewDataSource</Name>
+			<Path>Protocols/FPKOverlayViewDataSource.html</Path>
+		</Node>
+		<Node id="6">
+			<Name>MFAudioPlayerViewProtocol</Name>
+			<Path>Protocols/MFAudioPlayerViewProtocol.html</Path>
+		</Node>
+		<Node id="7">
+			<Name>MFAudioProvider</Name>
+			<Path>Protocols/MFAudioProvider.html</Path>
+		</Node>
+		<Node id="8">
 			<Name>MFDocumentOverlayDataSource</Name>
 			<Path>Protocols/MFDocumentOverlayDataSource.html</Path>
 		</Node>
-		<Node id="6">
+		<Node id="9">
 			<Name>MFDocumentViewControllerDelegate</Name>
 			<Path>Protocols/MFDocumentViewControllerDelegate.html</Path>
 		</Node>
-		<Node id="7">
+		<Node id="10">
 			<Name>MFOverlayDrawable</Name>
 			<Path>Protocols/MFOverlayDrawable.html</Path>
 		</Node>
-		<Node id="8">
+		<Node id="11">
 			<Name>MFOverlayTouchable</Name>
 			<Path>Protocols/MFOverlayTouchable.html</Path>
 		</Node>

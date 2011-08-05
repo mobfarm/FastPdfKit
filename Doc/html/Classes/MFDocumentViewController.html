@@ -69,6 +69,22 @@
 	
 	<option value="//api/name/cleanUp">&nbsp;&nbsp;&nbsp;&nbsp;- cleanUp</option>
 	
+	<option value="//api/name/convertPoint:fromOverlayToPage:">&nbsp;&nbsp;&nbsp;&nbsp;- convertPoint:fromOverlayToPage:</option>
+	
+	<option value="//api/name/convertPoint:fromViewtoPage:">&nbsp;&nbsp;&nbsp;&nbsp;- convertPoint:fromViewtoPage:</option>
+	
+	<option value="//api/name/convertPoint:toOverlayFromPage:">&nbsp;&nbsp;&nbsp;&nbsp;- convertPoint:toOverlayFromPage:</option>
+	
+	<option value="//api/name/convertPoint:toViewFromPage:">&nbsp;&nbsp;&nbsp;&nbsp;- convertPoint:toViewFromPage:</option>
+	
+	<option value="//api/name/convertRect:fromOverlayToPage:">&nbsp;&nbsp;&nbsp;&nbsp;- convertRect:fromOverlayToPage:</option>
+	
+	<option value="//api/name/convertRect:fromViewToPage:">&nbsp;&nbsp;&nbsp;&nbsp;- convertRect:fromViewToPage:</option>
+	
+	<option value="//api/name/convertRect:toOverlayFromPage:">&nbsp;&nbsp;&nbsp;&nbsp;- convertRect:toOverlayFromPage:</option>
+	
+	<option value="//api/name/convertRect:toViewFromPage:">&nbsp;&nbsp;&nbsp;&nbsp;- convertRect:toViewFromPage:</option>
+	
 	<option value="//api/name/direction">&nbsp;&nbsp;&nbsp;&nbsp;- direction</option>
 	
 	<option value="//api/name/lead">&nbsp;&nbsp;&nbsp;&nbsp;- lead</option>
@@ -92,6 +108,8 @@
 	<option value="//api/name/setAutozoomOnPageChange:">&nbsp;&nbsp;&nbsp;&nbsp;- setAutozoomOnPageChange:</option>
 	
 	<option value="//api/name/setDirection:">&nbsp;&nbsp;&nbsp;&nbsp;- setDirection:</option>
+	
+	<option value="//api/name/setEdgeFlipWidth:">&nbsp;&nbsp;&nbsp;&nbsp;- setEdgeFlipWidth:</option>
 	
 	<option value="//api/name/setLead:">&nbsp;&nbsp;&nbsp;&nbsp;- setLead:</option>
 	
@@ -167,6 +185,22 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cleanUp">cleanUp</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertPoint:fromOverlayToPage:">convertPoint:fromOverlayToPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertPoint:fromViewtoPage:">convertPoint:fromViewtoPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertPoint:toOverlayFromPage:">convertPoint:toOverlayFromPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertPoint:toViewFromPage:">convertPoint:toViewFromPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertRect:fromOverlayToPage:">convertRect:fromOverlayToPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertRect:fromViewToPage:">convertRect:fromViewToPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertRect:toOverlayFromPage:">convertRect:toOverlayFromPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/convertRect:toViewFromPage:">convertRect:toViewFromPage:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/direction">direction</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lead">lead</a></span></li>
@@ -190,6 +224,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAutozoomOnPageChange:">setAutozoomOnPageChange:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDirection:">setDirection:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setEdgeFlipWidth:">setEdgeFlipWidth:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLead:">setLead:</a></span></li>
 	
@@ -363,6 +399,15 @@ Default is 1.</p></span>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/setEdgeFlipWidth:">&ndash;&nbsp;setEdgeFlipWidth:</a></code>
+		<span class="tooltip"><p>Set and get the percentage of the screen associated with the <a href="#//api/name/page">page</a> flip on edge touch action. Default value is 0.1, this mean
+that the 10% of the width of the screen on either side will receive such events. Values are clipped between 0.0 and 0.5 to prevent
+overlap.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/zoomInOnDoubleTapEnabled">&nbsp;&nbsp;zoomInOnDoubleTapEnabled</a></code>
 		<span class="tooltip"><p>Enabled the zoom in when the user double tap on the screen.</p></span>
 	</span>
@@ -498,6 +543,62 @@ otherwise will be rest to 100% on <a href="#//api/name/page">page</a> change.</p
 		<span class="tooltip"><p>Call this method rightly after dismissing this <a href="MFDocumentViewController.html">MFDocumentViewController</a> instance. It will release all the resources
 and stop the background threads. Once this method has been called, the <a href="MFDocumentViewController.html">MFDocumentViewController</a> instance cannot be
 considered valid anymore and should be released.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertPoint:fromViewtoPage:">&ndash;&nbsp;convertPoint:fromViewtoPage:</a></code>
+		<span class="tooltip"><p>Convert a point from MFDocumentViewController&rsquo;s view space to <a href="#//api/name/page">page</a> space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertPoint:toViewFromPage:">&ndash;&nbsp;convertPoint:toViewFromPage:</a></code>
+		<span class="tooltip"><p>Convert a point from <a href="#//api/name/page">page</a> space to MFDocumentViewController&rsquo;s view space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertRect:fromViewToPage:">&ndash;&nbsp;convertRect:fromViewToPage:</a></code>
+		<span class="tooltip"><p>Convert a rect from MFDocumentViewController&rsquo;s view space to <a href="#//api/name/page">page</a> space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertRect:toViewFromPage:">&ndash;&nbsp;convertRect:toViewFromPage:</a></code>
+		<span class="tooltip"><p>Convert a rect from <a href="#//api/name/page">page</a> space to MFDocumentViewController&rsquo;s view space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertPoint:fromOverlayToPage:">&ndash;&nbsp;convertPoint:fromOverlayToPage:</a></code>
+		<span class="tooltip"><p>Convert a point from overlay space (the whole view that hold the both left and right <a href="#//api/name/page">page</a>, and that you can zoom in and scroll over) to <a href="#//api/name/page">page</a> space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertPoint:toOverlayFromPage:">&ndash;&nbsp;convertPoint:toOverlayFromPage:</a></code>
+		<span class="tooltip"><p>Convert a point from <a href="#//api/name/page">page</a> space to overlay space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertRect:fromOverlayToPage:">&ndash;&nbsp;convertRect:fromOverlayToPage:</a></code>
+		<span class="tooltip"><p>Convert a rect from overlay space to <a href="#//api/name/page">page</a> space.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/convertRect:toOverlayFromPage:">&ndash;&nbsp;convertRect:toOverlayFromPage:</a></code>
+		<span class="tooltip"><p>Convert a ract from <a href="#//api/name/page">page</a> to overlay space.</p></span>
 	</span>
 	
 	
@@ -1092,6 +1193,302 @@ considered valid anymore and should be released.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/convertPoint:fromOverlayToPage:" title="convertPoint:fromOverlayToPage:"></a>
+	<h3 class="subsubtitle method-title">convertPoint:fromOverlayToPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convert a point from overlay space (the whole view that hold the both left and right <a href="#//api/name/page">page</a>, and that you can zoom in and scroll over) to <a href="#//api/name/page">page</a> space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>point</em> fromOverlayToPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convert a point from overlay space (the whole view that hold the both left and right <a href="#//api/name/page">page</a>, and that you can zoom in and scroll over) to <a href="#//api/name/page">page</a> space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertPoint:fromViewtoPage:" title="convertPoint:fromViewtoPage:"></a>
+	<h3 class="subsubtitle method-title">convertPoint:fromViewtoPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convert a point from MFDocumentViewController&rsquo;s view space to <a href="#//api/name/page">page</a> space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>point</em> fromViewtoPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convert a point from MFDocumentViewController&rsquo;s view space to <a href="#//api/name/page">page</a> space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertPoint:toOverlayFromPage:" title="convertPoint:toOverlayFromPage:"></a>
+	<h3 class="subsubtitle method-title">convertPoint:toOverlayFromPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convert a point from <a href="#//api/name/page">page</a> space to overlay space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>point</em> toOverlayFromPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convert a point from <a href="#//api/name/page">page</a> space to overlay space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertPoint:toViewFromPage:" title="convertPoint:toViewFromPage:"></a>
+	<h3 class="subsubtitle method-title">convertPoint:toViewFromPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convert a point from <a href="#//api/name/page">page</a> space to MFDocumentViewController&rsquo;s view space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGPoint)convertPoint:(CGPoint)<em>point</em> toViewFromPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convert a point from <a href="#//api/name/page">page</a> space to MFDocumentViewController&rsquo;s view space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertRect:fromOverlayToPage:" title="convertRect:fromOverlayToPage:"></a>
+	<h3 class="subsubtitle method-title">convertRect:fromOverlayToPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convert a rect from overlay space to <a href="#//api/name/page">page</a> space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)convertRect:(CGRect)<em>rect</em> fromOverlayToPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convert a rect from overlay space to <a href="#//api/name/page">page</a> space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertRect:fromViewToPage:" title="convertRect:fromViewToPage:"></a>
+	<h3 class="subsubtitle method-title">convertRect:fromViewToPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convert a rect from MFDocumentViewController&rsquo;s view space to <a href="#//api/name/page">page</a> space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)convertRect:(CGRect)<em>rect</em> fromViewToPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convert a rect from MFDocumentViewController&rsquo;s view space to <a href="#//api/name/page">page</a> space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertRect:toOverlayFromPage:" title="convertRect:toOverlayFromPage:"></a>
+	<h3 class="subsubtitle method-title">convertRect:toOverlayFromPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convert a ract from <a href="#//api/name/page">page</a> to overlay space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)convertRect:(CGRect)<em>rect</em> toOverlayFromPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convert a ract from <a href="#//api/name/page">page</a> to overlay space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/convertRect:toViewFromPage:" title="convertRect:toViewFromPage:"></a>
+	<h3 class="subsubtitle method-title">convertRect:toViewFromPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convert a rect from <a href="#//api/name/page">page</a> space to MFDocumentViewController&rsquo;s view space.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)convertRect:(CGRect)<em>rect</em> toViewFromPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convert a rect from <a href="#//api/name/page">page</a> space to MFDocumentViewController&rsquo;s view space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/direction" title="direction"></a>
 	<h3 class="subsubtitle method-title">direction</h3>
 	
@@ -1538,6 +1935,47 @@ otherwise will be rest to 100% on <a href="#//api/name/page">page</a> change.</p
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/setEdgeFlipWidth:" title="setEdgeFlipWidth:"></a>
+	<h3 class="subsubtitle method-title">setEdgeFlipWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set and get the percentage of the screen associated with the <a href="#//api/name/page">page</a> flip on edge touch action. Default value is 0.1, this mean
+that the 10% of the width of the screen on either side will receive such events. Values are clipped between 0.0 and 0.5 to prevent
+overlap.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setEdgeFlipWidth:(CGFloat)<em>edgeFlipWidth</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set and get the percentage of the screen associated with the <a href="#//api/name/page">page</a> flip on edge touch action. Default value is 0.1, this mean
+that the 10% of the width of the screen on either side will receive such events. Values are clipped between 0.0 and 0.5 to prevent
+overlap.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setLead:" title="setLead:"></a>
 	<h3 class="subsubtitle method-title">setLead:</h3>
 	
@@ -1815,7 +2253,7 @@ the appropriate zoom level to fit the rectangle on screen.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-07-25)</span><br />
+						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-08-05)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						

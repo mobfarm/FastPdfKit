@@ -1,18 +1,33 @@
-{
-	"CFBundleDevelopmentRegion" = en;
-	CFBundleIdentifier = "com.mobfarm.fastpdfkit";
-	CFBundleName = "FastPdfKit";
-	"CFBundleShortVersionString" = "0.9";
-	CFBundleVersion = "0.9";
-	"DocSetCertificateIssuer" = "";
-	"DocSetCertificateSigner" = "";
-	DocSetDescription = "";
-	DocSetFallbackURL = "";
-	DocSetFeedName = "FastPdfKit Documentation";
-	DocSetFeedURL = "http://fastpdfkit.com/docset/docset.atom";
-	"DocSetMinimumXcodeVersion" = "3.0";
-	DocSetPlatformFamily = "";
-	"DocSetPublisherIdentifier" = "com.mobfarm";
-	DocSetPublisherName = "MobFarm S.r.l.";
-	"NSHumanReadableCopyright" = "Copyright © 2011 MobFarm S.r.l.. All rights reserved.";
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.mobfarm.fastpdfkit</string>
+	<key>CFBundleName</key>
+	<string>FastPdfKit</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0</string>
+	<key>CFBundleVersion</key>
+	<string>2.0</string>
+	
+	
+	
+	
+	<key>DocSetFeedName</key>
+	<string>FastPdfKit Documentation</string>
+	<key>DocSetFeedURL</key>
+	<string>http://doc.mobfarm.eu/fastpdfkit/docset.atom</string>
+	<key>DocSetMinimumXcodeVersion</key>
+	<string>3.0</string>
+	
+	<key>DocSetPublisherIdentifier</key>
+	<string>com.mobfarm</string>
+	<key>DocSetPublisherName</key>
+	<string>MobFarm</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2011 MobFarm. All rights reserved.</string>
+</dict>
+</plist>
