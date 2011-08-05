@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MFPDFOutlineEntry</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract></Abstract>
 			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>
 			
 			<NodeRef refid="3"/>
@@ -13,32 +13,44 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFPDFOutlineEntry/indentation</TokenIdentifier>
-			<Abstract type="html"> Indentation level of the outline entry. It is also the node level inside the outline tree. </Abstract>
-			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>
+			<Abstract>Indentation level of the outline entry. It is also the node level inside the outline tree.</Abstract>
+			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>			
+			
+			<Declaration>@property NSInteger indentation</Declaration>
+			
 			
 			<Anchor>//api/name/indentation</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFPDFOutlineEntry/pageNumber</TokenIdentifier>
-			<Abstract type="html"> Page number of the entry. </Abstract>
-			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>
+			<Abstract>Page number of the entry.</Abstract>
+			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>			
+			
+			<Declaration>@property NSUInteger pageNumber</Declaration>
+			
 			
 			<Anchor>//api/name/pageNumber</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFPDFOutlineEntry/bookmarks</TokenIdentifier>
-			<Abstract type="html"> Child entries. </Abstract>
-			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>
+			<Abstract>Child entries.</Abstract>
+			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>			
+			
+			<Declaration>@property (retain) NSArray *bookmarks</Declaration>
+			
 			
 			<Anchor>//api/name/bookmarks</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFPDFOutlineEntry/title</TokenIdentifier>
-			<Abstract type="html"> Title for the outline entry. </Abstract>
-			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>
+			<Abstract>Title for the outline entry.</Abstract>
+			<DeclaredIn>MFPDFOutlineEntry.h</DeclaredIn>			
+			
+			<Declaration>@property (copy) NSString *title</Declaration>
+			
 			
 			<Anchor>//api/name/title</Anchor>
 		</Token>

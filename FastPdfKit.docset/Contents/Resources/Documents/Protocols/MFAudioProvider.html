@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>MFOverlayDrawable Protocol Reference</title>
+		<title>MFAudioProvider Protocol Reference</title>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
@@ -11,7 +11,7 @@
 	<body>
 		<header id="top_header">
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">MFOverlayDrawable Protocol Reference</h1>
+				<h1 class="hideInXcode">MFAudioProvider Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -36,7 +36,13 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/drawInContext:">&nbsp;&nbsp;&nbsp;&nbsp;- drawInContext:</option>
+	<option value="//api/name/isPlaying">&nbsp;&nbsp;&nbsp;&nbsp;- isPlaying</option>
+	
+	<option value="//api/name/setVolumeLevel:">&nbsp;&nbsp;&nbsp;&nbsp;- setVolumeLevel:</option>
+	
+	<option value="//api/name/togglePlay">&nbsp;&nbsp;&nbsp;&nbsp;- togglePlay</option>
+	
+	<option value="//api/name/volumeLevel">&nbsp;&nbsp;&nbsp;&nbsp;- volumeLevel</option>
 	
 	
 	
@@ -64,7 +70,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/drawInContext:">drawInContext:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isPlaying">isPlaying</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setVolumeLevel:">setVolumeLevel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/togglePlay">togglePlay</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/volumeLevel">volumeLevel</a></span></li>
 	
 </ul></li>
 
@@ -73,7 +85,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="MFOverlayDrawable Protocol Reference" name="top"></a>
+				<a title="MFAudioProvider Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -82,15 +94,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">MFOverlayDrawable Protocol Reference</h1>
+						<h1 class="title title-header">MFAudioProvider Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">MFOverlayDrawable.h</td>
+	<td class="specification-value">MFAudioProvider.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -110,9 +125,29 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/drawInContext:">&ndash;&nbsp;drawInContext:</a></code>
-		<span class="tooltip"><p>Implement this method to perform drawing in an overlay over the document view. The context coordinate system is aligend
-to the user space of the document displayed.</p></span>
+		<code><a href="#//api/name/togglePlay">&ndash;&nbsp;togglePlay</a></code>
+		<span class="tooltip"><p>Play when stopped and viceversa.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isPlaying">&ndash;&nbsp;isPlaying</a></code>
+		<span class="tooltip"><p>Tell if the audio clip is playing.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setVolumeLevel:">&ndash;&nbsp;setVolumeLevel:</a></code>
+		<span class="tooltip"><p>Set the volume level, from 0.0 to 1.0.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/volumeLevel">&ndash;&nbsp;volumeLevel</a></code>
+		<span class="tooltip"><p>Return the volume level.</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
@@ -134,18 +169,17 @@ to the user space of the document displayed.</p></span>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/drawInContext:" title="drawInContext:"></a>
-	<h3 class="subsubtitle method-title">drawInContext:</h3>
+	<a name="//api/name/isPlaying" title="isPlaying"></a>
+	<h3 class="subsubtitle method-title">isPlaying</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Implement this method to perform drawing in an overlay over the document view. The context coordinate system is aligend
-to the user space of the document displayed.</p>
+		<p>Tell if the audio clip is playing.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)drawInContext:(CGContextRef)<em>context</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)isPlaying</code></div>
 	
 	
 	
@@ -154,8 +188,7 @@ to the user space of the document displayed.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Implement this method to perform drawing in an overlay over the document view. The context coordinate system is aligend
-to the user space of the document displayed.</p>
+		<p>Tell if the audio clip is playing.</p>
 	</div>
 	
 	
@@ -166,7 +199,118 @@ to the user space of the document displayed.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MFOverlayDrawable.h</code><br />
+		<code class="declared-in-ref">MFAudioProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setVolumeLevel:" title="setVolumeLevel:"></a>
+	<h3 class="subsubtitle method-title">setVolumeLevel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the volume level, from 0.0 to 1.0.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setVolumeLevel:(float)<em>volume</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set the volume level, from 0.0 to 1.0.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFAudioProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/togglePlay" title="togglePlay"></a>
+	<h3 class="subsubtitle method-title">togglePlay</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Play when stopped and viceversa.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)togglePlay</code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Play when stopped and viceversa.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFAudioProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/volumeLevel" title="volumeLevel"></a>
+	<h3 class="subsubtitle method-title">volumeLevel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the volume level.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)volumeLevel</code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Return the volume level.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFAudioProvider.h</code><br />
 	</div>				
 	
 	

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>MFDocumentOverlayDataSource Protocol Reference</title>
+		<title>FPKOverlayViewDataSource Protocol Reference</title>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
@@ -11,7 +11,7 @@
 	<body>
 		<header id="top_header">
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">MFDocumentOverlayDataSource Protocol Reference</h1>
+				<h1 class="hideInXcode">FPKOverlayViewDataSource Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -36,11 +36,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/documentViewController:didReceiveTapOnTouchable:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveTapOnTouchable:</option>
+	<option value="//api/name/documentViewController:overlayViewsForPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:overlayViewsForPage:</option>
 	
-	<option value="//api/name/documentViewController:drawablesForPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:drawablesForPage:</option>
+	<option value="//api/name/documentViewController:rectForOverlayView:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:rectForOverlayView:</option>
 	
-	<option value="//api/name/documentViewController:touchablesForPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:touchablesForPage:</option>
+	<option value="//api/name/documentViewController:willAddOverlayView:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:willAddOverlayView:</option>
 	
 	
 	
@@ -68,11 +68,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveTapOnTouchable:">documentViewController:didReceiveTapOnTouchable:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:overlayViewsForPage:">documentViewController:overlayViewsForPage:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:drawablesForPage:">documentViewController:drawablesForPage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:rectForOverlayView:">documentViewController:rectForOverlayView:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:touchablesForPage:">documentViewController:touchablesForPage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:willAddOverlayView:">documentViewController:willAddOverlayView:</a></span></li>
 	
 </ul></li>
 
@@ -81,7 +81,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="MFDocumentOverlayDataSource Protocol Reference" name="top"></a>
+				<a title="FPKOverlayViewDataSource Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -90,7 +90,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">MFDocumentOverlayDataSource Protocol Reference</h1>
+						<h1 class="title title-header">FPKOverlayViewDataSource Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -101,7 +101,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">MFDocumentOverlayDataSource.h</td>
+	<td class="specification-value">FPKOverlayViewDataSource.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -121,25 +121,25 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/documentViewController:drawablesForPage:">&ndash;&nbsp;documentViewController:drawablesForPage:</a></code>
-		<span class="tooltip"><p>This method is invoked when a new detail page is going to be drawn and overlayEnabled of the <a href="../Classes/MFDocumentViewController.html">MFDocumentViewController</a> is set
-to YES. The object setted as overlayDataSource is then required to return an array of <a href="../Protocols/MFOverlayDrawable.html">MFOverlayDrawable</a> object to be
-drawn on the page as overlay.</p></span>
+		<code><a href="#//api/name/documentViewController:overlayViewsForPage:">&ndash;&nbsp;documentViewController:overlayViewsForPage:</a></code>
+		<span class="tooltip"><p>This method shall return a set of view to display over the pdf page.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/documentViewController:touchablesForPage:">&ndash;&nbsp;documentViewController:touchablesForPage:</a></code>
-		<span class="tooltip"><p>This method is invoked when a new detail page is going to be drawn and overlayEnables is set to YES. Objects added as overlay
-data sources are required to submit touchables element to be tested against user input events.</p></span>
+		<code><a href="#//api/name/documentViewController:rectForOverlayView:">&ndash;&nbsp;documentViewController:rectForOverlayView:</a></code>
+		<span class="tooltip"><p>This method needs to return the frame in page-coordinates for the view passed as arguments. Remember that, like drawables
+and touchables, the coordinate system&rsquo;s origin is in the bottom left corner of the page.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/documentViewController:didReceiveTapOnTouchable:">&ndash;&nbsp;documentViewController:didReceiveTapOnTouchable:</a></code>
-		<span class="tooltip"><p>This method will be called when an user does tap on an overlay touchable element.</p></span>
+		<code><a href="#//api/name/documentViewController:willAddOverlayView:">&ndash;&nbsp;documentViewController:willAddOverlayView:</a></code>
+		<span class="tooltip"><p>These callbacks will be invoked when the overlay view is going to be added, after is added, when is going to be removed
+and when it is actually removed from the page view. Use these to change the status of the view and or start/stop any
+action that needs to be synchronized with the lifecycle of the view.</p></span>
 	</span>
 	
 	
@@ -161,17 +161,17 @@ data sources are required to submit touchables element to be tested against user
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/documentViewController:didReceiveTapOnTouchable:" title="documentViewController:didReceiveTapOnTouchable:"></a>
-	<h3 class="subsubtitle method-title">documentViewController:didReceiveTapOnTouchable:</h3>
+	<a name="//api/name/documentViewController:overlayViewsForPage:" title="documentViewController:overlayViewsForPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:overlayViewsForPage:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>This method will be called when an user does tap on an overlay touchable element.</p>
+		<p>This method shall return a set of view to display over the pdf page.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveTapOnTouchable:(id&lt;MFOverlayTouchable&gt;)<em>touchable</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSSet *)documentViewController:(MFDocumentViewController *)<em>dvc</em> overlayViewsForPage:(NSUInteger)<em>page</em></code></div>
 	
 	
 	
@@ -180,7 +180,7 @@ data sources are required to submit touchables element to be tested against user
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method will be called when an user does tap on an overlay touchable element.</p>
+		<p>This method shall return a set of view to display over the pdf page.</p>
 	</div>
 	
 	
@@ -191,26 +191,25 @@ data sources are required to submit touchables element to be tested against user
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MFDocumentOverlayDataSource.h</code><br />
+		<code class="declared-in-ref">FPKOverlayViewDataSource.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/documentViewController:drawablesForPage:" title="documentViewController:drawablesForPage:"></a>
-	<h3 class="subsubtitle method-title">documentViewController:drawablesForPage:</h3>
+	<a name="//api/name/documentViewController:rectForOverlayView:" title="documentViewController:rectForOverlayView:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:rectForOverlayView:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>This method is invoked when a new detail page is going to be drawn and overlayEnabled of the <a href="../Classes/MFDocumentViewController.html">MFDocumentViewController</a> is set
-to YES. The object setted as overlayDataSource is then required to return an array of <a href="../Protocols/MFOverlayDrawable.html">MFOverlayDrawable</a> object to be
-drawn on the page as overlay.</p>
+		<p>This method needs to return the frame in page-coordinates for the view passed as arguments. Remember that, like drawables
+and touchables, the coordinate system&rsquo;s origin is in the bottom left corner of the page.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSArray *)documentViewController:(MFDocumentViewController *)<em>dvc</em> drawablesForPage:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (CGRect)documentViewController:(MFDocumentViewController *)<em>dvc</em> rectForOverlayView:(UIView *)<em>view</em></code></div>
 	
 	
 	
@@ -219,9 +218,8 @@ drawn on the page as overlay.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is invoked when a new detail page is going to be drawn and overlayEnabled of the <a href="../Classes/MFDocumentViewController.html">MFDocumentViewController</a> is set
-to YES. The object setted as overlayDataSource is then required to return an array of <a href="../Protocols/MFOverlayDrawable.html">MFOverlayDrawable</a> object to be
-drawn on the page as overlay.</p>
+		<p>This method needs to return the frame in page-coordinates for the view passed as arguments. Remember that, like drawables
+and touchables, the coordinate system&rsquo;s origin is in the bottom left corner of the page.</p>
 	</div>
 	
 	
@@ -232,25 +230,26 @@ drawn on the page as overlay.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MFDocumentOverlayDataSource.h</code><br />
+		<code class="declared-in-ref">FPKOverlayViewDataSource.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/documentViewController:touchablesForPage:" title="documentViewController:touchablesForPage:"></a>
-	<h3 class="subsubtitle method-title">documentViewController:touchablesForPage:</h3>
+	<a name="//api/name/documentViewController:willAddOverlayView:" title="documentViewController:willAddOverlayView:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:willAddOverlayView:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>This method is invoked when a new detail page is going to be drawn and overlayEnables is set to YES. Objects added as overlay
-data sources are required to submit touchables element to be tested against user input events.</p>
+		<p>These callbacks will be invoked when the overlay view is going to be added, after is added, when is going to be removed
+and when it is actually removed from the page view. Use these to change the status of the view and or start/stop any
+action that needs to be synchronized with the lifecycle of the view.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSArray *)documentViewController:(MFDocumentViewController *)<em>dvc</em> touchablesForPage:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> willAddOverlayView:(UIView *)<em>view</em></code></div>
 	
 	
 	
@@ -259,8 +258,9 @@ data sources are required to submit touchables element to be tested against user
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is invoked when a new detail page is going to be drawn and overlayEnables is set to YES. Objects added as overlay
-data sources are required to submit touchables element to be tested against user input events.</p>
+		<p>These callbacks will be invoked when the overlay view is going to be added, after is added, when is going to be removed
+and when it is actually removed from the page view. Use these to change the status of the view and or start/stop any
+action that needs to be synchronized with the lifecycle of the view.</p>
 	</div>
 	
 	
@@ -271,7 +271,7 @@ data sources are required to submit touchables element to be tested against user
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MFDocumentOverlayDataSource.h</code><br />
+		<code class="declared-in-ref">FPKOverlayViewDataSource.h</code><br />
 	</div>				
 	
 	

@@ -1,23 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/MFOverlayDrawable.html">
+	<File path="Protocols/MFAudioProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/MFOverlayDrawable</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MFOverlayDrawable.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/MFAudioProvider</TokenIdentifier>
+			<Abstract></Abstract>
+			<DeclaredIn>MFAudioProvider.h</DeclaredIn>
 			
 			<NodeRef refid="7"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFOverlayDrawable/drawInContext:</TokenIdentifier>
-			<Abstract type="html"> Implement this method to perform drawing in an overlay over the document view. The context coordinate system is aligend
-to the user space of the document displayed. </Abstract>
-			<DeclaredIn>MFOverlayDrawable.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/togglePlay</TokenIdentifier>
+			<Abstract>Play when stopped and viceversa.</Abstract>
+			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
 			
-			<Anchor>//api/name/drawInContext:</Anchor>
+			<Declaration>- (void)togglePlay</Declaration>
+			
+			
+			<Anchor>//api/name/togglePlay</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/isPlaying</TokenIdentifier>
+			<Abstract>Tell if the audio clip is playing.</Abstract>
+			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isPlaying</Declaration>
+			
+			
+			<Anchor>//api/name/isPlaying</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/setVolumeLevel:</TokenIdentifier>
+			<Abstract>Set the volume level, from 0.0 to 1.0.</Abstract>
+			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)setVolumeLevel:(float)volume</Declaration>
+			
+			
+			<Anchor>//api/name/setVolumeLevel:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/volumeLevel</TokenIdentifier>
+			<Abstract>Return the volume level.</Abstract>
+			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
+			
+			<Declaration>- (float)volumeLevel</Declaration>
+			
+			
+			<Anchor>//api/name/volumeLevel</Anchor>
 		</Token>
 		
 	</File>

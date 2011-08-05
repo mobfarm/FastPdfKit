@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MFDocumentManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract></Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
 			
 			<NodeRef refid="1"/>
@@ -12,86 +12,198 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/getCropbox:andRotation:forPageNumber:</TokenIdentifier>
+			<Abstract>Use this method to get the cropbox and the rotation of a certain pdf page.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber</Declaration>
+			
+			
+			<Anchor>//api/name/getCropbox:andRotation:forPageNumber:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/createImageForThumbnailOfPageNumber:ofSize:andScale:</TokenIdentifier>
-			<Abstract type="html"> Create a thumbnail for a specific page. It will look far better than the thumbnail integrated inside the pdf, but
-it is also slower. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<Abstract>Create a thumbnail for a specific page. It will look far better than the thumbnail integrated inside the pdf, but
+it is also slower.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (CGImageRef)createImageForThumbnailOfPageNumber:(NSUInteger)pageNr ofSize:(CGSize)size andScale:(CGFloat)scale</Declaration>
+			
 			
 			<Anchor>//api/name/createImageForThumbnailOfPageNumber:ofSize:andScale:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/documentManagerWithFilePath:</TokenIdentifier>
-			<Abstract type="html"> Factory method to create an   <a href="MFDocumentManager.html">MFDocumentManager</a>  instance from a know file path. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/MFDocumentManager/documentManagerWithFilePath:</TokenIdentifier>
+			<Abstract>Factory method to create an MFDocumentManager instance from a know file path.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>+ (MFDocumentManager *)documentManagerWithFilePath:(NSString *)filePath</Declaration>
+			
 			
 			<Anchor>//api/name/documentManagerWithFilePath:</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/outline</TokenIdentifier>
-			<Abstract type="html"> Return an array of MFOutlineEntry as the outline/TOC of the pdf document. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<Abstract>Return an array of MFOutlineEntry as the outline/TOC of the pdf document.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSMutableArray *)outline</Declaration>
+			
 			
 			<Anchor>//api/name/outline</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/initWithFileUrl:</TokenIdentifier>
-			<Abstract type="html"> Initializer. You can also use the factory method above. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<Abstract>Initializer. You can also use the factory method above.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithFileUrl:(NSURL *)anUrl</Declaration>
+			
 			
 			<Anchor>//api/name/initWithFileUrl:</Anchor>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/initWithDataProvider:</TokenIdentifier>
+			<Abstract>Initializer with data provider.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithDataProvider:(CGDataProviderRef)dataProvider</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDataProvider:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/isLocked</TokenIdentifier>
-			<Abstract type="html"> Check if a document is encrypted and blocked by a password or not. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<Abstract>Check if a document is encrypted and blocked by a password or not.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isLocked</Declaration>
+			
 			
 			<Anchor>//api/name/isLocked</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/tryUnlockWithPassword:</TokenIdentifier>
-			<Abstract type="html"> Try to unlock the document with a password and return if the unlock has been successful or not. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<Abstract>Try to unlock the document with a password and return if the unlock has been successful or not.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)tryUnlockWithPassword:(NSString *)aPassword</Declaration>
+			
 			
 			<Anchor>//api/name/tryUnlockWithPassword:</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/numberOfPages</TokenIdentifier>
-			<Abstract type="html"> Return the number of pages that make up the document. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<Abstract>Return the number of pages that make up the document.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSUInteger)numberOfPages</Declaration>
+			
 			
 			<Anchor>//api/name/numberOfPages</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/emptyCache</TokenIdentifier>
-			<Abstract type="html"> Clear the page cache. It is important to call this method on memory warning as in the sample code
-to prevent the application being killed right for excessive memory usage. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<Abstract>Clear the page cache. It is important to call this method on memory warning as in the sample code
+to prevent the application being killed right for excessive memory usage.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)emptyCache</Declaration>
+			
 			
 			<Anchor>//api/name/emptyCache</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/searchResultOnPage:forSearchTerms:</TokenIdentifier>
-			<Abstract type="html"> Return an array of   <a href="MFTextItem.html">MFTextItem</a>  representing the matches of teh search term on the page passed
-as arguments. It is a good choice running this method in a secondary thread. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/searchResultOnPage:forSearchTerms:withProfile:</TokenIdentifier>
+			<Abstract>Return an array of MFTextItem representing the matches of teh search term on the page passed
+as arguments. It is a good choice running this method in a secondary thread. Pass NULL as profile
+to use default search profile. Profile is not retained, so be sure to keep it in memory until the function
+returns.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
-			<Anchor>//api/name/searchResultOnPage:forSearchTerms:</Anchor>
+			<Declaration>- (NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm withProfile:(MFProfile *)p</Declaration>
+			
+			
+			<Anchor>//api/name/searchResultOnPage:forSearchTerms:withProfile:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/wholeTextForPage:</TokenIdentifier>
-			<Abstract type="html"> Return a string representation of the text contained in a pdf page. </Abstract>
-			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/test_searchResultOnPage:forSearchTerms:</TokenIdentifier>
+			<Abstract>This method return the same result as the above, but uses a differnt search engine. Look at the readme for instructions.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
-			<Anchor>//api/name/wholeTextForPage:</Anchor>
+			<Declaration>- (NSArray *)test_searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm</Declaration>
+			
+			
+			<Anchor>//api/name/test_searchResultOnPage:forSearchTerms:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/wholeTextForPage:withProfile:</TokenIdentifier>
+			<Abstract>Return a string representation of the text contained in a pdf page. Profile is not retained, so be sure to keep
+it in memory until the function returns. You can pass NULL to use the default profile.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)wholeTextForPage:(NSUInteger)pageNr withProfile:(MFProfile *)p</Declaration>
+			
+			
+			<Anchor>//api/name/wholeTextForPage:withProfile:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/test_wholeTextForPage:</TokenIdentifier>
+			<Abstract>This method return the same result as the above, but uses a differnt extraction engine. Look at the readme for instructions.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)test_wholeTextForPage:(NSUInteger)pageNr</Declaration>
+			
+			
+			<Anchor>//api/name/test_wholeTextForPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MFDocumentManager/version</TokenIdentifier>
+			<Abstract>Build version of this library. Useful for debugging purposes.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)version</Declaration>
+			
+			
+			<Anchor>//api/name/version</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentManager/defaultProfile</TokenIdentifier>
+			<Abstract>This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
+set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it. This is the default profile used as fallback when
+a NULL profile is passed to the search and extraction methods.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) MFProfile defaultProfile</Declaration>
+			
+			
+			<Anchor>//api/name/defaultProfile</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentManager/resourceFolder</TokenIdentifier>
+			<Abstract>Resouce folder for the document. Video, audio and other files referenced in the pdf are contained here.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *resourceFolder</Declaration>
+			
+			
+			<Anchor>//api/name/resourceFolder</Anchor>
 		</Token>
 		
 	</File>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/MFOverlayDrawable.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/MFOverlayDrawable</TokenIdentifier>
+			<Abstract></Abstract>
+			<DeclaredIn>MFOverlayDrawable.h</DeclaredIn>
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFOverlayDrawable/drawInContext:</TokenIdentifier>
+			<Abstract>Implement this method to perform drawing in an overlay over the document view. The context coordinate system is aligend
+to the user space of the document displayed.</Abstract>
+			<DeclaredIn>MFOverlayDrawable.h</DeclaredIn>			
+			
+			<Declaration>- (void)drawInContext:(CGContextRef)context</Declaration>
+			
+			
+			<Anchor>//api/name/drawInContext:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
