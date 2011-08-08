@@ -16,7 +16,7 @@
 @end
 
 @interface MFHorizontalSlider : UIViewController <UIScrollViewDelegate, MFSliderDetailDelegate> {
-	UIScrollView *thumbnailsView;
+	UIScrollView *thumbnailsScrollView;
 	UIPageControl *thumbnailsPageControl;
 	NSMutableArray *thumbnailViewControllers;
 	NSMutableArray *thumbnailNumbers;
@@ -31,12 +31,12 @@
 	CGFloat viewHeight;
 	BOOL goToPageUsed;
 	id delegate;
-	
+	//NSFileManager * fileManager;
 	UIImageView *border;
 	int sliderType;
 	NSString *thumbFolderName;
 }
-@property (nonatomic, retain) UIScrollView *thumbnailsView;
+@property (nonatomic, retain) UIScrollView *thumbnailsScrollView;
 @property (nonatomic, retain) UIPageControl *thumbnailsPageControl;
 @property (nonatomic, retain) NSMutableArray *thumbnailViewControllers;
 @property (nonatomic, retain) NSMutableArray *thumbnailNumbers;
@@ -44,17 +44,20 @@
 @property (nonatomic, assign) CGFloat viewHeight;
 @property (nonatomic, assign) CGFloat sliderHeight;
 
-
 - (MFHorizontalSlider *)initWithImages:(NSArray *)images size:(CGSize)size width:(CGFloat)_width height:(CGFloat)_height type:(int)_type andFolderName:(NSString *)_nomecartellapdf;
 - (void)goToPage:(int)page animated:(BOOL)animated;
 - (void)thumbTapped:(int)number withObject:(id)object;
 
 - (void)changePage:(id)sender;
-- (void)loadThumbnailViewWithPage:(int)page;
-- (void)unloadThumbnailViewWithPage:(int)page;
+- (void)refreshThumbnailViewWithPage:(int)page;
+- (void)resetThumbnailViewWithPage:(int)page;
 
 - (id) getObjectForPage:(int)page;
 
 - (void)loadAndUnloadWithPage:(int)_page;
+
++(NSString *)thumbnailFolderPathForDocumentId:(NSString *)docId;
++(NSString *)thumbnailNameForPage:(NSUInteger)page;
++(NSString *)thumbnailImagePathForPage:(NSUInteger)page documentId:(NSString *)documentId;
 
 @end
