@@ -149,7 +149,6 @@
 		01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
 		01884A6C131E93C70045038F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		01884A7C131E93DB0045038F /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */; };
-		01884A83131E947C0045038F /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A82131E947C0045038F /* libz.1.2.3.dylib */; };
 		01884A86131E94AA0045038F /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */; };
 		01884A8A131E94C70045038F /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		01884A8B131E94C70045038F /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
@@ -228,6 +227,7 @@
 		01BE35B913EFF72000229741 /* MFSliderDetailVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BE35B313EFF72000229741 /* MFSliderDetailVIew.m */; };
 		01BE35BC13EFF72000229741 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BE35B513EFF72000229741 /* MFHorizontalSlider.m */; };
 		01BE35BF13EFF72000229741 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BE35B713EFF72000229741 /* MFSliderDetail.m */; };
+		01BE360113F017D300229741 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BE360013F017D300229741 /* libz.dylib */; };
 		01C9428A13263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */; };
 		01C9428B13263A6E000364B4 /* FastPdfKit-1.0RC1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */; };
 		01CF7356132532FC00E42146 /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
@@ -369,7 +369,6 @@
 		01884A56131E932A0045038F /* MFHomeListPdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHomeListPdf.h; sourceTree = "<group>"; };
 		01884A57131E932A0045038F /* MFHomeListPdf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHomeListPdf.m; sourceTree = "<group>"; };
 		01884A66131E93A80045038F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		01884A82131E947C0045038F /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		01884AA1131E950A0045038F /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		01884AA2131E950A0045038F /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -436,6 +435,7 @@
 		01BE35B513EFF72000229741 /* MFHorizontalSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHorizontalSlider.m; sourceTree = "<group>"; };
 		01BE35B613EFF72000229741 /* MFSliderDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSliderDetail.h; sourceTree = "<group>"; };
 		01BE35B713EFF72000229741 /* MFSliderDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSliderDetail.m; sourceTree = "<group>"; };
+		01BE360013F017D300229741 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		01C9428613263A6E000364B4 /* FastPdfKit-1.0RC1crypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FastPdfKit-1.0RC1crypt.pdf"; sourceTree = "<group>"; };
 		01C9428713263A6E000364B4 /* FastPdfKit-1.0RC1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FastPdfKit-1.0RC1.pdf"; sourceTree = "<group>"; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
@@ -471,6 +471,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BE360113F017D300229741 /* libz.dylib in Frameworks */,
 				01BBD89213A17FEE00E9EE89 /* AudioToolbox.framework in Frameworks */,
 				01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */,
 				01E2BC37133D14BB00CCED33 /* MediaPlayer.framework in Frameworks */,
@@ -480,7 +481,6 @@
 				01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */,
 				01884A4A131E92B30045038F /* UIKit.framework in Frameworks */,
 				01884A6C131E93C70045038F /* CoreGraphics.framework in Frameworks */,
-				01884A83131E947C0045038F /* libz.1.2.3.dylib in Frameworks */,
 				01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */,
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
 				014833F513EFD69A00B961FB /* libFastPDFKit.a in Frameworks */,
@@ -795,6 +795,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				01BE360013F017D300229741 /* libz.dylib */,
 				01B822EF13D07F04006BE6EE /* CFNetwork.framework */,
 				01B822E913D07EFB006BE6EE /* AudioToolbox.framework */,
 				01B822EA13D07EFB006BE6EE /* AVFoundation.framework */,
@@ -851,7 +852,6 @@
 				01884AC2131E96C50045038F /* SystemConfiguration.framework */,
 				01884AC6131E96CE0045038F /* MobileCoreServices.framework */,
 				01884A66131E93A80045038F /* CFNetwork.framework */,
-				01884A82131E947C0045038F /* libz.1.2.3.dylib */,
 				0174E2AF12EF24CA003699A8 /* CoreText.framework */,
 				950B37CF125CBEC4007BDDA1 /* UIKit.framework */,
 				950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */,
