@@ -50,6 +50,8 @@
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft;
 
+@synthesize thumbFileManager;
+
 -(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
 
     UIPopoverController * popoverController = nil;
@@ -1630,10 +1632,10 @@
 
 -(void)prepareThumbSlider {
 	
-    NSString * sysver = [[UIDevice currentDevice]systemVersion];
+//    NSString * sysver = [[UIDevice currentDevice]systemVersion];
     
-    if([sysver isEqualToString:@"5.0"]) // Skip thumbnail slider and thumbnails generation on 5.0.
-        return;
+//    if([sysver isEqualToString:@"5.0"]) // Skip thumbnail slider and thumbnails generation on 5.0.
+//        return;
     
     MFHorizontalSlider * anHorizontalThumbSlider = nil;
     
@@ -1662,7 +1664,7 @@
 	
 	// Start generating the thumbs in background.
 	
-	[self performSelectorInBackground:@selector(generateThumbInBackground:) withObject:self.documentId];
+	[self performSelectorInBackground:@selector(generateThumbInBackground) withObject:nil];
 }
 
 
@@ -1682,57 +1684,108 @@
 }
 
 
--(void)generateThumbInBackground:(NSString *)thumbFolderName {
-	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	NSFileManager * fileManager = nil;
-	NSError **error = NULL;
-	
-	NSArray *paths = nil;
-	NSString *documentsDirectory = nil;
-	
-	NSString * filename = nil;
-	NSString * fullPathToFile = nil;
-	
-	CGImageRef thumbImage = NULL;
-	UIImage * image = nil;
-	NSData * imageData = nil;
-	CGSize thumbSize = CGSizeMake(140, 182);
-	
-	NSUInteger count;
-	
-	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-	documentsDirectory = [[paths objectAtIndex:0]stringByAppendingPathComponent:thumbFolderName];
-	
-	fileManager = [[NSFileManager alloc]init];
-	[fileManager createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:error];
-	
-	count = [[self document]numberOfPages];
-	for (int i=1; i<=count; i++) {
+-(void)handleThumbDone {
+    
+    // Start next thumbnail operation or abort.
+    
+    if(currentThumbPage < [[self document]numberOfPages]) {
+        
+        currentThumbPage++;
+        
+		[self performSelectorInBackground:@selector(startThumb) withObject:nil];
+	} else {
 		
-		filename = [NSString stringWithFormat:@"png%d.png",i];
-		fullPathToFile = [documentsDirectory stringByAppendingPathComponent:filename];
-		
-		if((![fileManager fileExistsAtPath: fullPathToFile]) && pdfOpen) {
-			
-			thumbImage = [self.document createImageForThumbnailOfPageNumber:i ofSize:thumbSize andScale:1.0];
-			image = [[UIImage alloc] initWithCGImage:thumbImage];
-			imageData = UIImagePNGRepresentation(image);
-			
-			if (pdfOpen) {
-
-				[fileManager createFileAtPath:fullPathToFile contents:imageData attributes:nil];
-
-			}
-			
-			CGImageRelease(thumbImage);
-			[image release];
-		}
+        self.thumbFileManager = nil;
+        //self.thumbnailFolderPath = nil;
+        
 	}
-	
-	[fileManager release];
-	[pool release];
+}
+
+-(void)startThumb {
+    
+    NSString * thumbnailFilePath = nil;
+    //NSString * thumbnailFileName = nil;
+    
+    CGImageRef thumbImage = NULL;
+    UIImage * thumbnailImage = nil;
+    NSData * imageData = nil;
+    
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
+    
+    //thumbnailFileName = [MFHorizontalSlider thumbnailNameForPage:currentThumbPage];
+    //thumbnailFilePath = [self.thumbnailFolderPath stringByAppendingPathComponent:thumbnailFileName];
+    
+    thumbnailFilePath = [MFHorizontalSlider thumbnailImagePathForPage:currentThumbPage documentId:documentId];
+    
+    if(![self.thumbFileManager fileExistsAtPath:thumbnailFilePath] && pdfOpen) {
+        
+        thumbImage = [[self document] createImageForThumbnailOfPageNumber:currentThumbPage ofSize:CGSizeMake(70, 91) andScale:1.0];
+        thumbnailImage = [[UIImage alloc]initWithCGImage:thumbImage];
+		
+		imageData = UIImagePNGRepresentation(thumbnailImage);
+        //imageData = UIImageJPEGRepresentation(thumbnailImage,0.8); // JPEG version (will not have alfa).
+        
+        [self.thumbFileManager createFileAtPath:thumbnailFilePath contents:imageData attributes:nil];
+        
+        [self.thumbsliderHorizontal refreshThumbnailViewWithPage:currentThumbPage-1];
+        
+        CGImageRelease(thumbImage);
+        [thumbnailImage release];
+    }
+    
+    [pool release];
+    
+    [self performSelectorOnMainThread:@selector(handleThumbDone) withObject:nil waitUntilDone:NO];
+}
+
+-(void)generateThumbInBackground {
+    
+    NSFileManager * fileManager = nil;
+    
+    NSString * thumbFolderPath = [MFHorizontalSlider thumbnailFolderPathForDocumentId:self.documentId];
+    
+    BOOL isDir = NO;
+    NSError * error = nil;
+    
+    fileManager = [[NSFileManager alloc]init];
+    
+    if(![fileManager fileExistsAtPath:thumbFolderPath isDirectory:&isDir]) { // Does not exist.
+        
+        if(![fileManager createDirectoryAtPath:thumbFolderPath withIntermediateDirectories:YES attributes:nil error:&error]) {
+            
+            // Disable thumb here.
+            
+        }
+        
+    } else { // Exist...
+        
+        if(!isDir) { // ... but is not a directory.
+            
+            if(![fileManager removeItemAtPath:thumbFolderPath error:&error]) {
+                
+                // Disable thumb here.
+                
+            } else { // File successfully deleted.
+                
+                if(![fileManager createDirectoryAtPath:thumbFolderPath withIntermediateDirectories:YES attributes:nil error:&error]) {
+                    
+                    // Disable thumb here.
+                    
+                }
+            }
+        }
+    }
+    
+    self.thumbFileManager = fileManager;
+    //self.thumbnailFolderPath = thumbFolderPath;
+    
+    currentThumbPage = 1;
+    
+    [self performSelectorInBackground:@selector(startThumb) withObject:nil]; // Start the actual thumbnail generation.
+    
+    // Cleanup.
+    
+    [fileManager release];
 }
 
 /*
@@ -1806,6 +1859,9 @@
 	
     [documentId release];
 	
+    //[thumbnailFolderPath release];
+    [thumbFileManager release];
+    
 	[super dealloc];
 }
 

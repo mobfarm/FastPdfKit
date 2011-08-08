@@ -37,6 +37,9 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
 	[self.view setBackgroundColor:[UIColor clearColor]];
 	
 	if (temp) {
@@ -49,9 +52,9 @@
 		
 	} else {
 		//set the image
-		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, size.width-10, size.height-10)]; // dimension of image
+		UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 3, size.width-10, size.height-10)]; // dimension of image
 		[image setImage:[UIImage imageWithContentsOfFile:thumbnail]];
-		[image	setBackgroundColor:[UIColor clearColor]];
+		[image setBackgroundColor:[UIColor clearColor]];
 		[image setUserInteractionEnabled:YES];
 		[self.view addSubview:image];
 		[image release];
@@ -82,7 +85,6 @@
 			[pageLabel release];
 		}	
 	}
-	[super viewDidLoad];
 }
 
 - (void)updateCorner{
@@ -129,7 +131,7 @@
 
 - (void)dealloc {
 	[corner release];
-	[self.view removeFromSuperview];
+	//[self.view removeFromSuperview];
 	[super dealloc];
 }
 

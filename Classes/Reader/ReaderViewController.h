@@ -97,6 +97,11 @@
     
 	UILabel * pageLabel;    // Page label at the bottom of the screen.
 	UISlider * pageSlider;  // Page slider at the bottom of the screen.
+    
+    // Thumbnail related stuff.
+    NSUInteger currentThumbPage;
+    NSFileManager * thumbFileManager;
+    BOOL thumbnailize;
 }
 
 @property (nonatomic,retain) UIImage * imgModeSingle;
@@ -146,6 +151,10 @@
 @property (nonatomic, readwrite, getter = isMultimediaVisible) BOOL multimediaVisible;
 
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
+
+
+// Thumbnail stuff.
+@property (retain) NSFileManager * thumbFileManager;
 
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
