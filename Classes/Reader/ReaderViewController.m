@@ -1686,6 +1686,7 @@
 
 -(void)handleThumbDone {
     
+    [self.thumbsliderHorizontal refreshThumbnailViewWithPage:currentThumbPage-1];
     // Start next thumbnail operation or abort.
     
     if(currentThumbPage < [[self document]numberOfPages]) {
@@ -1726,8 +1727,6 @@
         //imageData = UIImageJPEGRepresentation(thumbnailImage,0.8); // JPEG version (will not have alfa).
         
         [self.thumbFileManager createFileAtPath:thumbnailFilePath contents:imageData attributes:nil];
-        
-        [self.thumbsliderHorizontal refreshThumbnailViewWithPage:currentThumbPage-1];
         
         CGImageRelease(thumbImage);
         [thumbnailImage release];
