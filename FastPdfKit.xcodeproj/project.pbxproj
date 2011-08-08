@@ -51,14 +51,14 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
-		012C881613EC4B80009AAEED /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012C881513EC4B80009AAEED /* libFastPDFKit.a */; };
-		012C881713EC4B80009AAEED /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012C881513EC4B80009AAEED /* libFastPDFKit.a */; };
-		012C881813EC4B80009AAEED /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012C881513EC4B80009AAEED /* libFastPDFKit.a */; };
-		012C881913EC4B80009AAEED /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012C881513EC4B80009AAEED /* libFastPDFKit.a */; };
 		012C881C13EC4B93009AAEED /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012C881A13EC4B93009AAEED /* MFDocumentManager.h */; };
 		012C881D13EC4B93009AAEED /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012C881A13EC4B93009AAEED /* MFDocumentManager.h */; };
 		012C881E13EC4B93009AAEED /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 012C881B13EC4B93009AAEED /* MFDocumentViewController.h */; };
 		012C881F13EC4B93009AAEED /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 012C881B13EC4B93009AAEED /* MFDocumentViewController.h */; };
+		014833E213EFD4BB00B961FB /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 014833E113EFD4BB00B961FB /* libFastPDFKit.a */; };
+		014833E313EFD4BB00B961FB /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 014833E113EFD4BB00B961FB /* libFastPDFKit.a */; };
+		014833E413EFD4BB00B961FB /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 014833E113EFD4BB00B961FB /* libFastPDFKit.a */; };
+		014833E513EFD4BB00B961FB /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 014833E113EFD4BB00B961FB /* libFastPDFKit.a */; };
 		01598DA713CAE783007344EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01598DBD13CAE7CD007344EE /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081C13C75D3A0077CE63 /* OutlineViewController.m */; };
 		01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
@@ -357,9 +357,9 @@
 		0123606E13CCA18700861EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		012C881513EC4B80009AAEED /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		012C881A13EC4B93009AAEED /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		012C881B13EC4B93009AAEED /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
+		014833E113EFD4BB00B961FB /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		018848E7131E89570045038F /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Kiosk-Info.plist"; sourceTree = "<group>"; };
@@ -557,7 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				012C881813EC4B80009AAEED /* libFastPDFKit.a in Frameworks */,
+				014833E413EFD4BB00B961FB /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,7 +567,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
-				012C881913EC4B80009AAEED /* libFastPDFKit.a in Frameworks */,
+				014833E513EFD4BB00B961FB /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +588,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
-				012C881713EC4B80009AAEED /* libFastPDFKit.a in Frameworks */,
+				014833E313EFD4BB00B961FB /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +605,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				012C881613EC4B80009AAEED /* libFastPDFKit.a in Frameworks */,
+				014833E213EFD4BB00B961FB /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,7 +1047,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				012C881513EC4B80009AAEED /* libFastPDFKit.a */,
+				014833E113EFD4BB00B961FB /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
