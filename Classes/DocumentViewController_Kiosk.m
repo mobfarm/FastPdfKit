@@ -1365,7 +1365,7 @@
 	
 	// Start generating the thumbs in background.
 	
-	[self performSelectorInBackground:@selector(generateThumbInBackground) withObject:nil];
+	[self performSelector:@selector(generateThumbInBackground)];
 }
 
 
@@ -1386,6 +1386,10 @@
 
 
 -(void)handleThumbDone {
+    
+    // Update the thumbnail.
+    
+    [self.thumbsliderHorizontal refreshThumbnailViewWithPage:currentThumbPage-1];
     
     // Start next thumbnail operation or abort.
     
@@ -1428,8 +1432,6 @@
         
         [self.thumbFileManager createFileAtPath:thumbnailFilePath contents:imageData attributes:nil];
         
-        [self.thumbsliderHorizontal refreshThumbnailViewWithPage:currentThumbPage-1];
-        
         CGImageRelease(thumbImage);
         [thumbnailImage release];
     }
@@ -1442,7 +1444,6 @@
 -(void)generateThumbInBackground {
     
     NSFileManager * fileManager = nil;
-    
     NSString * thumbFolderPath = [MFHorizontalSlider thumbnailFolderPathForDocumentId:self.documentId];
     
     BOOL isDir = NO;

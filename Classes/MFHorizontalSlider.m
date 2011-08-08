@@ -81,7 +81,9 @@ CGRect rectForThumbnail(CGFloat width, CGFloat height, int position) {
 	[self.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
 	currentThumbnail = 0;
 	
-	thumbnailsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, sliderWidth, sliderHeight)]; // dimension of view 
+    UIScrollView * aScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, sliderWidth, sliderHeight)]; // dimension of view  
+	self.thumbnailsScrollView = aScrollView;
+    [aScrollView release];
 
 	[thumbnailsScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
 	[thumbnailsScrollView setDelegate:self];
@@ -263,6 +265,9 @@ CGRect rectForThumbnailView(int pos, CGFloat width, CGFloat height) {
         detailView.thumbnailImagePath = fullPathToFile;
     }
     
+    
+//    // OLD STUFF, even worse than current code
+//
 //    MFSliderDetail *controller = [thumbnailViewControllers objectAtIndex:page];
 //    
 //	NSFileManager *filemanager = [NSFileManager defaultManager];
@@ -345,11 +350,12 @@ CGRect rectForThumbnailView(int pos, CGFloat width, CGFloat height) {
     
     if([obj isKindOfClass:[MFSliderDetailVIew class]]) {
         
-        MFSliderDetailVIew * detail = (MFSliderDetailVIew *)obj;
-        
-        [detail removeFromSuperview];
+        MFSliderDetailVIew * detailView = (MFSliderDetailVIew *)obj;
         
         [thumbnailViewControllers replaceObjectAtIndex:page withObject:[NSNull null]];    
+        
+        [detailView setHidden:YES];
+        [detailView removeFromSuperview];
     }
 }
 
