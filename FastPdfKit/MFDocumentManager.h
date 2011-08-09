@@ -92,6 +92,11 @@
  */
 -(NSUInteger)numberOfPages;
 
+/**
+ This method will return the page number of the destination with the name passed as argument.
+ */
+-(NSUInteger)pageNumberForDestinationNamed:(NSString *)name;
+
 /** 
  Clear the page cache. It is important to call this method on memory warning as in the sample code
  to prevent the application being killed right for excessive memory usage.
