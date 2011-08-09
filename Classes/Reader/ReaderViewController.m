@@ -1741,6 +1741,7 @@
     
     NSFileManager * fileManager = nil;
     
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
     NSString * thumbFolderPath = [MFHorizontalSlider thumbnailFolderPathForDocumentId:self.documentId];
     
     BOOL isDir = NO;
@@ -1785,6 +1786,7 @@
     // Cleanup.
     
     [fileManager release];
+    [pool release];
 }
 
 /*

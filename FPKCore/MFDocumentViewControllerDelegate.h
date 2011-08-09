@@ -96,6 +96,19 @@
 -(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString*)audioUri;
 
 /**
+ This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as third argument
+ and then get the page number with MFDocumentManager's -pageNumberForDestinationNamed: and presente the right page for display.
+ */
+-(void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToDestinationNamed:(NSString *)destinationName ofFile:(NSString *)fileName;
+
+/**
+ This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as last argument
+ and then set the page to the page number passed as second parameter.
+ */
+-(void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToPage:(NSUInteger)pageNumber ofFile:(NSString *)fileName;
+
+
+/**
  This method will be called to provide a class of the view to use as player audio control. You can use the default class provide in the sample
  or develop your own to suit the look and feel of you application better.
  */
