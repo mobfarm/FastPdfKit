@@ -179,6 +179,30 @@ that report the current zoom to the user.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:</TokenIdentifier>
+			<Abstract>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as third argument
+and then get the page number with MFDocumentManager's -pageNumberForDestinationNamed: and present the right page for display.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToDestinationNamed:(NSString *)destinationName ofFile:(NSString *)fileName</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveRequestToGoToPage:ofFile:</TokenIdentifier>
+			<Abstract>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as last argument
+and then set the page to the page number passed as second parameter.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToPage:(NSUInteger)pageNumber ofFile:(NSString *)fileName</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveRequestToGoToPage:ofFile:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/classForAudioPlayerView</TokenIdentifier>
 			<Abstract>This method will be called to provide a class of the view to use as player audio control. You can use the default class provide in the sample
 or develop your own to suit the look and feel of you application better.</Abstract>

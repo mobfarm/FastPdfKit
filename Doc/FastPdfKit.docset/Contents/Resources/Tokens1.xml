@@ -112,6 +112,17 @@ it is also slower.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/pageNumberForDestinationNamed:</TokenIdentifier>
+			<Abstract>This method will return the page number of the destination with the name passed as argument.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSUInteger)pageNumberForDestinationNamed:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/pageNumberForDestinationNamed:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/emptyCache</TokenIdentifier>
 			<Abstract>Clear the page cache. It is important to call this method on memory warning as in the sample code
 to prevent the application being killed right for excessive memory usage.</Abstract>

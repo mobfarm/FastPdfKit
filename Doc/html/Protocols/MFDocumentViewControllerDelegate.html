@@ -52,6 +52,10 @@
 	
 	<option value="//api/name/documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:</option>
 	
+	<option value="//api/name/documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:</option>
+	
+	<option value="//api/name/documentViewController:didReceiveRequestToGoToPage:ofFile:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveRequestToGoToPage:ofFile:</option>
+	
 	<option value="//api/name/documentViewController:didReceiveTapAtPoint:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveTapAtPoint:</option>
 	
 	<option value="//api/name/documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:</option>
@@ -109,6 +113,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didGoToPage:">documentViewController:didGoToPage:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:">documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:">documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveRequestToGoToPage:ofFile:">documentViewController:didReceiveRequestToGoToPage:ofFile:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:didReceiveTapAtPoint:">documentViewController:didReceiveTapAtPoint:</a></span></li>
 	
@@ -272,6 +280,22 @@ that report the current zoom to the user.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/documentViewController:doesHaveToAutoplayAudio:">&ndash;&nbsp;documentViewController:doesHaveToAutoplayAudio:</a></code>
 		<span class="tooltip"><p>Implement this method to return whether the audio clip should play automatically once loaded.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:">&ndash;&nbsp;documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:</a></code>
+		<span class="tooltip"><p>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as third argument
+and then get the page number with MFDocumentManager&rsquo;s -pageNumberForDestinationNamed: and present the right page for display.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:didReceiveRequestToGoToPage:ofFile:">&ndash;&nbsp;documentViewController:didReceiveRequestToGoToPage:ofFile:</a></code>
+		<span class="tooltip"><p>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as last argument
+and then set the page to the page number passed as second parameter.</p></span>
 	</span>
 	
 	
@@ -601,6 +625,84 @@ that report the current zoom to the user.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:" title="documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as third argument
+and then get the page number with MFDocumentManager&rsquo;s -pageNumberForDestinationNamed: and present the right page for display.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveRequestToGoToDestinationNamed:(NSString *)<em>destinationName</em> ofFile:(NSString *)<em>fileName</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as third argument
+and then get the page number with MFDocumentManager&rsquo;s -pageNumberForDestinationNamed: and present the right page for display.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:didReceiveRequestToGoToPage:ofFile:" title="documentViewController:didReceiveRequestToGoToPage:ofFile:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:didReceiveRequestToGoToPage:ofFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as last argument
+and then set the page to the page number passed as second parameter.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveRequestToGoToPage:(NSUInteger)<em>pageNumber</em> ofFile:(NSString *)<em>fileName</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as last argument
+and then set the page to the page number passed as second parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/documentViewController:didReceiveTapAtPoint:" title="documentViewController:didReceiveTapAtPoint:"></a>
 	<h3 class="subsubtitle method-title">documentViewController:didReceiveTapAtPoint:</h3>
 	
@@ -911,7 +1013,7 @@ link is activated and an internet browser should be open to show the link&rsquo;
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-08-05)</span><br />
+						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-08-10)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						
