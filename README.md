@@ -1,6 +1,10 @@
 # FastPdfKit
 
-This repository contains the FastPdfKit library with a sample project. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see [the FastPdfKit website](http://fastpdfkit.com).
+This repository contains the FastPdfKit iOS library with some sample projects. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see the [FastPdfKit website](http://fastpdfkit.com) and the [Support website](http://support.fastpdfkit.com).
+
+### Update: 1.0.15 (Aug 09th, 2011)
+* Added support to link annotation with Remote Go-To actions.
+* Updated manual with latest methods.
 
 ### Update: 1.0.14 (Aug 05th, 2011)
 * Added methods to convert points and rect to and from different coordinate systems. Take a look at the MFDocumentViewController for details.
@@ -161,7 +165,7 @@ didReceiveURIRequest:, but the latter is still called.
 
 * Download and extract the last sample project;
 
-* Open your existing app XCode project, open Project menu and choose Add to Project… ⌥⌘A, then locate FastPdfKit folder inside the downloaded package and click Add ( this folder include the file MFDocumentViewController.h , libFastPDFKit.a and many other file ), be sure to check Copy items into destination group’s folder (if needed);
+* Open your existing app Xcode project, open Project menu and choose Add to Project… ⌥⌘A, then locate FastPdfKit folder inside the downloaded package and click Add ( this folder include the file MFDocumentViewController.h , libFastPDFKit.a and many other file ), be sure to check Copy items into destination group’s folder (if needed);
 
 * Right click on the Framework group and select Add and then Existing Framework…, then choose QuartzCore.framework from the list and press Add;
 

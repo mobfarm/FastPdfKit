@@ -1,5 +1,0 @@
-{
-	CFBundleIdentifier = "com.custom.FastPdfKitSample.docset";
-	CFBundleName = "FastPdfKit Sample";
-	DocSetFeedName = "Custom documentation";
-}
