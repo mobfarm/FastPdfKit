@@ -7,6 +7,10 @@ This repository contains the FastPdfKit iOS library with some sample projects. T
 Activated libraries won't be pushed here if not expressly requested
 Feel free to comment on the [Support Site](http://support.fastpdfkit.com)
 
+### Update 2.0.3 (August 10th, 2011)
+* Fixed a bug in the transformation returned on double page mode for page with an angle not equal to 0.
+* Added guard to iOS 4.x only methods.
+
 ### Update 2.0.2 (August 09th, 2011)
 * Added support to link annotation with Remote Go-To actions.
 * Updated manual with latest methods.
