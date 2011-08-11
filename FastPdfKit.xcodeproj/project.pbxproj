@@ -88,7 +88,7 @@
 		01598E0E13CAEBCF007344EE /* TextDisplayViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */; };
 		01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; };
 		01598E2413CAEC8B007344EE /* FastPDFKit_KioskAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */; };
-		01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */; settings = {ATTRIBUTES = (); }; };
 		01598E2613CAEC8B007344EE /* MFHomeListPdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080813C75B310077CE63 /* MFHomeListPdf.h */; };
 		01598E2713CAEC8B007344EE /* XMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080A13C75B310077CE63 /* XMLParser.h */; };
 		01598E2C13CAEC8B007344EE /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A213C755610077CE63 /* ASIAuthenticationDialog.h */; };
