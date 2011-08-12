@@ -141,6 +141,34 @@ CGRect rectForThumbnail(CGFloat width, CGFloat height, int position) {
 	[self loadAndUnloadWithPage:currentThumbnail];
 }
 
+-(void)updateThumbnailViewWithPage:(int)page {
+    
+    // This method will refresh the thumbnail view without instantiate it first.
+    
+    NSString * fileName = nil;
+    NSString * fullPathToFile = nil;
+    MFSliderDetailVIew * detailView = nil;
+    NSFileManager * fileManager = nil;
+    
+	if (page < 1) return;
+    if (page > [thumbnailNumbers count]) return;
+	
+    detailView = [thumbnailViewControllers objectAtIndex:(page-1)];
+    
+    if([detailView isKindOfClass:[NSNull class]]) {
+        
+        return;
+    }
+    
+    fileManager = [NSFileManager defaultManager];
+    fileName = [[self class]thumbnailNameForPage:page]; //name of the file on disk
+    fullPathToFile = [thumbFolderName stringByAppendingPathComponent:fileName];
+    
+    if((![detailView.thumbnailImagePath isEqualToString:fullPathToFile])&&([fileManager fileExistsAtPath:fullPathToFile])) {
+        detailView.thumbnailImagePath = fullPathToFile;
+    }
+}
+
 - (void)loadAndUnloadWithPage:(int)aPage{
     
 	if (aPage - 10 > 0) {

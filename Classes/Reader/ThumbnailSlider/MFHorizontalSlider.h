@@ -54,7 +54,8 @@
 
 - (id) getObjectForPage:(int)page;
 
-- (void)loadAndUnloadWithPage:(int)_page;
+- (void)loadAndUnloadWithPage:(int)page;
+- (void)updateThumbnailViewWithPage:(int)page;
 
 +(NSString *)thumbnailFolderPathForDocumentId:(NSString *)docId;
 +(NSString *)thumbnailNameForPage:(NSUInteger)page;

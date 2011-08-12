@@ -1686,18 +1686,17 @@
 
 -(void)handleThumbDone {
     
-    [self.thumbsliderHorizontal refreshThumbnailViewWithPage:currentThumbPage-1];
+    [self.thumbsliderHorizontal updateThumbnailViewWithPage:currentThumbPage];
     // Start next thumbnail operation or abort.
     
     if(currentThumbPage < [[self document]numberOfPages]) {
         
         currentThumbPage++;
-        
 		[self performSelectorInBackground:@selector(startThumb) withObject:nil];
+        
 	} else {
 		
         self.thumbFileManager = nil;
-        //self.thumbnailFolderPath = nil;
         
 	}
 }
