@@ -385,7 +385,7 @@
 	UIProgressView * progressView = nil;
     NSString *pathContainPdf = nil;
     NSFileManager *filemanager = nil;
-    NSError **error;
+    NSError *error = nil;
     NSString *pdfPathTempForResume = nil;
     
     //check if the download url is a link to a pdf file or pfk file.
@@ -400,7 +400,7 @@
 	pathContainPdf = [documentsDirectory stringByAppendingString:pathContainPdf];
 	
 	filemanager = [[NSFileManager alloc]init];
-	[filemanager createDirectoryAtPath:pathContainPdf withIntermediateDirectories:YES attributes:nil error:error];
+	[filemanager createDirectoryAtPath:pathContainPdf withIntermediateDirectories:YES attributes:nil error:&error];
     [filemanager release];
 
     if (isPdfLink) {
@@ -420,7 +420,7 @@
 	}
 	
 	url = [NSURL URLWithString:sourceURL];
-    
+    //url = [NSURL URLWithString:@"http://hbsflip.chalco.net/aspx/doc.pdf?path=8Ka9CXdfH8fai6qI2wRdz-8JoPDJfvqz0"];
 	request = [ASIHTTPRequest requestWithURL:url];
 	[request setDelegate:self];
 	
@@ -511,7 +511,7 @@
 	[aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
     
-    [aButton release];
+    //[aButton release];
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
