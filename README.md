@@ -2,6 +2,10 @@
 
 This repository contains the FastPdfKit iOS library with some sample projects. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see the [FastPdfKit website](http://fastpdfkit.com) and the [Support website](http://support.fastpdfkit.com).
 
+### Update: 1.0.16 (Aug 10th, 2011)
+* Added check to avoid a few 4.0 methods getting called on earlier iOS versions.
+* Fixed wrong transformation on double page mode for page with angle different from 0.
+
 ### Update: 1.0.15 (Aug 09th, 2011)
 * Added support to link annotation with Remote Go-To actions.
 * Updated manual with latest methods.
