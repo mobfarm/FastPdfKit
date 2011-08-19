@@ -81,6 +81,9 @@
     NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user.
     NSUInteger currentSearchViewMode;
 
+    
+    // Needed to support links between pdf documents: points to MenuViewController
+    id delegate;
 }
 
 -(void)dismissAllPopovers;
@@ -89,6 +92,8 @@
 -(void)dismissMiniSearchView;
 -(void)revertToFullSearchView;
 -(void)showMiniSearchView;
+
+@property (nonatomic, assign) id delegate;
 
 @property (nonatomic, copy) NSString * documentId;
 

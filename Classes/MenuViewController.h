@@ -29,6 +29,8 @@
 
 -(IBAction)actionOpenPlainDocument:(id)sender;
 -(IBAction)actionOpenEncryptedDocument:(id)sender;
+-(void)setLinkedDocument:(NSString *)documentName withPage:(NSUInteger)destinationPage orDestinationName:(NSString *)destinationName;
+-(void)openDocumentWithParams:(NSArray *)params;
 
 
 @property (nonatomic, retain) IBOutlet UIButton *referenceButton;

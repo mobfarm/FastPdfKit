@@ -18,7 +18,7 @@
 #define TITLE_PLAIN @"Open"
 #define TITLE_ENCRYPTED @"Open"
 
-#define DOC_PLAIN @"FastPdfKit"
+#define DOC_PLAIN @"Arquivo1"
 #define DOC_ENCRYPTED @"FastPdfKitcrypt"
 
 @implementation MenuViewController
@@ -136,6 +136,49 @@
 		[anAlertView release];
 	}
 }
+
+
+/* This method should be called from the DocumentViewController when you get a link to another document */
+
+-(void)setLinkedDocument:(NSString *)documentName withPage:(NSUInteger)destinationPage orDestinationName:(NSString *)destinationName{
+    
+    NSArray *params = [NSArray arrayWithObjects:documentName,destinationName,[NSNumber numberWithInt:destinationPage], nil];
+    [self performSelector:@selector(openDocumentWithParams:) withObject:params afterDelay:0.5];
+}
+
+/* This method opens a linked document after a delay to let you pop the controller */
+
+-(void)openDocumentWithParams:(NSArray *)params{
+    
+    // Depending on the link format you need to manage the destination path accordingly to your own application path
+    // In this example we are assuming that every document is placed in your application bundle at the same level
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:[[[params objectAtIndex:0] lastPathComponent] stringByDeletingPathExtension] ofType:@"pdf"];
+	NSURL *documentUrl = [NSURL fileURLWithPath:filePath];    
+    NSLog(@"Path %@", filePath);
+	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
+    
+	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
+	[aDocViewController setDocumentId:[params objectAtIndex:0]];
+    
+    int page;
+    if([[params objectAtIndex:2] intValue] != -1){
+        page = [[params objectAtIndex:2] intValue];
+    } else {
+        // We need to parse the pdf to get the correct page
+        page = [aDocManager pageNumberForDestinationNamed:[params objectAtIndex:1]];
+    }
+    
+    [aDocViewController setPage:page];
+	[aDocViewController setDocumentDelegate:aDocViewController];
+    [aDocViewController setDelegate:self];
+    
+	[[self navigationController]pushViewController:aDocViewController animated:YES];
+	
+	[aDocViewController release];
+	[aDocManager release];
+    
+}
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 	

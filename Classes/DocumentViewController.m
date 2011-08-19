@@ -15,6 +15,7 @@
 #import "SearchManager.h"
 #import "MiniSearchView.h"
 #import "mfprofile.h"
+#import "MenuViewController.h"
 
 #define TITLE_MODE_SINGLE @"Single"
 #define TITLE_MODE_DOUBLE @"Double"
@@ -38,6 +39,7 @@
 @synthesize thumbnailView;
 @synthesize documentId;
 @synthesize reusablePopover;
+@synthesize delegate;
 
 #pragma mark Thumbnail utility functions
 
@@ -855,6 +857,27 @@
 		}
 	}
 }
+
+- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToDestinationNamed:(NSString *)destinationName ofFile:(NSString *)fileName{
+    
+    // We set the parameters to the MenuViewController that will open the other document as soon as this one is dismissed
+    
+    [(MenuViewController *)delegate setLinkedDocument:fileName withPage:-1 orDestinationName:destinationName];
+    
+    // We need to dismiss the document
+    [self actionDismiss:nil];
+    
+}
+- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToPage:(NSUInteger)pageNumber ofFile:(NSString *)fileName{
+    
+    // We set the parameters to the MenuViewController that will open the other document as soon as this one is dismissed
+    
+    [(MenuViewController *)delegate setLinkedDocument:fileName withPage:pageNumber orDestinationName:@""];    
+    
+    // We need to dismiss the document
+    [self actionDismiss:nil];
+}
+
 
 #pragma mark -
 #pragma mark UIViewController lifcecycle
