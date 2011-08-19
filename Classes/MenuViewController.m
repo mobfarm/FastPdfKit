@@ -18,7 +18,7 @@
 #define TITLE_PLAIN @"Open"
 #define TITLE_ENCRYPTED @"Open"
 
-#define DOC_PLAIN @"Arquivo1"
+#define DOC_PLAIN @"FastPdfKit"
 #define DOC_ENCRYPTED @"FastPdfKitcrypt"
 
 @implementation MenuViewController
@@ -43,7 +43,10 @@
     
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	[aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
-	//
+	
+    // This delegate has been added just to manage the links between pdfs, skip it if you just need standard visualization
+    [aDocViewController setDelegate:self];
+    
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
 	// [self presentModalViewController:aDocViewController animated:YES]; 
@@ -141,7 +144,6 @@
 /* This method should be called from the DocumentViewController when you get a link to another document */
 
 -(void)setLinkedDocument:(NSString *)documentName withPage:(NSUInteger)destinationPage orDestinationName:(NSString *)destinationName{
-    
     NSArray *params = [NSArray arrayWithObjects:documentName,destinationName,[NSNumber numberWithInt:destinationPage], nil];
     [self performSelector:@selector(openDocumentWithParams:) withObject:params afterDelay:0.5];
 }
@@ -154,7 +156,7 @@
     // In this example we are assuming that every document is placed in your application bundle at the same level
     NSString *filePath = [[NSBundle mainBundle]pathForResource:[[[params objectAtIndex:0] lastPathComponent] stringByDeletingPathExtension] ofType:@"pdf"];
 	NSURL *documentUrl = [NSURL fileURLWithPath:filePath];    
-    NSLog(@"Path %@", filePath);
+
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
     
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
