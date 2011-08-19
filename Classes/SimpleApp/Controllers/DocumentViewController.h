@@ -80,7 +80,9 @@
 	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller.
     NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user.
     NSUInteger currentSearchViewMode;
-
+    
+    // Needed to support links between pdf documents: points to MenuViewController
+    id delegate;
 }
 
 -(void)dismissAllPopovers;
@@ -89,6 +91,9 @@
 -(void)dismissMiniSearchView;
 -(void)revertToFullSearchView;
 -(void)showMiniSearchView;
+-(IBAction) actionDismiss:(id)sender;
+
+@property (nonatomic, assign) id delegate;
 
 @property (nonatomic, copy) NSString * documentId;
 
