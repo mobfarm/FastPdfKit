@@ -16,6 +16,7 @@
 #import "SearchResultCellView.h"
 #import "NotificationFactory.h"
 
+/* This parameter set the zoom level that will be performed when you choose the next result, there's another one in the MiniSearchView.m */
 #define ZOOM_LEVEL 4.0
 
 @interface SearchViewController()
