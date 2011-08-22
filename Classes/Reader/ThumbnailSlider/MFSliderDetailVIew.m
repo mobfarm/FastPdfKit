@@ -39,7 +39,7 @@
 
 -(void)layoutPageNumberLabel {
     
-    CGRect bounds = self.bounds;
+    // CGRect bounds = self.bounds;
     
     if(pageNumber) {
         

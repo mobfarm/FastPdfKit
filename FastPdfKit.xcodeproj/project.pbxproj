@@ -293,7 +293,66 @@
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
 		950B37D0125CBEC4007BDDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		951AE312140298690025DA52 /* FastPdfKitFramework-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 951AE311140298690025DA52 /* FastPdfKitFramework-Prefix.pch */; };
+		951AE31614029A6F0025DA52 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		951E4E4113D71E8400C9FC70 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E4E4013D71E8400C9FC70 /* libz.dylib */; };
+		958A81AD14027F3100837C82 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DE327F13FAA1C100FCBD77 /* libFastPDFKit.a */; };
+		958A81AE14027F3900837C82 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
+		958A81AF14027F3900837C82 /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
+		958A81B014027F3F00837C82 /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01794CF713F1B51A00690743 /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B114027F3F00837C82 /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01794CF813F1B51A00690743 /* MFDocumentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B214027F3F00837C82 /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 012C881B13EC4B93009AAEED /* MFDocumentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B314027F3F00837C82 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E49513DDCDD10053C00E /* FPKOverlayViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B414027F3F00837C82 /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E49613DDCDD10053C00E /* MFAudioPlayerViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B514027F3F00837C82 /* MFAudioProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E49713DDCDD10053C00E /* MFAudioProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B614027F3F00837C82 /* MFDocumentOverlayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E49913DDCDD10053C00E /* MFDocumentOverlayDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B714027F3F00837C82 /* MFOverlayDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E49C13DDCDD10053C00E /* MFOverlayDrawable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B814027F3F00837C82 /* MFOverlayTouchable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E49D13DDCDD10053C00E /* MFOverlayTouchable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81B914027F3F00837C82 /* MFPDFOutlineEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E49E13DDCDD10053C00E /* MFPDFOutlineEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81BA14027F3F00837C82 /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E49F13DDCDD10053C00E /* mfprofile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81BB14027F3F00837C82 /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E4A013DDCDD10053C00E /* MFTextItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81BC14027F3F00837C82 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 0197E4A113DDCDD10053C00E /* Stuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81BD14027F5300837C82 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81BE14027F5300837C82 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603613CC917600861EB7 /* ReaderViewController.m */; };
+		958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
+		958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81C314027F5B00837C82 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
+		958A81C414027F5B00837C82 /* SearchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082413C75D3A0077CE63 /* SearchManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81C514027F5B00837C82 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
+		958A81C614027F5B00837C82 /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
+		958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81C914027F5B00837C82 /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082913C75D3A0077CE63 /* SearchResultView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81CA14027F5B00837C82 /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082A13C75D3A0077CE63 /* SearchResultView.m */; };
+		958A81CD14027F5B00837C82 /* SearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082F13C75D3A0077CE63 /* SearchViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
+		958A81CF14027F5B00837C82 /* SearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81D114027F5B00837C82 /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81D214027F5B00837C82 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
+		958A81D314027F5B00837C82 /* TextDisplayViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81D414027F5B00837C82 /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81D514027F5B00837C82 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
+		958A81D614027F7100837C82 /* OutlineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81D714027F7100837C82 /* OutlineViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081D13C75D3A0077CE63 /* OutlineViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81D814027F7100837C82 /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81D914027F7100837C82 /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81DA14027F7100837C82 /* MFSliderDetailVIew.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* MFSliderDetailVIew.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81DB14027F7100837C82 /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81DC14027F7100837C82 /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE813EFE267008EB17B /* MFSliderDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81DD14027F7100837C82 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81DE14027F7100837C82 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81DF14027F7100837C82 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81E014027F9100837C82 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081C13C75D3A0077CE63 /* OutlineViewController.m */; };
+		958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
+		958A81E214027F9100837C82 /* MFSliderDetailVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* MFSliderDetailVIew.m */; };
+		958A81E314027F9100837C82 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
+		958A81E414027F9100837C82 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
+		958A81E514027F9100837C82 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
+		958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
+		958A81E714027F9100837C82 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
+		958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */; };
 		9597F995125D17E400E17B47 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9597F994125D17E400E17B47 /* iTunesArtwork */; };
 		959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
 		959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
@@ -322,6 +381,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6FB9771A13CB6E8A007C368C;
 			remoteInfo = SimpleBundle;
+		};
+		951AE30F140295060025DA52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FB9771A13CB6E8A007C368C;
+			remoteInfo = FPKReaderBundle;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -547,7 +613,11 @@
 		950B37C1125CBEA5007BDDA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		950B37CF125CBEC4007BDDA1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		951AE311140298690025DA52 /* FastPdfKitFramework-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPdfKitFramework-Prefix.pch"; sourceTree = "<group>"; };
+		951AE313140298910025DA52 /* ReaderFramework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReaderFramework-Info.plist"; sourceTree = "<group>"; };
+		951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
 		951E4E4013D71E8400C9FC70 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		958A81A014027EEE00837C82 /* FastPdfKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastPdfKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9597F994125D17E400E17B47 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		9598FDD112337F0F008D7198 /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
 		9598FDD312337F24008D7198 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -630,6 +700,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FB9771C13CB6E8A007C368C /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		958A819B14027EEE00837C82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958A81AD14027F3100837C82 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,6 +1055,7 @@
 				010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */,
 				6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */,
 				6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */,
+				958A81A014027EEE00837C82 /* FastPdfKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -998,11 +1077,13 @@
 			isa = PBXGroup;
 			children = (
 				9505BB1C13CCB941003163D2 /* FastPdfKit.xcconfig */,
+				951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */,
 				0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */,
 				0123602813CC908E00861EB7 /* SimpleBundle-Prefix.pch */,
 				010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */,
 				010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */,
 				959BB88613D97302004CB203 /* FastPDFKitSimple-Prefix.pch */,
+				951AE311140298690025DA52 /* FastPdfKitFramework-Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				890986A913CECF0F00656A49 /* Snippets.strings */,
 			);
@@ -1016,6 +1097,7 @@
 				8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */,
 				0123602913CC90C800861EB7 /* KioskBundle-Info.plist */,
 				0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */,
+				951AE313140298910025DA52 /* ReaderFramework-Info.plist */,
 				95B8BD5E13CCA59800195F0F /* Manual.pdf */,
 				95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */,
 				0123606D13CCA18700861EB7 /* Default@2x.png */,
@@ -1149,6 +1231,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		958A819C14027EEE00837C82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958A81B014027F3F00837C82 /* MFDocumentManager.h in Headers */,
+				958A81B114027F3F00837C82 /* MFDocumentViewControllerDelegate.h in Headers */,
+				958A81B214027F3F00837C82 /* MFDocumentViewController.h in Headers */,
+				958A81B314027F3F00837C82 /* FPKOverlayViewDataSource.h in Headers */,
+				958A81B614027F3F00837C82 /* MFDocumentOverlayDataSource.h in Headers */,
+				958A81B714027F3F00837C82 /* MFOverlayDrawable.h in Headers */,
+				958A81B814027F3F00837C82 /* MFOverlayTouchable.h in Headers */,
+				958A81B414027F3F00837C82 /* MFAudioPlayerViewProtocol.h in Headers */,
+				958A81B514027F3F00837C82 /* MFAudioProvider.h in Headers */,
+				958A81B914027F3F00837C82 /* MFPDFOutlineEntry.h in Headers */,
+				958A81BA14027F3F00837C82 /* mfprofile.h in Headers */,
+				958A81BB14027F3F00837C82 /* MFTextItem.h in Headers */,
+				958A81BC14027F3F00837C82 /* Stuff.h in Headers */,
+				958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */,
+				958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */,
+				958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */,
+				958A81C414027F5B00837C82 /* SearchManager.h in Headers */,
+				958A81C614027F5B00837C82 /* SearchResultCellView.h in Headers */,
+				958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */,
+				958A81C914027F5B00837C82 /* SearchResultView.h in Headers */,
+				958A81CD14027F5B00837C82 /* SearchViewController.h in Headers */,
+				958A81CF14027F5B00837C82 /* SearchViewControllerDelegate.h in Headers */,
+				958A81D114027F5B00837C82 /* TextDisplayViewController.h in Headers */,
+				958A81D314027F5B00837C82 /* TextDisplayViewControllerDelegate.h in Headers */,
+				958A81D414027F5B00837C82 /* TextSearchOperation.h in Headers */,
+				958A81D614027F7100837C82 /* OutlineViewController.h in Headers */,
+				958A81D714027F7100837C82 /* OutlineViewControllerDelegate.h in Headers */,
+				958A81D814027F7100837C82 /* BookmarkViewController.h in Headers */,
+				958A81D914027F7100837C82 /* BookmarkViewControllerDelegate.h in Headers */,
+				958A81DA14027F7100837C82 /* MFSliderDetailVIew.h in Headers */,
+				958A81DB14027F7100837C82 /* MFHorizontalSlider.h in Headers */,
+				958A81DC14027F7100837C82 /* MFSliderDetail.h in Headers */,
+				958A81DD14027F7100837C82 /* AudioViewController.h in Headers */,
+				958A81DE14027F7100837C82 /* MFAudioPlayerViewImpl.h in Headers */,
+				958A81DF14027F7100837C82 /* WebBrowser.h in Headers */,
+				958A81BD14027F5300837C82 /* ReaderViewController.h in Headers */,
+				951AE312140298690025DA52 /* FastPdfKitFramework-Prefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -1259,6 +1385,27 @@
 			productReference = 6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		958A819F14027EEE00837C82 /* FastPdfKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 958A81AB14027EEE00837C82 /* Build configuration list for PBXNativeTarget "FastPdfKit" */;
+			buildPhases = (
+				958A819914027EEE00837C82 /* ShellScript */,
+				958A819A14027EEE00837C82 /* Sources */,
+				958A819B14027EEE00837C82 /* Frameworks */,
+				958A819C14027EEE00837C82 /* Headers */,
+				958A819D14027EEE00837C82 /* Resources */,
+				958A819E14027EEE00837C82 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				951AE310140295060025DA52 /* PBXTargetDependency */,
+			);
+			name = FastPdfKit;
+			productName = FastPdfKit;
+			productReference = 958A81A014027EEE00837C82 /* FastPdfKit.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1288,6 +1435,7 @@
 				01598DD913CAE917007344EE /* FPKKioskLib */,
 				6FB9770813CB6E76007C368C /* FPKKioskBundle */,
 				6FB9771A13CB6E8A007C368C /* FPKReaderBundle */,
+				958A819F14027EEE00837C82 /* FastPdfKit */,
 			);
 		};
 /* End PBXProject section */
@@ -1432,6 +1580,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		958A819D14027EEE00837C82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958A81AE14027F3900837C82 /* Identity-H.cidf in Resources */,
+				958A81AF14027F3900837C82 /* Identity-V.cidf in Resources */,
+				958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */,
+				951AE31614029A6F0025DA52 /* FastPdfKitFramework.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1465,6 +1624,32 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle";
+		};
+		958A819914027EEE00837C82 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
+		};
+		958A819E14027EEE00837C82 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sf A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sf A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sf Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sf Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sf Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sf Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sf \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sf \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sf \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" \"$(PROJECT_DIR)\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1593,6 +1778,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		958A819A14027EEE00837C82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958A81BE14027F5300837C82 /* ReaderViewController.m in Sources */,
+				958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */,
+				958A81C314027F5B00837C82 /* NotificationFactory.m in Sources */,
+				958A81C514027F5B00837C82 /* SearchManager.m in Sources */,
+				958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */,
+				958A81CA14027F5B00837C82 /* SearchResultView.m in Sources */,
+				958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */,
+				958A81D214027F5B00837C82 /* TextDisplayViewController.m in Sources */,
+				958A81D514027F5B00837C82 /* TextSearchOperation.m in Sources */,
+				958A81E014027F9100837C82 /* OutlineViewController.m in Sources */,
+				958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */,
+				958A81E214027F9100837C82 /* MFSliderDetailVIew.m in Sources */,
+				958A81E314027F9100837C82 /* MFHorizontalSlider.m in Sources */,
+				958A81E414027F9100837C82 /* MFSliderDetail.m in Sources */,
+				958A81E514027F9100837C82 /* AudioViewController.m in Sources */,
+				958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */,
+				958A81E714027F9100837C82 /* WebBrowser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1610,6 +1819,11 @@
 			isa = PBXTargetDependency;
 			target = 6FB9771A13CB6E8A007C368C /* FPKReaderBundle */;
 			targetProxy = 6FB9778F13CC3D45007C368C /* PBXContainerItemProxy */;
+		};
+		951AE310140295060025DA52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FB9771A13CB6E8A007C368C /* FPKReaderBundle */;
+			targetProxy = 951AE30F140295060025DA52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1770,8 +1984,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Classes/Third parties/\"",
-					"\"$(SRCROOT)/FastPdfKit Library\"",
 					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/Classes/ThirdParties\"",
 				);
@@ -1799,8 +2011,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Classes/Third parties/\"",
-					"\"$(SRCROOT)/FastPdfKit Library\"",
 					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/Classes/ThirdParties\"",
 				);
@@ -1827,8 +2037,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Classes/Third parties/\"",
-					"\"$(SRCROOT)/FastPdfKit Library\"",
 					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/Classes/ThirdParties\"",
 				);
@@ -2038,6 +2246,102 @@
 			};
 			name = "Ad Hoc";
 		};
+		958A81A814027EEE00837C82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				DEAD_CODE_STRIPPING = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OtherSources/FastPdfKitFramework-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "Resources/ReaderFramework-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FPKCore\"",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		958A81A914027EEE00837C82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				DEAD_CODE_STRIPPING = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OtherSources/FastPdfKitFramework-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "Resources/ReaderFramework-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FPKCore\"",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		958A81AA14027EEE00837C82 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
+				DEAD_CODE_STRIPPING = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OtherSources/FastPdfKitFramework-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "Resources/ReaderFramework-Info.plist";
+				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FPKCore\"",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = "Ad Hoc";
+		};
 		9597F95D125D129600E17B47 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2046,13 +2350,14 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "";
 			};
 			name = "Ad Hoc";
 		};
@@ -2093,12 +2398,13 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -2110,13 +2416,14 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};
@@ -2179,6 +2486,16 @@
 				6FB9772513CB6E8A007C368C /* Debug */,
 				6FB9772613CB6E8A007C368C /* Release */,
 				6FB9772713CB6E8A007C368C /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		958A81AB14027EEE00837C82 /* Build configuration list for PBXNativeTarget "FastPdfKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				958A81A814027EEE00837C82 /* Debug */,
+				958A81A914027EEE00837C82 /* Release */,
+				958A81AA14027EEE00837C82 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
