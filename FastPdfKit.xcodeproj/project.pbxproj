@@ -296,6 +296,8 @@
 		951AE312140298690025DA52 /* FastPdfKitFramework-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 951AE311140298690025DA52 /* FastPdfKitFramework-Prefix.pch */; };
 		951AE31614029A6F0025DA52 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		951E4E4113D71E8400C9FC70 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E4E4013D71E8400C9FC70 /* libz.dylib */; };
+		956A056F14039F38003AE44D /* Drawable.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056C14039F38003AE44D /* Drawable.m */; };
+		956A057014039F38003AE44D /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056E14039F38003AE44D /* OverlayManager.m */; };
 		958A81AD14027F3100837C82 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DE327F13FAA1C100FCBD77 /* libFastPDFKit.a */; };
 		958A81AE14027F3900837C82 /* Identity-H.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3031309C3D9008BB483 /* Identity-H.cidf */; };
 		958A81AF14027F3900837C82 /* Identity-V.cidf in Resources */ = {isa = PBXBuildFile; fileRef = 01E3A3041309C3D9008BB483 /* Identity-V.cidf */; };
@@ -617,6 +619,10 @@
 		951AE313140298910025DA52 /* ReaderFramework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReaderFramework-Info.plist"; sourceTree = "<group>"; };
 		951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
 		951E4E4013D71E8400C9FC70 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		956A056B14039F38003AE44D /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawable.h; sourceTree = "<group>"; };
+		956A056C14039F38003AE44D /* Drawable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawable.m; sourceTree = "<group>"; };
+		956A056D14039F38003AE44D /* OverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayManager.h; sourceTree = "<group>"; };
+		956A056E14039F38003AE44D /* OverlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayManager.m; sourceTree = "<group>"; };
 		958A81A014027EEE00837C82 /* FastPdfKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastPdfKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9597F994125D17E400E17B47 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		9598FDD112337F0F008D7198 /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
@@ -765,6 +771,10 @@
 				010D14D413CB002300FD6F08 /* BasicLauncherController.m */,
 				010D14D513CB002300FD6F08 /* DocumentViewController.h */,
 				010D14D613CB002300FD6F08 /* DocumentViewController.m */,
+				956A056B14039F38003AE44D /* Drawable.h */,
+				956A056C14039F38003AE44D /* Drawable.m */,
+				956A056D14039F38003AE44D /* OverlayManager.h */,
+				956A056E14039F38003AE44D /* OverlayManager.m */,
 			);
 			name = Controllers;
 			path = Classes/SimpleApp/Controllers;
@@ -1761,6 +1771,8 @@
 				01AB4AF313EFE2B8008EB17B /* MFSliderDetailVIew.m in Sources */,
 				01AB4AF413EFE2B8008EB17B /* MFHorizontalSlider.m in Sources */,
 				01AB4AF513EFE2B8008EB17B /* MFSliderDetail.m in Sources */,
+				956A056F14039F38003AE44D /* Drawable.m in Sources */,
+				956A057014039F38003AE44D /* OverlayManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
