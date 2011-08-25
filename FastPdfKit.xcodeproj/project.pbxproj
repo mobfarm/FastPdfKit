@@ -289,6 +289,7 @@
 		9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
 		9505BB1913CCB187003163D2 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
 		9505BB1B13CCB1A6003163D2 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
+		95075CD414062F7700B8C979 /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -1476,6 +1477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95075CD414062F7700B8C979 /* FPKReaderBundle.bundle in Resources */,
 				9597F995125D17E400E17B47 /* iTunesArtwork in Resources */,
 				01E3A3051309C3D9008BB483 /* Identity-H.cidf in Resources */,
 				01E3A3061309C3D9008BB483 /* Identity-V.cidf in Resources */,
