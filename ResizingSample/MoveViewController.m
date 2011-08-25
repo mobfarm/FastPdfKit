@@ -177,7 +177,7 @@ static NSString * const AlertViewText = @"This is might happen if view controlle
         MFDocumentViewController * docController;
         MFDocumentManager * docManager;
         
-        docManager = [[MFDocumentManager alloc]initWithFileUrl:[[NSBundle mainBundle]URLForResource:@"FastPdfKit-1.0RC1" withExtension:@"pdf"]];
+        docManager = [[MFDocumentManager alloc]initWithFileUrl:[[NSBundle mainBundle]URLForResource:@"FastPdfKit" withExtension:@"pdf"]];
         docController = [[MFDocumentViewController alloc]initWithDocumentManager:docManager];
         [docController setAutomodeOnRotation:YES];
         
