@@ -22,9 +22,6 @@
 		015EF60D12CA29EE0098E4B6 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60812CA29EE0098E4B6 /* SearchViewController.m */; };
 		015EF60E12CA29EE0098E4B6 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF60A12CA29EE0098E4B6 /* TextSearchOperation.m */; };
 		015EF6C812CA474B0098E4B6 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */; };
-		01604C35140D495A006A870E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01604C34140D495A006A870E /* libFastPDFKit.a */; };
-		01604C36140D495A006A870E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01604C34140D495A006A870E /* libFastPDFKit.a */; };
-		01604C37140D495A006A870E /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01604C34140D495A006A870E /* libFastPDFKit.a */; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		0188490B131E89D90045038F /* DocumentViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0188490A131E89D90045038F /* DocumentViewController_Kiosk.m */; };
 		0188490E131E89EB0045038F /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0188490D131E89EB0045038F /* FastPDFKit_KioskAppDelegate.m */; };
@@ -163,6 +160,9 @@
 		01884AB2131E95720045038F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB0F92125CB46A002D4337 /* MenuViewController.m */; };
 		01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC2131E96C50045038F /* SystemConfiguration.framework */; };
 		01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC6131E96CE0045038F /* MobileCoreServices.framework */; };
+		018DF10A1411363700D713CD /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018DF1091411363700D713CD /* libFastPDFKit.a */; };
+		018DF10B1411363700D713CD /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018DF1091411363700D713CD /* libFastPDFKit.a */; };
+		018DF10C1411363700D713CD /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018DF1091411363700D713CD /* libFastPDFKit.a */; };
 		01B0C7B213596C2400CB3D29 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B0C7B113596C2400CB3D29 /* AVFoundation.framework */; };
 		01B0C7B413596C2A00CB3D29 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B0C7B313596C2A00CB3D29 /* AVFoundation.framework */; };
 		01B822C713D07D2C006BE6EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
@@ -280,7 +280,6 @@
 		015EF60A12CA29EE0098E4B6 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
 		015EF6C512CA474B0098E4B6 /* TextDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewController.h; sourceTree = "<group>"; };
 		015EF6C612CA474B0098E4B6 /* TextDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDisplayViewController.m; sourceTree = "<group>"; };
-		01604C34140D495A006A870E /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		01794CEA13F1B44100690743 /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		01794CEB13F1B44100690743 /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -375,6 +374,7 @@
 		01884AA2131E950A0045038F /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		018DF1091411363700D713CD /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0197E47D13DDCD470053C00E /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
 		0197E47E13DDCD470053C00E /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
 		0197E47F13DDCD470053C00E /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 				01884A6C131E93C70045038F /* CoreGraphics.framework in Frameworks */,
 				01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */,
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
-				01604C36140D495A006A870E /* libFastPDFKit.a in Frameworks */,
+				018DF10B1411363700D713CD /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +500,7 @@
 				01B822C713D07D2C006BE6EE /* UIKit.framework in Frameworks */,
 				01B822C813D07D2C006BE6EE /* Foundation.framework in Frameworks */,
 				01B822C913D07D2C006BE6EE /* CoreGraphics.framework in Frameworks */,
-				01604C37140D495A006A870E /* libFastPDFKit.a in Frameworks */,
+				018DF10C1411363700D713CD /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +517,7 @@
 				950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */,
 				950B37D0125CBEC4007BDDA1 /* UIKit.framework in Frameworks */,
 				0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */,
-				01604C35140D495A006A870E /* libFastPDFKit.a in Frameworks */,
+				018DF10A1411363700D713CD /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +730,7 @@
 		01CC21CB12B907AF00E77E6E /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				01604C34140D495A006A870E /* libFastPDFKit.a */,
+				018DF1091411363700D713CD /* libFastPDFKit.a */,
 				01448A0D134C70A700FD83D8 /* headers */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 			);
@@ -1264,6 +1264,7 @@
 					"\"$(SRCROOT)/FastPdfKit\"",
 					"\"$(SRCROOT)/FastPdfKit/headers\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
@@ -1289,6 +1290,7 @@
 					"\"$(SRCROOT)/FastPdfKit\"",
 					"\"$(SRCROOT)/FastPdfKit/headers\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
@@ -1312,6 +1314,7 @@
 					"\"$(SRCROOT)/FastPdfKit\"",
 					"\"$(SRCROOT)/FastPdfKit/headers\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				OTHER_LDFLAGS = "-objC";
 				PREBINDING = NO;
@@ -1340,6 +1343,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1363,6 +1367,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1387,6 +1392,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1414,6 +1420,7 @@
 					"\"$(SRCROOT)/FastPdfKit\"",
 					"\"$(SRCROOT)/FastPdfKit/headers\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1441,6 +1448,7 @@
 					"\"$(SRCROOT)/FastPdfKit\"",
 					"\"$(SRCROOT)/FastPdfKit/headers\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1488,6 +1496,7 @@
 					"\"$(SRCROOT)/FastPdfKit\"",
 					"\"$(SRCROOT)/FastPdfKit/headers\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/FastPdfKitLibrary-hhvdvinirtnkmgbunygcnjbnwbwe/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

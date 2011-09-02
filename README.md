@@ -2,6 +2,9 @@
 
 This repository contains the FastPdfKit iOS library with some sample projects. This library allows you to add some of the features of the [FastPdf application](http://fastpdf.eu) to your own app, allowing it to support pdf documents. For more information, see the [FastPdfKit website](http://fastpdfkit.com) and the [Support website](http://support.fastpdfkit.com).
 
+### Update: 1.0.18 (Sep 2nd, 2011)
+* Hardcoded the CID font files inside the library. No need to keep them in the bundle. They will be physically removed from the repo at later date.
+
 ### Update: 1.0.17 (Aug 30th, 2011)
 * Small fix to space handling in both text search and extraction.
 
