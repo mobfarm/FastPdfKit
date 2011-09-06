@@ -1,0 +1,2745 @@
+data 'icns' (-16455) {
+	$"6963 6E73 0000 AB54 544F 4320 0000 0018"            /* icns..«TTOC .... */
+	$"6974 3332 0000 6B2C 7438 6D6B 0000 4008"            /* it32..k,t8mk..@. */
+	$"6974 3332 0000 6B2C 0000 0000 FF00 FF00"            /* it32..k,....ÿ.ÿ. */
+	$"FF00 FF00 BC00 0202 0B0C F700 0902 1031"            /* ÿ.ÿ.¼.....÷.Æ..1 */
+	$"5365 6560 6C1B 03F0 000D 0210 1E2D 3336"            /* See`l..ð.....-36 */
+	$"3939 4550 4224 1E0C 8A00 001F DF00 100D"            /* 99EPB$..Š...ß... */
+	$"1B2A 3336 3839 3935 2D2B 2423 2322 1F04"            /* .*368995-+$##".. */
+	$"8600 070F 5AC8 E4C8 934B 0FD8 000A 0D1B"            /* †...ZÈäÈ“K.Ø.Â.. */
+	$"2A32 3638 3939 3830 2784 2301 210E 8400"            /* *2689980'„#.!.„. */
+	$"0C1F 85D3 ECF8 FFFB F3EA E2AD 772D D200"            /* ..…Óìøÿûóêâ­w-Ò. */
+	$"0508 1829 3236 3880 3901 322A 8723 0121"            /* ...)268€9.2*‡#.! */
+	$"1082 0004 3DA0 E4F1 FD84 FF06 F7EF E6D3"            /* .‚..= äñý„ÿ.÷ïæÓ */
+	$"A05A 1FCB 0005 0818 2730 3438 8039 0235"            /*  Z.Ë....'048€9.5 */
+	$"2B24 8923 0121 1080 0003 5AC8 E8F5 8AFF"            /* +$‰#.!.€..ZÈèõŠÿ */
+	$"06FD F5EC E4BA 854B C500 0505 1326 3034"            /* .ýõìäº…KÅ....&04 */
+	$"3780 3902 3730 258C 2306 2110 1F77 D3EC"            /* 7€9.70%Œ#.!..wÓì */
+	$"F890 FF06 F9F1 EAE0 A069 2DBE 0005 0212"            /* øÿ.ùñêà i-¾.... */
+	$"3032 3337 8039 0238 312A 9023 0365 E4EF"            /* 0237€9.81*#.eäï */
+	$"FC96 FF06 F5EE E6C8 934B 0FB9 0004 0929"            /* ü–ÿ.õîæÈ“K.¹..Æ) */
+	$"543F 3880 3902 342B 248D 230C 2221 2223"            /* T?8€9.4+$#."!"# */
+	$"238D FBF8 F7F8 FAFD FE95 FF03 FBF0 D895"            /* #ûø÷øúýþ•ÿ.ûðØ• */
+	$"B800 080B 385E 4836 3843 4926 8C23 8021"            /* ¸...8^H68CI&Œ#€! */
+	$"0E20 1F1F 2223 235C B7EA E8EA F0F7 FCFE"            /* . .."##\·êèêð÷üþ */
+	$"93FF 05FC ECDB D9C9 65B6 0007 0131 555D"            /* “ÿ.üìÛÙÉe¶...1U] */
+	$"4E52 8D6D 8C23 0421 2114 351D 801F 0B22"            /* NRmŒ#.!!.5.€.." */
+	$"2323 7171 5072 C2DF ECF7 FC91 FF02 FCEC"            /* ##qqPrÂßì÷ü‘ÿ.üì */
+	$"DC80 D902 D7C3 26B5 0006 1843 4D59 7C8B"            /* Ü€Ù.×Ã&µ...CMY|‹ */
+	$"358A 2316 2221 1B10 4FAD EE2B 1E1F 1F22"            /* 5Š#."!..O­î+..." */
+	$"2323 A6DE E52C 2DC3 DFF0 FA90 FF03 ECDC"            /* ##¦Þå,-Ãßðúÿ.ìÜ */
+	$"DADA 81D9 02CE AA0C B400 0526 3E5E 7B7C"            /* ÚÚÙ.Îª.´..&>^{| */
+	$"2B89 2318 2120 171B 69C8 EEF7 FE56 1E1F"            /* +‰#.! ..iÈî÷þV.. */
+	$"1F22 232B CBCB 9F48 23A4 D7EB F88E FF01"            /* ."#+ËËŸH#¤×ëøŽÿ. */
+	$"F1DF 81DA 81D9 02D8 CA88 B300 0503 1C26"            /* ñßÚÙ.ØÊˆ³....& */
+	$"3255 4388 231A 2120 1424 93D3 EEFA FFFE"            /* 2UCˆ#.! .$“Óîúÿþ */
+	$"FC70 1E1F 1F22 2323 3E7F 7D53 2BC1 D9ED"            /* üp..."##>.}S+ÁÙí */
+	$"F98C FF03 F1DF DBDB 81DA 81D9 03D8 D8C9"            /* ùŒÿ.ñßÛÛÚÙ.ØØÉ */
+	$"59B2 0005 071C 2020 2F27 8523 1222 211B"            /* Y²....  /'…#."!. */
+	$"103E A0EA F3FD FFFE FDFB F6C0 261E 1F22"            /* .> êóýÿþýûöÀ&.." */
+	$"8023 076A 8B62 84D0 E2F2 FB8A FF01 F1E0"            /* €#.j‹b„ÐâòûŠÿ.ñà */
+	$"81DB 81DA 81D9 04D8 D8D4 C326 B100 0505"            /* ÛÚÙ.ØØÔÃ&±... */
+	$"1C1F 1F26 2283 2307 2120 171B 5AC8 EAF5"            /* ...&"ƒ#.! ..ZÈêõ */
+	$"80FF 09FE FDF9 F3EA D985 2C1F 2180 2307"            /* €ÿÆþýùóêÙ…,.!€#. */
+	$"4F6F 99D1 E0EF F8FD 88FF 03F1 E0DC DC81"            /* Oo™Ñàïøýˆÿ.ñàÜÜ */
+	$"DB81 DA81 D980 D802 CE9D 0CB1 0003 1B1F"            /* ÛÚÙ€Ø.Î.±.... */
+	$"1F21 8223 0721 1F14 2485 D3EC F880 FF16"            /* .!‚#.!..$…Óìø€ÿ. */
+	$"FEFD FBF7 F0E6 DACF BD91 5833 2423 3D7B"            /* þýû÷ðæÚÏ½‘X3$#={ */
+	$"C0D8 E4F0 F8FC FE86 FF01 F2E1 81DC 81DB"            /* ÀØäðøüþ†ÿ.òáÜÛ */
+	$"81DA 81D9 81D8 01C9 7BB1 0003 181E 1F1F"            /* ÚÙØ.É{±...... */
+	$"8123 0621 103E 93EA F1FD 80FF 17FE FEFD"            /* #.!.>“êñý€ÿ.þþý */
+	$"F9F4 ECE2 D8D1 CDCC C9BF AC9B A2BE D6E2"            /* ùôìâØÑÍÌÉ¿¬›¢¾Öâ */
+	$"EBF4 F9FD FE85 FF03 F2E1 DDDD 81DC 81DB"            /* ëôùýþ…ÿ.òáÝÝÜÛ */
+	$"81DA 81D9 81D8 02D7 C74C B000 0315 1D1F"            /* ÚÙØ.×ÇL°..... */
+	$"1F81 2303 34BA EAF3 82FF 0CFE FDFB F6F0"            /* .#.4ºêó‚ÿ.þýûöð */
+	$"E7DE D7D5 D6DA DEE0 80E2 07E5 E9EE F3F8"            /* çÞ×ÕÖÚÞà€â.åéîóø */
+	$"FCFD FE84 FF01 F2E2 81DD 81DC 81DB 81DA"            /* üýþ„ÿ.òâÝÜÛÚ */
+	$"81D9 81D8 03D7 D1B2 26AF 0003 101C 1F1F"            /* ÙØ.×Ñ²&¯...... */
+	$"8223 00F9 82FF 17FE FDFB F7F1 EAE2 DBD8"            /* ‚#.ù‚ÿ.þýû÷ñêâÛØ */
+	$"D9DF E6EC F1F3 F4F4 F5F6 F8FA FCFD FE84"            /* Ùßæìñóôôõöøúüýþ„ */
+	$"FF03 F2E2 DEDE 81DD 81DC 81DB 81DA 81D9"            /* ÿ.òâÞÞÝÜÛÚÙ */
+	$"81D8 04D7 D7CD 9D0C AE00 030E 1C1E 1F82"            /* Ø.××Í.®......‚ */
+	$"2380 FF12 FEFE FDFB F8F2 EBE4 DDD9 DADE"            /* #€ÿ.þþýûøòëäÝÙÚÞ */
+	$"E6EE F4F9 FBFC FC80 FD80 FE84 FF01 F3E3"            /* æîôùûüü€ý€þ„ÿ.óã */
+	$"81DE 81DD 81DC 81DB 81DA 81D9 81D8 80D7"            /* ÞÝÜÛÚÙØ€× */
+	$"01C9 6FAE 0004 071B 1E1F 2281 2311 E3FE"            /* .Éo®......"#.ãþ */
+	$"FEFC FAF7 F1EB E3DC D8D8 DCE4 ECF4 F9FC"            /* þüú÷ñëãÜØØÜäìôùü */
+	$"80FE 89FF 03F3 E3DF DF81 DE81 DD81 DC81"            /* €þ‰ÿ.óãßßÞÝÜ */
+	$"DB81 DA81 D981 D880 D702 D6C4 3FAB 0006"            /* ÛÚÙØ€×.ÖÄ?«.. */
+	$"0F77 A21E 1E1F 2281 2311 C6FB F9F5 EFE8"            /* .w¢..."#.Æûùõïè */
+	$"E1DA D5D5 D9E0 E9F1 F8FB FDFE 8AFF 01F7"            /* áÚÕÕÙàéñøûýþŠÿ.÷ */
+	$"E381 DF81 DE81 DD81 DC81 DB81 DA81 D981"            /* ãßÞÝÜÛÚÙ */
+	$"D881 D702 CFAD 16A8 0008 1F93 D3EF FB1F"            /* Ø×.Ï­.¨...“Óïû. */
+	$"1E1F 2181 230F C1F2 ECE5 DDD6 D1D0 D4DB"            /* ..!#.ÁòìåÝÖÑÐÔÛ */
+	$"E5EE F6FA FDFE 8AFF 03F7 E7E0 E081 DF81"            /* åîöúýþŠÿ.÷çààß */
+	$"DE81 DD81 DC81 DB81 DA81 D981 D881 D702"            /* ÞÝÜÛÚÙØ×. */
+	$"B988 12A6 000A 4BAD E4F1 F3BD 8C3D 1E1F"            /* ¹ˆ.¦.ÂK­äñó½Œ=.. */
+	$"2181 230E B5E0 D8D1 CBCA CDD5 DFEA F3F9"            /* !#.µàØÑËÊÍÕßêóù */
+	$"FCFE FE89 FF01 F7E8 81E0 81DF 81DE 81DD"            /* üþþ‰ÿ.÷èàßÞÝ */
+	$"81DC 81DB 81DA 81D9 81D8 05D7 D7C6 A194"            /* ÜÛÚÙØ.××Æ¡” */
+	$"82A4 000D 0F5A C8EA F7FF D97C 7489 9C99"            /* ‚¤...ZÈê÷ÿÙ|t‰œ™ */
+	$"4121 8123 0CA5 CBC5 C3C6 CDD8 E4EF F6FB"            /* A!#.¥ËÅÃÆÍØäïöû */
+	$"FDFE 89FF 03F7 E8E1 E181 E081 DF81 DE81"            /* ýþ‰ÿ.÷èááàßÞ */
+	$"DD81 DC81 DB81 DA81 D981 D805 D3AE 9595"            /* ÝÜÛÚÙØ.Ó®•• */
+	$"916B A200 0F1F 85D3 ECF8 FFCA 6A5C 7991"            /* ‘k¢...…ÓìøÿÊj\y‘ */
+	$"A9B4 AFA3 4C81 230A ABBD BEC4 CFDC E9F3"            /* ©´¯£L#Â«½¾ÄÏÜéó */
+	$"F9FC FE89 FF01 F7E9 81E1 81E0 81DF 81DE"            /* ùüþ‰ÿ.÷éáàßÞ */
+	$"81DD 81DC 81DB 81DA 81D9 80D8 01BF 9A80"            /* ÝÜÛÚÙ€Ø.¿š€ */
+	$"9501 9065 A000 1F3D A0E4 F1FD FFFE 7D32"            /* •.e ..= äñýÿþ}2 */
+	$"3738 3E6F ADAC B2E1 9B2C 2323 3EB9 BCC5"            /* 78>o­¬²á›,##>¹¼Å */
+	$"D1E0 EDF6 FBFD FE88 FF03 F7E9 E2E2 81E1"            /* Ñàíöûýþˆÿ.÷éââá */
+	$"81E0 81DF 81DE 81DD 81DC 81DB 81DA 81D9"            /* àßÞÝÜÛÚÙ */
+	$"04D8 CCA7 9696 8095 018C 4D9E 0003 5AC8"            /* .ØÌ§––€•.ŒMž..ZÈ */
+	$"E8F5 80FF 18FE AA2C 4C49 3B39 395D A6E2"            /* èõ€ÿ.þª,LI;99]¦â */
+	$"D386 4F23 2389 BDC7 D4E3 F0F8 FCFE 88FF"            /* Ó†O##‰½ÇÔãðøüþˆÿ */
+	$"01F8 EA81 E281 E181 E081 DF81 DE81 DD81"            /* .øêâáàßÞÝ */
+	$"DC81 DB81 DA80 D902 D5B4 9780 9604 9595"            /* ÜÛÚ€Ù.Õ´—€–.•• */
+	$"937A 239B 0004 1F77 D3EC F881 FF18 FEFC"            /* “z#›...wÓìøÿ.þü */
+	$"6424 3458 6255 2E23 649D 8B8D 5823 50BF"            /* d$4XbU.#d‹X#P¿ */
+	$"CAD8 E6F2 F9FD FE87 FF03 F8EA E3E3 81E2"            /* ÊØæòùýþ‡ÿ.øêããâ */
+	$"81E1 81E0 81DF 81DE 81DD 81DC 81DB 81DA"            /* áàßÞÝÜÛÚ */
+	$"0CD9 D9C2 9C92 818E 9696 9595 6F29 9A00"            /* .ÙÙÂœ’Ž––••o)š. */
+	$"043D 93E4 EFFC 83FF 17FE F96D 2124 3747"            /* .=“äïüƒÿ.þùm!$7G */
+	$"3324 2327 7B92 9351 40B4 CEDC E9F4 FAFD"            /* 3$#'{’“Q@´ÎÜéôúý */
+	$"FE86 FF01 F8EA 81E3 81E2 81E1 81E0 81DF"            /* þ†ÿ.øêãâáàß */
+	$"81DE 81DD 81DC 81DB 81DA 0CCE AA98 7C79"            /* ÞÝÜÛÚ.Îª˜|y */
+	$"9765 9095 8D5F 4922 9800 035A ADE8 F386"            /* —e•_I"˜..Z­èó† */
+	$"FF07 FDF4 BF29 1F23 2C25 8023 0B6C 8A6B"            /* ÿ.ýô¿).#,%€#.lŠk */
+	$"55B1 D3E1 EDF6 FBFE FE85 FF03 F8EA E4E4"            /* U±Óáíöûþþ…ÿ.øêää */
+	$"81E3 81E2 81E1 81E0 81DF 81DE 81DD 81DC"            /* ãâáàßÞÝÜ */
+	$"81DB 10DA DAD6 B798 8372 9491 696A 8270"            /* Û.ÚÚÖ·˜ƒr”‘ij‚p */
+	$"4D51 4B14 9500 040F 77C8 ECF7 88FF 05FC"            /* MQK.•...wÈì÷ˆÿ.ü */
+	$"F1DD 9C25 2082 2309 495B 70B7 D9E7 F2F8"            /* ñÝœ% ‚#ÆI[p·Ùçòø */
+	$"FCFE 85FF 01F8 EB81 E481 E381 E281 E181"            /* üþ…ÿ.øëäãâá */
+	$"E081 DF81 DE81 DD81 DC81 DB10 DAC8 A397"            /* àßÞÝÜÛ.ÚÈ£— */
+	$"6C7E 997A 83A6 674E 4C53 544B 0E93 0004"            /* l~™zƒ¦gNLSTK.“.. */
+	$"2D93 E2EF FB8A FF05 FCF1 DEC5 842A 8123"            /* -“âïûŠÿ.üñÞÅ„*# */
+	$"0933 609B CBE1 EDF5 FAFD FE84 FF03 FBED"            /* Æ3`›Ëáíõúýþ„ÿ.ûí */
+	$"E5E5 81E4 81E3 81E2 81E1 81E0 81DF 81DE"            /* ååäãâáàßÞ */
+	$"81DD 81DC 80DB 10D4 AD99 9787 628A 73A3"            /* ÝÜ€Û.Ô­™—‡bŠs£ */
+	$"A480 744E 5354 5449 9200 034B ADE6 F38D"            /* ¤€tNSTTI’..K­æó */
+	$"FF12 FDF4 E4D1 BE9D 5D40 517B A5C7 DDEA"            /* ÿ.ýôäÑ¾]@Q{¥ÇÝê */
+	$"F2F9 FCFE FE83 FF01 FBEF 81E5 81E4 81E3"            /* òùüþþƒÿ.ûïåäã */
+	$"81E2 81E1 81E0 81DF 81DE 81DD 81DC 13DB"            /* âáàßÞÝÜ.Û */
+	$"D8BF 9C99 9896 805B 6A84 8E78 7873 5052"            /* Ø¿œ™˜–€[j„ŽxxsPR */
+	$"5453 448F 0004 0F69 C8EA F78F FF10 FEF9"            /* TSD...iÈê÷ÿ.þù */
+	$"EEDF D1C9 C5C4 C9D4 DFE9 F1F7 FBFD FE83"            /* îßÑÉÅÄÉÔßéñ÷ûýþƒ */
+	$"FF03 FBEF E6E6 81E5 81E4 81E3 81E2 81E1"            /* ÿ.ûïææåäãâá */
+	$"81E0 81DF 81DE 81DD 81DC 13CB A69A 9A99"            /* àßÞÝÜ.Ë¦šš™ */
+	$"9894 7D4D 5D5B 7376 7873 4F52 5452 388D"            /* ˜”}M][svxsORTR8 */
+	$"0004 1F93 D3EE FA91 FF0E FEFC F7EE E5E0"            /* ...“Óîú‘ÿ.þü÷îåà */
+	$"DEE1 E6EC F2F7 FBFD FE83 FF01 FCF0 81E6"            /* Þáæìò÷ûýþƒÿ.üðæ */
+	$"81E5 81E4 81E3 81E2 81E1 81E0 81DF 81DE"            /* åäãâáàßÞ */
+	$"81DD 04DC DCD6 B09C 809A 0F99 9792 7946"            /* Ý.ÜÜÖ°œ€š.™—’yF */
+	$"5A54 7175 7671 4F52 5451 348B 0004 3DA0"            /* ZTquvqORTQ4‹..=  */
+	$"E4F1 FD94 FF0C FEFC F9F5 F2F2 F3F6 F9FB"            /* äñý”ÿ.þüùõòòóöùû */
+	$"FDFE FE82 FF03 FCF0 E7E7 81E6 81E5 81E4"            /* ýþþ‚ÿ.üðççæåä */
+	$"81E3 00E2 80E1 07DF DEDE DDDC DBDA DA81"            /* ã.â€á.ßÞÞÝÜÛÚÚ */
+	$"D901 D8D9 81DA 06DB DBD8 C19E 9B9B 809A"            /* Ù.ØÙÚ.ÛÛØÁž››€š */
+	$"0F99 9778 4A42 554E 696E 716E 4E52 544F"            /* .™—xJBUNinqnNRTO */
+	$"2789 0004 2E84 BDE3 FC97 FF80 FE80 FD80"            /* '‰...„½ãü—ÿ€þ€ý€ */
+	$"FE83 FF01 FCF0 81E7 81E6 81E5 81E4 0FE3"            /* þƒÿ.üðçæåä.ã */
+	$"E3E2 E2E0 DFDD DCD9 D6D4 D2CF CECC CB80"            /* ãââàßÝÜÙÖÔÒÏÎÌË€ */
+	$"CA0B CBCA CCCD CFD0 D1D4 CBA5 9999 829A"            /* Ê.ËÊÌÍÏÐÑÔË¥™™‚š */
+	$"0F8E 614F 503D 4E43 5F64 6061 4D51 544F"            /* .ŽaOP=NC_d`aMQTO */
+	$"2787 0008 2E84 AFB9 C1C0 CAE7 FCA2 FF02"            /* '‡...„¯¹ÁÀÊçü¢ÿ. */
+	$"FCF0 E882 E781 E681 E581 E433 E2E1 E0DE"            /* üðè‚çæåä3âáàÞ */
+	$"DAD7 D3CF CAC6 C2C1 C5C4 C6CB C8C3 C2C0"            /* Ú×ÓÏÊÆÂÁÅÄÆËÈÃÂÀ */
+	$"C3C6 BFB5 BCB2 A88E 8F92 9497 9999 9677"            /* ÃÆ¿µ¼²¨Ž’”—™™–w */
+	$"595C 564F 394D 3C52 4A50 554D 5154 4C14"            /* Y\VO9M<RJPUMQTL. */
+	$"8500 0322 84B0 BA80 C180 C002 C9E7 F99E"            /* ….."„°º€Á€À.Éçùž */
+	$"FF01 FCF1 80E8 82E7 81E6 81E5 37E4 E4E3"            /* ÿ.üñ€è‚çæå7ääã */
+	$"E2E0 DDD9 D4CD C7C5 C9CE D4D9 DAD8 D6D4"            /* âàÝÙÔÍÇÅÉÎÔÙÚØÖÔ */
+	$"D3D2 D2D3 D4D5 D6D7 D8DA DBD6 CCBC AB9A"            /* ÓÒÒÓÔÕÖ×ØÚÛÖÌ¼«š */
+	$"9194 9067 5F5E 5C57 4F39 4942 4149 4643"            /* ‘”g_^\WO9IBAIFC */
+	$"4B51 544C 1483 0007 186F B0B9 C2C2 C1BB"            /* KQTL.ƒ...o°¹ÂÂÁ» */
+	$"81C0 04BF BFC4 DFF9 9AFF 02FC F1E9 81E8"            /* À.¿¿Äßùšÿ.üñéè */
+	$"82E7 81E6 81E5 36E3 E2E1 DED8 D2CA C9CE"            /* ‚çæå6ãâáÞØÒÊÉÎ */
+	$"D6DB D8D1 C9C3 C0BF C0C1 C4C7 C4C4 C5C7"            /* ÖÛØÑÉÃÀ¿ÀÁÄÇÄÄÅÇ */
+	$"CBCB C7C4 C4C6 CCD3 DADA D0BB 916B 5E5E"            /* ËËÇÄÄÆÌÓÚÚÐ»‘k^^ */
+	$"5C58 514A 5F5F 5039 3A41 4950 534A 8300"            /* \XQJ__P9:AIPSJƒ. */
+	$"130B AEB8 C3C3 C1B8 AAA3 A9B7 BFC0 BFBF"            /* ..®¸ÃÃÁ¸ª£©·¿À¿¿ */
+	$"BEBE C3DF F996 FF01 FCF1 80E9 81E8 82E7"            /* ¾¾Ãßù–ÿ.üñ€éè‚ç */
+	$"81E6 3AE5 E5E4 E3E0 DDD9 D2CA CDD5 DBD6"            /* æ:ååäãàÝÙÒÊÍÕÛÖ */
+	$"CABE B8B8 B6B1 AAA4 A8AA 968C 9B8D 899F"            /* Ê¾¸¸¶±ª¤¨ª–Œ›‰Ÿ */
+	$"B8BA BEC2 C3C3 BFB8 B6BD CCD9 DBD0 B07F"            /* ¸º¾ÂÃÃ¿¸¶½ÌÙÛÐ°. */
+	$"6481 BDDC DFD8 C8B0 8063 474E 534A 8400"            /* d½ÜßØÈ°€cGNSJ„. */
+	$"0DA5 C3C2 B9AA A5A6 A6A2 A1A8 B3BD BF80"            /* .¥ÃÂ¹ª¥¦¦¢¡¨³½¿€ */
+	$"BE03 BDC1 D6F4 92FF 02FC F1EA 81E9 81E8"            /* ¾.½ÁÖô’ÿ.üñêéè */
+	$"82E7 81E6 3AE4 E3E2 DED8 D1C7 CAD8 DBD0"            /* ‚çæ:äãâÞØÑÇÊØÛÐ */
+	$"BEB3 B3B1 A9A0 A09C 908F 7869 6D79 7972"            /* ¾³³±©  œximyyr */
+	$"6F6D 707C 8D91 A4A3 B2BD C0B8 ADAC BDD4"            /* omp|‘¤£²½À¸­¬½Ô */
+	$"DCD6 BDBC DCE8 EAE4 DED6 CCBE A676 5438"            /* ÜÖ½¼ÜèêäÞÖÌ¾¦vT8 */
+	$"8400 107A B4AD A9AA AAA9 A9A8 A6A2 A0A2"            /* „..z´­©ªª©©¨¦¢ ¢ */
+	$"B1BD BEBE 80BD 02BF D6F4 8EFF 04FD F4EB"            /* ±½¾¾€½.¿ÖôŽÿ.ýôë */
+	$"EAEA 81E9 81E8 82E7 80E6 3BE5 E3E0 DAD3"            /* êêéè‚ç€æ;åãàÚÓ */
+	$"C5C4 D6DC D0B9 AFB0 A79D 9980 6B5D 6773"            /* ÅÄÖÜÐ¹¯°§™€k]gs */
+	$"8188 9892 AEB8 C0C6 C3AF A87E 8469 646A"            /* ˆ˜’®¸ÀÆÃ¯¨~„idj */
+	$"86AA BABB B1A6 A0B4 D4DC D4B3 BBDB E4E4"            /* †ªº»±¦ ´ÔÜÔ³»Ûää */
+	$"DED8 D3CC BF9B 4B84 0010 63A4 ACAB AAAA"            /* ÞØÓÌ¿›K„..c¤¬«ªª */
+	$"A9A9 A8A8 A7A5 A19E A1B0 BC80 BD04 BCBC"            /* ©©¨¨§¥¡ž¡°¼€½.¼¼ */
+	$"BECD EE8A FF02 FDF5 EC81 EA81 E981 E882"            /* ¾ÍîŠÿ.ýõìêéè‚ */
+	$"E73F E6E6 E5E3 DED6 CCBB CBDB D8BE ACAB"            /* ç?ææåãÞÖÌ»ËÛØ¾¬« */
+	$"A69C 867B 7471 7E97 A4A2 979F 9992 A2A4"            /* ¦œ†{tq~—¤¢—Ÿ™’¢¤ */
+	$"A19F 90C2 C07B 809D 8F8B 776B 90A5 ABAB"            /* ¡ŸÂÀ{€‹wk¥«« */
+	$"A79D 9ABC DADB C7A7 D5DF E2DD D8D5 CFC5"            /* §š¼ÚÛÇ§ÕßâÝØÕÏÅ */
+	$"A244 8300 1A51 A2AC ABAA AAA9 A9A8 A8A7"            /* ¢Dƒ..Q¢¬«ªª©©¨¨§ */
+	$"A7A6 A4A1 9D9E AAB9 BDBC BCBB BBBC CDEE"            /* §¦¤¡žª¹½¼¼»»¼Íî */
+	$"86FF 04FD F5EC EBEB 81EA 81E9 81E8 82E7"            /* †ÿ.ýõìëëêéè‚ç */
+	$"40E6 E5E3 DED4 C5B3 D4DC D0AF A9A6 9471"            /* @æåãÞÔÅ³ÔÜÐ¯©¦”q */
+	$"615E 7087 9D99 ABA5 9581 81A6 BCC7 C1B3"            /* a^p‡™«¥•¦¼ÇÁ³ */
+	$"B0AB AE8B 6E66 777A A59A 927C 7D82 8B88"            /* °«®‹nfwz¥š’|}‚‹ˆ */
+	$"9B99 91A2 D4DC D3A2 C1DC DFDB D8D5 CFC5"            /* ›™‘¢ÔÜÓ¢ÁÜßÛØÕÏÅ */
+	$"A452 8200 1529 9CAC ABAA AAA9 A9A8 A8A7"            /* ¤R‚..)œ¬«ªª©©¨¨§ */
+	$"A7A6 A5A5 A4A0 9C9D A9B8 BC80 BB04 BABB"            /* §¦¥¥¤ œ©¸¼€».º» */
+	$"C7E7 FC81 FF02 FDF5 ED81 EB81 EA81 E981"            /* Ççüÿ.ýõíëêé */
+	$"E882 E741 E5E3 DDD3 BCAF D7DC CAA9 A69F"            /* è‚çAåãÝÓ¼¯×ÜÊ©¦Ÿ */
+	$"6F4B 5C8A 9AA6 ABAE AEA3 97A5 B7D6 E4E6"            /* oK\Šš¦«®®£—¥·Öäæ */
+	$"E0DE DEC5 CBD1 C5D3 CAB3 9891 6045 5978"            /* àÞÞÅËÑÅÓÊ³˜‘`EYx */
+	$"8D5F 505D 8389 8A93 CCDC D7A3 B1DB DAD7"            /* _P]ƒ‰Š“ÌÜ×£±ÛÚ× */
+	$"D4CF C8BC 9526 8100 181E 9BAC ABAA AAA9"            /* ÔÏÈ¼•&...›¬«ªª© */
+	$"A9A8 A8A7 A7A6 A5A5 A4A4 A3A0 9B9B A6B5"            /* ©¨¨§§¦¥¥¤¤£ ››¦µ */
+	$"BABB 80BA 08B9 C6E7 FCFE F6ED ECEC 81EB"            /* º»€º.¹Æçüþöíììë */
+	$"81EA 81E9 81E8 81E7 42E6 E3DE D4BA A9D7"            /* êéèçBæãÞÔº©× */
+	$"DCCB A7A4 9B61 4059 7C9A AABA B7B9 B2B8"            /* ÜË§¤›a@Y|šªº·¹²¸ */
+	$"D9E0 DFE0 DDE4 DFDD E0D4 BFC7 CBD6 CDC0"            /* ÙàßàÝäßÝàÔ¿ÇËÖÍÀ */
+	$"7A7A 735F 778E 7E53 656E 5260 7884 8CCD"            /* zzs_wŽ~SenR`x„ŒÍ */
+	$"DCD7 9EAC D7D4 D0C9 C0B3 9D68 8200 2097"            /* Ü×ž¬×ÔÐÉÀ³h‚. — */
+	$"ACAB AAAA A9A9 A8A8 A7A7 A6A5 A5A4 A4A3"            /* ¬«ªª©©¨¨§§¦¥¥¤¤£ */
+	$"A3A2 9F9A 98A3 B4B9 BABA B9B9 B8C1 E8ED"            /* £¢Ÿš˜£´¹ºº¹¹¸Áèí */
+	$"80EC 81EB 81EA 81E9 81E8 80E7 44E6 E5DF"            /* €ìëêéè€çDæåß */
+	$"D5C2 A3D3 DCD1 A6A4 9451 4472 7F8F A3B2"            /* ÕÂ£ÓÜÑ¦¤”QDr.£² */
+	$"BEC6 B9B4 C8D0 E4DC E6EA EAE0 D5CC C2A7"            /* ¾Æ¹´ÈÐäÜæêêàÕÌÂ§ */
+	$"B1B6 AEC7 858F 8E99 ADAF B5BF B486 606F"            /* ±¶®Ç…Ž™­¯µ¿´†`o */
+	$"4744 707D 8CD5 DCD4 8CBA CEC6 BCAD 9985"            /* GDp}ŒÕÜÔŒºÎÆ¼­™… */
+	$"6D14 8100 197D A8AB AAAA A9A9 A8A8 A7A7"            /* m...}¨«ªª©©¨¨§§ */
+	$"A6A5 A5A4 A4A3 A3A2 A2A1 9F9A 96A1 B080"            /* ¦¥¥¤¤££¢¢¡Ÿš–¡°€ */
+	$"B903 B8B8 C5F0 80EC 81EB 81EA 81E9 81E8"            /* ¹.¸¸Åð€ìëêéè */
+	$"80E7 44E5 E2D8 C998 C5DC DBAC 9D79 3959"            /* €çDåâØÉ˜ÅÜÛ¬y9Y */
+	$"928B 91A5 ACB5 D2CA B4AE C3BD DDE6 E6E4"            /* ’‹‘¥¬µÒÊ´®Ã½Ýææä */
+	$"DDC7 BFAB A6A1 B6D9 C3B4 B2A6 B6C5 C6BC"            /* ÝÇ¿«¦¡¶ÙÃ´²¦¶ÅÆ¼ */
+	$"C2C6 BCC1 8852 6638 4066 7B9D DCDC C673"            /* ÂÆ¼ÁˆRf8@f{ÜÜÆs */
+	$"BBB7 A38B 766F 6935 8100 1B6C A6AB AAAA"            /* »·£‹voi5..l¦«ªª */
+	$"A9A9 A8A8 A7A7 A6A5 A5A4 A4A3 A3A2 A2A1"            /* ©©¨¨§§¦¥¥¤¤££¢¢¡ */
+	$"A0A0 9E99 959C AD81 B803 D8EE ECEC 81EB"            /*   ž™•œ­¸.Øîììë */
+	$"81EA 81E9 81E8 47E7 E7E6 E4DC CDAC A5D9"            /* êéèGççæäÜÍ¬¥Ù */
+	$"DCC4 9B59 2862 A39F 9CA1 A8A5 B7CB B2A4"            /* ÜÄ›Y(b£Ÿœ¡¨¥·Ë²¤ */
+	$"9AAA BDD3 DCD4 C5AF B0A6 A09C 87BF D7CC"            /* šª½ÓÜÔÅ¯°¦ œ‡¿×Ì */
+	$"CCBD C1CC C69B 939A A2BC BBBD 954C 3832"            /* Ì½ÁÌÆ›“š¢¼»½•L82 */
+	$"4065 7CC5 DCDA A57C 9C58 3938 636C 4B81"            /* @e|ÅÜÚ¥|œX98clK */
+	$"0023 50A2 ABAA AAA9 A9A8 A8A7 A7A6 A5A5"            /* .#P¢«ªª©©¨¨§§¦¥¥ */
+	$"A4A4 A3A3 A2A2 A1A0 A09F 9F9D 9994 9AB1"            /* ¤¤££¢¢¡  ŸŸ™”š± */
+	$"B8B8 BDEB ECEC 81EB 81EA 81E9 81E8 47E7"            /* ¸¸½ëììëêéèGç */
+	$"E7E5 E0D4 C28F C7DC DCA6 8332 4FA0 BAAA"            /* çåàÔÂÇÜÜ¦ƒ2O ºª */
+	$"9E99 9B97 9CBE A19D 9691 B7C5 C3B6 AB9C"            /* ž™›—œ¾¡–‘·ÅÃ¶«œ */
+	$"8E8D 9CAD B6C9 CAD0 CECF C2C5 CBBE A2A2"            /* Žœ­¶ÉÊÐÎÏÂÅË¾¢¢ */
+	$"9DAF BEB3 9376 9656 3440 719A DBDC C96C"            /* ¯¾³“v–V4@qšÛÜÉl */
+	$"4433 3B38 476F 6181 0023 339E ABAA AAA9"            /* D3;8Goa.#3ž«ªª© */
+	$"A9A8 A8A7 A7A6 A5A5 A4A4 A3A3 A2A2 A1A0"            /* ©¨¨§§¦¥¥¤¤££¢¢¡  */
+	$"A09F 9F9E 9E9D 9999 B7B8 B7CE EFEC 81EB"            /*  ŸŸžž™™·¸·Îïìë */
+	$"81EA 81E9 81E8 47E7 E6E4 DCCC AB93 D5DC"            /* êéèGçæäÜÌ«“ÕÜ */
+	$"D299 6942 7E90 AD9B A69B 8D60 77AB A6BA"            /* Ò™iB~­›¦›`w«¦º */
+	$"A16D A3A7 B3A2 A6A7 A4A4 B9C9 CDC8 CDD0"            /* ¡m£§³¢¦§¤¤¹ÉÍÈÍÐ */
+	$"D9D9 D7C4 BEC4 AC9E A4B3 BF84 7E79 5D41"            /* ÙÙ×Ä¾Ä¬ž¤³¿„~y]A */
+	$"2C24 587B DBDC D792 4246 4747 486F 6181"            /* ,$X{ÛÜ×’BFGGHoa */
+	$"0023 1E9B ABAA AAA9 A9A8 A8A7 A7A6 A5A5"            /* .#.›«ªª©©¨¨§§¦¥¥ */
+	$"A4A4 A3A3 A2A2 A1A0 A09F 9F9E 9E9D 9D96"            /* ¤¤££¢¢¡  ŸŸžž– */
+	$"A8B8 B7B8 E2ED 81EB 81EA 81E9 81E8 48E7"            /* ¨¸·¸âíëêéèHç */
+	$"E6E2 D6C4 95A8 DADC C98B 3878 8296 9EAF"            /* æâÖÄ•¨ÚÜÉ‹8x‚–ž¯ */
+	$"A683 8173 7D8B 949D A9BE CBC1 CAC9 CBD4"            /* ¦ƒs}‹”©¾ËÁÊÉËÔ */
+	$"CEBB D7E2 E8EB EBE3 D6C4 AFAF B4B0 AEA8"            /* Î»×âèëëãÖÄ¯¯´°®¨ */
+	$"B1B2 BFB8 AA5E 6E3E 282A 3A6E C6DC DBAB"            /* ±²¿¸ª^n>(*:nÆÜÛ« */
+	$"4E4A 4A4B 4B70 6306 8100 2297 ABAA AAA9"            /* NJJKKpc.."—«ªª© */
+	$"A9A8 A8A7 A7A6 A5A5 A4A4 A3A3 A2A2 A1A0"            /* ©¨¨§§¦¥¥¤¤££¢¢¡  */
+	$"A09F 9F9E 9E9D 9D9B 94B3 B7B7 C5ED 81EB"            /*  ŸŸžž›”³··Åíë */
+	$"81EA 81E9 81E8 41E7 E5DE D0BC 89B4 DBDC"            /* êéèAçåÞÐ¼‰´ÛÜ */
+	$"BE62 3F73 6C79 94AB A38D 7E76 7F8A 918E"            /* ¾b?sly”«£~v.Š‘Ž */
+	$"8D95 938D 93A0 B8C4 BBC4 D7E0 E5E8 E8DF"            /* •““ ¸Ä»Ä×àåèèß */
+	$"DCBA 9395 AFAB 9C7C 9EA3 A7A9 8A67 4A41"            /* Üº“•¯«œ|ž£§©ŠgJA */
+	$"537C 3555 C2DC DCB8 5781 4F02 7066 1A81"            /* S|5UÂÜÜ¸WO.pf. */
+	$"0023 87A8 AAAA A9A9 A8A8 A7A7 A6A5 A5A4"            /* .#‡¨ªª©©¨¨§§¦¥¥¤ */
+	$"A4A3 A3A2 A2A1 A0A0 9F9F 9E9E 9D9D 9C96"            /* ¤££¢¢¡  ŸŸžžœ– */
+	$"9FB7 B7B6 D9ED 80EB 81EA 81E9 81E8 42E7"            /* Ÿ··¶Ùí€ëêéèBç */
+	$"E4DB CAB6 81B8 DCDC BE4A 4055 7E8A 6F91"            /* äÛÊ¶¸ÜÜ¾J@U~Šo‘ */
+	$"908A 8689 8583 7E81 8390 999C A2A8 AEAB"            /* Š†‰…ƒ~ƒ™œ¢¨®« */
+	$"A3BB C0CC D2D9 D8CC E9A2 8C93 C1B8 7F95"            /* £»ÀÌÒÙØÌé¢Œ“Á¸.• */
+	$"84A0 94A3 8162 4F65 9A8D 3244 BFDD DCBC"            /* „ ”£bOeš2D¿ÝÜ¼ */
+	$"5E51 8054 0270 661A 8100 2375 A6AA AAA9"            /* ^Q€T.pf..#u¦ªª© */
+	$"A9A8 A8A7 A7A6 A5A5 A4A4 A3A3 A2A2 A1A0"            /* ©¨¨§§¦¥¥¤¤££¢¢¡  */
+	$"A09F 9F9E 9E9D 9D9C 9C92 AEB7 B6B9 EA80"            /*  ŸŸžžœœ’®·¶¹ê€ */
+	$"EB81 EA81 E981 E847 E7E2 D7C4 B180 B5DB"            /* ëêéèGçâ×Ä±€µÛ */
+	$"DDCD 313C 4653 5885 8494 9790 928B 8678"            /* ÝÍ1<FSX…„”—’‹†x */
+	$"7D8D 9294 9FA4 B1B7 B3A1 99B6 BECA D3CD"            /* }’”Ÿ¤±·³¡™¶¾ÊÓÍ */
+	$"CBDC 97BA 95B6 A674 9A95 A4A9 B98F 6988"            /* ËÜ—º•¶¦tš•¤©¹iˆ */
+	$"8195 9339 3ACD DDDC BA5F 5259 595A 7062"            /* •“9:ÍÝÜº_RYYZpb */
+	$"8200 2650 A1AA AAA9 A9A8 A8A7 A7A6 A5A5"            /* ‚.&P¡ªª©©¨¨§§¦¥¥ */
+	$"A4A4 A3A3 A2A2 A1A0 A09F 9F9E 9E9D 9D9C"            /* ¤¤££¢¢¡  ŸŸžžœ */
+	$"9C97 97B5 B6B6 C9ED EBEB 81EA 81E9 81E8"            /* œ——µ¶¶Éíëëêéè */
+	$"47E6 E0D3 BFAD 8AAD DADD D931 4864 8760"            /* GæàÓ¿­Š­ÚÝÙ1Hd‡` */
+	$"78A1 AAB0 A0A0 9987 8497 9B98 8A9D 9C9D"            /* x¡ª°  ™‡„—›˜Šœ */
+	$"A274 6B83 B3C1 B8BB B9BF AE99 B09D C3BD"            /* ¢tkƒ³Á¸»¹¿®™°Ã½ */
+	$"A99C 9DAA C0C0 A199 9983 7B74 4149 DDDE"            /* ©œªÀÀ¡™™ƒ{tAIÝÞ */
+	$"DCB0 595E 5E5D 6270 6282 0026 3D9E AAAA"            /* Ü°Y^^]bpb‚.&=žªª */
+	$"A9A9 A8A8 A7A7 A6A5 A5A4 A4A3 A3A2 A2A1"            /* ©©¨¨§§¦¥¥¤¤££¢¢¡ */
+	$"A0A0 9F9F 9E9E 9D9D 9C9C 9B91 A7B6 B6B7"            /*   ŸŸžžœœ›‘§¶¶· */
+	$"E2EB EB81 EA81 E981 E841 E6DE CFBB AB88"            /* âëëêéèAæÞÏ»«ˆ */
+	$"9ED6 DDDE 5A34 4760 7A99 BAB6 A3A8 A1A2"            /* žÖÝÞZ4G`z™º¶£¨¡¢ */
+	$"7C7C 799D A2A3 A3A2 968E 8A85 828B 96B7"            /* ||y¢££¢–ŽŠ…‚‹–· */
+	$"C3B2 9D85 6E85 ACC7 CBBB ABAB B3C5 BDBD"            /* Ã²…n…¬ÇË»««³Å½½ */
+	$"9E7E 9D9D 7D39 7DDF DED9 A150 8064 0268"            /* ž~}9}ßÞÙ¡P€d.h */
+	$"7262 8200 2629 9BAA AAA9 A9A8 A8A7 A7A6"            /* rb‚.&)›ªª©©¨¨§§¦ */
+	$"A5A5 A4A4 A3A3 A2A2 A1A0 A09F 9F9E 9E9D"            /* ¥¥¤¤££¢¢¡  ŸŸžž */
+	$"9D9C 9C9B 998F B4B6 B6BF ECEB 81EA 81E9"            /* œœ›™´¶¶¿ìëêé */
+	$"80E8 42E7 E5DD CCB8 A98A 90CB DDDE B431"            /* €èBçåÝÌ¸©ŠËÝÞ´1 */
+	$"4C5C 76B1 C2C5 C0C0 B2B1 AF90 8CA2 A2A3"            /* L\v±ÂÅÀÀ²±¯Œ¢¢£ */
+	$"9D9A 9991 847E 7987 8484 898D 7B62 79C6"            /* š™‘„~y‡„„‰{byÆ */
+	$"BDBF BBB2 BCC4 CAC6 C4BD A49A BA9E 6A43"            /* ½¿»²¼ÄÊÆÄ½¤šºžjC */
+	$"CDE0 DECE 8B4C 806A 0272 7551 8300 2596"            /* ÍàÞÎ‹L€j.ruQƒ.%– */
+	$"AAAA A9A9 A8A8 A7A7 A6A5 A5A4 A4A3 A3A2"            /* ªª©©¨¨§§¦¥¥¤¤££¢ */
+	$"A2A1 A0A0 9F9F 9E9E 9D9D 9C9C 9B9A 929E"            /* ¢¡  ŸŸžžœœ›š’ž */
+	$"B6B6 B5D2 EB81 EA81 E980 E848 E7E5 DBC9"            /* ¶¶µÒëêé€èHçåÛÉ */
+	$"B5A8 9784 B9DB DFE0 6E4E 5777 9BB1 BEBD"            /* µ¨—„¹ÛßànNWw›±¾½ */
+	$"B299 A199 928C 9DA1 A29D 9E9F 9C85 8890"            /* ²™¡™’Œ¡¢žŸœ…ˆ */
+	$"8B85 8FA1 A8AB B7BF BDB7 B4AE BAC7 CDC8"            /* ‹…¡¨«·¿½·´®ºÇÍÈ */
+	$"BCBB B19C AEA7 834D A5E1 E0DD B877 5472"            /* ¼»±œ®§ƒM¥áàÝ¸wTr */
+	$"7170 7A78 4C83 0025 86A8 AAA9 A9A8 A8A7"            /* qpzxLƒ.%†¨ª©©¨¨§ */
+	$"A7A6 A5A5 A4A4 A3A3 A2A2 A1A0 A09F 9F9E"            /* §¦¥¥¤¤££¢¢¡  ŸŸž */
+	$"9E9D 9D9C 9C9B 9A9A 8DAE B6B5 B9E8 81EA"            /* žœœ›šš®¶µ¹èê */
+	$"81E9 80E8 48E7 E4D9 C7B7 AA8A 81A5 CFDF"            /* é€èHçäÙÇ·ªŠ¥Ïß */
+	$"E0D7 6552 6270 91A0 A6B0 827C 7380 A6AC"            /* à×eRbp‘ ¦°‚|s€¦¬ */
+	$"B2C5 CDD0 CDCA B68B 8C91 8B88 ABB5 C0CB"            /* ²ÅÍÐÍÊ¶‹Œ‘‹ˆ«µÀË */
+	$"D0D3 D2CC C4CB CAA7 B5BA A99D 9597 7959"            /* ÐÓÒÌÄËÊ§µº©•—yY */
+	$"7BE2 E1E0 CF9C 6D55 7775 7485 7534 8300"            /* {âáàÏœmUwut…u4ƒ. */
+	$"2174 A5AA A9A9 A8A8 A7A7 A6A5 A5A4 A4A3"            /* !t¥ª©©¨¨§§¦¥¥¤¤£ */
+	$"A3A2 A2A1 A0A0 9F9F 9E9E 9D9D 9C9C 9B9A"            /* £¢¢¡  ŸŸžžœœ›š */
+	$"9A95 9480 B501 C9EB 80EA 81E9 80E8 48E7"            /* š•”€µ.Éë€êé€èHç */
+	$"E3DB CDA8 8375 7E9C BAD8 E0E1 CF5A 5658"            /* ãÛÍ¨ƒu~œºØàáÏZVX */
+	$"5A7B 8DA4 ABA9 AEA6 9FB1 C4D7 DEDD D9E0"            /* Z{¤«©®¦Ÿ±Ä×ÞÝÙà */
+	$"CAA9 8691 9490 9FB8 C3BF A99A A5C7 D1DC"            /* Ê©†‘”Ÿ¸Ã¿©š¥ÇÑÜ */
+	$"C5A9 B7AC A188 7375 5C71 DDE2 E1D9 B187"            /* Å©·¬¡ˆsu\qÝâáÙ±‡ */
+	$"6B54 7C79 7792 732E 8300 225A A1AA A9A9"            /* kT|yw’s.ƒ."Z¡ª©© */
+	$"A8A8 A7A7 A6A5 A5A4 A4A3 A3A2 A2A1 A0A0"            /* ¨¨§§¦¥¥¤¤££¢¢¡   */
+	$"9F9F 9E9E 9D9D 9C9C 9B9A 9A99 8DA5 80B5"            /* ŸŸžžœœ›šš™¥€µ */
+	$"00DD 80EA 81E9 81E8 47EA D9A3 8379 767C"            /* .Ý€êéèGêÙ£ƒyv| */
+	$"9AAB C5DE E1E2 DA67 5039 5684 9D95 B2AE"            /* š«ÅÞáâÚgP9V„•²® */
+	$"A49E B4BF D8E5 E4E3 ECC7 A07A 8D95 9B98"            /* ¤ž´¿ØåäãìÇ z•›˜ */
+	$"9EA8 A89E 8871 C8CF D7BC ACA4 9186 7877"            /* ž¨¨žˆqÈÏ×¼¬¤‘†xw */
+	$"6F85 DFE4 E2DE BE94 8369 6883 7F80 956B"            /* o…ßäâÞ¾”ƒihƒ.€•k */
+	$"1A83 0026 469E AAA9 A9A8 A8A7 A7A6 A5A5"            /* .ƒ.&Fžª©©¨¨§§¦¥¥ */
+	$"A4A4 A3A3 A2A2 A1A0 A09F 9F9E 9E9D 9D9C"            /* ¤¤££¢¢¡  ŸŸžžœ */
+	$"9C9B 9A9A 9996 8FB2 B5B5 BE80 EA81 E94A"            /* œ›šš™–²µµ¾€êéJ */
+	$"E8E8 EDED CDA2 9081 7876 7998 A8B1 CDE2"            /* èèííÍ¢xvy˜¨±Íâ */
+	$"E2E3 DB8B 505E 6A7A 7F95 9988 9AB1 CAD9"            /* âãÛ‹P^jz.•™ˆš±ÊÙ */
+	$"E4E5 DEE7 B6A3 7E8D 98A1 A7A4 A49E 8D97"            /* äåÞç¶£~˜¡§¤¤ž— */
+	$"C2CD D2BC A397 8575 767B 69A8 E6E5 E3DF"            /* ÂÍÒ¼£—…uv{i¨æåãß */
+	$"C69C 8C82 656A 8C86 8D8D 6384 0029 299B"            /* ÆœŒ‚ejŒ†c„.))› */
+	$"AAA9 A9A8 A8A7 A7A6 A5A5 A4A4 A3A3 A2A2"            /* ª©©¨¨§§¦¥¥¤¤££¢¢ */
+	$"A1A0 A09F 9F9E 9E9D 9D9C 9C9B 9A9A 9999"            /* ¡  ŸŸžžœœ›šš™™ */
+	$"8E9D B5B5 B4D5 EAEA 81E9 10EC F0DC B7A6"            /* Žµµ´Õêêé.ìðÜ·¦ */
+	$"9E8F 8078 7679 96A8 AEB4 D0E3 80E5 36C0"            /* ž€xvy–¨®´Ðã€å6À */
+	$"6153 6281 897D 7089 99B0 C7CF D2DA C5A1"            /* aSb‰}p‰™°ÇÏÒÚÅ¡ */
+	$"B28B 9FAC B8C2 C1BB BCBA B5BD C3AA 998E"            /* ²‹Ÿ¬¸ÂÁ»¼ºµ½Ãª™Ž */
+	$"8372 6059 7DD5 E7E6 E4DF C7A2 928C 8061"            /* ƒr`Y}ÕçæäßÇ¢’Œ€a */
+	$"8196 8E93 804C 8400 780A 97AA A9A9 A8A8"            /* –Ž“€L„.xÂ—ª©©¨¨ */
+	$"A7A7 A6A5 A5A4 A4A3 A3A2 A2A1 A0A0 9F9F"            /* §§¦¥¥¤¤££¢¢¡  ŸŸ */
+	$"9E9E 9D9D 9C9C 9B9A 9A99 9998 88AD B5B4"            /* žžœœ›šš™™˜ˆ­µ´ */
+	$"B7E6 EAE9 E9EA F0EA C6AD AAA7 9E90 8178"            /* ·æêééêðêÆ­ª§žx */
+	$"7677 94A7 AEB1 B7CF E2E9 E8E7 E8AF 655F"            /* vw”§®±·Ïâéèçè¯e_ */
+	$"6357 5E7D 8087 9399 A6B3 9777 8F8E A6AD"            /* cW^}€‡“™¦³—wŽ¦­ */
+	$"B3B7 AAA8 ACB1 B0A6 978C 857A 6959 79C4"            /* ³·ª¨¬±°¦—Œ…ziYyÄ */
+	$"E9E8 E7E5 DBC3 A797 928C 7D5C 8EA0 9891"            /* éèçåÛÃ§—’Œ}\Ž ˜‘ */
+	$"722E 8500 008D 80A9 1FA8 A8A7 A7A6 A5A5"            /* r.…..€©.¨¨§§¦¥¥ */
+	$"A4A4 A3A3 A2A2 A1A0 A09F 9F9E 9E9D 9D9C"            /* ¤¤££¢¢¡  ŸŸžžœ */
+	$"9C9B 9A9A 9999 9892 9280 B450 CBEA EAEE"            /* œ›šš™™˜’’€´PËêêî */
+	$"F1D5 B2AB ABAA A79E 9081 7976 7392 A6AE"            /* ñÕ²««ª§žyvs’¦® */
+	$"B1B5 B9CF DEE8 EBE9 E8EA B182 555C 6268"            /* ±µ¹ÏÞèëéèê±‚U\bh */
+	$"717F 8E9E 9B85 6468 979B 9C9E A3A7 A9AC"            /* q.Žž›…dh—›œž£§©¬ */
+	$"9E8B 887A 7268 668F CFEB EAE9 E7E3 D3BD"            /* ž‹ˆzrhfÏëêéçãÓ½ */
+	$"AA9E 9792 8C7B 58A4 A79B 885F 0685 002C"            /* ªž—’Œ{X¤§›ˆ_.…., */
+	$"73A5 A9A9 A8A8 A7A7 A6A5 A5A4 A4A3 A3A2"            /* s¥©©¨¨§§¦¥¥¤¤££¢ */
+	$"A2A1 A0A0 9F9F 9E9E 9D9D 9C9C 9B9A 9A99"            /* ¢¡  ŸŸžžœœ›šš™ */
+	$"9998 9887 A8B4 B4B3 ECF3 E3BC AC80 AB46"            /* ™˜˜‡¨´´³ìóã¼¬€«F */
+	$"AAA7 9F91 7E72 5E68 90A5 AEB1 B5B8 BFD0"            /* ª§Ÿ‘~r^h¥®±µ¸¿Ð */
+	$"D9E4 EAEB EAEA ECE3 B485 635F 6772 7D80"            /* Ùäêëêêìã´…c_gr}€ */
+	$"7A7C 9393 9190 907F 858A 847B 716B 7695"            /* z|““‘.…Š„{qkv• */
+	$"C0EE EDEC EBE9 E6DC CAB8 AEA7 9C97 928B"            /* ÀîíìëéæÜÊ¸®§œ—’‹ */
+	$"7953 ACA3 9878 3486 002C 59A1 A9A9 A8A8"            /* yS¬£˜x4†.,Y¡©©¨¨ */
+	$"A7A7 A6A5 A5A4 A4A3 A3A2 A2A1 A0A0 9F9F"            /* §§¦¥¥¤¤££¢¢¡  ŸŸ */
+	$"9E9E 9D9D 9C9C 9B9A 9A99 9998 9894 8BB2"            /* žžœœ›šš™™˜˜”‹² */
+	$"B4B3 CFC9 AFAC AC80 AB46 AAA7 9E86 605E"            /* ´³ÏÉ¯¬¬€«Fª§ž†`^ */
+	$"5B67 8DA4 AEB1 B5B8 BCC7 D0D6 DEE6 EBED"            /* [g¤®±µ¸¼ÇÐÖÞæëí */
+	$"ECEC EDEE F0D3 B8A7 8488 676C 7174 7674"            /* ììíîðÓ¸§„ˆglqtvt */
+	$"7473 8390 95AD C5DF F1F0 EEED ECEB E6DC"            /* tsƒ•­ÅßñðîíìëæÜ */
+	$"D0C3 B8B3 AEA4 9C97 928B 765D AEA1 8660"            /* ÐÃ¸³®¤œ—’‹v]®¡†` */
+	$"0686 0029 4FA0 A9A9 A8A8 A7A7 A6A5 A5A4"            /* .†.)O ©©¨¨§§¦¥¥¤ */
+	$"A4A3 A3A2 A2A1 A0A0 9F9F 9E9E 9D9D 9C9C"            /* ¤££¢¢¡  ŸŸžžœœ */
+	$"9B9A 9A99 9998 9897 8B9C B4B3 B3AD 80AC"            /* ›šš™™˜˜—‹œ´³³­€¬ */
+	$"80AB 22AA A281 6361 5E5B 638B A3AE B1B5"            /* €«"ª¢ca^[c‹£®±µ */
+	$"B8BC C0CF D3D6 D8DD E3E9 ECEC EDEE F0F1"            /* ¸¼ÀÏÓÖØÝãéììíîðñ */
+	$"F2F3 F4F5 F6F6 81F7 1EF6 F5F5 F4F3 F2F1"            /* òóôõöö÷.öõõôóòñ */
+	$"F0EF EDE9 E1D6 CAC2 BFBD B8B3 AEA3 9C97"            /* ðïíéáÖÊÂ¿½¸³®£œ— */
+	$"928A 7368 AA99 7321 8700 2928 9BA9 A9A8"            /* ’Šshª™s!‡.)(›©©¨ */
+	$"A8A7 A7A6 A5A5 A4A4 A3A3 A2A2 A1A0 A09F"            /* ¨§§¦¥¥¤¤££¢¢¡  Ÿ */
+	$"9F9E 9E9D 9D9C 9C9B 9A9A 9999 9898 9797"            /* Ÿžžœœ›šš™™˜˜—— */
+	$"85AC B3B4 AE80 AC26 ABAB A897 7772 7266"            /* …¬³´®€¬&««¨—wrrf */
+	$"5E5B 6088 A2AD B1B5 B8BC C0CA D3D6 D7D6"            /* ^[`ˆ¢­±µ¸¼ÀÊÓÖ×Ö */
+	$"D6D8 DCE1 E5E9 EBEE F0F1 F2F3 F3F4 F480"            /* ÖØÜáåéëîðñòóóôô€ */
+	$"F51D F4F3 F3F2 F1EF EBE5 DDD1 C6BE BCBD"            /* õ.ôóóòñïëåÝÑÆ¾¼½ */
+	$"BEBF BDB8 B3AE A29C 9792 8970 78A2 7F48"            /* ¾¿½¸³®¢œ—’‰px¢.H */
+	$"8800 2913 99A9 A9A8 A8A7 A7A6 A5A5 A4A4"            /* ˆ.).™©©¨¨§§¦¥¥¤¤ */
+	$"A3A3 A2A2 A1A0 A09F 9F9E 9E9D 9D9C 9C9B"            /* ££¢¢¡  ŸŸžžœœ› */
+	$"9A9A 9999 9898 9797 8E91 B3B6 AF80 AC47"            /* šš™™˜˜——Ž‘³¶¯€¬G */
+	$"ABA2 8372 807E 7367 5F5B 5F85 A0AD B1B5"            /* «¢ƒr€~sg_[_… ­±µ */
+	$"B8BC C0C4 D3D5 D7D5 CDC9 C8C9 CBCF D2D4"            /* ¸¼ÀÄÓÕ×ÕÍÉÈÉËÏÒÔ */
+	$"D9DE E2E5 E7E9 EAEA E9E8 E5E1 DCD6 CEC5"            /* ÙÞâåçéêêéèåáÜÖÎÅ */
+	$"BDB6 B2B0 B1B3 B5BA BEBF BDB8 B3AC A29C"            /* ½¶²°±³µº¾¿½¸³¬¢œ */
+	$"9792 886C 788C 6106 8900 4D98 A9A9 A8A8"            /* —’ˆlxŒa.‰.M˜©©¨¨ */
+	$"A7A7 A6A5 A5A4 A4A3 A3A2 A2A1 A0A0 9F9F"            /* §§¦¥¥¤¤££¢¢¡  ŸŸ */
+	$"9E9E 9D9D 9C9C 9B9A 9A99 9998 9897 9796"            /* žžœœ›šš™™˜˜——– */
+	$"85A5 B8B1 ACAC A992 737C 8684 7F74 685F"            /* …¥¸±¬¬©’s|†„.th_ */
+	$"5B5B 829F ADB1 B5B8 BCC0 C3CE D5D6 D2CA"            /* [[‚Ÿ­±µ¸¼ÀÃÎÕÖÒÊ */
+	$"C9C8 C7C5 C4C2 C1BF BF81 BE20 BDBB B9B6"            /* ÉÈÇÅÄÂÁ¿¿¾ ½»¹¶ */
+	$"B2AE A9A7 A7A9 AAAC AEAF B1B3 B5B7 BDBF"            /* ²®©§§©ª¬®¯±³µ·½¿ */
+	$"BDB8 B3AB A29C 9791 8668 7C6F 1A8A 0071"            /* ½¸³«¢œ—‘†h|o.Š.q */
+	$"72A5 A9A8 A8A7 A7A6 A5A5 A4A4 A3A3 A2A2"            /* r¥©¨¨§§¦¥¥¤¤££¢¢ */
+	$"A1A0 A09F 9F9E 9E9D 9D9C 9C9B 9A9A 9999"            /* ¡  ŸŸžžœœ›šš™™ */
+	$"9898 9797 9692 87B7 B3AC A07E 7686 8786"            /* ˜˜——–’‡·³¬ ~v†‡† */
+	$"847F 7569 605B 5A80 9DAC B1B5 B8BC C0C3"            /* „.ui`[Z€¬±µ¸¼ÀÃ */
+	$"CAD5 D6CF CAC9 C8C7 C5C4 C2C1 BFBD BBB9"            /* ÊÕÖÏÊÉÈÇÅÄÂÁ¿½»¹ */
+	$"B7B5 B3B1 AEAC A9A7 A4A5 A7A9 AAAC AEAF"            /* ·µ³±®¬©§¤¥§©ª¬®¯ */
+	$"B1B3 B5B7 BBBF BDB8 B3AB A29C 9791 8363"            /* ±³µ·»¿½¸³«¢œ—‘ƒc */
+	$"662E 8B00 7009 67A2 A7A8 A7A7 A6A5 A5A4"            /* f.‹.pÆg¢§¨§§¦¥¥¤ */
+	$"A4A3 A3A2 A2A1 A0A0 9F9F 9E9E 9D9D 9C9C"            /* ¤££¢¢¡  ŸŸžžœœ */
+	$"9B9A 9A99 9998 9897 9796 9587 A5B1 8E73"            /* ›šš™™˜˜——–•‡¥±Žs */
+	$"8188 8787 8684 8076 6A60 5C5A 7B9B ACB1"            /* ˆ‡‡†„€vj`\Z{›¬± */
+	$"B5B8 BCC0 C3CA D4D6 CDCA C9C8 C7C5 C4C2"            /* µ¸¼ÀÃÊÔÖÍÊÉÈÇÅÄÂ */
+	$"C1BF BDBB B9B7 B5B3 B1AE ACA9 A7A4 A5A7"            /* Á¿½»¹·µ³±®¬©§¤¥§ */
+	$"A9AA ACAE AFB1 B3B5 B7BA BFBD B8B3 ABA2"            /* ©ª¬®¯±³µ·º¿½¸³«¢ */
+	$"9C97 9181 5741 8E00 6D26 81A4 A7A7 A6A5"            /* œ—‘WAŽ.m&¤§§¦¥ */
+	$"A5A4 A4A3 A3A2 A2A1 A0A0 9F9F 9E9E 9D9D"            /* ¥¤¤££¢¢¡  ŸŸžž */
+	$"9C9C 9B9A 9A99 9998 9897 9796 9593 877A"            /* œœ›šš™™˜˜——–•“‡z */
+	$"7B88 8988 8787 8684 8077 6B61 5C5A 7599"            /* {ˆ‰ˆ‡‡†„€wka\Zu™ */
+	$"ABB1 B5B8 BCC0 C3C7 D4D6 CDCA C9C8 C7C5"            /* «±µ¸¼ÀÃÇÔÖÍÊÉÈÇÅ */
+	$"C4C2 C1BF BDBB B9B7 B5B3 B1AE ACA9 A7A4"            /* ÄÂÁ¿½»¹·µ³±®¬©§¤ */
+	$"A5A7 A9AA ACAE AFB1 B3B5 B7B9 BFBD B8B2"            /* ¥§©ª¬®¯±³µ·¹¿½¸² */
+	$"A9A2 9C97 907D 4A90 006C 0954 A0A6 A6A5"            /* ©¢œ—}J.lÆT ¦¦¥ */
+	$"A5A4 A4A3 A3A2 A2A1 A0A0 9F9F 9E9E 9D9D"            /* ¥¤¤££¢¢¡  ŸŸžž */
+	$"9C9C 9B9A 9A99 9998 9897 9796 9595 8D85"            /* œœ›šš™™˜˜——–••… */
+	$"8A8A 8988 8787 8684 8178 6C61 5C5A 7397"            /* ŠŠ‰ˆ‡‡†„xla\Zs— */
+	$"AAB1 B5B8 BCC0 C3C7 D4D5 CCCA C9C8 C7C5"            /* ª±µ¸¼ÀÃÇÔÕÌÊÉÈÇÅ */
+	$"C4C2 C1BF BDBB B9B7 B5B3 B1AE ACA9 A7A4"            /* ÄÂÁ¿½»¹·µ³±®¬©§¤ */
+	$"A5A7 A9AA ACAE AFB1 B3B5 B7B8 BFBC B8B2"            /* ¥§©ª¬®¯±³µ·¸¿¼¸² */
+	$"A9A2 9C97 9077 3D92 006A 2681 A2A5 A5A4"            /* ©¢œ—w=’.j&¢¥¥¤ */
+	$"A4A3 A3A2 A2A1 A0A0 9F9F 9E9E 9D9D 9C9C"            /* ¤££¢¢¡  ŸŸžžœœ */
+	$"9B9A 9A99 9998 9897 9796 9595 948B 8A8A"            /* ›šš™™˜˜——–••”‹ŠŠ */
+	$"8988 8787 8684 8179 6C62 5C5A 6A94 A9B1"            /* ‰ˆ‡‡†„ylb\Zj”©± */
+	$"B5B8 BCC0 C3C7 D3D5 CBCA C9C8 C7C5 C4C2"            /* µ¸¼ÀÃÇÓÕËÊÉÈÇÅÄÂ */
+	$"C1BF BDBB B9B7 B5B3 B1AE ACA9 A7A4 A5A7"            /* Á¿½»¹·µ³±®¬©§¤¥§ */
+	$"A9AA ACAE AFB1 B3B5 B7B8 BFBC B8B2 A9A2"            /* ©ª¬®¯±³µ·¸¿¼¸²©¢ */
+	$"9C97 8F71 3194 0068 4B9D A3A4 A4A3 A3A2"            /* œ—q1”.hK£¤¤££¢ */
+	$"A2A1 A0A0 9F9F 9E9E 9D9D 9C9C 9B9A 9A99"            /* ¢¡  ŸŸžžœœ›šš™ */
+	$"9998 9897 9796 9595 948B 8A8A 8988 8787"            /* ™˜˜——–••”‹ŠŠ‰ˆ‡‡ */
+	$"8684 8179 6C62 5C5A 6992 A8B1 B5B8 BCC0"            /* †„ylb\Zi’¨±µ¸¼À */
+	$"C3C7 D3D5 CBCA C9C8 C7C5 C4C2 C1BF BDBB"            /* ÃÇÓÕËÊÉÈÇÅÄÂÁ¿½» */
+	$"B9B7 B5B3 B1AE ACA9 A7A4 A5A7 A9AA ACAE"            /* ¹·µ³±®¬©§¤¥§©ª¬® */
+	$"AFB1 B3B5 B7B8 BEBC B7B2 A8A2 9C97 8D6C"            /* ¯±³µ·¸¾¼·²¨¢œ—l */
+	$"2795 0067 1B76 A0A4 A3A3 A2A2 A1A0 A09F"            /* '•.g.v ¤££¢¢¡  Ÿ */
+	$"9F9E 9E9D 9D9C 9C9B 9A9A 9999 9898 9797"            /* Ÿžžœœ›šš™™˜˜—— */
+	$"9695 9594 8C8A 8A89 8887 8786 8481 786C"            /* –••”ŒŠŠ‰ˆ‡‡†„xl */
+	$"615C 5A64 8FA7 B1B5 B8BC C0C3 C7D3 D4CB"            /* a\Zd§±µ¸¼ÀÃÇÓÔË */
+	$"CAC9 C8C7 C5C4 C2C1 BFBD BBB9 B7B5 B3B1"            /* ÊÉÈÇÅÄÂÁ¿½»¹·µ³± */
+	$"AEAC A9A7 A4A5 A7A9 AAAC AEAF B1B3 B5B7"            /* ®¬©§¤¥§©ª¬®¯±³µ· */
+	$"B8BE BCB7 B2A7 A29C 978B 6618 9700 6549"            /* ¸¾¼·²§¢œ—‹f.—.eI */
+	$"9CA1 A3A2 A2A1 A0A0 9F9F 9E9E 9D9D 9C9C"            /* œ¡£¢¢¡  ŸŸžžœœ */
+	$"9B9A 9A99 9998 9897 9796 9595 948D 8A8A"            /* ›šš™™˜˜——–••”ŠŠ */
+	$"8988 8787 8684 8178 6B61 5C5A 608C A5B1"            /* ‰ˆ‡‡†„xka\Z`Œ¥± */
+	$"B5B8 BCC0 C3C7 D2D2 CBCA C9C8 C7C5 C4C2"            /* µ¸¼ÀÃÇÒÒËÊÉÈÇÅÄÂ */
+	$"C1BF BDBB B9B7 B5B3 B1AE ACA9 A7A4 A5A7"            /* Á¿½»¹·µ³±®¬©§¤¥§ */
+	$"A9AA ACAE AFB1 B3B5 B7B8 BEBC B7B2 A7A2"            /* ©ª¬®¯±³µ·¸¾¼·²§¢ */
+	$"9C97 8960 1298 0063 126C 9EA2 A2A1 A0A0"            /* œ—‰`.˜.c.lž¢¢¡   */
+	$"9F9F 9E9E 9D9D 9C9C 9B9A 9A99 9998 9897"            /* ŸŸžžœœ›šš™™˜˜— */
+	$"9796 9595 978D 8A8A 8988 8787 8684 8077"            /* —–••—ŠŠ‰ˆ‡‡†„€w */
+	$"6B60 5C5A 5E89 A4B0 B5B8 BCC0 C3C7 D2D2"            /* k`\Z^‰¤°µ¸¼ÀÃÇÒÒ */
+	$"CBCA C9C8 C7C5 C4C2 C1BF BDBB B9B7 B5B3"            /* ËÊÉÈÇÅÄÂÁ¿½»¹·µ³ */
+	$"B1AE ACA9 A7A4 A5A7 A9AA ACAE AFB1 B3B5"            /* ±®¬©§¤¥§©ª¬®¯±³µ */
+	$"B7B8 BEBC B7B2 A7A2 9C96 8658 9B00 613F"            /* ·¸¾¼·²§¢œ–†X›.a? */
+	$"84A0 A1A0 A09F 9F9E 9E9D 9D9C 9C9B 9A9A"            /* „ ¡  ŸŸžžœœ›šš */
+	$"9999 9898 9797 9695 959A 928A 8A89 8887"            /* ™™˜˜——–••š’ŠŠ‰ˆ‡ */
+	$"8786 847F 766A 605C 5A59 86A2 B0B5 B8BC"            /* ‡†„.vj`\ZY†¢°µ¸¼ */
+	$"C0C3 C7D2 D1CB CAC9 C8C7 C5C4 C2C1 BFBD"            /* ÀÃÇÒÑËÊÉÈÇÅÄÂÁ¿½ */
+	$"BBB9 B7B5 B3B1 AEAC A9A7 A4A5 A7A9 AAAC"            /* »¹·µ³±®¬©§¤¥§©ª¬ */
+	$"AEAF B1B3 B5B7 B8BC BCB7 B1A7 A29C 9681"            /* ®¯±³µ·¸¼¼·±§¢œ– */
+	$"4C9C 0060 126C 9CA0 A09F 9F9E 9E9D 9D9C"            /* Lœ.`.lœ  ŸŸžžœ */
+	$"9C9B 9A9A 9999 9898 9797 9695 9597 938A"            /* œ›šš™™˜˜——–••—“Š */
+	$"8A89 8887 8786 847F 7569 5F5B 5A59 83A0"            /* Š‰ˆ‡‡†„.ui_[ZYƒ  */
+	$"AFB5 B8BC C0C3 C7D1 D1CB CAC9 C8C7 C5C4"            /* ¯µ¸¼ÀÃÇÑÑËÊÉÈÇÅÄ */
+	$"C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7 A4A5"            /* ÂÁ¿½»¹·µ³±®¬©§¤¥ */
+	$"A7A9 AAAC AEAF B1B3 B5B7 B8BC BCB7 B1A7"            /* §©ª¬®¯±³µ·¸¼¼·±§ */
+	$"A29C 947B 409E 005E 3683 9E9F 9F9E 9E9D"            /* ¢œ”{@ž.^6ƒžŸŸžž */
+	$"9D9C 9C9B 9A9A 9999 9898 9797 9695 9594"            /* œœ›šš™™˜˜——–••” */
+	$"948A 8A89 8887 8786 847F 7468 5F5B 5A59"            /* ”ŠŠ‰ˆ‡‡†„.th_[ZY */
+	$"799E AFB5 B8BC C0C3 C7D1 CFCB CAC9 C8C7"            /* yž¯µ¸¼ÀÃÇÑÏËÊÉÈÇ */
+	$"C5C4 C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7"            /* ÅÄÂÁ¿½»¹·µ³±®¬©§ */
+	$"A4A5 A7A9 AAAC AEAF B1B3 B5B7 B8BC BCB7"            /* ¤¥§©ª¬®¯±³µ·¸¼¼· */
+	$"B0A7 A29C 9375 309F 005D 0961 999F 9E9E"            /* °§¢œ“u0Ÿ.]Æa™Ÿžž */
+	$"9D9D 9C9C 9B9A 9A99 9998 9897 9796 9595"            /* œœ›šš™™˜˜——–•• */
+	$"9494 8A8A 8988 8787 8683 7E73 675F 5B5A"            /* ””ŠŠ‰ˆ‡‡†ƒ~sg_[Z */
+	$"5977 9BAD B5B8 BCC0 C3C7 D1CF CBCA C9C8"            /* Yw›­µ¸¼ÀÃÇÑÏËÊÉÈ */
+	$"C7C5 C4C2 C1BF BDBB B9B7 B5B3 B1AE ACA9"            /* ÇÅÄÂÁ¿½»¹·µ³±®¬© */
+	$"A7A4 A5A7 A9AA ACAE AFB1 B3B5 B7B8 BCBB"            /* §¤¥§©ª¬®¯±³µ·¸¼» */
+	$"B6B0 A7A2 9C91 6E24 A100 5B2C 829B 9E9D"            /* ¶°§¢œ‘n$¡.[,‚›ž */
+	$"9D9C 9C9B 9A9A 9999 9898 9797 9695 9594"            /* œœ›šš™™˜˜——–••” */
+	$"978A 8A89 8887 8786 837D 7266 5E5B 5A59"            /* —ŠŠ‰ˆ‡‡†ƒ}rf^[ZY */
+	$"6D99 ADB5 B8BC C0C3 C7D0 CFCB CAC9 C8C7"            /* m™­µ¸¼ÀÃÇÐÏËÊÉÈÇ */
+	$"C5C4 C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7"            /* ÅÄÂÁ¿½»¹·µ³±®¬©§ */
+	$"A4A5 A7A9 AAAC AEAF B1B3 B5B7 B8BC BBB6"            /* ¤¥§©ª¬®¯±³µ·¸¼»¶ */
+	$"B0A7 A29C 8F67 15A2 005A 0957 989C 9D9C"            /* °§¢œg.¢.ZÆW˜œœ */
+	$"9C9B 9A9A 9999 9898 9797 9695 9594 9D8A"            /* œ›šš™™˜˜——–••”Š */
+	$"8A89 8887 8786 837C 7165 5E5B 5A59 6B96"            /* Š‰ˆ‡‡†ƒ|qe^[ZYk– */
+	$"ABB5 B8BC C0C3 C8D0 CECB CAC9 C8C7 C5C4"            /* «µ¸¼ÀÃÈÐÎËÊÉÈÇÅÄ */
+	$"C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7 A4A5"            /* ÂÁ¿½»¹·µ³±®¬©§¤¥ */
+	$"A7A9 AAAC AEAF B1B3 B5B7 B8BC BBB6 B0A7"            /* §©ª¬®¯±³µ·¸¼»¶°§ */
+	$"A29C 8C60 05A4 0057 2379 9A9C 9C9B 9A9A"            /* ¢œŒ`.¤.W#yšœœ›šš */
+	$"9999 9898 9797 9695 9594 9E8A 8A89 8887"            /* ™™˜˜——–••”žŠŠ‰ˆ‡ */
+	$"8785 827A 6E64 5D5B 5A58 4B92 A9B5 B8BC"            /* ‡…‚znd][ZXK’©µ¸¼ */
+	$"C0C3 C8D0 CDCB CAC9 C8C7 C5C4 C2C1 BFBD"            /* ÀÃÈÐÍËÊÉÈÇÅÄÂÁ¿½ */
+	$"BBB9 B7B5 B3B1 AEAC A9A7 A4A5 A7A9 AAAC"            /* »¹·µ³±®¬©§¤¥§©ª¬ */
+	$"AEAF B1B3 B5B7 B8BC BBB6 B0A7 A29B 8856"            /* ®¯±³µ·¸¼»¶°§¢›ˆV */
+	$"A600 5609 4F96 9B9B 9A9A 9999 9898 9797"            /* ¦.VÆO–››šš™™˜˜—— */
+	$"9695 9594 A08A 8A89 8887 8785 8078 6C62"            /* –••” ŠŠ‰ˆ‡‡…€xlb */
+	$"5C5B 4923 158B A7B4 B8BC C0C3 C8CF CDCB"            /* \[I#.‹§´¸¼ÀÃÈÏÍË */
+	$"CAC9 C8C7 C5C4 C2C1 BFBD BBB9 B7B5 B3B1"            /* ÊÉÈÇÅÄÂÁ¿½»¹·µ³± */
+	$"AEAC A9A7 A4A5 A7A9 AAAC AEAF B1B3 B5B7"            /* ®¬©§¤¥§©ª¬®¯±³µ· */
+	$"B8BC BBB6 AFA7 A29A 8144 A800 5423 7897"            /* ¸¼»¶¯§¢šD¨.T#x— */
+	$"9A9A 9999 9898 9797 9695 9594 A28A 8A89"            /* šš™™˜˜——–••”¢ŠŠ‰ */
+	$"8887 8684 7E74 6860 5B41 0F00 0083 A5B4"            /* ˆ‡†„~th`[A...ƒ¥´ */
+	$"B8BC C0C3 C8CF CDCB CAC9 C8C7 C5C4 C2C1"            /* ¸¼ÀÃÈÏÍËÊÉÈÇÅÄÂÁ */
+	$"BFBD BBB9 B7B5 B3B1 AEAC A9A7 A4A5 A7A9"            /* ¿½»¹·µ³±®¬©§¤¥§© */
+	$"AAAC AEAF B1B3 B5B7 B8BC BBB6 AFA7 A298"            /* ª¬®¯±³µ·¸¼»¶¯§¢˜ */
+	$"792F AA00 0145 9380 9914 9898 9797 9695"            /* y/ª..E“€™.˜˜——–• */
+	$"9594 A88A 8A89 8887 8582 796F 645E 2D81"            /* •”¨ŠŠ‰ˆ‡…‚yod^- */
+	$"0034 6AA1 B3B8 BCC0 C3C8 CFCC CBCA C9C8"            /* .4j¡³¸¼ÀÃÈÏÌËÊÉÈ */
+	$"C7C5 C4C2 C1BF BDBB B9B7 B5B3 B1AE ACA9"            /* ÇÅÄÂÁ¿½»¹·µ³±®¬© */
+	$"A7A4 A5A7 A9AA ACAE AFB1 B3B5 B7B8 BCBB"            /* §¤¥§©ª¬®¯±³µ·¸¼» */
+	$"B6AF A7A2 9673 22AB 0017 1A6E 9599 9898"            /* ¶¯§¢–s"«...n•™˜˜ */
+	$"9797 9695 9594 A48A 8A89 8886 837E 746B"            /* ——–••”¤ŠŠ‰ˆ†ƒ~tk */
+	$"5115 8200 345B 9DB2 B8BC C0C3 C8CE CCCB"            /* Q.‚.4[²¸¼ÀÃÈÎÌË */
+	$"CAC9 C8C7 C5C4 C2C1 BFBD BBB9 B7B5 B3B1"            /* ÊÉÈÇÅÄÂÁ¿½»¹·µ³± */
+	$"AEAC A9A7 A4A5 A7A9 AAAC AEAF B1B3 B5B7"            /* ®¬©§¤¥§©ª¬®¯±³µ· */
+	$"B8BC BAB6 AFA7 A194 6A10 AD00 1445 7E96"            /* ¸¼º¶¯§¡”j.­..E~– */
+	$"9897 9796 9595 94A5 8A8A 8887 8580 7A76"            /* ˜——–••”¥ŠŠˆ‡…€zv */
+	$"4605 8300 3344 98B0 B8BC C0C3 C8CE CCCB"            /* F.ƒ.3D˜°¸¼ÀÃÈÎÌË */
+	$"CAC9 C8C7 C5C4 C2C1 BFBD BBB9 B7B5 B3B1"            /* ÊÉÈÇÅÄÂÁ¿½»¹·µ³± */
+	$"AEAC A9A7 A4A5 A7A9 AAAC AEAF B1B3 B5B7"            /* ®¬©§¤¥§©ª¬®¯±³µ· */
+	$"B8BC BAB5 AEA7 A190 62AF 0011 1164 9497"            /* ¸¼ºµ®§¡b¯...d”— */
+	$"9796 9595 94A6 8A89 8886 8280 6F24 8500"            /* —–••”¦Š‰ˆ†‚€o$…. */
+	$"3335 93AF B8BC C0C3 C8CD CCCB CAC9 C8C7"            /* 35“¯¸¼ÀÃÈÍÌËÊÉÈÇ */
+	$"C5C4 C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7"            /* ÅÄÂÁ¿½»¹·µ³±®¬©§ */
+	$"A4A5 A7A9 AAAC AEAF B1B3 B5B7 B8BC BAB5"            /* ¤¥§©ª¬®¯±³µ·¸¼ºµ */
+	$"AEA7 A088 4AB1 000E 3B7D 9596 9595 94AA"            /* ®§ ˆJ±..;}•–••”ª */
+	$"8A89 8684 8B63 0F86 0033 1E8B ACB7 BCC0"            /* Š‰†„‹c.†.3.‹¬·¼À */
+	$"C3C8 CCCC CBCA C9C8 C7C5 C4C2 C1BF BDBB"            /* ÃÈÌÌËÊÉÈÇÅÄÂÁ¿½» */
+	$"B9B7 B5B3 B1AE ACA9 A7A4 A5A7 A9AA ACAE"            /* ¹·µ³±®¬©§¤¥§©ª¬® */
+	$"AFB1 B3B5 B7B8 BCBA B5AE A79E 7F31 B200"            /* ¯±³µ·¸¼ºµ®§ž.1². */
+	$"0B11 6391 9595 94B4 8A88 8997 3D89 0032"            /* ..c‘••”´Šˆ‰—=‰.2 */
+	$"83A9 B6BC C0C3 C8CC CCCB CAC9 C8C7 C5C4"            /* ƒ©¶¼ÀÃÈÌÌËÊÉÈÇÅÄ */
+	$"C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7 A4A5"            /* ÂÁ¿½»¹·µ³±®¬©§¤¥ */
+	$"A7A9 AAAC AEAF B1B3 B5B7 B8BC BAB5 AEA7"            /* §©ª¬®¯±³µ·¸¼ºµ®§ */
+	$"9A77 1EB4 0008 2A7B 9394 B589 997C 1B8A"            /* šw.´..*{“”µ‰™|.Š */
+	$"0032 67A3 B5BC C0C3 C7CA CCCB CAC9 C8C7"            /* .2g£µ¼ÀÃÇÊÌËÊÉÈÇ */
+	$"C5C4 C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7"            /* ÅÄÂÁ¿½»¹·µ³±®¬©§ */
+	$"A4A5 A7A9 AAAC AEAF B1B3 B5B7 B8BC BAB5"            /* ¤¥§©ª¬®¯±³µ·¸¼ºµ */
+	$"AEA6 966D 05B5 0005 085B 8FB5 A95A 8C00"            /* ®¦–m.µ...[µ©ZŒ. */
+	$"3147 9AB2 BCC0 C3C7 CACC CBCA C9C8 C7C5"            /* 1Gš²¼ÀÃÇÊÌËÊÉÈÇÅ */
+	$"C4C2 C1BF BDBB B9B7 B5B3 B1AE ACA9 A7A4"            /* ÄÂÁ¿½»¹·µ³±®¬©§¤ */
+	$"A5A7 A9AA ACAE AFB1 B3B5 B7B8 BCBA B5AE"            /* ¥§©ª¬®¯±³µ·¸¼ºµ® */
+	$"A38B 48B8 0002 2985 2C8D 0031 1F8E ADBA"            /* £‹H¸..)…,.1.Ž­º */
+	$"C0C3 C7CA CCCB CAC9 C8C7 C5C4 C2C1 BFBD"            /* ÀÃÇÊÌËÊÉÈÇÅÄÂÁ¿½ */
+	$"BBB9 B7B5 B3B1 AEAC A9A7 A4A5 A7A9 AAAC"            /* »¹·µ³±®¬©§¤¥§©ª¬ */
+	$"AEAF B1B3 B5B7 B8BC BAB5 AC9E 7E26 CC00"            /* ®¯±³µ·¸¼ºµ¬ž~&Ì. */
+	$"2F70 A5B7 BFC3 C7CA CCCB CAC9 C8C7 C5C4"            /* /p¥·¿ÃÇÊÌËÊÉÈÇÅÄ */
+	$"C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7 A4A5"            /* ÂÁ¿½»¹·µ³±®¬©§¤¥ */
+	$"A7A9 AAAC AEAF B1B3 B5B7 B8BC B9B4 A893"            /* §©ª¬®¯±³µ·¸¼¹´¨“ */
+	$"5ECD 002F 2895 B1BD C3C7 CACC CBCA C9C8"            /* ^Í./(•±½ÃÇÊÌËÊÉÈ */
+	$"C7C5 C4C2 C1BF BDBB B9B7 B5B3 B1AE ACA9"            /* ÇÅÄÂÁ¿½»¹·µ³±®¬© */
+	$"A7A4 A5A7 A9AA ACAE AFB1 B3B5 B7B9 BCB9"            /* §¤¥§©ª¬®¯±³µ·¹¼¹ */
+	$"B2A0 811B CE00 2D5B A5B8 C2C7 CACC CBCA"            /* ² .Î.-[¥¸ÂÇÊÌËÊ */
+	$"C9C8 C7C5 C4C2 C1BF BDBB B9B7 B5B3 B1AE"            /* ÉÈÇÅÄÂÁ¿½»¹·µ³±® */
+	$"ACA9 A7A4 A5A7 A9AA ACAE AFB1 B3B5 B7BA"            /* ¬©§¤¥§©ª¬®¯±³µ·º */
+	$"BCB7 AC90 41CF 002C 0871 ADBD C6CA CCCB"            /* ¼·¬AÏ.,.q­½ÆÊÌË */
+	$"CAC9 C8C7 C5C4 C2C1 BFBD BBB9 B7B5 B3B1"            /* ÊÉÈÇÅÄÂÁ¿½»¹·µ³± */
+	$"AEAC A9A7 A4A5 A7A9 AAAC AEAF B1B3 B5B7"            /* ®¬©§¤¥§©ª¬®¯±³µ· */
+	$"BABA B49A 4DD1 002A 117E B1C1 CBCC CBCA"            /* ºº´šMÑ.*.~±ÁËÌËÊ */
+	$"C9C8 C7C5 C4C2 C1BF BDBB B9B7 B5B3 B1AE"            /* ÉÈÇÅÄÂÁ¿½»¹·µ³±® */
+	$"ACA9 A7A4 A5A7 A9AA ACAE AFB1 B3B5 B8B7"            /* ¬©§¤¥§©ª¬®¯±³µ¸· */
+	$"B49F 50D3 0028 0978 B0C3 CCCC CAC9 C8C7"            /* ´ŸPÓ.(Æx°ÃÌÌÊÉÈÇ */
+	$"C5C4 C2C1 BFBD BBB9 B7B5 B3B1 AEAC A9A7"            /* ÅÄÂÁ¿½»¹·µ³±®¬©§ */
+	$"A4A5 A7A9 AAAC AEAF B1B3 B5B4 AE9C 4CD5"            /* ¤¥§©ª¬®¯±³µ´®œLÕ */
+	$"0026 0957 ADBE C8CB CAC8 C7C5 C4C2 C1BF"            /* .&ÆW­¾ÈËÊÈÇÅÄÂÁ¿ */
+	$"BDBB B9B7 B5B3 B1AE ACA9 A7A4 A5A7 A9AA"            /* ½»¹·µ³±®¬©§¤¥§©ª */
+	$"ACAE AFB1 B2AE A280 2BD8 0023 2881 B1BF"            /* ¬®¯±²®¢€+Ø.#(±¿ */
+	$"C6C8 C8C6 C5C2 C1BF BDBB B9B7 B5B3 B1AE"            /* ÆÈÈÆÅÂÁ¿½»¹·µ³±® */
+	$"ACA9 A7A4 A5A7 A9AA ACAD ADA9 9F91 4C08"            /* ¬©§¤¥§©ª¬­­©Ÿ‘L. */
+	$"DB00 163C 80AC B6BE C2C3 C3C2 C0BE BCBA"            /* Û..<€¬¶¾ÂÃÃÂÀ¾¼º */
+	$"B7B5 B3B1 AEAC AAA7 A5A5 80A6 05A5 9F96"            /* ·µ³±®¬ª§¥¥€¦.¥Ÿ– */
+	$"7B51 10DF 001B 1D57 87A7 AEB3 B7B9 B9B8"            /* {Q.ß...W‡§®³·¹¹¸ */
+	$"B7B6 B4B1 AFAD A9A6 A29D 9B97 938D 8564"            /* ·¶´±¯­©¦¢›—“…d */
+	$"2F07 E400 151C 4266 809B 9E9F A0A0 9E9D"            /* /.ä...Bf€›žŸ  ž */
+	$"9A97 938C 857D 785D 462B 07EC 000B 2323"            /* š—“Œ…}x]F+.ì..## */
+	$"3343 4140 403E 3B2B 1C13 FF00 FF00 FF00"            /* 3CA@@>;+..ÿ.ÿ.ÿ. */
+	$"FF00 FF00 FF00 FF00 FF00 FF00 8C00 FF00"            /* ÿ.ÿ.ÿ.ÿ.ÿ.ÿ.Œ.ÿ. */
+	$"FF00 FF00 FF00 BC00 0202 0909 F700 0902"            /* ÿ.ÿ.ÿ.¼...ÆÆ÷.Æ. */
+	$"0D27 4250 504C 5F15 02F0 000D 020C 1825"            /* .'BPPL_..ð.....% */
+	$"292A 2D2D 373F 351D 180A 8A00 001B DF00"            /* )*--7?5..ÂŠ...ß. */
+	$"100A 1622 282A 2C2D 2D2A 2322 1D1C 1C1B"            /* .Â."(*,--*#".... */
+	$"1903 8600 070D 50AF C3AE 8243 0DD8 000A"            /* ..†...P¯Ã®‚C.Ø.Â */
+	$"0A16 2127 2A2C 2D2D 2C26 1F84 1C01 1A0B"            /* Â.!'*,--,&.„.... */
+	$"8400 0C1B 75B6 C5C8 CDC9 C6C3 C19A 6928"            /* „...u¶ÅÈÍÉÆÃÁši( */
+	$"D200 0506 1421 272A 2C80 2D01 2821 871C"            /* Ò....!'*,€-.(!‡. */
+	$"011A 0D82 0004 368C C3C5 CC80 CD0A CCCC"            /* ...‚..6ŒÃÅÌ€ÍÂÌÌ */
+	$"CBCB C5C4 C2B6 8E50 1BCB 0005 0613 2026"            /* ËËÅÄÂ¶ŽP.Ë.... & */
+	$"2A2C 802D 022A 221D 891C 011A 0D80 0006"            /* *,€-.*".‰....€.. */
+	$"50AD C4C8 CFCE CE80 CD01 CCCC 80CB 08CA"            /* P­ÄÈÏÎÎ€Í.ÌÌ€Ë.Ê */
+	$"CAC7 C4C2 C2A3 7542 C500 0504 0F1F 262A"            /* ÊÇÄÂÂ£uBÅ.....&* */
+	$"2B80 2D02 2B26 1E8C 1C06 1A0D 1A69 B6C6"            /* +€-.+&.Œ.....i¶Æ */
+	$"CA80 CF01 CECE 80CD 01CC CC80 CB01 CACA"            /* Ê€Ï.ÎÎ€Í.ÌÌ€Ë.ÊÊ */
+	$"80C9 07C8 C4C1 C2C2 8D5D 28BE 0005 020E"            /* €É.ÈÄÁÂÂ](¾.... */
+	$"2628 292B 802D 022C 2721 901C 0558 C3C8"            /* &()+€-.,'!..XÃÈ */
+	$"CFD0 D080 CF01 CECE 80CD 01CC CC80 CB01"            /* ÏÐÐ€Ï.ÎÎ€Í.ÌÌ€Ë. */
+	$"CACA 80C9 01C8 C880 C706 BFC0 C1AC 8042"            /* ÊÊ€É.ÈÈ€Ç.¿ÀÁ¬€B */
+	$"0DB9 0004 0721 4233 2C80 2D02 2922 1D8D"            /* .¹...!B3,€-.)". */
+	$"1C0F 1B1A 1B1C 1C74 CECB CACA CCCE CECF"            /* .......tÎËÊÊÌÎÎÏ */
+	$"CECE 80CD 01CC CC80 CB01 CACA 80C9 01C8"            /* ÎÎ€Í.ÌÌ€Ë.ÊÊ€É.È */
+	$"C880 C706 C6C6 C5CC D0AF 70B8 0008 082E"            /* È€Ç.ÆÆÅÌÐ¯p¸.... */
+	$"4A39 2B2C 3840 1E8C 1C10 1B1A 1B19 1818"            /* J9+,8@.Œ........ */
+	$"1B1C 1C4B 96C0 BEBF C4C9 CC80 CE80 CD01"            /* ...K–À¾¿ÄÉÌ€Î€Í. */
+	$"CCCC 80CB 01CA CA80 C901 C8C8 80C7 07C6"            /* ÌÌ€Ë.ÊÊ€É.ÈÈ€Ç.Æ */
+	$"CFD8 C0A4 9F94 4AB6 0007 0126 444A 3D41"            /* ÏØÀ¤Ÿ”J¶...&DJ=A */
+	$"7C66 8C1C 041A 1A10 2C16 8018 0D1B 1C1C"            /* |fŒ.....,.€..... */
+	$"7C74 465C 9EB6 C0C8 CDCE CE80 CD01 CCCC"            /* |tF\ž¶ÀÈÍÎÎ€Í.ÌÌ */
+	$"80CB 01CA CA80 C90D C8C8 C7C7 D0D8 C0A4"            /* €Ë.ÊÊ€É.ÈÈÇÇÐØÀ¤ */
+	$"A0A0 9F9D 8E1C B500 0612 353E 4764 702E"            /*   ŸŽ.µ...5>Gdp. */
+	$"8A1C 071B 1A16 0D44 96CC 2280 180D 1B1C"            /* Š......D–Ì"€.... */
+	$"1CB1 E3E3 2624 9FB6 C3CB CECE 80CD 01CC"            /* .±ãã&$Ÿ¶ÃËÎÎ€Í.Ì */
+	$"CC80 CB01 CACA 80C9 0EC8 C8CE DAC0 A5A1"            /* Ì€Ë.ÊÊ€É.ÈÈÎÚÀ¥¡ */
+	$"A1A0 A09F 9F96 7B09 B400 051F 314A 6263"            /* ¡  ŸŸ–{Æ´...1Jbc */
+	$"2289 1C09 1B1A 1316 5BAD CBD0 D447 8018"            /* "‰.Æ....[­ËÐÔG€. */
+	$"0D1B 1C26 D0D1 A848 1C85 AFBF C9CE CE80"            /* ...&ÐÑ¨H.…¯¿ÉÎÎ€ */
+	$"CD01 CCCC 80CB 01CA CA80 C90E CDD7 C5A8"            /* Í.ÌÌ€Ë.ÊÊ€É.Í×Å¨ */
+	$"A2A2 A1A1 A0A0 9F9F 9E94 62B3 0005 0216"            /* ¢¢¡¡  ŸŸž”b³.... */
+	$"1E27 4335 881C 0B1A 1A10 1E7E B7CB D2D6"            /* .'C5ˆ......~·ËÒÖ */
+	$"D5D3 5D80 180D 1B1C 1C3B 8A88 5523 9EB1"            /* ÕÓ]€.....;ŠˆU#ž± */
+	$"C0CA CECE 80CD 01CC CC80 CB14 CACA C9CE"            /* ÀÊÎÎ€Í.ÌÌ€Ë.ÊÊÉÎ */
+	$"D7C5 A9A3 A3A2 A2A1 A1A0 A09F 9F9E 9E92"            /* ×Å©££¢¢¡¡  ŸŸžž’ */
+	$"40B2 0005 0516 1919 251F 851C 121B 1A16"            /* @²......%.…..... */
+	$"0D36 8BCA CFD5 D7D5 D4D2 CEA0 1F18 181B"            /* .6‹ÊÏÕ×ÕÔÒÎ .... */
+	$"801C 0970 9768 6BAA B8C5 CCCE CE80 CD01"            /* €.Æp—hkª¸ÅÌÎÎ€Í. */
+	$"CCCC 80CB 15CA CED7 C5AA A4A4 A3A3 A2A2"            /* ÌÌ€Ë.ÊÎ×Åª¤¤££¢¢ */
+	$"A1A1 A0A0 9F9F 9E9E 9A8E 1CB1 0005 0416"            /* ¡¡  ŸŸžžšŽ.±.... */
+	$"1818 1D1B 831C 141B 1A13 164E ADCA D0D8"            /* ....ƒ......N­ÊÐØ */
+	$"D7D7 D6D4 D1CC C3B5 6E23 181A 801C 0951"            /* ××ÖÔÑÌÃµn#..€.ÆQ */
+	$"6E7E AAB7 C2CA CDCE CE80 CD1B CCCC CBCB"            /* n~ª·ÂÊÍÎÎ€Í.ÌÌËË */
+	$"CFD6 C6AB A5A5 A4A4 A3A3 A2A2 A1A1 A0A0"            /* ÏÖÆ«¥¥¤¤££¢¢¡¡   */
+	$"9F9F 9E9E 9D95 7209 B100 0315 1818 1A82"            /* ŸŸžž•rÆ±......‚ */
+	$"1C20 1A19 101E 74B8 CBD3 D9D8 D8D7 D5D4"            /* . ....t¸ËÓÙØØ×ÕÔ */
+	$"CFC9 C0B6 AC9D 7849 291D 1C32 6C9D B1BA"            /* ÏÉÀ¶¬xI)..2l±º */
+	$"C3CA CD80 CE80 CD1B CCCC CFD8 C7AC A6A6"            /* ÃÊÍ€Î€Í.ÌÌÏØÇ¬¦¦ */
+	$"A5A5 A4A4 A3A3 A2A2 A1A1 A0A0 9F9F 9E9E"            /* ¥¥¤¤££¢¢¡¡  ŸŸžž */
+	$"9D9D 9359 B100 0012 8018 811C 061A 0D36"            /* “Y±...€.....6 */
+	$"80CB CFD8 80D9 1AD7 D7D5 D2CE C6BE B5AE"            /* €ËÏØ€Ù.××ÕÒÎÆ¾µ® */
+	$"ABA9 A79E 8E80 859C B0B9 C1C7 CBCE CECF"            /* «©§žŽ€…œ°¹ÁÇËÎÎÏ */
+	$"CECE 80CD 17D0 D8C8 AEA7 A7A6 A6A5 A5A4"            /* ÎÎ€Í.ÐØÈ®§§¦¦¥¥¤ */
+	$"A4A3 A3A2 A2A1 A1A0 A09F 9F9E 9E80 9D01"            /* ¤££¢¢¡¡  ŸŸžž€. */
+	$"9037 B000 0310 1718 1881 1C14 2BA3 CCD1"            /* 7°........+£ÌÑ */
+	$"DBDA DAD9 D9D8 D6D4 D0CA C3BA B5B2 B3B6"            /* ÛÚÚÙÙØÖÔÐÊÃºµ²³¶ */
+	$"B881 BB05 BCC0 C4C7 CBCD 81CF 07CE CECD"            /* ¸».¼ÀÄÇËÍÏ.ÎÎÍ */
+	$"CED8 C8AE A880 A711 A6A6 A5A5 A4A4 A3A3"            /* ÎØÈ®¨€§.¦¦¥¥¤¤££ */
+	$"A2A2 A1A1 A0A0 9F9F 9E9E 809D 0298 811B"            /* ¢¢¡¡  ŸŸžž€.˜. */
+	$"AF00 030C 1718 1882 1C00 D780 DB0F DADA"            /* ¯......‚..×€Û.ÚÚ */
+	$"D9D7 D6D2 CCC6 BFB9 B5B6 BAC0 C5C8 81CA"            /* Ù×ÖÒÌÆ¿¹µ¶ºÀÅÈÊ */
+	$"06CB CCCE CECF CFD0 80CF 07CE CFD6 C9B0"            /* .ËÌÎÎÏÏÐ€Ï.ÎÏÖÉ° */
+	$"A9A8 A880 A711 A6A6 A5A5 A4A4 A3A3 A2A2"            /* ©¨¨€§.¦¦¥¥¤¤££¢¢ */
+	$"A1A1 A0A0 9F9F 9E9E 809D 039C 9471 09AE"            /* ¡¡  ŸŸžž€.œ”qÆ® */
+	$"0003 0B16 1818 821C 12DC DBDB DAD9 D8D6"            /* ......‚..ÜÛÛÚÙØÖ */
+	$"D3CE C7C1 BBB7 B7BB C1C7 CCCF 82D1 11D0"            /* ÓÎÇÁ»··»ÁÇÌÏ‚Ñ.Ð */
+	$"D1D1 D0D1 D0D0 CFCF D0D6 C9B0 AAA9 A9A8"            /* ÑÑÐÑÐÐÏÏÐÖÉ°ª©©¨ */
+	$"A880 A711 A6A6 A5A5 A4A4 A3A3 A2A2 A1A1"            /* ¨€§.¦¦¥¥¤¤££¢¢¡¡ */
+	$"A0A0 9F9F 9E9E 809D 039C 9C91 51AE 0004"            /*   ŸŸžž€.œœ‘Q®.. */
+	$"0516 1818 1B81 1C11 C4DB DAD9 D6D3 CEC8"            /* .......ÄÛÚÙÖÓÎÈ */
+	$"C1BB B7B6 BAC0 C6CC D0D2 82D3 80D2 80D1"            /* Á»·¶ºÀÆÌÐÒ‚Ó€Ò€Ñ */
+	$"0CD0 D0D1 D6C9 B1AB AAAA A9A9 A8A8 80A7"            /* .ÐÐÑÖÉ±«ªª©©¨¨€§ */
+	$"11A6 A6A5 A5A4 A4A3 A3A2 A2A1 A1A0 A09F"            /* .¦¦¥¥¤¤££¢¢¡¡  Ÿ */
+	$"9F9E 9E80 9D04 9C9C 9B8E 2DAB 0006 0D68"            /* Ÿžž€.œœ›Ž-«...h */
+	$"8D17 1818 1B81 1C0F AAD8 D6D2 CDC7 C0B9"            /* ......ªØÖÒÍÇÀ¹ */
+	$"B6B4 B8BE C5CB D0D3 82D4 01D3 D380 D281"            /* ¶´¸¾ÅËÐÓ‚Ô.ÓÓ€Ò */
+	$"D10B D6CE B2AC ABAB AAAA A9A9 A8A8 80A7"            /* Ñ.ÖÎ²¬««ªª©©¨¨€§ */
+	$"11A6 A6A5 A5A4 A4A3 A3A2 A2A1 A1A0 A09F"            /* .¦¦¥¥¤¤££¢¢¡¡  Ÿ */
+	$"9F9E 9E80 9D05 9C9C 9B96 7C0F A800 041B"            /* Ÿžž€.œœ›–|.¨... */
+	$"81BA D2DC 8018 001A 811C 0EA6 D0CB C5BD"            /* ºÒÜ€.....¦ÐËÅ½ */
+	$"B7B2 B1B4 BAC2 C9CF D3D4 80D5 80D4 01D3"            /* ·²±´ºÂÉÏÓÔ€Õ€Ô.Ó */
+	$"D380 D20F D1D2 D7CE B7AD ACAC ABAB AAAA"            /* Ó€Ò.ÑÒ×Î·­¬¬««ªª */
+	$"A9A9 A8A8 80A7 11A6 A6A5 A5A4 A4A3 A3A2"            /* ©©¨¨€§.¦¦¥¥¤¤££¢ */
+	$"A2A1 A1A0 A09F 9F9E 9E80 9D05 9C9C 9B81"            /* ¢¡¡  ŸŸžž€.œœ› */
+	$"590B A600 0A43 99C9 D3D7 B087 3C18 181A"            /* Y.¦.ÂC™ÉÓ×°‡<... */
+	$"811C 119C C1BA B3AE ADAF B5BE C6CE D2D4"            /* ..œÁº³®­¯µ¾ÆÎÒÔ */
+	$"D6D5 D6D5 D580 D414 D3D3 D2D2 D3D7 CEB8"            /* ÖÕÖÕÕ€Ô.ÓÓÒÒÓ×Î¸ */
+	$"AEAD ADAC ACAB ABAA AAA9 A9A8 A880 A711"            /* ®­­¬¬««ªª©©¨¨€§. */
+	$"A6A6 A5A5 A4A4 A3A3 A2A2 A1A1 A0A0 9F9F"            /* ¦¦¥¥¤¤££¢¢¡¡  ŸŸ */
+	$"9E9E 809D 049C 8D6B 6054 A400 0D0D 50B1"            /* žž€.œk`T¤...P± */
+	$"CFD9 E1C5 827F 94A8 A33F 1A81 1C11 8EAF"            /* ÏÙáÅ‚.”¨£?...Ž¯ */
+	$"AAA8 A9AF B8C2 CBD1 D5D6 D6D7 D6D6 D5D5"            /* ª¨©¯¸ÂËÑÕÖÖ×ÖÖÕÕ */
+	$"80D4 80D3 11D6 CEB8 AFAE AEAD ADAC ACAB"            /* €Ô€Ó.ÖÎ¸¯®®­­¬¬« */
+	$"ABAA AAA9 A9A8 A880 A719 A6A6 A5A5 A4A4"            /* «ªª©©¨¨€§.¦¦¥¥¤¤ */
+	$"A3A3 A2A2 A1A1 A0A0 9F9F 9E9E 9D9D 9977"            /* ££¢¢¡¡  ŸŸžž™w */
+	$"6161 5E45 A200 0F1B 77BD D1DC E2B1 5D62"            /* aa^E¢...w½ÑÜâ±]b */
+	$"849D B5BF BBAF 4D81 1C09 93A3 A3A8 B1BC"            /* „µ¿»¯M.Æ“££¨±¼ */
+	$"C6CE D4D6 81D7 03D6 D6D5 D580 D414 D3D6"            /* ÆÎÔÖ×.ÖÖÕÕ€Ô.ÓÖ */
+	$"CEB9 B0AF AFAE AEAD ADAC ACAB ABAA AAA9"            /* Î¹°¯¯®®­­¬¬««ªª© */
+	$"A9A8 A880 A719 A6A6 A5A5 A4A4 A3A3 A2A2"            /* ©¨¨€§.¦¦¥¥¤¤££¢¢ */
+	$"A1A1 A0A0 9F9F 9E9E 9D87 6562 6161 5D41"            /* ¡¡  ŸŸžž‡ebaa]A */
+	$"A000 2037 8FCC D6E1 E2E1 6C28 2B2D 3470"            /*  . 7ÌÖáâál(+-4p */
+	$"BAB7 BCE4 A428 1C1C 349F A2A9 B4BF CAD1"            /* º·¼ä¤(..4Ÿ¢©´¿ÊÑ */
+	$"D5D7 D7D8 80D7 08D6 D6D5 D5D4 D4D7 CEBA"            /* Õ××Ø€×.ÖÖÕÕÔÔ×Îº */
+	$"80B0 0FAF AFAE AEAD ADAC ACAB ABAA AAA9"            /* €°.¯¯®®­­¬¬««ªª© */
+	$"A9A8 A880 A712 A6A6 A5A5 A4A4 A3A3 A2A2"            /* ©¨¨€§.¦¦¥¥¤¤££¢¢ */
+	$"A1A1 A0A0 9F9F 9E93 7280 6203 6161 5B32"            /* ¡¡  ŸŸž“r€b.aa[2 */
+	$"9E00 2251 B3D0 DAE4 E3E3 E295 233C 3A2F"            /* ž."Q³ÐÚäããâ•#<:/ */
+	$"2D2D 5BB1 E5D6 9051 1C1C 75A3 ABB6 C3CD"            /* --[±åÖQ..u£«¶ÃÍ */
+	$"D4D7 D8D9 D8D8 80D7 08D6 D6D5 D5D7 CFBB"            /* Ô×ØÙØØ€×.ÖÖÕÕ×Ï» */
+	$"B1B1 80B0 0FAF AFAE AEAD ADAC ACAB ABAA"            /* ±±€°.¯¯®®­­¬¬««ª */
+	$"AAA9 A9A8 A880 A712 A6A6 A5A5 A4A4 A3A3"            /* ª©©¨¨€§.¦¦¥¥¤¤££ */
+	$"A2A2 A1A1 A0A0 9F9B 7F63 6380 6203 6160"            /* ¢¢¡¡  Ÿ›.cc€b.a` */
+	$"5017 9B00 201C 6CBF D4DF E5E4 E4E3 E2E0"            /* P.›. .l¿Ôßåääãâà */
+	$"561D 2A46 4D46 251C 65A5 9497 5A1C 44A4"            /* V.*FMF%.e¥”—Z.D¤ */
+	$"AEBA C6D0 D5D8 80D9 01D8 D880 D708 D6D6"            /* ®ºÆÐÕØ€Ù.ØØ€×.ÖÖ */
+	$"D8CF BCB3 B2B1 B180 B00F AFAF AEAE ADAD"            /* ØÏ¼³²±±€°.¯¯®®­­ */
+	$"ACAC ABAB AAAA A9A9 A8A8 80A7 11A6 A6A5"            /* ¬¬««ªª©©¨¨€§.¦¦¥ */
+	$"A5A4 A4A3 A3A2 A2A1 A1A0 A08B 6962 6181"            /* ¥¤¤££¢¢¡¡  ‹iba */
+	$"6202 6145 169A 0004 3784 CFD8 E480 E519"            /* b.aE.š..7„ÏØä€å. */
+	$"E4E4 E3E2 DD5F 191D 2C38 291D 1C21 859C"            /* ääãâÝ_..,8)..!…œ */
+	$"9E53 369B B2BE C9D1 D7D8 81D9 01D8 D880"            /* žS6›²¾ÉÑ×ØÙ.ØØ€ */
+	$"D702 D8CF BD80 B302 B2B1 B180 B00F AFAF"            /* ×.ØÏ½€³.²±±€°.¯¯ */
+	$"AEAE ADAD ACAC ABAB AAAA A9A9 A8A8 80A7"            /* ®®­­¬¬««ªª©©¨¨€§ */
+	$"18A6 A6A5 A5A4 A4A3 A3A2 A2A1 A197 7664"            /* .¦¦¥¥¤¤££¢¢¡¡—vd */
+	$"5C76 9765 6162 5B37 2711 9800 0652 9ED2"            /* \v—eab[7'.˜..RžÒ */
+	$"DDE7 E6E6 80E5 0AE4 E4E3 E1D9 A821 181C"            /* Ýçææ€åÂääãáÙ¨!.. */
+	$"231D 801C 0C72 9574 4B99 B7C2 CDD4 D8DA"            /* #.€..r•tK™·ÂÍÔØÚ */
+	$"D9DA 80D9 80D8 04D9 D0BD B4B4 80B3 02B2"            /* ÙÚ€Ù€Ø.ÙÐ½´´€³.² */
+	$"B1B1 80B0 0FAF AFAE AEAD ADAC ACAB ABAA"            /* ±±€°.¯¯®®­­¬¬««ª */
+	$"AAA9 A9A8 A880 A718 A6A6 A5A5 A4A4 A3A3"            /* ª©©¨¨€§.¦¦¥¥¤¤££ */
+	$"A2A2 9E82 665D 6994 9169 6A5C 4529 2B28"            /* ¢¢ž‚f]i”‘ij\E)+( */
+	$"0A95 0004 0D6D B6D6 E180 E701 E6E6 80E5"            /* Â•...m¶Öá€ç.ææ€å */
+	$"08E4 E4E3 E0D6 C48A 1E19 821C 0C4B 6369"            /* .ääãàÖÄŠ..‚..Kci */
+	$"9EBC C8D0 D6D9 DADB DADA 80D9 07D8 DAD1"            /* ž¼ÈÐÖÙÚÛÚÚ€Ù.ØÚÑ */
+	$"BEB5 B5B4 B480 B302 B2B1 B180 B00F AFAF"            /* ¾µµ´´€³.²±±€°.¯¯ */
+	$"AEAE ADAD ACAC ABAB AAAA A9A9 A8A8 80A7"            /* ®®­­¬¬««ªª©©¨¨€§ */
+	$"18A6 A6A5 A5A4 A4A3 A3A2 9270 6458 7E99"            /* .¦¦¥¥¤¤££¢’pdX~™ */
+	$"7A83 A667 3429 2C2C 2807 9300 0629 86CF"            /* zƒ¦g4),,(.“..)†Ï */
+	$"DAE5 E8E8 80E7 01E6 E680 E508 E4E4 E3E0"            /* Úåèè€ç.ææ€å.ääãà */
+	$"D6C5 AE74 2381 1C08 2A56 88B1 C4CD D5D8"            /* ÖÅ®t#..*Vˆ±ÄÍÕØ */
+	$"DA80 DB0C DADA D9D9 DBD5 C1B6 B6B5 B5B4"            /* Ú€Û.ÚÚÙÙÛÕÁ¶¶µµ´ */
+	$"B480 B302 B2B1 B180 B00F AFAF AEAE ADAD"            /* ´€³.²±±€°.¯¯®®­­ */
+	$"ACAC ABAB AAAA A9A9 A8A8 80A7 13A6 A6A5"            /* ¬¬««ªª©©¨¨€§.¦¦¥ */
+	$"A5A4 A4A3 9F7A 6665 5D62 8A73 A3A4 8074"            /* ¥¤¤£Ÿzfe]bŠs£¤€t */
+	$"3280 2C00 2792 0003 459F D3DE 80E9 01E8"            /* 2€,.'’..EŸÓÞ€é.è */
+	$"E880 E701 E6E6 80E5 13E4 E4E3 E1D9 CAB9"            /* è€ç.ææ€å.ääãáÙÊ¹ */
+	$"A88A 5136 466C 90AE C0CB D2D7 DA82 DB0C"            /* ¨ŠQ6Fl®ÀËÒ×Ú‚Û. */
+	$"DADB DCD6 C4B7 B7B6 B6B5 B5B4 B480 B302"            /* ÚÛÜÖÄ··¶¶µµ´´€³. */
+	$"B2B1 B180 B00F AFAF AEAE ADAD ACAC ABAB"            /* ²±±€°.¯¯®®­­¬¬«« */
+	$"AAAA A9A9 A8A8 80A7 13A6 A6A5 A5A4 A28B"            /* ªª©©¨¨€§.¦¦¥¥¤¢‹ */
+	$"6966 6564 5A5B 6A84 8E78 7873 3380 2C00"            /* ifedZ[j„Žxxs3€,. */
+	$"248F 0006 0E61 B8D7 E3EA EA80 E901 E8E8"            /* $...a¸×ãêê€é.èè */
+	$"80E7 01E6 E680 E512 E4E4 E3E2 DDD3 C6B9"            /* €ç.ææ€å.ääãâÝÓÆ¹ */
+	$"B2AE ACB1 BAC3 CBD2 D7DA DB80 DC0F DBDB"            /* ²®¬±ºÃËÒ×ÚÛ€Ü.ÛÛ */
+	$"DCDD D8C5 B8B8 B7B7 B6B6 B5B5 B4B4 80B3"            /* ÜÝØÅ¸¸··¶¶µµ´´€³ */
+	$"02B2 B1B1 80B0 0FAF AFAE AEAD ADAC ACAB"            /* .²±±€°.¯¯®®­­¬¬« */
+	$"ABAA AAA9 A9A8 A880 A717 A6A6 A5A5 9774"            /* «ªª©©¨¨€§.¦¦¥¥—t */
+	$"6767 6665 6258 4D5D 5B73 7678 7333 2C2C"            /* ggfebXM][svxs3,, */
+	$"2B1E 8D00 081C 88C4 DCE7 EBEB EAEA 80E9"            /* +....ˆÄÜçëëêê€é */
+	$"01E8 E880 E701 E6E6 80E5 10E4 E4E3 E2E0"            /* .èè€ç.ææ€å.ääãâà */
+	$"DBD3 CBC5 C4C5 CACF D3D8 DADC 80DD 11DC"            /* ÛÓËÅÄÅÊÏÓØÚÜ€Ý.Ü */
+	$"DCDD DFD9 C6B9 B9B8 B8B7 B7B6 B6B5 B5B4"            /* ÜÝßÙÆ¹¹¸¸··¶¶µµ´ */
+	$"B480 B302 B2B1 B180 B00F AFAF AEAE ADAD"            /* ´€³.²±±€°.¯¯®®­­ */
+	$"ACAC ABAB AAAA A9A9 A8A8 80A7 04A6 A6A3"            /* ¬¬««ªª©©¨¨€§.¦¦£ */
+	$"7E69 8067 0F66 6561 5546 5A54 7175 7671"            /* ~i€g.feaUFZTquvq */
+	$"322C 2C2A 1B8B 0005 3995 D4DF EAEC 80EB"            /* 2,,*.‹..9•Ôßêì€ë */
+	$"01EA EA80 E901 E8E8 80E7 01E6 E680 E50D"            /* .êê€é.èè€ç.ææ€å. */
+	$"E4E4 E3E3 E2DF DDD9 D6D5 D6D8 DADC 84DD"            /* ääããâßÝÙÖÕÖØÚÜ„Ý */
+	$"10E1 DAC7 BABA B9B9 B8B8 B7B7 B6B6 B5B5"            /* .áÚÇºº¹¹¸¸··¶¶µµ */
+	$"B4B4 80B3 0EB2 B1B0 B0AF AEAD ADAB AAA9"            /* ´´€³.²±°°¯®­­«ª© */
+	$"A9A8 A7A7 81A6 80A5 07A6 A5A6 A490 6C68"            /* ©¨§§¦€¥.¦¥¦¤lh */
+	$"6880 670F 6664 4C2C 4255 4E69 6E71 6E32"            /* h€g.fdL,BUNinqn2 */
+	$"2C2C 2914 8900 0721 5F97 CCE9 EDEC EC80"            /* ,,).‰..!_—Ìéíìì€ */
+	$"EB01 EAEA 80E9 01E8 E880 E701 E6E6 80E5"            /* ë.êê€é.èè€ç.ææ€å */
+	$"08E4 E4E3 E3E2 E1E1 E0E0 81DF 09DE DFDE"            /* .ääããâááààßÆÞßÞ */
+	$"DEDD DFE2 DCC8 BB80 BA1B B9B9 B8B8 B7B7"            /* ÞÝßâÜÈ»€º.¹¹¸¸·· */
+	$"B6B6 B5B5 B4B4 B3B3 B2B1 B0AF ADAB A9A7"            /* ¶¶µµ´´³³²±°¯­«©§ */
+	$"A5A2 A19F 9E9C 829B 0B9C 9C9D 9E9F A19B"            /* ¥¢¡Ÿžœ‚›.œœžŸ¡› */
+	$"7467 6867 6880 670F 5C39 2B2C 3D4E 435F"            /* tghgh€g.\9+,=NC_ */
+	$"6460 612F 2B2C 2914 8700 0921 5F80 878C"            /* d`a/+,).‡.Æ!_€‡Œ */
+	$"8C9D CBE8 EC80 EB01 EAEA 80E9 01E8 E880"            /* ŒËèì€ë.êê€é.èè€ */
+	$"E701 E6E6 80E5 03E4 E4E3 E380 E201 E1E1"            /* ç.ææ€å.ääãã€â.áá */
+	$"80E0 80DF 07DE E0E3 DEC9 BCBB BB80 BA3F"            /* €à€ß.ÞàãÞÉ¼»»€º? */
+	$"B9B9 B8B8 B7B7 B6B6 B5B5 B4B4 B3B2 B1AE"            /* ¹¹¸¸··¶¶µµ´´³²±® */
+	$"ACA8 A5A1 9E9E A3AB B2BA BEC2 C5C6 C6C3"            /* ¬¨¥¡žž£«²º¾ÂÅÆÆÃ */
+	$"C1BC B5AC A79E 8A68 6062 6465 6667 6349"            /* Á¼µ¬§žŠh`bdefgcI */
+	$"3132 2F2B 394D 3C52 4A50 4D29 2C2C 280A"            /* 12/+9M<RJPM),,(Â */
+	$"8500 0519 5F80 878D 8D81 8C06 9ECC E5EB"            /* …..._€‡Œ.žÌåë */
+	$"EBEA EA80 E901 E8E8 80E7 01E6 E680 E503"            /* ëêê€é.èè€ç.ææ€å. */
+	$"E4E4 E3E3 80E2 01E1 E180 E00A DFDF E1E5"            /* ääãã€â.áá€àÂßßáå */
+	$"E0CB BDBC BCBB BB80 BA1A B9B9 B8B8 B7B7"            /* àË½¼¼»»€º.¹¹¸¸·· */
+	$"B6B6 B5B5 B4B3 B1AE ABA6 A1A2 AEBC CCD6"            /* ¶¶µµ´³±®«¦¡¢®¼ÌÖ */
+	$"DADB D9D7 D680 D502 D6D7 D880 D91B DADB"            /* ÚÛÙ×Ö€Õ.Ö×Ø€Ù.ÚÛ */
+	$"D7CE BC9F 836C 635F 3A34 3433 302B 3749"            /* ×Î¼Ÿƒlc_:4430+7I */
+	$"4241 4938 2628 2B2C 280A 8300 0811 527F"            /* BAI8&(+,(Âƒ...R. */
+	$"868D 8D8C 868B 828C 0495 BFE6 EAEA 80E9"            /* †Œ†‹‚Œ.•¿æêê€é */
+	$"01E8 E880 E701 E6E6 80E5 03E4 E4E3 E380"            /* .èè€ç.ææ€å.ääãã€ */
+	$"E201 E1E1 80E0 0AE2 E6E1 CCBE BDBD BCBC"            /* â.áá€àÂâæáÌ¾½½¼¼ */
+	$"BBBB 80BA 3EB9 B9B8 B8B7 B7B6 B6B4 B4B2"            /* »»€º>¹¹¸¸··¶¶´´² */
+	$"AFAB A5A6 B4C9 D7DB D9D3 CDC9 C6C6 C7C9"            /* ¯«¥¦´É×ÛÙÓÍÉÆÆÇÉ */
+	$"CBCD C9C9 CACD D1D1 CDCA C9CA CED4 DADA"            /* ËÍÉÉÊÍÑÑÍÊÉÊÎÔÚÚ */
+	$"D1B8 824A 3434 3330 2C42 6160 4C24 1F23"            /* Ñ¸‚J4430,Ba`L$.# */
+	$"272B 2C27 8300 0B08 7E86 8D8D 8B82 756F"            /* '+,'ƒ...~†‹‚uo */
+	$"7582 8B80 8C09 8B8B 95C1 E6EA E9E9 E8E8"            /* u‚‹€ŒÆ‹‹•Áæêééèè */
+	$"80E7 01E6 E680 E503 E4E4 E3E3 80E2 0FE1"            /* €ç.ææ€å.ääãã€â.á */
+	$"E1E0 E2E7 E3CD BFBE BEBD BDBC BCBB BB80"            /* áàâçãÍ¿¾¾½½¼¼»»€ */
+	$"BA3E B9B9 B8B8 B7B7 B5B4 B2B0 ABA6 ADC4"            /* º>¹¹¸¸··µ´²°«¦­Ä */
+	$"D7DB D7CD C4BF BFBD B7AE A5A5 A07D 6879"            /* ×Û×ÍÄ¿¿½·®¥¥ }hy */
+	$"6664 87AD B5BE C2C3 C5C2 BCBB C1CE D9DB"            /* fd‡­µ¾ÂÃÅÂ¼»ÁÎÙÛ */
+	$"D1AF 6B44 6FBB DFE3 DCCE B57A 5326 2A2C"            /* Ñ¯kDo»ßãÜÎµzS&*, */
+	$"2784 000D 778E 8C82 7472 7474 6F6E 737E"            /* '„..wŽŒ‚trttons~ */
+	$"8A8C 818B 0593 B5DF EAE8 E880 E701 E6E6"            /* ŠŒ‹.“µßêèè€ç.ææ */
+	$"80E5 03E4 E4E3 E380 E20F E1E3 E8E5 CFC0"            /* €å.ääãã€â.áãèåÏÀ */
+	$"BFBF BEBE BDBD BCBC BBBB 80BA 3EB9 B9B8"            /* ¿¿¾¾½½¼¼»»€º>¹¹¸ */
+	$"B8B7 B6B4 B1AC A6AD C8D9 DBD2 C3BA BAB7"            /* ¸·¶´±¬¦­ÈÙÛÒÃºº· */
+	$"AB9C 9386 736B 4E33 323C 3A34 3534 3D52"            /* «œ“†skN32<:454=R */
+	$"6B6E 8887 9EB2 B9B7 B1B1 C0D4 DCD7 C1C2"            /* knˆ‡ž²¹·±±ÀÔÜ×ÁÂ */
+	$"E1EC EEEA E4DD D4C6 AA67 321E 8400 0E58"            /* áìîêäÝÔÆªg2.„..X */
+	$"8079 787A 7979 7877 746F 6C6F 7D89 818B"            /* €yxzyyxwtolo}‰‹ */
+	$"048A 8FB5 E0EB 80E7 01E6 E680 E516 E4E4"            /* .Šµàë€ç.ææ€å.ää */
+	$"E3E3 E2E2 E4E9 E8D5 C2C0 C0BF BFBE BEBD"            /* ããââäéèÕÂÀÀ¿¿¾¾½ */
+	$"BDBC BCBB BB80 BA3E B9B9 B8B7 B5B3 AEA7"            /* ½¼¼»»€º>¹¹¸·µ³®§ */
+	$"A5BF D7DC D2BE B5B4 AA98 865E 3C23 2C37"            /* ¥¿×ÜÒ¾µ´ª˜†^<#,7 */
+	$"474E 6054 7F88 9198 957D 8043 482F 2B30"            /* GN`T.ˆ‘˜•}€CH/+0 */
+	$"588A A1AB ABA7 A5B7 D5DC D5B8 C4E3 EBEA"            /* XŠ¡««§¥·ÕÜÕ¸Äãëê */
+	$"E6E1 DBD5 C79F 3D84 0012 4776 7B7B 7A79"            /* æáÛÕÇŸ=„..Gv{{zy */
+	$"7978 7777 7674 6F6B 6E7B 888B 8B80 8A06"            /* yxwwvtokn{ˆ‹‹€Š. */
+	$"8FA8 D8EA E7E6 E680 E516 E4E4 E3E3 E5EB"            /* ¨Øêçææ€å.ääããåë */
+	$"EAD6 C3C1 C1C0 C0BF BFBE BEBD BDBC BCBB"            /* êÖÃÁÁÀÀ¿¿¾¾½½¼¼» */
+	$"BB80 BA3F B9B9 B7B6 B1AB A3AB CEDB D9C2"            /* »€º?¹¹·¶±«£«ÎÛÙÂ */
+	$"B3AD A393 7157 4030 384F 5C5C 545A 564F"            /* ³­£“qW@08O\\TZVO */
+	$"5A5D 5C5B 5EA6 9E4B 555C 494B 342E 5C7C"            /* Z]\[^¦žKU\IK4.\| */
+	$"8D9D A09C 9EBE DADB C9AE DEE7 E9E5 E1DD"            /*  œž¾ÚÛÉ®ÞçéåáÝ */
+	$"D8CD A948 8300 123A 747B 7B7A 7979 7877"            /* ØÍ©Hƒ..:t{{zyyxw */
+	$"7776 7575 736E 6A6B 7686 828A 048C A8D9"            /* wvuusnjkv†‚Š.Œ¨Ù */
+	$"EBE7 80E5 16E4 E4E6 ECEC D8C5 C2C2 C1C1"            /* ëç€å.ääæììØÅÂÂÁÁ */
+	$"C0C0 BFBF BEBE BDBD BCBC BBBB 80BA 40B9"            /* ÀÀ¿¿¾¾½½¼¼»»€º@¹ */
+	$"B8B6 B1A9 A0B1 D5DC D2B5 ADA3 8958 3726"            /* ¸¶±© ±ÕÜÒµ­£‰X7& */
+	$"3142 5855 6460 5141 3E65 879D 9676 6165"            /* 1BXUd`QA>e‡–vae */
+	$"6748 3A3A 4044 6457 5338 3649 5E6C 8C92"            /* gH::@DdWS86I^lŒ’ */
+	$"93A6 D5DC D4A8 CAE5 E7E4 E1DD D7CD AA55"            /* “¦ÕÜÔ¨ÊåçäáÝ×ÍªU */
+	$"8200 141E 717B 7B7A 7979 7877 7776 7575"            /* ‚...q{{zyyxwwvuu */
+	$"7474 726D 6969 7685 818A 1D89 8C9F D0E9"            /* ttrmiiv…Š.‰ŒŸÐé */
+	$"E7E5 E7ED EDD9 C6C3 C3C2 C2C1 C1C0 C0BF"            /* çåçííÙÆÃÃÂÂÁÁÀÀ¿ */
+	$"BFBE BEBD BDBC BCBB BB80 BA41 B8B6 B1A9"            /* ¿¾¾½½¼¼»»€ºA¸¶±© */
+	$"9DB2 D8DC CCAF A899 5C24 274E 5561 6363"            /* ²ØÜÌ¯¨™\$'NUacc */
+	$"6459 4F6F 94BF D6D8 CFCC CC92 7C8A 819F"            /* dYOo”¿ÖØÏÌÌ’|ŠŸ */
+	$"8A70 5E54 3321 2A3C 4523 2036 6E80 8A97"            /* Šp^T3!*<E# 6n€Š— */
+	$"CDDC D7A7 B9E4 E3E0 DDD7 D0C3 9B28 8100"            /* ÍÜ×§¹äãàÝ×ÐÃ›(. */
+	$"1816 707B 7B7A 7979 7877 7776 7575 7474"            /* ..p{{zyyxwwvuutt */
+	$"7372 726D 6868 7281 898A 8189 5E9F D0F0"            /* srrmhhr‰Š‰^ŸÐð */
+	$"F2DE C9C4 C4C3 C3C2 C2C1 C1C0 C0BF BFBE"            /* òÞÉÄÄÃÃÂÂÁÁÀÀ¿¿¾ */
+	$"BEBD BDBC BCBB BBBA BAB9 B7B2 AA9C ADD7"            /* ¾½½¼¼»»ºº¹·²ªœ­× */
+	$"DCCD ADA5 954C 1925 3D53 5F71 6D75 6A89"            /* ÜÍ­¥•L.%=S_qmuj‰ */
+	$"C4D1 CED0 C9D3 CCC8 CEBC 7A80 8698 8E7F"            /* ÄÑÎÐÉÓÌÈÎ¼z€†˜Ž. */
+	$"3F4E 402A 3749 4125 2C2E 2749 6F83 8FCD"            /* ?N@*7IA%,.'IoƒÍ */
+	$"DCD8 A2B5 E0DD D8D1 C7BA A46C 8200 186D"            /* ÜØ¢µàÝØÑÇº¤l‚..m */
+	$"7B7B 7A79 7978 7777 7675 7574 7473 7272"            /* {{zyyxwwvuuttsrr */
+	$"7170 6D67 646F 8188 8289 0298 D0C8 80C4"            /* qpmgdoˆ‚‰.˜ÐÈ€Ä */
+	$"57C3 C3C2 C2C1 C1C0 C0BF BFBE BEBD BDBC"            /* WÃÃÂÂÁÁÀÀ¿¿¾¾½½¼ */
+	$"BCBB BBBA B9B8 B3AC 9EA2 D3DC D2A9 A58B"            /* ¼»»º¹¸³¬ž¢ÓÜÒ©¥‹ */
+	$"381D 3F41 4956 6377 8975 7AAE BDD7 CAD8"            /* 8.?AIVcw‰uz®½×ÊØ */
+	$"DEDD CDBA AFA3 756D 726D 864B 4F4B 4F5B"            /* ÞÝÍº¯£umrm†KOKO[ */
+	$"5D64 726D 4B2F 301D 2F67 7B8D D5DC D491"            /* ]drmK/0./g{ÕÜÔ‘ */
+	$"C3D6 CFC4 B49F 8A72 1581 001A 5B78 7B7A"            /* ÃÖÏÄ´ŸŠr...[x{z */
+	$"7979 7877 7776 7575 7474 7372 7271 7070"            /* yyxwwvuuttsrrqpp */
+	$"6F6C 6763 6D7D 8780 8902 889C D580 C457"            /* olgcm}‡€‰.ˆœÕ€ÄW */
+	$"C3C3 C2C2 C1C1 C0C0 BFBF BEBE BDBD BCBC"            /* ÃÃÂÂÁÁÀÀ¿¿¾¾½½¼¼ */
+	$"BBBB BAB9 B6AE A293 C8DC DBAF 986A 1B32"            /* »»º¹¶®¢“ÈÜÛ¯˜j.2 */
+	$"644B 4A56 5D69 8E86 6F6A 9D9F CFDA D8D4"            /* dKJV]iŽ†ojŸÏÚØÔ */
+	$"C9A8 9D85 7869 789E 8371 6C5A 657B 7F71"            /* É¨…xixžƒqlZe{.q */
+	$"787C 6F75 4C24 2F15 2C5D 789C DCDC C77A"            /* x|ouL$/.,]xœÜÜÇz */
+	$"C3BE AA91 7B74 6D37 8100 654E 767B 7A79"            /* Ã¾ª‘{tm7.eNv{zy */
+	$"7978 7777 7675 7574 7473 7272 7170 706F"            /* yxwwvuuttsrrqppo */
+	$"6E6E 6C66 6268 7B87 8988 88B8 CBC4 C4C3"            /* nnlfbh{‡‰ˆˆ¸ËÄÄÃ */
+	$"C3C2 C2C1 C1C0 C0BF BFBE BEBD BDBC BCBB"            /* ÃÂÂÁÁÀÀ¿¿¾¾½½¼¼» */
+	$"BBBA B7B1 A592 ABD9 DCC6 973F 0F3E 7A67"            /* »º·±¥’«ÙÜÆ—?.>zg */
+	$"5955 5A58 7084 6C5E 5377 97BD C9BD A888"            /* YUZXp„l^Sw—½É½¨ˆ */
+	$"8777 6B66 4F84 9B8A 8A74 7381 885C 5654"            /* ‡wkfO„›ŠŠtsˆ\VT */
+	$"5680 7312 5827 1614 2D5C 7BC2 DCDA A883"            /* V€s.X'..-\{ÂÜÚ¨ƒ */
+	$"A25E 3E3C 676F 4F81 007B 3A73 7B7A 7979"            /* ¢^><goO.{:s{zyy */
+	$"7877 7776 7575 7474 7372 7271 7070 6F6E"            /* xwwvuuttsrrqppon */
+	$"6E6D 6D6B 6661 6780 8888 92CF C5C4 C3C3"            /* nmmkfag€ˆˆ’ÏÅÄÃÃ */
+	$"C2C2 C1C1 C0C0 BFBF BEBE BDBD BCBC BBBB"            /* ÂÂÁÁÀÀ¿¿¾¾½½¼¼»» */
+	$"B9B5 AB9C 8CC9 DCDC A573 1439 768E 7259"            /* ¹µ«œŒÉÜÜ¥s.9vŽrY */
+	$"4E4F 5159 765B 5A51 568D A39F 8978 6252"            /* NOQYv[ZQV£Ÿ‰xbR */
+	$"4F5A 6B72 8588 9190 8F7D 808E 8063 5F53"            /* OZkr…ˆ‘}€Ž€c_S */
+	$"6978 6F57 487A 2C17 316B 98DB DCCA 714A"            /* ixoWHz,.1k˜ÛÜÊqJ */
+	$"373F 3D4C 7365 8100 7524 717B 7A79 7978"            /* 7?=Lse.u$q{zyyx */
+	$"7777 7675 7574 7473 7272 7170 706F 6E6E"            /* wwvuuttsrrqpponn */
+	$"6D6D 6C6B 6B65 6686 8888 AACF C4C3 C3C2"            /* mmlkkef†ˆˆªÏÄÃÃÂ */
+	$"C2C1 C1C0 C0BF BFBE BEBD BDBC BCBB BAB8"            /* ÂÁÁÀÀ¿¿¾¾½½¼¼»º¸ */
+	$"B1A4 8F9A D6DC D292 5323 5961 7957 5F51"            /* ±¤šÖÜÒ’S#YayW_Q */
+	$"452E 3E63 6076 5F34 7076 8168 6662 6165"            /* E.>c`v_4pvhfbae */
+	$"9AB5 AE9C 9C95 999C 9B82 7B82 6456 5F72"            /* šµ®œœ•™œ›‚{‚dV_r */
+	$"7B49 4045 3121 1410 4D7A D9DC D796 4780"            /* {I@E1!..MzÙÜ×–G€ */
+	$"4C02 4D74 6681 0075 166F 7B7A 7979 7877"            /* L.Mtf.u.o{zyyxw */
+	$"7776 7575 7474 7372 7271 7070 6F6E 6E6D"            /* wvuuttsrrqpponnm */
+	$"6D6C 6B6B 6A63 7588 888A C3C7 C3C3 C2C2"            /* mlkkjcuˆˆŠÃÇÃÃÂÂ */
+	$"C1C1 C0C0 BFBF BEBE BDBD BCBC BBBA B6AC"            /* ÁÁÀÀ¿¿¾¾½½¼¼»º¶¬ */
+	$"9D85 AEDA DCC8 8018 4F48 575A 6861 423E"            /* …®ÚÜÈ€.OHWZhaB> */
+	$"393F 494F 5762 7F9D 8A8D 888C 998C 98C6"            /* 9?IOWb.ŠˆŒ™Œ˜Æ */
+	$"D3DA DDDE D5C1 A07A 696D 6A6D 6A75 6C7C"            /* ÓÚÝÞÕÁ zimjmjul| */
+	$"7B6E 303D 1F12 1229 6BC4 DCDB AD53 8150"            /* {n0=...)kÄÜÛ­SP */
+	$"0275 6806 8100 746C 7B7A 7979 7877 7776"            /* .uh..tl{zyyxwwv */
+	$"7575 7474 7372 7271 7070 6F6E 6E6D 6D6C"            /* uuttsrrqpponnmml */
+	$"6B6B 6A68 6081 8888 9DCD C3C3 C2C2 C1C1"            /* kkjh`ˆˆÍÃÃÂÂÁÁ */
+	$"C0C0 BFBF BEBE BDBD BCBC BBB9 B4A7 9882"            /* ÀÀ¿¿¾¾½½¼¼»¹´§˜‚ */
+	$"B8DB DCBF 4E1C 4434 3D51 655E 4B3F 3A40"            /* ¸ÛÜ¿N.D4=Qe^K?:@ */
+	$"4950 4E4C 514D 494F 5A72 7F85 ACC4 D2D7"            /* IPNLQMIOZr.…¬ÄÒ× */
+	$"DAD9 CCCA A376 596A 6A5F 4567 6467 6A52"            /* ÚÙÌÊ£vYjj_EgdgjR */
+	$"3925 2331 5C1D 4EBF DCDC BA5B 8154 0275"            /* 9%#1\.N¿ÜÜº[T.u */
+	$"6B1C 8100 1E60 797A 7979 7877 7776 7575"            /* k...`yzyyxwwvuu */
+	$"7474 7372 7271 7070 6F6E 6E6D 6D6C 6B6B"            /* ttsrrqpponnmmlkk */
+	$"6A69 636C 8088 59B7 C8C3 C2C2 C1C1 C0C0"            /* jicl€ˆY·ÈÃÂÂÁÁÀÀ */
+	$"BFBF BEBE BDBD BCBC BBB8 B1A2 9380 BBDC"            /* ¿¿¾¾½½¼¼»¸±¢“€»Ü */
+	$"DCC0 301B 264B 663B 5151 4946 4A46 4441"            /* ÜÀ0.&Kf;QQIFJFDA */
+	$"4446 5155 525A 6369 6777 9C9C ADB9 C5C2"            /* DFQURZcigwœœ­¹ÅÂ */
+	$"B4DE 8B6F 627E 7742 574B 625D 6749 352B"            /* ´Þ‹ob~wBWKb]gI5+ */
+	$"3963 6B18 38BC DDDC BE62 5658 5859 756B"            /* 9ck.8¼ÝÜ¾bVXXYuk */
+	$"1C81 007A 5477 7A79 7978 7777 7675 7574"            /* ..zTwzyyxwwvuut */
+	$"7473 7272 7170 706F 6E6E 6D6D 6C6B 6B6A"            /* tsrrqpponnmmlkkj */
+	$"6969 5F7C 8888 8DC8 C3C2 C2C1 C1C0 C0BF"            /* ii_|ˆˆÈÃÂÂÁÁÀÀ¿ */
+	$"BFBE BEBD BDBC BCBB B7AE 9E8F 7FB9 DBDD"            /* ¿¾¾½½¼¼»·®ž.¹ÛÝ */
+	$"CE14 181E 262B 4C47 5454 4F51 4C48 4043"            /* Î...&+LGTTOQLH@C */
+	$"4D52 545B 5D6E 7581 837A 9394 A1AE A8A9"            /* MRT[]nuƒz“”¡®¨© */
+	$"CC75 A860 7564 3E5A 5766 6E79 553B 514E"            /* Ìu¨`ud>ZWfnyU;QN */
+	$"5B67 1C2A CCDD DCBB 6356 5D5D 5F75 6782"            /* [g.*ÌÝÜ»cV]]_ug‚ */
+	$"0074 3973 7A79 7978 7777 7675 7574 7473"            /* .t9szyyxwwvuutts */
+	$"7272 7170 706F 6E6E 6D6D 6C6B 6B6A 6969"            /* rrqpponnmmlkkjii */
+	$"6464 8588 87A1 C9C2 C2C1 C1C0 C0BF BFBE"            /* dd…ˆ‡¡ÉÂÂÁÁÀÀ¿¿¾ */
+	$"BEBD BDBC BCBB B5AA 9A8C 7FB1 DADD D914"            /* ¾½½¼¼»µªšŒ.±ÚÝÙ. */
+	$"1F2E 4C31 515F 656A 5D60 584A 4B59 5956"            /* ..L1Q_ej]`XJKYYV */
+	$"4B5B 5659 6045 475F 95A3 8E8D 8B98 8A77"            /* K[VY`EG_•£Ž‹˜Šw */
+	$"9165 867D 6A5C 5D69 8180 655F 5F4F 4945"            /* ‘e†}j\]i€e__OIE */
+	$"213A DDDE DCB2 5D80 6202 6775 6782 007A"            /* !:ÝÞÜ²]€b.gug‚.z */
+	$"2B72 7A79 7978 7777 7675 7574 7473 7272"            /* +rzyyxwwvuuttsrr */
+	$"7170 706F 6E6E 6D6D 6C6B 6B6A 6969 685E"            /* qpponnmmlkkjiih^ */
+	$"7488 8789 BEC3 C2C1 C1C0 C0BF BFBE BEBD"            /* tˆ‡‰¾ÃÂÁÁÀÀ¿¿¾¾½ */
+	$"BDBC BCBA B4A7 9689 7DA5 D6DD DE45 151E"            /* ½¼¼º´§–‰}¥ÖÝÞE.. */
+	$"3D41 5C76 725F 635E 6046 584B 5B5F 6061"            /* =A\vr_c^`FXK[_`a */
+	$"6052 4B4C 494C 5C6D 97A6 9077 6250 626E"            /* `RKLIL\m—¦wbPbn */
+	$"898D 7B69 696C 8681 8564 4A62 634A 1C73"            /* ‰{iil†…dJbcJ.s */
+	$"DFDE D9A4 5568 6968 6C77 6782 005E 1D70"            /* ßÞÙ¤Uhihlwg‚.^.p */
+	$"7A79 7978 7777 7675 7574 7473 7272 7170"            /* zyyxwwvuuttsrrqp */
+	$"706F 6E6E 6D6D 6C6B 6B6A 6969 6867 5C83"            /* ponnmmlkkjiihg\ƒ */
+	$"8787 94C7 C2C1 C1C0 C0BF BFBE BEBD BDBC"            /* ‡‡”ÇÂÁÁÀÀ¿¿¾¾½½¼ */
+	$"BBBA B2A5 9488 7D97 CDDD DEAC 1221 2A3C"            /* »º²¥”ˆ}—ÍÝÞ¬.!*< */
+	$"6C7D 837D 7F6E 6D6B 5150 5F5F 615C 5655"            /* l}ƒ}.nmkQP__a\VU */
+	$"4D44 4241 4A4A 4E53 5A4D 3E49 8A80 7A12"            /* MDBAJJNSZM>IŠ€z. */
+	$"737C 868C 8785 8068 607C 633C 29CC E0DE"            /* s|†Œ‡…€h`|c<)ÌàÞ */
+	$"CE8F 5180 6E02 767A 5583 0020 6C7A 7979"            /* ÎQ€n.vzUƒ. lzyy */
+	$"7877 7776 7575 7474 7372 7271 7070 6F6E"            /* xwwvuuttsrrqppon */
+	$"6E6D 6D6C 6B6B 6A69 6968 685F 6B80 8755"            /* nmmlkkjiihh_k€‡U */
+	$"AAC4 C1C1 C0C0 BFBF BEBE BDBD BCBB B9B1"            /* ªÄÁÁÀÀ¿¿¾¾½½¼»¹± */
+	$"A291 8988 8DBD DBDF E056 2227 3C57 6A79"            /* ¢‘‰ˆ½ÛßàV"'<Wjy */
+	$"796C 5A69 5C54 505F 6765 6767 655D 3D43"            /* ylZi\TP_gegge]=C */
+	$"514D 474C 5B65 6874 7C79 7173 707D 898F"            /* QMGL[eht|yqsp}‰ */
+	$"8A77 7E74 6272 6C4E 2A9B E1E0 DDBA 7C59"            /* Šw~tbrlN*›áàÝº|Y */
+	$"7776 757E 7D4F 8300 2460 7879 7978 7777"            /* wvu~}Oƒ.$`xyyxww */
+	$"7675 7574 7473 7272 7170 706F 6E6E 6D6D"            /* vuuttsrrqpponnmm */
+	$"6C6B 6B6A 6969 6868 675A 7D87 878C 80C1"            /* lkkjiihhgZ}‡‡Œ€Á */
+	$"51C0 C0BF BFBE BEBD BDBC BBB9 B0A1 9B95"            /* QÀÀ¿¿¾¾½½¼»¹°¡›• */
+	$"7B89 ACD1 DFE0 D544 242D 3950 5C61 694A"            /* {‰¬ÑßàÕD$-9P\aiJ */
+	$"4640 486B 7986 AAB9 BEBB B89A 4E4A 544E"            /* F@Hky†ª¹¾»¸šNJTN */
+	$"4660 6F7D 8C92 9695 8F86 8F8D 6975 7968"            /* F`o}Œ’–•†iuyh */
+	$"5F5D 5E46 3066 E2E1 E0D0 9F73 5B7C 7A79"            /* _]^F0fâáàÐŸs[|zy */
+	$"8A7A 3783 0079 5476 7979 7877 7776 7575"            /* Šz7ƒ.yTvyyxwwvuu */
+	$"7474 7372 7271 7070 6F6E 6E6D 6D6C 6B6B"            /* ttsrrqpponnmmlkk */
+	$"6A69 6968 6867 6160 8587 879E C2C1 C0C0"            /* jiihhga`…‡‡žÂÁÀÀ */
+	$"BFBF BEBE BDBD BCBB B8B7 B48F 6358 87A3"            /* ¿¿¾¾½½¼»¸·´cX‡£ */
+	$"BFD9 E0E1 CA35 2729 2B41 4C5D 6667 6C63"            /* ¿ÙàáÊ5')+AL]fglc */
+	$"6985 A0C4 CFCF CAD1 B98D 4253 574C 5A75"            /* i… ÄÏÏÊÑ¹BSWLZu */
+	$"807E 6A5B 6888 93A3 8563 7067 5E50 444C"            /* €~j[hˆ“£…cpg^PDL */
+	$"375C DEE2 E1DA B48C 7159 817E 7B98 7830"            /* 7\ÞâáÚ´ŒqY~{˜x0 */
+	$"8300 2240 7479 7978 7777 7675 7574 7473"            /* ƒ."@tyyxwwvuutts */
+	$"7272 7170 706F 6E6E 6D6D 6C6B 6B6A 6969"            /* rrqpponnmmlkkjii */
+	$"6868 6766 5A72 8087 53B2 C1C0 C0BF BFBE"            /* hhgfZr€‡S²ÁÀÀ¿¿¾ */
+	$"BEBD BDBC BFCD BF81 5F56 5485 A2B1 C8DE"            /* ¾½½¼¿Í¿_VT…¢±ÈÞ */
+	$"E1E2 D745 2418 3849 5954 6D69 626E 919F"            /* áâ×E$.8IYTmibn‘Ÿ */
+	$"C6D8 D8D6 E2B7 883C 4E58 5E54 5966 6860"            /* ÆØØÖâ·ˆ<NX^TYfh` */
+	$"4F41 8B91 9979 645F 524E 4556 4C6E DFE4"            /* OA‹‘™yd_RNEVLnßä */
+	$"E2DF C099 886E 6E89 8486 9B6F 1C83 0078"            /* âßÀ™ˆnn‰„†›o.ƒ.x */
+	$"3272 7979 7877 7776 7575 7474 7372 7271"            /* 2ryyxwwvuuttsrrq */
+	$"7070 6F6E 6E6D 6D6C 6B6B 6A69 6968 6867"            /* pponnmmlkkjiihhg */
+	$"6663 5B82 8787 91C1 C0C0 BFBF BEBE BDBE"            /* fc[‚‡‡‘ÁÀÀ¿¿¾¾½¾ */
+	$"CBD3 AB77 665C 5654 83A0 AFB7 D0E2 E2E3"            /* ËÓ«wf\VTƒ ¯·Ðââã */
+	$"D874 232B 343E 4253 5A58 6D8F B7CB D8D9"            /* Øt#+4>BSZXm·ËØÙ */
+	$"CCDC A38C 4150 5B64 6763 6462 5664 838F"            /* ÌÜ£ŒAP[dgcdbVdƒ */
+	$"9478 5C54 4842 4852 459A E6E5 E3E0 C8A1"            /* ”x\THBHREšæåãàÈ¡ */
+	$"9187 6B71 928B 9293 6884 0023 1D6F 7979"            /* ‘‡kq’‹’“h„.#.oyy */
+	$"7877 7776 7575 7474 7372 7271 7070 6F6E"            /* xwwvuuttsrrqppon */
+	$"6E6D 6D6C 6B6B 6A69 6968 6867 6666 5B6A"            /* nmmlkkjiihhgff[j */
+	$"8087 17AB C0C0 BFBF BEBE C9D7 BE8D 7771"            /* €‡.«ÀÀ¿¿¾¾É×¾wq */
+	$"665C 5654 7A9E AEB4 BBD3 E480 E536 B53B"            /* f\VTzž®´»Óä€å6µ; */
+	$"262E 434C 444F 6372 97B4 BCC2 CDB0 889C"            /* &.CLDOcr—´¼ÂÍ°ˆœ */
+	$"4E5F 6B77 8080 7B7B 7970 7483 6454 4D47"            /* N_kw€€{{yptƒdTMG */
+	$"3F34 2F61 D0E7 E6E4 DFC9 A797 9185 6788"            /* ?4/aÐçæäßÉ§—‘…gˆ */
+	$"9C94 9885 4F84 0078 076C 7979 7877 7776"            /* œ”˜…O„.x.lyyxwwv */
+	$"7575 7474 7372 7271 7070 6F6E 6E6D 6D6C"            /* uuttsrrqpponnmml */
+	$"6B6B 6A69 6968 6867 6666 6555 7C87 878A"            /* kkjiihhgffeU|‡‡Š */
+	$"BCC0 BFBF C4D4 D1A1 7D7A 7771 665C 5654"            /* ¼À¿¿ÄÔÑ¡}zwqf\VT */
+	$"769C AEB4 B8BE D3E4 E9E8 E7E8 9E3E 2D31"            /* vœ®´¸¾Óäéèçèž>-1 */
+	$"2930 4B52 5C6A 7081 9378 5A73 5266 6B70"            /* )0KR\jp“xZsRfkp */
+	$"7466 6263 6A6D 6252 4A46 4339 2E5A BAE9"            /* tfbcjmbRJFC9.Zºé */
+	$"E8E7 E5DC C6AC 9C97 9183 6395 A79D 9777"            /* èçåÜÆ¬œ—‘ƒc•§—w */
+	$"3085 0077 6578 7978 7777 7675 7574 7473"            /* 0….wexyxwwvuutts */
+	$"7272 7170 706F 6E6E 6D6D 6C6B 6B6A 6969"            /* rrqpponnmmlkkjii */
+	$"6868 6766 6665 5F5E 8587 869F C0C1 D0DA"            /* hhgffe_^…‡†ŸÀÁÐÚ */
+	$"B585 7B7A 7A78 7166 5C56 5473 9BAD B4B8"            /* µ…{zzxqf\VTs›­´¸ */
+	$"BCC0 D4E1 E8EB E9E8 EAA0 6327 2B30 353E"            /* ¼ÀÔáèëéèê c'+05> */
+	$"4D5C 6F6D 553C 3C58 5959 5859 5C5F 6457"            /* M\omU<<XYYXY\_dW */
+	$"4845 3E3B 373C 74C8 EBEA E9E7 E3D6 C1B0"            /* HE>;7<tÈëêéçãÖÁ° */
+	$"A49C 9791 815E ABAE A28D 6306 8500 7653"            /* ¤œ—‘^«®¢c.….vS */
+	$"7579 7877 7776 7575 7474 7372 7271 7070"            /* uyxwwvuuttsrrqpp */
+	$"6F6E 6E6D 6D6C 6B6B 6A69 6968 6867 6666"            /* onnmmlkkjiihhgff */
+	$"6564 5576 8786 86D3 DCC9 947C 7B7B 7A7A"            /* edUv‡††ÓÜÉ”|{{zz */
+	$"7871 6757 4F3A 5B98 ACB4 B8BC BFC5 D5DD"            /* xqgWO:[˜¬´¸¼¿ÅÕÝ */
+	$"E6EB EBEA EAEC E0A3 6636 2E33 3C46 4844"            /* æëëêêìà£f6.3<FHD */
+	$"4552 504E 4C4A 3E42 4642 3D39 364B 78B2"            /* ERPNLJ>BFB=96Kx² */
+	$"EEED ECEB E9E6 DDCE BDB3 ADA2 9C97 907F"            /* îíìëéæÝÎ½³­¢œ—. */
+	$"5AB3 AA9E 7D37 8600 763F 7379 7877 7776"            /* Z³ªž}7†.v?syxwwv */
+	$"7575 7474 7372 7271 7070 6F6E 6E6D 6D6C"            /* uuttsrrqpponnmml */
+	$"6B6B 6A69 6968 6867 6666 6564 6156 8386"            /* kkjiihhgffedaVƒ† */
+	$"86AF A680 7C7C 7B7B 7A7A 7870 583C 3837"            /* †¯¦€||{{zzxpX<87 */
+	$"5A97 ABB4 B8BC BFC3 CED6 DBE2 E8EC EDEC"            /* Z—«´¸¼¿ÃÎÖÛâèìíì */
+	$"ECED EEF0 CBA6 8F5F 6232 3639 3C3D 3B3A"            /* ìíîðË¦_b269<=;: */
+	$"3952 6871 93B6 D9F1 F0EE EDEC EBE6 DED4"            /* 9Rhq“¶ÙñðîíìëæÞÔ */
+	$"C8BE B9B3 AAA2 9C97 907C 64B6 A88C 6406"            /* È¾¹³ª¢œ—|d¶¨Œd. */
+	$"8600 2538 7179 7877 7776 7575 7474 7372"            /* †.%8qyxwwvuuttsr */
+	$"7271 7070 6F6E 6E6D 6D6C 6B6B 6A69 6968"            /* rqpponnmmlkkjiih */
+	$"6867 6666 6564 6458 6980 8600 7D80 7C25"            /* hgffeddXi€†.}€|% */
+	$"7B7B 7A7A 7151 3B3A 3937 5094 AAB4 B8BC"            /* {{zzqQ;:97P”ª´¸¼ */
+	$"BFC3 C8D5 D9DC DEE1 E6EA ECEC EDEE F0F1"            /* ¿ÃÈÕÙÜÞáæêììíîðñ */
+	$"F2F3 F4F5 F6F6 81F7 1EF6 F5F5 F4F3 F2F1"            /* òóôõöö÷.öõõôóòñ */
+	$"F0EF EDE9 E2D9 CEC8 C6C3 BEB9 B3A8 A29C"            /* ðïíéâÙÎÈÆÃ¾¹³¨¢œ */
+	$"978F 796F B19F 7722 8700 291D 6E79 7877"            /* —yo±Ÿw"‡.).nyxw */
+	$"7776 7575 7474 7372 7271 7070 6F6E 6E6D"            /* wvuuttsrrqpponnm */
+	$"6D6C 6B6B 6A69 6968 6867 6666 6564 6463"            /* mlkkjiihhgffeddc */
+	$"537C 8688 7E80 7C26 7B7B 7763 4844 453E"            /* S|†ˆ~€|&{{wcHDE> */
+	$"3937 4792 A9B4 B8BC BFC3 C7D0 D9DC DDDD"            /* 97G’©´¸¼¿ÃÇÐÙÜÝÝ */
+	$"DCDD E1E4 E7EA ECEE F0F1 F2F3 F3F4 F480"            /* ÜÝáäçêìîðñòóóôô€ */
+	$"F51D F4F3 F3F2 F1EF ECE6 DED4 CBC4 C2C2"            /* õ.ôóóòñïìæÞÔËÄÂÂ */
+	$"C4C6 C3BE B9B3 A8A2 9C97 8E76 7FA9 844A"            /* ÄÆÃ¾¹³¨¢œ—Žv.©„J */
+	$"8800 290E 6D79 7877 7776 7575 7474 7372"            /* ˆ.).myxwwvuuttsr */
+	$"7271 7070 6F6E 6E6D 6D6C 6B6B 6A69 6968"            /* rqpponnmmlkkjiih */
+	$"6867 6666 6564 6463 5B5E 868B 8180 7C47"            /* hgffeddc[^†‹€|G */
+	$"7B6F 5144 4D4C 463E 3937 478F A8B3 B8BC"            /* {oQDMLF>97G¨³¸¼ */
+	$"BFC3 C7CB D9DC DDDB D4D1 D0D1 D2D5 D8D8"            /* ¿ÃÇËÙÜÝÛÔÑÐÑÒÕØØ */
+	$"DCE1 E4E7 E8EA EBEB EAE9 E7E3 DED8 D1C9"            /* ÜáäçèêëëêéçãÞØÑÉ */
+	$"C2BC B8B7 B8BA BCC0 C4C6 C3BE B9B2 A8A2"            /* Â¼¸·¸º¼ÀÄÆÃ¾¹²¨¢ */
+	$"9C97 8D73 8092 6506 8900 726C 7978 7777"            /* œ—s€’e.‰.rlyxww */
+	$"7675 7574 7473 7272 7170 706F 6E6E 6D6D"            /* vuuttsrrqpponnmm */
+	$"6C6B 6B6A 6969 6868 6766 6665 6464 6362"            /* lkkjiihhgffeddcb */
+	$"5274 8E84 7C7C 785E 454B 5250 4D46 3F39"            /* RtŽ„||x^EKRPMF?9 */
+	$"373A 8CA7 B3B8 BCBF C3C7 CBD4 DBDD D8D2"            /* 7:Œ§³¸¼¿ÃÇËÔÛÝØÒ */
+	$"D1D0 CFCD CCCA C8C7 C6C5 C5C4 C4C2 C1BE"            /* ÑÐÏÍÌÊÈÇÆÅÅÄÄÂÁ¾ */
+	$"BBB8 B3AF ADAD AFB1 B2B4 B6B8 BABC BDC4"            /* »¸³¯­­¯±²´¶¸º¼½Ä */
+	$"C6C3 BEB9 B1A8 A29C 968B 6E83 741C 8A00"            /* ÆÃ¾¹±¨¢œ–‹nƒt.Š. */
+	$"7151 7678 7777 7675 7574 7473 7272 7170"            /* qQvxwwvuuttsrrqp */
+	$"706F 6E6E 6D6D 6C6B 6B6A 6969 6868 6766"            /* ponnmmlkkjiihhgf */
+	$"6665 6464 6362 5E54 8D86 7C6D 4D46 5152"            /* feddcb^T†|mMFQR */
+	$"5250 4D47 403A 3736 8AA5 B3B8 BCBF C3C7"            /* RPMG@:76Š¥³¸¼¿ÃÇ */
+	$"CBD1 DBDD D6D2 D1D0 CFCD CCCA C8C7 C5C3"            /* ËÑÛÝÖÒÑÐÏÍÌÊÈÇÅÃ */
+	$"C1BE BCBA B7B5 B2B0 ADAA ABAD AFB1 B2B4"            /* Á¾¼º·µ²°­ª«­¯±²´ */
+	$"B6B8 BABC BDC2 C6C3 BEB9 B0A8 A29C 9689"            /* ¶¸º¼½ÂÆÃ¾¹°¨¢œ–‰ */
+	$"6A6C 308B 0070 0749 7376 7776 7575 7474"            /* jl0‹.p.Isvwvuutt */
+	$"7372 7271 7070 6F6E 6E6D 6D6C 6B6B 6A69"            /* srrqpponnmmlkkji */
+	$"6968 6867 6666 6564 6463 6262 5477 835A"            /* ihhgffeddcbbTwƒZ */
+	$"444F 5353 5252 504E 4740 3A37 3683 A3B2"            /* DOSSRRPNG@:76ƒ£² */
+	$"B8BC BFC3 C7CB D0DB DCD5 D2D1 D0CF CDCC"            /* ¸¼¿ÃÇËÐÛÜÕÒÑÐÏÍÌ */
+	$"CAC8 C7C5 C3C1 BEBC BAB7 B5B2 B0AD AAAB"            /* ÊÈÇÅÃÁ¾¼º·µ²°­ª« */
+	$"ADAF B1B2 B4B6 B8BA BCBD C1C6 C3BE B9B0"            /* ­¯±²´¶¸º¼½ÁÆÃ¾¹° */
+	$"A8A2 9C96 865E 438E 006D 1B5B 7576 7575"            /* ¨¢œ–†^CŽ.m.[uvuu */
+	$"7474 7372 7271 7070 6F6E 6E6D 6D6C 6B6B"            /* ttsrrqpponnmmlkk */
+	$"6A69 6968 6867 6666 6564 6463 6262 5F57"            /* jiihhgffeddcbb_W */
+	$"4B4A 5354 5353 5252 504E 4841 3A37 3674"            /* KJSTSSRRPNHA:76t */
+	$"A1B2 B8BC BFC3 C7CB CFDA DCD5 D2D1 D0CF"            /* ¡²¸¼¿ÃÇËÏÚÜÕÒÑÐÏ */
+	$"CDCC CAC8 C7C5 C3C1 BEBC BAB7 B5B2 B0AD"            /* ÍÌÊÈÇÅÃÁ¾¼º·µ²°­ */
+	$"AAAB ADAF B1B2 B4B6 B8BA BCBD C0C6 C3BE"            /* ª«­¯±²´¶¸º¼½ÀÆÃ¾ */
+	$"B9AF A8A2 9C95 8351 9000 6C06 3C71 7475"            /* ¹¯¨¢œ•ƒQ.l.<qtu */
+	$"7474 7372 7271 7070 6F6E 6E6D 6D6C 6B6B"            /* ttsrrqpponnmmlkk */
+	$"6A69 6968 6867 6666 6564 6463 6262 615A"            /* jiihhgffeddcbbaZ */
+	$"5155 5454 5353 5252 504E 4942 3B37 3672"            /* QUTTSSRRPNIB;76r */
+	$"9FB1 B8BC BFC3 C7CB CEDA DCD4 D2D1 D0CF"            /* Ÿ±¸¼¿ÃÇËÎÚÜÔÒÑÐÏ */
+	$"CDCC CAC8 C7C5 C3C1 BEBC BAB7 B5B2 B0AD"            /* ÍÌÊÈÇÅÃÁ¾¼º·µ²°­ */
+	$"AAAB ADAF B1B2 B4B6 B8BA BCBD BFC6 C3BD"            /* ª«­¯±²´¶¸º¼½¿ÆÃ½ */
+	$"B9AF A8A2 9C95 7D41 9200 6A1A 5972 7474"            /* ¹¯¨¢œ•}A’.j.Yrtt */
+	$"7372 7271 7070 6F6E 6E6D 6D6C 6B6B 6A69"            /* srrqpponnmmlkkji */
+	$"6968 6867 6666 6564 6463 6262 6160 5555"            /* ihhgffeddcbba`UU */
+	$"5454 5353 5252 504E 4942 3B37 365E 9DB0"            /* TTSSRRPNIB;76^° */
+	$"B8BC BFC3 C7CB CEDA DBD3 D2D1 D0CF CDCC"            /* ¸¼¿ÃÇËÎÚÛÓÒÑÐÏÍÌ */
+	$"CAC8 C7C5 C3C1 BEBC BAB7 B5B2 B0AD AAAB"            /* ÊÈÇÅÃÁ¾¼º·µ²°­ª« */
+	$"ADAF B1B2 B4B6 B8BA BCBD BFC6 C3BD B8AF"            /* ­¯±²´¶¸º¼½¿ÆÃ½¸¯ */
+	$"A8A2 9C94 7736 9400 6834 6E73 7372 7271"            /* ¨¢œ”w6”.h4nssrrq */
+	$"7070 6F6E 6E6D 6D6C 6B6B 6A69 6968 6867"            /* pponnmmlkkjiihhg */
+	$"6666 6564 6463 6262 6160 5555 5454 5353"            /* ffeddcbba`UUTTSS */
+	$"5252 504E 4942 3B37 365D 9BAF B8BC BFC3"            /* RRPNIB;76]›¯¸¼¿Ã */
+	$"C7CB CEDA DBD3 D2D1 D0CF CDCC CAC8 C7C5"            /* ÇËÎÚÛÓÒÑÐÏÍÌÊÈÇÅ */
+	$"C3C1 BEBC BAB7 B5B2 B0AD AAAB ADAF B1B2"            /* ÃÁ¾¼º·µ²°­ª«­¯±² */
+	$"B4B6 B8BA BCBD BFC4 C3BD B8AE A8A2 9C92"            /* ´¶¸º¼½¿ÄÃ½¸®¨¢œ’ */
+	$"722B 9500 6713 5370 7272 7170 706F 6E6E"            /* r+•.g.Sprrqpponn */
+	$"6D6D 6C6B 6B6A 6969 6868 6766 6665 6464"            /* mmlkkjiihhgffedd */
+	$"6362 6261 6057 5554 5453 5352 5250 4E49"            /* cbba`WUTTSSRRPNI */
+	$"423B 3736 5398 AEB8 BCBF C3C7 CBCE D9DB"            /* B;76S˜®¸¼¿ÃÇËÎÙÛ */
+	$"D3D2 D1D0 CFCD CCCA C8C7 C5C3 C1BE BCBA"            /* ÓÒÑÐÏÍÌÊÈÇÅÃÁ¾¼º */
+	$"B7B5 B2B0 ADAA ABAD AFB1 B2B4 B6B8 BABC"            /* ·µ²°­ª«­¯±²´¶¸º¼ */
+	$"BDBF C4C3 BDB8 ADA8 A29C 916B 1A97 0065"            /* ½¿ÄÃ½¸­¨¢œ‘k.—.e */
+	$"336C 7171 7070 6F6E 6E6D 6D6C 6B6B 6A69"            /* 3lqqpponnmmlkkji */
+	$"6968 6867 6666 6564 6463 6262 6160 5855"            /* ihhgffeddcbba`XU */
+	$"5454 5353 5252 504E 4841 3B37 3649 95AC"            /* TTSSRRPNHA;76I•¬ */
+	$"B8BC BFC3 C7CB CED9 D9D3 D2D1 D0CF CDCC"            /* ¸¼¿ÃÇËÎÙÙÓÒÑÐÏÍÌ */
+	$"CAC8 C7C5 C3C1 BEBC BAB7 B5B2 B0AD AAAB"            /* ÊÈÇÅÃÁ¾¼º·µ²°­ª« */
+	$"ADAF B1B2 B4B6 B8BA BCBD BFC4 C2BD B8AD"            /* ­¯±²´¶¸º¼½¿ÄÂ½¸­ */
+	$"A8A2 9C8E 6614 9800 630C 4B6E 7070 6F6E"            /* ¨¢œŽf.˜.c.Knppon */
+	$"6E6D 6D6C 6B6B 6A69 6968 6867 6666 6564"            /* nmmlkkjiihhgffed */
+	$"6463 6262 6163 5855 5454 5353 5252 504E"            /* dcbbacXUTTSSRRPN */
+	$"4841 3A37 3644 93AB B7BC BFC3 C7CB CED9"            /* HA:76D“«·¼¿ÃÇËÎÙ */
+	$"D8D3 D2D1 D0CF CDCC CAC8 C7C5 C3C1 BEBC"            /* ØÓÒÑÐÏÍÌÊÈÇÅÃÁ¾¼ */
+	$"BAB7 B5B2 B0AD AAAB ADAF B1B2 B4B6 B8BA"            /* º·µ²°­ª«­¯±²´¶¸º */
+	$"BCBD BFC4 C2BD B8AD A8A2 9C8C 5E9B 0061"            /* ¼½¿ÄÂ½¸­¨¢œŒ^›.a */
+	$"2C5C 6F6F 6E6E 6D6D 6C6B 6B6A 6969 6868"            /* ,\oonnmmlkkjiihh */
+	$"6766 6665 6464 6362 6261 655C 5554 5453"            /* gffeddcbbae\UTTS */
+	$"5352 5250 4E47 403A 3736 3690 A9B7 BCBF"            /* SRRPNG@:766©·¼¿ */
+	$"C3C7 CBCE D8D8 D3D2 D1D0 CFCD CCCA C8C7"            /* ÃÇËÎØØÓÒÑÐÏÍÌÊÈÇ */
+	$"C5C3 C1BE BCBA B7B5 B2B0 ADAA ABAD AFB1"            /* ÅÃÁ¾¼º·µ²°­ª«­¯± */
+	$"B2B4 B6B8 BABC BDBF C3C2 BDB8 ADA8 A29B"            /* ²´¶¸º¼½¿ÃÂ½¸­¨¢› */
+	$"8751 9C00 600C 4A6B 6E6E 6D6D 6C6B 6B6A"            /* ‡Qœ.`.Jknnmmlkkj */
+	$"6969 6868 6766 6665 6464 6362 6261 635D"            /* iihhgffeddcbbac] */
+	$"5554 5453 5352 5250 4D47 403A 3736 368D"            /* UTTSSRRPMG@:766 */
+	$"A7B6 BCBF C3C7 CBCE D8D8 D3D2 D1D0 CFCD"            /* §¶¼¿ÃÇËÎØØÓÒÑÐÏÍ */
+	$"CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0 ADAA"            /* ÌÊÈÇÅÃÁ¾¼º·µ²°­ª */
+	$"ABAD AFB1 B2B4 B6B8 BABC BDBF C3C2 BDB8"            /* «­¯±²´¶¸º¼½¿ÃÂ½¸ */
+	$"ADA8 A29A 8145 9E00 5E25 5A6C 6D6D 6C6B"            /* ­¨¢šEž.^%Zlmmlk */
+	$"6B6A 6969 6868 6766 6665 6464 6362 6261"            /* kjiihhgffeddcbba */
+	$"605E 5554 5453 5352 5250 4D46 3F39 3736"            /* `^UTTSSRRPMF?976 */
+	$"3678 A5B6 BCBF C3C7 CBCE D8D7 D3D2 D1D0"            /* 6x¥¶¼¿ÃÇËÎØ×ÓÒÑÐ */
+	$"CFCD CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0"            /* ÏÍÌÊÈÇÅÃÁ¾¼º·µ²° */
+	$"ADAA ABAD AFB1 B2B4 B6B8 BABC BDBF C3C2"            /* ­ª«­¯±²´¶¸º¼½¿ÃÂ */
+	$"BCB6 ADA8 A299 7A34 9F00 5D06 4369 6D6C"            /* ¼¶­¨¢™z4Ÿ.].Ciml */
+	$"6B6B 6A69 6968 6867 6666 6564 6463 6262"            /* kkjiihhgffeddcbb */
+	$"6160 5E55 5454 5353 5252 504D 463E 3937"            /* a`^UTTSSRRPMF>97 */
+	$"3636 76A3 B5BC BFC3 C7CB CED8 D6D3 D2D1"            /* 66v£µ¼¿ÃÇËÎØÖÓÒÑ */
+	$"D0CF CDCC CAC8 C7C5 C3C1 BEBC BAB7 B5B2"            /* ÐÏÍÌÊÈÇÅÃÁ¾¼º·µ² */
+	$"B0AD AAAB ADAF B1B2 B4B6 B8BA BCBD BFC3"            /* °­ª«­¯±²´¶¸º¼½¿Ã */
+	$"C2BC B6AD A8A2 9775 28A1 005B 1E59 6A6B"            /* Â¼¶­¨¢—u(¡.[.Yjk */
+	$"6B6A 6969 6868 6766 6665 6464 6362 6261"            /* kjiihhgffeddcbba */
+	$"6060 5554 5453 5352 5250 4C45 3E39 3736"            /* ``UTTSSRRPLE>976 */
+	$"3660 A1B4 BCBF C3C7 CBCE D7D6 D3D2 D1D0"            /* 6`¡´¼¿ÃÇËÎ×ÖÓÒÑÐ */
+	$"CFCD CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0"            /* ÏÍÌÊÈÇÅÃÁ¾¼º·µ²° */
+	$"ADAA ABAD AFB1 B2B4 B6B8 BABC BDBF C3C2"            /* ­ª«­¯±²´¶¸º¼½¿ÃÂ */
+	$"BCB6 ADA8 A295 6D17 A200 5A06 3C67 6B6A"            /* ¼¶­¨¢•m.¢.Z.<gkj */
+	$"6969 6868 6766 6665 6464 6362 6261 6065"            /* iihhgffeddcbba`e */
+	$"5554 5453 5352 524F 4B44 3D38 3736 365F"            /* UTTSSRROKD=8766_ */
+	$"9EB3 BCBF C3C7 CBCF D7D6 D3D2 D1D0 CFCD"            /* ž³¼¿ÃÇËÏ×ÖÓÒÑÐÏÍ */
+	$"CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0 ADAA"            /* ÌÊÈÇÅÃÁ¾¼º·µ²°­ª */
+	$"ABAD AFB1 B2B4 B6B8 BABC BDBF C3C2 BCB6"            /* «­¯±²´¶¸º¼½¿ÃÂ¼¶ */
+	$"ADA8 A192 6605 A400 5717 5168 6969 6868"            /* ­¨¡’f.¤.W.Qhiihh */
+	$"6766 6665 6464 6362 6261 6066 5554 5453"            /* gffeddcbba`fUTTS */
+	$"5352 514F 4A43 3C38 3636 353C 9BB1 BCBF"            /* SRQOJC<8665<›±¼¿ */
+	$"C3C7 CBCF D7D5 D3D2 D1D0 CFCD CCCA C8C7"            /* ÃÇËÏ×ÕÓÒÑÐÏÍÌÊÈÇ */
+	$"C5C3 C1BE BCBA B7B5 B2B0 ADAA ABAD AFB1"            /* ÅÃÁ¾¼º·µ²°­ª«­¯± */
+	$"B2B4 B6B8 BABC BDBF C3C2 BCB6 ADA8 A18E"            /* ²´¶¸º¼½¿ÃÂ¼¶­¨¡Ž */
+	$"5CA6 0056 0635 6569 6868 6766 6665 6464"            /* \¦.V.5eihhgffedd */
+	$"6362 6261 6067 5554 5453 5352 514E 4941"            /* cbba`gUTTSSRQNIA */
+	$"3B38 362B 1416 93AF BBBF C3C7 CBCF D6D5"            /* ;86+..“¯»¿ÃÇËÏÖÕ */
+	$"D3D2 D1D0 CFCD CCCA C8C7 C5C3 C1BE BCBA"            /* ÓÒÑÐÏÍÌÊÈÇÅÃÁ¾¼º */
+	$"B7B5 B2B0 ADAA ABAD AFB1 B2B4 B6B8 BABC"            /* ·µ²°­ª«­¯±²´¶¸º¼ */
+	$"BDBF C3C1 BCB6 ADA8 A088 4AA8 0054 1850"            /* ½¿ÃÁ¼¶­¨ ˆJ¨.T.P */
+	$"6668 6766 6665 6464 6362 6261 606B 5554"            /* fhgffeddcbba`kUT */
+	$"5453 5352 504C 463F 3A36 2508 0000 8CAD"            /* TSSRPLF?:6%...Œ­ */
+	$"BBBF C3C7 CBCF D6D5 D3D2 D1D0 CFCD CCCA"            /* »¿ÃÇËÏÖÕÓÒÑÐÏÍÌÊ */
+	$"C8C7 C5C3 C1BE BCBA B7B5 B2B0 ADAA ABAD"            /* ÈÇÅÃÁ¾¼º·µ²°­ª«­ */
+	$"AFB1 B2B4 B6B8 BABC BDBF C3C1 BCB6 ADA8"            /* ¯±²´¶¸º¼½¿ÃÁ¼¶­¨ */
+	$"9E80 33AA 0001 2F64 8066 1465 6464 6362"            /* ž€3ª../d€f.eddcb */
+	$"6261 606F 5554 5453 5351 4F4A 433D 381B"            /* ba`oUTTSSQOJC=8. */
+	$"8100 3471 A9BA BFC3 C7CB CFD6 D4D3 D2D1"            /* .4q©º¿ÃÇËÏÖÔÓÒÑ */
+	$"D0CF CDCC CAC8 C7C5 C3C1 BEBC BAB7 B5B2"            /* ÐÏÍÌÊÈÇÅÃÁ¾¼º·µ² */
+	$"B0AD AAAB ADAF B1B2 B4B6 B8BA BCBD BFC3"            /* °­ª«­¯±²´¶¸º¼½¿Ã */
+	$"C1BB B5AD A79C 7925 AB00 1711 4964 6665"            /* Á»µ­§œy%«...Idfe */
+	$"6464 6362 6261 606B 5554 5453 5250 4C46"            /* ddcbba`kUTTSRPLF */
+	$"4030 0D82 0034 61A6 B9BF C3C7 CBCF D6D4"            /* @0.‚.4a¦¹¿ÃÇËÏÖÔ */
+	$"D3D2 D1D0 CFCD CCCA C8C7 C5C3 C1BE BCBA"            /* ÓÒÑÐÏÍÌÊÈÇÅÃÁ¾¼º */
+	$"B7B5 B2B0 ADAA ABAD AFB1 B2B4 B6B8 BABC"            /* ·µ²°­ª«­¯±²´¶¸º¼ */
+	$"BDBF C3C1 BBB5 ADA7 9A72 12AD 0001 2E54"            /* ½¿ÃÁ»µ­§šr.­...T */
+	$"8064 0F63 6262 6160 6C55 5454 5251 4E4A"            /* €d.cbba`lUTTRQNJ */
+	$"472A 0383 0033 49A0 B8BF C3C7 CBCF D5D4"            /* G*.ƒ.3I ¸¿ÃÇËÏÕÔ */
+	$"D3D2 D1D0 CFCD CCCA C8C7 C5C3 C1BE BCBA"            /* ÓÒÑÐÏÍÌÊÈÇÅÃÁ¾¼º */
+	$"B7B5 B2B0 ADAA ABAD AFB1 B2B4 B6B8 BABC"            /* ·µ²°­ª«­¯±²´¶¸º¼ */
+	$"BDBF C3C1 BBB4 ADA7 976A AF00 110B 4261"            /* ½¿ÃÁ»´­§—j¯...Ba */
+	$"6463 6262 6160 6D55 5453 514F 4D44 1585"            /* dcbba`mUTSQOMD.… */
+	$"0033 3A9B B6BF C3C7 CBCF D4D4 D3D2 D1D0"            /* .3:›¶¿ÃÇËÏÔÔÓÒÑÐ */
+	$"CFCD CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0"            /* ÏÍÌÊÈÇÅÃÁ¾¼º·µ²° */
+	$"ADAA ABAD AFB1 B2B4 B6B8 BABC BDBF C3C1"            /* ­ª«­¯±²´¶¸º¼½¿ÃÁ */
+	$"BBB4 ADA6 8F50 B100 0127 5280 6209 6160"            /* »´­¦P±..'R€bÆa` */
+	$"6F55 5452 5056 3C09 8600 3321 96B4 BFC3"            /* oUTRPV<Æ†.3!–´¿Ã */
+	$"C7CB CFD4 D4D3 D2D1 D0CF CDCC CAC8 C7C5"            /* ÇËÏÔÔÓÒÑÐÏÍÌÊÈÇÅ */
+	$"C3C1 BEBC BAB7 B5B2 B0AD AAAB ADAF B1B2"            /* ÃÁ¾¼º·µ²°­ª«­¯±² */
+	$"B4B6 B8BA BCBD BFC2 C1BB B4AD A486 35B2"            /* ´¶¸º¼½¿ÂÁ»´­¤†5² */
+	$"000B 0B41 5F62 6160 7754 5354 5E26 8900"            /* ...A_ba`wTST^&‰. */
+	$"328D B2BE C3C7 CBCF D3D4 D3D2 D1D0 CFCD"            /* 2²¾ÃÇËÏÓÔÓÒÑÐÏÍ */
+	$"CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0 ADAA"            /* ÌÊÈÇÅÃÁ¾¼º·µ²°­ª */
+	$"ABAD AFB1 B2B4 B6B8 BABC BDBF C2C1 BBB4"            /* «­¯±²´¶¸º¼½¿ÂÁ»´ */
+	$"ADA1 7E21 B400 081B 5060 6078 545F 4E11"            /* ­¡~!´...P``xT_N. */
+	$"8A00 326F ABBD C3C7 CBCE D2D4 D3D2 D1D0"            /* Š.2o«½ÃÇËÎÒÔÓÒÑÐ */
+	$"CFCD CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0"            /* ÏÍÌÊÈÇÅÃÁ¾¼º·µ²° */
+	$"ADAA ABAD AFB1 B2B4 B6B8 BABC BDBF C3C1"            /* ­ª«­¯±²´¶¸º¼½¿ÃÁ */
+	$"BBB4 AC9C 7506 B500 0505 3A5D 786D 398C"            /* »´¬œu.µ...:]xm9Œ */
+	$"0031 4CA3 BAC3 C7CB CED2 D4D3 D2D1 D0CF"            /* .1L£ºÃÇËÎÒÔÓÒÑÐÏ */
+	$"CDCC CAC8 C7C5 C3C1 BEBC BAB7 B5B2 B0AD"            /* ÍÌÊÈÇÅÃÁ¾¼º·µ²°­ */
+	$"AAAB ADAF B1B2 B4B6 B8BA BCBD BFC3 C0BB"            /* ª«­¯±²´¶¸º¼½¿ÃÀ» */
+	$"B4A9 924E B800 021A 591B 8D00 3122 99B6"            /* ´©’N¸...Y..1"™¶ */
+	$"C2C7 CBCE D2D4 D3D2 D1D0 CFCD CCCA C8C7"            /* ÂÇËÎÒÔÓÒÑÐÏÍÌÊÈÇ */
+	$"C5C3 C1BE BCBA B7B5 B2B0 ADAA ABAD AFB1"            /* ÅÃÁ¾¼º·µ²°­ª«­¯± */
+	$"B2B4 B6B8 BABC BDBF C3C0 BBB3 A485 29CC"            /* ²´¶¸º¼½¿ÃÀ»³¤…)Ì */
+	$"002F 7AAE BFC7 CBCE D2D4 D3D2 D1D0 CFCD"            /* ./z®¿ÇËÎÒÔÓÒÑÐÏÍ */
+	$"CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0 ADAA"            /* ÌÊÈÇÅÃÁ¾¼º·µ²°­ª */
+	$"ABAD AFB1 B2B4 B6B8 BABC BDBF C3C0 BAAF"            /* «­¯±²´¶¸º¼½¿ÃÀº¯ */
+	$"9B65 CD00 2F2C A0BA C5CB CED2 D4D3 D2D1"            /* ›eÍ./, ºÅËÎÒÔÓÒÑ */
+	$"D0CF CDCC CAC8 C7C5 C3C1 BEBC BAB7 B5B2"            /* ÐÏÍÌÊÈÇÅÃÁ¾¼º·µ² */
+	$"B0AD AAAB ADAF B1B2 B4B6 B8BA BCBD C0C3"            /* °­ª«­¯±²´¶¸º¼½ÀÃ */
+	$"C0B8 A889 1DCE 002D 62AE C1CA CED2 D4D3"            /* À¸¨‰.Î.-b®ÁÊÎÒÔÓ */
+	$"D2D1 D0CF CDCC CAC8 C7C5 C3C1 BEBC BAB7"            /* ÒÑÐÏÍÌÊÈÇÅÃÁ¾¼º· */
+	$"B5B2 B0AD AAAB ADAF B1B2 B4B6 B8BA BCBD"            /* µ²°­ª«­¯±²´¶¸º¼½ */
+	$"C1C3 BEB3 9946 CF00 2C09 7AB7 C6CD D2D4"            /* ÁÃ¾³™FÏ.,Æz·ÆÍÒÔ */
+	$"D3D2 D1D0 CFCD CCCA C8C7 C5C3 C1BE BCBA"            /* ÓÒÑÐÏÍÌÊÈÇÅÃÁ¾¼º */
+	$"B7B5 B2B0 ADAA ABAD AFB1 B2B4 B6B8 BABC"            /* ·µ²°­ª«­¯±²´¶¸º¼ */
+	$"BEC1 C1BB A252 D100 2A13 87BB C9D3 D4D3"            /* ¾ÁÁ»¢RÑ.*.‡»ÉÓÔÓ */
+	$"D2D1 D0CF CDCC CAC8 C7C5 C3C1 BEBC BAB7"            /* ÒÑÐÏÍÌÊÈÇÅÃÁ¾¼º· */
+	$"B5B2 B0AD AAAB ADAF B1B2 B4B6 B8BA BCBE"            /* µ²°­ª«­¯±²´¶¸º¼¾ */
+	$"BFBC A857 D300 2809 81BA CCD4 D4D2 D1D0"            /* ¿¼¨WÓ.(ÆºÌÔÔÒÑÐ */
+	$"CFCD CCCA C8C7 C5C3 C1BE BCBA B7B5 B2B0"            /* ÏÍÌÊÈÇÅÃÁ¾¼º·µ²° */
+	$"ADAA ABAD AFB1 B2B4 B6B8 BABC BCB6 A651"            /* ­ª«­¯±²´¶¸º¼¼¶¦Q */
+	$"D500 2609 5DB8 C9D0 D3D2 D0CF CDCC CAC8"            /* Õ.&Æ]¸ÉÐÓÒÐÏÍÌÊÈ */
+	$"C7C5 C3C1 BEBC BAB7 B5B2 B0AD AAAB ADAF"            /* ÇÅÃÁ¾¼º·µ²°­ª«­¯ */
+	$"B1B2 B4B6 B8B9 B6AA 882E D800 232B 8BBC"            /* ±²´¶¸¹¶ªˆ.Ø.#+‹¼ */
+	$"C8CE D0D0 CECC CAC8 C7C5 C3C1 BEBC BAB7"            /* ÈÎÐÐÎÌÊÈÇÅÃÁ¾¼º· */
+	$"B5B2 B0AD AAAB ADAF B0B2 B3B4 B2A8 9B51"            /* µ²°­ª«­¯°²³´²¨›Q */
+	$"09DB 001F 4089 B6C0 C7CA CBCA C9C7 C5C3"            /* ÆÛ..@‰¶ÀÇÊËÊÉÇÅÃ */
+	$"C1BE BCBA B7B5 B2B0 ADAA ABAC ADAD ACA7"            /* Á¾¼º·µ²°­ª«¬­­¬§ */
+	$"9F83 5711 DF00 1B20 5E90 B1B7 BCBF C2C1"            /* ŸƒW.ß.. ^±·¼¿ÂÁ */
+	$"C0BF BDBB B8B6 B3B0 ADA9 A4A2 9F9B 968E"            /* À¿½»¸¶³°­©¤¢Ÿ›–Ž */
+	$"6B33 08E4 0015 1F47 6E89 A5A8 A9AA A9A7"            /* k3.ä...Gn‰¥¨©ª©§ */
+	$"A5A2 9E9A 948D 8681 644C 2F07 EC00 0B25"            /* ¥¢žš”†dL/.ì..% */
+	$"2637 4947 4644 4140 2F1E 15FF 00FF 00FF"            /* &7IGFDA@/..ÿ.ÿ.ÿ */
+	$"00FF 00FF 00FF 00FF 00FF 00FF 008C 00FF"            /* .ÿ.ÿ.ÿ.ÿ.ÿ.ÿ.Œ.ÿ */
+	$"00FF 00FF 00FF 00BC 0002 0107 08F7 0009"            /* .ÿ.ÿ.ÿ.¼.....÷.Æ */
+	$"010A 2138 4544 4057 1202 F000 0D01 0A14"            /* .Â!8ED@W..ð...Â. */
+	$"1F23 2526 262E 362D 1813 08ED 0004 0812"            /* .#%&&.6-...í.... */
+	$"1D22 2580 2608 241E 1D19 1818 1716 02E9"            /* ."%€&.$........é */
+	$"0004 0812 1C22 2481 2601 201A 8418 0116"            /* ....."$&. .„... */
+	$"09E6 0004 0510 1C22 2481 2601 221C 8718"            /* Ææ....."$&.".‡. */
+	$"0116 0BE3 0004 0510 1A20 2481 2602 241D"            /* ...ã..... $&.$. */
+	$"1989 1801 160B E000 0403 0D19 2024 8126"            /* .‰....à..... $& */
+	$"0225 2019 8C18 0116 0BDD 0005 010C 2122"            /* .% .Œ....Ý....!" */
+	$"2425 8026 0225 211C 9018 0009 DC00 0306"            /* $%€&.%!...ÆÜ... */
+	$"1C39 2C81 2602 231D 198D 1805 1716 1718"            /* .9,&.#........ */
+	$"180C DB00 0807 263F 3125 2631 3A1A 8C18"            /* ..Û...&?1%&1:.Œ. */
+	$"0A17 1617 1615 1517 1818 150A D900 0701"            /* Â..........ÂÙ... */
+	$"2139 3F34 3773 628C 1804 1616 0D05 1480"            /* !9?47sbŒ.......€ */
+	$"1507 1718 188D 7D37 1604 D600 0610 2D34"            /* .....}7..Ö...-4 */
+	$"3C54 612A 8A18 1317 1612 0B02 0000 1314"            /* <Ta*Š........... */
+	$"1515 1718 18C1 EBE3 2216 01D5 0005 1A2A"            /* .....Áëã"..Õ...* */
+	$"3F53 541D 8918 0317 1610 0882 000C 0F14"            /* ?ST.‰......‚.... */
+	$"1515 1718 23D8 D9B5 4E18 04D4 0005 0213"            /* ....#ØÙµN..Ô.... */
+	$"1922 392D 8818 0316 160D 0484 000B 0C14"            /* ."9-ˆ......„.... */
+	$"1515 1718 183D 9A98 5C16 D500 0505 1315"            /* .....=š˜\.Õ..... */
+	$"1620 1A85 1804 1716 120B 0186 0004 0312"            /* . .….......†.... */
+	$"1415 1780 1803 7DAA 7509 D500 0503 1315"            /* ...€..}ªuÆÕ..... */
+	$"1519 1783 1803 1716 1008 8A00 0303 0F15"            /* ...ƒ......Š..... */
+	$"1680 1802 585A 0BD7 0003 1315 1516 8218"            /* .€..XZ.×......‚. */
+	$"0316 150D 048E 0005 030D 1518 1024 D900"            /* .....Ž.......$Ù. */
+	$"0310 1415 1581 1802 160B 01F2 0003 0E13"            /* ..........ò.... */
+	$"1515 8118 0011 F400 030A 1315 1582 18F4"            /* .....ô..Â...‚.ô */
+	$"0003 0913 1415 8218 F400 0405 1214 1517"            /* ..Æ...‚.ô....... */
+	$"8118 0003 F300 0403 1414 1517 8118 0006"            /* ...ó.......... */
+	$"F400 0315 1415 1781 1800 06F1 0006 0839"            /* ô.........ñ...9 */
+	$"483F 1415 1681 1800 06C1 0000 01AB 0007"            /* H?......Á...«.. */
+	$"2174 8FA4 B9B3 4216 8118 0006 BE00 0301"            /* !t¤¹³B....¾... */
+	$"0201 01A9 0009 0724 6C94 ADC5 D0CC C051"            /* ...©.Æ.$l”­ÅÐÌÀQ */
+	$"8118 0002 BC00 0001 8002 0101 01A8 000E"            /* ...¼...€....¨.. */
+	$"1422 2526 2F76 CCC8 C9E9 B126 1818 13BC"            /* ."%&/vÌÈÉé±&...¼ */
+	$"0001 0203 8002 0101 01A7 000F 081E 3331"            /* ....€....§....31 */
+	$"2826 265E BFE9 DC9E 5818 1807 BA00 0302"            /* (&&^¿éÜžX...º... */
+	$"0403 0380 0200 01A8 000E 0E19 233B 423D"            /* ...€...¨....#;B= */
+	$"1F18 68B1 A3A8 6118 10B9 0005 0104 0825"            /* ..h±£¨a..¹.....% */
+	$"0E03 8002 A900 0E0D 1618 2630 2318 181F"            /* ..€.©.....&0#... */
+	$"95AE B15B 1201 B700 0901 0405 2070 9765"            /* •®±[..·.Æ... p—e */
+	$"0702 01AA 0005 0313 1518 1E19 8018 037E"            /* ...ª........€..~ */
+	$"A786 18B8 000A 0306 1657 9491 696A 1501"            /* §†.¸.Â...W”‘ij.. */
+	$"01AB 0002 0313 1582 1802 526D 24B7 000C"            /* .«.....‚..Rm$·.. */
+	$"0206 0635 7E99 7A83 A667 1301 01AC 0001"            /* ...5~™zƒ¦g...¬.. */
+	$"0312 8118 020F 1005 B600 0E01 0607 0712"            /* .......¶....... */
+	$"628A 73A3 A480 7413 0101 AD00 0401 0B12"            /* bŠs£¤€t...­..... */
+	$"0D03 B800 0F04 0808 0707 165B 6A84 8E78"            /* ..¸........[j„Žx */
+	$"7873 1301 01EB 0011 0308 0908 0807 0715"            /* xs...ë....Æ..... */
+	$"4D5D 5B73 7678 7313 0101 E900 0101 0780"            /* M][svxs...é....€ */
+	$"090E 0808 0707 1546 5A54 7175 7671 1201"            /* Æ......FZTquvq.. */
+	$"01E8 0002 050A 0A80 090E 0808 0705 0642"            /* .è...ÂÂ€Æ......B */
+	$"554E 696E 716E 1201 018B 0004 0816 1D0E"            /* UNinqn...‹...... */
+	$"02D3 0004 030A 0B0A 0A80 090E 0807 0302"            /* .Ó...Â.ÂÂ€Æ..... */
+	$"033D 4E43 5F64 6061 0D01 0189 0008 0817"            /* .=NC_d`a...‰.... */
+	$"1F20 201F 2012 02BF 0012 1034 5B6C 919D"            /* .  . ..¿...4[l‘ */
+	$"A3BA CDCC CAB5 9C95 8D61 5731 1D81 0A0E"            /* £ºÍÌÊµœ•aW1.Â. */
+	$"0909 0805 0203 0302 394D 3C52 4A50 4380"            /* ÆÆ......9M<RJPC€ */
+	$"0187 000C 0618 2121 2221 201F 1E1D 1E11"            /* .‡....!!"! ..... */
+	$"04B9 0007 1D54 8BC1 DADC DDDC 81DB 04DC"            /* .¹...T‹ÁÚÜÝÜÛ.Ü */
+	$"DCDD DEDE 81DD 08D9 D2BD 8B58 2809 0804"            /* ÜÝÞÞÝ.ÙÒ½‹X(Æ.. */
+	$"8103 0702 3549 4241 4928 0480 0185 0010"            /* ...5IBAI(.€.….. */
+	$"0416 2123 2423 221F 201F 1E1D 1D1C 1D14"            /* ..!#$#". ....... */
+	$"04B4 0007 1D65 B5DB DDDC D8D4 80D1 15D2"            /* .´...eµÛÝÜØÔ€Ñ.Ò */
+	$"D4D6 D7D4 D4D5 D8DC DCD8 D5D3 D2D4 D8DC"            /* ÔÖ×ÔÔÕØÜÜØÕÓÒÔØÜ */
+	$"DDD6 B470 2682 0304 3963 6247 0D82 0184"            /* ÝÖ´p&‚..9cbG.‚.„ */
+	$"0013 0223 2425 2523 201D 1B1B 1D1E 1D1D"            /* ...#$%%# ....... */
+	$"1C1B 1A1B 1204 B000 2E3C 9CDC DDDA D3CC"            /* ......°..<œÜÝÚÓÌ */
+	$"C9CA C8C2 B8AF ACA4 775B 6F57 5883 B1BA"            /* ÉÊÈÂ¸¯¬¤w[oWXƒ±º */
+	$"C6CB CBCD CBC5 C4C8 D2DC DDD6 B256 1F5C"            /* ÆËËÍËÅÄÈÒÜÝÖ²V.\ */
+	$"BAE4 E8E3 D6BB 7541 8001 8500 1421 2625"            /* ºäèãÖ»uA€.…..!&% */
+	$"211E 1D1D 1C1A 1919 1A1C 1C1B 1A19 1819"            /* !............... */
+	$"1407 AC00 3344 BCDC DDD6 CAC4 C5C2 B5A2"            /* ..¬.3D¼ÜÝÖÊÄÅÂµ¢ */
+	$"9581 695E 3C1A 151F 1A16 1817 243F 5D60"            /* •i^<.......$?]` */
+	$"817F 9BB1 BBBD BAB9 C6D7 DEDA CACC E8F2"            /* .›±»½º¹Æ×ÞÚÊÌèò */
+	$"F3F1 EDE7 DFD1 B056 0B85 0002 1822 2080"            /* óñíçßÑ°V.…..." € */
+	$"1F10 1E1D 1C1B 1918 1819 1A1A 1918 1716"            /* ................ */
+	$"1612 06A8 0023 26A0 DBDE D6C6 BFBD B29C"            /* ...¨.#& ÛÞÖÆ¿½²œ */
+	$"8455 2D10 1319 2830 402B 606F 767D 7856"            /* „U-...(0@+`ov}xV */
+	$"6122 2915 1318 447E 97A7 80AC 0FBE D7DE"            /* a")...D~—§€¬.¾×Þ */
+	$"D9C2 D1EF F3F3 F0EC E7E0 D1A5 2E84 0018"            /* ÙÂÑïóóðìçàÑ¥.„.. */
+	$"1320 2120 1F1F 1E1D 1C1B 1B19 1816 1617"            /* . ! ............ */
+	$"1818 1716 1515 1413 09A5 0038 63D4 DDDB"            /* ........Æ¥.8cÔÝÛ */
+	$"C9BD B4A5 946C 482A 161A 2A33 312D 3031"            /* É½´¥”lH*..*31-01 */
+	$"292F 3130 3035 7172 283D 3928 2E18 1647"            /* )/1005qr(=9(...G */
+	$"6A81 98A0 A0A6 C3DC DDCE BAEB F2F3 F0ED"            /* j˜  ¦ÃÜÝÎºëòóðí */
+	$"E9E3 D8B1 4B83 001A 0F20 2120 1F1F 1E1D"            /* éãØ±Kƒ... ! .... */
+	$"1C1B 1B1A 1918 1615 1415 1616 1515 1413"            /* ................ */
+	$"1212 08A1 003B 0B9C D9DE D5BE B6A6 894E"            /* ...¡.;.œÙÞÕ¾¶¦‰N */
+	$"240E 1421 2F2D 3633 291F 1C40 6984 7C53"            /* $..!/-63)..@i„|S */
+	$"3132 311D 1A1E 2125 3B30 2D19 1831 4961"            /* 121...!%;0-..1Ia */
+	$"8893 99AE D7DE D7B1 D7F1 F2EF EDE9 E3D8"            /* ˆ“™®×Þ×±×ñòïíéãØ */
+	$"B35A 8200 1D08 1F21 201F 1F1E 1D1C 1B1B"            /* ³Z‚....! ....... */
+	$"1A19 1818 1615 1413 1314 1514 1312 1110"            /* ................ */
+	$"1009 019D 000C 1EB2 DBDE D1B9 B09A 5711"            /* .Æ....²ÛÞÑ¹°šW. */
+	$"0E2A 2880 332D 342D 284F 7EAF CACA C1BC"            /* .*(€3-4-(O~¯ÊÊÁ¼ */
+	$"BD70 414C 4970 523D 352E 1A11 141E 220E"            /* ½pALIpR=5.....". */
+	$"0D26 6780 8F9E D0DE DAAF C6F0 EFEC E8E3"            /* .&g€žÐÞÚ¯Æðïìèã */
+	$"DBCE A42A 8100 1F06 1F21 201F 1F1E 1D1C"            /* ÛÎ¤*....! ..... */
+	$"1B1B 1A19 1818 1716 1514 1211 1112 1312"            /* ................ */
+	$"1110 0F0E 0E08 019A 003E 1DAD DADE D1B7"            /* .......š.>.­ÚÞÑ· */
+	$"AB98 4509 0E1A 252E 4038 4139 6BB3 C4C0"            /* «˜EÆ..%.@8A9k³ÄÀ */
+	$"C2BB C7BE B8BE A84D 4B4E 5E57 491D 1F20"            /* Â»Ç¾¸¾¨MKN^WI..  */
+	$"1014 1E1F 1214 1314 416F 8795 D1DE DAAA"            /* ........Ao‡•ÑÞÚª */
+	$"C1EC E8E3 DCD2 C4AD 7282 001B 1E21 201F"            /* ÁìèãÜÒÄ­r‚...! . */
+	$"1F1E 1D1C 1B1B 1A19 1818 1716 1515 1412"            /* ................ */
+	$"110F 1011 1110 0F0E 800D 0005 9800 4009"            /* ........€...˜.@Æ */
+	$"8FD7 DED5 B2AB 8C2F 0A19 1B20 2730 4156"            /* ×ÞÕ²«Œ/Â.. '0AV */
+	$"3F50 9AB0 CDBD CCD4 D3C0 A79B 8D57 3E44"            /* ?Pš°Í½ÌÔÓÀ§›W>D */
+	$"4050 2427 2425 2D2F 353F 3E28 1815 0D27"            /* @P$'$%-/5?>(...' */
+	$"677E 92D7 DED7 9ACF E1D9 CEBD A791 7816"            /* g~’×Þ×šÏáÙÎ½§‘x. */
+	$"8100 1F18 2020 1F1F 1E1D 1C1B 1B1A 1918"            /* ...  .......... */
+	$"1817 1615 1514 1312 110F 0E0E 0F0F 0E0D"            /* ................ */
+	$"0D0C 0C98 0040 6CCD DEDD B69B 6610 1932"            /* ...˜.@lÍÞÝ¶›f..2 */
+	$"2220 262A 3249 483A 3D82 8BC2 CFCC C8BB"            /* " &*2IH:=‚‹ÂÏÌÈ» */
+	$"9588 6F5D 4844 6751 3E38 2B32 4547 3D43"            /* •ˆo]HDgQ>8+2EG=C */
+	$"423A 3D23 0E16 0925 5C7B 9FDE DECC 85CE"            /* B:=#..Æ%\{ŸÞÞÌ…Î */
+	$"C8B3 9881 7A73 3A81 0018 1520 201F 1F1E"            /* È³˜zs:...  ... */
+	$"1D1C 1B1B 1A19 1818 1716 1515 1413 1211"            /* ................ */
+	$"110F 0E82 0D02 0C0B 0896 0041 23B4 DCDE"            /* ...‚.....–.A#´ÜÞ */
+	$"CB9B 3706 2F5C 382F 2628 2634 4135 2D2B"            /* Ë›7./\8/&(&4A5-+ */
+	$"5C7F ACB9 AB94 7370 5E50 4A32 475E 5350"            /* \.¬¹«”sp^PJ2G^SP */
+	$"3D3B 4952 2E2F 2E2C 3E3E 3C2D 1409 0927"            /* =;IR./.,>><-.ÆÆ' */
+	$"5C7F C3DE DCAE 8FAB 6645 446D 7553 8100"            /* \.ÃÞÜ®«fEDmuS. */
+	$"210F 1F20 1F1F 1E1D 1C1B 1B1A 1918 1817"            /* !.. ............ */
+	$"1615 1514 1312 1111 100F 0E0D 0C0B 0C0C"            /* ................ */
+	$"0B0B 0295 0041 72CE DEDE A970 092A 5E71"            /* ...•.ArÎÞÞ©pÆ*^q */
+	$"4C2D 2222 2327 392A 2B29 3A73 8D87 6E5C"            /* L-""#'9*+):s‡n\ */
+	$"4638 3539 433F 4A4F 595A 5949 4B59 4D34"            /* F859C?JOYZYIKYM4 */
+	$"3429 3942 3F2F 2150 170C 2C6D 9ADD DECE"            /* 4)9B?/!P..,mšÝÞÎ */
+	$"7C54 3F47 4452 796A 8100 1B0A 1E20 1F1F"            /* |T?GDRyj..Â. .. */
+	$"1E1D 1C1B 1B1A 1918 1817 1615 1514 1312"            /* ................ */
+	$"1111 100F 0E0E 0D81 0B01 0A08 9400 3C19"            /* .........Â.”.<. */
+	$"A6D8 DED5 934C 0F38 3B52 272C 221D 141C"            /* ¦ØÞÕ“L.8;R',"... */
+	$"2D2C 3529 1A50 4E58 4742 3C3A 4287 A698"            /* -,5).PNXGB<:B‡¦˜ */
+	$"7D75 6461 6667 4E46 4A33 2B32 4048 231D"            /* }udafgNFJ3+2@H#. */
+	$"251A 100A 094C 7FD9 DEDA 9D51 8053 0254"            /* %..ÂÆL.ÙÞÚQ€S.T */
+	$"7A6B 8100 2206 1E20 1F1F 1E1D 1C1B 1B1A"            /* zk.".. ........ */
+	$"1918 1817 1615 1514 1312 1111 100F 0E0E"            /* ................ */
+	$"0D0C 0B0A 0B0A 0904 9300 433B B6DC DECA"            /* ...Â.ÂÆ.“.C;¶ÜÞÊ */
+	$"7E0E 2020 2928 302C 1C1A 1A1D 2125 292D"            /* ~.  )(0,....!%)- */
+	$"415C 4D54 5159 655B 82B8 C6CF D3D4 C9B2"            /* A\MTQYe[‚¸ÆÏÓÔÉ² */
+	$"8859 3B3C 383E 3D3E 3A4A 4C40 171A 0F09"            /* ˆY;<8>=>:JL@...Æ */
+	$"0824 6FC4 DEDD B35E 5656 5757 7B6D 0781"            /* .$oÄÞÝ³^VVWW{m. */
+	$"001C 1D20 1F1F 1E1D 1C1B 1B1A 1918 1817"            /* ... ............ */
+	$"1615 1514 1312 1111 100F 0E0E 0D0C 0B80"            /* ...............€ */
+	$"0A01 0908 9300 3C57 BFDD DEC4 470A 1A17"            /* Â.Æ.“.<W¿ÝÞÄGÂ.. */
+	$"1B23 312E 201D 1A1C 2228 2726 2926 2429"            /* .#1. ..."('&)&$) */
+	$"3040 4B63 9CB4 C5CC D0CD BFBD 9366 393A"            /* 0@Kcœ´ÅÌÐÍ¿½“f9: */
+	$"3A34 223D 3438 3C2D 1D13 121E 4011 4EBF"            /* :4"=48<-....@.N¿ */
+	$"DEDE BE67 815A 027B 701D 8100 2219 201F"            /* ÞÞ¾gZ.{p..". . */
+	$"1F1E 1D1C 1B1B 1A19 1818 1716 1515 1413"            /* ................ */
+	$"1211 1110 0F0E 0E0D 0C0B 0A09 0A09 0804"            /* ..........ÂÆÂÆ.. */
+	$"9200 0F69 C2DE DEC5 260A 0F1E 2F19 2828"            /* ’..iÂÞÞÅ&Â../.(( */
+	$"2222 2380 202A 2223 2A2D 2930 383B 395D"            /* ""#€ *"#*-)08;9] */
+	$"8885 98A9 B7B3 A6D8 7F61 484A 451F 2E25"            /* ˆ…˜©·³¦Ø.aHJE..% */
+	$"3234 3923 1C18 1F3D 570F 34BC DFDE C26D"            /* 249#...=W.4¼ßÞÂm */
+	$"5C80 5E02 7B70 1D81 0000 1680 1F19 1E1D"            /* \€^.{p....€.... */
+	$"1C1B 1B1A 1918 1817 1615 1514 1312 1111"            /* ................ */
+	$"100F 0E0E 0D0C 0B0B 8009 0208 0801 9100"            /* ........€Æ....‘. */
+	$"4268 C0DD DFD1 080A 0D10 1224 2329 2826"            /* BhÀÝßÑ.Â...$#)(& */
+	$"2925 2521 2226 292C 3032 4046 5567 687D"            /* )%%!"&),02@FUgh} */
+	$"7B88 9993 96C2 639F 4144 3621 322E 383D"            /* {ˆ™“–ÂcŸAD6!2.8= */
+	$"4329 1E2E 2D33 4A11 24CD DFDE C06E 5E63"            /* C)..-3J.$ÍßÞÀn^c */
+	$"6365 7B6C 8200 230F 1E1F 1F1E 1D1C 1B1B"            /* ce{l‚.#......... */
+	$"1A19 1818 1716 1515 1413 1211 1110 0F0E"            /* ................ */
+	$"0E0D 0C0B 0B09 0809 0807 0591 003B 45B9"            /* .....Æ.Æ...‘.;E¹ */
+	$"DCDF DC09 0E13 2413 292F 3236 3234 2F27"            /* ÜßÜÆ..$.)/2624/' */
+	$"2730 2F2B 262F 2E2F 3524 2D4C 8492 7675"            /* '0/+&/./5$-L„’vu */
+	$"7483 7765 8043 5448 3C33 333B 4B4A 3735"            /* tƒwe€CTH<33;KJ75 */
+	$"392E 2B28 1433 DEE0 DEB7 8168 026D 7B6C"            /* 9.+(.3ÞàÞ·h.m{l */
+	$"8200 1E0B 1E1F 1F1E 1D1C 1B1B 1A19 1818"            /* ‚............... */
+	$"1716 1515 1413 1211 1110 0F0E 0E0D 0C0B"            /* ................ */
+	$"0B0A 8008 0207 0601 9000 1944 AFD9 DFE0"            /* .Â€.......D¯Ùßà */
+	$"3E09 0B18 1C2E 413C 2E33 3233 2537 2430"            /* >Æ....A<.323%7$0 */
+	$"3233 3434 2C80 281F 2E42 5987 987F 644F"            /* 2344,€(..BY‡˜.dO */
+	$"4049 4254 5648 3C3B 3C51 5158 3C29 373B"            /* @IBTVH<;<QQX<)7; */
+	$"2B11 6FE0 E0DB AA60 806F 0272 7D6C 8200"            /* +.oààÛª`€o.r}l‚. */
+	$"2407 1D1F 1F1E 1D1C 1B1B 1A19 1818 1716"            /* $............... */
+	$"1515 1413 1211 1110 0F0E 0E0D 0C0B 0B0A"            /* ...............Â */
+	$"0907 0807 0605 9000 3C3B A3D1 DFE0 AA07"            /* Æ......<;£Ñßàª. */
+	$"0D12 1A35 434B 4649 3A3B 3829 2A32 3333"            /* ...5CKFI:;8)*233 */
+	$"312F 2E29 2323 2228 2B31 373D 352A 2B4F"            /* 1/.)##"(+17=5*+O */
+	$"4645 4743 4C51 5653 504D 3C39 4A3B 231F"            /* FEGCLQVSPM<9J;#. */
+	$"CDE1 E0D2 985D 8075 027D 815A 8300 241C"            /* ÍáàÒ˜]€u.}Zƒ.$. */
+	$"1F1F 1E1D 1C1B 1B1A 1918 1817 1615 1514"            /* ................ */
+	$"1312 1111 100F 0E0E 0D0C 0B0B 0A09 0807"            /* ............ÂÆ.. */
+	$"0706 0502 8F00 4221 9AC4 DEE0 E24D 0F11"            /* .....B!šÄÞàâM.. */
+	$"1A27 3440 4238 2F3C 2F2A 2836 403F 4747"            /* .'4@B8/</*(6@?GG */
+	$"453B 1C22 2C28 2627 3038 3C43 4A46 3F44"            /* E;.",(&'08<CJF?D */
+	$"444E 5959 5447 5143 3B48 412E 1998 E3E1"            /* DNYYTGQC;HA..˜ãá */
+	$"DFBF 8664 7D7C 7B86 8454 8300 2418 1F1F"            /* ß¿†d}|{†„Tƒ.$... */
+	$"1E1D 1C1B 1B1A 1918 1817 1615 1514 1312"            /* ................ */
+	$"1111 100F 0E0E 0D0C 0B0B 0A09 0807 0706"            /* ..........ÂÆ.... */
+	$"0504 8E00 4303 2D98 B5D5 E0E2 D536 1014"            /* ..Ž.C.-˜µÕàâÕ6.. */
+	$"1924 292F 3524 221F 2343 5A6B 97AA B1AE"            /* .$)/5$".#CZk—ª±® */
+	$"AA8A 3227 302C 2332 3D48 5359 5C5B 5650"            /* ªŠ2'0,#2=HSY\[VP */
+	$"5C5D 3F44 473A 3638 3727 1D5E E4E3 E2D3"            /* \]?DG:687'.^äãâÓ */
+	$"A77D 6683 807F 9281 3983 0025 151E 1F1E"            /* §}fƒ€.’9ƒ.%.... */
+	$"1D1C 1B1B 1A19 1818 1716 1515 1413 1211"            /* ................ */
+	$"1110 0F0E 0E0D 0C0B 0B0A 0908 0706 0605"            /* .........ÂÆ..... */
+	$"0502 8C00 440E 1622 96AE C7DC E2E3 C927"            /* ..Œ.D.."–®ÇÜâãÉ' */
+	$"1113 1419 222A 3234 3938 4C6C 89B6 C4C4"            /* ...."*2498Ll‰¶ÄÄ */
+	$"BFC5 AC7E 212E 3427 3040 494C 4135 3C4E"            /* ¿Å¬~!.4'0@ILA5<N */
+	$"5664 4E36 3C36 312C 2832 2055 E0E4 E3DC"            /* VdN6<61,(2 UàäãÜ */
+	$"BA95 7B65 8885 829F 7E32 8300 2510 1D1F"            /* º•{eˆ…‚Ÿ~2ƒ.%... */
+	$"1E1D 1C1B 1B1A 1918 1817 1615 1514 1312"            /* ................ */
+	$"1111 100F 0E0E 0D0C 0B0B 0A09 0808 0606"            /* ..........ÂÆ.... */
+	$"0505 048A 0046 0A1A 1715 1494 ADBC CEE1"            /* ...Š.FÂ....”­¼Îá */
+	$"E3E4 D837 110A 1E24 2D29 3939 3D57 7D8C"            /* ãäØ7.Â.$-)99=W}Œ */
+	$"BACF CFCB DAAC 7B1C 2A36 392E 2F39 3E38"            /* ºÏÏËÚ¬{.*69./9>8 */
+	$"2D23 5454 5943 3330 2B2B 2745 3C65 E1E5"            /* -#TTYC30++'E<eáå */
+	$"E4E0 C6A1 9179 7890 8B8C A175 1D83 0021"            /* äàÆ¡‘yx‹Œ¡u.ƒ.! */
+	$"0D1D 1F1E 1D1C 1B1B 1A19 1818 1716 1515"            /* ................ */
+	$"1413 1211 1110 0F0E 0E0D 0C0B 0B0A 0908"            /* .............ÂÆ. */
+	$"0806 8005 0104 0287 0047 051A 1E19 1715"            /* ..€....‡.G...... */
+	$"1492 ACBA C1D6 E4E4 E5D9 6B11 1418 1C1F"            /* .’¬ºÁÖääåÙk..... */
+	$"2831 3E56 7CAA C1CE CFBE D398 8220 2C37"            /* (1>V|ªÁÎÏ¾Ó˜‚ ,7 */
+	$"3D3D 393B 3A33 3D4F 595A 4231 2B26 2528"            /* ==9;:3=OYZB1+&%( */
+	$"3834 95E7 E6E5 E1CD AA9B 9076 7B9A 9398"            /* 84•çæåáÍª›v{š“˜ */
+	$"986D 8400 2107 1C1F 1E1D 1C1B 1B1A 1918"            /* ˜m„.!........... */
+	$"1817 1615 1514 1312 1111 100F 0E0E 0D0C"            /* ................ */
+	$"0B0B 0A09 0808 0780 0502 0403 0185 0048"            /* ..ÂÆ...€.....….H */
+	$"1521 1E1D 1917 1514 7AAA B9BF C5D9 E6E7"            /* .!......zª¹¿ÅÙæç */
+	$"E6E7 B22C 1215 2025 2239 4F5E 8AA9 B1B8"            /* æç²,.. %"9O^Š©±¸ */
+	$"C5A2 7B91 2934 3E46 4E4D 4A4A 4840 424E"            /* Å¢{‘)4>FNMJJH@BN */
+	$"372D 2927 241E 1B56 CFE8 E7E6 E1CF B0A1"            /* 7-)'$..VÏèçæáÏ°¡ */
+	$"9A8F 7392 A59B 9E8B 5484 0022 011C 1F1E"            /* šs’¥›ž‹T„.".... */
+	$"1D1C 1B1B 1A19 1818 1716 1515 1413 1211"            /* ................ */
+	$"1110 0F0E 0E0D 0C0B 0B0A 0908 0807 0680"            /* .........ÂÆ....€ */
+	$"0401 0302 8300 4A0C 1F20 1F1E 1D19 1715"            /* ....ƒ.J.. ...... */
+	$"1471 A8B9 BFC3 C8DA E6EA E9E8 E998 2D15"            /* .q¨¹¿ÃÈÚæêéèé˜-. */
+	$"1814 1B31 3D49 555C 6D83 6848 572C 3B3E"            /* ...1=IU\mƒhHW,;> */
+	$"3F41 3736 373C 3E36 2B28 2626 211B 4EB7"            /* ?A767<>6+(&&!.N· */
+	$"EAE9 E8E7 DFCC B5A7 A19A 8D6F 9FAF A69E"            /* êéèçßÌµ§¡šoŸ¯¦ž */
+	$"7D32 8500 2719 1F1E 1D1C 1B1B 1A19 1818"            /* }2….'........... */
+	$"1716 1515 1413 1211 1110 0F0E 0E0D 0C0B"            /* ................ */
+	$"0B0A 0908 0807 0605 0403 0302 0180 004C"            /* .ÂÆ..........€.L */
+	$"031A 2320 201F 1E1D 1917 1514 6FA7 B8BF"            /* ..#  .......o§¸¿ */
+	$"C3C7 CCDB E5EA ECEA EAEB 9A57 1415 181D"            /* ÃÇÌÛåêìêêëšW.... */
+	$"2634 4256 543D 2823 3133 312E 2D2E 3236"            /* &4BVT=(#131.-.26 */
+	$"2E25 2421 2120 2969 C5EC EBEA E9E5 DAC9"            /* .%$!! )iÅìëêéåÚÉ */
+	$"BAAE A7A1 9A8B 6BB5 B7AA 9569 0785 0076"            /* º®§¡š‹kµ·ª•i.….v */
+	$"151E 1E1D 1C1B 1B1A 1918 1817 1615 1514"            /* ................ */
+	$"1312 1111 100F 0E0E 0D0C 0B0B 0A09 0808"            /* ............ÂÆ.. */
+	$"0706 0504 0303 0201 0000 1424 2121 2020"            /* ...........$!!   */
+	$"1F1E 1D19 1512 094C A5B7 BFC3 C7CB D0DD"            /* ......ÆL¥·¿ÃÇËÐÝ */
+	$"E3E9 ECED EBEB EDE0 9C59 2318 1B21 292B"            /* ãéìíëëíàœY#..!)+ */
+	$"2827 2D2C 2A28 251E 1F22 211F 1E1E 386C"            /* ('-,*(%.."!...8l */
+	$"ADEF EEED ECEA E8E2 D6C7 BEB7 ADA7 A19A"            /* ­ïîíìêèâÖÇ¾·­§¡š */
+	$"8967 BCB2 A783 3986 0076 101D 1E1D 1C1B"            /* ‰g¼²§ƒ9†.v...... */
+	$"1B1A 1918 1817 1615 1514 1312 1111 100F"            /* ................ */
+	$"0E0E 0D0C 0B0B 0A09 0808 0706 0504 0303"            /* ......ÂÆ........ */
+	$"0201 0722 2322 2121 2020 1F1E 1C15 0C09"            /* ..."#"!!  .....Æ */
+	$"084B A4B7 BFC3 C7CB CED7 DFE3 E8EB EDEE"            /* .K¤·¿ÃÇËÎ×ßãèëíî */
+	$"EDED EEEF F0C8 A085 4F51 1B1D 2021 2120"            /* ííîïðÈ …OQ.. !!  */
+	$"1F1E 3A55 6189 B0D8 F2F1 EFEE EDEC E8E3"            /* ..:Ua‰°Øòñïîíìèã */
+	$"DCD2 CAC4 BEB5 ADA7 A199 8771 BFB1 9369"            /* ÜÒÊÄ¾µ­§¡™‡q¿±“i */
+	$"0786 0051 0E1D 1E1D 1C1B 1B1A 1918 1817"            /* .†.Q............ */
+	$"1615 1514 1312 1111 100F 0E0E 0D0C 0B0B"            /* ................ */
+	$"0A09 0808 0706 0504 0302 0201 0023 2222"            /* ÂÆ...........#"" */
+	$"2121 2020 1F1C 120A 0909 083A A1B6 BFC3"            /* !!  ...ÂÆÆ.:¡¶¿Ã */
+	$"C7CB CED3 DEE2 E5E7 E8EA EDEE EDEE EFF0"            /* ÇËÎÓÞâåçèêíîíîïð */
+	$"F1F2 F3F4 F5F6 83F7 1DF6 F5F4 F4F3 F2F1"            /* ñòóôõöƒ÷.öõôôóòñ */
+	$"F0EE EBE6 DED7 D2D2 CFC9 C4BE B3AD A7A1"            /* ðîëæÞ×ÒÒÏÉÄ¾³­§¡ */
+	$"9984 7BBA A77E 2487 0051 071C 1E1D 1C1B"            /* ™„{º§~$‡.Q...... */
+	$"1B1A 1918 1817 1615 1514 1312 1111 100F"            /* ................ */
+	$"0E0E 0D0C 0B0B 0A09 0808 0706 0504 0402"            /* ......ÂÆ........ */
+	$"0201 0023 2222 2121 201F 190D 0A0B 0A09"            /* ...#""!! ...Â.ÂÆ */
+	$"0829 9FB5 BFC3 C7CB CED2 DBE2 E5E7 E6E5"            /* .)Ÿµ¿ÃÇËÎÒÛâåçæå */
+	$"E5E7 E9EA ECED EFF1 F2F3 F3F4 83F5 1CF4"            /* åçéêìíïñòóóôƒõ.ô */
+	$"F4F3 F2F0 EDE9 E2DA D3CE CCCE D0D2 CFC9"            /* ôóòðíéâÚÓÎÌÎÐÒÏÉ */
+	$"C4BE B3AD A7A1 9881 8BB2 8B4E 8800 4603"            /* Ä¾³­§¡˜‹²‹Nˆ.F. */
+	$"1C1E 1D1C 1B1B 1A19 1818 1716 1515 1413"            /* ................ */
+	$"1211 1110 0F0E 0E0D 0C0B 0B0A 0908 0807"            /* ...........ÂÆ... */
+	$"0605 0404 0202 0100 2422 2221 211D 120B"            /* ........$""!!... */
+	$"0C0C 0B0A 0908 289D B4BF C3C7 CBCE D2D7"            /* ...ÂÆ.(´¿ÃÇËÎÒ× */
+	$"E2E5 E7E5 E0DD 80DC 2ADE E0DF E2E5 E7E9"            /* âåçåàÝ€Ü*Þàßâåçé */
+	$"EBEC EDED ECEB E8E5 E1DB D6CF CAC5 C3C2"            /* ëìííìëèåáÛÖÏÊÅÃÂ */
+	$"C4C6 C8CC D0D2 CFC9 C4BD B3AD A7A1 977E"            /* ÄÆÈÌÐÒÏÉÄ½³­§¡—~ */
+	$"8B9A 6B07 8900 721C 1E1D 1C1B 1B1A 1918"            /* ‹šk.‰.r......... */
+	$"1817 1615 1514 1312 1111 100F 0E0E 0D0C"            /* ................ */
+	$"0B0B 0A09 0808 0706 0504 0403 0101 0025"            /* ..ÂÆ...........% */
+	$"2222 2017 0D0C 0D0D 0C0B 0A09 0810 9BB2"            /* "" .......ÂÆ..›² */
+	$"BEC3 C7CB CED2 D6DF E5E6 E3DE DDDC DAD9"            /* ¾ÃÇËÎÒÖßåæãÞÝÜÚÙ */
+	$"D7D6 D4D2 D1D0 CFCE CDCC CAC7 C4C1 BDB8"            /* ×ÖÔÒÑÐÏÎÍÌÊÇÄÁ½¸ */
+	$"B7B7 B9BB BEC0 C2C4 C6C8 CACF D2CF C9C4"            /* ··¹»¾ÀÂÄÆÈÊÏÒÏÉÄ */
+	$"BCB3 ADA7 A195 7A8C 7A1D 8A00 7114 1D1D"            /* ¼³­§¡•zŒz.Š.q... */
+	$"1C1B 1B1A 1918 1817 1615 1514 1312 1111"            /* ................ */
+	$"100F 0E0E 0D0C 0B0B 0A09 0808 0706 0504"            /* ........ÂÆ...... */
+	$"0403 0200 0025 221D 100C 0D0E 0D0D 0C0B"            /* .....%"......... */
+	$"0A09 0808 99B1 BEC3 C7CB CED2 D6DC E5E6"            /* ÂÆ..™±¾ÃÇËÎÒÖÜåæ */
+	$"E1DE DDDC DAD9 D7D6 D4D2 D0CE CCC9 C7C5"            /* áÞÝÜÚÙ×ÖÔÒÐÎÌÉÇÅ */
+	$"C2BF BDBA B7B4 B5B7 B9BB BEC0 C2C4 C6C8"            /* Â¿½º·´µ·¹»¾ÀÂÄÆÈ */
+	$"CACE D2CF C9C4 BBB3 ADA7 A093 7674 328B"            /* ÊÎÒÏÉÄ»³­§ “vt2‹ */
+	$"002B 0111 1C1C 1B1B 1A19 1818 1716 1515"            /* .+.............. */
+	$"1413 1211 1110 0F0E 0E0D 0C0B 0B0A 0908"            /* .............ÂÆ. */
+	$"0807 0605 0404 0302 0100 2416 0B0D 800E"            /* ..........$...€. */
+	$"410D 0D0C 0B0A 0908 088E AFBE C3C7 CBCE"            /* A....ÂÆ..Ž¯¾ÃÇËÎ */
+	$"D2D6 DCE4 E6E0 DEDD DCDA D9D7 D6D4 D2D0"            /* ÒÖÜäæàÞÝÜÚÙ×ÖÔÒÐ */
+	$"CECC C9C7 C5C2 BFBD BAB7 B4B5 B7B9 BBBE"            /* ÎÌÉÇÅÂ¿½º·´µ·¹»¾ */
+	$"C0C2 C4C6 C8CA CDD2 CFC9 C4BB B3AD A7A0"            /* ÀÂÄÆÈÊÍÒÏÉÄ»³­§  */
+	$"916A 468E 0027 0616 1B1B 1A19 1818 1716"            /* ‘jFŽ.'.......... */
+	$"1515 1413 1211 1110 0F0E 0E0D 0C0B 0B0A"            /* ...............Â */
+	$"0908 0807 0605 0404 0302 0100 0F0D 820E"            /* Æ.............‚. */
+	$"400D 0D0C 0B0A 0908 0873 AEBD C3C7 CBCE"            /* @....ÂÆ..s®½ÃÇËÎ */
+	$"D2D6 DAE4 E6E0 DEDD DCDA D9D7 D6D4 D2D0"            /* ÒÖÚäæàÞÝÜÚÙ×ÖÔÒÐ */
+	$"CECC C9C7 C5C2 BFBD BAB7 B4B5 B7B9 BBBE"            /* ÎÌÉÇÅÂ¿½º·´µ·¹»¾ */
+	$"C0C2 C4C6 C8CA CDD2 CFC9 C4BA B3AD A7A0"            /* ÀÂÄÆÈÊÍÒÏÉÄº³­§  */
+	$"8E5B 9000 2601 0D1A 1A19 1818 1716 1515"            /* Ž[.&........... */
+	$"1413 1211 1110 0F0E 0E0D 0C0B 0B0A 0908"            /* .............ÂÆ. */
+	$"0807 0605 0404 0302 0100 0E0F 820E 400D"            /* ............‚.@. */
+	$"0D0C 0B0A 0908 0872 ACBD C3C7 CBCE D2D6"            /* ...ÂÆ..r¬½ÃÇËÎÒÖ */
+	$"DAE4 E6E0 DEDD DCDA D9D7 D6D4 D2D0 CECC"            /* ÚäæàÞÝÜÚÙ×ÖÔÒÐÎÌ */
+	$"C9C7 C5C2 BFBD BAB7 B4B5 B7B9 BBBE C0C2"            /* ÉÇÅÂ¿½º·´µ·¹»¾ÀÂ */
+	$"C4C6 C8CA CCD2 CFC9 C4BA B3AD A79F 884A"            /* ÄÆÈÊÌÒÏÉÄº³­§ŸˆJ */
+	$"9200 0106 1380 181F 1716 1515 1413 1211"            /* ’....€.......... */
+	$"1110 0F0E 0E0D 0C0B 0B0A 0908 0807 0605"            /* .........ÂÆ..... */
+	$"0404 0302 0101 0F0F 820E 400D 0D0C 0C0A"            /* ........‚.@....Â */
+	$"0908 084F AABC C3C7 CBCE D2D6 DAE4 E5DF"            /* Æ..Oª¼ÃÇËÎÒÖÚäåß */
+	$"DEDD DCDA D9D7 D6D4 D2D0 CECC C9C7 C5C2"            /* ÞÝÜÚÙ×ÖÔÒÐÎÌÉÇÅÂ */
+	$"BFBD BAB7 B4B5 B7B9 BBBE C0C2 C4C6 C8CA"            /* ¿½º·´µ·¹»¾ÀÂÄÆÈÊ */
+	$"CCD2 CFC9 C3BA B3AD A79E 833D 9400 220A"            /* ÌÒÏÉÃº³­§žƒ=”."Â */
+	$"1718 1716 1515 1413 1211 1110 0F0E 0E0D"            /* ................ */
+	$"0C0B 0B0A 0908 0807 0605 0404 0302 0101"            /* ...ÂÆ........... */
+	$"0F0F 820E 400D 0D0C 0C0A 0908 084E A8BB"            /* ..‚.@....ÂÆ..N¨» */
+	$"C3C7 CBCE D2D6 DAE4 E5DF DEDD DCDA D9D7"            /* ÃÇËÎÒÖÚäåßÞÝÜÚÙ× */
+	$"D6D4 D2D0 CECC C9C7 C5C2 BFBD BAB7 B4B5"            /* ÖÔÒÐÎÌÉÇÅÂ¿½º·´µ */
+	$"B7B9 BBBE C0C2 C4C6 C8CA CCD0 CFC9 C3B9"            /* ·¹»¾ÀÂÄÆÈÊÌÐÏÉÃ¹ */
+	$"B3AD A79D 7D31 9500 2103 1016 1615 1514"            /* ³­§}1•.!....... */
+	$"1312 1111 100F 0E0E 0D0C 0B0B 0A09 0808"            /* ............ÂÆ.. */
+	$"0706 0504 0403 0201 010D 0F82 0E40 0D0D"            /* ...........‚.@.. */
+	$"0C0B 0A09 0808 3CA6 BAC3 C7CB CED2 D6DA"            /* ..ÂÆ..<¦ºÃÇËÎÒÖÚ */
+	$"E3E5 DFDE DDDC DAD9 D7D6 D4D2 D0CE CCC9"            /* ãåßÞÝÜÚÙ×ÖÔÒÐÎÌÉ */
+	$"C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0 C2C4"            /* ÇÅÂ¿½º·´µ·¹»¾ÀÂÄ */
+	$"C6C8 CACC D0CF C9C3 B9B3 ADA7 9B77 1E97"            /* ÆÈÊÌÐÏÉÃ¹³­§›w.— */
+	$"0000 0980 151B 1413 1211 1110 0F0E 0E0D"            /* ..Æ€............ */
+	$"0C0B 0B0A 0908 0807 0605 0404 0302 0101"            /* ...ÂÆ........... */
+	$"0B0F 820E 400D 0D0C 0B0A 0908 082A A4B9"            /* ..‚.@....ÂÆ..*¤¹ */
+	$"C3C7 CBCE D2D6 DAE3 E4DF DEDD DCDA D9D7"            /* ÃÇËÎÒÖÚãäßÞÝÜÚÙ× */
+	$"D6D4 D2D0 CECC C9C7 C5C2 BFBD BAB7 B4B5"            /* ÖÔÒÐÎÌÉÇÅÂ¿½º·´µ */
+	$"B7B9 BBBE C0C2 C4C6 C8CA CCD0 CEC9 C3B9"            /* ·¹»¾ÀÂÄÆÈÊÌÐÎÉÃ¹ */
+	$"B3AD A699 7118 9800 1E02 0D15 1413 1211"            /* ³­¦™q.˜......... */
+	$"1110 0F0E 0E0D 0C0B 0B0A 0908 0807 0605"            /* .........ÂÆ..... */
+	$"0404 0302 0101 0B0F 820E 3F0D 0D0C 0B0A"            /* ........‚.?....Â */
+	$"0908 0821 A2B8 C3C7 CBCE D2D6 DAE3 E3DF"            /* Æ..!¢¸ÃÇËÎÒÖÚããß */
+	$"DEDD DCDA D9D7 D6D4 D2D0 CECC C9C7 C5C2"            /* ÞÝÜÚÙ×ÖÔÒÐÎÌÉÇÅÂ */
+	$"BFBD BAB7 B4B5 B7B9 BBBE C0C2 C4C6 C8CA"            /* ¿½º·´µ·¹»¾ÀÂÄÆÈÊ */
+	$"CCD0 CEC9 C3B9 B3AD A697 6A9B 001C 0810"            /* ÌÐÎÉÃ¹³­¦—j›.... */
+	$"1312 1111 100F 0E0E 0D0C 0B0B 0A09 0808"            /* ............ÂÆ.. */
+	$"0706 0504 0403 0201 010B 0F82 0E05 0D0D"            /* ...........‚.... */
+	$"0C0B 0A09 8008 369F B6C2 C7CB CED2 D6DA"            /* ..ÂÆ€.6Ÿ¶ÂÇËÎÒÖÚ */
+	$"E3E3 DFDE DDDC DAD9 D7D6 D4D2 D0CE CCC9"            /* ããßÞÝÜÚÙ×ÖÔÒÐÎÌÉ */
+	$"C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0 C2C4"            /* ÇÅÂ¿½º·´µ·¹»¾ÀÂÄ */
+	$"C6C8 CACC CFCE C9C3 B9B3 ADA5 935C 9C00"            /* ÆÈÊÌÏÎÉÃ¹³­¥“\œ. */
+	$"1B02 0B12 1111 100F 0E0E 0D0C 0B0B 0A09"            /* ..............ÂÆ */
+	$"0808 0706 0504 0403 0201 010B 0F82 0E05"            /* .............‚.. */
+	$"0D0D 0C0B 0A09 8008 369D B4C2 C7CB CED2"            /* ....ÂÆ€.6´ÂÇËÎÒ */
+	$"D6DA E3E3 DFDE DDDC DAD9 D7D6 D4D2 D0CE"            /* ÖÚããßÞÝÜÚÙ×ÖÔÒÐÎ */
+	$"CCC9 C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0"            /* ÌÉÇÅÂ¿½º·´µ·¹»¾À */
+	$"C2C4 C6C8 CACC CFCE C9C3 B9B3 ADA5 8D4E"            /* ÂÄÆÈÊÌÏÎÉÃ¹³­¥N */
+	$"9E00 1906 0D11 100F 0E0E 0D0C 0B0B 0A09"            /* ž.............ÂÆ */
+	$"0808 0706 0504 0403 0201 010B 0F82 0E05"            /* .............‚.. */
+	$"0D0D 0C0B 0A09 8008 3678 B3C1 C7CB CED2"            /* ....ÂÆ€.6x³ÁÇËÎÒ */
+	$"D6DA E2E2 DFDE DDDC DAD9 D7D6 D4D2 D0CE"            /* ÖÚââßÞÝÜÚÙ×ÖÔÒÐÎ */
+	$"CCC9 C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0"            /* ÌÉÇÅÂ¿½º·´µ·¹»¾À */
+	$"C2C4 C6C8 CACC CFCE C8C2 B9B3 ADA4 863B"            /* ÂÄÆÈÊÌÏÎÈÂ¹³­¤†; */
+	$"A000 1709 100F 0E0E 0D0C 0B0B 0A09 0808"            /*  ..Æ........ÂÆ.. */
+	$"0706 0504 0403 0201 010B 0F82 0E05 0D0D"            /* ...........‚.... */
+	$"0C0B 0A09 8008 3676 B1C1 C7CB CED2 D6DA"            /* ..ÂÆ€.6v±ÁÇËÎÒÖÚ */
+	$"E2E2 DFDE DDDC DAD9 D7D6 D4D2 D0CE CCC9"            /* ââßÞÝÜÚÙ×ÖÔÒÐÎÌÉ */
+	$"C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0 C2C4"            /* ÇÅÂ¿½º·´µ·¹»¾ÀÂÄ */
+	$"C6C8 CACC CFCE C8C2 B9B3 ADA2 802E A100"            /* ÆÈÊÌÏÎÈÂ¹³­¢€.¡. */
+	$"1604 0B0E 0E0D 0C0B 0B0A 0908 0807 0605"            /* .........ÂÆ..... */
+	$"0404 0302 0101 0B0F 820E 050D 0D0C 0B0A"            /* ........‚......Â */
+	$"0980 0836 52AF C0C7 CBCE D2D6 DAE2 E2DF"            /* Æ€.6R¯ÀÇËÎÒÖÚââß */
+	$"DEDD DCDA D9D7 D6D4 D2D0 CECC C9C7 C5C2"            /* ÞÝÜÚÙ×ÖÔÒÐÎÌÉÇÅÂ */
+	$"BFBD BAB7 B4B5 B7B9 BBBE C0C2 C4C6 C8CA"            /* ¿½º·´µ·¹»¾ÀÂÄÆÈÊ */
+	$"CCCF CEC8 C1B9 B3AC A07A 1AA3 0014 070E"            /* ÌÏÎÈÁ¹³¬ z.£.... */
+	$"0D0C 0B0B 0A09 0808 0706 0504 0403 0201"            /* ....ÂÆ.......... */
+	$"010C 0F82 0E05 0D0D 0C0B 0A09 8008 3651"            /* ...‚......ÂÆ€.6Q */
+	$"ADBE C7CB CED2 D6DB E2E1 DFDE DDDC DAD9"            /* ­¾ÇËÎÒÖÛâáßÞÝÜÚÙ */
+	$"D7D6 D4D2 D0CE CCC9 C7C5 C2BF BDBA B7B4"            /* ×ÖÔÒÐÎÌÉÇÅÂ¿½º·´ */
+	$"B5B7 B9BB BEC0 C2C4 C6C8 CACC CFCE C8C1"            /* µ·¹»¾ÀÂÄÆÈÊÌÏÎÈÁ */
+	$"B9B3 AC9E 7206 A400 1303 090C 0B0B 0A09"            /* ¹³¬žr.¤...Æ...ÂÆ */
+	$"0808 0706 0504 0403 0201 010C 0F82 0E05"            /* .............‚.. */
+	$"0D0C 0C0A 0A09 8008 3526 AABD C7CB CED2"            /* ...ÂÂÆ€.5&ª½ÇËÎÒ */
+	$"D6DB E1E0 DFDE DDDC DAD9 D7D6 D4D2 D0CE"            /* ÖÛáàßÞÝÜÚÙ×ÖÔÒÐÎ */
+	$"CCC9 C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0"            /* ÌÉÇÅÂ¿½º·´µ·¹»¾À */
+	$"C2C4 C6C8 CACC CFCE C8C1 B9B3 AC9A 68A7"            /* ÂÄÆÈÊÌÏÎÈÁ¹³¬šh§ */
+	$"0011 050B 0B0A 0908 0807 0605 0404 0302"            /* .....ÂÆ......... */
+	$"0101 0B0F 820E 3E0D 0C0B 0A09 0908 0502"            /* ....‚.>...ÂÆÆ... */
+	$"19A2 BCC7 CBCE D2D6 DBE1 E0DF DEDD DCDA"            /* .¢¼ÇËÎÒÖÛáàßÞÝÜÚ */
+	$"D9D7 D6D4 D2D0 CECC C9C7 C5C2 BFBD BAB7"            /* Ù×ÖÔÒÐÎÌÉÇÅÂ¿½º· */
+	$"B4B5 B7B9 BBBE C0C2 C4C6 C8CA CCCF CEC8"            /* ´µ·¹»¾ÀÂÄÆÈÊÌÏÎÈ */
+	$"C1B9 B3AB 9354 A800 1002 080A 0908 0807"            /* Á¹³«“T¨....ÂÆ... */
+	$"0605 0404 0302 0101 070F 820E 060D 0C0B"            /* ..........‚..... */
+	$"0A09 0904 8000 349A BAC6 CBCE D2D6 DBE1"            /* ÂÆÆ.€.4šºÆËÎÒÖÛá */
+	$"E0DF DEDD DCDA D9D7 D6D4 D2D0 CECC C9C7"            /* àßÞÝÜÚÙ×ÖÔÒÐÎÌÉÇ */
+	$"C5C2 BFBD BAB7 B4B5 B7B9 BBBE C0C2 C4C6"            /* ÅÂ¿½º·´µ·¹»¾ÀÂÄÆ */
+	$"C8CA CCCF CEC8 C1B9 B3AA 8C3A AA00 0E04"            /* ÈÊÌÏÎÈÁ¹³ªŒ:ª... */
+	$"0908 0807 0605 0404 0302 0101 080F 820E"            /* Æ.............‚. */
+	$"050D 0B0A 0A09 0381 0034 7EB6 C5CB CED2"            /* ...ÂÂÆ..4~¶ÅËÎÒ */
+	$"D6DB E1E0 DFDE DDDC DAD9 D7D6 D4D2 D0CE"            /* ÖÛáàßÞÝÜÚÙ×ÖÔÒÐÎ */
+	$"CCC9 C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0"            /* ÌÉÇÅÂ¿½º·´µ·¹»¾À */
+	$"C2C4 C6C8 CACC CFCD C8C1 B9B2 A886 2AAB"            /* ÂÄÆÈÊÌÏÍÈÁ¹²¨†*« */
+	$"000D 0105 0807 0605 0404 0302 0101 080F"            /* ................ */
+	$"810E 050D 0C0B 0A07 0182 0034 6DB2 C5CB"            /* .....Â..‚.4m²ÅË */
+	$"CED2 D6DB E1E0 DFDE DDDC DAD9 D7D6 D4D2"            /* ÎÒÖÛáàßÞÝÜÚÙ×ÖÔÒ */
+	$"D0CE CCC9 C7C5 C2BF BDBA B7B4 B5B7 B9BB"            /* ÐÎÌÉÇÅÂ¿½º·´µ·¹» */
+	$"BEC0 C2C4 C6C8 CACC CFCD C8C0 B9B2 A67E"            /* ¾ÀÂÄÆÈÊÌÏÍÈÀ¹²¦~ */
+	$"14AD 000B 0304 0605 0404 0302 0101 080F"            /* .­.............. */
+	$"810E 030D 0C0B 0684 0033 52AE C4CB CED2"            /* ......„.3R®ÄËÎÒ */
+	$"D6DB E1E0 DFDE DDDC DAD9 D7D6 D4D2 D0CE"            /* ÖÛáàßÞÝÜÚÙ×ÖÔÒÐÎ */
+	$"CCC9 C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0"            /* ÌÉÇÅÂ¿½º·´µ·¹»¾À */
+	$"C2C4 C6C8 CACC CFCD C8C0 B9B2 A377 B000"            /* ÂÄÆÈÊÌÏÍÈÀ¹²£w°. */
+	$"0903 0504 0403 0201 0108 0F80 0E03 0D0D"            /* Æ..........€.... */
+	$"0A03 8500 3340 AAC2 CBCE D2D6 DBE0 E0DF"            /* Â.….3@ªÂËÎÒÖÛààß */
+	$"DEDD DCDA D9D7 D6D4 D2D0 CECC C9C7 C5C2"            /* ÞÝÜÚÙ×ÖÔÒÐÎÌÉÇÅÂ */
+	$"BFBD BAB7 B4B5 B7B9 BBBE C0C2 C4C6 C8CA"            /* ¿½º·´µ·¹»¾ÀÂÄÆÈÊ */
+	$"CCCF CDC7 C0B9 B19A 5BB1 000E 0103 0403"            /* ÌÏÍÇÀ¹±š[±...... */
+	$"0201 0109 0F0E 0E0D 0E09 0186 0033 24A4"            /* ...Æ.....Æ.†.3$¤ */
+	$"C1CA CED2 D6DB E0E0 DFDE DDDC DAD9 D7D6"            /* ÁÊÎÒÖÛààßÞÝÜÚÙ×Ö */
+	$"D4D2 D0CE CCC9 C7C5 C2BF BDBA B7B4 B5B7"            /* ÔÒÐÎÌÉÇÅÂ¿½º·´µ· */
+	$"B9BB BEC0 C2C4 C6C8 CACC CFCD C7C0 B9AF"            /* ¹»¾ÀÂÄÆÈÊÌÏÍÇÀ¹¯ */
+	$"923D B300 0A02 0302 0101 0A0F 0E0E 0F05"            /* ’=³.Â.....Â..... */
+	$"8900 329C BECA CED2 D6DB DFE0 DFDE DDDC"            /* ‰.2œ¾ÊÎÒÖÛßàßÞÝÜ */
+	$"DAD9 D7D6 D4D2 D0CE CCC9 C7C5 C2BF BDBA"            /* ÚÙ×ÖÔÒÐÎÌÉÇÅÂ¿½º */
+	$"B7B4 B5B7 B9BB BEC0 C2C4 C6C8 CACC CFCD"            /* ·´µ·¹»¾ÀÂÄÆÈÊÌÏÍ */
+	$"C7C0 B8AD 8B26 B500 8001 040A 0F11 0C02"            /* ÇÀ¸­‹&µ.€..Â.... */
+	$"8A00 327A B8C9 CED2 D6DA DEE0 DFDE DDDC"            /* Š.2z¸ÉÎÒÖÚÞàßÞÝÜ */
+	$"DAD9 D7D6 D4D2 D0CE CCC9 C7C5 C2BF BDBA"            /* ÚÙ×ÖÔÒÐÎÌÉÇÅÂ¿½º */
+	$"B7B4 B5B7 B9BB BEC0 C2C4 C6C8 CACC CFCD"            /* ·´µ·¹»¾ÀÂÄÆÈÊÌÏÍ */
+	$"C7C0 B7A9 8107 B700 0301 0A12 0A8C 0031"            /* ÇÀ·©.·...Â.ÂŒ.1 */
+	$"54B1 C7CE D2D6 DADE E0DF DEDD DCDA D9D7"            /* T±ÇÎÒÖÚÞàßÞÝÜÚÙ× */
+	$"D6D4 D2D0 CECC C9C7 C5C2 BFBD BAB7 B4B5"            /* ÖÔÒÐÎÌÉÇÅÂ¿½º·´µ */
+	$"B7B9 BBBE C0C2 C4C6 C8CA CCCF CDC7 BFB5"            /* ·¹»¾ÀÂÄÆÈÊÌÏÍÇ¿µ */
+	$"9F57 B900 0106 048D 0031 26A7 C3CD D2D6"            /* ŸW¹.....1&§ÃÍÒÖ */
+	$"DADE E0DF DEDD DCDA D9D7 D6D4 D2D0 CECC"            /* ÚÞàßÞÝÜÚÙ×ÖÔÒÐÎÌ */
+	$"C9C7 C5C2 BFBD BAB7 B4B5 B7B9 BBBE C0C2"            /* ÉÇÅÂ¿½º·´µ·¹»¾ÀÂ */
+	$"C4C6 C8CA CCCF CDC7 BEB1 942F CC00 2F86"            /* ÄÆÈÊÌÏÍÇ¾±”/Ì./† */
+	$"BCCB D2D6 DADE E0DF DEDD DCDA D9D7 D6D4"            /* ¼ËÒÖÚÞàßÞÝÜÚÙ×ÖÔ */
+	$"D2D0 CECC C9C7 C5C2 BFBD BAB7 B4B5 B7B9"            /* ÒÐÎÌÉÇÅÂ¿½º·´µ·¹ */
+	$"BBBE C0C2 C4C6 C8CA CCCF CDC7 BCA8 72CD"            /* »¾ÀÂÄÆÈÊÌÏÍÇ¼¨rÍ */
+	$"002F 31AF C7D1 D6DA DEE0 DFDE DDDC DAD9"            /* ./1¯ÇÑÖÚÞàßÞÝÜÚÙ */
+	$"D7D6 D4D2 D0CE CCC9 C7C5 C2BF BDBA B7B4"            /* ×ÖÔÒÐÎÌÉÇÅÂ¿½º·´ */
+	$"B5B7 B9BB BEC0 C2C4 C6C8 CACC D0CC C5B6"            /* µ·¹»¾ÀÂÄÆÈÊÌÐÌÅ¶ */
+	$"9821 CE00 2D6D BCCD D5DA DEE0 DFDE DDDC"            /* ˜!Î.-m¼ÍÕÚÞàßÞÝÜ */
+	$"DAD9 D7D6 D4D2 D0CE CCC9 C7C5 C2BF BDBA"            /* ÚÙ×ÖÔÒÐÎÌÉÇÅÂ¿½º */
+	$"B7B4 B5B7 B9BB BEC0 C2C4 C6C8 CACD CFCB"            /* ·´µ·¹»¾ÀÂÄÆÈÊÍÏË */
+	$"C1A7 4ECF 002C 0A85 C5D2 D9DE E0DF DEDD"            /* Á§NÏ.,Â…ÅÒÙÞàßÞÝ */
+	$"DCDA D9D7 D6D4 D2D0 CECC C9C7 C5C2 BFBD"            /* ÜÚÙ×ÖÔÒÐÎÌÉÇÅÂ¿½ */
+	$"BAB7 B4B5 B7B9 BBBE C0C2 C4C6 C8CA CCCD"            /* º·´µ·¹»¾ÀÂÄÆÈÊÌÍ */
+	$"C8B2 5BD1 002A 1594 C9D7 DFE0 DFDE DDDC"            /* È²[Ñ.*.”É×ßàßÞÝÜ */
+	$"DAD9 D7D6 D4D2 D0CE CCC9 C7C5 C2BF BDBA"            /* ÚÙ×ÖÔÒÐÎÌÉÇÅÂ¿½º */
+	$"B7B4 B5B7 B9BB BEC0 C2C4 C6C8 CACB C9B7"            /* ·´µ·¹»¾ÀÂÄÆÈÊËÉ· */
+	$"61D3 0028 0A8D C9DA E0E0 DEDD DCDA D9D7"            /* aÓ.(ÂÉÚààÞÝÜÚÙ× */
+	$"D6D4 D2D0 CECC C9C7 C5C2 BFBD BAB7 B4B5"            /* ÖÔÒÐÎÌÉÇÅÂ¿½º·´µ */
+	$"B7B9 BBBE C0C2 C4C6 C8C8 C3B6 5AD5 0026"            /* ·¹»¾ÀÂÄÆÈÈÃ¶ZÕ.& */
+	$"0B66 C8D7 DDDE DDDC DAD9 D7D6 D4D2 D0CE"            /* .fÈ×ÝÞÝÜÚÙ×ÖÔÒÐÎ */
+	$"CCC9 C7C5 C2BF BDBA B7B4 B5B7 B9BB BEC0"            /* ÌÉÇÅÂ¿½º·´µ·¹»¾À */
+	$"C1C3 C5C3 B998 34D8 0023 3097 CBD6 DBDC"            /* ÁÃÅÃ¹˜4Ø.#0—ËÖÛÜ */
+	$"DBD9 D7D6 D4D2 D0CE CCC9 C7C5 C2BF BDBA"            /* ÛÙ×ÖÔÒÐÎÌÉÇÅÂ¿½º */
+	$"B7B4 B5B7 B9BB BDBF BFBD B6AA 5A0A DB00"            /* ·´µ·¹»½¿¿½¶ªZÂÛ. */
+	$"1F46 96C5 CED4 D7D6 D6D4 D2D0 CECC C9C7"            /* .F–ÅÎÔ×ÖÖÔÒÐÎÌÉÇ */
+	$"C5C2 BFBD BAB7 B4B5 B6B7 B8B8 B4AC 9060"            /* ÅÂ¿½º·´µ¶·¸¸´¬` */
+	$"13DF 001B 2367 9DC0 C5CA CCCE CDCC CBC8"            /* .ß..#gÀÅÊÌÎÍÌËÈ */
+	$"C6C4 C1BF BBB8 B4AF ADAB A8A3 9D77 3809"            /* ÆÄÁ¿»¸´¯­«¨£w8Æ */
+	$"E400 1522 4E78 96B3 B7B6 B7B7 B4B2 AFAB"            /* ä.."Nx–³·¶··´²¯« */
+	$"A7A1 9993 8D6F 5535 09EC 000B 2A2A 3E50"            /* §¡™“oU5Æì..**>P */
+	$"4E4D 4C49 4734 2218 FF00 FF00 FF00 FF00"            /* NMLIG4".ÿ.ÿ.ÿ.ÿ. */
+	$"FF00 FF00 FF00 FF00 FF00 8C00 7438 6D6B"            /* ÿ.ÿ.ÿ.ÿ.ÿ.Œ.t8mk */
+	$"0000 4008 0000 0000 0000 0000 0000 0000"            /* ..@............. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0011 4545 0000"            /* ............EE.. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 1166 B6FF FFFF FFE3"            /* .........f¶ÿÿÿÿã */
+	$"6611 0000 0000 0000 0000 0000 0000 0000"            /* f............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0011 66B6 FFFF FFFF FFFF FFFF"            /* ......f¶ÿÿÿÿÿÿÿÿ */
+	$"FFF1 6600 0000 0000 0000 0000 0000 0000"            /* ÿñf............. */
+	$"2300 0000 0000 0000 0000 0000 0000 0000"            /* #............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0055 A6F1 FFFF FFFF FFFF FFFF FFFF"            /* ...U¦ñÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FF23 0000 0000 0000 0000 0011 66E3"            /* ÿÿÿ#..........fã */
+	$"FFE3 A655 1100 0000 0000 0000 0000 0000"            /* ÿã¦U............ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"55A6 F1FF FFFF FFFF FFFF FFFF FFFF FFFF"            /* U¦ñÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FF77 0000 0000 0000 0023 97F1 FFFF"            /* ÿÿÿw.......#—ñÿÿ */
+	$"FFFF FFFF FFC5 8733 0000 0000 0000 0000"            /* ÿÿÿÿÿÅ‡3........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0033 97F1"            /* .............3—ñ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FF87 0000 0000 0045 B6FF FFFF FFFF"            /* ÿÿÿ‡.....E¶ÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF F1B6 6623 0000 0000"            /* ÿÿÿÿÿÿÿÿñ¶f#.... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 3397 E3FF FFFF"            /* ..........3—ãÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FF87 0000 0066 E3FF FFFF FFFF FFFF"            /* ÿÿÿ‡...fãÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF D397 5500"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÓ—U. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0023 77E3 FFFF FFFF FFFF"            /* .......#wãÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FF87 2387 F1FF FFFF FFFF FFFF FFFF"            /* ÿÿÿ‡#‡ñÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"B677 3300 0000 0000 0000 0000 0000 0000"            /* ¶w3............. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 1177 D3FF FFFF FFFF FFFF FFFF"            /* .....wÓÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFE3 FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿãÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFE3 A655 1100 0000 0000 0000 0000"            /* ÿÿÿã¦U.......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0045 E3FF FFFF FFFF FFFF FFFF FFFF"            /* ...Eãÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF C500 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÅ......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 55FF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ..Uÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FF87 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÿ‡........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0011 F1FF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ..ñÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF A677 FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿ¦wÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF 3300 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿ3....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0097 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* .—ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFE3 8777 C5FF FFFF FFFF"            /* ÿÿÿÿÿÿÿã‡wÅÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF E311 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿã....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"00F1 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* .ñÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFC5 7777 E3FF FFFF FFFF FFFF"            /* ÿÿÿÿÿÅwwãÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFB6 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÿ¶...... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"23FF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* #ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFA6 55A6 F1FF FFFF FFFF FFFF FFFF"            /* ÿÿÿ¦U¦ñÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF 7700 0000 0000"            /* ÿÿÿÿÿÿÿÿÿÿw..... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"45FF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* Eÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"E387 55B6 FFFF FFFF FFFF FFFF FFFF FFFF"            /* ã‡U¶ÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FF33 0000 0000"            /* ÿÿÿÿÿÿÿÿÿÿÿ3.... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"33FF FFFF FFFF FFFF FFFF FFFF FFFF C577"            /* 3ÿÿÿÿÿÿÿÿÿÿÿÿÿÅw */
+	$"66E3 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* fãÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFD3 1100 0000"            /* ÿÿÿÿÿÿÿÿÿÿÿÓ.... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"00FF FFFF FFFF FFFF FFFF FFFF A655 97F1"            /* .ÿÿÿÿÿÿÿÿÿÿÿ¦U—ñ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF A600 0000"            /* ÿÿÿÿÿÿÿÿÿÿÿÿ¦... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"00E3 FFFF FFFF FFFF FFFF 8755 A6FF FFFF"            /* .ãÿÿÿÿÿÿÿÿ‡U¦ÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FF66 0000"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿf.. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"00C5 FFFF FFFF FFFF FFF1 D3FF FFFF FFFF"            /* .ÅÿÿÿÿÿÿÿñÓÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFF1 3300"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿñ3. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0097 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* .—ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF D311"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÓ. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0087 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* .‡ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FF97"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ— */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0045 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* .Eÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"5500 0000 0000 0000 0000 0000 0000 0000"            /* U............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0011"            /* ................ */
+	$"87E3 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ‡ãÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"F123 0000 0000 0000 0000 0000 0000 0000"            /* ñ#.............. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0023 A6F1"            /* .............#¦ñ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FF23 0000 0000 0000 0000 0000 0000 0000"            /* ÿ#.............. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0055 C5FF FFFF"            /* ...........UÅÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FF00 0000 0000 0000 0000 0000 0000 0000"            /* ÿ............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 1166 E3FF FFFF FFFF"            /* .........fãÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"D300 0000 0000 0000 0000 0000 0000 0000"            /* Ó............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 2397 F1FF FFFF FFFF FFFF"            /* ......#—ñÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"C500 0000 0000 0000 0000 0000 0000 0000"            /* Å............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 45B6 FFFF FFFF FFFF FFFF FFFF"            /* ....E¶ÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"9700 0000 0000 0000 0000 0000 0000 0000"            /* —............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 66E3 FFFF FFFF FFFF FFFF FFFF FFFF"            /* ..fãÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFF1"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿñ */
+	$"4500 0000 0000 0000 0000 0000 0000 0000"            /* E............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0023"            /* ...............# */
+	$"87F1 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ‡ñÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FF87"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ‡ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0045 A6FF"            /* .............E¦ÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FF77"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿw */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0066 C5FF FFFF"            /* ...........fÅÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FF45"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿE */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 1187 E3FF FFFF FFFF"            /* .........‡ãÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FF33"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ3 */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 33A6 FFFF FFFF FFFF FFFF"            /* ......3¦ÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FF00"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 55C5 FFFF FFFF FFFF FFFF FFFF"            /* ....UÅÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF F100"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿñ. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0011 77E3 FFFF FFFF FFFF FFFF FFFF FFFF"            /* ..wãÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF C500"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÅ. */
+	$"0000 0000 0000 0000 0000 0000 0000 0023"            /* ...............# */
+	$"A6F1 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ¦ñÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF B600"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ¶. */
+	$"0000 0000 0000 0000 0000 0000 0045 B6FF"            /* .............E¶ÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF 8700"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ‡. */
+	$"0000 0000 0000 0000 0000 0045 C5FF FFFF"            /* ...........EÅÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF 8700"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ‡. */
+	$"0000 0000 0000 0000 0045 C5FF FFFF FFFF"            /* .........EÅÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF 4500"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿE. */
+	$"0000 0000 0000 0033 C5FF FFFF FFFF FFFF"            /* .......3Åÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF 4500"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿE. */
+	$"0000 0000 0023 A6FF FFFF FFFF FFFF FFFF"            /* .....#¦ÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF 0100"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ.. */
+	$"0000 0000 11FF FFFF FFFF FFFF FFFF FFFF"            /* .....ÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF 0401"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ.. */
+	$"0000 0000 00FF FFFF FFFF FFFF FFFF FFFF"            /* .....ÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFCA 0D04"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÊ.. */
+	$"0100 0000 00C5 FFFF FFFF FFFF FFFF FFFF"            /* .....Åÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFCD 1C0D"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÍ.. */
+	$"0601 0000 00A6 FFFF FFFF FFFF FFFF FFFF"            /* .....¦ÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF 9A1D"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿš. */
+	$"0E06 0100 0087 FFFF FFFF FFFF FFFF FFFF"            /* .....‡ÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFB4"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ´ */
+	$"1D0E 0401 0045 FFFF FFFF FFFF FFFF FFFF"            /* .....Eÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"711A 0A02 0033 FFFF FFFF FFFF FFFF FFFF"            /* q.Â..3ÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"E720 0E04 0000 FFFF FFFF FFFF FFFF FFFF"            /* ç ....ÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FF49 0D04 0000 D3FF FFFF FFFF FFFF FFFF"            /* ÿI....Óÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FF8D 0701 0000 B6FF FFFF FFFF FFFF FFFF"            /* ÿ....¶ÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFC5 0200 0000 87FF FFFF FFFF FFFF FFFF"            /* ÿÅ....‡ÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF 0000 0000 55FF FFFF FFFF FFFF FFFF"            /* ÿÿ....Uÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF 0000 0000 33FF FFFF FFFF FFFF FFFF"            /* ÿÿ....3ÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF 1100 0000 00FF FFFF FFFF FFFF FFFF"            /* ÿÿ.....ÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF 4500 0000 00E3 FFFF FFFF FFFF FFFF"            /* ÿÿE....ãÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF 4500 0000 00C5 FFFF FFFF FFFF FFFF"            /* ÿÿE....Åÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF 0000 0000 0087 FFFF FFFF FFFF FFFF"            /* ÿÿ.....‡ÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF 0000 0000 0066 FFFF FFFF FFFF FFFF"            /* ÿÿ.....fÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF 0000 0000 0045 FFFF FFFF FFFF FFFF"            /* ÿÿ.....Eÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFD3 0000 0000 0000 FFFF FFFF FFFF FFFF"            /* ÿÓ......ÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFC5 0000 0000 0000 E3FF FFFF FFFF FFFF"            /* ÿÅ......ãÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FF87 0000 0000 0000 C5FF FFFF FFFF FFFF"            /* ÿ‡......Åÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FF77 0000 0000 0000 97FF FFFF FFFF FFFF"            /* ÿw......—ÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FF45 0000 0000 0000 77FF FFFF FFFF FFFF"            /* ÿE......wÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FF00 0000 0000 0000 45FF FFFF FFFF FFFF"            /* ÿ.......Eÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"C500 0000 0000 0000 11FF FFFF FFFF FFFF"            /* Å........ÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"7700 0000 0000 0000 00F1 FFFF FFFF FFFF"            /* w........ñÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFF1"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿñ */
+	$"1100 0000 0000 0000 00C5 FFFF FFFF FFFF"            /* .........Åÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FF87"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ‡ */
+	$"0000 0000 0000 0000 0097 FFFF FFFF FFFF"            /* .........—ÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF F111"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿñ. */
+	$"0000 0000 0000 0000 0087 FFFF FFFF FFFF"            /* .........‡ÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF 5500"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿU. */
+	$"0000 0000 0000 0000 0148 FFFF FFFF FFFF"            /* .........Hÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFB6 0000"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿ¶.. */
+	$"0000 0000 0000 0004 0830 FFFF FFFF FFFF"            /* .........0ÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF F111 0000"            /* ÿÿÿÿÿÿÿÿÿÿÿÿñ... */
+	$"0000 0000 0000 040A 1523 FFFF FFFF FFFF"            /* .......Â.#ÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF 4500 0000"            /* ÿÿÿÿÿÿÿÿÿÿÿÿE... */
+	$"0000 0000 0001 0814 2537 D5FF FFFF FFFF"            /* ........%7Õÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FF77 0000 0000"            /* ÿÿÿÿÿÿÿÿÿÿÿw.... */
+	$"0000 0000 0002 0918 2A3E 72E0 FFFF FFFF"            /* ......Æ.*>ràÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF A600 0000 0000"            /* ÿÿÿÿÿÿÿÿÿÿ¦..... */
+	$"0000 0000 0001 0713 2333 4364 AEF4 FFFF"            /* ........#3Cd®ôÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFF1 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÿñ...... */
+	$"0000 0000 0000 0409 1320 2E3C 5082 D5FF"            /* .......Æ. .<P‚Õÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFC5 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÿÅ...... */
+	$"0000 0000 0000 0002 070E 1A27 3543 63AA"            /* ...........'5Ccª */
+	$"F4FF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ôÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFA6 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÿ¦...... */
+	$"0000 0000 0000 0000 0104 0A13 202D 3B4E"            /* ..........Â. -;N */
+	$"79D0 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* yÐÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FF87 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÿ‡...... */
+	$"0000 0000 0000 0000 0000 0207 0D18 2733"            /* ..............'3 */
+	$"435F A2EF FFFF FFFF FFFF FFFF FFFF FFFF"            /* C_¢ïÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FF55 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÿU...... */
+	$"0000 0000 0000 0000 0000 0001 040A 131F"            /* .............Â.. */
+	$"2D3A 4C77 CDFF FFFF FFFF FFFF FFFF FFFF"            /* -:LwÍÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FF45 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÿE...... */
+	$"0000 0000 0000 0000 0000 0000 0002 070D"            /* ................ */
+	$"1825 3342 5C9A EAFF FFFF FFFF FFFF FFFF"            /* .%3B\šêÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FF00 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÿ....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0104"            /* ................ */
+	$"0912 1E2C 394B 73C7 FBFF FFFF FFFF FFFF"            /* Æ..,9KsÇûÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF E300 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿã....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0206 0D18 2533 405A 98EA FFFF FFFF FFFF"            /* ....%3@Z˜êÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF C500 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿÅ....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0001 0409 121D 2B39 4A6F C1F9 FFFF FFFF"            /* ...Æ..+9JoÁùÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF 9700 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿ—....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0002 060D 1623 3140 5890 E4FF FFFF"            /* .......#1@Xäÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF 7700 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿw....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0104 0811 1D2A 3948 6DB9 F9FF"            /* .........*9Hm¹ùÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF 4500 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿE....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0106 0B16 2330 3E55 8BDF"            /* ..........#0>U‹ß */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF 1100 0000 0000 0000"            /* ÿÿÿÿÿÿÿÿ........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0001 0408 0F1C 2937 4769"            /* ............)7Gi */
+	$"B3F5 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ³õÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FBFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿûÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFF1 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÿñ........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0001 040B 1523 303E"            /* .............#0> */
+	$"5488 DAFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* TˆÚÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FEE6 C3FF FFFF FFFF FFFF FFFF FFFF FFFF"            /* þæÃÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFC5 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÿÅ........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0002 080F 1A28"            /* ...............( */
+	$"3546 66AF F5FF FFFF FFFF FFFF FFFF FFFF"            /* 5Ff¯õÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFF8"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿø */
+	$"CF9F 86FF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÏŸ†ÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FF87 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÿ‡........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0104 0A14"            /* ..............Â. */
+	$"2130 3C51 81D3 FFFF FFFF FFFF FFFF FFFF"            /* !0<QÓÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF EAB6"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿê¶ */
+	$"9080 77ED FFFF FFFF FFFF FFFF FFFF FFFF"            /* €wíÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FF66 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÿf........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0207"            /* ................ */
+	$"0E1A 2835 4564 A8F1 FFFF FFFF FFFF FFFF"            /* ..(5Ed¨ñÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF F9D0 9F85"            /* ÿÿÿÿÿÿÿÿÿÿÿÿùÐŸ… */
+	$"7B72 69DB FFFF FFFF FFFF FFFF FFFF FFFF"            /* {riÛÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FF33 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÿ3........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0001"            /* ................ */
+	$"040A 1420 2E3C 507C D2FC FFFF FFFF FFFF"            /* .Â. .<P|Òüÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFED B286 746E"            /* ÿÿÿÿÿÿÿÿÿÿÿí²†tn */
+	$"6863 63C0 FFFF FFFF FFFF FFFF FFFF FFFF"            /* hccÀÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FF00 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÿ......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0002 070E 1A27 3543 61A1 ECFF FFFF FFFF"            /* .....'5Ca¡ìÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFC CF8F 6D5E 5550"            /* ÿÿÿÿÿÿÿÿÿüÏm^UP */
+	$"4E50 5EAE FFFF FFFF FFFF FFFF FFFF FFFF"            /* NP^®ÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF C500 0000 0000 0000 0000"            /* ÿÿÿÿÿÿÅ......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0104 0A13 1F2D 3B4E 79CB FBFF FFFF"            /* ....Â..-;NyËûÿÿÿ */
+	$"FFFF FFFF FFFF FFFF EFAB 7257 493B 312D"            /* ÿÿÿÿÿÿÿÿï«rWI;1- */
+	$"3040 558D FFFF FFFF FFFF FFFF FFFF FFFF"            /* 0@Uÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF 8F00 0000 0000 0000 0000"            /* ÿÿÿÿÿÿ......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0207 0D18 2533 425E 9EEC FFFF"            /* ........%3B^žìÿÿ */
+	$"FFFF FFFF FFFF FFD2 865D 493B 2B1D 1312"            /* ÿÿÿÿÿÿÿÒ†]I;+... */
+	$"182D 455A FFFF FFFF FFFF FFFF FFFF FFFF"            /* .-EZÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF 6D07 0000 0000 0000 0000"            /* ÿÿÿÿÿÿm......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0001 0409 121F 2C3A 4C76 C2FB"            /* .......Æ..,:LvÂû */
+	$"FFFF FFFF FFF2 AE6D 5040 3123 140A 0404"            /* ÿÿÿÿÿò®mP@1#.Â.. */
+	$"0B1F 334A E3FF FFFF FFFF FFFF FFFF FFFF"            /* ..3Jãÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF 3C0E 0000 0000 0000 0000"            /* ÿÿÿÿÿÿ<......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0002 060D 1825 3340 5C97"            /* ...........%3@\— */
+	$"E7FF FFFF DA86 5A47 392A 1C0E 0702 0000"            /* çÿÿÿÚ†ZG9*...... */
+	$"0718 293E B9FF FFFF FFFF FFFF FFFF FFFF"            /* ..)>¹ÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFCA 3114 0000 0000 0000 0000"            /* ÿÿÿÿÿÊ1......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0104 0912 1E2B 394B"            /* ..........Æ..+9K */
+	$"72BE EFB3 6C4D 4033 2315 0B04 0100 0000"            /* r¾ï³lM@3#....... */
+	$"0615 2335 84FF FFFF FFFF FFFF FFFF FFFF"            /* ..#5„ÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FF94 3015 0100 0000 0000 0000"            /* ÿÿÿÿÿ”0......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0206 0D18 2331"            /* ..............#1 */
+	$"4058 6A57 463A 2C1E 1108 0200 0000 0000"            /* @XjWF:,......... */
+	$"0613 2130 51EF FFFF FFFF FFFF FFFF FFFF"            /* ..!0Qïÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF ED4D 2D14 0000 0000 0000 0000"            /* ÿÿÿÿíM-......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0001 0409 111D"            /* .............Æ.. */
+	$"2A37 3E3C 3325 180D 0601 0000 0000 0000"            /* *7><3%.......... */
+	$"0411 1E2B 429F FFFF FFFF FFFF FFFF FFFF"            /* ...+BŸÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF 9040 270F 0000 0000 0000 0000"            /* ÿÿÿÿ@'......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0001 060D"            /* ................ */
+	$"1620 2827 1E13 0904 0100 0000 0000 0000"            /* . ('..Æ......... */
+	$"010D 1A25 355D DAFF FFFF FFFF FFFF FFFF"            /* ...%5]Úÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFC9 5533 1F0A 0000 0000 0000 0000"            /* ÿÿÿÉU3.Â........ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0104"            /* ................ */
+	$"080D 1212 0D06 0200 0000 0000 0000 0000"            /* ................ */
+	$"0008 1420 2B40 7BEC FFFF FFFF FFFF FFFF"            /* ... +@{ìÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF D568 3E28 1504 0000 0000 0000 0000"            /* ÿÿÕh>(.......... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0104 0404 0401 0000 0000 0000 0000 0000"            /* ................ */
+	$"0002 0D18 2330 4A8B F2FF FFFF FFFF FFFF"            /* ....#0J‹òÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFD7 7245 2D1D 0B00 0000 0000 0000 0000"            /* ÿ×rE-........... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 060F 1A25 314C 83EA FFFF FFFF FFFF"            /* .....%1Lƒêÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"CF72 4730 2011 0200 0000 0000 0000 0000"            /* ÏrG0 ........... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0008 121C 2530 4777 CDFF FFFF FFFF"            /* ......%0GwÍÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF F9AF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿù¯ */
+	$"6643 2E21 1304 0000 0000 0000 0000 0000"            /* fC.!............ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0811 1A23 2C3E 5D9F EAFF FFFF"            /* .......#,>]Ÿêÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFCF 8255"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÏ‚U */
+	$"3A2B 1F12 0600 0000 0000 0000 0000 0000"            /* :+.............. */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0006 0E18 1F28 3347 66AE EAFF"            /* .........(3Gf®êÿ */
+	$"FFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF FFFF F9D5 8B5E 4330"            /* ÿÿÿÿÿÿÿÿÿÿùÕ‹^C0 */
+	$"251A 0F04 0000 0000 0000 0000 0000 0000"            /* %............... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 040B 131A 2129 3546 6090"            /* ..........!)5F` */
+	$"CAF1 FFFF FFFF FFFF FFFF FFFF FFFF FFFF"            /* Êñÿÿÿÿÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF FFFF FFFF EAB3 7C5A 4233 281F"            /* ÿÿÿÿÿÿÿÿê³|ZB3(. */
+	$"150B 0200 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0001 060D 141A 2128 303C"            /* ............!(0< */
+	$"4E63 8EB7 DAF1 FFFF FFFF FFFF FFFF FFFF"            /* NcŽ·Úñÿÿÿÿÿÿÿÿÿÿ */
+	$"FFFF FFFF EAD0 AE7B 5E4A 3A30 271F 180E"            /* ÿÿÿÿêÐ®{^J:0'... */
+	$"0600 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0001 060D 1318 1E23"            /* ...............# */
+	$"2930 3945 515F 6C92 9AAE BEBF C0C0 BFBC"            /* )09EQ_l’š®¾¿ÀÀ¿¼ */
+	$"AB97 8866 594E 4339 2E28 231C 150D 0701"            /* «—ˆfYNC9.(#..... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0001 0409 0E14"            /* .............Æ.. */
+	$"181D 2025 292D 3137 3B40 4346 4747 4543"            /* .. %)-17;@CFGGEC */
+	$"3E3A 3530 2C28 2320 1C16 110A 0401 0000"            /* >:50,(# ...Â.... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0104"            /* ................ */
+	$"090D 1114 181A 1D1F 2023 2323 2525 2323"            /* Æ....... ###%%## */
+	$"2120 1E1C 1816 120E 0A04 0100 0000 0000"            /* ! ......Â....... */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0204 0709 0B0D 0F11 1212 1313 1211"            /* .....Æ.......... */
+	$"0F0E 0D0A 0804 0200 0000 0000 0000 0000"            /* ...Â............ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0101 0202 0202 0201"            /* ................ */
+	$"0100 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000 0000 0000 0000 0000 0000 0000"            /* ................ */
+	$"0000 0000"                                          /* .... */
+};
+
