@@ -257,6 +257,8 @@
 		95C46A8D13F26FEC00937B60 /* FastPdfKit.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95C46A8A13F26FEC00937B60 /* FastPdfKit.pdf */; };
 		95C46A8E13F26FEC00937B60 /* FastPdfKitcrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95C46A8B13F26FEC00937B60 /* FastPdfKitcrypt.pdf */; };
 		95C46A8F13F26FEC00937B60 /* FastPdfKitcrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95C46A8B13F26FEC00937B60 /* FastPdfKitcrypt.pdf */; };
+		95D3648E141796C40019F2F5 /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D3648D141796C40019F2F5 /* OverlayManager.m */; };
+		95D36492141797000019F2F5 /* Drawable.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D36491141797000019F2F5 /* Drawable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -465,6 +467,10 @@
 		9598FDE512338042008D7198 /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
 		95C46A8A13F26FEC00937B60 /* FastPdfKit.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = FastPdfKit.pdf; sourceTree = "<group>"; };
 		95C46A8B13F26FEC00937B60 /* FastPdfKitcrypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = FastPdfKitcrypt.pdf; sourceTree = "<group>"; };
+		95D3648C141796C40019F2F5 /* OverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayManager.h; sourceTree = "<group>"; };
+		95D3648D141796C40019F2F5 /* OverlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayManager.m; sourceTree = "<group>"; };
+		95D36490141797000019F2F5 /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawable.h; sourceTree = "<group>"; };
+		95D36491141797000019F2F5 /* Drawable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -777,6 +783,10 @@
 				01FB0F92125CB46A002D4337 /* MenuViewController.m */,
 				01B916B51321524C00D517A6 /* BasicLauncherController.h */,
 				01B916B61321524C00D517A6 /* BasicLauncherController.m */,
+				95D3648C141796C40019F2F5 /* OverlayManager.h */,
+				95D3648D141796C40019F2F5 /* OverlayManager.m */,
+				95D36490141797000019F2F5 /* Drawable.h */,
+				95D36491141797000019F2F5 /* Drawable.m */,
 				1D3623240D0F684500981E51 /* FastPDFKit_SampleAppDelegate.h */,
 				1D3623250D0F684500981E51 /* FastPDFKit_SampleAppDelegate.m */,
 			);
@@ -1222,6 +1232,8 @@
 				01B916C01321526F00D517A6 /* DocumentViewController.m in Sources */,
 				01B916C41321527500D517A6 /* OutlineViewController.m in Sources */,
 				01D85E4B138BE08400F02268 /* NotificationFactory.m in Sources */,
+				95D3648E141796C40019F2F5 /* OverlayManager.m in Sources */,
+				95D36492141797000019F2F5 /* Drawable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

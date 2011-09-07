@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
+#import "OverlayManager.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -44,6 +45,11 @@
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	[aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
 	
+    // We are adding an image overlay on the first page on the bottom left corner
+    OverlayManager *ovManager = [[OverlayManager alloc] init];
+    [aDocViewController addOverlayDataSource:ovManager];
+    [ovManager release];
+    
     // This delegate has been added just to manage the links between pdfs, skip it if you just need standard visualization
     [aDocViewController setDelegate:self];
     
