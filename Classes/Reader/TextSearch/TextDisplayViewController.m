@@ -77,7 +77,7 @@
 #pragma mark Actions
 
 -(IBAction)actionBack:(id)sender {
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+	[[self delegate] dismissTextDisplayViewController:self];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
