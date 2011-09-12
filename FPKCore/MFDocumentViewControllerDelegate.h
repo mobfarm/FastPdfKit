@@ -97,7 +97,7 @@
 
 /**
  This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as third argument
- and then get the page number with MFDocumentManager's -pageNumberForDestinationNamed: and presente the right page for display.
+ and then get the page number with MFDocumentManager's -pageNumberForDestinationNamed: and present the right page for display.
  */
 -(void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToDestinationNamed:(NSString *)destinationName ofFile:(NSString *)fileName;
 

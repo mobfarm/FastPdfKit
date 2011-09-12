@@ -19,6 +19,8 @@
 
 #define TITLE_MODE_SINGLE @"Single"
 #define TITLE_MODE_DOUBLE @"Double"
+#define TTILE_MODE_OVERFLOW @"Overflow"
+
 #define TITLE_LEAD_LEFT @"L-Lead"
 #define TITLE_LEAD_RIGHT @"R-Lead"
 #define TITLE_DIR_L2R @"L2R"
@@ -667,8 +669,10 @@
 	if(mode == MFDocumentModeSingle) {
 		[self setMode:MFDocumentModeDouble];
 	} else if (mode == MFDocumentModeDouble) {
-		[self setMode:MFDocumentModeSingle];
-	}
+		[self setMode:MFDocumentModeOverflow];
+	} else if (mode == MFDocumentModeOverflow) {
+        [self setMode:MFDocumentModeSingle];
+    }
 }
 
 -(IBAction)actionChangeLead:(id)sender {
@@ -1103,6 +1107,8 @@
 	
 	if((self = [super initWithDocumentManager:aDocumentManager])) {
 		[self setDocumentDelegate:self];
+        [self setAutoMode:MFDocumentAutoModeOverflow];
+        [self setAutomodeOnRotation:YES];
 	}
 	return self;
 }
