@@ -49,6 +49,8 @@
 	MFDocumentDirection currentDirection;
 	BOOL autoMode;
 	MFDocumentMode currentMode;
+    MFDocumentAutoMode currentAutoMode;
+    
 	MFDocumentLead currentLead;
 	NSUInteger currentPage;
 	NSUInteger startingPage;
@@ -207,6 +209,13 @@
  Set how the pages are presented to the user. MFDocumentModeSingle present a single page to the user, centered on the screen. MFDocumentModeDouble present two pages side-by-side, as they would appear on a magazine or a books. This will allow to preserve content split between the pages, for example a large background image.
  */
 -(void)setMode:(MFDocumentMode)newMode;
+
+
+/**
+ Set the mode to which the document will automatically switch to upon rotation. Pass MFDocumentAutoModeX values and not MFDocumentModeX values, since it is not
+ guaranteed to be the same.
+ */
+-(void)setAutoMode:(MFDocumentAutoMode)newAutoMode;
 
 /**
  Returns the current mode used to display the document.

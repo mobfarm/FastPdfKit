@@ -35,8 +35,6 @@ enum MFDocumentLead {
 	MFDocumentLeadRight = 1
 };
 typedef NSUInteger MFDocumentLead;
-//#define MFDocumentLeadLeft 0
-//#define MFDocumentLeadRight 1
 
 /**
  Pretty much self explanatory: when the mode property of the MFDocumentViewController is set to MFDocumentModeSingle, a single
@@ -44,11 +42,21 @@ typedef NSUInteger MFDocumentLead;
  */
 enum MFDocumentMode {
 	MFDocumentModeSingle = 1,
-	MFDocumentModeDouble = 2
+	MFDocumentModeDouble = 2,
+    MFDocumentModeOverflow = 3
 };
 typedef NSUInteger MFDocumentMode;
-//#define MFDocumentModeSingle 1
-//#define MFDocumentModeDouble 2
+
+/**
+ Set the default mode to automatically adopt upon rotation.
+ */
+enum MFDocumentAutoMode {
+    MFDocumentAutoModeNone = 0,
+    MFDocumentAutoModeSingle = 1,
+    MFDocumentAutoModeDouble = 2,
+    MFDocumentAutoModeOverflow = 3
+};
+typedef NSUInteger MFDocumentAutoMode;
 
 /**
  MFDocumentDirectionL2R is the standard for western magazine and books. Set the direction property of MFDocumentViewController
@@ -59,8 +67,6 @@ enum MFDocumentDirection {
 	MFDocumentDirectionR2L = 1
 };
 typedef NSUInteger MFDocumentDirection;
-//#define MFDocumentDirectionL2R 0
-//#define MFDocumentDirectionR2L 1
 
 #define IS_DEVICE_PAD ([UIDevice instancesRespondToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
@@ -98,8 +104,13 @@ static inline NSUInteger pageForDirection(NSUInteger pageNumber, NSUInteger numb
 	
 }
 
+static inline float radiansToDegrees(float rads) {
+    return rads * 180.0f / M_PI;
+}
+
 static inline float degreesToRadians(float degs) {
-	return ((fmod(degs, 360.0)) / 180.0) * M_PI;
+	//return ((fmod(degs, 360.0)) / 180.0) * M_PI;
+    return degs * M_PI / 180.0f;
 }
 
 static inline NSInteger pageNumberForPosition(NSInteger position) {
@@ -115,7 +126,7 @@ static inline CGSize sizeForContent(NSInteger numberOfPages, CGSize pageSize) {
 static inline NSUInteger numberOfPositions(NSUInteger numberOfPages, MFDocumentMode pagesForPositions, MFDocumentLead lead) {
 	
 	int nrOfPos = 0;
-	if(pagesForPositions == MFDocumentModeSingle){
+	if(pagesForPositions == MFDocumentModeSingle || pagesForPositions == MFDocumentModeOverflow){
 		
 		nrOfPos = numberOfPages;
 		
@@ -141,7 +152,7 @@ static inline NSInteger positionForPage(NSUInteger page, MFDocumentMode mode, MF
 		page = maxPages-page+1;
 	}
 	
-	if(mode == MFDocumentModeSingle) {
+	if(mode == MFDocumentModeSingle || mode == MFDocumentModeOverflow) {
 		pos = page-1;
 	} else if (mode == MFDocumentModeDouble) {
 		if(lead == MFDocumentLeadLeft) {
@@ -158,7 +169,7 @@ static inline NSUInteger leftPageForPosition(NSInteger position, MFDocumentMode 
 	
 	int page = 0;
 	
-	if(mode == MFDocumentModeSingle) {
+	if(mode == MFDocumentModeSingle || mode == MFDocumentModeOverflow) {
 		page = position+1;
 	} else if (mode == MFDocumentModeDouble) {
 		
@@ -184,7 +195,7 @@ static inline NSUInteger rightPageForPosition(NSInteger position, MFDocumentMode
 	
 	int page = 0;
 	
-	if(mode == MFDocumentModeSingle) {
+	if(mode == MFDocumentModeSingle || mode == MFDocumentModeOverflow) {
 		page = 0;
 	} else if (mode == MFDocumentModeDouble) {
 		
@@ -211,7 +222,7 @@ static inline NSUInteger pageForPosition(NSInteger position, MFDocumentMode mode
 	
 	int page = 0;
 	
-	if(mode == MFDocumentModeSingle) {
+	if(mode == MFDocumentModeSingle || mode == MFDocumentModeOverflow) {
 		page = position+1;
 	} else if (mode == MFDocumentModeDouble) {
 		if(lead == MFDocumentLeadLeft) {
