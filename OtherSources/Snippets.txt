@@ -8,6 +8,8 @@
 
 /** These are for the interface .h */
 
+#import <FastPdfKit/FastPdfKit.h>
+
 @class MFDocumentManager;
 
 -(IBAction)actionOpenPlainDocument:(id)sender;
@@ -15,9 +17,6 @@
 
 
 /** These are for the implementation .m */
-
-#import "MFDocumentManager.h"
-#import "ReaderViewController.h"
 
 -(IBAction)actionOpenPlainDocument:(id)sender{
     /** Set document name */
