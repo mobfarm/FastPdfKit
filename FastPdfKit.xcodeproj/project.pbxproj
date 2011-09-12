@@ -102,10 +102,6 @@
 		01598E3613CAEC8B007344EE /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07B313C755610077CE63 /* ASIProgressDelegate.h */; };
 		01598E3713CAEC8B007344EE /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07BF13C755610077CE63 /* Reachability.h */; };
 		01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07C113C755610077CE63 /* ZipArchive.h */; };
-		01619BC1141E475600C06565 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01619BC0141E475600C06565 /* libFastPDFKit.a */; };
-		01619BC2141E475600C06565 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01619BC0141E475600C06565 /* libFastPDFKit.a */; };
-		01619BC3141E475600C06565 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01619BC0141E475600C06565 /* libFastPDFKit.a */; };
-		01619BC4141E475600C06565 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01619BC0141E475600C06565 /* libFastPDFKit.a */; };
 		01619BD3141E477000C06565 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01619BC5141E477000C06565 /* FPKOverlayViewDataSource.h */; };
 		01619BD4141E477000C06565 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01619BC5141E477000C06565 /* FPKOverlayViewDataSource.h */; };
 		01619BD5141E477000C06565 /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 01619BC6141E477000C06565 /* MFAudioPlayerViewProtocol.h */; };
@@ -134,6 +130,10 @@
 		01619BEC141E477000C06565 /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 01619BD1141E477000C06565 /* MFTextItem.h */; };
 		01619BED141E477000C06565 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01619BD2141E477000C06565 /* Stuff.h */; };
 		01619BEE141E477000C06565 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01619BD2141E477000C06565 /* Stuff.h */; };
+		01619BF0141E679200C06565 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01619BEF141E679200C06565 /* libFastPDFKit.a */; };
+		01619BF1141E679200C06565 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01619BEF141E679200C06565 /* libFastPDFKit.a */; };
+		01619BF2141E679200C06565 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01619BEF141E679200C06565 /* libFastPDFKit.a */; };
+		01619BF3141E679200C06565 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01619BEF141E679200C06565 /* libFastPDFKit.a */; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A47131E92B30045038F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -433,7 +433,6 @@
 		0123606E13CCA18700861EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		01619BC0141E475600C06565 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01619BC5141E477000C06565 /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
 		01619BC6141E477000C06565 /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
 		01619BC7141E477000C06565 /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
@@ -448,6 +447,7 @@
 		01619BD0141E477000C06565 /* MFSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSearchResult.h; sourceTree = "<group>"; };
 		01619BD1141E477000C06565 /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
 		01619BD2141E477000C06565 /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
+		01619BEF141E679200C06565 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		018848E7131E89570045038F /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Kiosk-Info.plist"; sourceTree = "<group>"; };
@@ -649,7 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				01619BC3141E475600C06565 /* libFastPDFKit.a in Frameworks */,
+				01619BF2141E679200C06565 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,7 +659,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
-				01619BC4141E475600C06565 /* libFastPDFKit.a in Frameworks */,
+				01619BF3141E679200C06565 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,7 +680,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
-				01619BC2141E475600C06565 /* libFastPDFKit.a in Frameworks */,
+				01619BF1141E679200C06565 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,7 +697,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				01619BC1141E475600C06565 /* libFastPDFKit.a in Frameworks */,
+				01619BF0141E679200C06565 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1159,7 +1159,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				01619BC0141E475600C06565 /* libFastPDFKit.a */,
+				01619BEF141E679200C06565 /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
