@@ -138,7 +138,7 @@
 -(IBAction)actionBack:(id)sender {
 	
     if ([self respondsToSelector:@selector(presentingViewController)])
-        [[self presentingViewController] dismissViewControllerAnimated:YES completion:^{ /*now you can clean up too */ }];
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
     else
         [[self parentViewController] dismissModalViewControllerAnimated:YES];
 

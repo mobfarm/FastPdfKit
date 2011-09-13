@@ -622,7 +622,7 @@
     else{
         // Or, if presented as modalviewcontroller, tell the parent to dismiss it.
         if ([self respondsToSelector:@selector(presentingViewController)])
-            [[self presentingViewController] dismissViewControllerAnimated:YES completion:^{ /*now you can clean up too */ }];
+            [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
         else
             [[self parentViewController] dismissModalViewControllerAnimated:YES];
     }
