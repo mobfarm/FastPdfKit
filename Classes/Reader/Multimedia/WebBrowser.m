@@ -86,7 +86,11 @@
 -(IBAction)actionDismiss{
 	
 	docViewController.multimediaVisible = NO;
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+    if ([self respondsToSelector:@selector(presentingViewController)])
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:^{ /*now you can clean up too */ }];
+    else
+        [[self parentViewController] dismissModalViewControllerAnimated:YES];
+
 }
 
 - (void)viewDidUnload

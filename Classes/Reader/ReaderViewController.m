@@ -617,10 +617,15 @@
 	
 	//
 	//	Just remove this controller from the navigation stack.
-	[[self navigationController]popViewControllerAnimated:YES];	
-	
-	// Or, if presented as modalviewcontroller, tell the parent to dismiss it.
-	// [[self parentViewController]dismissModalViewControllerAnimated:YES];
+    if([self navigationController])
+        [[self navigationController] popViewControllerAnimated:YES];	
+    else{
+        // Or, if presented as modalviewcontroller, tell the parent to dismiss it.
+        if ([self respondsToSelector:@selector(presentingViewController)])
+            [[self presentingViewController] dismissViewControllerAnimated:YES completion:^{ /*now you can clean up too */ }];
+        else
+            [[self parentViewController] dismissModalViewControllerAnimated:YES];
+    }
 }
 
 -(IBAction) actionPageSliderSlided:(id)sender {
@@ -866,7 +871,7 @@
 	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") link:url local:isLocal];
 	
 	webBrowser.docViewController = self;
-	[[self parentViewController]presentModalViewController:webBrowser animated:YES];
+	[self presentModalViewController:webBrowser animated:YES];
 	
 	[webBrowser release];
 }

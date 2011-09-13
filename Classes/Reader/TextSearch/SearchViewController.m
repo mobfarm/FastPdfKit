@@ -50,8 +50,12 @@
 }
 
 -(void)handleSearchDidStopNotification:(NSNotification *)notification {
+    NSString *title = NSLocalizedString(@"SEARCH_CANCEL_BTN_TITLE", @"Cancel");
+    if ([title isEqualToString:@"SEARCH_CANCEL_BTN_TITLE"]){
+        title = @"Cancel";
+    }
     
-    [cancelStopBarButtonItem setTitle:NSLocalizedString(@"SEARCH_CANCEL_BTN_TITLE", @"Cancel")];
+    [cancelStopBarButtonItem setTitle:title];
 	[activityIndicatorView stopAnimating];
 }
 
@@ -63,7 +67,12 @@
 		
 	// Set up the view status accordingly.
 	
-	[cancelStopBarButtonItem setTitle:NSLocalizedString(@"SEARCH_STOP_BTN_TITLE", @"Stop")];
+    NSString *title = NSLocalizedString(@"SEARCH_STOP_BTN_TITLE", @"Cancel");
+    if ([title isEqualToString:@"SEARCH_STOP_BTN_TITLE"]){
+        title = @"Stop";
+    }
+    
+	[cancelStopBarButtonItem setTitle:title];
 	[activityIndicatorView startAnimating];
 	[cancelStopBarButtonItem setEnabled:YES];
 	[switchToMiniBarButtonItem setEnabled:YES];
@@ -128,7 +137,11 @@
 
 -(IBAction)actionBack:(id)sender {
 	
-	[[self parentViewController]dismissModalViewControllerAnimated:YES];
+    if ([self respondsToSelector:@selector(presentingViewController)])
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:^{ /*now you can clean up too */ }];
+    else
+        [[self parentViewController] dismissModalViewControllerAnimated:YES];
+
 }
 
 -(IBAction)actionMinimize:(id)sender {
@@ -269,11 +282,20 @@
 	if([searchManager isRunning]) {
 		
 		[activityIndicatorView startAnimating];
-		[cancelStopBarButtonItem setTitle:NSLocalizedString(@"SEARCH_STOP_BTN_TITLE", @"Stop")];
+        NSString *title = NSLocalizedString(@"SEARCH_STOP_BTN_TITLE", @"Cancel");
+        if ([title isEqualToString:@"SEARCH_STOP_BTN_TITLE"]){
+            title = @"Stop";
+        }
+
+		[cancelStopBarButtonItem setTitle:title];
 		
 	} else {
-	
-		[cancelStopBarButtonItem setTitle:NSLocalizedString(@"SEARCH_CANCEL_BTN_TITLE", @"Cancel")];
+	    NSString *title = NSLocalizedString(@"SEARCH_CANCEL_BTN_TITLE", @"Cancel");
+        if ([title isEqualToString:@"SEARCH_CANCEL_BTN_TITLE"]){
+            title = @"Cancel";
+        }
+        
+		[cancelStopBarButtonItem setTitle:title];
 		
 	} 
 	
