@@ -53,14 +53,18 @@
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 		
 	}
-	
-	if([entry pageNumber] == 0) {
-		[cell setAccessoryType:UITableViewCellAccessoryNone];
-	} else {
+    
+    // Quick cleanup of the cell. There should be a table view method for this, but I'm unable to find it atm.
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
+    [[cell imageView]setImage:nil];
+    
+    if([entry pageNumber] != 0) { // Check if the link is valid.
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+    }
+    
+	if([[entry bookmarks]count]> 0) { // Check if the entry has children.
         
         [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangleright",@"png")]];
-
-        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	}
 	
 	[cell setIndentationLevel:[entry indentation]];
@@ -150,8 +154,6 @@
 	
 	MFPDFOutlineEntry * entry = [outlineEntries objectAtIndex:indexPath.row];
     
-    
-	
 	// If the entry is a leaf (it doesn't have children), return immediately.
 	if(![[entry bookmarks]count]>0) {
 		return;

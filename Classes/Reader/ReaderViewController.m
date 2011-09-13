@@ -48,7 +48,7 @@
 @synthesize reusablePopover;
 @synthesize multimediaVisible;
 
-@synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft;
+@synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft, imgModeOverflow;
 
 @synthesize thumbFileManager;
 
@@ -666,8 +666,10 @@
 	if(mode == MFDocumentModeSingle) {
 		[self setMode:MFDocumentModeDouble];
 	} else if (mode == MFDocumentModeDouble) {
-		[self setMode:MFDocumentModeSingle];
-	}
+		[self setMode:MFDocumentModeOverflow];
+	} else if (mode == MFDocumentModeOverflow) {
+        [self setMode:MFDocumentModeSingle];
+    }
 }
 
 -(IBAction)actionChangeLead:(id)sender {
@@ -1096,7 +1098,8 @@
         self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead",@"png")];
         
         self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead",@"png")];
-		
+        
+		self.imgModeOverflow = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"img_overflow", @"png")];
 	} else { // IPhone.
         
         self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeSingle_phone",@"png")];
@@ -1114,6 +1117,8 @@
         self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead_phone",@"png")];
         
         self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead_phone",@"png")];
+        
+        self.imgModeOverflow = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"img_overflow", @"png")];
 	}
 	
 	items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
@@ -1835,6 +1840,8 @@
     
 	[imgModeSingle release];
 	[imgModeDouble release];
+    [imgModeOverflow release];
+    
 	[imgZoomLock release];
 	[imgZoomUnlock release];
 	[imgl2r release];

@@ -62,6 +62,7 @@
 	
 	UIImage * imgModeSingle;
 	UIImage * imgModeDouble;
+    UIImage * imgModeOverflow;
 	
 	UIImage * imgZoomLock;
 	UIImage * imgZoomUnlock;
@@ -112,6 +113,7 @@
 @property (nonatomic,retain) UIImage * imgr2l;
 @property (nonatomic,retain) UIImage * imgLeadRight;
 @property (nonatomic,retain) UIImage * imgLeadLeft;
+@property (nonatomic,retain) UIImage * imgModeOverflow;
 
 -(void)setNumberOfPageToolbar;
 
