@@ -909,7 +909,7 @@
 	} else if (mode == MFDocumentModeDouble) {
 		[changeModeBarButtonItem setImage:imgModeDouble];
 	} else if (mode == MFDocumentModeOverflow) {
-        [changeLeadBarButtonItem setImage:imgModeOverflow];
+        [changeModeBarButtonItem setImage:imgModeOverflow];
     }
 }
 
