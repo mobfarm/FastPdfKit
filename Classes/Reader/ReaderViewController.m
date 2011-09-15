@@ -1716,7 +1716,6 @@
 -(void)startThumb {
     
     NSString * thumbnailFilePath = nil;
-    //NSString * thumbnailFileName = nil;
     
     CGImageRef thumbImage = NULL;
     UIImage * thumbnailImage = nil;
@@ -1724,14 +1723,12 @@
     
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
     
-    //thumbnailFileName = [MFHorizontalSlider thumbnailNameForPage:currentThumbPage];
-    //thumbnailFilePath = [self.thumbnailFolderPath stringByAppendingPathComponent:thumbnailFileName];
-    
     thumbnailFilePath = [MFHorizontalSlider thumbnailImagePathForPage:currentThumbPage documentId:documentId];
     
     if(![self.thumbFileManager fileExistsAtPath:thumbnailFilePath] && pdfOpen) {
         
-        thumbImage = [[self document] createImageForThumbnailOfPageNumber:currentThumbPage ofSize:CGSizeMake(70, 91) andScale:1.0];
+        thumbImage = [[self document] createImageForThumbnailOfPageNumber:currentThumbPage ofSize:CGSizeMake(70, 91) andScale:1.0]; // You are responsible for releasing this CGImage.
+        
         thumbnailImage = [[UIImage alloc]initWithCGImage:thumbImage];
 		
 		imageData = UIImagePNGRepresentation(thumbnailImage);
