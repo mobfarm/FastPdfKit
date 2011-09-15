@@ -33,6 +33,8 @@
 	CGRect *cropboxes;
 	int *rotations;
     
+    NSMutableDictionary * fontCache;
+    
 }
 
 // These method are used internally.
