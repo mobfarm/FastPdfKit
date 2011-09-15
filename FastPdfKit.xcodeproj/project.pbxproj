@@ -45,10 +45,6 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
-		0124A88914223F2100396A33 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124A88814223F2100396A33 /* libFastPDFKit.a */; };
-		0124A88A14223F2100396A33 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124A88814223F2100396A33 /* libFastPDFKit.a */; };
-		0124A88B14223F2100396A33 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124A88814223F2100396A33 /* libFastPDFKit.a */; };
-		0124A88C14223F2100396A33 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124A88814223F2100396A33 /* libFastPDFKit.a */; };
 		0124A89B14223F4000396A33 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0124A88D14223F4000396A33 /* FPKOverlayViewDataSource.h */; };
 		0124A89C14223F4000396A33 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0124A88D14223F4000396A33 /* FPKOverlayViewDataSource.h */; };
 		0124A89D14223F4000396A33 /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 0124A88E14223F4000396A33 /* MFAudioPlayerViewProtocol.h */; };
@@ -77,6 +73,10 @@
 		0124A8B414223F4000396A33 /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0124A89914223F4000396A33 /* MFTextItem.h */; };
 		0124A8B514223F4000396A33 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 0124A89A14223F4000396A33 /* Stuff.h */; };
 		0124A8B614223F4000396A33 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 0124A89A14223F4000396A33 /* Stuff.h */; };
+		0124A8B81422638500396A33 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124A8B71422638500396A33 /* libFastPDFKit.a */; };
+		0124A8B91422638500396A33 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124A8B71422638500396A33 /* libFastPDFKit.a */; };
+		0124A8BA1422638500396A33 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124A8B71422638500396A33 /* libFastPDFKit.a */; };
+		0124A8BB1422638500396A33 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124A8B71422638500396A33 /* libFastPDFKit.a */; };
 		014F442D14211E4B004FBEE9 /* img_overflow_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442A14211E4A004FBEE9 /* img_overflow_pad.png */; };
 		014F442E14211E4B004FBEE9 /* img_overflow_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442B14211E4A004FBEE9 /* img_overflow_phone.png */; };
 		014F442F14211E4B004FBEE9 /* img_overflow_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */; };
@@ -415,7 +415,6 @@
 		0123606E13CCA18700861EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		0124A88814223F2100396A33 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0124A88D14223F4000396A33 /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
 		0124A88E14223F4000396A33 /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
 		0124A88F14223F4000396A33 /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
@@ -430,6 +429,7 @@
 		0124A89814223F4000396A33 /* MFSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSearchResult.h; sourceTree = "<group>"; };
 		0124A89914223F4000396A33 /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
 		0124A89A14223F4000396A33 /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
+		0124A8B71422638500396A33 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		014F442A14211E4A004FBEE9 /* img_overflow_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_pad.png; sourceTree = "<group>"; };
 		014F442B14211E4A004FBEE9 /* img_overflow_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_phone.png; sourceTree = "<group>"; };
 		014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_overflow_phone@2x.png"; sourceTree = "<group>"; };
@@ -635,7 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				0124A88B14223F2100396A33 /* libFastPDFKit.a in Frameworks */,
+				0124A8BA1422638500396A33 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +645,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
-				0124A88C14223F2100396A33 /* libFastPDFKit.a in Frameworks */,
+				0124A8BB1422638500396A33 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +666,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
-				0124A88A14223F2100396A33 /* libFastPDFKit.a in Frameworks */,
+				0124A8B91422638500396A33 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +683,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				0124A88914223F2100396A33 /* libFastPDFKit.a in Frameworks */,
+				0124A8B81422638500396A33 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1148,7 +1148,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				0124A88814223F2100396A33 /* libFastPDFKit.a */,
+				0124A8B71422638500396A33 /* libFastPDFKit.a */,
 				01E3A3021309C3D9008BB483 /* cidf */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);

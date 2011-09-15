@@ -2,10 +2,12 @@
 
 This repository contains the FastPdfKit iOS library with some sample projects. This library allows you to add some of the features of the FastPdf application to your own app, allowing it to support pdf documents. For more information, see the [FastPdfKit website](http://fastpdfkit.com) and the [Support website](http://support.fastpdfkit.com).
 
-## DEVELOPMENT BRANCH
-* Use at your own risk *
-Activated libraries won't be pushed here if not expressly requested
-Feel free to comment on the [Support Site](http://support.fastpdfkit.com)
+### Update 2.1.1 (September 15th, 2011)
+* Added a font cache system for text extraction and search, which should give sensible improvement in search speed especially on documents with a large amount of different fonts.
+
+### Update 2.1.0 (September 14th, 2011)
+* Added Overflow page mode to previous Single and Double. Basically, the pdf page will now fill the screen along its width, overflowing under the bottom of the screen if necessary.
+* Added autoMode property. It will tell the MFDocumentViewController to what mode switch when in landscape if automodeOnRotation is YES. Default is MFAutoModeDouble, other option are MFAutoModeSingle and MFAutoModeOverflow.
 
 ### Update 2.0.3 (August 10th, 2011)
 * Fixed a bug in the transformation returned on double page mode for page with an angle not equal to 0.
