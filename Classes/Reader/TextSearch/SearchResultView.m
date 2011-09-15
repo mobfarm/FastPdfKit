@@ -78,7 +78,9 @@
         NSString * pageNumberString = nil;
         CFMutableAttributedStringRef labelAttrString = NULL;
         
-        CTFontRef helveticaBold = NULL;
+        CTFontRef helveticaBoldNumber = NULL;
+        CTFontRef helveticaBoldSnippet = NULL;
+        CTFontRef helveticaSnippet = NULL;
         CGColorSpaceRef rgbColorSpace = NULL;
         CGFloat whiteComponents [] = {1.0,1.0,1.0,1.0};
         CGColorRef whiteColor = NULL;
@@ -90,6 +92,7 @@
         // Label variables.
         
         CGRect labelRect = CGRectNull;
+        CGRect labelTextRect = CGRectNull;
         CGFloat labelRadius = 0.0f;
         CTFramesetterRef labelFramesetter = NULL;
         CTFrameRef labelFrame = NULL;
@@ -113,7 +116,13 @@
 		labelRect.origin.y = labelRect.size.height * 0.5;
 		labelRect.size.width -=20;
 		
-		snippetRect = CGRectMake(rect.size.height*1.5, 0, rect.size.width-(rect.size.height*1.5), rect.size.height);
+		labelTextRect = CGRectMake(0, 0, rect.size.height*1.5,rect.size.height);
+		labelTextRect.size.height *= 0.5;
+		labelTextRect.origin.x += 10;
+		labelTextRect.origin.y = labelRect.size.height * 0.5 + 0.0;
+		labelTextRect.size.width -=20;
+        
+        snippetRect = CGRectMake(rect.size.height*1.5, 0, rect.size.width-(rect.size.height*1.5), rect.size.height);
 		snippetRect.size.height *= 0.5;
 		snippetRect.origin.y = snippetRect.size.height * 0.5;
 	
@@ -165,8 +174,8 @@
 	    
 		// Bold.
 		
-		helveticaBold = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 12.0, NULL);
-		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, CFAttributedStringGetLength(labelAttrString)), kCTFontAttributeName, helveticaBold);
+		helveticaBoldNumber = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 14.0, NULL);
+		CFAttributedStringSetAttribute(labelAttrString, CFRangeMake(0, CFAttributedStringGetLength(labelAttrString)), kCTFontAttributeName, helveticaBoldNumber);
         
 		// White color.
 		
@@ -190,7 +199,7 @@
 		
 		// Create the pat.
 		labelPath = CGPathCreateMutable();
-		CGPathAddRect(labelPath, NULL, labelRect);
+		CGPathAddRect(labelPath, NULL, labelTextRect);
 		
 		// Create the frame.
 		labelFrame = CTFramesetterCreateFrame(labelFramesetter, CFRangeMake(0, pageNumberString.length), labelPath, NULL);
@@ -228,10 +237,15 @@
 		
 		snippetAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(snippetAttrString, CFRangeMake(0, 0), snippetString);
+
 		
+        // Set the font size for the whole string
+        helveticaSnippet = CTFontCreateWithName(CFSTR("Helvetica"), 14.0, NULL);
+        CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(0, CFStringGetLength(snippetString)), kCTFontAttributeName, helveticaSnippet);
+        
 		// Bold.
-		
-		CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTFontAttributeName, helveticaBold);
+		helveticaBoldSnippet = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 14.0, NULL);
+		CFAttributedStringSetAttribute(snippetAttrString, CFRangeMake(boldRange.location, boldRange.length), kCTFontAttributeName, helveticaBoldSnippet);
        
 		// Now the framesetter.
 		
@@ -276,9 +290,15 @@
         if(snippetAttrString)
             CFRelease(snippetAttrString);
         
-        if(helveticaBold)
-            CFRelease(helveticaBold);
-        
+        if(helveticaBoldNumber)
+            CFRelease(helveticaBoldNumber);
+
+        if(helveticaBoldSnippet)
+            CFRelease(helveticaBoldSnippet);        
+
+        if(helveticaSnippet)
+            CFRelease(helveticaSnippet);        
+
 		// Pop the stored context state.
 		CGContextRestoreGState(ctx);
 	}
