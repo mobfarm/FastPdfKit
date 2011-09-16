@@ -154,9 +154,19 @@
 	
 	MFPDFOutlineEntry * entry = [outlineEntries objectAtIndex:indexPath.row];
     
-	// If the entry is a leaf (it doesn't have children), return immediately.
+	// If the entry is a leaf (it doesn't have children), go to the page.
 	if(![[entry bookmarks]count]>0) {
-		return;
+        
+        // Go to page if it is not 0. The point is that some kind of link are not supported, for example the ones
+        // that refer to actions linking to other pdf files. In this case the destination page is set to be 0, and
+        // it never exist. We already have a control in the cellForRowAtIndexPath: method and the setPage: method
+        // does nothing if the page is 0, but better be paranoid than sorry.
+        
+        NSUInteger pageNumber = [entry pageNumber];
+        if(pageNumber != 0) {
+            
+            [delegate outlineViewController:self didRequestPage:pageNumber];
+        }
 	}
 	
 	// We need to add/remove a certain number of rows depending on how
