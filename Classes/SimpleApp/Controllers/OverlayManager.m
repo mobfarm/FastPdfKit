@@ -15,7 +15,7 @@
     if(page == 1){
         array = [NSArray arrayWithObject:[[Drawable alloc] init]];
     } else
-        array = [[NSArray alloc] init];
+        array = [NSArray array];
     return array;
 }
 
