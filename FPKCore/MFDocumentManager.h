@@ -110,13 +110,13 @@
  to use default search profile. Profile is not retained, so be sure to keep it in memory until the function
  returns.
  */
--(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm withProfile:(MFProfile *)p;
+-(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm;
 
 /**
  Return a string representation of the text contained in a pdf page. Profile is not retained, so be sure to keep
  it in memory until the function returns. You can pass NULL to use the default profile.
  */
--(NSString *)wholeTextForPage:(NSUInteger)pageNr withProfile:(MFProfile *)p;
+-(NSString *)wholeTextForPage:(NSUInteger)pageNr;
 
 /**
  Build version of this library. Useful for debugging purposes.

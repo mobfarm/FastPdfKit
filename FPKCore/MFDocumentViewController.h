@@ -290,7 +290,7 @@ This method is used to set the page reading direction: left to right or right to
 /**
  Convert a point from MFDocumentViewController's view space to page space.
  */
--(CGPoint)convertPoint:(CGPoint)point fromViewtoPage:(NSUInteger)page;
+-(CGPoint)convertPoint:(CGPoint)point fromViewToPage:(NSUInteger)page;
 
 /**
  Convert a point from page space to MFDocumentViewController's view space.
@@ -302,11 +302,11 @@ This method is used to set the page reading direction: left to right or right to
  */
 -(CGRect)convertRect:(CGRect)rect fromViewToPage:(NSUInteger)page;
 
-
 /**
  Convert a rect from page space to MFDocumentViewController's view space.
  */
 -(CGRect)convertRect:(CGRect)rect toViewFromPage:(NSUInteger)page;
+
 
 /**
  Convert a point from overlay space (the whole view that hold the both left and right page, and that you can zoom in and scroll over) to page space.
