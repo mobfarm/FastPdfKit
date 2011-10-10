@@ -126,7 +126,6 @@
 		0173C511143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
 		0173C512143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
 		0173C513143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
-		0173C514143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
 		0173C515143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A47131E92B30045038F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
@@ -658,7 +657,6 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
-				0173C514143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
