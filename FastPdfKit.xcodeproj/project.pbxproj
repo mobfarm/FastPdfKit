@@ -109,6 +109,25 @@
 		0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
 		0161F22F141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
 		0161F230141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
+		016BB449143C9AEC001F2047 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C3FD142A47F7004AF153 /* FPKOverlayViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB44A143C9AF2001F2047 /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C3FE142A47F7004AF153 /* MFAudioPlayerViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB44B143C9AF2001F2047 /* MFAudioProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C3FF142A47F7004AF153 /* MFAudioProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB44C143C9AF2001F2047 /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C400142A47F7004AF153 /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB44D143C9AF2001F2047 /* MFDocumentOverlayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C401142A47F7004AF153 /* MFDocumentOverlayDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB44E143C9AF2001F2047 /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C402142A47F7004AF153 /* MFDocumentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB44F143C9AF2001F2047 /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C403142A47F7004AF153 /* MFDocumentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB450143C9AF2001F2047 /* MFOverlayDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C404142A47F7004AF153 /* MFOverlayDrawable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB451143C9AF2001F2047 /* MFOverlayTouchable.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C405142A47F7004AF153 /* MFOverlayTouchable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB452143C9AF2001F2047 /* MFPDFOutlineEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C406142A47F7004AF153 /* MFPDFOutlineEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB453143C9AF2001F2047 /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C407142A47F7004AF153 /* mfprofile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB454143C9AF2001F2047 /* MFSearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C408142A47F7004AF153 /* MFSearchResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB455143C9AF2001F2047 /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C409142A47F7004AF153 /* MFTextItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016BB456143C9AF2001F2047 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C40A142A47F7004AF153 /* Stuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0173C511143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
+		0173C512143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
+		0173C513143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
+		0173C514143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
+		0173C515143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A47131E92B30045038F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -165,10 +184,6 @@
 		01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
-		01C0C3F9142A47D9004AF153 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C0C3F8142A47D9004AF153 /* libFastPDFKit.a */; };
-		01C0C3FA142A47D9004AF153 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C0C3F8142A47D9004AF153 /* libFastPDFKit.a */; };
-		01C0C3FB142A47D9004AF153 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C0C3F8142A47D9004AF153 /* libFastPDFKit.a */; };
-		01C0C3FC142A47D9004AF153 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C0C3F8142A47D9004AF153 /* libFastPDFKit.a */; };
 		01C0C40B142A47F7004AF153 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C3FD142A47F7004AF153 /* FPKOverlayViewDataSource.h */; };
 		01C0C40C142A47F7004AF153 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C3FD142A47F7004AF153 /* FPKOverlayViewDataSource.h */; };
 		01C0C40D142A47F7004AF153 /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C3FE142A47F7004AF153 /* MFAudioPlayerViewProtocol.h */; };
@@ -420,6 +435,7 @@
 		014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_overflow_phone@2x.png"; sourceTree = "<group>"; };
 		0161F228141FABE8000EA8E4 /* ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderViewController.m; sourceTree = "<group>"; };
 		0161F22C141FAC24000EA8E4 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
+		0173C510143E6A6700F88828 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		018848E7131E89570045038F /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Kiosk-Info.plist"; sourceTree = "<group>"; };
@@ -547,7 +563,6 @@
 		01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewControllerDelegate.h; sourceTree = "<group>"; };
 		01BC083613C75D3A0077CE63 /* TextSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSearchOperation.h; sourceTree = "<group>"; };
 		01BC083713C75D3A0077CE63 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
-		01C0C3F8142A47D9004AF153 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		01C0C3FD142A47F7004AF153 /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
 		01C0C3FE142A47F7004AF153 /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
 		01C0C3FF142A47F7004AF153 /* MFAudioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioProvider.h; sourceTree = "<group>"; };
@@ -567,8 +582,6 @@
 		01CF74A713254E0E00E42146 /* minisearch_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_full@2x.png"; sourceTree = "<group>"; };
 		01CF74A813254E0E00E42146 /* minisearch_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_next@2x.png"; sourceTree = "<group>"; };
 		01CF74A913254E0E00E42146 /* minisearch_prev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_prev@2x.png"; sourceTree = "<group>"; };
-		01E3A3031309C3D9008BB483 /* Identity-H.cidf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Identity-H.cidf"; sourceTree = "<group>"; };
-		01E3A3041309C3D9008BB483 /* Identity-V.cidf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Identity-V.cidf"; sourceTree = "<group>"; };
 		01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -635,7 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				01C0C3FB142A47D9004AF153 /* libFastPDFKit.a in Frameworks */,
+				0173C513143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +658,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
-				01C0C3FC142A47D9004AF153 /* libFastPDFKit.a in Frameworks */,
+				0173C514143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +679,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
-				01C0C3FA142A47D9004AF153 /* libFastPDFKit.a in Frameworks */,
+				0173C512143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +696,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				01C0C3F9142A47D9004AF153 /* libFastPDFKit.a in Frameworks */,
+				0173C511143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
+				0173C515143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,15 +1048,6 @@
 			path = TextSearch;
 			sourceTree = "<group>";
 		};
-		01E3A3021309C3D9008BB483 /* cidf */ = {
-			isa = PBXGroup;
-			children = (
-				01E3A3031309C3D9008BB483 /* Identity-H.cidf */,
-				01E3A3041309C3D9008BB483 /* Identity-V.cidf */,
-			);
-			name = cidf;
-			sourceTree = "<group>";
-		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,8 +1153,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				01C0C3F8142A47D9004AF153 /* libFastPDFKit.a */,
-				01E3A3021309C3D9008BB483 /* cidf */,
+				0173C510143E6A6700F88828 /* libFastPDFKit.a */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
 			path = FPKCore;
@@ -1271,6 +1275,20 @@
 				958A81BD14027F5300837C82 /* ReaderViewController.h in Headers */,
 				951AE312140298690025DA52 /* FastPdfKitFramework-Prefix.pch in Headers */,
 				958CBA85141E612F0094D4C1 /* FastPdfKit.h in Headers */,
+				016BB449143C9AEC001F2047 /* FPKOverlayViewDataSource.h in Headers */,
+				016BB44A143C9AF2001F2047 /* MFAudioPlayerViewProtocol.h in Headers */,
+				016BB44B143C9AF2001F2047 /* MFAudioProvider.h in Headers */,
+				016BB44C143C9AF2001F2047 /* MFDocumentManager.h in Headers */,
+				016BB44D143C9AF2001F2047 /* MFDocumentOverlayDataSource.h in Headers */,
+				016BB44E143C9AF2001F2047 /* MFDocumentViewController.h in Headers */,
+				016BB44F143C9AF2001F2047 /* MFDocumentViewControllerDelegate.h in Headers */,
+				016BB450143C9AF2001F2047 /* MFOverlayDrawable.h in Headers */,
+				016BB451143C9AF2001F2047 /* MFOverlayTouchable.h in Headers */,
+				016BB452143C9AF2001F2047 /* MFPDFOutlineEntry.h in Headers */,
+				016BB453143C9AF2001F2047 /* mfprofile.h in Headers */,
+				016BB454143C9AF2001F2047 /* MFSearchResult.h in Headers */,
+				016BB455143C9AF2001F2047 /* MFTextItem.h in Headers */,
+				016BB456143C9AF2001F2047 /* Stuff.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1634,7 +1652,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n[[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n[[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n[[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n[[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n[[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"";
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n[[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n[[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n[[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n[[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n[[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
 		};
 		958A819E14027EEE00837C82 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
