@@ -1621,7 +1621,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle";
+			shellScript = "cp -rf \"${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH}\" \"${PROJECT_DIR}/Bundle\"";
 		};
 		01235FEB13CC7F9B00861EB7 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1637,7 +1637,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle";
+			shellScript = "cp -rf \"${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH}\" \"${PROJECT_DIR}/Bundle\"";
 		};
 		958A819914027EEE00837C82 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
