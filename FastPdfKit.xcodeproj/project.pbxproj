@@ -48,6 +48,11 @@
 		014F442D14211E4B004FBEE9 /* img_overflow_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442A14211E4A004FBEE9 /* img_overflow_pad.png */; };
 		014F442E14211E4B004FBEE9 /* img_overflow_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442B14211E4A004FBEE9 /* img_overflow_phone.png */; };
 		014F442F14211E4B004FBEE9 /* img_overflow_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */; };
+		0154E581144495C100E9393C /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0154E580144495C100E9393C /* libFastPDFKit.a */; };
+		0154E582144495C100E9393C /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0154E580144495C100E9393C /* libFastPDFKit.a */; };
+		0154E583144495C100E9393C /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0154E580144495C100E9393C /* libFastPDFKit.a */; };
+		0154E584144495C100E9393C /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0154E580144495C100E9393C /* libFastPDFKit.a */; };
+		0154E585144495C100E9393C /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0154E580144495C100E9393C /* libFastPDFKit.a */; };
 		01598DA713CAE783007344EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
 		01598DBF13CAE7CD007344EE /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
@@ -123,10 +128,6 @@
 		016BB454143C9AF2001F2047 /* MFSearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C408142A47F7004AF153 /* MFSearchResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		016BB455143C9AF2001F2047 /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C409142A47F7004AF153 /* MFTextItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		016BB456143C9AF2001F2047 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C0C40A142A47F7004AF153 /* Stuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0173C511143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
-		0173C512143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
-		0173C513143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
-		0173C515143E6A6700F88828 /* libFastPDFKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0173C510143E6A6700F88828 /* libFastPDFKit.a */; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A47131E92B30045038F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
@@ -432,9 +433,9 @@
 		014F442A14211E4A004FBEE9 /* img_overflow_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_pad.png; sourceTree = "<group>"; };
 		014F442B14211E4A004FBEE9 /* img_overflow_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_phone.png; sourceTree = "<group>"; };
 		014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_overflow_phone@2x.png"; sourceTree = "<group>"; };
+		0154E580144495C100E9393C /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0161F228141FABE8000EA8E4 /* ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderViewController.m; sourceTree = "<group>"; };
 		0161F22C141FAC24000EA8E4 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
-		0173C510143E6A6700F88828 /* libFastPDFKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPDFKit.a; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		018848E7131E89570045038F /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Kiosk-Info.plist"; sourceTree = "<group>"; };
@@ -647,7 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				0173C513143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
+				0154E583144495C100E9393C /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +658,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
+				0154E584144495C100E9393C /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +679,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
-				0173C512143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
+				0154E582144495C100E9393C /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,7 +696,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				0173C511143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
+				0154E581144495C100E9393C /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,7 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				0173C515143E6A6700F88828 /* libFastPDFKit.a in Frameworks */,
+				0154E585144495C100E9393C /* libFastPDFKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,7 +1153,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				0173C510143E6A6700F88828 /* libFastPDFKit.a */,
+				0154E580144495C100E9393C /* libFastPDFKit.a */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
 			path = FPKCore;
@@ -1621,7 +1623,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle";
+			shellScript = "cp -rf \"${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH}\" \"${PROJECT_DIR}/Bundle\"";
 		};
 		01235FEB13CC7F9B00861EB7 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1637,7 +1639,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -rf ${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH} ${PROJECT_DIR}/Bundle";
+			shellScript = "cp -rf \"${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH}\" \"${PROJECT_DIR}/Bundle\"";
 		};
 		958A819914027EEE00837C82 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
