@@ -133,7 +133,17 @@
  */
 +(NSString *)version;
 
+/**
+ Array of every uri annotation for a selected page.
+ */
+
 -(NSArray *)uriAnnotationsForPageNumber:(NSUInteger)pageNr;
+
+/**
+ Get the parameters for a generic uri, useful to parse options passed with the annotations to customize the behaviour.
+ */
+
++(NSDictionary *)paramsFromURI:(NSString *)uri;
 
 /**
  This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
