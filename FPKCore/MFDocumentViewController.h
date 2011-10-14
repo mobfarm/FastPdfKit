@@ -13,8 +13,8 @@
 
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
-@class MFDetailViewController;
 @class MFDocumentViewController;
+@class FPKDetailView;
 
 @interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
 	
@@ -34,16 +34,15 @@
 	
 	// Detail view
 	UIScrollView * pagedScrollView;
-	MFDetailViewController * detailViewController;
-	UIView * detailView;
+	// MFDetailViewController * detailViewController;
+
+    FPKDetailView * detailView;
 	
 	// Previews
-	MFDeferredContentLayerWrapper * previous;
-	MFDeferredContentLayerWrapper * current;
-	MFDeferredContentLayerWrapper * next;
-	MFDeferredContentLayerWrapper * former;
-	
-	NSArray * wrappers;
+    MFDeferredContentLayerWrapper * current;        // Currently 'focused' layer wrapper.
+    MFDeferredContentLayerWrapper * focused;
+    int nextBias, prevBias, wrapperCount;           // Wrappers info.
+	NSArray * wrappers;                             // Wrappers.
 	
 	// Internal status
 	MFDocumentDirection currentDirection;
@@ -56,13 +55,15 @@
 	NSUInteger startingPage;
 	//MFLegacyMode legacyMode;
 	
-	NSInteger currentPosition;
-	NSUInteger currentOrientation;
-	NSUInteger currentNumberOfPositions;
-	
+	NSInteger currentPosition;              // Currently displayed position.
+	NSUInteger currentOrientation;          // Current orientation as intended by the application.
+	NSUInteger currentNumberOfPositions;    // Current number of "screens".
+    
+	NSInteger currentDetailPosition;        // Current position of the detail view.
+    
 	NSInteger maxNumberOfPages;
 	
-	CGSize currentSize;
+	CGSize currentSize;                     // Current size as intended by the application.
 	
 	BOOL pageControlUsed;
 	BOOL pageButtonUsed;
@@ -71,6 +72,8 @@
 	BOOL firstLoad;
 	int loads;
 	
+    float defaultMaxZoomScale;
+    
 	BOOL pageFlipOnEdgeTouchEnabled;
 	BOOL zoomInOnDoubleTapEnabled;
 	BOOL documentInteractionEnabled;
@@ -192,6 +195,12 @@
 // Private status variable about legacyMode...
 @property (readwrite) BOOL legacyModeEnabled;
 
+
+/**
+ This is the default maximum magnification the pdf will zoom.
+ */
+@property (nonatomic,readwrite) float defaultMaxZoomScale;
+
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
 
 /**
@@ -290,7 +299,7 @@ This method is used to set the page reading direction: left to right or right to
 /**
  Convert a point from MFDocumentViewController's view space to page space.
  */
--(CGPoint)convertPoint:(CGPoint)point fromViewToPage:(NSUInteger)page;
+-(CGPoint)convertPoint:(CGPoint)point fromViewtoPage:(NSUInteger)page;
 
 /**
  Convert a point from page space to MFDocumentViewController's view space.
@@ -302,11 +311,11 @@ This method is used to set the page reading direction: left to right or right to
  */
 -(CGRect)convertRect:(CGRect)rect fromViewToPage:(NSUInteger)page;
 
+
 /**
  Convert a rect from page space to MFDocumentViewController's view space.
  */
 -(CGRect)convertRect:(CGRect)rect toViewFromPage:(NSUInteger)page;
-
 
 /**
  Convert a point from overlay space (the whole view that hold the both left and right page, and that you can zoom in and scroll over) to page space.
@@ -327,5 +336,21 @@ This method is used to set the page reading direction: left to right or right to
  Convert a ract from page to overlay space.
  */
 -(CGRect)convertRect:(CGRect)rect toOverlayFromPage:(NSUInteger)page;
+
+/**
+ Override in your subclass to toggle gesture recognizer on overlay views on and off.
+ */
+-(BOOL)gesturesDisabled;
+
+/**
+ Set the paged scroll enabled or not. Useful to lock the user in the current page during animations.
+ */
+-(void)setScrollEnabled:(BOOL)lock;
+
+/**
+ Set the maximum zoom scale for the pdf page.
+ */
+-(void)setMaximumZoomScale:(NSNumber *)scale;
+
 
 @end

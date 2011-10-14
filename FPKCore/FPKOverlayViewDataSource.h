@@ -16,7 +16,7 @@
 /**
  This method shall return a set of view to display over the pdf page.
  */
--(NSSet *)documentViewController:(MFDocumentViewController *)dvc overlayViewsForPage:(NSUInteger)page;
+-(NSArray *)documentViewController:(MFDocumentViewController *)dvc overlayViewsForPage:(NSUInteger)page;
 
 /**
  This method needs to return the frame in page-coordinates for the view passed as arguments. Remember that, like drawables

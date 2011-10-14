@@ -91,6 +91,12 @@
 -(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayVideo:(NSString*)videoUri;
 
 /**
+ Self explanatory. This method will be called to ask the delegate if the video player needs to loop the video.
+ */
+-(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToLoopVideo:(NSString*)videoUri;
+
+
+/**
  Implement this method to return whether the audio clip should play automatically once loaded.
  */
 -(BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString*)audioUri;

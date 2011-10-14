@@ -29,12 +29,12 @@
 	NSString * password;
 	
 	NSLock * pageDataLock;
+    
 	int *dataSetFlags;
 	CGRect *cropboxes;
 	int *rotations;
-    
-    NSMutableDictionary * fontCache;
-    
+	
+	MFProfile defaultProfile;
 }
 
 // These method are used internally.
@@ -50,7 +50,7 @@
 /**
  Use this method to get the cropbox and the rotation of a certain pdf page.
  */
--(void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber;
+-(void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber withBuffer:(BOOL)withOrWithout;
 
 /**
  Create a thumbnail for a specific page. It will look far better than the thumbnail integrated inside the pdf, but
@@ -110,25 +110,37 @@
  to use default search profile. Profile is not retained, so be sure to keep it in memory until the function
  returns.
  */
--(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm;
+-(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm withProfile:(MFProfile *)p;
+
+/**
+ This method return the same result as the above, but uses a differnt search engine. Look at the readme for instructions.
+ */
+-(NSArray *)test_searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm;
 
 /**
  Return a string representation of the text contained in a pdf page. Profile is not retained, so be sure to keep
  it in memory until the function returns. You can pass NULL to use the default profile.
  */
--(NSString *)wholeTextForPage:(NSUInteger)pageNr;
+-(NSString *)wholeTextForPage:(NSUInteger)pageNr withProfile:(MFProfile *)p;
+
+/**
+ This method return the same result as the above, but uses a differnt extraction engine. Look at the readme for instructions.
+ */
+-(NSString *)test_wholeTextForPage:(NSUInteger)pageNr;
 
 /**
  Build version of this library. Useful for debugging purposes.
  */
 +(NSString *)version;
 
+-(NSArray *)uriAnnotationsForPageNumber:(NSUInteger)pageNr;
+
 /**
  This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
  set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it. This is the default profile used as fallback when
  a NULL profile is passed to the search and extraction methods.
  */
-//@property (nonatomic,readwrite) MFProfile defaultProfile;
+@property (nonatomic,readwrite) MFProfile defaultProfile;
 
 /**
  Resouce folder for the document. Video, audio and other files referenced in the pdf are contained here.
