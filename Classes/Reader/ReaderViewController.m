@@ -1415,7 +1415,7 @@
 	}
     
 	//Page slider.
-	aSlider = [[UISlider alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)-paddingSlider, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
+	aSlider = [[UISlider alloc]initWithFrame:CGRectMake((self.view.frame.size.width-(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2)))/2, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
 	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
 	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
 	[aSlider setMinimumValue:1.0];
