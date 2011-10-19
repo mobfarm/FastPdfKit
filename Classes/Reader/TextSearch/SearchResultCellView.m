@@ -74,6 +74,7 @@
 		searchResultView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
 		
 		[self.contentView addSubview:searchResultView];
+        
     }
 	
     return self;

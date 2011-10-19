@@ -142,6 +142,8 @@
 		CGContextFillRect(ctx, contentRect);
 		
 		//[self drawLabel:labelRect];
+        
+        /*
 		
 		// 1) Let's draw the Page X label first.
 		
@@ -171,6 +173,7 @@
 		
 		labelAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(labelAttrString, CFRangeMake(0, 0), (CFStringRef) pageNumberString);
+         
 	    
 		// Bold.
 		
@@ -226,6 +229,7 @@
     
         [pageNumberString release];
         
+        */
         
 		// 2) Now let's proceed with the snippet.
 		

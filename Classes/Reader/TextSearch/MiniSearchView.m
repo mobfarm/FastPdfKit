@@ -221,7 +221,7 @@
         [bar setBarStyle:UIBarStyleBlack];
         [bar setTranslucent:YES];
 		
-        NSArray *items = [NSArray arrayWithObjects:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prew",@"png")], [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")], nil];
+        /*NSArray *items = [NSArray arrayWithObjects:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prew",@"png")], [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")], nil];
         UISegmentedControl *segControl = [[UISegmentedControl alloc] initWithItems:items];
         [segControl setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
         [segControl addTarget:self action:@selector(segmentSwitch:) forControlEvents:UIControlEventValueChanged];
@@ -229,8 +229,26 @@
         [segControl setMomentary:YES];
         [self addSubview:segControl];
         [segControl release];
+         */
         
-        UIBarButtonItem *segItem = [[UIBarButtonItem alloc] initWithCustomView:segControl];
+        UIButton *btnPrev = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 37, 30)];
+        
+        [btnPrev setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prew",@"png")] forState:UIControlStateNormal];
+        
+        [btnPrev addTarget:self action:@selector(actionPrev:) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        UIBarButtonItem *prevItem = [[UIBarButtonItem alloc] initWithCustomView:btnPrev];
+        
+        UIButton *btnNext = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 37, 30)];
+        
+        [btnNext setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")] forState:UIControlStateNormal];
+        
+        [btnNext addTarget:self action:@selector(actionNext:) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIBarButtonItem *nextItem = [[UIBarButtonItem alloc] initWithCustomView:btnNext];
+        
+        
 		
 		UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(actionCancel:)];
 		
@@ -240,10 +258,11 @@
         UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         
         
-        [bar setItems:[NSArray arrayWithObjects:doneItem, flexibleSpace, segItem, fixedSpace, fullItem, nil] animated:NO];
+        [bar setItems:[NSArray arrayWithObjects:doneItem, flexibleSpace, prevItem,nextItem, fixedSpace, fullItem, nil] animated:NO];
         [flexibleSpace release];
         [fixedSpace release];
-        [segItem release];
+        [prevItem release];
+        [nextItem release];
         [doneItem release];
         [fullItem release];
         

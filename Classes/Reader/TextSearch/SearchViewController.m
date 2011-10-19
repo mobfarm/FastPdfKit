@@ -227,6 +227,7 @@
 	
 	NSArray *searchResult = [[searchManager searchResults] objectAtIndex:indexPath.section];
 	MFTextItem *searchItem = [searchResult objectAtIndex:indexPath.row];
+    
 	
 	// This is a custom view cell that display an MFTextItem directly.
 	
@@ -236,15 +237,39 @@
 	
 		// Simple initialization.
 		
-		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId]autorelease];
-		
+		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId]autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
 	
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i",[searchItem page]];
+    
+    
 	[cell setTextSnippet:[searchItem text]];
 	[cell setPage:[searchItem page]];
 	[cell setBoldRange:[searchItem searchTermRange]];
 	
-	return cell;
+     
+    /*
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+	
+	if(nil == cell) {
+		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId]autorelease];
+		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+	}
+	
+    cell.textLabel.text = [searchItem text];
+    cell.textLabel.minimumFontSize = 12;
+
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i",[searchItem page]];
+     
+     */
+
+    return cell;
+    
 	
 }
 
