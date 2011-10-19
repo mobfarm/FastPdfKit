@@ -23,7 +23,7 @@
 	
     
     // Get the result from the document.
-    NSArray *searchResult = [[document searchResultOnPage:page forSearchTerms:searchTerm withProfile:NULL]copy];
+    NSArray *searchResult = [[document searchResultOnPage:page forSearchTerms:searchTerm]copy];
     
 	if(![self isCancelled]) {
 		

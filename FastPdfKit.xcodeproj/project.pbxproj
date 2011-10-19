@@ -45,6 +45,14 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
+		012B94D4144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
+		012B94D5144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
+		012B94D6144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
+		012B94DA144EC95100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94D9144EC95100C821FC /* libFastPdfKit.a */; };
+		012B94DB144EC95100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94D9144EC95100C821FC /* libFastPdfKit.a */; };
+		012B94DC144EC95100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94D9144EC95100C821FC /* libFastPdfKit.a */; };
+		012B94DD144EC95100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94D9144EC95100C821FC /* libFastPdfKit.a */; };
+		012B94DE144EC95100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94D9144EC95100C821FC /* libFastPdfKit.a */; };
 		014F442D14211E4B004FBEE9 /* img_overflow_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442A14211E4A004FBEE9 /* img_overflow_pad.png */; };
 		014F442E14211E4B004FBEE9 /* img_overflow_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442B14211E4A004FBEE9 /* img_overflow_phone.png */; };
 		014F442F14211E4B004FBEE9 /* img_overflow_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */; };
@@ -141,14 +149,6 @@
 		0160960814482814003CEAAA /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095E014482814003CEAAA /* Stuff.h */; };
 		0160960914482814003CEAAA /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095E014482814003CEAAA /* Stuff.h */; };
 		0160960A14482814003CEAAA /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095E014482814003CEAAA /* Stuff.h */; };
-		0160968B14488298003CEAAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0160968A14488298003CEAAA /* libFastPdfKit.a */; };
-		0160968C14488298003CEAAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0160968A14488298003CEAAA /* libFastPdfKit.a */; };
-		0160968D14488298003CEAAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0160968A14488298003CEAAA /* libFastPdfKit.a */; };
-		0160968E14488298003CEAAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0160968A14488298003CEAAA /* libFastPdfKit.a */; };
-		0160968F14488298003CEAAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0160968A14488298003CEAAA /* libFastPdfKit.a */; };
-		01609691144882AC003CEAAA /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01609690144882AC003CEAAA /* MFDocumentManager.h */; };
-		01609692144882AC003CEAAA /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01609690144882AC003CEAAA /* MFDocumentManager.h */; };
-		01609693144882AC003CEAAA /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01609690144882AC003CEAAA /* MFDocumentManager.h */; };
 		0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
 		0161F22A141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
 		0161F22B141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
@@ -430,6 +430,8 @@
 		0123606E13CCA18700861EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		012B94D3144EC5BE00C821FC /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
+		012B94D9144EC95100C821FC /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		014F442A14211E4A004FBEE9 /* img_overflow_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_pad.png; sourceTree = "<group>"; };
 		014F442B14211E4A004FBEE9 /* img_overflow_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_phone.png; sourceTree = "<group>"; };
 		014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_overflow_phone@2x.png"; sourceTree = "<group>"; };
@@ -446,8 +448,6 @@
 		016095DE14482814003CEAAA /* mfprofile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mfprofile.h; sourceTree = "<group>"; };
 		016095DF14482814003CEAAA /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
 		016095E014482814003CEAAA /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
-		0160968A14488298003CEAAA /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
-		01609690144882AC003CEAAA /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		0161F228141FABE8000EA8E4 /* ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderViewController.m; sourceTree = "<group>"; };
 		0161F22C141FAC24000EA8E4 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -648,7 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				0160968D14488298003CEAAA /* libFastPdfKit.a in Frameworks */,
+				012B94DC144EC95100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +658,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
-				0160968E14488298003CEAAA /* libFastPdfKit.a in Frameworks */,
+				012B94DD144EC95100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +679,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
-				0160968C14488298003CEAAA /* libFastPdfKit.a in Frameworks */,
+				012B94DB144EC95100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,7 +696,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				0160968B14488298003CEAAA /* libFastPdfKit.a in Frameworks */,
+				012B94DA144EC95100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,7 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				0160968F14488298003CEAAA /* libFastPdfKit.a in Frameworks */,
+				012B94DE144EC95100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,7 +808,7 @@
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
 			children = (
-				01609690144882AC003CEAAA /* MFDocumentManager.h */,
+				012B94D3144EC5BE00C821FC /* MFDocumentManager.h */,
 				016095D314482814003CEAAA /* FPKOverlayViewDataSource.h */,
 				016095D414482814003CEAAA /* FPKURIAnnotation.h */,
 				016095D514482814003CEAAA /* MFAudioPlayerViewProtocol.h */,
@@ -1153,7 +1153,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				0160968A14488298003CEAAA /* libFastPdfKit.a */,
+				012B94D9144EC95100C821FC /* libFastPdfKit.a */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
 			path = FPKCore;
@@ -1203,7 +1203,7 @@
 				0160960214482814003CEAAA /* mfprofile.h in Headers */,
 				0160960514482814003CEAAA /* MFTextItem.h in Headers */,
 				0160960814482814003CEAAA /* Stuff.h in Headers */,
-				01609691144882AC003CEAAA /* MFDocumentManager.h in Headers */,
+				012B94D4144EC5BE00C821FC /* MFDocumentManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1242,7 +1242,7 @@
 				0160960314482814003CEAAA /* mfprofile.h in Headers */,
 				0160960614482814003CEAAA /* MFTextItem.h in Headers */,
 				0160960914482814003CEAAA /* Stuff.h in Headers */,
-				01609692144882AC003CEAAA /* MFDocumentManager.h in Headers */,
+				012B94D5144EC5BE00C821FC /* MFDocumentManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,7 +1288,7 @@
 				0160960414482814003CEAAA /* mfprofile.h in Headers */,
 				0160960714482814003CEAAA /* MFTextItem.h in Headers */,
 				0160960A14482814003CEAAA /* Stuff.h in Headers */,
-				01609693144882AC003CEAAA /* MFDocumentManager.h in Headers */,
+				012B94D6144EC5BE00C821FC /* MFDocumentManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
