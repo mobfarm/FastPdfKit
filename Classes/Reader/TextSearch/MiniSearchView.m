@@ -236,7 +236,7 @@
 		self.nextButton = aButton;
 		
 		[self addSubview:aButton];
-		[aButton release];
+		//[aButton release];
 		
 		// Prev button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -253,7 +253,7 @@
 		self.prevButton = aButton;
 		
 		[self addSubview:aButton];
-		[aButton release];
+		//[aButton release];
 		
 		
 		// Cancel button.
@@ -269,7 +269,7 @@
 		self.cancelButton = aButton;
 		
 		[self addSubview:aButton];
-		[aButton release];
+		//[aButton release];
 		
 		
 		// Full button.
@@ -285,7 +285,7 @@
 		self.fullButton = aButton;
 		
 		[self addSubview:aButton];
-		[aButton release];
+		//[aButton release];
 		
 		SearchResultView *aSRV = [[SearchResultView alloc]initWithFrame:CGRectMake(30+2,2, size.width-30*2-2*4,size.height-5)];
 		[aSRV setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];

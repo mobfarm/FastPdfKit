@@ -409,7 +409,7 @@
 		
 		// If nil, allocate and initialize it.
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)]autorelease];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 			
 		}else {
@@ -607,11 +607,12 @@
 	// values you can just set up a delegate and implement in a delegate method both the
 	// removal of the DocumentViweController and the processing of the values.
 	
+    // Stop the search.
+    [self.searchManager cancelSearch];
+    
 	// Call this function to stop the worker threads and release the associated resources.
 	pdfOpen = NO;
 	[self cleanUp];
-    
-    [self.searchManager cancelSearch];
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES]; // Hide the status bar.
 	

@@ -170,7 +170,7 @@ int calculateNextSearchPage(int currentPage, int maxPage) {
 	   
         FPK_SRCMGR_STATUS_STOP(status);
 	
-        [self.currentSearchOperation cancel], self.currentSearchOperation = nil;
+        [self.currentSearchOperation cancel];
 	
         notification = [NotificationFactory notificationSearchDidStopWithSearchTerm:searchTerm fromSender:self];
         [[NSNotificationCenter defaultCenter]postNotification:notification];
