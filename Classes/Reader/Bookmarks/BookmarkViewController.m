@@ -187,6 +187,7 @@
 	if(nil == cell) {
 		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	}
 	
 	[[cell textLabel]setText:[NSString stringWithFormat:@"Page %u",[pageNumber unsignedIntValue]]];

@@ -14,6 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
+    NSLog(@"versione libreria %@",[MFDocumentManager version]);
     
     MenuViewController_Kiosk *aMenuViewController = nil;
 	
