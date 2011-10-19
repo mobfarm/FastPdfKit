@@ -48,11 +48,11 @@
 		012B94D4144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
 		012B94D5144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
 		012B94D6144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
-		012B94E0144EE66400C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94DF144EE66400C821FC /* libFastPdfKit.a */; };
-		012B94E1144EE66400C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94DF144EE66400C821FC /* libFastPdfKit.a */; };
-		012B94E2144EE66400C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94DF144EE66400C821FC /* libFastPdfKit.a */; };
-		012B94E3144EE66400C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94DF144EE66400C821FC /* libFastPdfKit.a */; };
-		012B94E4144EE66400C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B94DF144EE66400C821FC /* libFastPdfKit.a */; };
+		012B9509144F2AB100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B9508144F2AB100C821FC /* libFastPdfKit.a */; };
+		012B950A144F2AB100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B9508144F2AB100C821FC /* libFastPdfKit.a */; };
+		012B950B144F2AB100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B9508144F2AB100C821FC /* libFastPdfKit.a */; };
+		012B950C144F2AB100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B9508144F2AB100C821FC /* libFastPdfKit.a */; };
+		012B950D144F2AB100C821FC /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012B9508144F2AB100C821FC /* libFastPdfKit.a */; };
 		014F442D14211E4B004FBEE9 /* img_overflow_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442A14211E4A004FBEE9 /* img_overflow_pad.png */; };
 		014F442E14211E4B004FBEE9 /* img_overflow_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442B14211E4A004FBEE9 /* img_overflow_phone.png */; };
 		014F442F14211E4B004FBEE9 /* img_overflow_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */; };
@@ -431,7 +431,7 @@
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		012B94D3144EC5BE00C821FC /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
-		012B94DF144EE66400C821FC /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
+		012B9508144F2AB100C821FC /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		014F442A14211E4A004FBEE9 /* img_overflow_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_pad.png; sourceTree = "<group>"; };
 		014F442B14211E4A004FBEE9 /* img_overflow_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_phone.png; sourceTree = "<group>"; };
 		014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_overflow_phone@2x.png"; sourceTree = "<group>"; };
@@ -648,7 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				012B94E2144EE66400C821FC /* libFastPdfKit.a in Frameworks */,
+				012B950B144F2AB100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +658,7 @@
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
 				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
-				012B94E3144EE66400C821FC /* libFastPdfKit.a in Frameworks */,
+				012B950C144F2AB100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +679,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
-				012B94E1144EE66400C821FC /* libFastPdfKit.a in Frameworks */,
+				012B950A144F2AB100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,7 +696,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				012B94E0144EE66400C821FC /* libFastPdfKit.a in Frameworks */,
+				012B9509144F2AB100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,7 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				012B94E4144EE66400C821FC /* libFastPdfKit.a in Frameworks */,
+				012B950D144F2AB100C821FC /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1153,7 +1153,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				012B94DF144EE66400C821FC /* libFastPdfKit.a */,
+				012B9508144F2AB100C821FC /* libFastPdfKit.a */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
 			path = FPKCore;

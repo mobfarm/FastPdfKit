@@ -237,15 +237,13 @@
 		// Simple initialization.
 		
 		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId]autorelease];
-		
 	}
 	
 	[cell setTextSnippet:[searchItem text]];
 	[cell setPage:[searchItem page]];
 	[cell setBoldRange:[searchItem searchTermRange]];
 	
-	return cell;
-	
+	return cell;	
 }
 
 -(NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
