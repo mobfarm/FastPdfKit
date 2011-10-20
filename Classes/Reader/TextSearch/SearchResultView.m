@@ -122,7 +122,7 @@
 		labelTextRect.origin.y = labelRect.size.height * 0.5 + 0.0;
 		labelTextRect.size.width -=20;
         
-        snippetRect = CGRectMake(rect.size.height*1.5, 0, rect.size.width-(rect.size.height*1.5), rect.size.height);
+        snippetRect = CGRectMake(rect.size.height*0.2, 0, rect.size.width-(rect.size.height*1.5), rect.size.height);
 		snippetRect.size.height *= 0.5;
 		snippetRect.origin.y = snippetRect.size.height * 0.5;
 	
