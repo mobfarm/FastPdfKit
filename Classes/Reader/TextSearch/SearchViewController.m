@@ -227,6 +227,7 @@
 	
 	NSArray *searchResult = [[searchManager searchResults] objectAtIndex:indexPath.section];
 	MFTextItem *searchItem = [searchResult objectAtIndex:indexPath.row];
+    
 	
 	// This is a custom view cell that display an MFTextItem directly.
 	
@@ -236,14 +237,55 @@
 	
 		// Simple initialization.
 		
-		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId]autorelease];
+		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
-	
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i",[searchItem page]];
+    
 	[cell setTextSnippet:[searchItem text]];
 	[cell setPage:[searchItem page]];
 	[cell setBoldRange:[searchItem searchTermRange]];
 	
-	return cell;	
+     
+    /*
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+	
+	if(nil == cell) {
+		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId]autorelease];
+		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+	}
+	
+    cell.textLabel.text = [searchItem text];
+    cell.textLabel.minimumFontSize = 12;
+
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i",[searchItem page]];
+     
+     */
+
+    return cell;
+    
+	
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+
+    // Let's get the MFTextItem from its container array.
+	
+	NSArray *searchResult = [[searchManager searchResults] objectAtIndex:indexPath.section];
+	MFTextItem * item = [searchResult objectAtIndex:indexPath.row];
+	
+	// Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page after
+	// displaying the mini search view.
+	
+	[delegate switchToMiniSearchView:item];
+	
+	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
+
 }
 
 -(NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {

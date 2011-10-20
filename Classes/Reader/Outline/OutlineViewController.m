@@ -225,7 +225,9 @@
         
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
-        [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangledown",@"png")]];
+        UIImage *aImage = [[UIImage alloc]initWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangledown",@"png")];
+        
+        [[cell imageView]setImage:aImage];
         
         
 		// Add the visible children of the selected entry to the outlineEntries array and update

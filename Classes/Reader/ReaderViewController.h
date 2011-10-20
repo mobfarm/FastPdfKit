@@ -103,7 +103,17 @@
     NSUInteger currentThumbPage;
     NSFileManager * thumbFileManager;
     BOOL thumbnailize;
+    
+    UIButton *btnChangeModeBarButtonItem;
+	UIButton *btnZoomLockBarButtonItem;
+	UIButton *btnChangeDirectionBarButtonItem;
+	UIButton *btnChangeLeadBarButtonItem;
 }
+
+@property (nonatomic,retain) UIButton *btnChangeModeBarButtonItem;
+@property (nonatomic,retain) UIButton *btnZoomLockBarButtonItem;
+@property (nonatomic,retain) UIButton *btnChangeDirectionBarButtonItem;
+@property (nonatomic,retain) UIButton *btnChangeLeadBarButtonItem;
 
 @property (nonatomic,retain) UIImage * imgModeSingle;
 @property (nonatomic,retain) UIImage * imgModeDouble;
