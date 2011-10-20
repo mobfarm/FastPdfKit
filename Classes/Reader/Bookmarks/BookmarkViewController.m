@@ -151,6 +151,24 @@
 	//[delegate dismissBookmark:self];
 }
 
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+
+	// 
+    //	Get the right page number from the array
+	NSUInteger index = indexPath.row;
+	NSNumber *pageNumber = [bookmarks objectAtIndex:index];
+	NSUInteger page = [pageNumber unsignedIntValue];
+    
+	//
+    //	Dismiss this modal view controller and tell the delegate to show the requested page number. Consider
+    // implementing a documentDelegate interface that handle such kind of request
+	
+	[delegate bookmarkViewController:self didRequestPage:page];
+	//[delegate setPage:page];
+	//[delegate dismissBookmark:self];
+}
+
 -(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	if(editingStyle == UITableViewCellEditingStyleDelete) {
