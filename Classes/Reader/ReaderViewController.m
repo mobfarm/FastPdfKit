@@ -20,6 +20,7 @@
 #import "MFAudioPlayerViewImpl.h"
 
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %d of %d",(x),(y)]
+#define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%d / %d",(x),(y)]
 
 @interface ReaderViewController()
 
@@ -412,11 +413,11 @@
 		// If nil, allocate and initialize it.
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.frame.size.width, 44)]autorelease];
-			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 			
 		}else {
 			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.frame.size.width, 44)]autorelease];
-			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		}
 		
 	} else {
@@ -446,11 +447,13 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 		
         [miniSearchView setFrame:CGRectMake(0, 44, self.view.frame.size.width, 44)];
+        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		[self.view bringSubviewToFront:rollawayToolbar];
         
 	}else {
         
 		[miniSearchView setFrame:CGRectMake(0, 44, self.view.frame.size.width, 44)];
+        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		[self.view bringSubviewToFront:rollawayToolbar];
 	}
     
@@ -1445,7 +1448,7 @@
 		
 		// Dismiss.
         
-        aButton.bounds = CGRectMake( 0, 0, 30 , 25);
+        aButton.bounds = CGRectMake( 0, 0, 30 , 24);
         UIImage *image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"X_phone",@"png")];
         
         
@@ -1474,7 +1477,7 @@
 		// Zoom lock.
         
         self.btnZoomLockBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnZoomLockBarButtonItem.bounds = CGRectMake( 0, 0, 25 , 25 );    
+        self.btnZoomLockBarButtonItem.bounds = CGRectMake( 0, 0, 24 , 24 );    
         [self.btnZoomLockBarButtonItem setImage:imgZoomUnlock forState:UIControlStateNormal];
         [self.btnZoomLockBarButtonItem addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnZoomLockBarButtonItem];
@@ -1490,7 +1493,7 @@
 		// Change direction.
         
         self.btnChangeDirectionBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeDirectionBarButtonItem.bounds = CGRectMake( 0, 0, 25 , 25 );    
+        self.btnChangeDirectionBarButtonItem.bounds = CGRectMake( 0, 0, 24 , 24 );    
         [self.btnChangeDirectionBarButtonItem setImage:imgl2r forState:UIControlStateNormal];
         [self.btnChangeDirectionBarButtonItem addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeDirectionBarButtonItem];
@@ -1505,7 +1508,7 @@
 		// Change lead.
         
         self.btnChangeLeadBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeLeadBarButtonItem.bounds = CGRectMake( 0, 0, 25 , 25 );    
+        self.btnChangeLeadBarButtonItem.bounds = CGRectMake( 0, 0, 24 , 24 );    
         [self.btnChangeLeadBarButtonItem setImage:imgLeadRight forState:UIControlStateNormal];
         [self.btnChangeLeadBarButtonItem addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeLeadBarButtonItem];
@@ -1521,7 +1524,7 @@
 		// Change mode.
         
         self.btnChangeModeBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeModeBarButtonItem.bounds = CGRectMake( 0, 0, 25 , 25 );    
+        self.btnChangeModeBarButtonItem.bounds = CGRectMake( 0, 0, 24 , 24 );    
         [self.btnChangeModeBarButtonItem setImage:imgModeSingle forState:UIControlStateNormal];
         [self.btnChangeModeBarButtonItem addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeModeBarButtonItem];
@@ -1550,7 +1553,7 @@
 		
 		// Outline.
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 25 , 25);
+        aButton.bounds = CGRectMake( 0, 0, 24 , 24);
         image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"indice_phone",@"png")];
         
         
@@ -1569,7 +1572,7 @@
 		// Bookmarks.
         
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 25 , 25);
+        aButton.bounds = CGRectMake( 0, 0, 24 , 24);
         image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"bookmark_add_phone",@"png")];
         
         
@@ -1587,7 +1590,7 @@
         // Search.
         
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 25 , 25);
+        aButton.bounds = CGRectMake( 0, 0, 24 , 24);
         image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"search_phone",@"png")];
         
         
@@ -1693,8 +1696,20 @@
 		paddingSlider = 10;
 	}
     
+    aSlider = nil;
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        aSlider = [[UISlider alloc]initWithFrame:CGRectMake((self.view.frame.size.width-(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2)))/2, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
+    
+    }else{
+    
+        aSlider = [[UISlider alloc]initWithFrame:CGRectMake(10, thumbSliderOffsetX, 250,thumbSliderHeight)];
+    
+    }
+    
+    
 	//Page slider.
-	aSlider = [[UISlider alloc]initWithFrame:CGRectMake((self.view.frame.size.width-(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2)))/2, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
 	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
 	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
 	[aSlider setMinimumValue:1.0];
@@ -1712,13 +1727,13 @@
 	if(!isPad) {
 		
 		// Set the number of page into the toolbar at the right the slider on iPhone.
-		aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-25, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
+		aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-40, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-		aLabel.text = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+		aLabel.text = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
 		aLabel.textAlignment = UITextAlignmentCenter;
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.textColor = [UIColor whiteColor];
-		aLabel.font = [UIFont boldSystemFontOfSize:11.0];
+		aLabel.font = [UIFont boldSystemFontOfSize:10.0];
 		[aThumbSliderView addSubview:aLabel];
 		self.pageNumLabel = aLabel;
 		[aLabel release];
@@ -1895,7 +1910,15 @@
 	
 	NSString *labelTitle = nil;
     
-    labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+    
+    }else{
+    
+        labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
+    }
+    
 	self.pageNumLabel.text = labelTitle;
 }
 
