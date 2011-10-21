@@ -22,7 +22,7 @@
  This method needs to return the frame in page-coordinates for the view passed as arguments. Remember that, like drawables
  and touchables, the coordinate system's origin is in the bottom left corner of the page.
  */
--(CGRect)documentViewController:(MFDocumentViewController *)dvc rectForOverlayView:(UIView *)view;
+-(CGRect)documentViewController:(MFDocumentViewController *)dvc rectForOverlayView:(UIView *)view onPage:(NSUInteger)page;
 
 /**
  These callbacks will be invoked when the overlay view is going to be added, after is added, when is going to be removed
