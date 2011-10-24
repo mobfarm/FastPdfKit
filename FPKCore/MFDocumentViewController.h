@@ -10,6 +10,7 @@
 #import "MFDocumentViewControllerDelegate.h"
 #import "MFDocumentOverlayDataSource.h"
 #import "FPKOverlayViewDataSource.h"
+#import "FPKDetailView.h"
 
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
@@ -73,6 +74,7 @@
 	int loads;
 	
     float defaultMaxZoomScale;
+    CGFloat defaultPageFlipWidth;
     
 	BOOL pageFlipOnEdgeTouchEnabled;
 	BOOL zoomInOnDoubleTapEnabled;
@@ -169,12 +171,20 @@
 @property (assign,readwrite,getter=isPageFlipOnEdgeTouchEnabled) BOOL pageFlipOnEdgeTouchEnabled;
 
 /**
- Set and get the percentage of the screen associated with the page flip on edge touch action. Default value is 0.1, this mean
- that the 10% of the width of the screen on either side will receive such events. Values are clipped between 0.0 and 0.5 to prevent
- overlap.
+ Set and get the percentage of the screen associated with the page flip on edge 
+ touch action. Default value is 0.1, this mean that the 10% of the width of the 
+ screen on either side will receive such events. Values are clipped between 0.0 
+ and 0.5 to prevent overlap.
  */
 -(void)setEdgeFlipWidth:(CGFloat)edgeFlipWidth;
 -(CGFloat)edgeFlipWidth;
+
+/**
+ Default value to wich the current value will be reset to after each page change.
+ Default is 0.1.
+ */
+@property (nonatomic,readwrite) CGFloat defaultEdgeFlipWidth;
+
 
 /**
  Enabled the zoom in when the user double tap on the screen.
@@ -189,8 +199,8 @@
 @property (readwrite) BOOL overlayEnabled;
 
 /**
- Enabled or force the legacy mode, or let the app choose to enable it or not depending on the device.
- Default is disabled.
+ Enabled or force the legacy mode, or let the app choose to enable it or not 
+ depending on the device. Default is disabled.
  */
 // Private status variable about legacyMode...
 @property (readwrite) BOOL legacyModeEnabled;
@@ -204,8 +214,10 @@
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
 
 /**
- This metod enable or disable the automatic mode switching upon rotation. If enabled, the page mode will be automatically
- changed to single page in portrait and side-by-side (double) on landscape. Setting the mode manually will disable the automode.
+ This metod enable or disable the automatic mode switching upon rotation. If 
+ enabled, the page mode will be automatically changed to single page in portrait 
+ and side-by-side (double) on landscape. Setting the mode manually will disable 
+ the automode.
  */
 -(BOOL)automodeOnRotation;
 
@@ -215,13 +227,18 @@
 -(void)setAutomodeOnRotation:(BOOL)automode;
 
 /**
- Set how the pages are presented to the user. MFDocumentModeSingle present a single page to the user, centered on the screen. MFDocumentModeDouble present two pages side-by-side, as they would appear on a magazine or a books. This will allow to preserve content split between the pages, for example a large background image.
+ Set how the pages are presented to the user. MFDocumentModeSingle present a 
+ single page to the user, centered on the screen. MFDocumentModeDouble present 
+ two pages side-by-side, as they would appear on a magazine or a books. This 
+ will allow to preserve content split between the pages, for example a large 
+ background image.
  */
 -(void)setMode:(MFDocumentMode)newMode;
 
 
 /**
- Set the mode to which the document will automatically switch to upon rotation. Pass MFDocumentAutoModeX values and not MFDocumentModeX values, since it is not
+ Set the mode to which the document will automatically switch to upon rotation. 
+ Pass MFDocumentAutoModeX values and not MFDocumentModeX values, since it is not
  guaranteed to be the same.
  */
 -(void)setAutoMode:(MFDocumentAutoMode)newAutoMode;
@@ -232,13 +249,18 @@
 -(MFDocumentMode)mode;
 
 /**
- This metod will set the current page of the document and jump to the specified page. Current page is used to determine bookmarks position. On side-by-side (double) mode, it is usually the left-most page of the two.
+ This metod will set the current page of the document and jump to the specified 
+ page. Current page is used to determine bookmarks position. On side-by-side 
+ (double) mode, it is usually the left-most page of the two.
  */
 -(void)setPage:(NSUInteger)page;
 
 /**
- This metod will set the current page of the document and jump to the specified page, while trying to zoom in on the specified rect. Pass 0.0 as zoomLevel to let the application try to calculate
- the appropriate zoom level to fit the rectangle on screen. */
+ This metod will set the current page of the document and jump to the specified 
+ page, while trying to zoom in on the specified rect. Pass 0.0 as zoomLevel to 
+ let the application try to calculate the appropriate zoom level to fit the 
+ rectangle on screen. 
+ */
 -(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
 
 /**
@@ -247,8 +269,11 @@
 -(NSUInteger)page;
 
 /**
- This method will set the lead used to present the pages in side-by-side (double) mode. With MFDocumentLeadLeft, the
- cover will appear on the left side in side-by-side mode, whereas with MFDocumentLeadRight will appear on the right side. Use this method to keep pairing between pages for books and magazines. Single page mode is not affected by this setting.
+ This method set the lead used to show the pages in side-by-side (double) mode. 
+ With MFDocumentLeadLeft, the cover will appear on the left side in side-by-side
+ mode, whereas with MFDocumentLeadRight will appear on the right side. Use this 
+ method to keep pairing between pages for books and magazines. Single page mode 
+ is not affected by this setting.
  */
 -(void)setLead:(MFDocumentLead)newLead;
 
@@ -258,7 +283,8 @@
 -(MFDocumentLead)lead;
 
 /**
-This method is used to set the page reading direction: left to right or right to left.
+ This method is used to set the page reading direction: left to right or right 
+ to left.
 */
 -(void)setDirection:(MFDocumentDirection)newDirection;
 
@@ -268,8 +294,9 @@ This method is used to set the page reading direction: left to right or right to
 -(MFDocumentDirection)direction;
 
 /**
- This method will turn on or off the autozoom feature. If on, the current zoom level will be kept between pages,
- otherwise will be rest to 100% on page change.
+ This method will turn on or off the autozoom feature. If on, the current zoom 
+ level will be kept between pages, otherwise will be rest to 100% on page 
+ change.
  */
 -(void)setAutozoomOnPageChange:(BOOL)autozoom;
 
@@ -284,14 +311,16 @@ This method is used to set the page reading direction: left to right or right to
 -(void)moveToNextPage;
 
 /**
- This method will begin an animated transition to the previous page, if available.
+ This method will begin an animated transition to the previous page, if 
+ available.
  */
 -(void)moveToPreviousPage;
 
 /**
- Call this method rightly after dismissing this MFDocumentViewController instance. It will release all the resources
- and stop the background threads. Once this method has been called, the MFDocumentViewController instance cannot be
- considered valid anymore and should be released.
+ Call this method rightly after dismissing this MFDocumentViewController 
+ instance. It will release all the resources and stop the background threads. 
+ Once this method has been called, the MFDocumentViewController instance cannot 
+ be considered valid anymore and should be released.
  */
 -(void)cleanUp;
 
@@ -318,7 +347,8 @@ This method is used to set the page reading direction: left to right or right to
 -(CGRect)convertRect:(CGRect)rect toViewFromPage:(NSUInteger)page;
 
 /**
- Convert a point from overlay space (the whole view that hold the both left and right page, and that you can zoom in and scroll over) to page space.
+ Convert a point from overlay space (the whole view that hold the both left and 
+ right page, and that you can zoom in and scroll over) to page space.
  */
 -(CGPoint)convertPoint:(CGPoint)point fromOverlayToPage:(NSUInteger)page;
 
@@ -338,12 +368,14 @@ This method is used to set the page reading direction: left to right or right to
 -(CGRect)convertRect:(CGRect)rect toOverlayFromPage:(NSUInteger)page;
 
 /**
- Override in your subclass to toggle gesture recognizer on overlay views on and off.
+ Override in your subclass to toggle gesture recognizer on overlay views on and 
+ off.
  */
 -(BOOL)gesturesDisabled;
 
 /**
- Set the paged scroll enabled or not. Useful to lock the user in the current page during animations.
+ Set the paged scroll enabled or not. Useful to lock the user in the current 
+ page during animations.
  */
 -(void)setScrollEnabled:(BOOL)lock;
 
@@ -351,6 +383,5 @@ This method is used to set the page reading direction: left to right or right to
  Set the maximum zoom scale for the pdf page.
  */
 -(void)setMaximumZoomScale:(NSNumber *)scale;
-
 
 @end
