@@ -619,6 +619,8 @@
 	pdfOpen = NO;
 	[self cleanUp];
     
+    [self dismissAlternateViewController];
+    
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES]; // Hide the status bar.
 	
 	//
