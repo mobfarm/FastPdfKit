@@ -10,7 +10,6 @@
 #import "MFDocumentViewControllerDelegate.h"
 #import "MFDocumentOverlayDataSource.h"
 #import "FPKOverlayViewDataSource.h"
-#import "FPKDetailView.h"
 
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
