@@ -646,7 +646,16 @@
 	NSUInteger pageNumber = [number unsignedIntValue];
 	
 	// Update the label.
-	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(pageNumber,[[self document]numberOfPages])];
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [pageNumLabel setText:PAGE_NUM_LABEL_TEXT(pageNumber,[[self document]numberOfPages])];
+    
+    }else{
+        
+        [pageNumLabel setText:PAGE_NUM_LABEL_TEXT_PHONE(pageNumber,[[self document]numberOfPages])];
+    
+    }
+	
 }
 
 -(IBAction) actionPageSliderStopped:(id)sender {
@@ -658,6 +667,8 @@
 	
 	// Go to the page.
 	[self setPage:pageNumber];
+    
+    
 }
 
 -(IBAction)actionChangeMode:(id)sender {
@@ -1466,15 +1477,13 @@
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
 		
-		/*
-         // Space.
-         
-         aButton.bounds = CGRectMake( 0, 0, 34 , 30);
+		
+         // Space
          
          aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
          [items addObject:aBarButtonItem];
          [aBarButtonItem release];
-         */
+         
 		
 		// Zoom lock.
         
@@ -1534,6 +1543,13 @@
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
+        
+        // Space
+        
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        [items addObject:aBarButtonItem];
+        [aBarButtonItem release];
+        
 		
 		// Text.
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
