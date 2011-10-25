@@ -122,6 +122,7 @@ int nextOffset(int offset) {
     NSUInteger page;
     
     TVThumbnailView2 * view = [thumbnailViews objectAtIndex:currentPosition%[thumbnailViews count]];
+    
     if(view.position==currentPosition) {
         [view reload];
     }
@@ -146,13 +147,22 @@ int nextOffset(int offset) {
     
     int position = startingPosition+offset;
     offset = nextOffset(offset);
-    while(position < 0 || position >= pagesCount) {
+    int retry = 2;
+    while((position < 0 || position >= pagesCount) && retry > 0) {
         position = startingPosition+offset;
         offset = nextOffset(offset);
+        retry--;
     }
-    self.currentPosition = position;
     
-    [self performSelectorInBackground:@selector(generateThumbnailOrSkip:) withObject:nil];
+    if(retry > 0) {
+        self.currentPosition = position;
+        
+        NSLog(@"checking %d",position);
+        
+        [self performSelectorInBackground:@selector(generateThumbnailOrSkip:) withObject:nil];    
+    } else {
+        backgroundWorkStillGoingOn = NO;
+    }
 }
 
 
@@ -229,13 +239,14 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
     if (self) {
     
         [self setAutoresizesSubviews:YES];
-        [self setBackgroundColor:[UIColor blackColor]];
+        [self setBackgroundColor:[UIColor yellowColor]];
         
         UIView * aScrollContainerView = [[UIView alloc]initWithFrame:frame];
         [aScrollContainerView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
         [aScrollContainerView setAutoresizesSubviews:YES];
         
         UIScrollView * aScrollView = [[UIScrollView alloc]initWithFrame:frame];
+        [aScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
         [aScrollView setBackgroundColor:[UIColor redColor]];
         [aScrollView setDelegate:self];
         
@@ -243,7 +254,7 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
     
         currentThumbnailPosition = 0;
         thumbnailSize = CGSizeMake(90, 120);
-        padding = 20;
+        padding = 0.0;
         
         [aScrollContainerView addSubview:aScrollView];
         [self addSubview:aScrollContainerView];
@@ -299,7 +310,8 @@ BOOL isViewOutsideRange(int viewPosition, int currentPosition, int count) {
 }
 
 -(void)thumbTapped:(NSInteger)position withObject:(id)obj {
-    [self setPage:[self pageForPosition:position] animated:YES];
+    [delegate thumbnailScrollView:self didSelectPage:[self pageForPosition:position]];
+    //[self setPage:[self pageForPosition:position] animated:YES];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -405,24 +417,24 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
     return [self imagePathForPosition:view.position];
 }
 
--(void)requestImageForThumbnailView:(TVThumbnailView2 *)view {
-    
-    return;
-    
-    // NSString * path = [self imagePathForThumbnailView:view];
-    // NSUInteger page = view.position+1;
-    NSNumber * page;
-    if([pendingRequests valueForKey:view]) {
-        
-        page = [pendingRequests valueForKey:view];
-        [delegate cancelThumbnailForPage:[page unsignedIntValue]];
-        
-    } else {
-        
-        
-        
-    }
-}
+//-(void)requestImageForThumbnailView:(TVThumbnailView2 *)view {
+//    
+//    return;
+//    
+//    // NSString * path = [self imagePathForThumbnailView:view];
+//    // NSUInteger page = view.position+1;
+//    NSNumber * page;
+//    if([pendingRequests valueForKey:view]) {
+//        
+//        page = [pendingRequests valueForKey:view];
+//        [delegate cancelThumbnailForPage:[page unsignedIntValue]];
+//        
+//    } else {
+//        
+//        
+//        
+//    }
+//}
 
 -(void)start {
     
@@ -484,6 +496,8 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
         view.thumbnailImagePath = [[self class]thumbnailImagePathForPage:[self pageForPosition:position] documentId:documentId];
     }
     
+    //scrollContainerView.frame = self.bounds;
+    //scrollView.frame = self.bounds;
     scrollView.contentSize = CGSizeMake(contentWidth(thumbnailSize.width, padding, pagesCount, bounds.size.width), bounds.size.height);
     [scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
 }

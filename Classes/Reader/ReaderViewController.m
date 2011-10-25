@@ -33,7 +33,7 @@
 @implementation ReaderViewController
 
 @synthesize bottomToolbarView;
-@synthesize thumbImgArray;
+//@synthesize thumbImgArray;
 @synthesize rollawayToolbar;
 
 @synthesize searchBarButtonItem, changeModeBarButtonItem, zoomLockBarButtonItem, changeDirectionBarButtonItem, changeLeadBarButtonItem;
@@ -1630,13 +1630,13 @@
 - (void)viewDidLoad {
     
     //UIFont *font = nil;
-	UIView * aThumbSliderView = nil;
+	UIView * aContainerView = nil;
     
     UIToolbar *aThumbSliderToolbar = nil;
     UISlider *aSlider = nil;
     UILabel * aLabel = nil;
     
-    NSMutableArray * aThumbImgArray = nil;
+    // NSMutableArray * aThumbImgArray = nil;
     
     CGFloat thumbSliderOffsetX = 0 ;
 	CGFloat thumbSliderHeight = 0;
@@ -1668,33 +1668,34 @@
         
 		// Initialize the thumb slider containter view. 
 		
-		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
+		aContainerView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
 		thumbSliderToolbarHeight = 44; // Height of the thumb that include the slider.
 		thumbSliderViewBorderWidth = 100;
 		thumbSliderHeight = 20 ; // Height of the slider.
 		
-		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44; // Vertical offset of the toolbar.
+		thumbSliderOffsetY = aContainerView.frame.size.height-44; // Vertical offset of the toolbar.
 		thumbSliderOffsetX = thumbSliderOffsetY + 10; // Horizontal offset of the toolbar.
 		
 	} else {
 		
-		aThumbSliderView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
+		aContainerView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
 		thumbSliderToolbarHeight = 44;
 		thumbSliderViewBorderWidth = 50;
 		thumbSliderHeight = 10;
-		thumbSliderOffsetY = aThumbSliderView.frame.size.height-44;
+		thumbSliderOffsetY = aContainerView.frame.size.height-44;
 		thumbSliderOffsetX = thumbSliderOffsetY + 10;
 	}
 	
-	[aThumbSliderView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
-	[aThumbSliderView setAutoresizesSubviews:YES];
-	[aThumbSliderView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
+    [aContainerView setBackgroundColor:[UIColor brownColor]];
+	[aContainerView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+	[aContainerView setAutoresizesSubviews:YES];
+	[aContainerView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
 	
 	aThumbSliderToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, thumbSliderOffsetY, self.view.frame.size.width, thumbSliderToolbarHeight)];
 	[aThumbSliderToolbar setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
 	aThumbSliderToolbar.barStyle = UIBarStyleBlackTranslucent;
 	
-	[aThumbSliderView addSubview:aThumbSliderToolbar];
+	[aContainerView addSubview:aThumbSliderToolbar];
 	[aThumbSliderToolbar release];
 	
 	if(isPad) {
@@ -1705,7 +1706,7 @@
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
-        aSlider = [[UISlider alloc]initWithFrame:CGRectMake((self.view.frame.size.width-(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2)))/2, thumbSliderOffsetX, aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
+        aSlider = [[UISlider alloc]initWithFrame:CGRectMake((self.view.frame.size.width-(aContainerView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2)))/2, thumbSliderOffsetX, aContainerView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
     
     }else{
     
@@ -1725,45 +1726,45 @@
 	
 	[self setPageSlider:aSlider];
 	
-	[aThumbSliderView addSubview:aSlider];
+	[aContainerView addSubview:aSlider];
 	
 	[aSlider release];
 	
 	if(!isPad) {
 		
 		// Set the number of page into the toolbar at the right the slider on iPhone.
-		aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aThumbSliderView.frame.size.width-thumbSliderViewBorderWidth)-40, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
+		aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aContainerView.frame.size.width-thumbSliderViewBorderWidth)-40, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
 		aLabel.text = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
 		aLabel.textAlignment = UITextAlignmentCenter;
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.textColor = [UIColor whiteColor];
 		aLabel.font = [UIFont boldSystemFontOfSize:10.0];
-		[aThumbSliderView addSubview:aLabel];
+		[aContainerView addSubview:aLabel];
 		self.pageNumLabel = aLabel;
 		[aLabel release];
 	}
 	
-	[self.view addSubview:aThumbSliderView];
+	[self.view addSubview:aContainerView];
 	
-	self.bottomToolbarView = aThumbSliderView;
+	self.bottomToolbarView = aContainerView;
 	
-	[aThumbSliderView release];
+	[aContainerView release];
 	
     
 	// Now prepare an image array to display as placeholder for the thumbs.
 	
-	aThumbImgArray  = [[NSMutableArray alloc]init];
-	
-	pagesCount = [[self document]numberOfPages];
-	
-	for (int i=0; i<pagesCount ; i++) {
-		[aThumbImgArray insertObject:[NSNull null] atIndex:i];
-	}	
-	
-	self.thumbImgArray = aThumbImgArray;
-	
-	[aThumbImgArray release];
+//	aThumbImgArray  = [[NSMutableArray alloc]init];
+//	
+//	pagesCount = [[self document]numberOfPages];
+//	
+//	for (int i=0; i<pagesCount ; i++) {
+//		[aThumbImgArray insertObject:[NSNull null] atIndex:i];
+//	}	
+//	
+//	self.thumbImgArray = aThumbImgArray;
+//	
+//	[aThumbImgArray release];
 	
     
 	// Utility method to prepare the rollaway toolbar.
@@ -1965,13 +1966,17 @@
     
     if(isPad) {
         aThumbScrollView = [[TVThumbnailScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 160)];
+        aThumbScrollView.thumbnailSize = CGSizeMake(100, 124);
     } else {
         aThumbScrollView = [[TVThumbnailScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 70)];
+        aThumbScrollView.thumbnailSize = CGSizeMake(50, 64);
     }
     
+    [aThumbScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     [aThumbScrollView setThumbnailFolder:nil];
-    [aThumbScrollView setPagesCount:[self.document numberOfPages]];
     [aThumbScrollView setDocument:[self document]];
+    [aThumbScrollView setPagesCount:[self.document numberOfPages]];
+    [aThumbScrollView setDelegate:self];
     
 //    MFHorizontalSlider * anHorizontalThumbSlider = nil;
 //    
@@ -2012,114 +2017,124 @@
 }
 
 
-- (void)didTappedOnPage:(int)number ofType:(int)type withObject:(id)object{
-	[self setPage:number];
+#pragma mark - TVThumbnailScrollViewDelegate methods
+
+-(void)thumbnailScrollView:(TVThumbnailView *)scrollView didSelectPage:(NSUInteger)page {
+    [self setPage:page];
 }
 
-- (void)didSelectedPage:(int)number ofType:(int)type withObject:(id)object{
-}
+
+//- (void)didTappedOnPage:(int)number ofType:(int)type withObject:(id)object{
+//	[self setPage:number];
+//}
+//
+//- (void)didSelectedPage:(int)number ofType:(int)type withObject:(id)object{
+//}
+
+#pragma mark -
 
 
--(void)handleThumbDone {
-    
-    // [self.thumbsliderHorizontal updateThumbnailViewWithPage:currentThumbPage];
-    // Start next thumbnail operation or abort.
-    
-    if(currentThumbPage < [[self document]numberOfPages]) {
-        
-        currentThumbPage++;
-		[self performSelectorInBackground:@selector(startThumb) withObject:nil];
-        
-	} else {
-		
-        self.thumbFileManager = nil;
-        
-	}
-}
 
--(void)startThumb {
-    
-    NSString * thumbnailFilePath = nil;
-    
-    CGImageRef thumbImage = NULL;
-    UIImage * thumbnailImage = nil;
-    NSData * imageData = nil;
-    
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
-    
-    thumbnailFilePath = [MFHorizontalSlider thumbnailImagePathForPage:currentThumbPage documentId:documentId];
-    
-    if(![self.thumbFileManager fileExistsAtPath:thumbnailFilePath] && pdfOpen) {
-        
-        thumbImage = [[self document] createImageForThumbnailOfPageNumber:currentThumbPage ofSize:CGSizeMake(70, 91) andScale:1.0]; // You are responsible for releasing this CGImage.
-        
-        thumbnailImage = [[UIImage alloc]initWithCGImage:thumbImage];
-		
-		imageData = UIImagePNGRepresentation(thumbnailImage);
-        //imageData = UIImageJPEGRepresentation(thumbnailImage,0.8); // JPEG version (will not have alfa).
-        
-        [self.thumbFileManager createFileAtPath:thumbnailFilePath contents:imageData attributes:nil];
-        
-        CGImageRelease(thumbImage);
-        [thumbnailImage release];
-    }
-    
-    [pool release];
-    
-    [self performSelectorOnMainThread:@selector(handleThumbDone) withObject:nil waitUntilDone:NO];
-}
+//-(void)handleThumbDone {
+//    
+//    // [self.thumbsliderHorizontal updateThumbnailViewWithPage:currentThumbPage];
+//    // Start next thumbnail operation or abort.
+//    
+//    if(currentThumbPage < [[self document]numberOfPages]) {
+//        
+//        currentThumbPage++;
+//		[self performSelectorInBackground:@selector(startThumb) withObject:nil];
+//        
+//	} else {
+//		
+//        self.thumbFileManager = nil;
+//        
+//	}
+//}
+//
+//-(void)startThumb {
+//    
+//    NSString * thumbnailFilePath = nil;
+//    
+//    CGImageRef thumbImage = NULL;
+//    UIImage * thumbnailImage = nil;
+//    NSData * imageData = nil;
+//    
+//    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
+//    
+//    thumbnailFilePath = [MFHorizontalSlider thumbnailImagePathForPage:currentThumbPage documentId:documentId];
+//    
+//    if(![self.thumbFileManager fileExistsAtPath:thumbnailFilePath] && pdfOpen) {
+//        
+//        thumbImage = [[self document] createImageForThumbnailOfPageNumber:currentThumbPage ofSize:CGSizeMake(70, 91) andScale:1.0]; // You are responsible for releasing this CGImage.
+//        
+//        thumbnailImage = [[UIImage alloc]initWithCGImage:thumbImage];
+//		
+//		imageData = UIImagePNGRepresentation(thumbnailImage);
+//        //imageData = UIImageJPEGRepresentation(thumbnailImage,0.8); // JPEG version (will not have alfa).
+//        
+//        [self.thumbFileManager createFileAtPath:thumbnailFilePath contents:imageData attributes:nil];
+//        
+//        CGImageRelease(thumbImage);
+//        [thumbnailImage release];
+//    }
+//    
+//    [pool release];
+//    
+//    [self performSelectorOnMainThread:@selector(handleThumbDone) withObject:nil waitUntilDone:NO];
+//}
 
--(void)generateThumbInBackground {
-    
-    NSFileManager * fileManager = nil;
-    
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
-    NSString * thumbFolderPath = [MFHorizontalSlider thumbnailFolderPathForDocumentId:self.documentId];
-    
-    BOOL isDir = NO;
-    NSError * error = nil;
-    
-    fileManager = [[NSFileManager alloc]init];
-    
-    if(![fileManager fileExistsAtPath:thumbFolderPath isDirectory:&isDir]) { // Does not exist.
-        
-        if(![fileManager createDirectoryAtPath:thumbFolderPath withIntermediateDirectories:YES attributes:nil error:&error]) {
-            
-            // Disable thumb here.
-            
-        }
-        
-    } else { // Exist...
-        
-        if(!isDir) { // ... but is not a directory.
-            
-            if(![fileManager removeItemAtPath:thumbFolderPath error:&error]) {
-                
-                // Disable thumb here.
-                
-            } else { // File successfully deleted.
-                
-                if(![fileManager createDirectoryAtPath:thumbFolderPath withIntermediateDirectories:YES attributes:nil error:&error]) {
-                    
-                    // Disable thumb here.
-                    
-                }
-            }
-        }
-    }
-    
-    self.thumbFileManager = fileManager;
-    //self.thumbnailFolderPath = thumbFolderPath;
-    
-    currentThumbPage = 1;
-    
-    [self performSelectorInBackground:@selector(startThumb) withObject:nil]; // Start the actual thumbnail generation.
-    
-    // Cleanup.
-    
-    [fileManager release];
-    [pool release];
-}
+//-(void)generateThumbInBackground {
+//    
+//    NSFileManager * fileManager = nil;
+//    
+//    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
+//    NSString * thumbFolderPath = [MFHorizontalSlider thumbnailFolderPathForDocumentId:self.documentId];
+//    
+//    BOOL isDir = NO;
+//    NSError * error = nil;
+//    
+//    fileManager = [[NSFileManager alloc]init];
+//    
+//    if(![fileManager fileExistsAtPath:thumbFolderPath isDirectory:&isDir]) { // Does not exist.
+//        
+//        if(![fileManager createDirectoryAtPath:thumbFolderPath withIntermediateDirectories:YES attributes:nil error:&error]) {
+//            
+//            // Disable thumb here.
+//            
+//        }
+//        
+//    } else { // Exist...
+//        
+//        if(!isDir) { // ... but is not a directory.
+//            
+//            if(![fileManager removeItemAtPath:thumbFolderPath error:&error]) {
+//                
+//                // Disable thumb here.
+//                
+//            } else { // File successfully deleted.
+//                
+//                if(![fileManager createDirectoryAtPath:thumbFolderPath withIntermediateDirectories:YES attributes:nil error:&error]) {
+//                    
+//                    // Disable thumb here.
+//                    
+//                }
+//            }
+//        }
+//    }
+//    
+//    self.thumbFileManager = fileManager;
+//    //self.thumbnailFolderPath = thumbFolderPath;
+//    
+//    currentThumbPage = 1;
+//    
+//    [self performSelectorInBackground:@selector(startThumb) withObject:nil]; // Start the actual thumbnail generation.
+//    
+//    // Cleanup.
+//    
+//    [fileManager release];
+//    [pool release];
+//}
 
 /*
  // Override to allow orientations other than the default portrait orientation.
@@ -2173,8 +2188,8 @@
 	[imgLeadLeft release];
     
     [rollawayToolbar release];
-	[thumbnailView release];
-	[thumbImgArray release];
+	// [thumbnailView release];
+	// [thumbImgArray release];
 	
     [searchBarButtonItem release], searchBarButtonItem = nil;
 	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
@@ -2196,6 +2211,8 @@
 	[textDisplayViewController release];
 	[miniSearchView release];
 	[searchManager release];
+    
+    [thumbnailScrollView release];
 	
     [documentId release];
 	

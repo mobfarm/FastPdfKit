@@ -10,11 +10,14 @@
 #import "MFDocumentManager.h"
 
 @class TVThumbnailView;
+@class TVThumbnailScrollView;
 
 @protocol TVThumbnailScrollViewDelegate
 
--(void)provideThumbnailForPage:(NSUInteger)page;
--(void)cancelThumbnailForPage:(NSUInteger)page;
+-(void)thumbnailScrollView:(TVThumbnailScrollView *)scrollView didSelectPage:(NSUInteger)page;
+
+//-(void)provideThumbnailForPage:(NSUInteger)page;
+//-(void)cancelThumbnailForPage:(NSUInteger)page;
 
 @end
 
