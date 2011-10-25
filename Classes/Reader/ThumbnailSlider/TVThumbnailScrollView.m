@@ -114,23 +114,25 @@ int nextOffset(int offset) {
         
         [fileManager createFileAtPath:path contents:data attributes:nil];
         
-        [img release];
+        
         CGImageRelease(image);
         
-        [self performSelectorOnMainThread:@selector(handleThumbDone) withObject:nil waitUntilDone:NO];
+        [self performSelectorOnMainThread:@selector(handleThumbDone:) withObject:img waitUntilDone:NO];
+        
+        [img autorelease];
     }
     
     [pool release];
 }
 
--(void)handleThumbDone {
+-(void)handleThumbDone:(UIImage *)image {
     
     NSUInteger page;
     
     TVThumbnailView * view = [thumbnailViews objectAtIndex:currentPosition%[thumbnailViews count]];
     
     if(view.position==currentPosition) {
-        [view reload];
+        [view reloadImage:image];
     }
     
     [self checkForThumbnail];

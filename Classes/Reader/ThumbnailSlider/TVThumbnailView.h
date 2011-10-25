@@ -41,6 +41,6 @@
 
 @property (nonatomic,retain) UIImage * thumbnailImage;
 
--(void)reload;
+-(void)reloadImage:(UIImage *)image;
 
 @end

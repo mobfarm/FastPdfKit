@@ -84,24 +84,35 @@
 
 }
 
++(CGRect)frameForImageView:(CGSize)size {
+    
+    return CGRectMake(5, 10, size.width-10, size.height-20);
+}
+
 -(void)layoutSubviews {
     
-    CGRect bounds = self.bounds;
+    /*
+     If there's an associated image, present it as thumbnail, otherwise show the
+     activity indicator. In both case, layout the label since the page number
+     is always displayed at the bottom of the view.
+     */
     
-    // If there's a path, present the label and the image view, otherwise present the spinner.
+    CGRect bounds = self.bounds;
+    CGRect imageViewFrame;
+    UIImageView * anImageView = nil;
+    CGRect spinnerFrame;
     
     if(thumbnailImage) {
         
         activityIndicator.hidden = YES;
         
-        // Calculate the image view frame and get the image that will act as content.
+        // Calculate the image view frame.
         
-        CGRect imageViewRect = CGRectMake(5, 3, bounds.size.width-10, bounds.size.height-6);
-        // UIImage * imageViewImage = [UIImage imageWithContentsOfFile:thumbnailImagePath];
+        imageViewFrame = [TVThumbnailView frameForImageView:bounds.size];
         
         if(!thumbnailView) { // Prepare the subview if it does not exist yet.
             
-            UIImageView * anImageView = [[UIImageView alloc]initWithFrame:imageViewRect];
+            anImageView = [[UIImageView alloc]initWithFrame:imageViewFrame];
             anImageView.backgroundColor = [UIColor clearColor];
             anImageView.userInteractionEnabled = YES;
             
@@ -115,22 +126,19 @@
         // Set the image view frame and content, then show it (ignored if already shown).
         
         thumbnailView.image = thumbnailImage;
-        thumbnailView.frame = imageViewRect;
+        thumbnailView.frame = imageViewFrame;
         thumbnailView.hidden = NO;
         
-        // Layout the page number label.
-        
-        [self layoutPageNumberLabel];
-              
+        [self layoutPageNumberLabel]; // Layout the page number label.
         
     } else {
         
         thumbnailView.hidden = YES;
         
-        [self layoutPageNumberLabel];
+        [self layoutPageNumberLabel]; // Layout the page number label.
         
-        CGRect spinnerRect = CGRectMake(bounds.size.width * 0.5 - activityIndicator.frame.size.width * 0.5, bounds.size.height * 0.5 - activityIndicator.frame.size.height * 0.5, activityIndicator.frame.size.width, activityIndicator.frame.size.height);
-        self.activityIndicator.frame = spinnerRect;
+        spinnerFrame = CGRectMake(bounds.size.width * 0.5 - activityIndicator.frame.size.width * 0.5, bounds.size.height * 0.5 - activityIndicator.frame.size.height * 0.5, activityIndicator.frame.size.width, activityIndicator.frame.size.height);
+        self.activityIndicator.frame = spinnerFrame;
         [activityIndicator startAnimating];
     }
 }
@@ -150,12 +158,16 @@
 -(void)loadThumbImg:(NSString *)path {
     
     // Do this IO operation on background thread.
+    
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
+    
     UIImage * image = [[UIImage alloc]initWithContentsOfFile:path];
     
     if(image) {
         [self performSelectorOnMainThread:@selector(setThumbnailImage:) withObject:image waitUntilDone:NO];
     }
+    
+    // Cleanup.
     
     [image autorelease];
     [pool release];
@@ -169,13 +181,27 @@
     }
 }
 
--(void)reload {
+-(void)reloadImage:(UIImage *)image {
+    
+    // Just force the view to recheck the availability of the thumbnail image.
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadThumbImg:) object:thumbnailImagePath];
-    [self performSelectorInBackground:@selector(loadThumbImg:) withObject:thumbnailImagePath];    
+    
+    [self setThumbnailImage:image];
+    
+    // [self performSelectorInBackground:@selector(loadThumbImg:) withObject:thumbnailImagePath];    
 }
 
 -(void)setThumbnailImagePath:(NSString *)newThumbnailImagePath {
+    
+    /*
+     This might seem tricky, but it is rather straightforward: if the thumbnail
+     path passed as argument is different than the current one it is time to
+     check for a new thumbnail image. This mean we have to set the current image
+     to nil - so it won't be displayed upon redraw - and invoke the thumbnail
+     loading function on a separate thread, since it will perform an IO 
+     operation. The method will eventually load the image from disk and update
+     */
     
     if(thumbnailImagePath!=newThumbnailImagePath) {
         
