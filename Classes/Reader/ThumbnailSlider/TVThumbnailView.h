@@ -1,9 +1,9 @@
 //
-//  TVThumbnailView.h
-//  ThumbnailView
+//  MFSliderDetailVIew.h
+//  FastPdfKit Sample
 //
-//  Created by Nicolò Tosi on 10/14/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Created by Nicolò Tosi on 7/7/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,13 +11,36 @@
 @class TVThumbnailScrollView;
 
 @interface TVThumbnailView : UIView {
-
+    
+    UIActivityIndicatorView * activityIndicator;
+    
+    NSInteger position;
+    
+    UILabel * pageNumberLabel;
+    NSNumber * pageNumber;
+    
+    UIImageView * thumbnailView;
+    NSString * thumbnailImagePath;
+    
+    UIImage * thumbnailImage;
+    
+    TVThumbnailScrollView * delegate;
 }
 
-@property (nonatomic,retain) UIImage * image;
-@property (nonatomic,readwrite) NSUInteger position;
-@property (nonatomic,copy) NSString * pendingThumbnailName;
-@property (nonatomic,assign) TVThumbnailScrollView * delegate;
+@property (nonatomic,retain) NSNumber * pageNumber;
+@property (nonatomic,retain) UILabel * pageNumberLabel;
+
+@property (nonatomic,retain) UIImageView * thumbnailView;
+@property (nonatomic,copy) NSString *thumbnailImagePath;
+
 @property (nonatomic,retain) UIActivityIndicatorView * activityIndicator;
+
+@property (nonatomic,assign) TVThumbnailScrollView * delegate;
+
+@property (nonatomic,readwrite) NSInteger position;
+
+@property (nonatomic,retain) UIImage * thumbnailImage;
+
+-(void)reload;
 
 @end

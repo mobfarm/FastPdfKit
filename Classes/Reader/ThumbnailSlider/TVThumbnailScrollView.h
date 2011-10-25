@@ -16,9 +16,6 @@
 
 -(void)thumbnailScrollView:(TVThumbnailScrollView *)scrollView didSelectPage:(NSUInteger)page;
 
-//-(void)provideThumbnailForPage:(NSUInteger)page;
-//-(void)cancelThumbnailForPage:(NSUInteger)page;
-
 @end
 
 @interface TVThumbnailScrollView : UIView <UIScrollViewDelegate> {
@@ -30,14 +27,10 @@
     
     NSArray * thumbnailViews;
     
-    NSString * cacheFolder;
-    
     NSUInteger currentThumbnailPosition;
     
     CGSize thumbnailSize;
     CGFloat padding;
-    
-    NSString * thumbnailFolder;
     
     id<TVThumbnailScrollViewDelegate> delegate;
     
@@ -48,29 +41,20 @@
     
     MFDocumentManager * document;
     
-    NSString * documentId;
+    NSString * cacheFolderPath;
 }
 
-@property (nonatomic,copy) NSString * cacheFolder;
 @property (nonatomic,readwrite) NSUInteger pagesCount;
-
-@property (nonatomic,copy) NSString * thumbnailFolder;
 
 @property (nonatomic,readwrite) CGSize thumbnailSize;
 @property (nonatomic,readwrite) CGFloat padding;
 
 @property (nonatomic,assign) id<TVThumbnailScrollViewDelegate> delegate;
+@property (nonatomic, copy) NSString * cacheFolderPath;
 
--(NSString *)imagePathForPosition:(int)position;
--(NSString *)imagePathForThumbnailView:(TVThumbnailView *)view;
--(void)requestImageForThumbnailView:(TVThumbnailView *)view;
-
-//+(NSNotification *)thumbnailReadyNotification:(NSString *)thumbnail;
-//
-//extern NSString * kTVThumbnailName;
-//extern NSString * kTVThumbnailReadyNotification;
 @property (nonatomic,retain) MFDocumentManager * document;
+
 -(void)setPage:(NSUInteger)page animated:(BOOL)animated;
--(void)page;
+-(NSUInteger)page;
 
 @end

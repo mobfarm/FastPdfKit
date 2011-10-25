@@ -1952,14 +1952,11 @@
 
 -(void)prepareThumbSlider {
 	
-//    NSString * sysver = [[UIDevice currentDevice]systemVersion];
-    
-//    if([sysver isEqualToString:@"5.0"]) // Skip thumbnail slider and thumbnails generation on 5.0.
-//        return;
     
     TVThumbnailScrollView * aThumbScrollView = nil;
-    
+    NSString * thumbnailCacheFolderPath = nil;
     BOOL isPad = NO;
+    
 #ifdef UI_USER_INTERFACE_IDIOM
     isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
@@ -1973,39 +1970,89 @@
     }
     
     [aThumbScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-    [aThumbScrollView setThumbnailFolder:nil];
+
+    
+    /*
+     If there is not an associated documentId use the <APPLICATION_HOME>/tmp
+     folder to store the thumbnail. Be sure that the folder is deleted when the 
+     documentview controller is loaded with a different document manager. 
+     Otherwise, if there's a valid documentId, it tries to reuse the appropriate
+     folder in the <APPLICATION_HOME>/Library/Caches a folder that will be kept
+     between application launches but will not be backed up by iTunes.
+     */
+    
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    BOOL isDirectory = NO;
+    
+    if(documentId) {
+        
+        thumbnailCacheFolderPath = [[[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"]stringByAppendingPathComponent:documentId]stringByAppendingPathComponent:@"thumbs"];
+        
+        if([fileManager fileExistsAtPath:thumbnailCacheFolderPath isDirectory:&isDirectory]) {
+            
+            // If the file exist and is not a directory, destroy it and creat it as a folder.
+            
+            if(!isDirectory) {
+                
+                [fileManager removeItemAtPath:thumbnailCacheFolderPath error:NULL];
+                [fileManager createDirectoryAtPath:thumbnailCacheFolderPath withIntermediateDirectories:YES attributes:nil error:NULL];
+            }
+            
+        } else {
+            
+            // Create the folder if it does not exist.
+        
+            [fileManager createDirectoryAtPath:thumbnailCacheFolderPath withIntermediateDirectories:YES attributes:nil error:NULL];
+        }
+        
+    } else {
+        
+        thumbnailCacheFolderPath = [NSHomeDirectory() stringByAppendingPathComponent:@"tmp/thumbs"];
+        
+        // Destroy the item, file or folder doesn't matter, then create the folder.
+        
+        if([fileManager fileExistsAtPath:thumbnailCacheFolderPath isDirectory:&isDirectory]) {
+            
+            if(!isDirectory) {
+                
+                // Remove the file.
+                
+                [fileManager removeItemAtPath:thumbnailCacheFolderPath error:NULL];
+                
+            } else {
+                
+                // Remove the contents of the folder, then the folder.
+                
+                NSArray * items = [fileManager contentsOfDirectoryAtPath:thumbnailCacheFolderPath error:NULL];
+                for (NSString * item in items) {
+                    [fileManager removeItemAtPath:item error:NULL];
+                }
+                
+                [fileManager removeItemAtPath:thumbnailCacheFolderPath error:NULL];
+                
+            }
+        } 
+        
+        // (Re)create the folder.
+        
+        [fileManager createDirectoryAtPath:thumbnailCacheFolderPath withIntermediateDirectories:YES attributes:nil error:NULL];
+    }
+    
+    // Setting stuff.
+
+    [aThumbScrollView setCacheFolderPath:thumbnailCacheFolderPath];
     [aThumbScrollView setDocument:[self document]];
     [aThumbScrollView setPagesCount:[self.document numberOfPages]];
     [aThumbScrollView setDelegate:self];
     
-//    MFHorizontalSlider * anHorizontalThumbSlider = nil;
-//    
-//	// Create the actual thumb slider controller. The controller view will be added manually to the view stack, so you need to call viewDidLoad esplicitely.
-//	
-//	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-//		
-//		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(100, 124) width:self.view.bounds.size.width height:160 type:1 andFolderName:documentId];
-//		
-//	}	else {
-//		
-//		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(50, 64) width:self.view.frame.size.width height:70 type:1 andFolderName:documentId];
-//	}
-//	
-//	anHorizontalThumbSlider.delegate = self;
-//	
-//	self.thumbsliderHorizontal = anHorizontalThumbSlider;
-//	
-    self.thumbnailScrollView = aThumbScrollView;
-    [self.bottomToolbarView addSubview:aThumbScrollView];
-
-	[aThumbScrollView release];
+    // Put the thumb scrollview inside the bottom view initialized in viewDidLoad.
     
-//	[anHorizontalThumbSlider viewDidLoad];
-//	[anHorizontalThumbSlider release];
-	
-	// Start generating the thumbs in background.
-	
-	//[self performSelectorInBackground:@selector(generateThumbInBackground) withObject:nil];
+    self.thumbnailScrollView = aThumbScrollView;
+    [bottomToolbarView addSubview:aThumbScrollView];
+
+    // Cleanup.
+    
+	[aThumbScrollView release];
 }
 
 

@@ -8,7 +8,7 @@
 
 #import "TVThumbnailScrollView.h"
 // #import "TVThumbnailView.h"
-#import "TVThumbnailView2.h"
+#import "TVThumbnailView.h"
 
 @interface TVThumbnailScrollView()
 
@@ -25,23 +25,26 @@
 -(NSInteger)positionForPage:(NSUInteger)page;
 
 +(NSString *)thumbnailNameForPage:(NSUInteger)page;
-+(NSString *)thumbnailFolderPathForDocumentId:(NSString *)documentId;
-+(NSString *)thumbnailImagePathForPage:(NSUInteger)page documentId:(NSString *)documentId;
++(NSString *)thumbnailFolderPathForPath:(NSString *)documentId;
++(NSString *)thumbnailImagePathForPage:(NSUInteger)page cacheFolderPath:(NSString *)documentId;
+
+-(void)checkForThumbnail;
 
 @end
 
 @implementation TVThumbnailScrollView
 
 @synthesize scrollView, thumbnailViews;
-@synthesize cacheFolder;
+// @synthesize cacheFolder;
 @synthesize thumbnailSize, padding;
-@synthesize thumbnailFolder;
+//@synthesize thumbnailFolder;
 @synthesize pagesCount;
 @synthesize pendingRequests;
 @synthesize startingPosition, offset, currentPosition;
 @synthesize scrollContainerView;
 @synthesize delegate;
 @synthesize document;
+@synthesize cacheFolderPath;
 
 NSString * kTVThumbnailName = @"key_tv_thumbnail_name";
 NSString * kTVThumbnailReadyNotification = @"tv_thumbnail_ready_notification";
@@ -55,19 +58,22 @@ NSString * kTVThumbnailReadyNotification = @"tv_thumbnail_ready_notification";
 }
 
 +(NSString *)thumbnailNameForPage:(NSUInteger)page {
-    return [NSString stringWithFormat:@"thumb_%d.tmb",page];
+    return [NSString stringWithFormat:@"thumb_%6d.tmb",page];
 }
 
-+(NSString *)thumbnailFolderPathForDocumentId:(NSString *)docId {
++(NSString *)thumbnailFolderPathForPath:(NSString *)docId {
     
-    NSString * libCacheDir = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
-    return [libCacheDir stringByAppendingPathComponent:docId];
+    if(docId) {
+        return docId;
+    }
+    
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"tmp"];
 }
 
-+(NSString *)thumbnailImagePathForPage:(NSUInteger)page documentId:(NSString *)documentId {
++(NSString *)thumbnailImagePathForPage:(NSUInteger)page cacheFolderPath:(NSString *)documentId {
     
     NSString * tmbName = [[self class]thumbnailNameForPage:page];
-    NSString * tmbFolder = [[self class]thumbnailFolderPathForDocumentId:documentId];
+    NSString * tmbFolder = [[self class]thumbnailFolderPathForPath:documentId];
     
     return [tmbFolder stringByAppendingPathComponent:tmbName];
 }
@@ -91,8 +97,8 @@ int nextOffset(int offset) {
         fileManager = [[NSFileManager alloc]init];
     }
     
-    NSUInteger page = [self pageForPosition:currentPosition];
-    NSString * path = [[self class]thumbnailImagePathForPage:page documentId:documentId];
+    NSUInteger pageNr = [self pageForPosition:currentPosition];
+    NSString * path = [[self class]thumbnailImagePathForPage:pageNr cacheFolderPath:cacheFolderPath];
     
     if([fileManager fileExistsAtPath:path]) {
         
@@ -102,7 +108,7 @@ int nextOffset(int offset) {
         
         // Thumbnail rendering here.
         
-        CGImageRef image = [document createImageForThumbnailOfPageNumber:page ofSize:thumbnailSize andScale:1.0];
+        CGImageRef image = [document createImageForThumbnailOfPageNumber:pageNr ofSize:thumbnailSize andScale:1.0];
         UIImage * img = [[UIImage alloc]initWithCGImage:image];
         NSData * data = UIImagePNGRepresentation(img);
         
@@ -121,7 +127,7 @@ int nextOffset(int offset) {
     
     NSUInteger page;
     
-    TVThumbnailView2 * view = [thumbnailViews objectAtIndex:currentPosition%[thumbnailViews count]];
+    TVThumbnailView * view = [thumbnailViews objectAtIndex:currentPosition%[thumbnailViews count]];
     
     if(view.position==currentPosition) {
         [view reload];
@@ -208,14 +214,12 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
     if (self) {
         
         [self setAutoresizesSubviews:YES];
-        [self setBackgroundColor:[UIColor blackColor]];
         
         UIView * aScrollContainerView = [[UIView alloc]initWithCoder:aDecoder];
         [aScrollContainerView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
         [aScrollContainerView setAutoresizesSubviews:YES];
         
         UIScrollView * aScrollView = [[UIScrollView alloc]initWithCoder:aDecoder];
-        [aScrollView setBackgroundColor:[UIColor darkGrayColor]];
         aScrollView.delegate = self;
         self.scrollView = aScrollView;
         
@@ -239,7 +243,6 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
     if (self) {
     
         [self setAutoresizesSubviews:YES];
-        [self setBackgroundColor:[UIColor yellowColor]];
         
         UIView * aScrollContainerView = [[UIView alloc]initWithFrame:frame];
         [aScrollContainerView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
@@ -247,7 +250,6 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
         
         UIScrollView * aScrollView = [[UIScrollView alloc]initWithFrame:frame];
         [aScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-        [aScrollView setBackgroundColor:[UIColor redColor]];
         [aScrollView setDelegate:self];
         
         self.scrollView = aScrollView;
@@ -265,15 +267,17 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
     return self;
 }
 
--(void)setPage:(NSUInteger)page animated:(BOOL)animated {
+-(void)setPage:(NSUInteger)pageNr animated:(BOOL)animated {
     
-    NSInteger position = [self positionForPage:page];
-    CGFloat offset = rightOffsetForThumbnailPosition(position, thumbnailSize.width, padding, self.bounds.size.width);
+    NSInteger position = [self positionForPage:pageNr];
+    CGFloat contentOffset = rightOffsetForThumbnailPosition(position, thumbnailSize.width, padding, self.bounds.size.width);
     
-    [scrollView setContentOffset:CGPointMake(offset, 0) animated:animated];
+    // NSLog(@"Setting page %d",pageNr);
+    
+    [scrollView setContentOffset:CGPointMake(contentOffset, 0) animated:animated];
 }
 
--(void)page {
+-(NSUInteger)page {
     
     return [self pageForPosition:currentThumbnailPosition];
 }
@@ -282,18 +286,18 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
     
     int position = thumbnailPositionForOffset(scrollView.contentOffset.x, thumbnailSize.width, padding, self.bounds.size.width);
     
-    CGFloat offset = rightOffsetForThumbnailPosition(position, thumbnailSize.width, padding, self.bounds.size.width);
+    CGFloat contentOffset = rightOffsetForThumbnailPosition(position, thumbnailSize.width, padding, self.bounds.size.width);
     
-    [scrollView setContentOffset:CGPointMake(offset, 0) animated:YES];
+    [scrollView setContentOffset:CGPointMake(contentOffset, 0) animated:YES];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-
+    NSLog(@"scrollViewDidEndDecelerating");
     [self alignToThumbnail];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    
+    NSLog(@"scrollViewDidEndDragging");
     if(!decelerate) {
         [self alignToThumbnail];
     }
@@ -326,8 +330,9 @@ BOOL isViewOutsideRange(int viewPosition, int currentPosition, int count) {
         
         int position;
         int count = [thumbnailViews count];
+        int pageNr;
         
-        for(TVThumbnailView2 * view in thumbnailViews) {
+        for(TVThumbnailView * view in thumbnailViews) {
             
             position = view.position;
             BOOL done = NO;
@@ -357,13 +362,13 @@ BOOL isViewOutsideRange(int viewPosition, int currentPosition, int count) {
             if(view.position!=position) {
              
                 view.position = position;
-                
+
                 CGRect frame = view.frame;
                 frame.origin.x = thumbnailOffset(position, thumbnailSize.width, padding, self.bounds.size.width);
                 view.frame = frame;
-                
-                view.pageNumber = [NSNumber numberWithUnsignedInt:[self pageForPosition:position]];
-                view.thumbnailImagePath = [[self class]thumbnailImagePathForPage:[self pageForPosition:position] documentId:documentId];
+                pageNr = [self pageForPosition:position];                
+                view.pageNumber = [NSNumber numberWithUnsignedInt:pageNr];
+                view.thumbnailImagePath = [[self class]thumbnailImagePathForPage:pageNr cacheFolderPath:cacheFolderPath];
             }
         }
     }
@@ -408,14 +413,14 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
     return count;
 }
 
--(NSString *)imagePathForPosition:(int)position {
-    return [thumbnailFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%6d.tmb",position+1]];
-}
-                       
--(NSString *)imagePathForThumbnailView:(TVThumbnailView2 *)view {
-    
-    return [self imagePathForPosition:view.position];
-}
+//-(NSString *)imagePathForPosition:(int)position {
+//    return [thumbnailFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%6d.tmb",position+1]];
+//}
+//                       
+//-(NSString *)imagePathForThumbnailView:(TVThumbnailView *)view {
+//    
+//    return [self imagePathForPosition:view.position];
+//}
 
 //-(void)requestImageForThumbnailView:(TVThumbnailView2 *)view {
 //    
@@ -470,8 +475,7 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
         int i;
         for(i = 0; i < newThumbnailCount; i++) {
             
-            TVThumbnailView2 * thumbnailView = [[TVThumbnailView2 alloc]initWithFrame:CGRectZero]; // Will be layed out later.
-            thumbnailView.backgroundColor = [UIColor greenColor];
+            TVThumbnailView * thumbnailView = [[TVThumbnailView alloc]initWithFrame:CGRectZero]; // Will be layed out later.
             thumbnailView.position = i;
             thumbnailView.delegate = self;
             [thumbnailArray addObject:thumbnailView];
@@ -486,30 +490,61 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
     
     thumbnailCount = newThumbnailCount;
     
-    for(TVThumbnailView2 * view in thumbnailViews) {
+    for(TVThumbnailView * view in thumbnailViews) {
         
         int position = view.position;
+        BOOL done = NO;
         
+        while (isViewOutsideRange(position, currentThumbnailPosition, thumbnailCount) && (!done)) {
+            
+            if(position < currentThumbnailPosition) {
+                
+                position += thumbnailCount; 
+                
+                if(position >= pagesCount) {
+                    position-=thumbnailCount;
+                    done = YES;
+                }
+                
+            } else if (position > currentThumbnailPosition) {
+                
+                position -= thumbnailCount;
+                
+                if(position < 0) {
+                    position+=thumbnailCount;
+                    done = YES;
+                }
+            }
+        }
+
         CGRect frame = CGRectMake(thumbnailOffset(position, thumbnailSize.width, padding, bounds.size.width), (bounds.size.height - thumbnailSize.height) * 0.5, thumbnailSize.width, thumbnailSize.height);
         view.frame = frame;
         view.pageNumber = [NSNumber numberWithUnsignedInt:[self pageForPosition:position]];
-        view.thumbnailImagePath = [[self class]thumbnailImagePathForPage:[self pageForPosition:position] documentId:documentId];
+        view.thumbnailImagePath = [[self class]thumbnailImagePathForPage:[self pageForPosition:position] cacheFolderPath:cacheFolderPath];
     }
     
     //scrollContainerView.frame = self.bounds;
     //scrollView.frame = self.bounds;
     scrollView.contentSize = CGSizeMake(contentWidth(thumbnailSize.width, padding, pagesCount, bounds.size.width), bounds.size.height);
-    [scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    
+    CGFloat contentOffset = rightOffsetForThumbnailPosition(currentThumbnailPosition, thumbnailSize.width, padding, bounds.size.width);   
+    [scrollView setContentOffset:CGPointMake(contentOffset, 0) animated:NO];
 }
 
 -(void)dealloc {
     
-    [cacheFolder release];
+    [cacheFolderPath release];
     [thumbnailViews release];
+
+    scrollView.delegate = nil, [scrollView release], scrollView = nil;
     
-    scrollView.delegate = nil, [scrollView release];
+    [scrollContainerView release];
     
-    [thumbnailFolder release],thumbnailFolder = nil;
+    delegate = nil;
+    
+    [fileManager release],fileManager = nil;
+    
+    [document release];
     
     [super dealloc];
 }
