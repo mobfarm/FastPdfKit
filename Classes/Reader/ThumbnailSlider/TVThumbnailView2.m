@@ -6,15 +6,16 @@
 //  Copyright 2011 MobFarm S.r.L. All rights reserved.
 //
 
-#import "MFSliderDetailVIew.h"
+#import "TVThumbnailView2.h"
 
 
-@implementation MFSliderDetailVIew
+@implementation TVThumbnailView2
 
 @synthesize pageNumberLabel, pageNumber;
 @synthesize thumbnailImagePath, thumbnailView;
 @synthesize delegate;
 @synthesize activityIndicator;
+@synthesize position;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,7 +25,7 @@
         self.userInteractionEnabled = YES;
         
         UIActivityIndicatorView * anActivityIndicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-        anActivityIndicatorView.frame = CGRectMake(frame.size.width * 0.5 - anActivityIndicatorView.frame.size.width * 0.5, frame.size.height * 0.5 - anActivityIndicatorView.frame.size.height * 0.5, anActivityIndicatorView.frame.size.width, anActivityIndicatorView.frame.size.height);
+        anActivityIndicatorView.frame = CGRectMake((frame.size.width - anActivityIndicatorView.frame.size.width) * 0.5, (frame.size.height - anActivityIndicatorView.frame.size.height) * 0.5, anActivityIndicatorView.frame.size.width, anActivityIndicatorView.frame.size.height);
         anActivityIndicatorView.hidesWhenStopped = YES;
         
         [self addSubview:anActivityIndicatorView];
@@ -51,7 +52,7 @@
             
             if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // Pad.
                 
-                aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 138, 60, 15) ];
+                aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 120, 60, 15) ];
                 aLabel.textAlignment =  UITextAlignmentCenter;
                 aLabel.textColor = [UIColor whiteColor];
                 aLabel.backgroundColor = [UIColor clearColor];
@@ -59,12 +60,11 @@
                 
             } else { // Phone.
                 
-                aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(6, 57, 40, 15) ];
+                aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(6, 50, 40, 15) ];
                 aLabel.textAlignment =  UITextAlignmentCenter;
                 aLabel.textColor = [UIColor whiteColor];
                 aLabel.backgroundColor = [UIColor clearColor];
                 aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(9.0)];
-                
             }	
             
             self.pageNumberLabel = aLabel;
@@ -89,14 +89,14 @@
     
     // If there's a path, present the label and the image view, otherwise present the spinner.
     
-    if(thumbnailImagePath) {
+    if(thumbnailImage) {
         
         activityIndicator.hidden = YES;
         
         // Calculate the image view frame and get the image that will act as content.
         
         CGRect imageViewRect = CGRectMake(5, 3, bounds.size.width-10, bounds.size.height-6);
-        UIImage * imageViewImage = [UIImage imageWithContentsOfFile:thumbnailImagePath];
+        // UIImage * imageViewImage = [UIImage imageWithContentsOfFile:thumbnailImagePath];
         
         if(!thumbnailView) { // Prepare the subview if it does not exist yet.
             
@@ -113,7 +113,7 @@
         
         // Set the image view frame and content, then show it (ignored if already shown).
         
-        thumbnailView.image = imageViewImage;
+        thumbnailView.image = thumbnailImage;
         thumbnailView.frame = imageViewRect;
         thumbnailView.hidden = NO;
         
@@ -131,7 +131,6 @@
         CGRect spinnerRect = CGRectMake(bounds.size.width * 0.5 - activityIndicator.frame.size.width * 0.5, bounds.size.height * 0.5 - activityIndicator.frame.size.height * 0.5, activityIndicator.frame.size.width, activityIndicator.frame.size.height);
         self.activityIndicator.frame = spinnerRect;
         [activityIndicator startAnimating];
-        
     }
 }
 
@@ -146,14 +145,48 @@
     }
 }
 
+
+-(void)loadThumbImg:(NSString *)path {
+    
+    // Do this IO operation on background thread.
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
+    UIImage * image = [[UIImage alloc]initWithContentsOfFile:path];
+    
+    if(image) {
+        [self performSelectorOnMainThread:@selector(setThumbnailImage:) withObject:image waitUntilDone:NO];
+    }
+    
+    [image autorelease];
+    [pool release];
+}
+
+-(void)setThumbnailImage:(UIImage *)newThumbnailImage {
+    if(thumbnailImage!=newThumbnailImage) {
+        [thumbnailImage release];
+        thumbnailImage = [newThumbnailImage retain];
+        [self setNeedsLayout];
+    }
+}
+
+-(void)reload {
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadThumbImg:) object:thumbnailImagePath];
+    [self performSelectorInBackground:@selector(loadThumbImg:) withObject:thumbnailImagePath];    
+}
+
 -(void)setThumbnailImagePath:(NSString *)newThumbnailImagePath {
     
     if(thumbnailImagePath!=newThumbnailImagePath) {
         
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadThumbImg:) object:thumbnailImagePath];
+        
         [thumbnailImagePath release];
         thumbnailImagePath = [newThumbnailImagePath copy];
+        [self setThumbnailImage:nil];
         
         [self setNeedsLayout];
+        
+        [self performSelectorInBackground:@selector(loadThumbImg:) withObject:thumbnailImagePath];
     }
 }
 
@@ -170,7 +203,7 @@
 			switch ([touch tapCount])
             {
                 case 1: {	//Single Tap.
-                    [self.delegate thumbTapped:[pageNumber intValue] withObject:self];
+                    [self.delegate thumbTapped:position withObject:self];
                     //[self setSelected:YES];
                 } break;
                 case 2: {	//Double tap.

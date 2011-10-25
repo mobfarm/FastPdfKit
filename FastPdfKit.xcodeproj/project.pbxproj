@@ -50,6 +50,18 @@
 		012B94D4144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
 		012B94D5144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
 		012B94D6144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
+		0134EE0F1456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; };
+		0134EE101456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; };
+		0134EE131456D9B2007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
+		0134EE141456D9B2007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
+		0134EE151456D9B2007D543F /* TVThumbnailView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0D1456D9B2007D543F /* TVThumbnailView.h */; };
+		0134EE161456D9B2007D543F /* TVThumbnailView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0D1456D9B2007D543F /* TVThumbnailView.h */; };
+		0134EE191456D9B2007D543F /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0E1456D9B2007D543F /* TVThumbnailView.m */; };
+		0134EE1A1456D9B2007D543F /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0E1456D9B2007D543F /* TVThumbnailView.m */; };
+		0134EE1C1456E10F007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
+		0134EE1D1456E110007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
+		0134EE1E1456E116007D543F /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0E1456D9B2007D543F /* TVThumbnailView.m */; };
+		0134EE1F1456E116007D543F /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0E1456D9B2007D543F /* TVThumbnailView.m */; };
 		014F442D14211E4B004FBEE9 /* img_overflow_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442A14211E4A004FBEE9 /* img_overflow_pad.png */; };
 		014F442E14211E4B004FBEE9 /* img_overflow_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442B14211E4A004FBEE9 /* img_overflow_phone.png */; };
 		014F442F14211E4B004FBEE9 /* img_overflow_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */; };
@@ -164,16 +176,16 @@
 		01884A8E131E94DD0045038F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC2131E96C50045038F /* SystemConfiguration.framework */; };
 		01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC6131E96CE0045038F /* MobileCoreServices.framework */; };
-		01AB4AEA13EFE267008EB17B /* MFSliderDetailVIew.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* MFSliderDetailVIew.h */; };
-		01AB4AEB13EFE267008EB17B /* MFSliderDetailVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* MFSliderDetailVIew.m */; };
-		01AB4AEC13EFE267008EB17B /* MFSliderDetailVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* MFSliderDetailVIew.m */; };
+		01AB4AEA13EFE267008EB17B /* TVThumbnailView2.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* TVThumbnailView2.h */; };
+		01AB4AEB13EFE267008EB17B /* TVThumbnailView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView2.m */; };
+		01AB4AEC13EFE267008EB17B /* TVThumbnailView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView2.m */; };
 		01AB4AED13EFE267008EB17B /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */; };
 		01AB4AEE13EFE267008EB17B /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
 		01AB4AEF13EFE267008EB17B /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
 		01AB4AF013EFE267008EB17B /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE813EFE267008EB17B /* MFSliderDetail.h */; };
 		01AB4AF113EFE267008EB17B /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
 		01AB4AF213EFE267008EB17B /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
-		01AB4AF313EFE2B8008EB17B /* MFSliderDetailVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* MFSliderDetailVIew.m */; };
+		01AB4AF313EFE2B8008EB17B /* TVThumbnailView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView2.m */; };
 		01AB4AF413EFE2B8008EB17B /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
 		01AB4AF513EFE2B8008EB17B /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
 		01BC07C313C755610077CE63 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A313C755610077CE63 /* ASIAuthenticationDialog.m */; };
@@ -342,14 +354,14 @@
 		958A81D714027F7100837C82 /* OutlineViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081D13C75D3A0077CE63 /* OutlineViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81D814027F7100837C82 /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81D914027F7100837C82 /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81DA14027F7100837C82 /* MFSliderDetailVIew.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* MFSliderDetailVIew.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958A81DA14027F7100837C82 /* TVThumbnailView2.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* TVThumbnailView2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DB14027F7100837C82 /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DC14027F7100837C82 /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE813EFE267008EB17B /* MFSliderDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DD14027F7100837C82 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DE14027F7100837C82 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DF14027F7100837C82 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
-		958A81E214027F9100837C82 /* MFSliderDetailVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* MFSliderDetailVIew.m */; };
+		958A81E214027F9100837C82 /* TVThumbnailView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView2.m */; };
 		958A81E314027F9100837C82 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
 		958A81E414027F9100837C82 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
 		958A81E514027F9100837C82 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
@@ -432,6 +444,10 @@
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		01296EC314557C9500F5F12F /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
 		012B94D3144EC5BE00C821FC /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
+		0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailScrollView.h; sourceTree = "<group>"; };
+		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
+		0134EE0D1456D9B2007D543F /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
+		0134EE0E1456D9B2007D543F /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
 		014F442A14211E4A004FBEE9 /* img_overflow_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_pad.png; sourceTree = "<group>"; };
 		014F442B14211E4A004FBEE9 /* img_overflow_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_phone.png; sourceTree = "<group>"; };
 		014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_overflow_phone@2x.png"; sourceTree = "<group>"; };
@@ -500,8 +516,8 @@
 		01884A66131E93A80045038F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		01AB4AE413EFE267008EB17B /* MFSliderDetailVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSliderDetailVIew.h; sourceTree = "<group>"; };
-		01AB4AE513EFE267008EB17B /* MFSliderDetailVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSliderDetailVIew.m; sourceTree = "<group>"; };
+		01AB4AE413EFE267008EB17B /* TVThumbnailView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView2.h; sourceTree = "<group>"; };
+		01AB4AE513EFE267008EB17B /* TVThumbnailView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView2.m; sourceTree = "<group>"; };
 		01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHorizontalSlider.h; sourceTree = "<group>"; };
 		01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHorizontalSlider.m; sourceTree = "<group>"; };
 		01AB4AE813EFE267008EB17B /* MFSliderDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSliderDetail.h; sourceTree = "<group>"; };
@@ -731,8 +747,12 @@
 		010D14CB13CAFFD800FD6F08 /* ThumbnailSlider */ = {
 			isa = PBXGroup;
 			children = (
-				01AB4AE413EFE267008EB17B /* MFSliderDetailVIew.h */,
-				01AB4AE513EFE267008EB17B /* MFSliderDetailVIew.m */,
+				0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */,
+				0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */,
+				0134EE0D1456D9B2007D543F /* TVThumbnailView.h */,
+				0134EE0E1456D9B2007D543F /* TVThumbnailView.m */,
+				01AB4AE413EFE267008EB17B /* TVThumbnailView2.h */,
+				01AB4AE513EFE267008EB17B /* TVThumbnailView2.m */,
 				01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */,
 				01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */,
 				01AB4AE813EFE267008EB17B /* MFSliderDetail.h */,
@@ -1188,7 +1208,7 @@
 				0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
 				0123605013CC917600861EB7 /* WebBrowser.h in Headers */,
 				0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */,
-				01AB4AEA13EFE267008EB17B /* MFSliderDetailVIew.h in Headers */,
+				01AB4AEA13EFE267008EB17B /* TVThumbnailView2.h in Headers */,
 				01AB4AED13EFE267008EB17B /* MFHorizontalSlider.h in Headers */,
 				01AB4AF013EFE267008EB17B /* MFSliderDetail.h in Headers */,
 				016095E414482814003CEAAA /* FPKURIAnnotation.h in Headers */,
@@ -1206,6 +1226,8 @@
 				0168707E1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */,
 				01296EC414557C9500F5F12F /* MFDocumentViewController.h in Headers */,
 				015ED17C1455AE9700C7C372 /* FPKAnnotation.h in Headers */,
+				0134EE0F1456D9B2007D543F /* TVThumbnailScrollView.h in Headers */,
+				0134EE151456D9B2007D543F /* TVThumbnailView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1267,7 +1289,7 @@
 				958A81D714027F7100837C82 /* OutlineViewControllerDelegate.h in Headers */,
 				958A81D814027F7100837C82 /* BookmarkViewController.h in Headers */,
 				958A81D914027F7100837C82 /* BookmarkViewControllerDelegate.h in Headers */,
-				958A81DA14027F7100837C82 /* MFSliderDetailVIew.h in Headers */,
+				958A81DA14027F7100837C82 /* TVThumbnailView2.h in Headers */,
 				958A81DB14027F7100837C82 /* MFHorizontalSlider.h in Headers */,
 				958A81DC14027F7100837C82 /* MFSliderDetail.h in Headers */,
 				958A81DD14027F7100837C82 /* AudioViewController.h in Headers */,
@@ -1291,6 +1313,8 @@
 				0168707F1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */,
 				01296EC514557C9500F5F12F /* MFDocumentViewController.h in Headers */,
 				015ED17D1455AE9700C7C372 /* FPKAnnotation.h in Headers */,
+				0134EE101456D9B2007D543F /* TVThumbnailScrollView.h in Headers */,
+				0134EE161456D9B2007D543F /* TVThumbnailView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1688,11 +1712,13 @@
 				0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
 				0123605413CC917600861EB7 /* WebBrowser.m in Sources */,
 				9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */,
-				01AB4AEC13EFE267008EB17B /* MFSliderDetailVIew.m in Sources */,
+				01AB4AEC13EFE267008EB17B /* TVThumbnailView2.m in Sources */,
 				01AB4AEF13EFE267008EB17B /* MFHorizontalSlider.m in Sources */,
 				01AB4AF213EFE267008EB17B /* MFSliderDetail.m in Sources */,
 				0161F22A141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
 				0161F22F141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
+				0134EE131456D9B2007D543F /* TVThumbnailScrollView.m in Sources */,
+				0134EE191456D9B2007D543F /* TVThumbnailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1748,11 +1774,13 @@
 				0123603F13CC917600861EB7 /* AudioViewController.m in Sources */,
 				0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
 				0123605313CC917600861EB7 /* WebBrowser.m in Sources */,
-				01AB4AEB13EFE267008EB17B /* MFSliderDetailVIew.m in Sources */,
+				01AB4AEB13EFE267008EB17B /* TVThumbnailView2.m in Sources */,
 				01AB4AEE13EFE267008EB17B /* MFHorizontalSlider.m in Sources */,
 				01AB4AF113EFE267008EB17B /* MFSliderDetail.m in Sources */,
 				0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
 				0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
+				0134EE1D1456E110007D543F /* TVThumbnailScrollView.m in Sources */,
+				0134EE1F1456E116007D543F /* TVThumbnailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1775,12 +1803,14 @@
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
 				010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */,
 				0123603E13CC917600861EB7 /* AudioViewController.m in Sources */,
-				01AB4AF313EFE2B8008EB17B /* MFSliderDetailVIew.m in Sources */,
+				01AB4AF313EFE2B8008EB17B /* TVThumbnailView2.m in Sources */,
 				01AB4AF413EFE2B8008EB17B /* MFHorizontalSlider.m in Sources */,
 				01AB4AF513EFE2B8008EB17B /* MFSliderDetail.m in Sources */,
 				956A056F14039F38003AE44D /* Drawable.m in Sources */,
 				956A057014039F38003AE44D /* OverlayManager.m in Sources */,
 				0161F22D141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
+				0134EE1C1456E10F007D543F /* TVThumbnailScrollView.m in Sources */,
+				0134EE1E1456E116007D543F /* TVThumbnailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1811,7 +1841,7 @@
 				958A81D214027F5B00837C82 /* TextDisplayViewController.m in Sources */,
 				958A81D514027F5B00837C82 /* TextSearchOperation.m in Sources */,
 				958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */,
-				958A81E214027F9100837C82 /* MFSliderDetailVIew.m in Sources */,
+				958A81E214027F9100837C82 /* TVThumbnailView2.m in Sources */,
 				958A81E314027F9100837C82 /* MFHorizontalSlider.m in Sources */,
 				958A81E414027F9100837C82 /* MFSliderDetail.m in Sources */,
 				958A81E514027F9100837C82 /* AudioViewController.m in Sources */,
@@ -1819,6 +1849,8 @@
 				958A81E714027F9100837C82 /* WebBrowser.m in Sources */,
 				0161F22B141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
 				0161F230141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
+				0134EE141456D9B2007D543F /* TVThumbnailScrollView.m in Sources */,
+				0134EE1A1456D9B2007D543F /* TVThumbnailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

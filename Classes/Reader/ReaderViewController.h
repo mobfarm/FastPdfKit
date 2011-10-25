@@ -17,6 +17,7 @@
 #import "MFHorizontalSlider.h"
 #import "TextDisplayViewControllerDelegate.h"
 #import "MediaPlayer/MediaPlayer.h"
+#import "TVThumbnailScrollView.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -40,8 +41,9 @@
 	UIImageView * thumbnailView;
 	
 	// Text extraction controller and stuff.
-	MFHorizontalSlider * thumbsliderHorizontal;
-	UIView * thumbSliderViewHorizontal;
+	//MFHorizontalSlider * thumbsliderHorizontal;
+    TVThumbnailScrollView * thumbnailScrollView;
+	UIView * bottomToolbarView;
 	
 	NSMutableArray * thumbImgArray;
 	
@@ -152,8 +154,9 @@
 
 @property (nonatomic, retain) NSMutableArray *thumbImgArray;
 
-@property (nonatomic, retain) MFHorizontalSlider *thumbsliderHorizontal;
-@property (nonatomic, retain) UIView *thumbSliderViewHorizontal;
+@property (nonatomic, retain) TVThumbnailScrollView * thumbnailScrollView;
+//@property (nonatomic, retain) MFHorizontalSlider *thumbsliderHorizontal;
+@property (nonatomic, retain) UIView *bottomToolbarView;
 
 @property (nonatomic, retain) SearchViewController * searchViewController;
 @property (nonatomic, retain) SearchManager * searchManager;

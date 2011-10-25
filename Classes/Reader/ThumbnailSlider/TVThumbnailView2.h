@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MFSliderDetail.h"
 
-@interface MFSliderDetailVIew : UIView {
+@class TVThumbnailScrollView;
+
+@interface TVThumbnailView2 : UIView {
     
     UIActivityIndicatorView * activityIndicator;
+    
+    NSInteger position;
     
     UILabel * pageNumberLabel;
     NSNumber * pageNumber;
@@ -19,8 +22,9 @@
     UIImageView * thumbnailView;
     NSString * thumbnailImagePath;
     
-    id<MFSliderDetailDelegate> delegate;
+    UIImage * thumbnailImage;
     
+    TVThumbnailScrollView * delegate;
 }
 
 @property (nonatomic,retain) NSNumber * pageNumber;
@@ -31,6 +35,12 @@
 
 @property (nonatomic,retain) UIActivityIndicatorView * activityIndicator;
 
-@property (nonatomic,assign) id<MFSliderDetailDelegate> delegate;
+@property (nonatomic,assign) TVThumbnailScrollView * delegate;
+
+@property (nonatomic,readwrite) NSInteger position;
+
+@property (nonatomic,retain) UIImage * thumbnailImage;
+
+-(void)reload;
 
 @end

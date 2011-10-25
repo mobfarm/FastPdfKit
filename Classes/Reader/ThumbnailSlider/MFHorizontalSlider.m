@@ -8,7 +8,7 @@
 
 #import "MFHorizontalSlider.h"
 #import <QuartzCore/QuartzCore.h>
-#import "MFSliderDetailVIew.h"
+#import "TVThumbnailView2.h"
 
 @implementation MFHorizontalSlider
 
@@ -147,7 +147,7 @@ CGRect rectForThumbnail(CGFloat width, CGFloat height, int position) {
     
     NSString * fileName = nil;
     NSString * fullPathToFile = nil;
-    MFSliderDetailVIew * detailView = nil;
+    TVThumbnailView2 * detailView = nil;
     NSFileManager * fileManager = nil;
     
 	if (page < 1) return;
@@ -258,7 +258,7 @@ CGRect rectForThumbnailView(int pos, CGFloat width, CGFloat height) {
     
     NSString * fileName = nil;
     NSString * fullPathToFile = nil;
-    MFSliderDetailVIew * detailView = nil;
+    TVThumbnailView2 * detailView = nil;
     NSFileManager * fileManager = nil;
     
 	//set the detail of the page ( img and numbers of page 
@@ -272,7 +272,7 @@ CGRect rectForThumbnailView(int pos, CGFloat width, CGFloat height) {
         
         CGRect detailViewFrame = rectForThumbnail(thumbWidth, thumbHeight, page);
         
-        detailView = [[MFSliderDetailVIew alloc]initWithFrame:detailViewFrame];
+        detailView = [[TVThumbnailView2 alloc]initWithFrame:detailViewFrame];
         detailView.pageNumber = [NSNumber numberWithInt:page+1];    
         detailView.delegate = self;
         
@@ -371,9 +371,9 @@ CGRect rectForThumbnailView(int pos, CGFloat width, CGFloat height) {
     
     obj = [thumbnailViewControllers objectAtIndex:page];
     
-    if([obj isKindOfClass:[MFSliderDetailVIew class]]) {
+    if([obj isKindOfClass:[TVThumbnailView2 class]]) {
         
-        MFSliderDetailVIew * detail = (MFSliderDetailVIew *)obj;
+        TVThumbnailView2 * detail = (TVThumbnailView2 *)obj;
         
         [detail removeFromSuperview];
         

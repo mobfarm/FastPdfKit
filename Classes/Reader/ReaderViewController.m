@@ -32,7 +32,7 @@
 
 @implementation ReaderViewController
 
-@synthesize thumbSliderViewHorizontal,thumbsliderHorizontal;
+@synthesize bottomToolbarView;
 @synthesize thumbImgArray;
 @synthesize rollawayToolbar;
 
@@ -54,6 +54,7 @@
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft, imgModeOverflow;
 
 @synthesize thumbFileManager;
+@synthesize thumbnailScrollView;
 
 -(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
 
@@ -169,14 +170,15 @@
 
 -(void)showHorizontalThumbnails{
     
-	if (thumbSliderViewHorizontal.frame.origin.y >= self.view.bounds.size.height) {
+	if (bottomToolbarView.frame.origin.y >= self.view.bounds.size.height) {
 	
 		[UIView beginAnimations:@"show" context:NULL];
 		[UIView setAnimationDuration:0.35];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y-thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+		[bottomToolbarView setFrame:CGRectMake(0, bottomToolbarView.frame.origin.y-bottomToolbarView.frame.size.height, bottomToolbarView.frame.size.width, bottomToolbarView.frame.size.height)];
 		[UIView commitAnimations];
 		thumbsViewVisible = YES;
+        [thumbnailScrollView start];
 	}
 }
 
@@ -185,9 +187,10 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[thumbSliderViewHorizontal setFrame:CGRectMake(0, thumbSliderViewHorizontal.frame.origin.y+thumbSliderViewHorizontal.frame.size.height, thumbSliderViewHorizontal.frame.size.width, thumbSliderViewHorizontal.frame.size.height)];
+	[bottomToolbarView setFrame:CGRectMake(0, bottomToolbarView.frame.origin.y+bottomToolbarView.frame.size.height, bottomToolbarView.frame.size.width, bottomToolbarView.frame.size.height)];
 	[UIView commitAnimations];
 	thumbsViewVisible = NO;
+    [thumbnailScrollView stop];
 }
 
 #pragma mark -
@@ -906,10 +909,10 @@
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
-	[thumbsliderHorizontal goToPage:page-1 animated:YES];
+    [thumbnailScrollView setPage:page animated:YES];
+	//[thumbsliderHorizontal goToPage:page-1 animated:YES];
 	
 	[self setNumberOfPageToolbar];
-	
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didChangeModeTo:(MFDocumentMode)mode automatic:(BOOL)automatically {
@@ -1743,7 +1746,7 @@
 	
 	[self.view addSubview:aThumbSliderView];
 	
-	self.thumbSliderViewHorizontal = aThumbSliderView;
+	self.bottomToolbarView = aThumbSliderView;
 	
 	[aThumbSliderView release];
 	
@@ -1953,34 +1956,51 @@
 //    if([sysver isEqualToString:@"5.0"]) // Skip thumbnail slider and thumbnails generation on 5.0.
 //        return;
     
-    MFHorizontalSlider * anHorizontalThumbSlider = nil;
+    TVThumbnailScrollView * aThumbScrollView = nil;
     
-	if(thumbsliderHorizontal)
-		return;
-	
-	// Create the actual thumb slider controller. The controller view will be added manually to the view stack, so you need to call viewDidLoad esplicitely.
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
-		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(100, 124) width:self.view.bounds.size.width height:160 type:1 andFolderName:documentId];
-		
-	}	else {
-		
-		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(50, 64) width:self.view.frame.size.width height:70 type:1 andFolderName:documentId];
-	}
-	
-	anHorizontalThumbSlider.delegate = self;
-	
-	self.thumbsliderHorizontal = anHorizontalThumbSlider;
-	
-	[self.thumbSliderViewHorizontal addSubview:thumbsliderHorizontal.view];
-	
-	[anHorizontalThumbSlider viewDidLoad];
-	[anHorizontalThumbSlider release];
+    BOOL isPad = NO;
+#ifdef UI_USER_INTERFACE_IDIOM
+    isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+#endif
+    
+    if(isPad) {
+        aThumbScrollView = [[TVThumbnailScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 160)];
+    } else {
+        aThumbScrollView = [[TVThumbnailScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 70)];
+    }
+    
+    [aThumbScrollView setThumbnailFolder:nil];
+    [aThumbScrollView setPagesCount:[self.document numberOfPages]];
+    [aThumbScrollView setDocument:[self document]];
+    
+//    MFHorizontalSlider * anHorizontalThumbSlider = nil;
+//    
+//	// Create the actual thumb slider controller. The controller view will be added manually to the view stack, so you need to call viewDidLoad esplicitely.
+//	
+//	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//		
+//		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(100, 124) width:self.view.bounds.size.width height:160 type:1 andFolderName:documentId];
+//		
+//	}	else {
+//		
+//		anHorizontalThumbSlider = [[MFHorizontalSlider alloc] initWithImages:thumbImgArray size:CGSizeMake(50, 64) width:self.view.frame.size.width height:70 type:1 andFolderName:documentId];
+//	}
+//	
+//	anHorizontalThumbSlider.delegate = self;
+//	
+//	self.thumbsliderHorizontal = anHorizontalThumbSlider;
+//	
+    self.thumbnailScrollView = aThumbScrollView;
+    [self.bottomToolbarView addSubview:aThumbScrollView];
+
+	[aThumbScrollView release];
+    
+//	[anHorizontalThumbSlider viewDidLoad];
+//	[anHorizontalThumbSlider release];
 	
 	// Start generating the thumbs in background.
 	
-	[self performSelectorInBackground:@selector(generateThumbInBackground) withObject:nil];
+	//[self performSelectorInBackground:@selector(generateThumbInBackground) withObject:nil];
 }
 
 
@@ -2002,7 +2022,7 @@
 
 -(void)handleThumbDone {
     
-    [self.thumbsliderHorizontal updateThumbnailViewWithPage:currentThumbPage];
+    // [self.thumbsliderHorizontal updateThumbnailViewWithPage:currentThumbPage];
     // Start next thumbnail operation or abort.
     
     if(currentThumbPage < [[self document]numberOfPages]) {
