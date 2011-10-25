@@ -14,7 +14,6 @@
 #import "SearchViewControllerDelegate.h"
 #import "MiniSearchViewControllerDelegate.h"
 #import "OutlineViewControllerDelegate.h"
-#import "MFHorizontalSlider.h"
 #import "TextDisplayViewControllerDelegate.h"
 #import "MediaPlayer/MediaPlayer.h"
 #import "TVThumbnailScrollView.h"
@@ -37,12 +36,7 @@
 
 @interface ReaderViewController : MFDocumentViewController <TVThumbnailScrollViewDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
 	
-	// Thumbnail view and stuff.
-	//UIImageView * thumbnailView;
-	
-	// Text extraction controller and stuff.
-	//MFHorizontalSlider * thumbsliderHorizontal;
-    TVThumbnailScrollView * thumbnailScrollView;
+	TVThumbnailScrollView * thumbnailScrollView;
 	UIView * bottomToolbarView;
 	
 	NSMutableArray * thumbImgArray;
@@ -86,6 +80,7 @@
 	NSString * documentId;  // Keep an unique reference to the document in the application (could be an ID, the name, etc).
 	
 	// Text search controller and stuff.
+    
 	SearchViewController * searchViewController;
 	SearchManager * searchManager;
 	MiniSearchView * miniSearchView;
@@ -151,8 +146,6 @@
 @property (nonatomic, retain) UIBarButtonItem * outlineBarButtonItem;
 
 @property (nonatomic, retain) UILabel * numberOfPageTitleToolbar;
-
-@property (nonatomic, retain) NSMutableArray *thumbImgArray;
 
 @property (nonatomic, retain) TVThumbnailScrollView * thumbnailScrollView;
 //@property (nonatomic, retain) MFHorizontalSlider *thumbsliderHorizontal;

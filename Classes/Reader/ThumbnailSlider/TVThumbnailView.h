@@ -3,7 +3,7 @@
 //  FastPdfKit Sample
 //
 //  Created by Nicolò Tosi on 7/7/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 MobFarm S.a.s.. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

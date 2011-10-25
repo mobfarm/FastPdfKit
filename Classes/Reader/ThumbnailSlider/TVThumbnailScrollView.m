@@ -3,11 +3,10 @@
 //  ThumbnailView
 //
 //  Created by Nicolò Tosi on 10/14/11.
-//  Copyright (c) 2011 MobFarm S.a.S.. All rights reserved.
+//  Copyright (c) 2011 MobFarm S.a.s.. All rights reserved.
 //
 
 #import "TVThumbnailScrollView.h"
-// #import "TVThumbnailView.h"
 #import "TVThumbnailView.h"
 
 @interface TVThumbnailScrollView()

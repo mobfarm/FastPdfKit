@@ -3,7 +3,7 @@
 //  ThumbnailView
 //
 //  Created by Nicolò Tosi on 10/14/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 MobFarm S.a.s.. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -56,5 +56,8 @@
 
 -(void)setPage:(NSUInteger)page animated:(BOOL)animated;
 -(NSUInteger)page;
+
+-(void)start;
+-(void)stop;
 
 @end

@@ -173,15 +173,7 @@
 		01AB4AEA13EFE267008EB17B /* TVThumbnailView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* TVThumbnailView.h */; };
 		01AB4AEB13EFE267008EB17B /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView.m */; };
 		01AB4AEC13EFE267008EB17B /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView.m */; };
-		01AB4AED13EFE267008EB17B /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */; };
-		01AB4AEE13EFE267008EB17B /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
-		01AB4AEF13EFE267008EB17B /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
-		01AB4AF013EFE267008EB17B /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE813EFE267008EB17B /* MFSliderDetail.h */; };
-		01AB4AF113EFE267008EB17B /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
-		01AB4AF213EFE267008EB17B /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
 		01AB4AF313EFE2B8008EB17B /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView.m */; };
-		01AB4AF413EFE2B8008EB17B /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
-		01AB4AF513EFE2B8008EB17B /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
 		01BC07C313C755610077CE63 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A313C755610077CE63 /* ASIAuthenticationDialog.m */; };
 		01BC07C513C755610077CE63 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A613C755610077CE63 /* ASIDownloadCache.m */; };
 		01BC07C713C755610077CE63 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A813C755610077CE63 /* ASIFormDataRequest.m */; };
@@ -349,15 +341,11 @@
 		958A81D814027F7100837C82 /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81D914027F7100837C82 /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DA14027F7100837C82 /* TVThumbnailView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* TVThumbnailView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81DB14027F7100837C82 /* MFHorizontalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81DC14027F7100837C82 /* MFSliderDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE813EFE267008EB17B /* MFSliderDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DD14027F7100837C82 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DE14027F7100837C82 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DF14027F7100837C82 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
 		958A81E214027F9100837C82 /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView.m */; };
-		958A81E314027F9100837C82 /* MFHorizontalSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */; };
-		958A81E414027F9100837C82 /* MFSliderDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE913EFE267008EB17B /* MFSliderDetail.m */; };
 		958A81E514027F9100837C82 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
 		958A81E714027F9100837C82 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
@@ -510,10 +498,6 @@
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		01AB4AE413EFE267008EB17B /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
 		01AB4AE513EFE267008EB17B /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
-		01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHorizontalSlider.h; sourceTree = "<group>"; };
-		01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHorizontalSlider.m; sourceTree = "<group>"; };
-		01AB4AE813EFE267008EB17B /* MFSliderDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSliderDetail.h; sourceTree = "<group>"; };
-		01AB4AE913EFE267008EB17B /* MFSliderDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSliderDetail.m; sourceTree = "<group>"; };
 		01BC07A213C755610077CE63 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		01BC07A313C755610077CE63 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		01BC07A413C755610077CE63 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -743,10 +727,6 @@
 				0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */,
 				01AB4AE413EFE267008EB17B /* TVThumbnailView.h */,
 				01AB4AE513EFE267008EB17B /* TVThumbnailView.m */,
-				01AB4AE613EFE267008EB17B /* MFHorizontalSlider.h */,
-				01AB4AE713EFE267008EB17B /* MFHorizontalSlider.m */,
-				01AB4AE813EFE267008EB17B /* MFSliderDetail.h */,
-				01AB4AE913EFE267008EB17B /* MFSliderDetail.m */,
 			);
 			path = ThumbnailSlider;
 			sourceTree = "<group>";
@@ -1199,8 +1179,6 @@
 				0123605013CC917600861EB7 /* WebBrowser.h in Headers */,
 				0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */,
 				01AB4AEA13EFE267008EB17B /* TVThumbnailView.h in Headers */,
-				01AB4AED13EFE267008EB17B /* MFHorizontalSlider.h in Headers */,
-				01AB4AF013EFE267008EB17B /* MFSliderDetail.h in Headers */,
 				016095E414482814003CEAAA /* FPKURIAnnotation.h in Headers */,
 				016095E714482814003CEAAA /* MFAudioPlayerViewProtocol.h in Headers */,
 				016095EA14482814003CEAAA /* MFAudioProvider.h in Headers */,
@@ -1279,8 +1257,6 @@
 				958A81D814027F7100837C82 /* BookmarkViewController.h in Headers */,
 				958A81D914027F7100837C82 /* BookmarkViewControllerDelegate.h in Headers */,
 				958A81DA14027F7100837C82 /* TVThumbnailView.h in Headers */,
-				958A81DB14027F7100837C82 /* MFHorizontalSlider.h in Headers */,
-				958A81DC14027F7100837C82 /* MFSliderDetail.h in Headers */,
 				958A81DD14027F7100837C82 /* AudioViewController.h in Headers */,
 				958A81DE14027F7100837C82 /* MFAudioPlayerViewImpl.h in Headers */,
 				958A81DF14027F7100837C82 /* WebBrowser.h in Headers */,
@@ -1701,8 +1677,6 @@
 				0123605413CC917600861EB7 /* WebBrowser.m in Sources */,
 				9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */,
 				01AB4AEC13EFE267008EB17B /* TVThumbnailView.m in Sources */,
-				01AB4AEF13EFE267008EB17B /* MFHorizontalSlider.m in Sources */,
-				01AB4AF213EFE267008EB17B /* MFSliderDetail.m in Sources */,
 				0161F22A141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
 				0161F22F141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
 				0134EE131456D9B2007D543F /* TVThumbnailScrollView.m in Sources */,
@@ -1762,8 +1736,6 @@
 				0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
 				0123605313CC917600861EB7 /* WebBrowser.m in Sources */,
 				01AB4AEB13EFE267008EB17B /* TVThumbnailView.m in Sources */,
-				01AB4AEE13EFE267008EB17B /* MFHorizontalSlider.m in Sources */,
-				01AB4AF113EFE267008EB17B /* MFSliderDetail.m in Sources */,
 				0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
 				0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
 				0134EE1D1456E110007D543F /* TVThumbnailScrollView.m in Sources */,
@@ -1790,8 +1762,6 @@
 				010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */,
 				0123603E13CC917600861EB7 /* AudioViewController.m in Sources */,
 				01AB4AF313EFE2B8008EB17B /* TVThumbnailView.m in Sources */,
-				01AB4AF413EFE2B8008EB17B /* MFHorizontalSlider.m in Sources */,
-				01AB4AF513EFE2B8008EB17B /* MFSliderDetail.m in Sources */,
 				956A056F14039F38003AE44D /* Drawable.m in Sources */,
 				956A057014039F38003AE44D /* OverlayManager.m in Sources */,
 				0161F22D141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
@@ -1827,8 +1797,6 @@
 				958A81D514027F5B00837C82 /* TextSearchOperation.m in Sources */,
 				958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */,
 				958A81E214027F9100837C82 /* TVThumbnailView.m in Sources */,
-				958A81E314027F9100837C82 /* MFHorizontalSlider.m in Sources */,
-				958A81E414027F9100837C82 /* MFSliderDetail.m in Sources */,
 				958A81E514027F9100837C82 /* AudioViewController.m in Sources */,
 				958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */,
 				958A81E714027F9100837C82 /* WebBrowser.m in Sources */,

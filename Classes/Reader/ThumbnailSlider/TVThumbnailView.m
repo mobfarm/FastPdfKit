@@ -3,7 +3,7 @@
 //  FastPdfKit Sample
 //
 //  Created by Nicolò Tosi on 7/7/11.
-//  Copyright 2011 MobFarm S.r.L. All rights reserved.
+//  Copyright 2011 MobFarm S.a.s.. All rights reserved.
 //
 
 #import "TVThumbnailView.h"
@@ -163,6 +163,8 @@
     
     UIImage * image = [[UIImage alloc]initWithContentsOfFile:path];
     
+    // If we got an image from the disk, set it as the current image.
+    
     if(image) {
         [self performSelectorOnMainThread:@selector(setThumbnailImage:) withObject:image waitUntilDone:NO];
     }
@@ -183,13 +185,14 @@
 
 -(void)reloadImage:(UIImage *)image {
     
-    // Just force the view to recheck the availability of the thumbnail image.
+    /* This will stop the background request to check and load the thumbnail 
+     image and rather set the image directly */
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadThumbImg:) object:thumbnailImagePath];
     
     [self setThumbnailImage:image];
     
-    // [self performSelectorInBackground:@selector(loadThumbImg:) withObject:thumbnailImagePath];    
+    // [self performSelectorInBackground:@selector(loadThumbImg:) withObject:thumbnailImagePath]; // OLD.  
 }
 
 -(void)setThumbnailImagePath:(NSString *)newThumbnailImagePath {
@@ -211,7 +214,7 @@
         thumbnailImagePath = [newThumbnailImagePath copy];
         [self setThumbnailImage:nil];
         
-        [self setNeedsLayout];
+        // [self setNeedsLayout]; // Redundant, included in setThumbnailImage.
         
         [self performSelectorInBackground:@selector(loadThumbImg:) withObject:thumbnailImagePath];
     }
@@ -219,6 +222,9 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
 {	
+    
+    // TODO: use gesture recognizer instead.
+    
 	NSSet *allTouches = [event allTouches];
 	
 	switch ([allTouches count]) {
@@ -245,16 +251,6 @@
 			break;
 	}
 }
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 - (void)dealloc
 {
