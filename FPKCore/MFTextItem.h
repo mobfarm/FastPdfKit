@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "MFOverlayDrawable.h"
+#import <UIKit/UIKit.h>
 
 @interface MFTextItem : NSObject<MFOverlayDrawable> {
 
@@ -17,7 +18,7 @@
 	CGPathRef highlightPath;
 	NSUInteger page;
 	NSRange searchTermRange;
-    CGColorRef highlightColor;
+    UIColor * highlightColor;
 }
 
 /**
@@ -49,8 +50,16 @@
 @property (readonly) NSUInteger page;
 
 /**
- The color of the hilight. Default is currently a mild red (1.0, 0.0, 0.0, 0.25)
+ Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)
  */
-@property (assign) CGColorRef highlightColor;
+@property (nonatomic,retain) UIColor * highlightColor;
+
+/**
+ A few usefult colors for the highlight. You are NOT responsible for releasing
+ the object.
+ */
++(UIColor *)highlightRedColor;
++(UIColor *)highlightYellowColor;
++(UIColor *)highlightBlueColor;
 
 @end

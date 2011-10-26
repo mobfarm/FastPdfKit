@@ -1021,11 +1021,13 @@
 }
 
 -(void)documentViewController:(MFDocumentViewController *)dvc willFollowLinkToPage:(NSUInteger)page {
-    willFollowLink = YES;
+    willFollowLink = YES; 
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point {
 	
+    // Skip if we are going to move to a different page because the user tapped on the view to
+    // over an internal link. Check the documentViewController:willFollowLinkToPage: callback.
     if(willFollowLink) {
         willFollowLink = NO;
         return;

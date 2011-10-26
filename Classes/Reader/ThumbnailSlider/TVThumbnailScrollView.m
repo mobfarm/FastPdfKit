@@ -19,6 +19,7 @@
 @property (readwrite) NSInteger startingPosition;
 @property (nonatomic, readwrite) NSInteger offset;
 @property (readwrite) NSInteger currentPosition;
+@property (retain) NSFileManager * fileManager;
 
 -(NSUInteger)pageForPosition:(NSInteger)position;
 -(NSInteger)positionForPage:(NSUInteger)page;
@@ -34,9 +35,7 @@
 @implementation TVThumbnailScrollView
 
 @synthesize scrollView, thumbnailViews;
-// @synthesize cacheFolder;
 @synthesize thumbnailSize, padding;
-//@synthesize thumbnailFolder;
 @synthesize pagesCount;
 @synthesize pendingRequests;
 @synthesize startingPosition, offset, currentPosition;
@@ -44,6 +43,7 @@
 @synthesize delegate;
 @synthesize document;
 @synthesize cacheFolderPath;
+@synthesize fileManager;
 
 NSString * kTVThumbnailName = @"key_tv_thumbnail_name";
 NSString * kTVThumbnailReadyNotification = @"tv_thumbnail_ready_notification";
@@ -164,8 +164,6 @@ int nextOffset(int offset) {
     if(retry > 0) {
         self.currentPosition = position;
         
-        NSLog(@"checking %d",position);
-        
         [self performSelectorInBackground:@selector(generateThumbnailOrSkip:) withObject:nil];    
     } else {
         backgroundWorkStillGoingOn = NO;
@@ -182,29 +180,29 @@ int nextOffset(int offset) {
 }
 
 CGFloat thumbnailOffset(int position, CGFloat thumbWidth, CGFloat padding, CGFloat viewportWidth) {
-    //return ((viewportWidth - thumbWidth) * 0.5) + (position * (thumbWidth + padding));
+    
     return ((viewportWidth - thumbWidth) * 0.5) + position * thumbWidth;
 }
 
 CGFloat contentWidth (CGFloat thumbWidth, CGFloat padding, int count, CGFloat viewportWidth) {
-    //return viewportWidth + (count-1)*(thumbWidth + padding);
+    
     return  viewportWidth + (count - 1) * thumbWidth;
 }
 
 CGFloat contentOffset(int position, CGFloat thumbWidth, CGFloat padding, CGFloat viewportWidth) {
     
-    //return 0.0 + ((thumbWidth + padding) * position);
+    
     return thumbWidth * position;
 }
 
 NSUInteger thumbnailPositionForOffset(CGFloat offset, CGFloat thumbWidth, CGFloat padding, CGFloat viewportWidth) {
     
-    //return floorf((offset + ((thumbWidth + padding) * 0.5)) / (thumbWidth + padding));
+    
     return (offset + (thumbWidth * 0.5)) / thumbWidth;
 }
 
 CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloat padding, CGFloat viewportWidth) {
-    //return (thumbWidth + padding) * (float)position;
+    
     return thumbWidth * position;
 }
 
@@ -273,8 +271,6 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
     NSInteger position = [self positionForPage:pageNr];
     CGFloat contentOffset = rightOffsetForThumbnailPosition(position, thumbnailSize.width, padding, self.bounds.size.width);
     
-    // NSLog(@"Setting page %d",pageNr);
-    
     [scrollView setContentOffset:CGPointMake(contentOffset, 0) animated:animated];
 }
 
@@ -293,19 +289,15 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"scrollViewDidEndDecelerating");
+    
     [self alignToThumbnail];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    NSLog(@"scrollViewDidEndDragging");
+    
     if(!decelerate) {
         [self alignToThumbnail];
     }
-}
-
--(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    NSLog(@"didEndScrollingAnimation");
 }
 
 
@@ -414,34 +406,6 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
     return count;
 }
 
-//-(NSString *)imagePathForPosition:(int)position {
-//    return [thumbnailFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%6d.tmb",position+1]];
-//}
-//                       
-//-(NSString *)imagePathForThumbnailView:(TVThumbnailView *)view {
-//    
-//    return [self imagePathForPosition:view.position];
-//}
-
-//-(void)requestImageForThumbnailView:(TVThumbnailView2 *)view {
-//    
-//    return;
-//    
-//    // NSString * path = [self imagePathForThumbnailView:view];
-//    // NSUInteger page = view.position+1;
-//    NSNumber * page;
-//    if([pendingRequests valueForKey:view]) {
-//        
-//        page = [pendingRequests valueForKey:view];
-//        [delegate cancelThumbnailForPage:[page unsignedIntValue]];
-//        
-//    } else {
-//        
-//        
-//        
-//    }
-//}
-
 -(void)start {
     
     if(backgroundWorkStillGoingOn) {
@@ -549,14 +513,5 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
     
     [super dealloc];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

@@ -34,8 +34,6 @@
     
     id<TVThumbnailScrollViewDelegate> delegate;
     
-    NSFileManager * fileManager;
-    
     BOOL backgroundWorkStillGoingOn;
     BOOL shouldContinueBackgrounWork;
     

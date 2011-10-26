@@ -249,7 +249,6 @@
         UIBarButtonItem *nextItem = [[UIBarButtonItem alloc] initWithCustomView:btnNext];
         
         
-		
 		UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(actionCancel:)];
 		
         UIBarButtonItem *fullItem = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleBordered target:self action:@selector(actionFull:)];
@@ -265,6 +264,8 @@
         [nextItem release];
         [doneItem release];
         [fullItem release];
+        [btnNext release];
+        [btnPrev release];
         
         [self addSubview:bar];
         [bar release];

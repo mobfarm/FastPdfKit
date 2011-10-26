@@ -61,15 +61,20 @@
 	
 	// Now we will check the first element of each sub-array. Since every element in the array lay on
 	// same page, if the first element is not on the right page we can discard the whole array.
-	// It is not very clean but it is still better
-	// than a plain linear search.
-	
+	// Then we can set the color of the search result to a color that suit us better. Default is a mild red.
+    
 	for(NSArray * array in results) {
 		
 		item = [array objectAtIndex:0];
         
-		if([item page] == page)			
-			[drawables addObjectsFromArray:array];
+		if([item page] == page) {
+        
+            for(MFTextItem * item in array) {
+                item.highlightColor = [MFTextItem highlightRedColor];
+            }
+            
+            [drawables addObjectsFromArray:array];    
+        }
 	}
 	
 	[results release];
