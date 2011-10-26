@@ -194,7 +194,7 @@
 	// Progress bar for the download operation.
 
 	aProgressView = [[UIProgressView alloc] initWithFrame:CGRectMake(21, progressBarVOffset, size.width-24, size.height-10)];
-	aProgressView.progressViewStyle = UIActivityIndicatorViewStyleGray;
+	aProgressView.progressViewStyle = UIProgressViewStyleDefault; // FIXME: it was UIActivityIndicatorViewStyleGray. 
 	aProgressView.progress= 0.0;
 	aProgressView.hidden = TRUE;
 	[[self view] addSubview:aProgressView];

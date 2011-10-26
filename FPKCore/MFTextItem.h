@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "MFOverlayDrawable.h"
+#import <UIKit/UIKit.h>
 
 @interface MFTextItem : NSObject<MFOverlayDrawable> {
 
@@ -17,6 +18,7 @@
 	CGPathRef highlightPath;
 	NSUInteger page;
 	NSRange searchTermRange;
+    UIColor * highlightColor;
 }
 
 /**
@@ -46,5 +48,18 @@
  The page of which this text item represent the position of a word.
  */
 @property (readonly) NSUInteger page;
+
+/**
+ Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)
+ */
+@property (nonatomic,retain) UIColor * highlightColor;
+
+/**
+ A few usefult colors for the highlight. You are NOT responsible for releasing
+ the object.
+ */
++(UIColor *)highlightRedColor;
++(UIColor *)highlightYellowColor;
++(UIColor *)highlightBlueColor;
 
 @end

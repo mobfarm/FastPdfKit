@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MFDocumentViewController.h"
 #import "MFDocumentViewControllerDelegate.h"
-#import "MFHorizontalSlider.h"
 #import "BookmarkViewControllerDelegate.h"
 #import "SearchViewControllerDelegate.h"
 #import "MiniSearchViewControllerDelegate.h"

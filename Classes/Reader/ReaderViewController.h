@@ -14,9 +14,9 @@
 #import "SearchViewControllerDelegate.h"
 #import "MiniSearchViewControllerDelegate.h"
 #import "OutlineViewControllerDelegate.h"
-#import "MFHorizontalSlider.h"
 #import "TextDisplayViewControllerDelegate.h"
 #import "MediaPlayer/MediaPlayer.h"
+#import "TVThumbnailScrollView.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -34,14 +34,10 @@
 #define FPK_SEARCH_VIEW_MODE_MINI 0
 #define FPK_SEARCH_VIEW_MODE_FULL 1
 
-@interface ReaderViewController : MFDocumentViewController <MFSliderDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
+@interface ReaderViewController : MFDocumentViewController <TVThumbnailScrollViewDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
 	
-	// Thumbnail view and stuff.
-	UIImageView * thumbnailView;
-	
-	// Text extraction controller and stuff.
-	MFHorizontalSlider * thumbsliderHorizontal;
-	UIView * thumbSliderViewHorizontal;
+	TVThumbnailScrollView * thumbnailScrollView;
+	UIView * bottomToolbarView;
 	
 	NSMutableArray * thumbImgArray;
 	
@@ -84,6 +80,7 @@
 	NSString * documentId;  // Keep an unique reference to the document in the application (could be an ID, the name, etc).
 	
 	// Text search controller and stuff.
+    
 	SearchViewController * searchViewController;
 	SearchManager * searchManager;
 	MiniSearchView * miniSearchView;
@@ -108,6 +105,8 @@
 	UIButton *btnZoomLockBarButtonItem;
 	UIButton *btnChangeDirectionBarButtonItem;
 	UIButton *btnChangeLeadBarButtonItem;
+    
+    BOOL willFollowLink;
 }
 
 @property (nonatomic,retain) UIButton *btnChangeModeBarButtonItem;
@@ -150,10 +149,9 @@
 
 @property (nonatomic, retain) UILabel * numberOfPageTitleToolbar;
 
-@property (nonatomic, retain) NSMutableArray *thumbImgArray;
-
-@property (nonatomic, retain) MFHorizontalSlider *thumbsliderHorizontal;
-@property (nonatomic, retain) UIView *thumbSliderViewHorizontal;
+@property (nonatomic, retain) TVThumbnailScrollView * thumbnailScrollView;
+//@property (nonatomic, retain) MFHorizontalSlider *thumbsliderHorizontal;
+@property (nonatomic, retain) UIView *bottomToolbarView;
 
 @property (nonatomic, retain) SearchViewController * searchViewController;
 @property (nonatomic, retain) SearchManager * searchManager;
