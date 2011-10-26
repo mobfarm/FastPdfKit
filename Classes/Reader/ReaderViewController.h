@@ -105,6 +105,8 @@
 	UIButton *btnZoomLockBarButtonItem;
 	UIButton *btnChangeDirectionBarButtonItem;
 	UIButton *btnChangeLeadBarButtonItem;
+    
+    BOOL willFollowLink;
 }
 
 @property (nonatomic,retain) UIButton *btnChangeModeBarButtonItem;

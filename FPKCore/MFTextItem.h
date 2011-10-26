@@ -17,6 +17,7 @@
 	CGPathRef highlightPath;
 	NSUInteger page;
 	NSRange searchTermRange;
+    CGColorRef highlightColor;
 }
 
 /**
@@ -46,5 +47,10 @@
  The page of which this text item represent the position of a word.
  */
 @property (readonly) NSUInteger page;
+
+/**
+ The color of the hilight. Default is currently a mild red (1.0, 0.0, 0.0, 0.25)
+ */
+@property (assign) CGColorRef highlightColor;
 
 @end

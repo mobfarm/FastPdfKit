@@ -904,7 +904,7 @@
 	//	Page has changed, either by user input or an internal change upon an event: update the label and the 
 	//	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 	//	in this callback.
-	
+    
 	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(page,[[self document]numberOfPages])];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
@@ -1020,12 +1020,20 @@
     }
 }
 
+-(void)documentViewController:(MFDocumentViewController *)dvc willFollowLinkToPage:(NSUInteger)page {
+    willFollowLink = YES;
+}
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point {
 	
+    if(willFollowLink) {
+        willFollowLink = NO;
+        return;
+    }
+    
 	// If the flag waitingForTextInput is enabled, we use the touch event to select the page. Otherwise,
 	// we are free to use it to show/hide the selected HUD elements.
-	
+    
 	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
 		
 		[self dismissAlternateViewController];
