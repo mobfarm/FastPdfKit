@@ -51,7 +51,7 @@
 		012B94D5144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
 		012B94D6144EC5BE00C821FC /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 012B94D3144EC5BE00C821FC /* MFDocumentManager.h */; };
 		0134EE0F1456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; };
-		0134EE101456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; };
+		0134EE101456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0134EE131456D9B2007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
 		0134EE141456D9B2007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
 		0134EE1C1456E10F007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
