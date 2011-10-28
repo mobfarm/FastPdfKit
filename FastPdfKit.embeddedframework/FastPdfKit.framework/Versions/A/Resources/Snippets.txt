@@ -1,12 +1,22 @@
 /* 
-  Snippets.strings
-  FastPdfKit Sample
+  Snippets.txt
+  FastPdfKit
 
   Created by Matteo Gavagnin on 7/14/11.
   Copyright 2011 MobdFarm. All rights reserved.
 */
 
-/** These are for the interface .h */
+/** These are for the interface .h if you add FastPdfKit as library or add the Xcode project in the Workspace */
+
+#import "ReaderViewController.h"
+
+@class MFDocumentManager;
+
+-(IBAction)actionOpenPlainDocument:(id)sender;
+
+
+
+/** These are for the interface .h if you add FastPdfKit as Framework */
 
 #import <FastPdfKit/FastPdfKit.h>
 

@@ -47,5 +47,9 @@
 -(void)reloadData;
 -(void)setCurrentResultIndex:(NSUInteger)index;
 -(void)setCurrentTextItem:(MFTextItem *)item;
+-(void)actionNext:(id)sender;
+-(void)actionPrev:(id)sender;
+-(void)moveToPrevResult;
+-(void)moveToNextResult;
 
 @end
