@@ -215,9 +215,12 @@
 		self.autoresizesSubviews = YES;		// Yes.
 		self.opaque = NO;					// Otherwise background transparencies will be flat black.
 		// Layout subviews.
+        
+        
+        NSLog(@"widht -> %f",frame.size.width);
 		
-        UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 44)];
-        [bar setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin];
+        UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 44)];
+        [bar setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
         [bar setBarStyle:UIBarStyleBlack];
         [bar setTranslucent:YES];
 		
