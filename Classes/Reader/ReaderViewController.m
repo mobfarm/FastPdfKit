@@ -415,11 +415,11 @@
 		
 		// If nil, allocate and initialize it.
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.frame.size.width, 44)]autorelease];
+			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)]autorelease];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 			
 		}else {
-			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.frame.size.width, 44)]autorelease];
+			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)]autorelease];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		}
 		
@@ -449,13 +449,13 @@
     
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 		
-        [miniSearchView setFrame:CGRectMake(0, 44, self.view.frame.size.width, 44)];
+        [miniSearchView setFrame:CGRectMake(0, 44, self.view.bounds.size.width, 44)];
         [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		[self.view bringSubviewToFront:rollawayToolbar];
         
 	}else {
         
-		[miniSearchView setFrame:CGRectMake(0, 44, self.view.frame.size.width, 44)];
+		[miniSearchView setFrame:CGRectMake(0, 44, self.view.bounds.size.width, 44)];
         [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		[self.view bringSubviewToFront:rollawayToolbar];
 	}
@@ -528,9 +528,9 @@
 	[UIView setAnimationDuration:0.15];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake(0,-45 , self.view.frame.size.width, 44)];
+		[miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
 	}else {
-		[miniSearchView setFrame:CGRectMake(0,-45 , self.view.frame.size.width, 44)];
+		[miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
 	}
 	[UIView commitAnimations];
 	
@@ -553,9 +553,11 @@
 	[UIView setAnimationDuration:0.15];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake(0,44 , self.view.frame.size.width, 44)];
+		[miniSearchView setFrame:CGRectMake(0,44 , self.view.bounds.size.width, 44)];
+        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 	}else {
-		[miniSearchView setFrame:CGRectMake(0,44 , self.view.frame.size.width, 44)];
+		[miniSearchView setFrame:CGRectMake(0,44 , self.view.bounds.size.width, 44)];
+        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 	}
 	
 	[UIView commitAnimations];
@@ -1736,7 +1738,7 @@
     
     }else{
     
-        aSlider = [[UISlider alloc]initWithFrame:CGRectMake(10, thumbSliderOffsetX, 250,thumbSliderHeight)];
+        aSlider = [[UISlider alloc]initWithFrame:CGRectMake(10, thumbSliderOffsetX, 230,thumbSliderHeight)];
     
     }
     
@@ -1759,7 +1761,7 @@
 	if(!isPad) {
 		
 		// Set the number of page into the toolbar at the right the slider on iPhone.
-		aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aContainerView.frame.size.width-thumbSliderViewBorderWidth)-40, thumbSliderOffsetX+6, 55, thumbSliderHeight)];
+		aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aContainerView.frame.size.width-thumbSliderViewBorderWidth)-60, thumbSliderOffsetX+6, 75, thumbSliderHeight)];
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
 		aLabel.text = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
 		aLabel.textAlignment = UITextAlignmentCenter;
@@ -1796,6 +1798,8 @@
 	// Utility method to prepare the rollaway toolbar.
 	
 	[self prepareToolbar];
+    
+    [self prepareThumbSlider];
 }
 
 
@@ -2086,7 +2090,6 @@
 
 	[super viewWillAppear:animated];
 	
-	[self prepareThumbSlider];
 }
 
 
