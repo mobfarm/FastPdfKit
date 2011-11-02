@@ -1796,6 +1796,8 @@
 	// Utility method to prepare the rollaway toolbar.
 	
 	[self prepareToolbar];
+    
+    [self prepareThumbSlider];
 }
 
 
@@ -2085,8 +2087,6 @@
 -(void)viewWillAppear:(BOOL)animated {
 
 	[super viewWillAppear:animated];
-	
-	[self prepareThumbSlider];
 }
 
 
@@ -2242,7 +2242,13 @@
 - (void)viewDidUnload {
     
 	[super viewDidUnload];
-	
+    
+    // TODO: it is better to release every object created and retained in viewDidLoad
+    // rather than waiting for the next viewDidLoad to release the old objects!
+    
+    self.pageSlider = nil;
+    self.thumbnailScrollView = nil;
+    self.bottomToolbarView = nil;
 }
 
 - (void)dealloc {
