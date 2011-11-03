@@ -250,6 +250,8 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
         UIScrollView * aScrollView = [[UIScrollView alloc]initWithFrame:frame];
         [aScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
         [aScrollView setDelegate:self];
+        [aScrollView setShowsVerticalScrollIndicator:NO];
+        [aScrollView setShowsHorizontalScrollIndicator:NO];
         
         self.scrollView = aScrollView;
     
