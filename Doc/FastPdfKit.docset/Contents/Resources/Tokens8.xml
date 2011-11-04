@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/MFDocumentOverlayDataSource.html">
+	<File path="Protocols/MFAudioPlayerViewProtocol.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/MFDocumentOverlayDataSource</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/MFAudioPlayerViewProtocol</TokenIdentifier>
 			<Abstract></Abstract>
-			<DeclaredIn>MFDocumentOverlayDataSource.h</DeclaredIn>
+			<DeclaredIn>MFAudioPlayerViewProtocol.h</DeclaredIn>
 			
 			<NodeRef refid="8"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentOverlayDataSource/documentViewController:drawablesForPage:</TokenIdentifier>
-			<Abstract>This method is invoked when a new detail page is going to be drawn and overlayEnabled of the MFDocumentViewController is set
-to YES. The object setted as overlayDataSource is then required to return an array of MFOverlayDrawable object to be
-drawn on the page as overlay.</Abstract>
-			<DeclaredIn>MFDocumentOverlayDataSource.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioPlayerViewProtocol/audioPlayerViewInstance</TokenIdentifier>
+			<Abstract>This method will be called to provide a view instance to add to the overlay.</Abstract>
+			<DeclaredIn>MFAudioPlayerViewProtocol.h</DeclaredIn>			
 			
-			<Declaration>- (NSArray *)documentViewController:(MFDocumentViewController *)dvc drawablesForPage:(NSUInteger)page</Declaration>
+			<Declaration>+ (UIView *)audioPlayerViewInstance</Declaration>
 			
 			
-			<Anchor>//api/name/documentViewController:drawablesForPage:</Anchor>
+			<Anchor>//api/name/audioPlayerViewInstance</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentOverlayDataSource/documentViewController:touchablesForPage:</TokenIdentifier>
-			<Abstract>This method is invoked when a new detail page is going to be drawn and overlayEnables is set to YES. Objects added as overlay
-data sources are required to submit touchables element to be tested against user input events.</Abstract>
-			<DeclaredIn>MFDocumentOverlayDataSource.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioPlayerViewProtocol/setAudioProvider:</TokenIdentifier>
+			<Abstract>This method will be called to give a chance to store the refernce to the provider
+that will notify the view about the playback. It is recommended to assign it, not retain to
+avoid circular retention between provider and review.</Abstract>
+			<DeclaredIn>MFAudioPlayerViewProtocol.h</DeclaredIn>			
 			
-			<Declaration>- (NSArray *)documentViewController:(MFDocumentViewController *)dvc touchablesForPage:(NSUInteger)page</Declaration>
+			<Declaration>- (void)setAudioProvider:(id&lt;MFAudioProvider&gt;)provider</Declaration>
 			
 			
-			<Anchor>//api/name/documentViewController:touchablesForPage:</Anchor>
+			<Anchor>//api/name/setAudioProvider:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentOverlayDataSource/documentViewController:didReceiveTapOnTouchable:</TokenIdentifier>
-			<Abstract>This method will be called when an user does tap on an overlay touchable element.</Abstract>
-			<DeclaredIn>MFDocumentOverlayDataSource.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioPlayerViewProtocol/audioProviderDidStart:</TokenIdentifier>
+			<Abstract>Playback and status event methods.</Abstract>
+			<DeclaredIn>MFAudioPlayerViewProtocol.h</DeclaredIn>			
 			
-			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnTouchable:(id&lt;MFOverlayTouchable&gt;)touchable</Declaration>
+			<Declaration>- (void)audioProviderDidStart:(id&lt;MFAudioProvider&gt;)mfeap</Declaration>
 			
 			
-			<Anchor>//api/name/documentViewController:didReceiveTapOnTouchable:</Anchor>
+			<Anchor>//api/name/audioProviderDidStart:</Anchor>
 		</Token>
 		
 	</File>

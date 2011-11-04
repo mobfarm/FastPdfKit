@@ -1,15 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>MFTextItem Class Reference</title>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
 		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
 	</head>
 	<body>
 		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">FastPdfKit </a></h1>
+				<a id="developerHome" href="../index.html">MobFarm</a>
+			</div>
+			
 			<div id="title" role="banner">
 				<h1 class="hideInXcode">MFTextItem Class Reference</h1>
 			</div>
@@ -32,6 +38,8 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/highlightColor">&nbsp;&nbsp;&nbsp;&nbsp;highlightColor</option>
+	
 	<option value="//api/name/highlightPath">&nbsp;&nbsp;&nbsp;&nbsp;highlightPath</option>
 	
 	<option value="//api/name/page">&nbsp;&nbsp;&nbsp;&nbsp;page</option>
@@ -39,6 +47,11 @@
 	<option value="//api/name/text">&nbsp;&nbsp;&nbsp;&nbsp;text</option>
 	
 	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/highlightRedColor">&nbsp;&nbsp;&nbsp;&nbsp;+ highlightRedColor</option>
 	
 	
 	
@@ -71,6 +84,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/highlightColor">highlightColor</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/highlightPath">highlightPath</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/page">page</a></span></li>
@@ -80,6 +95,12 @@
 </ul></li>
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/highlightRedColor">highlightRedColor</a></span></li>
+	
+</ul></li>
 
 
 
@@ -173,6 +194,21 @@
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/highlightColor">&nbsp;&nbsp;highlightColor</a></code>
+		<span class="tooltip"><p>Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/highlightRedColor">+&nbsp;highlightRedColor</a></code>
+		<span class="tooltip"><p>A few usefult colors for the highlight. You are NOT responsible for releasing
+the object.</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -187,6 +223,45 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/highlightColor" title="highlightColor"></a>
+	<h3 class="subsubtitle method-title">highlightColor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) UIColor *highlightColor</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFTextItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/highlightPath" title="highlightPath"></a>
 	<h3 class="subsubtitle method-title">highlightPath</h3>
 	
@@ -198,6 +273,8 @@
 	
 	
 	<div class="method-subsection method-declaration"><code>@property (readonly) CGPathRef highlightPath</code></div>
+	
+	
 	
 	
 	
@@ -241,6 +318,8 @@
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>The <a href="#//api/name/page">page</a> of which this <a href="#//api/name/text">text</a> item represent the position of a word.</p>
@@ -278,6 +357,8 @@
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Some <a href="#//api/name/text">text</a> to be displayed along with the item.</p>
@@ -301,6 +382,53 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/highlightRedColor" title="highlightRedColor"></a>
+	<h3 class="subsubtitle method-title">highlightRedColor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A few usefult colors for the highlight. You are NOT responsible for releasing
+the object.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (UIColor *)highlightRedColor</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A few usefult colors for the highlight. You are NOT responsible for releasing
+the object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFTextItem.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
 					
 					
 					<div class="section section-methods">
@@ -320,6 +448,8 @@
 	
 	
 	<div class="method-subsection method-declaration"><code>- (id)initWithText:(NSString *)<em>someText</em> andHighlightPath:(CGPathRef)<em>aPath</em></code></div>
+	
+	
 	
 	
 	
@@ -364,6 +494,8 @@
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Default initializer, plus the <a href="#//api/name/page">page</a> number.</p>
@@ -396,7 +528,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-08-10)</span><br />
+						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-11-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						

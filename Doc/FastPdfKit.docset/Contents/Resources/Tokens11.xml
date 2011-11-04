@@ -1,25 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/MFOverlayTouchable.html">
+	<File path="Protocols/MFDocumentViewControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/MFOverlayTouchable</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/MFDocumentViewControllerDelegate</TokenIdentifier>
 			<Abstract></Abstract>
-			<DeclaredIn>MFOverlayTouchable.h</DeclaredIn>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>
 			
 			<NodeRef refid="11"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFOverlayTouchable/containsPoint:</TokenIdentifier>
-			<Abstract>Implement this method to perform a hit test. The CGPoint coordinates are defined in document user space.</Abstract>
-			<DeclaredIn>MFOverlayTouchable.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didChangeDirectionTo:</TokenIdentifier>
+			<Abstract>This method will notify a change in the direction used to present the document.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
 			
-			<Declaration>- (BOOL)containsPoint:(CGPoint)point</Declaration>
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didChangeDirectionTo:(MFDocumentDirection)direction</Declaration>
 			
 			
-			<Anchor>//api/name/containsPoint:</Anchor>
+			<Anchor>//api/name/documentViewController:didChangeDirectionTo:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didGoToPage:</TokenIdentifier>
+			<Abstract>This method will be called to notify the transition to a new page. Use this to update page number related UI's elements or synchronize selected actions.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didGoToPage:(NSUInteger)page</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didGoToPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didChangeLeadTo:</TokenIdentifier>
+			<Abstract>This method will notify a change in the lead used to present the document.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didChangeLeadTo:(MFDocumentLead)lead</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didChangeLeadTo:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didChangeModeTo:automatic:</TokenIdentifier>
+			<Abstract>This method will notify a change in the mode of the document, either by esplicity setting it or automatic on rotation.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didChangeModeTo:(MFDocumentMode)mode automatic:(BOOL)automatically</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didChangeModeTo:automatic:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveTapAtPoint:</TokenIdentifier>
+			<Abstract>This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveTapAtPoint:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveURIRequest:</TokenIdentifier>
+			<Abstract>This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
+link is activated and an internet browser should be open to show the link's content.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveURIRequest:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveTapOnPage:atPoint:</TokenIdentifier>
+			<Abstract>This method will notify if and where the user has tapped on a page bounds. Coordinates of the point are in document's user space.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveTapOnPage:atPoint:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didEndZoomingAtScale:</TokenIdentifier>
+			<Abstract>This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
+that report the current zoom to the user.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didEndZoomingAtScale:(float)level</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didEndZoomingAtScale:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:willFocusOnPage:</TokenIdentifier>
+			<Abstract>This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc willFocusOnPage:(NSUInteger)page</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:willFocusOnPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didFocusOnPage:</TokenIdentifier>
+			<Abstract>This method will be called upon the showing up of the high definition version of the current page. Could be used to stop and Activity Indicator.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didFocusOnPage:(NSUInteger)page</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didFocusOnPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewControllerDidUnfocus:</TokenIdentifier>
+			<Abstract>This method will be called when the high definition version of the page is removed from the view.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewControllerDidUnfocus:(MFDocumentViewController *)dvc</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewControllerDidUnfocus:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:</TokenIdentifier>
+			<Abstract>This method will be called when user double tap on an annotation.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveDoubleTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri onPage:(NSUInteger)page</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveDoubleTapOnAnnotationRect:withUri:onPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:</TokenIdentifier>
+			<Abstract>This method will be called when an user tap on an annotation.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri onPage:(NSUInteger)page</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveTapOnAnnotationRect:withUri:onPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:doesHaveToAutoplayVideo:</TokenIdentifier>
+			<Abstract>This method will be called to ask the delegate if the video player needs to start automatically once visible.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayVideo:(NSString *)videoUri</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:doesHaveToAutoplayVideo:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:doesHaveToLoopVideo:</TokenIdentifier>
+			<Abstract>Self explanatory. This method will be called to ask the delegate if the video player needs to loop the video.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToLoopVideo:(NSString *)videoUri</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:doesHaveToLoopVideo:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:doesHaveToAutoplayAudio:</TokenIdentifier>
+			<Abstract>Implement this method to return whether the audio clip should play automatically once loaded.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString *)audioUri</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:doesHaveToAutoplayAudio:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:willFollowLinkToPage:</TokenIdentifier>
+			<Abstract>This method will be invoked before automatically moving to a page due to the user tapping on an embedded internal link inside the document.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc willFollowLinkToPage:(NSUInteger)page</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:willFollowLinkToPage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:</TokenIdentifier>
+			<Abstract>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as third argument
+and then get the page number with MFDocumentManager's -pageNumberForDestinationNamed: and present the right page for display.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToDestinationNamed:(NSString *)destinationName ofFile:(NSString *)fileName</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveRequestToGoToDestinationNamed:ofFile:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/documentViewController:didReceiveRequestToGoToPage:ofFile:</TokenIdentifier>
+			<Abstract>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as last argument
+and then set the page to the page number passed as second parameter.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveRequestToGoToPage:(NSUInteger)pageNumber ofFile:(NSString *)fileName</Declaration>
+			
+			
+			<Anchor>//api/name/documentViewController:didReceiveRequestToGoToPage:ofFile:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentViewControllerDelegate/classForAudioPlayerView</TokenIdentifier>
+			<Abstract>This method will be called to provide a class of the view to use as player audio control. You can use the default class provide in the sample
+or develop your own to suit the look and feel of you application better.</Abstract>
+			<DeclaredIn>MFDocumentViewControllerDelegate.h</DeclaredIn>			
+			
+			<Declaration>- (Class&lt;MFAudioPlayerViewProtocol&gt;)classForAudioPlayerView</Declaration>
+			
+			
+			<Anchor>//api/name/classForAudioPlayerView</Anchor>
 		</Token>
 		
 	</File>

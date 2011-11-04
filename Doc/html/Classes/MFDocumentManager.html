@@ -1,15 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>MFDocumentManager Class Reference</title>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
 		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
 	</head>
 	<body>
 		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">FastPdfKit </a></h1>
+				<a id="developerHome" href="../index.html">MobFarm</a>
+			</div>
+			
 			<div id="title" role="banner">
 				<h1 class="hideInXcode">MFDocumentManager Class Reference</h1>
 			</div>
@@ -32,8 +38,6 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/defaultProfile">&nbsp;&nbsp;&nbsp;&nbsp;defaultProfile</option>
-	
 	<option value="//api/name/resourceFolder">&nbsp;&nbsp;&nbsp;&nbsp;resourceFolder</option>
 	
 	
@@ -42,6 +46,8 @@
 	<option value="class_methods">Class Methods</option>
 	
 	<option value="//api/name/documentManagerWithFilePath:">&nbsp;&nbsp;&nbsp;&nbsp;+ documentManagerWithFilePath:</option>
+	
+	<option value="//api/name/paramsFromURI:">&nbsp;&nbsp;&nbsp;&nbsp;+ paramsFromURI:</option>
 	
 	<option value="//api/name/version">&nbsp;&nbsp;&nbsp;&nbsp;+ version</option>
 	
@@ -54,7 +60,7 @@
 	
 	<option value="//api/name/emptyCache">&nbsp;&nbsp;&nbsp;&nbsp;- emptyCache</option>
 	
-	<option value="//api/name/getCropbox:andRotation:forPageNumber:">&nbsp;&nbsp;&nbsp;&nbsp;- getCropbox:andRotation:forPageNumber:</option>
+	<option value="//api/name/getCropbox:andRotation:forPageNumber:withBuffer:">&nbsp;&nbsp;&nbsp;&nbsp;- getCropbox:andRotation:forPageNumber:withBuffer:</option>
 	
 	<option value="//api/name/initWithDataProvider:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDataProvider:</option>
 	
@@ -68,15 +74,13 @@
 	
 	<option value="//api/name/pageNumberForDestinationNamed:">&nbsp;&nbsp;&nbsp;&nbsp;- pageNumberForDestinationNamed:</option>
 	
-	<option value="//api/name/searchResultOnPage:forSearchTerms:withProfile:">&nbsp;&nbsp;&nbsp;&nbsp;- searchResultOnPage:forSearchTerms:withProfile:</option>
-	
-	<option value="//api/name/test_searchResultOnPage:forSearchTerms:">&nbsp;&nbsp;&nbsp;&nbsp;- test_searchResultOnPage:forSearchTerms:</option>
-	
-	<option value="//api/name/test_wholeTextForPage:">&nbsp;&nbsp;&nbsp;&nbsp;- test_wholeTextForPage:</option>
+	<option value="//api/name/searchResultOnPage:forSearchTerms:">&nbsp;&nbsp;&nbsp;&nbsp;- searchResultOnPage:forSearchTerms:</option>
 	
 	<option value="//api/name/tryUnlockWithPassword:">&nbsp;&nbsp;&nbsp;&nbsp;- tryUnlockWithPassword:</option>
 	
-	<option value="//api/name/wholeTextForPage:withProfile:">&nbsp;&nbsp;&nbsp;&nbsp;- wholeTextForPage:withProfile:</option>
+	<option value="//api/name/uriAnnotationsForPageNumber:">&nbsp;&nbsp;&nbsp;&nbsp;- uriAnnotationsForPageNumber:</option>
+	
+	<option value="//api/name/wholeTextForPage:">&nbsp;&nbsp;&nbsp;&nbsp;- wholeTextForPage:</option>
 	
 	
 	
@@ -100,8 +104,6 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultProfile">defaultProfile</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resourceFolder">resourceFolder</a></span></li>
 	
 </ul></li>
@@ -111,6 +113,8 @@
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentManagerWithFilePath:">documentManagerWithFilePath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/paramsFromURI:">paramsFromURI:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/version">version</a></span></li>
 	
@@ -124,7 +128,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/emptyCache">emptyCache</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCropbox:andRotation:forPageNumber:">getCropbox:andRotation:forPageNumber:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCropbox:andRotation:forPageNumber:withBuffer:">getCropbox:andRotation:forPageNumber:withBuffer:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDataProvider:">initWithDataProvider:</a></span></li>
 	
@@ -138,15 +142,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pageNumberForDestinationNamed:">pageNumberForDestinationNamed:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchResultOnPage:forSearchTerms:withProfile:">searchResultOnPage:forSearchTerms:withProfile:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/test_searchResultOnPage:forSearchTerms:">test_searchResultOnPage:forSearchTerms:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/test_wholeTextForPage:">test_wholeTextForPage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchResultOnPage:forSearchTerms:">searchResultOnPage:forSearchTerms:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tryUnlockWithPassword:">tryUnlockWithPassword:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wholeTextForPage:withProfile:">wholeTextForPage:withProfile:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uriAnnotationsForPageNumber:">uriAnnotationsForPageNumber:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wholeTextForPage:">wholeTextForPage:</a></span></li>
 	
 </ul></li>
 
@@ -198,7 +200,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getCropbox:andRotation:forPageNumber:">&ndash;&nbsp;getCropbox:andRotation:forPageNumber:</a></code>
+		<code><a href="#//api/name/getCropbox:andRotation:forPageNumber:withBuffer:">&ndash;&nbsp;getCropbox:andRotation:forPageNumber:withBuffer:</a></code>
 		<span class="tooltip"><p>Use this method to get the cropbox and the rotation of a certain pdf page.</p></span>
 	</span>
 	
@@ -277,33 +279,16 @@ to prevent the application being killed right for excessive memory usage.</p></s
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/searchResultOnPage:forSearchTerms:withProfile:">&ndash;&nbsp;searchResultOnPage:forSearchTerms:withProfile:</a></code>
+		<code><a href="#//api/name/searchResultOnPage:forSearchTerms:">&ndash;&nbsp;searchResultOnPage:forSearchTerms:</a></code>
 		<span class="tooltip"><p>Return an array of <a href="../Classes/MFTextItem.html">MFTextItem</a> representing the matches of teh search term on the page passed
-as arguments. It is a good choice running this method in a secondary thread. Pass NULL as profile
-to use default search profile. Profile is not retained, so be sure to keep it in memory until the function
-returns.</p></span>
+as arguments. It is a good choice running this method in a secondary thread.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/test_searchResultOnPage:forSearchTerms:">&ndash;&nbsp;test_searchResultOnPage:forSearchTerms:</a></code>
-		<span class="tooltip"><p>This method return the same result as the above, but uses a differnt search engine. Look at the readme for instructions.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/wholeTextForPage:withProfile:">&ndash;&nbsp;wholeTextForPage:withProfile:</a></code>
-		<span class="tooltip"><p>Return a string representation of the text contained in a pdf page. Profile is not retained, so be sure to keep
-it in memory until the function returns. You can pass NULL to use the default profile.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/test_wholeTextForPage:">&ndash;&nbsp;test_wholeTextForPage:</a></code>
-		<span class="tooltip"><p>This method return the same result as the above, but uses a differnt extraction engine. Look at the readme for instructions.</p></span>
+		<code><a href="#//api/name/wholeTextForPage:">&ndash;&nbsp;wholeTextForPage:</a></code>
+		<span class="tooltip"><p>Return a string representation of the text contained in a pdf page.</p></span>
 	</span>
 	
 	
@@ -316,12 +301,17 @@ it in memory until the function returns. You can pass NULL to use the default pr
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/defaultProfile">&nbsp;&nbsp;defaultProfile</a></code>
-		<span class="tooltip"><p>This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
-set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it. This is the default profile used as fallback when
-a NULL profile is passed to the search and extraction methods.</p></span>
+		<code><a href="#//api/name/uriAnnotationsForPageNumber:">&ndash;&nbsp;uriAnnotationsForPageNumber:</a></code>
+		<span class="tooltip"><p>Array of every uri annotation for a selected page.</p></span>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/paramsFromURI:">+&nbsp;paramsFromURI:</a></code>
+		<span class="tooltip"><p>Get the parameters for a generic uri, useful to parse options passed with the annotations to customize the behaviour.</p></span>
+	</span>
+	
 	
 </li><li>
 	<span class="tooltip">
@@ -344,47 +334,6 @@ a NULL profile is passed to the search and extraction methods.</p></span>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/defaultProfile" title="defaultProfile"></a>
-	<h3 class="subsubtitle method-title">defaultProfile</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
-set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it. This is the default profile used as fallback when
-a NULL profile is passed to the search and extraction methods.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) MFProfile defaultProfile</code></div>
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This is an experimental features. It will allow to customize the behaviour for search and extraction of text. You can
-set the values inside of this struct before launching a search or a text extraction action. Look at mfprofile.h for an explanation of the MFProfile struct and how to customize it. This is the default profile used as fallback when
-a NULL profile is passed to the search and extraction methods.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MFDocumentManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/resourceFolder" title="resourceFolder"></a>
 	<h3 class="subsubtitle method-title">resourceFolder</h3>
 	
@@ -396,6 +345,8 @@ a NULL profile is passed to the search and extraction methods.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *resourceFolder</code></div>
+	
+	
 	
 	
 	
@@ -447,9 +398,50 @@ a NULL profile is passed to the search and extraction methods.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Factory method to create an <a href="MFDocumentManager.html">MFDocumentManager</a> instance from a know file path.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/paramsFromURI:" title="paramsFromURI:"></a>
+	<h3 class="subsubtitle method-title">paramsFromURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the parameters for a generic uri, useful to parse options passed with the annotations to customize the behaviour.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)paramsFromURI:(NSString *)<em>uri</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get the parameters for a generic uri, useful to parse options passed with the annotations to customize the behaviour.</p>
 	</div>
 	
 	
@@ -478,6 +470,8 @@ a NULL profile is passed to the search and extraction methods.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>+ (NSString *)version</code></div>
+	
+	
 	
 	
 	
@@ -530,6 +524,8 @@ it is also slower.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Create a thumbnail for a specific page. It will look far better than the thumbnail integrated inside the pdf, but
@@ -569,6 +565,8 @@ to prevent the application being killed right for excessive memory usage.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Clear the page cache. It is important to call this method on memory warning as in the sample code
@@ -590,8 +588,8 @@ to prevent the application being killed right for excessive memory usage.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/getCropbox:andRotation:forPageNumber:" title="getCropbox:andRotation:forPageNumber:"></a>
-	<h3 class="subsubtitle method-title">getCropbox:andRotation:forPageNumber:</h3>
+	<a name="//api/name/getCropbox:andRotation:forPageNumber:withBuffer:" title="getCropbox:andRotation:forPageNumber:withBuffer:"></a>
+	<h3 class="subsubtitle method-title">getCropbox:andRotation:forPageNumber:withBuffer:</h3>
 	
 	
 	
@@ -600,7 +598,9 @@ to prevent the application being killed right for excessive memory usage.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)getCropbox:(CGRect *)<em>cropbox</em> andRotation:(int *)<em>rotation</em> forPageNumber:(NSInteger)<em>pageNumber</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getCropbox:(CGRect *)<em>cropbox</em> andRotation:(int *)<em>rotation</em> forPageNumber:(NSInteger)<em>pageNumber</em> withBuffer:(BOOL)<em>withOrWithout</em></code></div>
+	
+	
 	
 	
 	
@@ -644,6 +644,8 @@ to prevent the application being killed right for excessive memory usage.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Initializer with data provider.</p>
@@ -675,6 +677,8 @@ to prevent the application being killed right for excessive memory usage.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>- (id)initWithFileUrl:(NSURL *)<em>anUrl</em></code></div>
+	
+	
 	
 	
 	
@@ -718,6 +722,8 @@ to prevent the application being killed right for excessive memory usage.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Check if a document is encrypted and blocked by a password or not.</p>
@@ -749,6 +755,8 @@ to prevent the application being killed right for excessive memory usage.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>- (NSUInteger)numberOfPages</code></div>
+	
+	
 	
 	
 	
@@ -792,6 +800,8 @@ to prevent the application being killed right for excessive memory usage.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Return an array of MFOutlineEntry as the outline/TOC of the pdf document.</p>
@@ -829,6 +839,8 @@ to prevent the application being killed right for excessive memory usage.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will return the page number of the destination with the name passed as argument.</p>
@@ -849,20 +861,20 @@ to prevent the application being killed right for excessive memory usage.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/searchResultOnPage:forSearchTerms:withProfile:" title="searchResultOnPage:forSearchTerms:withProfile:"></a>
-	<h3 class="subsubtitle method-title">searchResultOnPage:forSearchTerms:withProfile:</h3>
+	<a name="//api/name/searchResultOnPage:forSearchTerms:" title="searchResultOnPage:forSearchTerms:"></a>
+	<h3 class="subsubtitle method-title">searchResultOnPage:forSearchTerms:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
 		<p>Return an array of <a href="../Classes/MFTextItem.html">MFTextItem</a> representing the matches of teh search term on the page passed
-as arguments. It is a good choice running this method in a secondary thread. Pass NULL as profile
-to use default search profile. Profile is not retained, so be sure to keep it in memory until the function
-returns.</p>
+as arguments. It is a good choice running this method in a secondary thread.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSArray *)searchResultOnPage:(NSUInteger)<em>pageNr</em> forSearchTerms:(NSString *)<em>searchTerm</em> withProfile:(MFProfile *)<em>p</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSArray *)searchResultOnPage:(NSUInteger)<em>pageNr</em> forSearchTerms:(NSString *)<em>searchTerm</em></code></div>
+	
+	
 	
 	
 	
@@ -872,83 +884,7 @@ returns.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Return an array of <a href="../Classes/MFTextItem.html">MFTextItem</a> representing the matches of teh search term on the page passed
-as arguments. It is a good choice running this method in a secondary thread. Pass NULL as profile
-to use default search profile. Profile is not retained, so be sure to keep it in memory until the function
-returns.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MFDocumentManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/test_searchResultOnPage:forSearchTerms:" title="test_searchResultOnPage:forSearchTerms:"></a>
-	<h3 class="subsubtitle method-title">test_searchResultOnPage:forSearchTerms:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>This method return the same result as the above, but uses a differnt search engine. Look at the readme for instructions.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (NSArray *)test_searchResultOnPage:(NSUInteger)<em>pageNr</em> forSearchTerms:(NSString *)<em>searchTerm</em></code></div>
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method return the same result as the above, but uses a differnt search engine. Look at the readme for instructions.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MFDocumentManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/test_wholeTextForPage:" title="test_wholeTextForPage:"></a>
-	<h3 class="subsubtitle method-title">test_wholeTextForPage:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>This method return the same result as the above, but uses a differnt extraction engine. Look at the readme for instructions.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (NSString *)test_wholeTextForPage:(NSUInteger)<em>pageNr</em></code></div>
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method return the same result as the above, but uses a differnt extraction engine. Look at the readme for instructions.</p>
+as arguments. It is a good choice running this method in a secondary thread.</p>
 	</div>
 	
 	
@@ -983,6 +919,8 @@ returns.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Try to unlock the document with a password and return if the unlock has been successful or not.</p>
@@ -1003,18 +941,19 @@ returns.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/wholeTextForPage:withProfile:" title="wholeTextForPage:withProfile:"></a>
-	<h3 class="subsubtitle method-title">wholeTextForPage:withProfile:</h3>
+	<a name="//api/name/uriAnnotationsForPageNumber:" title="uriAnnotationsForPageNumber:"></a>
+	<h3 class="subsubtitle method-title">uriAnnotationsForPageNumber:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Return a string representation of the text contained in a pdf page. Profile is not retained, so be sure to keep
-it in memory until the function returns. You can pass NULL to use the default profile.</p>
+		<p>Array of every uri annotation for a selected page.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSString *)wholeTextForPage:(NSUInteger)<em>pageNr</em> withProfile:(MFProfile *)<em>p</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSArray *)uriAnnotationsForPageNumber:(NSUInteger)<em>pageNr</em></code></div>
+	
+	
 	
 	
 	
@@ -1023,8 +962,46 @@ it in memory until the function returns. You can pass NULL to use the default pr
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Return a string representation of the text contained in a pdf page. Profile is not retained, so be sure to keep
-it in memory until the function returns. You can pass NULL to use the default profile.</p>
+		<p>Array of every uri annotation for a selected page.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wholeTextForPage:" title="wholeTextForPage:"></a>
+	<h3 class="subsubtitle method-title">wholeTextForPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return a string representation of the text contained in a pdf page.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)wholeTextForPage:(NSUInteger)<em>pageNr</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Return a string representation of the text contained in a pdf page.</p>
 	</div>
 	
 	
@@ -1054,7 +1031,7 @@ it in memory until the function returns. You can pass NULL to use the default pr
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-08-10)</span><br />
+						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-11-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						

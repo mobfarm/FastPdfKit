@@ -14,6 +14,8 @@
 						<NodeRef refid="2"/>
 						<NodeRef refid="3"/>
 						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
 						
 					</Subnodes>
 				</Node>
@@ -24,13 +26,13 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="5"/>
-						<NodeRef refid="6"/>
 						<NodeRef refid="7"/>
 						<NodeRef refid="8"/>
 						<NodeRef refid="9"/>
 						<NodeRef refid="10"/>
 						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
 						
 					</Subnodes>
 				</Node>
@@ -40,48 +42,56 @@
     </TOC>
 	<Library>
 		<Node id="1">
+			<Name>FPKAnnotation</Name>
+			<Path>Classes/FPKAnnotation.html</Path>
+		</Node>
+		<Node id="2">
+			<Name>FPKURIAnnotation</Name>
+			<Path>Classes/FPKURIAnnotation.html</Path>
+		</Node>
+		<Node id="3">
 			<Name>MFDocumentManager</Name>
 			<Path>Classes/MFDocumentManager.html</Path>
 		</Node>
-		<Node id="2">
+		<Node id="4">
 			<Name>MFDocumentViewController</Name>
 			<Path>Classes/MFDocumentViewController.html</Path>
 		</Node>
-		<Node id="3">
+		<Node id="5">
 			<Name>MFPDFOutlineEntry</Name>
 			<Path>Classes/MFPDFOutlineEntry.html</Path>
 		</Node>
-		<Node id="4">
+		<Node id="6">
 			<Name>MFTextItem</Name>
 			<Path>Classes/MFTextItem.html</Path>
 		</Node>
 		
 		
-		<Node id="5">
+		<Node id="7">
 			<Name>FPKOverlayViewDataSource</Name>
 			<Path>Protocols/FPKOverlayViewDataSource.html</Path>
 		</Node>
-		<Node id="6">
+		<Node id="8">
 			<Name>MFAudioPlayerViewProtocol</Name>
 			<Path>Protocols/MFAudioPlayerViewProtocol.html</Path>
 		</Node>
-		<Node id="7">
+		<Node id="9">
 			<Name>MFAudioProvider</Name>
 			<Path>Protocols/MFAudioProvider.html</Path>
 		</Node>
-		<Node id="8">
+		<Node id="10">
 			<Name>MFDocumentOverlayDataSource</Name>
 			<Path>Protocols/MFDocumentOverlayDataSource.html</Path>
 		</Node>
-		<Node id="9">
+		<Node id="11">
 			<Name>MFDocumentViewControllerDelegate</Name>
 			<Path>Protocols/MFDocumentViewControllerDelegate.html</Path>
 		</Node>
-		<Node id="10">
+		<Node id="12">
 			<Name>MFOverlayDrawable</Name>
 			<Path>Protocols/MFOverlayDrawable.html</Path>
 		</Node>
-		<Node id="11">
+		<Node id="13">
 			<Name>MFOverlayTouchable</Name>
 			<Path>Protocols/MFOverlayTouchable.html</Path>
 		</Node>

@@ -1,15 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>FPKOverlayViewDataSource Protocol Reference</title>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
 		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
 	</head>
 	<body>
 		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">FastPdfKit </a></h1>
+				<a id="developerHome" href="../index.html">MobFarm</a>
+			</div>
+			
 			<div id="title" role="banner">
 				<h1 class="hideInXcode">FPKOverlayViewDataSource Protocol Reference</h1>
 			</div>
@@ -38,7 +44,7 @@
 	
 	<option value="//api/name/documentViewController:overlayViewsForPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:overlayViewsForPage:</option>
 	
-	<option value="//api/name/documentViewController:rectForOverlayView:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:rectForOverlayView:</option>
+	<option value="//api/name/documentViewController:rectForOverlayView:onPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:rectForOverlayView:onPage:</option>
 	
 	<option value="//api/name/documentViewController:willAddOverlayView:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:willAddOverlayView:</option>
 	
@@ -70,7 +76,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:overlayViewsForPage:">documentViewController:overlayViewsForPage:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:rectForOverlayView:">documentViewController:rectForOverlayView:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:rectForOverlayView:onPage:">documentViewController:rectForOverlayView:onPage:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:willAddOverlayView:">documentViewController:willAddOverlayView:</a></span></li>
 	
@@ -128,7 +134,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/documentViewController:rectForOverlayView:">&ndash;&nbsp;documentViewController:rectForOverlayView:</a></code>
+		<code><a href="#//api/name/documentViewController:rectForOverlayView:onPage:">&ndash;&nbsp;documentViewController:rectForOverlayView:onPage:</a></code>
 		<span class="tooltip"><p>This method needs to return the frame in page-coordinates for the view passed as arguments. Remember that, like drawables
 and touchables, the coordinate system&rsquo;s origin is in the bottom left corner of the page.</p></span>
 	</span>
@@ -171,7 +177,9 @@ action that needs to be synchronized with the lifecycle of the view.</p></span>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSSet *)documentViewController:(MFDocumentViewController *)<em>dvc</em> overlayViewsForPage:(NSUInteger)<em>page</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSArray *)documentViewController:(MFDocumentViewController *)<em>dvc</em> overlayViewsForPage:(NSUInteger)<em>page</em></code></div>
+	
+	
 	
 	
 	
@@ -198,8 +206,8 @@ action that needs to be synchronized with the lifecycle of the view.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/documentViewController:rectForOverlayView:" title="documentViewController:rectForOverlayView:"></a>
-	<h3 class="subsubtitle method-title">documentViewController:rectForOverlayView:</h3>
+	<a name="//api/name/documentViewController:rectForOverlayView:onPage:" title="documentViewController:rectForOverlayView:onPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:rectForOverlayView:onPage:</h3>
 	
 	
 	
@@ -209,7 +217,9 @@ and touchables, the coordinate system&rsquo;s origin is in the bottom left corne
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (CGRect)documentViewController:(MFDocumentViewController *)<em>dvc</em> rectForOverlayView:(UIView *)<em>view</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (CGRect)documentViewController:(MFDocumentViewController *)<em>dvc</em> rectForOverlayView:(UIView *)<em>view</em> onPage:(NSUInteger)<em>page</em></code></div>
+	
+	
 	
 	
 	
@@ -256,6 +266,8 @@ action that needs to be synchronized with the lifecycle of the view.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>These callbacks will be invoked when the overlay view is going to be added, after is added, when is going to be removed
@@ -290,7 +302,7 @@ action that needs to be synchronized with the lifecycle of the view.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-08-10)</span><br />
+						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-11-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						

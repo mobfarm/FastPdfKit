@@ -1,58 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/MFAudioProvider.html">
+	<File path="Protocols/FPKOverlayViewDataSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/MFAudioProvider</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/FPKOverlayViewDataSource</TokenIdentifier>
 			<Abstract></Abstract>
-			<DeclaredIn>MFAudioProvider.h</DeclaredIn>
+			<DeclaredIn>FPKOverlayViewDataSource.h</DeclaredIn>
 			
 			<NodeRef refid="7"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/togglePlay</TokenIdentifier>
-			<Abstract>Play when stopped and viceversa.</Abstract>
-			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/FPKOverlayViewDataSource/documentViewController:overlayViewsForPage:</TokenIdentifier>
+			<Abstract>This method shall return a set of view to display over the pdf page.</Abstract>
+			<DeclaredIn>FPKOverlayViewDataSource.h</DeclaredIn>			
 			
-			<Declaration>- (void)togglePlay</Declaration>
+			<Declaration>- (NSArray *)documentViewController:(MFDocumentViewController *)dvc overlayViewsForPage:(NSUInteger)page</Declaration>
 			
 			
-			<Anchor>//api/name/togglePlay</Anchor>
+			<Anchor>//api/name/documentViewController:overlayViewsForPage:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/isPlaying</TokenIdentifier>
-			<Abstract>Tell if the audio clip is playing.</Abstract>
-			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/FPKOverlayViewDataSource/documentViewController:rectForOverlayView:onPage:</TokenIdentifier>
+			<Abstract>This method needs to return the frame in page-coordinates for the view passed as arguments. Remember that, like drawables
+and touchables, the coordinate system's origin is in the bottom left corner of the page.</Abstract>
+			<DeclaredIn>FPKOverlayViewDataSource.h</DeclaredIn>			
 			
-			<Declaration>- (BOOL)isPlaying</Declaration>
+			<Declaration>- (CGRect)documentViewController:(MFDocumentViewController *)dvc rectForOverlayView:(UIView *)view onPage:(NSUInteger)page</Declaration>
 			
 			
-			<Anchor>//api/name/isPlaying</Anchor>
+			<Anchor>//api/name/documentViewController:rectForOverlayView:onPage:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/setVolumeLevel:</TokenIdentifier>
-			<Abstract>Set the volume level, from 0.0 to 1.0.</Abstract>
-			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/FPKOverlayViewDataSource/documentViewController:willAddOverlayView:</TokenIdentifier>
+			<Abstract>These callbacks will be invoked when the overlay view is going to be added, after is added, when is going to be removed
+and when it is actually removed from the page view. Use these to change the status of the view and or start/stop any
+action that needs to be synchronized with the lifecycle of the view.</Abstract>
+			<DeclaredIn>FPKOverlayViewDataSource.h</DeclaredIn>			
 			
-			<Declaration>- (void)setVolumeLevel:(float)volume</Declaration>
-			
-			
-			<Anchor>//api/name/setVolumeLevel:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/volumeLevel</TokenIdentifier>
-			<Abstract>Return the volume level.</Abstract>
-			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
-			
-			<Declaration>- (float)volumeLevel</Declaration>
+			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc willAddOverlayView:(UIView *)view</Declaration>
 			
 			
-			<Anchor>//api/name/volumeLevel</Anchor>
+			<Anchor>//api/name/documentViewController:willAddOverlayView:</Anchor>
 		</Token>
 		
 	</File>

@@ -1,49 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/MFAudioPlayerViewProtocol.html">
+	<File path="Classes/MFTextItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/MFAudioPlayerViewProtocol</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/MFTextItem</TokenIdentifier>
 			<Abstract></Abstract>
-			<DeclaredIn>MFAudioPlayerViewProtocol.h</DeclaredIn>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>
 			
 			<NodeRef refid="6"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioPlayerViewProtocol/audioPlayerViewInstance</TokenIdentifier>
-			<Abstract>This method will be called to provide a view instance to add to the overlay.</Abstract>
-			<DeclaredIn>MFAudioPlayerViewProtocol.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/initWithText:andHighlightPath:</TokenIdentifier>
+			<Abstract>Default initializer. Init the Text Item with some text and a path for the hilight that will be rendered in
+page space.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
-			<Declaration>+ (UIView *)audioPlayerViewInstance</Declaration>
+			<Declaration>- (id)initWithText:(NSString *)someText andHighlightPath:(CGPathRef)aPath</Declaration>
 			
 			
-			<Anchor>//api/name/audioPlayerViewInstance</Anchor>
+			<Anchor>//api/name/initWithText:andHighlightPath:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioPlayerViewProtocol/setAudioProvider:</TokenIdentifier>
-			<Abstract>This method will be called to give a chance to store the refernce to the provider
-that will notify the view about the playback. It is recommended to assign it, not retain to
-avoid circular retention between provider and review.</Abstract>
-			<DeclaredIn>MFAudioPlayerViewProtocol.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/initWithText:highlightPath:andPage:</TokenIdentifier>
+			<Abstract>Default initializer, plus the page number.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
-			<Declaration>- (void)setAudioProvider:(id&lt;MFAudioProvider&gt;)provider</Declaration>
+			<Declaration>- (id)initWithText:(NSString *)someText highlightPath:(CGPathRef)aPath andPage:(NSUInteger)aPage</Declaration>
 			
 			
-			<Anchor>//api/name/setAudioProvider:</Anchor>
+			<Anchor>//api/name/initWithText:highlightPath:andPage:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioPlayerViewProtocol/audioProviderDidStart:</TokenIdentifier>
-			<Abstract>Playback and status event methods.</Abstract>
-			<DeclaredIn>MFAudioPlayerViewProtocol.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/text</TokenIdentifier>
+			<Abstract>Some text to be displayed along with the item.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
-			<Declaration>- (void)audioProviderDidStart:(id&lt;MFAudioProvider&gt;)mfeap</Declaration>
+			<Declaration>@property (readonly) NSString *text</Declaration>
 			
 			
-			<Anchor>//api/name/audioProviderDidStart:</Anchor>
+			<Anchor>//api/name/text</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/highlightPath</TokenIdentifier>
+			<Abstract>The path for the hilight. It is defined in page space.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) CGPathRef highlightPath</Declaration>
+			
+			
+			<Anchor>//api/name/highlightPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/page</TokenIdentifier>
+			<Abstract>The page of which this text item represent the position of a word.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSUInteger page</Declaration>
+			
+			
+			<Anchor>//api/name/page</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/highlightColor</TokenIdentifier>
+			<Abstract>Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *highlightColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MFTextItem/highlightRedColor</TokenIdentifier>
+			<Abstract>A few usefult colors for the highlight. You are NOT responsible for releasing
+the object.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>+ (UIColor *)highlightRedColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightRedColor</Anchor>
 		</Token>
 		
 	</File>

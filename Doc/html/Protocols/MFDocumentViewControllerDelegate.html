@@ -1,15 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>MFDocumentViewControllerDelegate Protocol Reference</title>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
 		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
 	</head>
 	<body>
 		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">FastPdfKit </a></h1>
+				<a id="developerHome" href="../index.html">MobFarm</a>
+			</div>
+			
 			<div id="title" role="banner">
 				<h1 class="hideInXcode">MFDocumentViewControllerDelegate Protocol Reference</h1>
 			</div>
@@ -68,7 +74,11 @@
 	
 	<option value="//api/name/documentViewController:doesHaveToAutoplayVideo:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:doesHaveToAutoplayVideo:</option>
 	
+	<option value="//api/name/documentViewController:doesHaveToLoopVideo:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:doesHaveToLoopVideo:</option>
+	
 	<option value="//api/name/documentViewController:willFocusOnPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:willFocusOnPage:</option>
+	
+	<option value="//api/name/documentViewController:willFollowLinkToPage:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewController:willFollowLinkToPage:</option>
 	
 	<option value="//api/name/documentViewControllerDidUnfocus:">&nbsp;&nbsp;&nbsp;&nbsp;- documentViewControllerDidUnfocus:</option>
 	
@@ -130,7 +140,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:doesHaveToAutoplayVideo:">documentViewController:doesHaveToAutoplayVideo:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:doesHaveToLoopVideo:">documentViewController:doesHaveToLoopVideo:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:willFocusOnPage:">documentViewController:willFocusOnPage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController:willFollowLinkToPage:">documentViewController:willFollowLinkToPage:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewControllerDidUnfocus:">documentViewControllerDidUnfocus:</a></span></li>
 	
@@ -278,8 +292,22 @@ that report the current zoom to the user.</p></span>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:doesHaveToLoopVideo:">&ndash;&nbsp;documentViewController:doesHaveToLoopVideo:</a></code>
+		<span class="tooltip"><p>Self explanatory. This method will be called to ask the delegate if the video player needs to loop the video.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/documentViewController:doesHaveToAutoplayAudio:">&ndash;&nbsp;documentViewController:doesHaveToAutoplayAudio:</a></code>
 		<span class="tooltip"><p>Implement this method to return whether the audio clip should play automatically once loaded.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController:willFollowLinkToPage:">&ndash;&nbsp;documentViewController:willFollowLinkToPage:</a></code>
+		<span class="tooltip"><p>This method will be invoked before automatically moving to a page due to the user tapping on an embedded internal link inside the document.</p></span>
 	</span>
 	
 	
@@ -343,6 +371,8 @@ or develop your own to suit the look and feel of you application better.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will be called to provide a class of the view to use as player audio control. You can use the default class provide in the sample
@@ -375,6 +405,8 @@ or develop your own to suit the look and feel of you application better.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didChangeDirectionTo:(MFDocumentDirection)<em>direction</em></code></div>
+	
+	
 	
 	
 	
@@ -418,6 +450,8 @@ or develop your own to suit the look and feel of you application better.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will notify a change in the lead used to present the document.</p>
@@ -449,6 +483,8 @@ or develop your own to suit the look and feel of you application better.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didChangeModeTo:(MFDocumentMode)<em>mode</em> automatic:(BOOL)<em>automatically</em></code></div>
+	
+	
 	
 	
 	
@@ -493,6 +529,8 @@ that report the current zoom to the user.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will report the last zoom level achieved by the document detail view. You can use this callback to animate an icon
@@ -525,6 +563,8 @@ that report the current zoom to the user.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didFocusOnPage:(NSUInteger)<em>page</em></code></div>
+	
+	
 	
 	
 	
@@ -568,6 +608,8 @@ that report the current zoom to the user.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will be called to notify the transition to a new page. Use this to update page number related UI&rsquo;s elements or synchronize selected actions.</p>
@@ -599,6 +641,8 @@ that report the current zoom to the user.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveDoubleTapOnAnnotationRect:(CGRect)<em>rect</em> withUri:(NSString *)<em>uri</em> onPage:(NSUInteger)<em>page</em></code></div>
+	
+	
 	
 	
 	
@@ -637,6 +681,8 @@ and then get the page number with MFDocumentManager&rsquo;s -pageNumberForDestin
 	
 	
 	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveRequestToGoToDestinationNamed:(NSString *)<em>destinationName</em> ofFile:(NSString *)<em>fileName</em></code></div>
+	
+	
 	
 	
 	
@@ -682,6 +728,8 @@ and then set the page to the page number passed as second parameter.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as last argument
@@ -714,6 +762,8 @@ and then set the page to the page number passed as second parameter.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveTapAtPoint:(CGPoint)<em>point</em></code></div>
+	
+	
 	
 	
 	
@@ -757,6 +807,8 @@ and then set the page to the page number passed as second parameter.</p>
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will be called when an user tap on an annotation.</p>
@@ -788,6 +840,8 @@ and then set the page to the page number passed as second parameter.</p>
 	
 	
 	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> didReceiveTapOnPage:(NSUInteger)<em>page</em> atPoint:(CGPoint)<em>point</em></code></div>
+	
+	
 	
 	
 	
@@ -832,6 +886,8 @@ link is activated and an internet browser should be open to show the link&rsquo;
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
@@ -864,6 +920,8 @@ link is activated and an internet browser should be open to show the link&rsquo;
 	
 	
 	<div class="method-subsection method-declaration"><code>- (BOOL)documentViewController:(MFDocumentViewController *)<em>dvc</em> doesHaveToAutoplayAudio:(NSString *)<em>audioUri</em></code></div>
+	
+	
 	
 	
 	
@@ -907,9 +965,50 @@ link is activated and an internet browser should be open to show the link&rsquo;
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will be called to ask the delegate if the video player needs to start automatically once visible.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:doesHaveToLoopVideo:" title="documentViewController:doesHaveToLoopVideo:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:doesHaveToLoopVideo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Self explanatory. This method will be called to ask the delegate if the video player needs to loop the video.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)documentViewController:(MFDocumentViewController *)<em>dvc</em> doesHaveToLoopVideo:(NSString *)<em>videoUri</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Self explanatory. This method will be called to ask the delegate if the video player needs to loop the video.</p>
 	</div>
 	
 	
@@ -944,9 +1043,50 @@ link is activated and an internet browser should be open to show the link&rsquo;
 	
 	
 	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This method will be called right before displaying a high definition version of the current page. Could be used to start an Activity Indicator.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MFDocumentViewControllerDelegate.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController:willFollowLinkToPage:" title="documentViewController:willFollowLinkToPage:"></a>
+	<h3 class="subsubtitle method-title">documentViewController:willFollowLinkToPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will be invoked before automatically moving to a page due to the user tapping on an embedded internal link inside the document.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)documentViewController:(MFDocumentViewController *)<em>dvc</em> willFollowLinkToPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will be invoked before automatically moving to a page due to the user tapping on an embedded internal link inside the document.</p>
 	</div>
 	
 	
@@ -975,6 +1115,8 @@ link is activated and an internet browser should be open to show the link&rsquo;
 	
 	
 	<div class="method-subsection method-declaration"><code>- (void)documentViewControllerDidUnfocus:(MFDocumentViewController *)<em>dvc</em></code></div>
+	
+	
 	
 	
 	
@@ -1013,7 +1155,7 @@ link is activated and an internet browser should be open to show the link&rsquo;
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-08-10)</span><br />
+						<p><span class="copyright">&copy; 2011 MobFarm. All rights reserved. (Last updated: 2011-11-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						
