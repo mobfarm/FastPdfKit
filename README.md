@@ -8,11 +8,11 @@ Side scrolling, search with highlighted results, preview and thumbnails, text ex
 
 For more information, see the [FastPdfKit website](http://fastpdfkit.com) and the [Support website](http://support.fastpdfkit.com).
 
-![Interface iPad](http://reader.fastpdfkit.com/readme/interface1.png)
-![Search iPad](http://reader.fastpdfkit.com/readme/search1.png)
+![Interface iPad](http://reader.fastpdfkit.com/readme/interface1s.png)
+![Search iPad](http://reader.fastpdfkit.com/readme/search1s.png)
 
-![Interface iPad](http://reader.fastpdfkit.com/readme/2pages2.png)
-![Search iPad](http://reader.fastpdfkit.com/readme/search4.png)
+![Interface iPhone](http://reader.fastpdfkit.com/readme/2pages2s.png)
+![Search iPhone](http://reader.fastpdfkit.com/readme/search4s.png)
 
 ## Features
 
