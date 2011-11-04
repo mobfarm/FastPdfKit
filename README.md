@@ -2,6 +2,13 @@
 
 This repository contains the FastPdfKit iOS library with some sample projects. This library allows you to add some of the features of the FastPdf application to your own app, allowing it to support pdf documents. For more information, see the [FastPdfKit website](http://fastpdfkit.com) and the [Support website](http://support.fastpdfkit.com).
 
+### Update 3.0 (November 4th, 2011)* Internal changes of the view hierarchy to provide more flexibility and overlay transitions.* Revamped `ReaderViewController` user interface.* Better thumbnail scroll view and generation.* Added support to video overlay control parameters in the uri.* Search now works for terms of unitary length.* Added a method to retrieve annotations from the document and provide them as overlays.* Slightly changes to `MFDocumentViewControllerDelegate` callbacks.
+* New activation method with key *FPKLicenseKey* from *Info.plist*: no need to pull to get the activated version.
+
+### Update 2.1.3 (September 27th, 2011)
+
+Disabled the 2.1.1 font cache due to an implementation oversight. Will be re-introduced as soon as it will behave as expected.
+
 ### Update 2.1.2 (September 21th, 2011)
 * Cleaned up text search and extraction a little bit. More fixes incoming.
 
