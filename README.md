@@ -162,7 +162,7 @@ For more information, see the [FastPdfKit website](http://fastpdfkit.com) and th
 ### Miscellanous
 
 -   True PDF
--   [Free version](/plans) for low budget projects with complete
+-   [Free version](http://fastpdfkit.com/plans) for low budget projects with complete
     features
 -   Fully multitouch
 -   Large document support
@@ -216,11 +216,29 @@ For more information, see the [FastPdfKit website](http://fastpdfkit.com) and th
 
 ### Opportunities
 
--   Become a [Reseller](/reseller)
--   How [fits your needs](/target)
+-   Become a [Reseller](http://fastpdfkit.com/reseller)
+-   How [fits your needs](http://fastpdfkit.com/target)
 -   Free for selected [no-profit organizations](http://fastpdfkit.com/target#4)
--   [100+ applications](/partners) already developed in [20 countries](http://fastpdfkit.com/reseller)
--   Tens of [Partners](/partners)
+-   [100+ applications](http://fastpdfkit.com/partners) already developed in [20 countries](http://fastpdfkit.com/reseller)
+-   Tens of [Partners](http://fastpdfkit.com/partners)
+
+## Targets
+
+In the Xcode project you'll find some targets
+
+* **FastPdfKit**: framework with everything needed to add just the reader to your app;
+* **FPKKioskApp**: a Kiosk project with document download and ready to use reader class;
+* **FPKSimpleApp**: a basic project with custom reader;
+* **FPKReaderLib**: a static library with the `ReaderViewController`and its dependencies;
+* **FPKKioskLib**: a static library with the kiosk classes;
+* **FPKioskBundle**: bundle of resources for needed for the kiosk;
+* **FPReaderBundle**: bundle of resources for needed by the `ReaderViewController`.
+
+In **FastPdfKit.framework** and **FPKReaderLib** the `libFastPdfKit.a`that contains the compiled core rendering engine.
+
+All the other classes are public and can be customized or subclassed at will.
+
+Every target can be compiled and recompiled for your needs.
 
 ## Usage guide
 
