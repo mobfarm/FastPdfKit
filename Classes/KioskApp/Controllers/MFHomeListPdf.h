@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
 #import "MenuViewController_Kiosk.h"
+#import <Newsstandkit/NewsstandKit.h>
 
-@interface MFHomeListPdf : UIViewController <UIActionSheetDelegate>{
+@interface MFHomeListPdf : UIViewController <UIActionSheetDelegate,NSURLConnectionDownloadDelegate>{
 	
 	id object;
 	NSString *thumbName;
@@ -65,5 +66,6 @@
 - (void)downloadPDF:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf;
 - (void)downloadImage:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf;
 - (BOOL)checkIfPDfLink:(NSString *)url;
+- (BOOL)handleFPKFile;
 
 @end

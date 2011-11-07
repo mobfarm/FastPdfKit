@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Newsstandkit/NewsstandKit.h>
+
 
 @interface FastPDFKit_KioskAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;

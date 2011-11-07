@@ -10,11 +10,38 @@
 	<string>FastPdfKit Kiosk</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFiles</key>
+    <key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon.png</string>
+                <string>Icon114.png</string>
+                <string>Icon72.png</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+		<key>UINewsstandIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon.png</string>
+                <string>Icon114.png</string>
+                <string>Icon72.png</string>
+			</array>
+			<key>UINewsstandBindingEdge</key>
+			<string>UINewsstandBindingEdgeLeft</string>
+			<key>UINewsstandBindingType</key>
+			<string>UINewsstandBindingTypeMagazine</string>
+		</dict>
+	</dict>
+    <key>UINewsstandApp</key>
+	<true/>
+	<key>UIBackgroundModes</key>
 	<array>
-		<string>Icon.png</string>
-		<string>Icon114.png</string>
-		<string>Icon72.png</string>
+		<string>newsstand-content</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.mobfarm.fastpdfkiosk</string>
