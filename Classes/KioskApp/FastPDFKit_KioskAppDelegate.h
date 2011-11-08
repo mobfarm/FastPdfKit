@@ -13,6 +13,7 @@
 @interface FastPDFKit_KioskAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 	UINavigationController *navigationController;
+    UIBackgroundTaskIdentifier bgTask;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

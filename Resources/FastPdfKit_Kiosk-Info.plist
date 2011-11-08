@@ -10,15 +10,15 @@
 	<string>FastPdfKit Kiosk</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-    <key>CFBundleIcons</key>
+	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>Icon.png</string>
-                <string>Icon114.png</string>
-                <string>Icon72.png</string>
+				<string>Icon114.png</string>
+				<string>Icon72.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<false/>
@@ -28,8 +28,8 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>Icon.png</string>
-                <string>Icon114.png</string>
-                <string>Icon72.png</string>
+				<string>Icon114.png</string>
+				<string>Icon72.png</string>
 			</array>
 			<key>UINewsstandBindingEdge</key>
 			<string>UINewsstandBindingEdgeLeft</string>
@@ -37,7 +37,7 @@
 			<string>UINewsstandBindingTypeMagazine</string>
 		</dict>
 	</dict>
-    <key>UINewsstandApp</key>
+	<key>UINewsstandApp</key>
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
@@ -85,5 +85,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>newsStandEnabled</key>
+	<true/>
 </dict>
 </plist>

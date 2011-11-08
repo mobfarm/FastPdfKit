@@ -67,5 +67,6 @@
 - (void)downloadImage:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf;
 - (BOOL)checkIfPDfLink:(NSString *)url;
 - (BOOL)handleFPKFile;
+- (void)updateBtnDownload;
 
 @end

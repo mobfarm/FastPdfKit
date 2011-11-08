@@ -13,6 +13,27 @@
 @synthesize window,navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    /*
+    //Uncomment the line below to enable NewsStand remote Notification
+    
+    
+    NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",@"FastPdfKit_Kiosk-Info"]];
+    
+    NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    
+    BOOL newsStandEnabled = [[plistDict objectForKey:@"newsStandEnabled"]boolValue];
+    
+    if(newsStandEnabled){
+        // TODO: decomment this to enable multiple notifications on the same day
+
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"NKDontThrottleNewsstandContentNotifications"];
+        
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeNewsstandContentAvailability];
+    } else {
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
+    }
+    */
 	
     NSLog(@"versione libreria %@",[MFDocumentManager version]);
     
@@ -44,6 +65,38 @@
 	
 	return YES;
 }
+
+/*
+#pragma mark -
+#pragma mark NewsStand callBack
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+    NSNumber * content = [[userInfo objectForKey:@"aps"] objectForKey:@"content-available"];
+    if(content && [content intValue] > 0){
+        NSLog(@"### Content Available: %i", [content intValue]);
+        int newNKItems = [content intValue];
+        
+        UIApplication *app = [UIApplication sharedApplication];
+        bgTask = [app beginBackgroundTaskWithExpirationHandler:^{ 
+            [app endBackgroundTask:bgTask]; 
+            bgTask = UIBackgroundTaskInvalid;
+        }];
+        
+        //set the action
+
+        
+    }
+
+}
+ 
+ */
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
