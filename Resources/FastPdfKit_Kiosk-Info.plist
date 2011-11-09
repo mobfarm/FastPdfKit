@@ -44,7 +44,7 @@
 		<string>newsstand-content</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.mobfarm.fastpdfkiosk</string>
+	<string>com.mobfarm.fastpdfkit.kiosk</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
