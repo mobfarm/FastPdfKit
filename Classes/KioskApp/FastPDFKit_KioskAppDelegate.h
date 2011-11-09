@@ -10,7 +10,7 @@
 #import <Newsstandkit/NewsstandKit.h>
 
 
-@interface FastPDFKit_KioskAppDelegate : NSObject <UIApplicationDelegate> {
+@interface FastPDFKit_KioskAppDelegate : NSObject <UIApplicationDelegate,NSURLConnectionDownloadDelegate> {
     UIWindow *window;
 	UINavigationController *navigationController;
     UIBackgroundTaskIdentifier bgTask;
@@ -18,5 +18,7 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UINavigationController *navigationController;
+
+- (BOOL)handleFPKFile:(NSString *)namePdf;
 
 @end

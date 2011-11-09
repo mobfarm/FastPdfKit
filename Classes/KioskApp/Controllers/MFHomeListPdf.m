@@ -403,7 +403,7 @@
     
     NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     
-    BOOL status1 = [[plistDict objectForKey:@"newsStandEnabled"]boolValue];
+    BOOL status1 = [[plistDict objectForKey:@"UINewsstandApp"]boolValue];
     
     BOOL status2 = [app respondsToSelector:@selector(setNewsstandIconImage:)];
     

@@ -8,6 +8,7 @@
 
 #import "FastPDFKit_KioskAppDelegate.h"
 #import "MenuViewController_Kiosk.h"
+#import "ZipArchive.h"
 
 @implementation FastPDFKit_KioskAppDelegate
 @synthesize window,navigationController;
@@ -22,7 +23,7 @@
     
     NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     
-    BOOL newsStandEnabled = [[plistDict objectForKey:@"newsStandEnabled"]boolValue];
+    BOOL newsStandEnabled = [[plistDict objectForKey:@"UINewsstandApp"]boolValue];
     
     if(newsStandEnabled){
         // TODO: decomment this to enable multiple notifications on the same day
@@ -66,9 +67,24 @@
 	return YES;
 }
 
-/*
+
 #pragma mark -
 #pragma mark NewsStand callBack
+/* 
+ 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+ 
+     NSLog(@"Did Register for Remote Notifications");
+     UIRemoteNotificationType type = [application enabledRemoteNotificationTypes];	
+        if (type > 0) {	
+            NSString *deviceTokenStr = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""] stringByReplacingOccurrencesOfString: @">" withString: @""] stringByReplacingOccurrencesOfString: @" " withString: @""];
+ 
+            NSLog(@"Device Token: %@", deviceTokenStr);
+ 
+        }
+}
+ 
+
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
 
@@ -88,13 +104,120 @@
         }];
         
         //set the action
-
+        
+        NSString *namePdf = [[userInfo objectForKey:@"aps"] objectForKey:@"name-pdf"];
+        NSURL *url = [NSURL URLWithString:[[userInfo objectForKey:@"aps"] objectForKey:@"link-pdf"]];
+        
+        NKLibrary *library = [NKLibrary sharedLibrary];
+        if ([library issueWithName:namePdf]) {               
+            [library removeIssue:[library issueWithName:namePdf]];
+        }
+        NKIssue *issue = [library addIssueWithName:namePdf date:[NSDate date]];
+        NSURLRequest * request = nil;
+        request = [[NSURLRequest alloc ]initWithURL:url];
+        NKAssetDownload *asset = [issue addAssetWithRequest:request];
+        [asset setUserInfo:[NSDictionary dictionaryWithObject:namePdf forKey:@"filename"]];
+        [asset downloadWithDelegate:self];
         
     }
 
 }
- 
- */
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_Error" object:nil];
+    
+    NSLog(@"Download Failed");
+    
+    
+}
+
+- (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *)destinationURL {
+    
+    
+    //write pdf
+    
+    NKAssetDownload *asset = [connection newsstandAssetDownload];
+    NSString *filename = [[asset userInfo] objectForKey:@"filename"];
+    NSString *suffix = nil;
+    NSString *path = nil;
+    
+    NSArray *tempArray = [NSArray arrayWithObjects:filename, [NSNumber numberWithInt:[filename intValue]], nil];  
+    
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
+    
+    [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    
+    [path stringByAppendingPathComponent:filename];
+    
+    
+    if([[destinationURL absoluteString] hasSuffix:@"fpk"]) {
+        suffix = @"fpk";
+        
+        path = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",filename,suffix]];
+        [[NSFileManager defaultManager] copyItemAtPath:[destinationURL path] toPath:path error:nil];
+        [[NSFileManager defaultManager] removeItemAtPath:[destinationURL path] error:nil];
+            if ([self handleFPKFile:filename]) [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_OK" object:tempArray];
+        else [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_Error" object:nil];
+        
+    } else {    
+        suffix = @"pdf";
+        path = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",filename,suffix]];
+        NSLog(@"path %@",path);
+        NSError *error = nil;    
+        [[NSFileManager defaultManager] copyItemAtPath:[destinationURL path] toPath:path error:&error];
+        [[NSFileManager defaultManager] removeItemAtPath:[destinationURL path] error:&error];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_OK" object:tempArray];
+    }
+    
+}
+
+- (BOOL)handleFPKFile:(NSString *)namePdf {
+    NSLog(@"Alla fine del download FPK");
+    
+    BOOL zipStatus = NO;
+    
+    ZipArchive * zipFile = nil;
+    NSArray * dirContents = nil;
+    
+    NSString * oldPath = nil;
+    NSString * newPath = nil;
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",namePdf]];
+    NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",namePdf,namePdf]];
+    
+    [[NSFileManager defaultManager] createDirectoryAtPath:unzippedDestination withIntermediateDirectories:YES attributes:nil error:nil];        
+    
+    zipFile = [[ZipArchive alloc] init];
+    [zipFile UnzipOpenFile:saveLocation];
+    zipStatus = [zipFile UnzipFileTo:unzippedDestination overWrite:YES];    
+    [zipFile UnzipCloseFile];
+    [zipFile release];
+    
+    dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
+    
+    
+    BOOL pdfStatus = NO;
+    for (NSString *tString in dirContents) {
+        
+        if ([tString hasSuffix:@".pdf"]) {
+            
+            oldPath =[unzippedDestination stringByAppendingString:tString];
+            newPath = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.pdf",namePdf,namePdf]];
+            
+            [[NSFileManager defaultManager] moveItemAtPath:oldPath toPath:newPath error:nil];				
+            pdfStatus = YES;
+        }
+    }
+    
+    return zipStatus && pdfStatus;
+}
+
+*/
 
 
 

@@ -85,7 +85,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>newsStandEnabled</key>
-	<true/>
 </dict>
 </plist>
