@@ -25,12 +25,15 @@
 @synthesize documentsList;
 @synthesize graphicsMode;
 @synthesize scrollView;
+@synthesize interfaceLoaded;
 
 
 -(IBAction)actionOpenPlainDocument:(NSString *)documentName {
 	
 	MFDocumentManager * documentManager = nil;
 	ReaderViewController * documentViewController = nil;
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 	
 	NSArray *paths = nil;
 	NSString *documentsDirectory = nil;
@@ -174,7 +177,7 @@
     if (scrollView) {
         [scrollView removeFromSuperview];
     }else{
-    
+        
         // Border.
         
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -191,7 +194,7 @@
     }
 	
 	aScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewVOffset, scrollViewWidth, scrollViewHeight)];
-	aScrollView.backgroundColor = [UIColor whiteColor];
+	aScrollView.backgroundColor = [UIColor clearColor];
 	aScrollView.contentSize = CGSizeMake(scrollViewWidth, detailViewHeight * ((documentsCount/2)+(documentsCount%2)));
 	
 	for (int i=1; i<= documentsCount ; i++) {
@@ -234,6 +237,7 @@
 	}
 	scrollView = aScrollView;
 	[self.view addSubview:scrollView];
+    interfaceLoaded = YES;
 	// self.scrollView = aScrollView; // Not referenced anywhere else.
 	[aScrollView release];
 

@@ -29,6 +29,7 @@
     UIScrollView *scrollView;
 	
 	BOOL graphicsMode;
+    BOOL interfaceLoaded;
 }
 
 -(IBAction)actionOpenPlainDocument:(NSString *)documentName;
@@ -49,5 +50,6 @@
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
 @property (nonatomic,retain ) NSDictionary *imgDict;
 @property (nonatomic,assign ) BOOL graphicsMode;
+@property (nonatomic,assign ) BOOL interfaceLoaded;
 
 @end

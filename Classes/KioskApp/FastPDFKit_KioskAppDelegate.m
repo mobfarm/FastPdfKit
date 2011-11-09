@@ -202,10 +202,10 @@
     
     //reload interface
     if (menuVC_Kiosk) {
-        [menuVC_Kiosk buildInterface];
+        if (menuVC_Kiosk.interfaceLoaded) {
+            [menuVC_Kiosk buildInterface];
+        }
     }
-    
-    
     
 }
 
