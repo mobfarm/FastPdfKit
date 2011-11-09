@@ -110,7 +110,7 @@
 	
 	// Paths to the cover and the document.
 	
-	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];	
 	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",page,page]];
 	
@@ -296,7 +296,7 @@
 	NSString *documentsDirectory = nil;
 	NSString *pdfPath = nil; 
 	
-	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
 	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",page]];
 	
@@ -449,7 +449,7 @@
         
         // Filename path.
         
-        paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         documentsDirectory = [paths objectAtIndex:0];
         
         pathContainPdf = [NSString stringWithString:[NSString stringWithFormat:@"/%@/",namePdf]];
@@ -615,7 +615,7 @@
     NSString *suffix = nil;
     NSString *path = nil;
     
-    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     
     path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
     
@@ -659,7 +659,7 @@
     NSString * newPath = nil;
     
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
     NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",page,page]];
@@ -806,7 +806,7 @@
         NSString * newPath = nil;
         
         //set the directory for the Unzip and use ZipArchive library to unzip the file and the multimedia file
-		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 		NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
 		NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",page,page]];

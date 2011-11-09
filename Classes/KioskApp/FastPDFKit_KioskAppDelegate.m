@@ -10,8 +10,11 @@
 #import "MenuViewController_Kiosk.h"
 #import "ZipArchive.h"
 
+
+
 @implementation FastPDFKit_KioskAppDelegate
 @synthesize window,navigationController;
+@synthesize menuVC_Kiosk;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -50,8 +53,10 @@
 	} else {
 			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
 	}
-		
-	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:aMenuViewController];
+    
+    menuVC_Kiosk = aMenuViewController;
+    
+	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:menuVC_Kiosk];
 	[aNavController setNavigationBarHidden:YES];
 	[self setNavigationController:aNavController];
 	
@@ -168,7 +173,7 @@
     
     NSArray *tempArray = [NSArray arrayWithObjects:filename, [NSNumber numberWithInt:[filename intValue]], nil];  
     
-    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     
     path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
     
@@ -196,6 +201,13 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_OK" object:tempArray];
     }
     
+    //reload interface
+    if (menuVC_Kiosk) {
+        [menuVC_Kiosk buildInterface];
+    }
+    
+    
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didWriteData:(long long)bytesWritten totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long)expectedTotalBytes{
@@ -214,7 +226,7 @@
     NSString * newPath = nil;
     
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",namePdf]];
     NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",namePdf,namePdf]];
@@ -299,6 +311,7 @@
 	
 	[navigationController release];
     [window release];
+    [menuVC_Kiosk release];
     [super dealloc];
 }
 

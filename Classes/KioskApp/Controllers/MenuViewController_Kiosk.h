@@ -25,16 +25,20 @@
 	NSMutableDictionary * imgDict;
 	
 	NSMutableArray *documentsList;
+    
+    UIScrollView *scrollView;
 	
 	BOOL graphicsMode;
 }
 
 -(IBAction)actionOpenPlainDocument:(NSString *)documentName;
+-(void)buildInterface;
 //-(void)showViewDownload;
 //-(void)hideViewDownload;
 
 //@property (nonatomic, retain) MFDocumentManager *document;
 @property (nonatomic, retain) NSMutableArray *documentsList;
+@property (nonatomic,retain) UIScrollView *scrollView;
 //@property (nonatomic,retain ) UIProgressView *downloadProgressView;
 //@property (nonatomic,retain ) UIView *downloadProgressContainerView;
 
