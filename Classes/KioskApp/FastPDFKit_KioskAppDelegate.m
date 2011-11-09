@@ -17,11 +17,8 @@
 @synthesize menuVC_Kiosk;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
-    //Uncomment the line below to enable NewsStand remote Notification
-    
-    
+
+    //Comment the line below to disable NewsStand remote Notification
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",@"FastPdfKit_Kiosk-Info"]];
     
     NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
@@ -36,6 +33,10 @@
         [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeNewsstandContentAvailability];
     } else {
         [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
+    }
+    
+    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]){
+        [self application:application didReceiveRemoteNotification:[launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]];
     }
 	
     NSLog(@"FastPdfKit Version: %@",[MFDocumentManager version]);
@@ -77,15 +78,13 @@
 
  
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-     UIRemoteNotificationType type = [application enabledRemoteNotificationTypes];	
-        if (type > 0) {	
-            NSString *deviceTokenStr = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""] stringByReplacingOccurrencesOfString: @">" withString: @""] stringByReplacingOccurrencesOfString: @" " withString: @""];
- 
-            NSLog(@"Device Token: %@", deviceTokenStr);
- 
-        }
+    UIRemoteNotificationType type = [application enabledRemoteNotificationTypes];	
+    if (type > 0) {	
+        NSString *deviceTokenStr = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""] stringByReplacingOccurrencesOfString: @">" withString: @""] stringByReplacingOccurrencesOfString: @" " withString: @""];
+
+        NSLog(@"Device Token: %@", deviceTokenStr);
+    }
 }
- 
 
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
