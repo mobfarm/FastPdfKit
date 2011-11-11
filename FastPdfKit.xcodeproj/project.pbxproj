@@ -1990,7 +1990,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gianluca Orsini (9T4EXXT4HH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gianluca Orsini (9T4EXXT4HH)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2009,7 +2010,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C0B27C15-C18D-480B-BA36-A6F14D925A41";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C0B27C15-C18D-480B-BA36-A6F14D925A41";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -2019,7 +2021,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gianluca Orsini (9T4EXXT4HH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gianluca Orsini (9T4EXXT4HH)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2037,7 +2040,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C0B27C15-C18D-480B-BA36-A6F14D925A41";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C0B27C15-C18D-480B-BA36-A6F14D925A41";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				ZERO_LINK = NO;
@@ -2048,7 +2052,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gianluca Orsini (9T4EXXT4HH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gianluca Orsini (9T4EXXT4HH)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitKiosk-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2064,7 +2069,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C0B27C15-C18D-480B-BA36-A6F14D925A41";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C0B27C15-C18D-480B-BA36-A6F14D925A41";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};

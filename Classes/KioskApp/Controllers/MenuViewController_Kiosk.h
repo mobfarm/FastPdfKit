@@ -25,16 +25,21 @@
 	NSMutableDictionary * imgDict;
 	
 	NSMutableArray *documentsList;
+    
+    UIScrollView *scrollView;
 	
 	BOOL graphicsMode;
+    BOOL interfaceLoaded;
 }
 
 -(IBAction)actionOpenPlainDocument:(NSString *)documentName;
+-(void)buildInterface;
 //-(void)showViewDownload;
 //-(void)hideViewDownload;
 
 //@property (nonatomic, retain) MFDocumentManager *document;
 @property (nonatomic, retain) NSMutableArray *documentsList;
+@property (nonatomic,retain) UIScrollView *scrollView;
 //@property (nonatomic,retain ) UIProgressView *downloadProgressView;
 //@property (nonatomic,retain ) UIView *downloadProgressContainerView;
 
@@ -45,5 +50,6 @@
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
 @property (nonatomic,retain ) NSDictionary *imgDict;
 @property (nonatomic,assign ) BOOL graphicsMode;
+@property (nonatomic,assign ) BOOL interfaceLoaded;
 
 @end

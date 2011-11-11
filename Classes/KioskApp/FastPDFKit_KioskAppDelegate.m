@@ -10,15 +10,15 @@
 #import "MenuViewController_Kiosk.h"
 #import "ZipArchive.h"
 
+
+
 @implementation FastPDFKit_KioskAppDelegate
 @synthesize window,navigationController;
+@synthesize menuVC_Kiosk;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    /*
-    //Uncomment the line below to enable NewsStand remote Notification
-    
-    
+
+    //Comment the line below to disable NewsStand remote Notification
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",@"FastPdfKit_Kiosk-Info"]];
     
     NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
@@ -34,9 +34,12 @@
     } else {
         [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
     }
-    */
+    
+    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]){
+        [self application:application didReceiveRemoteNotification:[launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]];
+    }
 	
-    NSLog(@"versione libreria %@",[MFDocumentManager version]);
+    NSLog(@"FastPdfKit Version: %@",[MFDocumentManager version]);
     
     MenuViewController_Kiosk *aMenuViewController = nil;
 	
@@ -51,8 +54,10 @@
 	} else {
 			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
 	}
-		
-	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:aMenuViewController];
+    
+    menuVC_Kiosk = aMenuViewController;
+    
+	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:menuVC_Kiosk];
 	[aNavController setNavigationBarHidden:YES];
 	[self setNavigationController:aNavController];
 	
@@ -70,31 +75,28 @@
 
 #pragma mark -
 #pragma mark NewsStand callBack
-/* 
+
  
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
- 
-     NSLog(@"Did Register for Remote Notifications");
-     UIRemoteNotificationType type = [application enabledRemoteNotificationTypes];	
-        if (type > 0) {	
-            NSString *deviceTokenStr = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""] stringByReplacingOccurrencesOfString: @">" withString: @""] stringByReplacingOccurrencesOfString: @" " withString: @""];
- 
-            NSLog(@"Device Token: %@", deviceTokenStr);
- 
-        }
+    UIRemoteNotificationType type = [application enabledRemoteNotificationTypes];	
+    if (type > 0) {	
+        NSString *deviceTokenStr = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""] stringByReplacingOccurrencesOfString: @">" withString: @""] stringByReplacingOccurrencesOfString: @" " withString: @""];
+
+        NSLog(@"Device Token: %@", deviceTokenStr);
+    }
 }
- 
 
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-
+    NSLog(@"Did Fail To Register for remote notifications: %@", error);
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"Did Receive Remote Notification");
     
     NSNumber * content = [[userInfo objectForKey:@"aps"] objectForKey:@"content-available"];
     if(content && [content intValue] > 0){
-        NSLog(@"### Content Available: %i", [content intValue]);
+        NSLog(@"Content Available: %i", [content intValue]);
         int newNKItems = [content intValue];
         
         UIApplication *app = [UIApplication sharedApplication];
@@ -103,22 +105,51 @@
             bgTask = UIBackgroundTaskInvalid;
         }];
         
-        //set the action
+        NSString *namePdf = @"";
+        NSString *urlS = @"";
         
-        NSString *namePdf = [[userInfo objectForKey:@"aps"] objectForKey:@"name-pdf"];
-        NSURL *url = [NSURL URLWithString:[[userInfo objectForKey:@"aps"] objectForKey:@"link-pdf"]];
+        /**
+         In the remote notification you need to provide the pdf name and the url.
+         The same of one of the document in the source xml.
+         
+         Something like
+         
+         {
+            "aps": {
+                "badge": 1,
+                "alert": "New Issue available", 
+                "content-available":1,
+                "name-pdf":"License", 
+                "link-pdf":"http://fastpdfkit.com/license.pdf"
+            }
+         }
+         
+        */
         
-        NKLibrary *library = [NKLibrary sharedLibrary];
-        if ([library issueWithName:namePdf]) {               
-            [library removeIssue:[library issueWithName:namePdf]];
+        if ([[userInfo objectForKey:@"aps"] objectForKey:@"name-pdf"]){
+            namePdf = [[userInfo objectForKey:@"aps"] objectForKey:@"name-pdf"];
+            NSLog(@"PDF Name: %@", namePdf);
         }
-        NKIssue *issue = [library addIssueWithName:namePdf date:[NSDate date]];
-        NSURLRequest * request = nil;
-        request = [[NSURLRequest alloc ]initWithURL:url];
-        NKAssetDownload *asset = [issue addAssetWithRequest:request];
-        [asset setUserInfo:[NSDictionary dictionaryWithObject:namePdf forKey:@"filename"]];
-        [asset downloadWithDelegate:self];
-        
+            
+        if([[userInfo objectForKey:@"aps"] objectForKey:@"link-pdf"]){
+            urlS = [[userInfo objectForKey:@"aps"] objectForKey:@"link-pdf"];
+            NSLog(@"PDF URL: %@", urlS);
+        }
+            
+
+        if(![namePdf isEqualToString:@""] && ![urlS isEqualToString:@""]){
+            NSURL *url = [NSURL URLWithString:urlS];
+            NKLibrary *library = [NKLibrary sharedLibrary];
+            if ([library issueWithName:namePdf]) {               
+                [library removeIssue:[library issueWithName:namePdf]];
+            }
+            NKIssue *issue = [library addIssueWithName:namePdf date:[NSDate date]];
+            NSURLRequest * request = nil;
+            request = [[NSURLRequest alloc ]initWithURL:url];
+            NKAssetDownload *asset = [issue addAssetWithRequest:request];
+            [asset setUserInfo:[NSDictionary dictionaryWithObject:namePdf forKey:@"filename"]];
+            [asset downloadWithDelegate:self];
+        }        
     }
 
 }
@@ -132,8 +163,6 @@
 }
 
 - (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *)destinationURL {
-    
-    
     //write pdf
     
     NKAssetDownload *asset = [connection newsstandAssetDownload];
@@ -143,7 +172,7 @@
     
     NSArray *tempArray = [NSArray arrayWithObjects:filename, [NSNumber numberWithInt:[filename intValue]], nil];  
     
-    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     
     path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
     
@@ -171,10 +200,21 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_OK" object:tempArray];
     }
     
+    //reload interface
+    if (menuVC_Kiosk) {
+        if (menuVC_Kiosk.interfaceLoaded) {
+            [menuVC_Kiosk buildInterface];
+        }
+    }
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didWriteData:(long long)bytesWritten totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long)expectedTotalBytes{
+    // You can update the loading bar
 }
 
 - (BOOL)handleFPKFile:(NSString *)namePdf {
-    NSLog(@"Alla fine del download FPK");
+    NSLog(@"At the end of PDF download");
     
     BOOL zipStatus = NO;
     
@@ -185,7 +225,7 @@
     NSString * newPath = nil;
     
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",namePdf]];
     NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",namePdf,namePdf]];
@@ -216,9 +256,6 @@
     
     return zipStatus && pdfStatus;
 }
-
-*/
-
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -273,6 +310,7 @@
 	
 	[navigationController release];
     [window release];
+    [menuVC_Kiosk release];
     [super dealloc];
 }
 
