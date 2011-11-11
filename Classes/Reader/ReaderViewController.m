@@ -1077,7 +1077,7 @@
 		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
 		// and show it.
 		
-        [self presentTextDisplayViewControllerForPage:[[self document]numberOfPages]];
+        [self presentTextDisplayViewControllerForPage:[self page]];
     }
 }
 

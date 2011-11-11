@@ -213,6 +213,7 @@
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39224A281469334C004A3EB1 /* FastPdfKit_Kiosk-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */; };
+		39FD7651146D3B4C00CD4DA3 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA211355F57B0028DD38 /* next.png */; };
 		6F27B5C313D4837300C8C18F /* img_outline_triangledown.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F27B5C113D4837300C8C18F /* img_outline_triangledown.png */; };
 		6F27B5C413D4837300C8C18F /* img_outline_triangleright.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F27B5C213D4837300C8C18F /* img_outline_triangleright.png */; };
 		6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9FBD191356F2CD006884F5 /* AVFoundation.framework */; };
@@ -234,11 +235,9 @@
 		6FB9773D13CB713F007C368C /* SearchView2_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082C13C75D3A0077CE63 /* SearchView2_phone.xib */; };
 		6FB9774013CB713F007C368C /* TextDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC083213C75D3A0077CE63 /* TextDisplayView.xib */; };
 		6FB9774513CC3BF5007C368C /* blackslider.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB8D31313671E690010A558 /* blackslider.png */; };
-		6FB9774913CC3BF5007C368C /* hud_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 711169C713587AE700DE0C39 /* hud_player.png */; };
 		6FB9774A13CC3BF5007C368C /* close_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 711169BD13587A0900DE0C39 /* close_player.png */; };
 		6FB9774B13CC3BF5007C368C /* play_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 711169BB135879ED00DE0C39 /* play_player.png */; };
 		6FB9774C13CC3BF5007C368C /* pause_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C6013B135877A000873F5A /* pause_player.png */; };
-		6FB9774D13CC3BF5007C368C /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 71C601391358770200873F5A /* next.png */; };
 		6FB9774F13CC3BF5007C368C /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA281355F5AE0028DD38 /* reload.png */; };
 		6FB9775013CC3BF5007C368C /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA201355F57B0028DD38 /* close.png */; };
 		6FB9775113CC3BF5007C368C /* prew.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA221355F57B0028DD38 /* prew.png */; };
@@ -607,7 +606,6 @@
 		711169BB135879ED00DE0C39 /* play_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_player.png; sourceTree = "<group>"; };
 		711169BD13587A0900DE0C39 /* close_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_player.png; sourceTree = "<group>"; };
 		711169C713587AE700DE0C39 /* hud_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hud_player.png; sourceTree = "<group>"; };
-		71C601391358770200873F5A /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		71C6013B135877A000873F5A /* pause_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_player.png; sourceTree = "<group>"; };
 		890986A913CECF0F00656A49 /* Snippets.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Sample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -854,7 +852,6 @@
 				711169BD13587A0900DE0C39 /* close_player.png */,
 				711169BB135879ED00DE0C39 /* play_player.png */,
 				71C6013B135877A000873F5A /* pause_player.png */,
-				71C601391358770200873F5A /* next.png */,
 				6FFCFA281355F5AE0028DD38 /* reload.png */,
 				6FFCFA201355F57B0028DD38 /* close.png */,
 				6FFCFA211355F57B0028DD38 /* next.png */,
@@ -1526,11 +1523,9 @@
 				6FB9773D13CB713F007C368C /* SearchView2_phone.xib in Resources */,
 				6FB9774013CB713F007C368C /* TextDisplayView.xib in Resources */,
 				6FB9774513CC3BF5007C368C /* blackslider.png in Resources */,
-				6FB9774913CC3BF5007C368C /* hud_player.png in Resources */,
 				6FB9774A13CC3BF5007C368C /* close_player.png in Resources */,
 				6FB9774B13CC3BF5007C368C /* play_player.png in Resources */,
 				6FB9774C13CC3BF5007C368C /* pause_player.png in Resources */,
-				6FB9774D13CC3BF5007C368C /* next.png in Resources */,
 				6FB9774F13CC3BF5007C368C /* reload.png in Resources */,
 				6FB9775013CC3BF5007C368C /* close.png in Resources */,
 				6FB9775113CC3BF5007C368C /* prew.png in Resources */,
@@ -1588,6 +1583,7 @@
 				014F442D14211E4B004FBEE9 /* img_overflow_pad.png in Resources */,
 				014F442E14211E4B004FBEE9 /* img_overflow_phone.png in Resources */,
 				014F442F14211E4B004FBEE9 /* img_overflow_phone@2x.png in Resources */,
+				39FD7651146D3B4C00CD4DA3 /* next.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2378,6 +2374,7 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -2387,6 +2384,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Sample";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "";
@@ -2429,6 +2427,7 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -2437,6 +2436,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Sample";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "";
@@ -2450,6 +2450,7 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -2459,6 +2460,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Sample";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "";
