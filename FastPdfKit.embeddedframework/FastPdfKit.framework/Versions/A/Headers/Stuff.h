@@ -26,6 +26,19 @@ free((x)),(x)=NULL; \
 #define PRINT_SIZE(c,s) NSLog(@"%@ - (%.3f, %.3f)",(c),(s).width,(s).height)
 
 /**
+ Search mode for MFDocumentManager search methods.
+ FPKSearchModeHard - if you search for term 'à' it will only match 'à'.
+ FPKSearchModeSoft - if you search for term 'à' it will match 'a' and 'à'.
+ FPKSearchModeSmart - if you search for term 'a' it will match both 'a' and 'à', but if you search for 'à' it will only match 'à'.
+ */
+enum FPKSearchMode {
+    FPKSearchModeHard = 1,
+    FPKSearchModeSoft = 2,
+    FPKSearchModeSmart = 0
+};
+typedef unsigned int FPKSearchMode;
+
+/**
  When the lead property of the MFDocumentViewController is set to MFDocumentLeadLeft, the odd numbered page is shown
  on the left side of the view. MFDocumentLeadRight move the odd page on the right, and this should be the default behaviour
  when dealing with books or magazines.
