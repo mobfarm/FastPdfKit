@@ -2091,7 +2091,7 @@
 
 #pragma mark - TVThumbnailScrollViewDelegate methods
 
--(void)thumbnailScrollView:(TVThumbnailView *)scrollView didSelectPage:(NSUInteger)page {
+-(void)thumbnailScrollView:(TVThumbnailScrollView *)scrollView didSelectPage:(NSUInteger)page {
     [self setPage:page];
 }
 
