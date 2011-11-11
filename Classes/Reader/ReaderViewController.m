@@ -1017,20 +1017,8 @@
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point {
 	
-	
-	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
-		[self dismissAlternateViewController];
-	}
-	
-	if(waitingForTextInput) {
-		
-		waitingForTextInput = NO;
-		
-		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
-		// and show it.
-		
-        [self presentTextDisplayViewControllerForPage:page];
-    }
+        //unused
+
 }
 
 -(void)documentViewController:(MFDocumentViewController *)dvc willFollowLinkToPage:(NSUInteger)page {
@@ -1082,7 +1070,15 @@
                 hudHidden = YES;
             }
         }
-	}
+	}else{
+    
+        waitingForTextInput = NO;
+		
+		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
+		// and show it.
+		
+        [self presentTextDisplayViewControllerForPage:[[self document]numberOfPages]];
+    }
 }
 
 #pragma mark -

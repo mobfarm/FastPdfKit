@@ -3800,7 +3800,7 @@ static NSOperationQueue *sharedQueue = nil;
 
 + (void)registerForNetworkReachabilityNotifications {
     
-	[[Reachability reachabilityForInternetConnection] startNotifier];
+	[[Reachability reachabilityForInternetConnection] startNotifer];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:@"kNetworkReachabilityChangedNotification" object:nil];
 }
 
