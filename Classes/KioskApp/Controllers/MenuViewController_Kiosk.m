@@ -24,19 +24,23 @@
 @synthesize progressViewDict,imgDict;
 @synthesize documentsList;
 @synthesize graphicsMode;
+@synthesize scrollView;
+@synthesize interfaceLoaded;
 
 
 -(IBAction)actionOpenPlainDocument:(NSString *)documentName {
 	
 	MFDocumentManager * documentManager = nil;
 	ReaderViewController * documentViewController = nil;
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 	
 	NSArray *paths = nil;
 	NSString *documentsDirectory = nil;
 	NSString *pdfPath = nil;
 	NSURL *documentUrl = nil;
 	
-	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
 	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",documentName,documentName]];
 	documentUrl = [NSURL fileURLWithPath:pdfPath];
@@ -84,7 +88,14 @@
 	
 	[super viewDidLoad];
 	
-	XMLParser *parser = nil;
+	[self buildInterface];
+	
+}
+
+
+-(void)buildInterface{
+
+    XMLParser *parser = nil;
     NSURL * xmlUrl = nil;
 	
 	UIScrollView * aScrollView = nil;
@@ -161,7 +172,26 @@
 	
 	[parser release];
 	
-	documentsCount = [documentsList count]; 
+	documentsCount = [documentsList count];
+    
+    if (scrollView) {
+        [scrollView removeFromSuperview];
+    }else{
+        
+        // Border.
+        
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            yBorder = scrollViewVOffset-3 ;
+        }else {
+            yBorder = scrollViewVOffset-1 ;
+        }
+        
+        anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, scrollViewWidth, 40)]; 
+        [anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"border",@"png")]];
+        [self.view addSubview:anImageView];
+        [anImageView release];
+        
+    }
 	
 	aScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewVOffset, scrollViewWidth, scrollViewHeight)];
 	aScrollView.backgroundColor = [UIColor whiteColor];
@@ -205,25 +235,16 @@
 		[viewPdf release];
 		
 	}
-	
-	[self.view addSubview:aScrollView];
+	scrollView = aScrollView;
+	[self.view addSubview:scrollView];
+    interfaceLoaded = YES;
 	// self.scrollView = aScrollView; // Not referenced anywhere else.
 	[aScrollView release];
-	
-	// Border.
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		yBorder = scrollViewVOffset-3 ;
-	}else {
-		yBorder = scrollViewVOffset-1 ;
-	}
-	
-	anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, scrollViewWidth, 40)]; 
-	[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"border",@"png")]];
-	[self.view addSubview:anImageView];
-	[anImageView release];
-	
+
 }
+
+
+
 
 
 // Override to allow orientations other than the default portrait orientation.
@@ -269,6 +290,8 @@
 	[imgDict release];
 	[downloadProgressContainerView release];
     [downloadProgressView release];
+    
+    [scrollView release];
     
 	[homeListPdfs release];
 	

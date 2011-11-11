@@ -9,6 +9,7 @@
 #import "MFHomeListPdf.h"
 #import "MenuViewController_Kiosk.h"
 #import "ZipArchive.h"
+#import "FastPDFKit_KioskAppDelegate.h"
 
 #define TITLE_DOWNLOAD @"Download"
 #define TITLE_OPEN @"Open"
@@ -109,7 +110,7 @@
 	
 	// Paths to the cover and the document.
 	
-	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];	
 	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",page,page]];
 	
@@ -295,7 +296,7 @@
 	NSString *documentsDirectory = nil;
 	NSString *pdfPath = nil; 
 	
-	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
 	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",page]];
 	
@@ -343,10 +344,26 @@
 
 -(void)actionStopPdf:(id)sender {
 	
-    UIButton * aButton = nil; 
+    UIButton * aButton = nil;
+    // C'è Newsstand
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    if ([app respondsToSelector:@selector(setNewsstandIconImage:)] && YES){
+        
+        NKLibrary *library = [NKLibrary sharedLibrary];
+        if ([library issueWithName:page]) {               
+            [library removeIssue:[library issueWithName:page]];
+        }
+        pdfInDownload=NO;
+    }else{
+    
+        [self.httpRequest cancel];
+    }
+    
+    
     
     downloadPdfStopped = YES;
-	[self.httpRequest cancel];
+	
     
 	aButton = [menuViewController.openButtons objectForKey:page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
@@ -373,76 +390,311 @@
 }
 
 
--(void)downloadPDF:(id)sender withUrl:(NSString *)sourceURL andName:(NSString *)destinationFilePath{
-	
-	NSURL *url = nil;
-	ASIHTTPRequest * request = nil;
-	
-	NSArray * paths = nil;
-	NSString * documentsDirectory = nil;
-	NSString * pdfPath = nil;
-	
-	UIProgressView * progressView = nil;
-    NSString *pathContainPdf = nil;
-    NSFileManager *filemanager = nil;
-    NSError *error = nil;
-    NSString *pdfPathTempForResume = nil;
+-(void)downloadPDF:(id)sender withUrl:(NSString *)sourceURL andName:(NSString *)namePdf{
     
-    //check if the download url is a link to a pdf file or pfk file.
-    isPdfLink = [self checkIfPDfLink:sourceURL];
-	
-	// Filename path.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelDownload:) name:@"cancel_Download_taped" object:nil];        
     
-    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	documentsDirectory = [paths objectAtIndex:0];
-
-    pathContainPdf = [NSString stringWithString:[NSString stringWithFormat:@"/%@/",destinationFilePath]];
-	pathContainPdf = [documentsDirectory stringByAppendingString:pathContainPdf];
-	
-	filemanager = [[NSFileManager alloc]init];
-	[filemanager createDirectoryAtPath:pathContainPdf withIntermediateDirectories:YES attributes:nil error:&error];
-    [filemanager release];
-
-    if (isPdfLink) {
-        pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",destinationFilePath,destinationFilePath]];
+    NSURL *url = [NSURL URLWithString:sourceURL];
+    
+    // C'è Newsstand
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",@"FastPdfKit_Kiosk-Info"]];
+    
+    NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    
+    BOOL status1 = [[plistDict objectForKey:@"UINewsstandApp"]boolValue];
+    
+    BOOL status2 = [app respondsToSelector:@selector(setNewsstandIconImage:)];
+    
+    
+    if (status2 && status1){
+        
+        NSLog(@"download con NewsStand");
+        
+        NKLibrary *library = [NKLibrary sharedLibrary];
+        if ([library issueWithName:namePdf]) {               
+            [library removeIssue:[library issueWithName:namePdf]];
+        }
+        NKIssue *issue = [library addIssueWithName:namePdf date:[NSDate date]];
+        NSURLRequest * request = nil;
+        request = [[NSURLRequest alloc ]initWithURL:url];
+        NKAssetDownload *asset = [issue addAssetWithRequest:request];
+        [asset setUserInfo:[NSDictionary dictionaryWithObject:namePdf forKey:@"filename"]];
+        [asset downloadWithDelegate:self];
+        
+        [self updateBtnDownload];
+        
+        
     }else{
-        pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.fpk",destinationFilePath,destinationFilePath]];
+        
+        
+        NSLog(@"download senza NewsStand");
+    
+        NSURL *url = nil;
+        ASIHTTPRequest * request = nil;
+        
+        NSArray * paths = nil;
+        NSString * documentsDirectory = nil;
+        NSString * pdfPath = nil;
+        
+        UIProgressView * progressView = nil;
+        NSString *pathContainPdf = nil;
+        NSFileManager *filemanager = nil;
+        NSError *error = nil;
+        NSString *pdfPathTempForResume = nil;
+        
+        //check if the download url is a link to a pdf file or pfk file.
+        isPdfLink = [self checkIfPDfLink:sourceURL];
+        
+        // Filename path.
+        
+        paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+        documentsDirectory = [paths objectAtIndex:0];
+        
+        pathContainPdf = [NSString stringWithString:[NSString stringWithFormat:@"/%@/",namePdf]];
+        pathContainPdf = [documentsDirectory stringByAppendingString:pathContainPdf];
+        
+        filemanager = [[NSFileManager alloc]init];
+        [filemanager createDirectoryAtPath:pathContainPdf withIntermediateDirectories:YES attributes:nil error:&error];
+        [filemanager release];
+        
+        if (isPdfLink) {
+            pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",namePdf,namePdf]];
+        }else{
+            pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.fpk",namePdf,namePdf]];
+        }
+        
+        //This Directory Contains the temp file in download . it's used when resume is supported.
+        pdfPathTempForResume = [documentsDirectory stringByAppendingPathComponent:@"temp"];
+        
+        if (isPdfLink) {
+            pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",namePdf]];
+        }else {
+            pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.fpk",namePdf]];
+            
+        }
+        
+        url = [NSURL URLWithString:sourceURL];
+        //url = [NSURL URLWithString:@"http://hbsflip.chalco.net/aspx/doc.pdf?path=8Ka9CXdfH8fai6qI2wRdz-8JoPDJfvqz0"];
+        request = [ASIHTTPRequest requestWithURL:url];
+        [request setDelegate:self];
+        
+        [request setUseKeychainPersistence:YES];
+        [request setDownloadDestinationPath:pdfPath];
+        [request setDidFinishSelector:@selector(requestFinished:)];
+        [request setDidFailSelector:@selector(requestFailed:)];
+        
+        // Get the progressview from the mainviewcontroller and set it as the progress delegate.
+        
+        progressView = [menuViewController.progressViewDict objectForKey:page];
+        [request setDownloadProgressDelegate:progressView];
+        
+        [request setShouldPresentAuthenticationDialog:YES];
+        [request setDownloadDestinationPath:pdfPath];
+        [request setAllowResumeForFileDownloads:YES]; //set YEs if resume is supported 
+        [request setTemporaryFileDownloadPath:pdfPathTempForResume]; // if resume is supported set the temporary Path
+        
+        self.httpRequest = request;
+        
+        [request startAsynchronous];
     }
-
-    //This Directory Contains the temp file in download . it's used when resume is supported.
-    pdfPathTempForResume = [documentsDirectory stringByAppendingPathComponent:@"temp"];
 	
-	if (isPdfLink) {
-		pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",destinationFilePath]];
-	}else {
-		pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.fpk",destinationFilePath]];
-		
-	}
-	
-	url = [NSURL URLWithString:sourceURL];
-    //url = [NSURL URLWithString:@"http://hbsflip.chalco.net/aspx/doc.pdf?path=8Ka9CXdfH8fai6qI2wRdz-8JoPDJfvqz0"];
-	request = [ASIHTTPRequest requestWithURL:url];
-	[request setDelegate:self];
-	
-	[request setUseKeychainPersistence:YES];
-	[request setDownloadDestinationPath:pdfPath];
-	[request setDidFinishSelector:@selector(requestFinished:)];
-	[request setDidFailSelector:@selector(requestFailed:)];
-	
-	// Get the progressview from the mainviewcontroller and set it as the progress delegate.
-	
-	progressView = [menuViewController.progressViewDict objectForKey:page];
-	[request setDownloadProgressDelegate:progressView];
-	
-	[request setShouldPresentAuthenticationDialog:YES];
-	[request setDownloadDestinationPath:pdfPath];
-    [request setAllowResumeForFileDownloads:YES]; //set YEs if resume is supported 
-	[request setTemporaryFileDownloadPath:pdfPathTempForResume]; // if resume is supported set the temporary Path
-	
-	self.httpRequest = request;
-	
-	[request startAsynchronous];
 }
+
+
+#pragma mark -
+#pragma mark Newsstand download progress
+
+
+-(void)updateBtnDownload{
+
+    UIButton *aButton = nil;
+    UIProgressView *progressView = nil;
+    
+    pdfInDownload = YES;
+    
+    progressView = [menuViewController.progressViewDict objectForKey:page];
+    progressView.hidden = NO;
+    
+    aButton =[menuViewController.openButtons objectForKey:page];
+    [aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
+    [aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+    [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"pause",@"png")] forState:UIControlStateNormal];
+    [aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // Cover button.
+    
+    aButton = [menuViewController.imgDict objectForKey:page];
+    [aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+    [aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //[aButton release];
+}
+
+
+
+
+
+- (void)connection:(NSURLConnection *)connection didWriteData:(long long)bytesWritten totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long)expectedTotalBytes{
+    
+    self.progressDownload.hidden = NO;
+    
+    float progress = (float)totalBytesWritten/(float)expectedTotalBytes;
+    
+    [self.progressDownload setProgress:progress animated:YES];
+    
+    /*NSArray *tempArray = [NSArray arrayWithObjects:page, [NSNumber numberWithInt:[page intValue]], [NSNumber numberWithFloat:(float)totalBytesWritten/(float)expectedTotalBytes], nil];   
+     */
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_Progress" object:tempArray];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_Error" object:nil];
+    
+    UIButton * aButton = nil;
+    UIProgressView * aProgressView = nil;
+    
+	pdfInDownload = NO;
+	
+	aProgressView = [menuViewController.progressViewDict objectForKey:page];
+	aProgressView.hidden = !downloadPdfStopped;
+    
+    aButton = [menuViewController.openButtons objectForKey:page];
+    [aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
+    [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
+    [aButton removeTarget:self action:@selector(actionStopPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	
+    aButton = [menuViewController.imgDict objectForKey:page];
+	[aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+    
+	if (downloadPdfStopped) {
+		downloadPdfStopped=NO;
+	}
+    
+    
+}
+
+- (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *)destinationURL {
+    
+    
+    self.progressDownload.hidden =YES;
+    
+	UIButton * aButton = nil; /* Will reuse this to reference different buttons */
+	
+	pdfInDownload = NO;
+	
+	// Update the UI elements from download status to pen status. We get the buttons from the main view controller
+	// and update them to the new status.
+	
+	// Download/open button.
+	
+	aButton =[menuViewController.openButtons objectForKey:page];
+	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
+	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"view",@"png")] forState:UIControlStateNormal];
+	[aButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
+	// Cover button.
+	
+	aButton = [menuViewController.imgDict objectForKey:page];
+	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self performSelector:@selector(visualizzaButtonRemove) withObject:nil afterDelay:0.1];
+    
+    
+    //write pdf
+    
+    
+    NSArray *tempArray = [NSArray arrayWithObjects:page, [NSNumber numberWithInt:[page intValue]], nil];  
+    NKAssetDownload *asset = [connection newsstandAssetDownload];
+    NSString *filename = [[asset userInfo] objectForKey:@"filename"];
+    NSString *suffix = nil;
+    NSString *path = nil;
+    
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    
+    path = [[paths objectAtIndex:0] stringByAppendingPathComponent:filename];
+    
+    [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    
+    [path stringByAppendingPathComponent:filename];
+    
+    
+    if([[destinationURL absoluteString] hasSuffix:@"fpk"]) {
+        suffix = @"fpk";
+        
+        path = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",filename,suffix]];
+        [[NSFileManager defaultManager] copyItemAtPath:[destinationURL path] toPath:path error:nil];
+        [[NSFileManager defaultManager] removeItemAtPath:[destinationURL path] error:nil];
+        if ([self handleFPKFile]) [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_OK" object:tempArray];
+        else [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_Error" object:nil];
+        
+    } else {    
+        suffix = @"pdf";
+        path = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",filename,suffix]];
+        NSLog(@"path %@",path);
+        NSError *error = nil;    
+        [[NSFileManager defaultManager] copyItemAtPath:[destinationURL path] toPath:path error:&error];
+        [[NSFileManager defaultManager] removeItemAtPath:[destinationURL path] error:&error];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_OK" object:tempArray];
+    }
+    
+}
+
+
+
+- (BOOL)handleFPKFile {
+    NSLog(@"Alla fine del download FPK");
+    
+    BOOL zipStatus = NO;
+    
+    ZipArchive * zipFile = nil;
+    NSArray * dirContents = nil;
+    
+    NSString * oldPath = nil;
+    NSString * newPath = nil;
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
+    NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",page,page]];
+    
+    [[NSFileManager defaultManager] createDirectoryAtPath:unzippedDestination withIntermediateDirectories:YES attributes:nil error:nil];        
+    
+    zipFile = [[ZipArchive alloc] init];
+    [zipFile UnzipOpenFile:saveLocation];
+    zipStatus = [zipFile UnzipFileTo:unzippedDestination overWrite:YES];    
+    [zipFile UnzipCloseFile];
+    [zipFile release];
+    
+    dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
+    
+    
+    BOOL pdfStatus = NO;
+    for (NSString *tString in dirContents) {
+        
+        if ([tString hasSuffix:@".pdf"]) {
+            
+            oldPath =[unzippedDestination stringByAppendingString:tString];
+            newPath = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.pdf",page,page]];
+            
+            [[NSFileManager defaultManager] moveItemAtPath:oldPath toPath:newPath error:nil];				
+            pdfStatus = YES;
+        }
+    }
+    
+    //[[NSFileManager defaultManager] removeItemAtPath:saveLocation error:nil];
+    
+    return zipStatus && pdfStatus;
+}
+
+
+
 
 -(void)downloadImage:(id)sender withUrl:(NSString *)_url andName:(NSString *)nomefilepdf{
 	
@@ -554,7 +806,7 @@
         NSString * newPath = nil;
         
         //set the directory for the Unzip and use ZipArchive library to unzip the file and the multimedia file
-		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 		NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
 		NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",page,page]];
