@@ -299,6 +299,19 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1 beta (November 11th, 2011)
+* Enhanced search and extraction with Unicode composition and decomposition.
+* Added search match modes:
+	* Return an array of `MFTextItem` representing the matches of teh search term on the page passed as arguments. It is a good choice running this method in a secondary thread.
+ 	* `FPKSearchMode` has the following values:
+ 	* `FPKSearchModeHard` - if you search for 'bèzier' it will match 'bèzier' only but not
+ 'bezier'. If you search for 'bezier' it will match 'bezier' only.
+ 	* `FPKSearchModeSoft` - if you search for term 'bèzier' it will match both 'bezier' and 'bèzier'. Same if you search for 'bezier'.
+ 	* `FPKSearchModeSmart` - if you search for term 'bezier', it will also match 'bèzier', but if you search for 'bèzier' it will match 'bèzier' only.
+	* Ignore case is self explanatory.
+	* Default parameters are `FPKSearchModeSmart` and `ignoreCase` to `YES`.
+
+
 ### Update 3.0 (November 4th, 2011)* Internal changes of the view hierarchy to provide more flexibility and overlay transitions.* Revamped `ReaderViewController` user interface.* Better thumbnail scroll view and generation.* Added support to video overlay control parameters in the uri.* Search now works for terms of unitary length.* Added a method to retrieve annotations from the document and provide them as overlays.* Slightly changes to `MFDocumentViewControllerDelegate` callbacks.
 * New activation method with key *FPKLicenseKey* from *Info.plist*: no need to pull to get the activated version.
 
