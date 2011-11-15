@@ -299,6 +299,13 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1 beta2 (November 15th, 2011)
+* Font cache re-enabled. This time seems to work as expected.
+* Default zoom not being set fixed (again).
+* Search and extraction will not crash when certain characters are found. Instead
+    a .notdef (usually it looks like an empty rect) value with be appended to the
+    text.
+
 ### Update 3.1 beta (November 11th, 2011)
 * Enhanced search and extraction with Unicode composition and decomposition.
 * Added search match modes:
@@ -312,7 +319,14 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 	* Default parameters are `FPKSearchModeSmart` and `ignoreCase` to `YES`.
 
 
-### Update 3.0 (November 4th, 2011)* Internal changes of the view hierarchy to provide more flexibility and overlay transitions.* Revamped `ReaderViewController` user interface.* Better thumbnail scroll view and generation.* Added support to video overlay control parameters in the uri.* Search now works for terms of unitary length.* Added a method to retrieve annotations from the document and provide them as overlays.* Slightly changes to `MFDocumentViewControllerDelegate` callbacks.
+### Update 3.0 (November 4th, 2011)
+* Internal changes of the view hierarchy to provide more flexibility and overlay transitions.
+* Revamped `ReaderViewController` user interface.
+* Better thumbnail scroll view and generation.
+* Added support to video overlay control parameters in the uri.
+* Search now works for terms of unitary length.
+* Added a method to retrieve annotations from the document and provide them as overlays.
+* Slightly changes to `MFDocumentViewControllerDelegate` callbacks.
 * New activation method with key *FPKLicenseKey* from *Info.plist*: no need to pull to get the activated version.
 
 ### Update 2.1.3 (September 27th, 2011)
