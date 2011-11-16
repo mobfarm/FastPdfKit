@@ -299,6 +299,14 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1 beta3 (November 16th, 2011)
+* Lib will now attemp to compose multibyte characted to a single codepoint for
+    search and extraction.
+* Added support to 14 (-2) Adobe Standard Fonts. If you get page empty, blank
+    pages at text extraction check the simulator log and if the font marked as
+    uncompleted is named like one of the files in the FPKCore/standard14fonts
+    folder add that font to your application bundle.
+
 ### Update 3.1 beta2 (November 15th, 2011)
 * Font cache re-enabled. This time seems to work as expected.
 * Default zoom not being set fixed (again).

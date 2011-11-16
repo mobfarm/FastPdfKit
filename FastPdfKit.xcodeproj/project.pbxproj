@@ -21,10 +21,6 @@
 		010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DA13CB002300FD6F08 /* MenuView_pad.xib */; };
 		010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DB13CB002300FD6F08 /* MenuView_phone.xib */; };
 		010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14DD13CB002300FD6F08 /* MenuViewController.m */; };
-		011E42B11472D0BA0099754E /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011E42B01472D0BA0099754E /* libFastPdfKit.a */; };
-		011E42B21472D0BA0099754E /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011E42B01472D0BA0099754E /* libFastPdfKit.a */; };
-		011E42B31472D0BA0099754E /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011E42B01472D0BA0099754E /* libFastPdfKit.a */; };
-		011E42B41472D0BA0099754E /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011E42B01472D0BA0099754E /* libFastPdfKit.a */; };
 		011E42B61472D0E20099754E /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 011E42B51472D0E20099754E /* MFDocumentManager.h */; };
 		011E42B71472D0E20099754E /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 011E42B51472D0E20099754E /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
@@ -206,6 +202,7 @@
 		01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
+		01D73BB4147436ED00C142FE /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D73BB3147436ED00C142FE /* libFastPdfKit.a */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -405,7 +402,6 @@
 		010D14DB13CB002300FD6F08 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
 		010D14DC13CB002300FD6F08 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		010D14DD13CB002300FD6F08 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		011E42B01472D0BA0099754E /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		011E42B51472D0E20099754E /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		011E42B81472D1510099754E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
@@ -574,6 +570,19 @@
 		01CF74A713254E0E00E42146 /* minisearch_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_full@2x.png"; sourceTree = "<group>"; };
 		01CF74A813254E0E00E42146 /* minisearch_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_next@2x.png"; sourceTree = "<group>"; };
 		01CF74A913254E0E00E42146 /* minisearch_prev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minisearch_prev@2x.png"; sourceTree = "<group>"; };
+		01D73BB3147436ED00C142FE /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
+		01D73BB61474385300C142FE /* Courier-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-Bold.fpkfm"; sourceTree = "<group>"; };
+		01D73BB71474385300C142FE /* Courier-BoldOblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-BoldOblique.fpkfm"; sourceTree = "<group>"; };
+		01D73BB81474385300C142FE /* Courier-Oblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-Oblique.fpkfm"; sourceTree = "<group>"; };
+		01D73BB91474385300C142FE /* Courier.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Courier.fpkfm; sourceTree = "<group>"; };
+		01D73BBA1474385300C142FE /* Helvetica-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Helvetica-Bold.fpkfm"; sourceTree = "<group>"; };
+		01D73BBB1474385300C142FE /* Helvetica-BoldOblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Helvetica-BoldOblique.fpkfm"; sourceTree = "<group>"; };
+		01D73BBC1474385300C142FE /* Helvetica-Oblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Helvetica-Oblique.fpkfm"; sourceTree = "<group>"; };
+		01D73BBD1474385300C142FE /* Helvetica.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Helvetica.fpkfm; sourceTree = "<group>"; };
+		01D73BBE1474385300C142FE /* Times-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Bold.fpkfm"; sourceTree = "<group>"; };
+		01D73BBF1474385300C142FE /* Times-BoldItalic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-BoldItalic.fpkfm"; sourceTree = "<group>"; };
+		01D73BC01474385300C142FE /* Times-Italic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Italic.fpkfm"; sourceTree = "<group>"; };
+		01D73BC11474385300C142FE /* Times-Roman.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Roman.fpkfm"; sourceTree = "<group>"; };
 		01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -640,7 +649,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				011E42B31472D0BA0099754E /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,7 +680,6 @@
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
-				011E42B21472D0BA0099754E /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,7 +696,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				011E42B11472D0BA0099754E /* libFastPdfKit.a in Frameworks */,
+				01D73BB4147436ED00C142FE /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +721,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				011E42B41472D0BA0099754E /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1039,6 +1045,25 @@
 			path = TextSearch;
 			sourceTree = "<group>";
 		};
+		01D73BB51474385300C142FE /* standard14fonts */ = {
+			isa = PBXGroup;
+			children = (
+				01D73BB61474385300C142FE /* Courier-Bold.fpkfm */,
+				01D73BB71474385300C142FE /* Courier-BoldOblique.fpkfm */,
+				01D73BB81474385300C142FE /* Courier-Oblique.fpkfm */,
+				01D73BB91474385300C142FE /* Courier.fpkfm */,
+				01D73BBA1474385300C142FE /* Helvetica-Bold.fpkfm */,
+				01D73BBB1474385300C142FE /* Helvetica-BoldOblique.fpkfm */,
+				01D73BBC1474385300C142FE /* Helvetica-Oblique.fpkfm */,
+				01D73BBD1474385300C142FE /* Helvetica.fpkfm */,
+				01D73BBE1474385300C142FE /* Times-Bold.fpkfm */,
+				01D73BBF1474385300C142FE /* Times-BoldItalic.fpkfm */,
+				01D73BC01474385300C142FE /* Times-Italic.fpkfm */,
+				01D73BC11474385300C142FE /* Times-Roman.fpkfm */,
+			);
+			path = standard14fonts;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1146,7 +1171,8 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				011E42B01472D0BA0099754E /* libFastPdfKit.a */,
+				01D73BB51474385300C142FE /* standard14fonts */,
+				01D73BB3147436ED00C142FE /* libFastPdfKit.a */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
 			path = FPKCore;
