@@ -299,6 +299,11 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1 beta4 (November 17th, 2011)
+* Unicode sequences will now be handled as such and the lib will no try (and fail)
+    to compose them to a single unicode codepoint (it is related to search and
+    extraction of text).
+
 ### Update 3.1 beta3 (November 16th, 2011)
 * Lib will now attemp to compose multibyte characted to a single codepoint for
     search and extraction.
