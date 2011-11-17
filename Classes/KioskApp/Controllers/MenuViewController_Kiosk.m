@@ -87,16 +87,48 @@
 - (void)viewDidLoad {
 	
 	[super viewDidLoad];
+    
+    XMLParser *parser = nil;
+    NSURL * xmlUrl = nil;
+    
+    parser = [[XMLParser alloc] init];
+	xmlUrl = [NSURL URLWithString:FPK_KIOSK_XML_URL];
+    [parser parseXMLFileAtURL:xmlUrl];
+    
+    [self.documentsList retain];
+    self.documentsList = nil;
+    
+    NSMutableArray *anArray = [[NSMutableArray alloc]init];
 	
-	[self buildInterface];
+    // Try to parse the remote URL. If it fails, fallback to the local xml.
+    
+    if([parser isDone]) {
+        
+        self.documentsList = [parser parsedItems];
+
+        
+    } else {
+        
+        xmlUrl = [MF_BUNDLED_BUNDLE(@"FPKKioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
+        [parser parseXMLFileAtURL:xmlUrl];
+        
+        if([parser isDone]) {
+            self.documentsList = [parser parsedItems];
+        }
+    }
+	
+    [parser release];
+    
+    
+	
+	[self performSelector:@selector(buildInterface) withObject:nil afterDelay:0.5];
 	
 }
 
 
 -(void)buildInterface{
 
-    XMLParser *parser = nil;
-    NSURL * xmlUrl = nil;
+    
 	
 	UIScrollView * aScrollView = nil;
 	CGFloat yBorder = 0 ; 
@@ -149,30 +181,9 @@
 		scrollViewVOffset = 60.0;
 	}
 	
-	
-	parser = [[XMLParser alloc] init];
-	xmlUrl = [NSURL URLWithString:FPK_KIOSK_XML_URL];
-    [parser parseXMLFileAtURL:xmlUrl];
-	
-    // Try to parse the remote URL. If it fails, fallback to the local xml.
-    
-    if([parser isDone]) {
-        
-        self.documentsList = [parser parsedItems];    
-        
-    } else {
-        
-        xmlUrl = [MF_BUNDLED_BUNDLE(@"FPKKioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
-        [parser parseXMLFileAtURL:xmlUrl];
-        
-        if([parser isDone]) {
-            self.documentsList = [parser parsedItems];
-        }
-    }
-	
-	[parser release];
-	
 	documentsCount = [documentsList count];
+    
+    NSLog(@"Documents Count %i",documentsCount);
     
     if (scrollView) {
         [scrollView removeFromSuperview];
@@ -276,6 +287,7 @@
 	[progressViewDict removeAllObjects];
 	[imgDict removeAllObjects];
 	[homeListPdfs removeAllObjects];
+   // [documentsList removeAllObjects];
 	
 }
 
