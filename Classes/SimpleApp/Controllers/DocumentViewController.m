@@ -189,6 +189,11 @@
 	return textDisplayViewController;
 }
 
+-(void)dismissTextDisplayViewController:(TextDisplayViewController *)controller {
+ 
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 #pragma mark -
 #pragma mark SearchViewController, _Delegate and _Actions
 

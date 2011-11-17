@@ -2,6 +2,36 @@
 <response>
 	<list>
         <pdf>
+		    <title>Multimedia</title>
+			<link>http://reader.fastpdfkit.com/Multimedia.pdf</link>
+			<cover>http://reader.fastpdfkit.com/Multimedia.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Readme</title>
+			<link>http://reader.fastpdfkit.com/readme.pdf</link>
+			<cover>http://reader.fastpdfkit.com/readme.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Sources</title>
+			<link>http://reader.fastpdfkit.com/sources.pdf</link>
+			<cover>http://reader.fastpdfkit.com/sources.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>License</title>
+			<link>http://fastpdfkit.com/license.pdf</link>
+			<cover>http://reader.fastpdfkit.com/license.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Documentation</title>
+			<link>http://doc.fastpdfkit.com/manual.pdf</link>
+			<cover>http://reader.fastpdfkit.com/doc.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Documentation</title>
+			<link>http://reader.fastpdfkit.com/kb.pdf</link>
+			<cover>http://reader.fastpdfkit.com/kb.jpg</cover>
+		</pdf>
+        <pdf>
 		    <title>Aperture</title>
 			<link>http://go.mobfarm.eu/pdf/Aperture.pdf</link>
 			<cover>http://go.mobfarm.eu/pdf/Aperture.png</cover>

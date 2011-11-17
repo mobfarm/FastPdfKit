@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MFDocumentManager.h"
+#import "TVThumbnailView.h"
 
-@class TVThumbnailView;
 @class TVThumbnailScrollView;
 
 @protocol TVThumbnailScrollViewDelegate
@@ -18,7 +18,7 @@
 
 @end
 
-@interface TVThumbnailScrollView : UIView <UIScrollViewDelegate> {
+@interface TVThumbnailScrollView : UIView <UIScrollViewDelegate, TVThumbnailViewDelegate> {
     
     NSUInteger thumbnailCount;
     
