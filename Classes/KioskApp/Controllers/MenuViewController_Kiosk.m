@@ -287,7 +287,7 @@
 	[progressViewDict removeAllObjects];
 	[imgDict removeAllObjects];
 	[homeListPdfs removeAllObjects];
-   // [documentsList removeAllObjects];
+    scrollView = nil; 
 	
 }
 
