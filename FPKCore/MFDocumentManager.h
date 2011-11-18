@@ -35,6 +35,8 @@
 	int *rotations;
     
     NSMutableDictionary * fontCache;
+    
+    BOOL fontCacheEnabled;
 }
 
 // These method are used internally.
@@ -155,5 +157,12 @@
  pdf are contained here.
  */
 @property (nonatomic,retain) NSString * resourceFolder;
+
+/**
+ Enable/disable the font cache. Tipically, you want the cache turned on. If you
+ get a lot of [] (notdef) characters in the text extracted or the search turn
+ up nothing, try to disabled set this to NO. Default value is YES.
+ */
+@property (nonatomic,assign) BOOL fontCacheEnabled;
 
 @end

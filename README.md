@@ -299,6 +299,11 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1 beta5 (November 18th, 2011)
+* Changed font cache management. If you still get problem with [] (notedef) caracter
+    in the text extracted, the cache might be the issue. Set MFDocumentManager's
+    fontCacheEnabled property to NO.
+
 ### Update 3.1 beta4 (November 17th, 2011)
 * Unicode sequences will now be handled as such and the lib will no try (and fail)
     to compose them to a single unicode codepoint (it is related to search and
