@@ -299,6 +299,11 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1 beta6 (November 21th, 2011)
+* Fixed a few errors in Win ANSI and Mac OS Roman encoding. For example, the Unicode
+    character 'LEFT SINGLE QUOTATION MARK' U+2018 will no more be replaced by
+    other characters.
+
 ### Update 3.1 beta5 (November 18th, 2011)
 * Changed font cache management. If you still get problem with [] (notedef) caracter
     in the text extracted, the cache might be the issue. Set MFDocumentManager's
