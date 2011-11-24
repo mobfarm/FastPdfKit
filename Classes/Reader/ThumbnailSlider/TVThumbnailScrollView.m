@@ -113,7 +113,6 @@ int nextOffset(int offset) {
         
         [fileManager createFileAtPath:path contents:data attributes:nil];
         
-        
         CGImageRelease(image);         // You are responsible for release the CGImageRef.
         
         [self performSelectorOnMainThread:@selector(handleThumbDone:) withObject:img waitUntilDone:NO];

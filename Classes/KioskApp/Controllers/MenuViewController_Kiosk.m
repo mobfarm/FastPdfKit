@@ -95,10 +95,8 @@
 	xmlUrl = [NSURL URLWithString:FPK_KIOSK_XML_URL];
     [parser parseXMLFileAtURL:xmlUrl];
     
-    [self.documentsList retain];
+    //[self.documentsList retain]; // EH?
     self.documentsList = nil;
-    
-    NSMutableArray *anArray = [[NSMutableArray alloc]init];
 	
     // Try to parse the remote URL. If it fails, fallback to the local xml.
     
@@ -106,7 +104,6 @@
         
         self.documentsList = [parser parsedItems];
 
-        
     } else {
         
         xmlUrl = [MF_BUNDLED_BUNDLE(@"FPKKioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
@@ -118,11 +115,9 @@
     }
 	
     [parser release];
-    
-    
 	
 	[self performSelector:@selector(buildInterface) withObject:nil afterDelay:0.5];
-	
+
 }
 
 
