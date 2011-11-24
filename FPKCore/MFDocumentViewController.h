@@ -11,10 +11,10 @@
 #import "MFDocumentOverlayDataSource.h"
 #import "FPKOverlayViewDataSource.h"
 
+
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
 @class MFDocumentViewController;
-@class FPKDetailView;
 
 @interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
 	
@@ -33,10 +33,6 @@
 	MFDocumentManager * document;
 	
 	// Detail view
-	UIScrollView * pagedScrollView;
-	// MFDetailViewController * detailViewController;
-
-    FPKDetailView * detailView;
 	
 	// Previews
     MFDeferredContentLayerWrapper * current;        // Currently 'focused' layer wrapper.

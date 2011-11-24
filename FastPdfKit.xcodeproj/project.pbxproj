@@ -21,9 +21,6 @@
 		010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DA13CB002300FD6F08 /* MenuView_pad.xib */; };
 		010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DB13CB002300FD6F08 /* MenuView_phone.xib */; };
 		010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14DD13CB002300FD6F08 /* MenuViewController.m */; };
-		011AA1A21476B69900CB3227 /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 011AA1A11476B69900CB3227 /* MFDocumentManager.h */; };
-		011AA1A31476B69900CB3227 /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 011AA1A11476B69900CB3227 /* MFDocumentManager.h */; };
-		011AA1A41476B69900CB3227 /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 011AA1A11476B69900CB3227 /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
 		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
@@ -48,14 +45,20 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
-		01296EC414557C9500F5F12F /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01296EC314557C9500F5F12F /* MFDocumentViewController.h */; };
-		01296EC514557C9500F5F12F /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01296EC314557C9500F5F12F /* MFDocumentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0134EE0F1456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; };
 		0134EE101456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0134EE131456D9B2007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
 		0134EE141456D9B2007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
 		0134EE1C1456E10F007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
 		0134EE1D1456E110007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
+		01368070147E4CED009E2DAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0136806F147E4CED009E2DAA /* libFastPdfKit.a */; };
+		01368071147E4CED009E2DAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0136806F147E4CED009E2DAA /* libFastPdfKit.a */; };
+		01368072147E4CED009E2DAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0136806F147E4CED009E2DAA /* libFastPdfKit.a */; };
+		01368073147E4CED009E2DAA /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0136806F147E4CED009E2DAA /* libFastPdfKit.a */; };
+		01368076147E4D0E009E2DAA /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01368074147E4D0E009E2DAA /* MFDocumentManager.h */; };
+		01368077147E4D0E009E2DAA /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01368074147E4D0E009E2DAA /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01368078147E4D0E009E2DAA /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01368075147E4D0E009E2DAA /* MFDocumentViewController.h */; };
+		01368079147E4D0E009E2DAA /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01368075147E4D0E009E2DAA /* MFDocumentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		014F442D14211E4B004FBEE9 /* img_overflow_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442A14211E4A004FBEE9 /* img_overflow_pad.png */; };
 		014F442E14211E4B004FBEE9 /* img_overflow_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442B14211E4A004FBEE9 /* img_overflow_phone.png */; };
 		014F442F14211E4B004FBEE9 /* img_overflow_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */; };
@@ -161,10 +164,6 @@
 		01884A8E131E94DD0045038F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC2131E96C50045038F /* SystemConfiguration.framework */; };
 		01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC6131E96CE0045038F /* MobileCoreServices.framework */; };
-		01A6CA10147AC2B200F73CD8 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A6CA0F147AC2B200F73CD8 /* libFastPdfKit.a */; };
-		01A6CA11147AC2B200F73CD8 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A6CA0F147AC2B200F73CD8 /* libFastPdfKit.a */; };
-		01A6CA12147AC2B200F73CD8 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A6CA0F147AC2B200F73CD8 /* libFastPdfKit.a */; };
-		01A6CA13147AC2B200F73CD8 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A6CA0F147AC2B200F73CD8 /* libFastPdfKit.a */; };
 		01AB4AEA13EFE267008EB17B /* TVThumbnailView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* TVThumbnailView.h */; };
 		01AB4AEB13EFE267008EB17B /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView.m */; };
 		01AB4AEC13EFE267008EB17B /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView.m */; };
@@ -406,7 +405,6 @@
 		010D14DB13CB002300FD6F08 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
 		010D14DC13CB002300FD6F08 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		010D14DD13CB002300FD6F08 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		011AA1A11476B69900CB3227 /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		011E42B81472D1510099754E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
 		0123602813CC908E00861EB7 /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
@@ -425,9 +423,11 @@
 		0123606E13CCA18700861EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		01296EC314557C9500F5F12F /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
 		0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailScrollView.h; sourceTree = "<group>"; };
 		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
+		0136806F147E4CED009E2DAA /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
+		01368074147E4D0E009E2DAA /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
+		01368075147E4D0E009E2DAA /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
 		014F442A14211E4A004FBEE9 /* img_overflow_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_pad.png; sourceTree = "<group>"; };
 		014F442B14211E4A004FBEE9 /* img_overflow_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_overflow_phone.png; sourceTree = "<group>"; };
 		014F442C14211E4B004FBEE9 /* img_overflow_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_overflow_phone@2x.png"; sourceTree = "<group>"; };
@@ -494,7 +494,6 @@
 		01884A66131E93A80045038F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		01A6CA0F147AC2B200F73CD8 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		01AB4AE413EFE267008EB17B /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
 		01AB4AE513EFE267008EB17B /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
 		01B3DAD8146D920F00F8C740 /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
@@ -653,7 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				01A6CA12147AC2B200F73CD8 /* libFastPdfKit.a in Frameworks */,
+				01368072147E4CED009E2DAA /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,7 +684,7 @@
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
-				01A6CA11147AC2B200F73CD8 /* libFastPdfKit.a in Frameworks */,
+				01368071147E4CED009E2DAA /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,7 +701,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				01A6CA10147AC2B200F73CD8 /* libFastPdfKit.a in Frameworks */,
+				01368070147E4CED009E2DAA /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,7 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				01A6CA13147AC2B200F73CD8 /* libFastPdfKit.a in Frameworks */,
+				01368073147E4CED009E2DAA /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,12 +811,12 @@
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
 			children = (
-				011AA1A11476B69900CB3227 /* MFDocumentManager.h */,
+				01368074147E4D0E009E2DAA /* MFDocumentManager.h */,
+				01368075147E4D0E009E2DAA /* MFDocumentViewController.h */,
 				01B3DAD8146D920F00F8C740 /* Stuff.h */,
 				0155DE13145848590080FFEF /* MFTextItem.h */,
 				0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */,
 				015ED17B1455AE9700C7C372 /* FPKAnnotation.h */,
-				01296EC314557C9500F5F12F /* MFDocumentViewController.h */,
 				0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */,
 				016095D414482814003CEAAA /* FPKURIAnnotation.h */,
 				016095D514482814003CEAAA /* MFAudioPlayerViewProtocol.h */,
@@ -1178,7 +1177,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				01A6CA0F147AC2B200F73CD8 /* libFastPdfKit.a */,
+				0136806F147E4CED009E2DAA /* libFastPdfKit.a */,
 				01D73BB51474385300C142FE /* standard14fonts */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
@@ -1223,13 +1222,13 @@
 				016095FF14482814003CEAAA /* MFPDFOutlineEntry.h in Headers */,
 				0160960214482814003CEAAA /* mfprofile.h in Headers */,
 				0168707E1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */,
-				01296EC414557C9500F5F12F /* MFDocumentViewController.h in Headers */,
 				015ED17C1455AE9700C7C372 /* FPKAnnotation.h in Headers */,
 				0134EE0F1456D9B2007D543F /* TVThumbnailScrollView.h in Headers */,
 				0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */,
 				0155DE14145848590080FFEF /* MFTextItem.h in Headers */,
 				01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */,
-				011AA1A21476B69900CB3227 /* MFDocumentManager.h in Headers */,
+				01368076147E4D0E009E2DAA /* MFDocumentManager.h in Headers */,
+				01368078147E4D0E009E2DAA /* MFDocumentViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,7 +1263,6 @@
 				0160960014482814003CEAAA /* MFPDFOutlineEntry.h in Headers */,
 				0160960314482814003CEAAA /* mfprofile.h in Headers */,
 				015ED17E1455AEA900C7C372 /* FPKAnnotation.h in Headers */,
-				011AA1A31476B69900CB3227 /* MFDocumentManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1304,13 +1302,13 @@
 				0160960114482814003CEAAA /* MFPDFOutlineEntry.h in Headers */,
 				0160960414482814003CEAAA /* mfprofile.h in Headers */,
 				0168707F1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */,
-				01296EC514557C9500F5F12F /* MFDocumentViewController.h in Headers */,
 				015ED17D1455AE9700C7C372 /* FPKAnnotation.h in Headers */,
 				0155DDE81458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */,
 				0155DE15145848590080FFEF /* MFTextItem.h in Headers */,
 				0134EE101456D9B2007D543F /* TVThumbnailScrollView.h in Headers */,
 				01B3DADA146D920F00F8C740 /* Stuff.h in Headers */,
-				011AA1A41476B69900CB3227 /* MFDocumentManager.h in Headers */,
+				01368077147E4D0E009E2DAA /* MFDocumentManager.h in Headers */,
+				01368079147E4D0E009E2DAA /* MFDocumentViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1875,7 +1873,7 @@
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitReader-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1896,7 +1894,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitReader-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1917,7 +1915,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitReader-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1945,7 +1943,7 @@
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitKiosk-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1972,7 +1970,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitKiosk-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1999,7 +1997,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitKiosk-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2319,7 +2317,7 @@
 				GCC_PREFIX_HEADER = "OtherSources/FastPdfKitFramework-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Resources/ReaderFramework-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
@@ -2350,7 +2348,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/FastPdfKitFramework-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Resources/ReaderFramework-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
@@ -2381,7 +2379,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/FastPdfKitFramework-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Resources/ReaderFramework-Info.plist";
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
