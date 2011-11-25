@@ -86,7 +86,7 @@
 		01598DED13CAEAA6007344EE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07C013C755610077CE63 /* Reachability.m */; };
 		01598DEE13CAEB09007344EE /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */; };
 		01598DEF13CAEB09007344EE /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */; };
-		01598DF013CAEB09007344EE /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* MFHomeListPdf.m */; };
+		01598DF013CAEB09007344EE /* BookItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* BookItemView.m */; };
 		01598DF113CAEB09007344EE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080B13C75B310077CE63 /* XMLParser.m */; };
 		01598E0013CAEBCF007344EE /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; };
 		01598E0113CAEBCF007344EE /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; };
@@ -105,7 +105,7 @@
 		01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; };
 		01598E2413CAEC8B007344EE /* FastPDFKit_KioskAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */; };
 		01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */; settings = {ATTRIBUTES = (); }; };
-		01598E2613CAEC8B007344EE /* MFHomeListPdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080813C75B310077CE63 /* MFHomeListPdf.h */; };
+		01598E2613CAEC8B007344EE /* BookItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080813C75B310077CE63 /* BookItemView.h */; };
 		01598E2713CAEC8B007344EE /* XMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080A13C75B310077CE63 /* XMLParser.h */; };
 		01598E2C13CAEC8B007344EE /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A213C755610077CE63 /* ASIAuthenticationDialog.h */; };
 		01598E2D13CAEC8B007344EE /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A413C755610077CE63 /* ASICacheDelegate.h */; };
@@ -184,7 +184,7 @@
 		01BC07DB13C755610077CE63 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07C013C755610077CE63 /* Reachability.m */; };
 		01BC080C13C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */; };
 		01BC081013C75B310077CE63 /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */; };
-		01BC081113C75B310077CE63 /* MFHomeListPdf.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* MFHomeListPdf.m */; };
+		01BC081113C75B310077CE63 /* BookItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* BookItemView.m */; };
 		01BC081213C75B310077CE63 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080B13C75B310077CE63 /* XMLParser.m */; };
 		01BC083A13C75D3A0077CE63 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
 		01BC083B13C75D3A0077CE63 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
@@ -535,8 +535,8 @@
 		01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow_Kiosk.xib; sourceTree = "<group>"; };
 		01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController_Kiosk.h; sourceTree = "<group>"; };
 		01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController_Kiosk.m; sourceTree = "<group>"; };
-		01BC080813C75B310077CE63 /* MFHomeListPdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFHomeListPdf.h; sourceTree = "<group>"; };
-		01BC080913C75B310077CE63 /* MFHomeListPdf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFHomeListPdf.m; sourceTree = "<group>"; };
+		01BC080813C75B310077CE63 /* BookItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemView.h; sourceTree = "<group>"; };
+		01BC080913C75B310077CE63 /* BookItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemView.m; sourceTree = "<group>"; };
 		01BC080A13C75B310077CE63 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		01BC080B13C75B310077CE63 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		01BC081513C75D3A0077CE63 /* BookmarkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookmarkView.xib; sourceTree = "<group>"; };
@@ -799,8 +799,8 @@
 				01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */,
 				01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */,
 				01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */,
-				01BC080813C75B310077CE63 /* MFHomeListPdf.h */,
-				01BC080913C75B310077CE63 /* MFHomeListPdf.m */,
+				01BC080813C75B310077CE63 /* BookItemView.h */,
+				01BC080913C75B310077CE63 /* BookItemView.m */,
 				01BC080A13C75B310077CE63 /* XMLParser.h */,
 				01BC080B13C75B310077CE63 /* XMLParser.m */,
 			);
@@ -1238,7 +1238,7 @@
 			files = (
 				01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */,
 				01598E2413CAEC8B007344EE /* FastPDFKit_KioskAppDelegate.h in Headers */,
-				01598E2613CAEC8B007344EE /* MFHomeListPdf.h in Headers */,
+				01598E2613CAEC8B007344EE /* BookItemView.h in Headers */,
 				01598E2713CAEC8B007344EE /* XMLParser.h in Headers */,
 				01598E2C13CAEC8B007344EE /* ASIAuthenticationDialog.h in Headers */,
 				01598E2D13CAEC8B007344EE /* ASICacheDelegate.h in Headers */,
@@ -1721,7 +1721,7 @@
 				01598DE613CAEA78007344EE /* ASIDownloadCache.m in Sources */,
 				01598DEE13CAEB09007344EE /* FastPDFKit_KioskAppDelegate.m in Sources */,
 				01598DEF13CAEB09007344EE /* MenuViewController_Kiosk.m in Sources */,
-				01598DF013CAEB09007344EE /* MFHomeListPdf.m in Sources */,
+				01598DF013CAEB09007344EE /* BookItemView.m in Sources */,
 				01598DF113CAEB09007344EE /* XMLParser.m in Sources */,
 				01598DE713CAEA78007344EE /* ASIFormDataRequest.m in Sources */,
 				01598DE813CAEA78007344EE /* ASIHTTPRequest.m in Sources */,
@@ -1751,7 +1751,7 @@
 				01BC07DB13C755610077CE63 /* Reachability.m in Sources */,
 				01BC080C13C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m in Sources */,
 				01BC081013C75B310077CE63 /* MenuViewController_Kiosk.m in Sources */,
-				01BC081113C75B310077CE63 /* MFHomeListPdf.m in Sources */,
+				01BC081113C75B310077CE63 /* BookItemView.m in Sources */,
 				01BC081213C75B310077CE63 /* XMLParser.m in Sources */,
 				01BC083B13C75D3A0077CE63 /* BookmarkViewController.m in Sources */,
 				01BC084113C75D3A0077CE63 /* MiniSearchView.m in Sources */,

@@ -6,7 +6,7 @@
 //  Copyright 2009 MobFarm s.r.l.. All rights reserved.
 //
 
-#import "MFHomeListPdf.h"
+#import "BookItemView.h"
 #import "MenuViewController_Kiosk.h"
 #import "ZipArchive.h"
 #import "FastPDFKit_KioskAppDelegate.h"
@@ -16,7 +16,7 @@
 #define TITLE_REMOVE @"Remove"
 #define TITLE_RESUME @"Resume"
 
-@implementation MFHomeListPdf
+@implementation BookItemView
 @synthesize object, temp, dataSource ,corner,documentNumber;
 @synthesize menuViewController;
 @synthesize page,titleOfPdf;
@@ -43,6 +43,7 @@
     
 	documentNumber = numDoc;
 	temp = NO;
+    
 	return self;
 }
 
@@ -901,7 +902,6 @@
 	[page release];
 	[downloadUrl release];
 	
-	[thumbName release];
 	[removeButton release];
 	[openButton release];
 	[thumbImage release];
