@@ -411,8 +411,6 @@
     
     if (status2 && status1){
         
-        NSLog(@"download con NewsStand");
-        
         NKLibrary *library = [NKLibrary sharedLibrary];
         if ([library issueWithName:namePdf]) {               
             [library removeIssue:[library issueWithName:namePdf]];
@@ -430,9 +428,6 @@
         
     }else{
         
-        
-        NSLog(@"download senza NewsStand");
-    
         NSURL *url = nil;
         ASIHTTPRequest * request = nil;
         
@@ -639,7 +634,7 @@
     } else {    
         suffix = @"pdf";
         path = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",filename,suffix]];
-        NSLog(@"path %@",path);
+        
         NSError *error = nil;    
         [[NSFileManager defaultManager] copyItemAtPath:[destinationURL path] toPath:path error:&error];
         [[NSFileManager defaultManager] removeItemAtPath:[destinationURL path] error:&error];
@@ -651,7 +646,6 @@
 
 
 - (BOOL)handleFPKFile {
-    NSLog(@"Alla fine del download FPK");
     
     BOOL zipStatus = NO;
     
