@@ -426,6 +426,7 @@
         
         [self updateBtnDownload];
         
+        [request release];
         
     }else{
         
@@ -501,6 +502,7 @@
         [request startAsynchronous];
     }
 	
+    [plistDict release];
 }
 
 

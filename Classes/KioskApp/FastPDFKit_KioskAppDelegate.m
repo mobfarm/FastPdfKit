@@ -151,6 +151,7 @@
             NKAssetDownload *asset = [issue addAssetWithRequest:request];
             [asset setUserInfo:[NSDictionary dictionaryWithObject:namePdf forKey:@"filename"]];
             [asset downloadWithDelegate:self];
+            [request release];
         }        
     }
 
