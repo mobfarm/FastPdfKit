@@ -11,7 +11,7 @@
 #import "MenuViewController_Kiosk.h"
 #import <Newsstandkit/NewsstandKit.h>
 
-@interface MFHomeListPdf : UIViewController <UIActionSheetDelegate,NSURLConnectionDownloadDelegate>{
+@interface BookItemView : UIViewController <UIActionSheetDelegate,NSURLConnectionDownloadDelegate>{
 	
 	id object;
 	NSString *thumbName;

@@ -28,6 +28,11 @@
 -(void)presentTextDisplayViewControllerForPage:(NSUInteger)page;
 -(void)revertToFullSearchView;
 
+-(void)showToolbar;
+-(void)hideToolbar;
+-(void)prepareToolbar;
+-(void)prepareThumbSlider;
+
 @end
 
 @implementation ReaderViewController
@@ -49,11 +54,10 @@
 @synthesize reusablePopover;
 @synthesize multimediaVisible;
 
-@synthesize btnChangeModeBarButtonItem,btnZoomLockBarButtonItem,btnChangeDirectionBarButtonItem,btnChangeLeadBarButtonItem;
+@synthesize changeModeButton,zoomLockButton,changeDirectionButton,changeLeadButton;
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft, imgModeOverflow;
 
-@synthesize thumbFileManager;
 @synthesize thumbnailScrollView;
 
 -(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
@@ -261,6 +265,7 @@
 	//	you can also push the controller with the navigation controller or use an UIActionSheet.
 	
     BookmarkViewController *bookmarksVC = nil;
+    UIBarButtonItem * bbItem = nil;
     
 	if (currentReusableView == FPK_REUSABLE_VIEW_BOOKMARK) {
         
@@ -622,8 +627,7 @@
     
 	// Call this function to stop the worker threads and release the associated resources.
 	pdfOpen = NO;
-	[self cleanUp];
-    
+	
     [self dismissAlternateViewController];
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES]; // Hide the status bar.
@@ -733,13 +737,13 @@
 	if(autozoom) {
 		[self setAutozoomOnPageChange:NO];
         
-        [self.btnZoomLockBarButtonItem setImage:imgZoomUnlock forState:UIControlStateNormal];
+        [self.zoomLockButton setImage:imgZoomUnlock forState:UIControlStateNormal];
         
 	} else {
 		[self setAutozoomOnPageChange:YES];
         
         
-        [self.btnZoomLockBarButtonItem setImage:imgZoomLock forState:UIControlStateNormal];
+        [self.zoomLockButton setImage:imgZoomLock forState:UIControlStateNormal];
         
 	}
 }
@@ -829,16 +833,7 @@
         arrayParameter = [uri componentsSeparatedByString:@"="];
         
         [self setPage:[[arrayParameter objectAtIndex:1]intValue]];
-    
-    
     }
-
-    
-    
-    
-    
-    
-	
 }
 
 - (void)playAudio:(NSString *)audioURL local:(BOOL)_isLocal{
@@ -957,14 +952,14 @@
 	
 	if(mode == MFDocumentModeSingle) {
         
-        [btnChangeModeBarButtonItem setImage:imgModeSingle forState:UIControlStateNormal];
+        [changeModeButton setImage:imgModeSingle forState:UIControlStateNormal];
         
 		//[changeModeBarButtonItem setImage:imgModeSingle];
 	} else if (mode == MFDocumentModeDouble) {
-        [btnChangeModeBarButtonItem setImage:imgModeDouble forState:UIControlStateNormal];
+        [changeModeButton setImage:imgModeDouble forState:UIControlStateNormal];
 		//[changeModeBarButtonItem setImage:imgModeDouble];
 	} else if (mode == MFDocumentModeOverflow) {
-        [btnChangeModeBarButtonItem setImage:imgModeOverflow forState:UIControlStateNormal];
+        [changeModeButton setImage:imgModeOverflow forState:UIControlStateNormal];
         //[changeModeBarButtonItem setImage:imgModeOverflow];
     }
 }
@@ -977,13 +972,13 @@
 	if(direction == MFDocumentDirectionL2R) {
         
         
-        [self.btnChangeDirectionBarButtonItem setImage:imgl2r forState:UIControlStateNormal];
+        [self.changeDirectionButton setImage:imgl2r forState:UIControlStateNormal];
 		
 
 		
 	} else if (direction == MFDocumentDirectionR2L) {
         
-        [self.btnChangeDirectionBarButtonItem setImage:imgr2l forState:UIControlStateNormal];		
+        [self.changeDirectionButton setImage:imgr2l forState:UIControlStateNormal];		
 	}
 }
 
@@ -994,13 +989,13 @@
 	
 	if(lead == MFDocumentLeadLeft) {
         
-        [self.btnChangeLeadBarButtonItem setImage:imgLeadLeft forState:UIControlStateNormal];
+        [self.changeLeadButton setImage:imgLeadLeft forState:UIControlStateNormal];
 		
 		//[changeLeadBarButtonItem setImage:imgLeadLeft];
 		
 	} else if (lead == MFDocumentLeadRight) {
         
-        [self.btnChangeLeadBarButtonItem setImage:imgLeadRight forState:UIControlStateNormal];
+        [self.changeLeadButton setImage:imgLeadRight forState:UIControlStateNormal];
 		
 		//[changeLeadBarButtonItem setImage:imgLeadRight];
 	}
@@ -1174,6 +1169,7 @@
         self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead",@"png")];
         
 		self.imgModeOverflow = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"img_overflow_pad", @"png")];
+        
 	} else { // IPhone.
         
         self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeSingle_phone",@"png")];
@@ -1219,12 +1215,12 @@
 				
 		// Zoom lock.
         
-        self.btnZoomLockBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnZoomLockBarButtonItem.bounds = CGRectMake( 0, 0, 30 , 30 );    
-        [self.btnZoomLockBarButtonItem setImage:imgZoomUnlock forState:UIControlStateNormal];
-        [self.btnZoomLockBarButtonItem addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
+        self.zoomLockButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.zoomLockButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
+        [self.zoomLockButton setImage:imgZoomUnlock forState:UIControlStateNormal];
+        [self.zoomLockButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnZoomLockBarButtonItem];
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
         
 		self.zoomLockBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1232,12 +1228,12 @@
 		
 		// Change direction.
         
-        self.btnChangeDirectionBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeDirectionBarButtonItem.bounds = CGRectMake( 0, 0, 30 , 30 );    
-        [self.btnChangeDirectionBarButtonItem setImage:imgl2r forState:UIControlStateNormal];
-        [self.btnChangeDirectionBarButtonItem addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
+        self.changeDirectionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.changeDirectionButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
+        [self.changeDirectionButton setImage:imgl2r forState:UIControlStateNormal];
+        [self.changeDirectionButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeDirectionBarButtonItem];
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
         
         self.changeDirectionBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1245,12 +1241,12 @@
 		
 		// Change lead.
         
-        self.btnChangeLeadBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeLeadBarButtonItem.bounds = CGRectMake( 0, 0, 30 , 30 );    
-        [self.btnChangeLeadBarButtonItem setImage:imgLeadRight forState:UIControlStateNormal];
-        [self.btnChangeLeadBarButtonItem addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
+        self.changeLeadButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.changeLeadButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
+        [self.changeLeadButton setImage:imgLeadRight forState:UIControlStateNormal];
+        [self.changeLeadButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeLeadBarButtonItem];
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
         
         self.changeLeadBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1259,11 +1255,11 @@
 		
 		// Change mode.
         
-        self.btnChangeModeBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeModeBarButtonItem.bounds = CGRectMake( 0, 0, 30 , 30 );    
-        [self.btnChangeModeBarButtonItem setImage:imgModeSingle forState:UIControlStateNormal];
-        [self.btnChangeModeBarButtonItem addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeModeBarButtonItem];
+        self.changeModeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.changeModeButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
+        [self.changeModeButton setImage:imgModeSingle forState:UIControlStateNormal];
+        [self.changeModeButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeModeButton];
         
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1406,11 +1402,11 @@
 		
 		// Zoom lock.
         
-        self.btnZoomLockBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnZoomLockBarButtonItem.bounds = CGRectMake( 0, 0, 24 , 24 );    
-        [self.btnZoomLockBarButtonItem setImage:imgZoomUnlock forState:UIControlStateNormal];
-        [self.btnZoomLockBarButtonItem addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnZoomLockBarButtonItem];
+        self.zoomLockButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.zoomLockButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
+        [self.zoomLockButton setImage:imgZoomUnlock forState:UIControlStateNormal];
+        [self.zoomLockButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
         
         
         
@@ -1422,11 +1418,11 @@
 		
 		// Change direction.
         
-        self.btnChangeDirectionBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeDirectionBarButtonItem.bounds = CGRectMake( 0, 0, 24 , 24 );    
-        [self.btnChangeDirectionBarButtonItem setImage:imgl2r forState:UIControlStateNormal];
-        [self.btnChangeDirectionBarButtonItem addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeDirectionBarButtonItem];
+        self.changeDirectionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.changeDirectionButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
+        [self.changeDirectionButton setImage:imgl2r forState:UIControlStateNormal];
+        [self.changeDirectionButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
         
         
 		
@@ -1437,11 +1433,11 @@
 		
 		// Change lead.
         
-        self.btnChangeLeadBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeLeadBarButtonItem.bounds = CGRectMake( 0, 0, 24 , 24 );    
-        [self.btnChangeLeadBarButtonItem setImage:imgLeadRight forState:UIControlStateNormal];
-        [self.btnChangeLeadBarButtonItem addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeLeadBarButtonItem];
+        self.changeLeadButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.changeLeadButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
+        [self.changeLeadButton setImage:imgLeadRight forState:UIControlStateNormal];
+        [self.changeLeadButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
         
         
 		
@@ -1453,11 +1449,11 @@
 		
 		// Change mode.
         
-        self.btnChangeModeBarButtonItem = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnChangeModeBarButtonItem.bounds = CGRectMake( 0, 0, 24 , 24 );    
-        [self.btnChangeModeBarButtonItem setImage:imgModeSingle forState:UIControlStateNormal];
-        [self.btnChangeModeBarButtonItem addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnChangeModeBarButtonItem];
+        self.changeModeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.changeModeButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
+        [self.changeModeButton setImage:imgModeSingle forState:UIControlStateNormal];
+        [self.changeModeButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
+        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeModeButton];
         
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1512,7 +1508,6 @@
         aButton.bounds = CGRectMake( 0, 0, 24 , 24);
         image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"bookmark_add_phone",@"png")];
         
-        
         [aButton setImage:image forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -1536,12 +1531,10 @@
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
         
-        
 		self.searchBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
-		
 	}
 	
 	aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, toolbarHeight)];
@@ -2124,22 +2117,35 @@
 
 - (void)didReceiveMemoryWarning {
 	
-	// Remember to call the super implementation, since MFDocumentViewController will use
-	// memory warnings to clear up its rendering cache.
-	
+	self.textDisplayViewController = nil;
+    self.searchViewController = nil;
+    
 	[super didReceiveMemoryWarning];
 }
 
 - (void)viewDidUnload {
     
-	[super viewDidUnload];
-    
-    // TODO: it is better to release every object created and retained in viewDidLoad
-    // rather than waiting for the next viewDidLoad to release the old objects!
-    
     self.pageSlider = nil;
     self.thumbnailScrollView = nil;
     self.bottomToolbarView = nil;
+    self.miniSearchView = nil;
+    self.pageNumLabel = nil;
+    self.numberOfPageTitleToolbar = nil;
+    
+    // Button and bar buttons
+    
+    self.changeModeBarButtonItem = nil;
+	self.zoomLockBarButtonItem = nil;
+	self.changeDirectionBarButtonItem = nil;
+	self.changeLeadBarButtonItem = nil;
+	self.searchBarButtonItem = nil;
+    
+    self.changeModeButton = nil;
+	self.zoomLockButton = nil;
+	self.changeDirectionButton = nil;
+	self.changeLeadButton = nil;
+    
+    [super viewDidUnload];
 }
 
 - (void)dealloc {
@@ -2165,10 +2171,10 @@
 	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
 	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
     
-    [btnZoomLockBarButtonItem release],btnZoomLockBarButtonItem = nil;
-    [btnChangeModeBarButtonItem release],btnChangeModeBarButtonItem = nil;
-    [btnChangeLeadBarButtonItem release],btnChangeLeadBarButtonItem = nil;
-    [btnChangeDirectionBarButtonItem release],btnChangeDirectionBarButtonItem = nil;
+    [zoomLockButton release],zoomLockButton = nil;
+    [changeModeButton release],changeModeButton = nil;
+    [changeLeadButton release],changeLeadButton = nil;
+    [changeDirectionButton release],changeDirectionButton = nil;
 	
     // Popovers.
     [reusablePopover release];
@@ -2183,8 +2189,6 @@
     [thumbnailScrollView release];
 	
     [documentId release];
-	
-    [thumbFileManager release];
     
 	[super dealloc];
 }

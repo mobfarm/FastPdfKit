@@ -9,7 +9,7 @@
 #import "MenuViewController_Kiosk.h"
 #import "MFDocumentManager.h"
 #import "ReaderViewController.h"
-#import "MFHomeListPdf.h"
+#import "BookItemView.h"
 #import "XMLParser.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,8 +47,6 @@
     
     pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",documentName]];
 	
-	
-	
 	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class and use
 	// it to initialize an MFDocumentViewController subclass 	
 	
@@ -76,7 +74,9 @@
 		progressViewDict = [[NSMutableDictionary alloc] init];
 		imgDict = [[NSMutableDictionary alloc] init];
 		
-		homeListPdfs = [[NSMutableArray alloc]init];
+		bookItemViews = [[NSMutableArray alloc]init];
+        
+        xmlDirty = YES;
 		
 	}
 	
@@ -91,40 +91,39 @@
     XMLParser *parser = nil;
     NSURL * xmlUrl = nil;
     
-    parser = [[XMLParser alloc] init];
-	xmlUrl = [NSURL URLWithString:FPK_KIOSK_XML_URL];
-    [parser parseXMLFileAtURL:xmlUrl];
-    
-    //[self.documentsList retain]; // EH?
-    self.documentsList = nil;
-	
-    // Try to parse the remote URL. If it fails, fallback to the local xml.
-    
-    if([parser isDone]) {
+    if(xmlDirty) {
         
-        self.documentsList = [parser parsedItems];
-
-    } else {
-        
-        xmlUrl = [MF_BUNDLED_BUNDLE(@"FPKKioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
+        xmlDirty = NO;
+    
+        parser = [[XMLParser alloc] init];
+        xmlUrl = [NSURL URLWithString:FPK_KIOSK_XML_URL];
         [parser parseXMLFileAtURL:xmlUrl];
-        
+    
         if([parser isDone]) {
+            
             self.documentsList = [parser parsedItems];
+            
+        } else {
+            
+            xmlUrl = [MF_BUNDLED_BUNDLE(@"FPKKioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
+            
+            [parser parseXMLFileAtURL:xmlUrl];
+            
+            if([parser isDone]) {
+                self.documentsList = [parser parsedItems];
+            }
         }
+        
+        [parser release];
     }
-	
-    [parser release];
-	
-	[self performSelector:@selector(buildInterface) withObject:nil afterDelay:0.5];
-
+    
+	//[self performSelector:@selector(buildInterface) withObject:nil afterDelay:0.5];
+    [self buildInterface];
 }
 
 
 -(void)buildInterface{
 
-    
-	
 	UIScrollView * aScrollView = nil;
 	CGFloat yBorder = 0 ; 
 	UIImageView * anImageView = nil;
@@ -135,7 +134,7 @@
 	NSString * linkPdf = nil;
 	NSString * copertinaPdf = nil;
     
-	MFHomeListPdf * viewPdf = nil;
+	BookItemView * bookItemView = nil;
     
 	int documentsCount; // Used to iterate over each item in the list.
 	
@@ -178,13 +177,7 @@
 	
 	documentsCount = [documentsList count];
     
-    NSLog(@"Documents Count %i",documentsCount);
-    
-    if (scrollView) {
-        [scrollView removeFromSuperview];
-    }else{
-        
-        // Border.
+       // Border.
         
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             yBorder = scrollViewVOffset-3 ;
@@ -196,9 +189,7 @@
         [anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"border",@"png")]];
         [self.view addSubview:anImageView];
         [anImageView release];
-        
-    }
-	
+    
 	aScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewVOffset, scrollViewWidth, scrollViewHeight)];
 	aScrollView.backgroundColor = [UIColor whiteColor];
 	aScrollView.contentSize = CGSizeMake(scrollViewWidth, detailViewHeight * ((documentsCount/2)+(documentsCount%2)));
@@ -210,7 +201,7 @@
 		linkPdf = [[documentsList objectAtIndex: i-1] objectForKey: @"link"];
 		copertinaPdf = [[documentsList objectAtIndex: i-1] objectForKey: @"cover"];
         
-        viewPdf = [[MFHomeListPdf alloc] initWithName:titoloPdfNoSpace andTitoloPdf:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(thumbWidth, thumbHeight)];
+        bookItemView = [[BookItemView alloc] initWithName:titoloPdfNoSpace andTitoloPdf:titoloPdf andLinkPdf:linkPdf andnumOfDoc:i andImage:copertinaPdf andSize:CGSizeMake(thumbWidth, thumbHeight)];
         
 		frame = self.view.frame;
 		
@@ -226,27 +217,28 @@
 			frame.size.height = detailViewHeight;
 		}
 		
-		viewPdf.view.frame = frame;
-		viewPdf.menuViewController = self;
-		[aScrollView addSubview:viewPdf.view];
+		bookItemView.view.frame = frame;
+		bookItemView.menuViewController = self;
+		[aScrollView addSubview:bookItemView.view];
 		
 		// Adding stuff to their respective containers.
 		
-		[imgDict setValue:viewPdf.openButtonFromImage forKey:titoloPdfNoSpace];
-		[openButtons setValue:viewPdf.openButton forKey:titoloPdfNoSpace];
-		[buttonRemoveDict setValue:viewPdf.removeButton forKey:titoloPdfNoSpace];
-		[progressViewDict setValue:viewPdf.progressDownload forKey:titoloPdfNoSpace];
+		[imgDict setValue:bookItemView.openButtonFromImage forKey:titoloPdfNoSpace];
+		[openButtons setValue:bookItemView.openButton forKey:titoloPdfNoSpace];
+		[buttonRemoveDict setValue:bookItemView.removeButton forKey:titoloPdfNoSpace];
+		[progressViewDict setValue:bookItemView.progressDownload forKey:titoloPdfNoSpace];
 		
-		[homeListPdfs addObject:viewPdf];
-		[viewPdf release];
+		[bookItemViews addObject:bookItemView];
+		[bookItemView release];
 		
 	}
-	scrollView = aScrollView;
+    
+	self.scrollView = aScrollView;
+    [aScrollView release];
+    
 	[self.view addSubview:scrollView];
+    
     interfaceLoaded = YES;
-	// self.scrollView = aScrollView; // Not referenced anywhere else.
-	[aScrollView release];
-
 }
 
 
@@ -275,15 +267,15 @@
 
 - (void)viewDidUnload {
     
-    [super viewDidUnload];
-	
     [buttonRemoveDict removeAllObjects];
 	[openButtons removeAllObjects];
 	[progressViewDict removeAllObjects];
 	[imgDict removeAllObjects];
-	[homeListPdfs removeAllObjects];
-    scrollView = nil; 
-	
+	[bookItemViews removeAllObjects];
+    
+    self.scrollView = nil; 
+    
+    [super viewDidUnload];
 }
 
 
@@ -300,7 +292,7 @@
     
     [scrollView release];
     
-	[homeListPdfs release];
+	[bookItemViews release];
 	
     [super dealloc];
 }

@@ -299,6 +299,22 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1 beta8 (November 28th, 2011)
+* Reverted to optional tiled overlay view (used for search resulth highlight). This
+    seems to have fixed most 'crashes' (app bein killed actually) while zooming
+    onto a page.
+* A few memory leaks inside the unicode normalization data structures have been 
+    fixed.
+
+### Update 3.1 beta7 (November 25th, 2011)
+* Different handling of document view controller dismissal. It is no more necessary
+    to call -cleanup on the MFDocumentViewController before relasing it. Actual
+    method implementation does nothing.
+* Quite a few small memory leaks fixed.
+* Faster page redrawn on page transition (goToPage, setPageMode, etc.).
+* MFHomeListPdfs is now BookItemView, be careful if you used to subclass the former
+    in your project.
+
 ### Update 3.1 beta6 (November 21th, 2011)
 * Fixed a few errors in Win ANSI and Mac OS Roman encoding. For example, the Unicode
     character 'LEFT SINGLE QUOTATION MARK' U+2018 will no more be replaced by

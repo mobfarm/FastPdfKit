@@ -6,7 +6,7 @@
 //  Copyright 2009 MobFarm s.r.l.. All rights reserved.
 //
 
-#import "MFHomeListPdf.h"
+#import "BookItemView.h"
 #import "MenuViewController_Kiosk.h"
 #import "ZipArchive.h"
 #import "FastPDFKit_KioskAppDelegate.h"
@@ -16,7 +16,7 @@
 #define TITLE_REMOVE @"Remove"
 #define TITLE_RESUME @"Resume"
 
-@implementation MFHomeListPdf
+@implementation BookItemView
 @synthesize object, temp, dataSource ,corner,documentNumber;
 @synthesize menuViewController;
 @synthesize page,titleOfPdf;
@@ -43,6 +43,7 @@
     
 	documentNumber = numDoc;
 	temp = NO;
+    
 	return self;
 }
 
@@ -410,8 +411,6 @@
     
     if (status2 && status1){
         
-        NSLog(@"download con NewsStand");
-        
         NKLibrary *library = [NKLibrary sharedLibrary];
         if ([library issueWithName:namePdf]) {               
             [library removeIssue:[library issueWithName:namePdf]];
@@ -425,12 +424,10 @@
         
         [self updateBtnDownload];
         
+        [request release];
         
     }else{
         
-        
-        NSLog(@"download senza NewsStand");
-    
         NSURL *url = nil;
         ASIHTTPRequest * request = nil;
         
@@ -500,6 +497,7 @@
         [request startAsynchronous];
     }
 	
+    [plistDict release];
 }
 
 
@@ -636,7 +634,7 @@
     } else {    
         suffix = @"pdf";
         path = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",filename,suffix]];
-        NSLog(@"path %@",path);
+        
         NSError *error = nil;    
         [[NSFileManager defaultManager] copyItemAtPath:[destinationURL path] toPath:path error:&error];
         [[NSFileManager defaultManager] removeItemAtPath:[destinationURL path] error:&error];
@@ -648,7 +646,6 @@
 
 
 - (BOOL)handleFPKFile {
-    NSLog(@"Alla fine del download FPK");
     
     BOOL zipStatus = NO;
     
@@ -901,7 +898,6 @@
 	[page release];
 	[downloadUrl release];
 	
-	[thumbName release];
 	[removeButton release];
 	[openButton release];
 	[thumbImage release];
