@@ -2116,13 +2116,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Resources/FastPdfKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
-				LIBRARY_SEARCH_PATHS = (
-					LIBRARY_SEARCH_PATHS,
-					"=",
-					"\"$(SRCROOT)/FastPdfKit\\ Library\"",
-					"$(SRCROOT)/FastPdfKit\\ Library",
-					"\"$(SRCROOT)/FPKCore\"",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -2144,13 +2138,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Resources/FastPdfKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
-				LIBRARY_SEARCH_PATHS = (
-					LIBRARY_SEARCH_PATHS,
-					"=",
-					"\"$(SRCROOT)/FastPdfKit\\ Library\"",
-					"$(SRCROOT)/FastPdfKit\\ Library",
-					"\"$(SRCROOT)/FPKCore\"",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -2433,13 +2421,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Resources/FastPdfKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
-				LIBRARY_SEARCH_PATHS = (
-					LIBRARY_SEARCH_PATHS,
-					"=",
-					"\"$(SRCROOT)/FastPdfKit\\ Library\"",
-					"$(SRCROOT)/FastPdfKit\\ Library",
-					"\"$(SRCROOT)/FPKCore\"",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;

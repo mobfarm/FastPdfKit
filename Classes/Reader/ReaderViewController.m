@@ -627,8 +627,7 @@
     
 	// Call this function to stop the worker threads and release the associated resources.
 	pdfOpen = NO;
-	[self cleanUp];
-    
+	
     [self dismissAlternateViewController];
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES]; // Hide the status bar.
@@ -834,16 +833,7 @@
         arrayParameter = [uri componentsSeparatedByString:@"="];
         
         [self setPage:[[arrayParameter objectAtIndex:1]intValue]];
-    
-    
     }
-
-    
-    
-    
-    
-    
-	
 }
 
 - (void)playAudio:(NSString *)audioURL local:(BOOL)_isLocal{
@@ -1518,7 +1508,6 @@
         aButton.bounds = CGRectMake( 0, 0, 24 , 24);
         image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"bookmark_add_phone",@"png")];
         
-        
         [aButton setImage:image forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -1542,12 +1531,10 @@
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
         
-        
 		self.searchBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
-		
 	}
 	
 	aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, toolbarHeight)];

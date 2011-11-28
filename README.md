@@ -299,6 +299,11 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1 beta8 (November 28th, 2011)
+* Reverted to optional tiled overlay view (used for search resulth highlight). This
+    seems to have fixed most 'crashes' (app bein killed actually) while zooming
+    onto a page.
+
 ### Update 3.1 beta7 (November 25th, 2011)
 * Different handling of document view controller dismissal. It is no more necessary
     to call -cleanup on the MFDocumentViewController before relasing it. Actual
