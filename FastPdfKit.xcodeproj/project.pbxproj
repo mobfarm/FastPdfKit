@@ -45,6 +45,10 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
+		012A0B39148392E3004E3AD6 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012A0B38148392E3004E3AD6 /* libFastPdfKit.a */; };
+		012A0B3A148392E3004E3AD6 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012A0B38148392E3004E3AD6 /* libFastPdfKit.a */; };
+		012A0B3B148392E3004E3AD6 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012A0B38148392E3004E3AD6 /* libFastPdfKit.a */; };
+		012A0B3C148392E3004E3AD6 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012A0B38148392E3004E3AD6 /* libFastPdfKit.a */; };
 		0134EE0F1456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; };
 		0134EE101456D9B2007D543F /* TVThumbnailScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0134EE131456D9B2007D543F /* TVThumbnailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */; };
@@ -150,10 +154,6 @@
 		0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
 		0161F22F141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
 		0161F230141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
-		0164554A147FE90700A76F9F /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01645549147FE90700A76F9F /* libFastPdfKit.a */; };
-		0164554B147FE90700A76F9F /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01645549147FE90700A76F9F /* libFastPdfKit.a */; };
-		0164554C147FE90700A76F9F /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01645549147FE90700A76F9F /* libFastPdfKit.a */; };
-		0164554D147FE90700A76F9F /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01645549147FE90700A76F9F /* libFastPdfKit.a */; };
 		0168707E1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */; };
 		0168707F1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
@@ -423,6 +423,7 @@
 		0123606E13CCA18700861EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		012A0B38148392E3004E3AD6 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailScrollView.h; sourceTree = "<group>"; };
 		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
 		01368074147E4D0E009E2DAA /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
@@ -443,7 +444,6 @@
 		016095DE14482814003CEAAA /* mfprofile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mfprofile.h; sourceTree = "<group>"; };
 		0161F228141FABE8000EA8E4 /* ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderViewController.m; sourceTree = "<group>"; };
 		0161F22C141FAC24000EA8E4 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
-		01645549147FE90700A76F9F /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		018848E7131E89570045038F /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -652,7 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				0164554C147FE90700A76F9F /* libFastPdfKit.a in Frameworks */,
+				012A0B3B148392E3004E3AD6 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +684,7 @@
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
-				0164554B147FE90700A76F9F /* libFastPdfKit.a in Frameworks */,
+				012A0B3A148392E3004E3AD6 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +701,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				0164554A147FE90700A76F9F /* libFastPdfKit.a in Frameworks */,
+				012A0B39148392E3004E3AD6 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,7 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				0164554D147FE90700A76F9F /* libFastPdfKit.a in Frameworks */,
+				012A0B3C148392E3004E3AD6 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,7 +1177,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				01645549147FE90700A76F9F /* libFastPdfKit.a */,
+				012A0B38148392E3004E3AD6 /* libFastPdfKit.a */,
 				01D73BB51474385300C142FE /* standard14fonts */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
