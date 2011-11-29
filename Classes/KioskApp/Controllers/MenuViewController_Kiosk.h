@@ -14,11 +14,8 @@
 
 @interface MenuViewController_Kiosk : UIViewController {
 
-	UIView * downloadProgressContainerView;
-	
-	UIProgressView * downloadProgressView;
-	
-	NSMutableArray * homeListPdfs;
+	NSMutableArray * bookItemViews;
+    
 	NSMutableDictionary * buttonRemoveDict;
 	NSMutableDictionary * openButtons;
 	NSMutableDictionary * progressViewDict;
@@ -27,24 +24,22 @@
 	NSMutableArray *documentsList;
     
     UIScrollView *scrollView;
+    
+	UIView * downloadProgressContainerView;
+	UIProgressView * downloadProgressView;
 	
 	BOOL graphicsMode;
     BOOL interfaceLoaded;
+    
+    BOOL xmlDirty;
 }
 
 -(IBAction)actionOpenPlainDocument:(NSString *)documentName;
 -(void)buildInterface;
-//-(void)showViewDownload;
-//-(void)hideViewDownload;
 
-//@property (nonatomic, retain) MFDocumentManager *document;
 @property (nonatomic, retain) NSMutableArray *documentsList;
-@property (nonatomic,retain) UIScrollView *scrollView;
-//@property (nonatomic,retain ) UIProgressView *downloadProgressView;
-//@property (nonatomic,retain ) UIView *downloadProgressContainerView;
+@property (nonatomic, retain) UIScrollView *scrollView;
 
-//@property (nonatomic, assign) UIAlertView *passwordAlertView;
-//@property (nonatomic, assign) NSString *documentName;
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 @property (nonatomic,retain ) NSDictionary *openButtons;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;

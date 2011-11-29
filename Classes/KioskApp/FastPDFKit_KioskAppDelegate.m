@@ -39,7 +39,8 @@
         [self application:application didReceiveRemoteNotification:[launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]];
     }
 	
-    NSLog(@"FastPdfKit Version: %@",[MFDocumentManager version]);
+    // Uncomment to print the library version.
+    // NSLog(@"FastPdfKit Version: %@",[MFDocumentManager version]);
     
     MenuViewController_Kiosk *aMenuViewController = nil;
 	
@@ -68,6 +69,7 @@
 	
 	[aNavController release];
 	[aMenuViewController release];
+    [plistDict release];
 	
 	return YES;
 }
@@ -149,6 +151,7 @@
             NKAssetDownload *asset = [issue addAssetWithRequest:request];
             [asset setUserInfo:[NSDictionary dictionaryWithObject:namePdf forKey:@"filename"]];
             [asset downloadWithDelegate:self];
+            [request release];
         }        
     }
 

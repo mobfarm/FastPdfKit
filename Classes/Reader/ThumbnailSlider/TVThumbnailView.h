@@ -10,6 +10,12 @@
 
 @class TVThumbnailScrollView;
 
+@protocol TVThumbnailViewDelegate
+
+-(void)thumbTapped:(NSInteger)position withObject:(id)obj;
+
+@end
+
 @interface TVThumbnailView : UIView {
     
     UIActivityIndicatorView * activityIndicator;
@@ -24,7 +30,7 @@
     
     UIImage * thumbnailImage;
     
-    TVThumbnailScrollView * delegate;
+    id<TVThumbnailViewDelegate> delegate;
 }
 
 @property (nonatomic,retain) NSNumber * pageNumber;
@@ -35,7 +41,7 @@
 
 @property (nonatomic,retain) UIActivityIndicatorView * activityIndicator;
 
-@property (nonatomic,assign) TVThumbnailScrollView * delegate;
+@property (nonatomic,assign) id<TVThumbnailViewDelegate> delegate;
 
 @property (nonatomic,readwrite) NSInteger position;
 

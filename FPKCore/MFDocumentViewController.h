@@ -11,10 +11,10 @@
 #import "MFDocumentOverlayDataSource.h"
 #import "FPKOverlayViewDataSource.h"
 
+
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
 @class MFDocumentViewController;
-@class FPKDetailView;
 
 @interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
 	
@@ -33,10 +33,6 @@
 	MFDocumentManager * document;
 	
 	// Detail view
-	UIScrollView * pagedScrollView;
-	// MFDetailViewController * detailViewController;
-
-    FPKDetailView * detailView;
 	
 	// Previews
     MFDeferredContentLayerWrapper * current;        // Currently 'focused' layer wrapper.
@@ -314,15 +310,6 @@
  available.
  */
 -(void)moveToPreviousPage;
-
-/**
- Call this method rightly after dismissing this MFDocumentViewController 
- instance. It will release all the resources and stop the background threads. 
- Once this method has been called, the MFDocumentViewController instance cannot 
- be considered valid anymore and should be released.
- */
--(void)cleanUp;
-
 
 /**
  Convert a point from MFDocumentViewController's view space to page space.

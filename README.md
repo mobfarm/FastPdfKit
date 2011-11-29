@@ -299,7 +299,73 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
-### Update 3.0 (November 4th, 2011)* Internal changes of the view hierarchy to provide more flexibility and overlay transitions.* Revamped `ReaderViewController` user interface.* Better thumbnail scroll view and generation.* Added support to video overlay control parameters in the uri.* Search now works for terms of unitary length.* Added a method to retrieve annotations from the document and provide them as overlays.* Slightly changes to `MFDocumentViewControllerDelegate` callbacks.
+### Update 3.1 beta8 (November 28th, 2011)
+* Reverted to optional tiled overlay view (used for search resulth highlight). This
+    seems to have fixed most 'crashes' (app bein killed actually) while zooming
+    onto a page.
+* A few memory leaks inside the unicode normalization data structures have been 
+    fixed.
+
+### Update 3.1 beta7 (November 25th, 2011)
+* Different handling of document view controller dismissal. It is no more necessary
+    to call -cleanup on the MFDocumentViewController before relasing it. Actual
+    method implementation does nothing.
+* Quite a few small memory leaks fixed.
+* Faster page redrawn on page transition (goToPage, setPageMode, etc.).
+* MFHomeListPdfs is now BookItemView, be careful if you used to subclass the former
+    in your project.
+
+### Update 3.1 beta6 (November 21th, 2011)
+* Fixed a few errors in Win ANSI and Mac OS Roman encoding. For example, the Unicode
+    character 'LEFT SINGLE QUOTATION MARK' U+2018 will no more be replaced by
+    other characters.
+
+### Update 3.1 beta5 (November 18th, 2011)
+* Changed font cache management. If you still get problem with [] (notedef) caracter
+    in the text extracted, the cache might be the issue. Set MFDocumentManager's
+    fontCacheEnabled property to NO.
+
+### Update 3.1 beta4 (November 17th, 2011)
+* Unicode sequences will now be handled as such and the lib will no try (and fail)
+    to compose them to a single unicode codepoint (it is related to search and
+    extraction of text).
+
+### Update 3.1 beta3 (November 16th, 2011)
+* Lib will now attemp to compose multibyte characted to a single codepoint for
+    search and extraction.
+* Added support to 14 (-2) Adobe Standard Fonts. If you get page empty, blank
+    pages at text extraction check the simulator log and if the font marked as
+    uncompleted is named like one of the files in the FPKCore/standard14fonts
+    folder add that font to your application bundle.
+
+### Update 3.1 beta2 (November 15th, 2011)
+* Font cache re-enabled. This time seems to work as expected.
+* Default zoom not being set fixed (again).
+* Search and extraction will not crash when certain characters are found. Instead
+    a .notdef (usually it looks like an empty rect) value with be appended to the
+    text.
+
+### Update 3.1 beta (November 11th, 2011)
+* Enhanced search and extraction with Unicode composition and decomposition.
+* Added search match modes:
+	* Return an array of `MFTextItem` representing the matches of teh search term on the page passed as arguments. It is a good choice running this method in a secondary thread.
+ 	* `FPKSearchMode` has the following values:
+ 	* `FPKSearchModeHard` - if you search for 'bèzier' it will match 'bèzier' only but not
+ 'bezier'. If you search for 'bezier' it will match 'bezier' only.
+ 	* `FPKSearchModeSoft` - if you search for term 'bèzier' it will match both 'bezier' and 'bèzier'. Same if you search for 'bezier'.
+ 	* `FPKSearchModeSmart` - if you search for term 'bezier', it will also match 'bèzier', but if you search for 'bèzier' it will match 'bèzier' only.
+	* Ignore case is self explanatory.
+	* Default parameters are `FPKSearchModeSmart` and `ignoreCase` to `YES`.
+
+
+### Update 3.0 (November 4th, 2011)
+* Internal changes of the view hierarchy to provide more flexibility and overlay transitions.
+* Revamped `ReaderViewController` user interface.
+* Better thumbnail scroll view and generation.
+* Added support to video overlay control parameters in the uri.
+* Search now works for terms of unitary length.
+* Added a method to retrieve annotations from the document and provide them as overlays.
+* Slightly changes to `MFDocumentViewControllerDelegate` callbacks.
 * New activation method with key *FPKLicenseKey* from *Info.plist*: no need to pull to get the activated version.
 
 ### Update 2.1.3 (September 27th, 2011)

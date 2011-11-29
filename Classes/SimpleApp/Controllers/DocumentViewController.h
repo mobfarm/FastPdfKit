@@ -84,7 +84,6 @@
     id delegate;
 }
 
--(void)dismissAllPopovers;
 
 -(void)switchToMiniSearchView:(MFTextItem *)index;
 -(void)dismissMiniSearchView;

@@ -189,6 +189,11 @@
 	return textDisplayViewController;
 }
 
+-(void)dismissTextDisplayViewController:(TextDisplayViewController *)controller {
+ 
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 #pragma mark -
 #pragma mark SearchViewController, _Delegate and _Actions
 
@@ -595,11 +600,7 @@
 	//  values you can just set up a delegate and implement in a delegate method both the
 	//  removal of the DocumentViweController and the processing of the values.
 	
-	//  Call this function to stop the worker threads and release the associated resources.
-	
-    [self cleanUp];
-	
-    //  Cancel the search if it is in progress.
+	//  Cancel the search if it is in progress.
     
     [self.searchManager cancelSearch];
     

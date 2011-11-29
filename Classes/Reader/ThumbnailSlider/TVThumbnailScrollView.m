@@ -7,7 +7,6 @@
 //
 
 #import "TVThumbnailScrollView.h"
-#import "TVThumbnailView.h"
 
 @interface TVThumbnailScrollView()
 
@@ -107,14 +106,14 @@ int nextOffset(int offset) {
         
         // Thumbnail rendering here.
         
+
         CGImageRef image = [document createImageForThumbnailOfPageNumber:pageNr ofSize:thumbnailSize andScale:1.0];
         UIImage * img = [[UIImage alloc]initWithCGImage:image];
         NSData * data = UIImagePNGRepresentation(img);
         
         [fileManager createFileAtPath:path contents:data attributes:nil];
         
-        
-        CGImageRelease(image);
+        CGImageRelease(image);         // You are responsible for release the CGImageRef.
         
         [self performSelectorOnMainThread:@selector(handleThumbDone:) withObject:img waitUntilDone:NO];
         
@@ -313,7 +312,7 @@ BOOL isViewOutsideRange(int viewPosition, int currentPosition, int count) {
     //[self setPage:[self pageForPosition:position] animated:YES];
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+-(void)scrollViewDidScroll:(UIScrollView *)aScrollView {
     
     // NSLog(@"didScroll");
     

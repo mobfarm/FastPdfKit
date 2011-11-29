@@ -64,6 +64,7 @@
     [xmlParser parse]; // Start parsing.
 	
 	[xmlParser release];
+    
 	[pool release];
 }
 
