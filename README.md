@@ -299,6 +299,10 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1.1 (November 30th, 2011)
+* View size of the reader is now appropriate for the screen configuration (status bar only).
+* Added missing dismiss button in ReaderViewController on iPhone.
+
 ### Update 3.1 (November 30th, 2011)
 * Reverted to optional tiled overlay view (used for search resulth highlight). This
     seems to have fixed most 'crashes' (app bein killed actually) while zooming

@@ -1108,15 +1108,16 @@
 	// the document.
 	
 	UIView * aView = nil;
-	
 	BOOL isPad = NO;
+    
 #ifdef UI_USER_INTERFACE_IDIOM
 	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 #endif
+    
  	if(isPad) {
-		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20 + 44, 768, 1024-20-44)];
+		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 768, 1024-20)];  // Status bar only
 	} else {
-		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20 + 44, 320, 480-20-44)];
+		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 480-20)];   // Status bar only
 	}
 	
 	[aView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
@@ -1149,8 +1150,6 @@
 	toolbarHeight = 44;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // IPad.
-        
-         
         
         self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeSingle",@"png")];
         
@@ -1295,29 +1294,24 @@
 		
 		// Space.
         
-		
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
-		
 		
 		// Text.
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
         aButton.bounds = CGRectMake( 0, 0, 34 , 30);
         image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"text",@"png")];
         
-        
         [aButton setImage:image forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
         
-        
 		self.textBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
-        
 		
 		// Outline.
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1330,12 +1324,10 @@
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
         
-        
 		self.outlineBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
 		[aBarButtonItem release];
-        
         
 		// Bookmarks.
         
@@ -1343,12 +1335,10 @@
         aButton.bounds = CGRectMake( 0, 0, 34 , 30);
         image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"bookmark_add",@"png")];
         
-        
         [aButton setImage:image forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
-        
         
 		self.bookmarkBarButtonItem = aBarButtonItem;
         
@@ -1361,12 +1351,10 @@
         aButton.bounds = CGRectMake( 0, 0, 34 , 30);
         image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"search",@"png")];
         
-        
         [aButton setImage:image forState:UIControlStateNormal];
         [aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
-        
         
 		self.searchBarButtonItem = aBarButtonItem;
         
@@ -1379,6 +1367,7 @@
        
         // Dismiss
         
+        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
         aButton.bounds = CGRectMake( 0, 0, 30 , 24);
         UIImage *image = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"X_phone",@"png")];
         
@@ -1409,8 +1398,6 @@
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
         
         
-        
-		
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgZoomUnlock style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
 		self.zoomLockBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
@@ -1423,7 +1410,6 @@
         [self.changeDirectionButton setImage:imgl2r forState:UIControlStateNormal];
         [self.changeDirectionButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
-        
         
 		
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
@@ -1438,7 +1424,6 @@
         [self.changeLeadButton setImage:imgLeadRight forState:UIControlStateNormal];
         [self.changeLeadButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
-        
         
 		
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
