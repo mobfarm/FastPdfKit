@@ -517,14 +517,14 @@
     
     aButton =[menuViewController.openButtons objectForKey:page];
     [aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
-    [aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+    [aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
     [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"pause",@"png")] forState:UIControlStateNormal];
     [aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
     
     // Cover button.
     
     aButton = [menuViewController.imgDict objectForKey:page];
-    [aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+    [aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
     [aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
     
     //[aButton release];
@@ -562,10 +562,10 @@
     [aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
     [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
     [aButton removeTarget:self action:@selector(actionStopPDF:) forControlEvents:UIControlEventTouchUpInside];
-	[aButton addTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
     aButton = [menuViewController.imgDict objectForKey:page];
-	[aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
     
 	if (downloadPdfStopped) {
@@ -750,14 +750,14 @@
     
     aButton =[menuViewController.openButtons objectForKey:page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
-	[aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"pause",@"png")] forState:UIControlStateNormal];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 	// Cover button.
 	
 	aButton = [menuViewController.imgDict objectForKey:page];
-	[aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
     
     //[aButton release];
@@ -846,10 +846,10 @@
     [aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
     [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
     [aButton removeTarget:self action:@selector(actionStopPDF:) forControlEvents:UIControlEventTouchUpInside];
-	[aButton addTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
     aButton = [menuViewController.imgDict objectForKey:page];
-	[aButton removeTarget:self action:@selector(actionDownloadPDF:) forControlEvents:UIControlEventTouchUpInside];
+	[aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
     
 	if (downloadPdfStopped) {
