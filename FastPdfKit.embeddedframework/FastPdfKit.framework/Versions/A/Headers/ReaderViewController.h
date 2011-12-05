@@ -39,22 +39,59 @@
 	TVThumbnailScrollView * thumbnailScrollView;
 	UIView * bottomToolbarView;
 	
-	NSMutableArray * thumbImgArray;
-	
-	BOOL pdfOpen;
-	BOOL thumbsViewVisible;
-	
-	UIBarButtonItem *changeModeBarButtonItem;
-	UIBarButtonItem *zoomLockBarButtonItem;
-	UIBarButtonItem *changeDirectionBarButtonItem;
-	UIBarButtonItem *changeLeadBarButtonItem;
-	UIBarButtonItem *searchBarButtonItem;
-	
 	UILabel * numberOfPageTitleToolbar;
 	UILabel * pageNumLabel;
 	
 	id senderText;
 	id senderSearch;
+    
+	UIToolbar * rollawayToolbar;
+    
+    CGFloat toolbarHeight;
+	CGFloat thumbSliderViewBorderWidth;
+	CGFloat thumbSliderViewHeight;
+	
+	NSString * documentId;  // Keep an unique reference to the document in the application (could be an ID, the name, etc)
+	
+    // Child view controllers
+    
+	SearchViewController * searchViewController;
+	SearchManager * searchManager;
+	MiniSearchView * miniSearchView;
+	TextDisplayViewController * textDisplayViewController;
+	    
+	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller
+    NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user
+    NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini
+    
+	UILabel * pageLabel;    // Page label at the bottom of the screen
+	UISlider * pageSlider;  // Page slider at the bottom of the screen
+    
+    // Button content for bar button items
+
+    UIButton *changeModeButton;
+	UIButton *zoomLockButton;
+	UIButton *changeDirectionButton;
+	UIButton *changeLeadButton;
+    
+    // Bar button items
+    
+    UIBarButtonItem *changeModeBarButtonItem;
+	UIBarButtonItem *zoomLockBarButtonItem;
+	UIBarButtonItem *changeDirectionBarButtonItem;
+	UIBarButtonItem *changeLeadBarButtonItem;
+	UIBarButtonItem *searchBarButtonItem;
+    
+    // Flags
+    
+    BOOL willFollowLink;
+    BOOL hudHidden; // General HUD visible flag
+	BOOL multimediaVisible;
+    BOOL pdfOpen;
+	BOOL thumbsViewVisible;
+    BOOL waitingForTextInput;
+    
+    // Cached images for dynamic interface elements
 	
 	UIImage * imgModeSingle;
 	UIImage * imgModeDouble;
@@ -68,51 +105,13 @@
 	
 	UIImage * imgLeadRight;
 	UIImage * imgLeadLeft;
-	
-	CGFloat toolbarHeight;
-	CGFloat thumbSliderViewBorderWidth;
-	CGFloat thumbSliderViewHeight;
-	
-	UIToolbar * rollawayToolbar;
-	
-	BOOL waitingForTextInput;
-	
-	NSString * documentId;  // Keep an unique reference to the document in the application (could be an ID, the name, etc).
-	
-	// Text search controller and stuff.
-    
-	SearchViewController * searchViewController;
-	SearchManager * searchManager;
-	MiniSearchView * miniSearchView;
-	TextDisplayViewController * textDisplayViewController;
-	
-	BOOL hudHidden; // General HUD visible flag.
-	BOOL multimediaVisible;
-    
-	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller.
-    NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user.
-    NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini.
-    
-	UILabel * pageLabel;    // Page label at the bottom of the screen.
-	UISlider * pageSlider;  // Page slider at the bottom of the screen.
-    
-    // Thumbnail related stuff.
-    NSUInteger currentThumbPage;
-    NSFileManager * thumbFileManager;
-    BOOL thumbnailize;
-    
-    UIButton *btnChangeModeBarButtonItem;
-	UIButton *btnZoomLockBarButtonItem;
-	UIButton *btnChangeDirectionBarButtonItem;
-	UIButton *btnChangeLeadBarButtonItem;
-    
-    BOOL willFollowLink;
+
 }
 
-@property (nonatomic,retain) UIButton *btnChangeModeBarButtonItem;
-@property (nonatomic,retain) UIButton *btnZoomLockBarButtonItem;
-@property (nonatomic,retain) UIButton *btnChangeDirectionBarButtonItem;
-@property (nonatomic,retain) UIButton *btnChangeLeadBarButtonItem;
+@property (nonatomic,retain) UIButton *changeModeButton;
+@property (nonatomic,retain) UIButton *zoomLockButton;
+@property (nonatomic,retain) UIButton *changeDirectionButton;
+@property (nonatomic,retain) UIButton *changeLeadButton;
 
 @property (nonatomic,retain) UIImage * imgModeSingle;
 @property (nonatomic,retain) UIImage * imgModeDouble;
@@ -129,9 +128,10 @@
 -(void)showToolbar;
 -(void)hideToolbar;
 
+@property (nonatomic, copy) NSString * documentId;
+
 @property (nonatomic, retain) UIToolbar * rollawayToolbar;
 @property (nonatomic, retain) UILabel * pageNumLabel;
-@property (nonatomic, copy) NSString * documentId;
 
 @property (nonatomic, retain) UISlider * pageSlider;
 
@@ -150,7 +150,6 @@
 @property (nonatomic, retain) UILabel * numberOfPageTitleToolbar;
 
 @property (nonatomic, retain) TVThumbnailScrollView * thumbnailScrollView;
-//@property (nonatomic, retain) MFHorizontalSlider *thumbsliderHorizontal;
 @property (nonatomic, retain) UIView *bottomToolbarView;
 
 @property (nonatomic, retain) SearchViewController * searchViewController;
@@ -163,19 +162,11 @@
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
 
 
-// Thumbnail stuff.
-@property (retain) NSFileManager * thumbFileManager;
-
 -(void)hideHorizontalThumbnails;
 -(void)showHorizontalThumbnails;
 -(void)dismissAlternateViewController;
 -(void)playVideo:(NSString *)path local:(BOOL)isLocal;
 -(void)playAudio:(NSString *)path local:(BOOL)isLocal;
 -(void)showWebView:(NSString *)path local:(BOOL)isLocal;
-
--(void)showToolbar;
--(void)hideToolbar;
--(void)prepareToolbar;
--(void)prepareThumbSlider;
 
 @end

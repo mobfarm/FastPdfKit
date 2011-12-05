@@ -165,4 +165,10 @@
  */
 @property (nonatomic,assign) BOOL fontCacheEnabled;
 
+/**
+ Return an array of FPKGlyphBox, that is, the bounding box of each glyph on the
+ page and its unicode representation. Check FPKGlyphBox interface for details.
+ */
+-(NSArray *)glyphBoxesForPage:(NSUInteger)pageNr;
+
 @end
