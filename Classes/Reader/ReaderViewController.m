@@ -1065,6 +1065,8 @@
         if(!multimediaVisible){
 		
             if(hudHidden) {
+                
+                [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 			
                 [self showToolbar];
                 [self showHorizontalThumbnails];
@@ -1076,6 +1078,8 @@
             } else {
 			
                 // Hide
+                
+                [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 			
                 [self hideToolbar];
                 [self hideHorizontalThumbnails];
@@ -1106,6 +1110,9 @@
 	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar. If
 	// you want to add a toolbar, use the navigation controller's one like you would with an UIImageView to not cover
 	// the document.
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    [self setWantsFullScreenLayout:YES];
 	
 	UIView * aView = nil;
 	BOOL isPad = NO;
@@ -1832,7 +1839,7 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[rollawayToolbar setFrame:CGRectMake(0, 0, rollawayToolbar.frame.size.width, toolbarHeight)];
+	[rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
 	[UIView commitAnimations];		
 }
 
