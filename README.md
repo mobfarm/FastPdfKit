@@ -299,6 +299,15 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1.2 (December 16th, 2011)
+* Non-unlocked password protected douments should no more crash the application.
+* Cordinates for taps on the right page are now correct.
+* Fixed a bug involving multibyte fonts compromising search, introduced with
+    unicode normalization.
+* Few memory leaks in ReaderViewController.
+* Overlay views are enbaled on any license again.
+* Newstand is disabled as default due to a memory leak in the download procedure.
+
 ### Update 3.1.1 (November 30th, 2011)
 * View size of the reader is now appropriate for the screen configuration (status bar only).
 * Added missing dismiss button in ReaderViewController on iPhone.
