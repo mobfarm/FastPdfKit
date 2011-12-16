@@ -2131,6 +2131,11 @@
 	self.changeDirectionBarButtonItem = nil;
 	self.changeLeadBarButtonItem = nil;
 	self.searchBarButtonItem = nil;
+    self.textBarButtonItem = nil;
+    self.numberOfPageTitleBarButtonItem = nil;
+    self.outlineBarButtonItem = nil;
+    self.bookmarkBarButtonItem = nil;
+    self.dismissBarButtonItem = nil;
     
     self.changeModeButton = nil;
 	self.zoomLockButton = nil;
@@ -2157,11 +2162,18 @@
     
     [rollawayToolbar release];
 	
+    // Bar button item.
+    
     [searchBarButtonItem release], searchBarButtonItem = nil;
 	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
 	[changeModeBarButtonItem release], changeModeBarButtonItem = nil;
 	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
 	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
+    [textBarButtonItem release], textBarButtonItem = nil;
+    [numberOfPageTitleBarButtonItem release], numberOfPageTitleBarButtonItem = nil;
+    [outlineBarButtonItem release], outlineBarButtonItem = nil;
+    [bookmarkBarButtonItem release], bookmarkBarButtonItem = nil;
+    [dismissBarButtonItem release], dismissBarButtonItem = nil;
     
     [zoomLockButton release],zoomLockButton = nil;
     [changeModeButton release],changeModeButton = nil;

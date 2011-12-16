@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>UINewsstandApp</key>
-	<true/>
+	<false/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>newsstand-content</string>
