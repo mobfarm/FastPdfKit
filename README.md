@@ -299,6 +299,17 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.1.3 (Decembter 30th, 2011)
+* Reworked page metrics synchronization to reduce lag on slow pdfs (more to come).
+* Paged scroll view attribute is accessible again in the MFDocumentViewController
+    public interface.
+* FPK annotations parsing can be disabled by setting MFDocumentViewController's
+    fpkAnnotationsEnabled to NO. Use this if you experience frequent freezes while
+    skimming the pages.
+* You can add multiple MFDocumentViewControllerDelegates by calling MFDocumentViewController's
+    addDocumentDelegate: (and removeDocumentDelegate:). Check the interface for 
+    details
+
 ### Update 3.1.2 (December 16th, 2011)
 * Non-unlocked password protected douments should no more crash the application.
 * Cordinates for taps on the right page are now correct.

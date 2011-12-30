@@ -11,7 +11,6 @@
 #import "MFDocumentOverlayDataSource.h"
 #import "FPKOverlayViewDataSource.h"
 
-
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
 @class MFDocumentViewController;
@@ -22,7 +21,8 @@
 	
 	// Mode change callback delegate
 	NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
-	
+	CFMutableArrayRef documentDelegates;
+    
     NSMutableSet * overlayDataSources;
     NSMutableSet * overlayViewDataSources;
     
@@ -80,18 +80,28 @@
     CGFloat padding;
 	
     BOOL useTiledOverlayView;
+    
+    
 }
 
 @property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
+-(void)addDocumentDelegate:(NSObject<MFDocumentViewControllerDelegate> *)delegate;
+-(void)removeDocumentDelegate:(NSObject<MFDocumentViewControllerDelegate> *)delegate;
+
+
 @property (readonly) MFDocumentManager * document;
 
 /**
- This property enable or disable the directional lock in the inner (document) scroll view. Default is NO.
+ This property enable or disable the directional lock in the inner (document)
+ scroll view. 
+ Default is NO.
  */
 @property (nonatomic,readwrite,getter = isDirectionLockEnabled) BOOL directionalLockEnabled;
 
 /**
- This property will enable an CATiledLayer version of the overlay view. This means overlay drawables will be drawn sharp, no matter the zoom of the scroll view.
+ This property will enable an CATiledLayer version of the overlay view. This
+ means overlay drawables will be drawn sharp, no matter the zoom of the scroll
+ view.
  */
 @property (readwrite) BOOL useTiledOverlayView;
 
@@ -101,12 +111,14 @@
 @property (nonatomic,readwrite) BOOL showHorizontalScroller;
 
 /**
- Set this flag to NO if you don't want the dropdown shadow under the pages. Default is YES.
+ Set this flag to NO if you don't want the dropdown shadow under the pages.
+ Default is YES.
  */
 @property (nonatomic,readwrite) BOOL showShadow;
 
 /**
- Set the amount of minimum padding between the pages and the screen edge. Default is 5.0. Values are clipped between 0 and 100.
+ Set the amount of minimum padding between the pages and the screen edge.
+ Default is 5.0. Values are clipped between 0 and 100.
  */
 @property (nonatomic,readwrite) CGFloat padding;
 
@@ -117,19 +129,27 @@
 -(void)removeOverlayDataSource:(id<MFDocumentOverlayDataSource>)ods;
 
 /**
+ Enable or disable FPK Annotations parsing at page load. Set it to NO if you
+ don't use FPK Annotations and experience freezing while scrolling the pages.
+ Default is YES (enabled).
+ */
+@property (nonatomic,readwrite) BOOL fpkAnnotationsEnabled;
+
+/**
  Add and remove an Overlay View Datasource for overlay UIViews.
 */
 -(void)addOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
 -(void)removeOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
 
 /**
- This method will provoke the redraw of the overlay. Overlay Datasources will be asked to provide drawables.
+ This method will provoke the redraw of the overlay. Overlay Datasources will be
+ asked to provide drawables.
  */
 -(void)reloadOverlay;
 
 /**
- This will return the appropriate zoom level to perfectly zoom onto an annotation. If return 0, there's no available
- page data to compute the zoom yet.
+ This will return the appropriate zoom level to perfectly zoom onto an annotation.
+ If return 0, there's no available page data to compute the zoom yet.
  */
 -(float)zoomLevelForAnnotationRect:(CGRect)rect ofPage:(NSUInteger)page;
 
@@ -144,18 +164,21 @@
 -(CGPoint)zoomOffset;
 
 /**
- This method will return the page number of the left page displayed. If the mode is single page, the left page number is the current page.
+ This method will return the page number of the left page displayed. If the mode
+ is single page, the left page number is the current page.
  */
 -(NSUInteger)leftPage;
 
 /**
- This method will return the page number of the right page displayed. If the mode is single, right page number is invalid.
+ This method will return the page number of the right page displayed. If the mode
+ is single, right page number is invalid.
  */
 -(NSUInteger)rightPage;
 
 /**
- Set the starting page of the document. It is valid only after initialization and before the view is
- displayed on the screen. Tipically you want to set this just after the init of the viewController.
+ Set the starting page of the document. It is valid only after initialization
+ and before the view is displayed on the screen. Tipically you want to set this 
+ just after the init of the viewController.
  Default is 1.
  */
 @property (nonatomic,readwrite) NSUInteger startingPage;
@@ -189,7 +212,8 @@
 @property (assign,readwrite,getter=isDocumentInteractionEnabled) BOOL documentInteractionEnabled;
 
 /**
- Enable or disable the display of overlay item over the document. Default is disabled.
+ Enable or disable the display of overlay item over the document.
+ Default is disabled.
  */
 @property (readwrite) BOOL overlayEnabled;
 
@@ -312,6 +336,15 @@
 -(void)moveToPreviousPage;
 
 /**
+ Call this method rightly after dismissing this MFDocumentViewController 
+ instance. It will release all the resources and stop the background threads. 
+ Once this method has been called, the MFDocumentViewController instance cannot 
+ be considered valid anymore and should be released.
+ */
+-(void)cleanUp;
+
+
+/**
  Convert a point from MFDocumentViewController's view space to page space.
  */
 -(CGPoint)convertPoint:(CGPoint)point fromViewtoPage:(NSUInteger)page;
@@ -369,5 +402,18 @@
  Set the maximum zoom scale for the pdf page.
  */
 -(void)setMaximumZoomScale:(NSNumber *)scale;
+
+/**
+ Set the max number of preview images to use at any time. Call this before 
+ presenting the MFDocumentViewController subclass. Default is 4, sweet spot is
+ 3-4 and you should not exceed this number unless your target device are iPhone4 
+ iPad2 or newer devices and/or your PDF are scarce of images.
+ */
+@property (nonatomic,readwrite) NSUInteger previewsCount;
+
+/**
+ Access the inner paged scroll view.
+ */
+@property (readonly) UIScrollView * pagedScrollView;
 
 @end
