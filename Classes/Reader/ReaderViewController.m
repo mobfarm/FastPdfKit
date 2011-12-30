@@ -1065,6 +1065,8 @@
         if(!multimediaVisible){
 		
             if(hudHidden) {
+                
+                [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 			
                 [self showToolbar];
                 [self showHorizontalThumbnails];
@@ -1076,6 +1078,8 @@
             } else {
 			
                 // Hide
+                
+                [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 			
                 [self hideToolbar];
                 [self hideHorizontalThumbnails];
@@ -1106,6 +1110,9 @@
 	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar. If
 	// you want to add a toolbar, use the navigation controller's one like you would with an UIImageView to not cover
 	// the document.
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    [self setWantsFullScreenLayout:YES];
 	
 	UIView * aView = nil;
 	BOOL isPad = NO;
@@ -1832,7 +1839,7 @@
 	[UIView beginAnimations:@"show" context:NULL];
 	[UIView setAnimationDuration:0.35];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[rollawayToolbar setFrame:CGRectMake(0, 0, rollawayToolbar.frame.size.width, toolbarHeight)];
+	[rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
 	[UIView commitAnimations];		
 }
 
@@ -2124,6 +2131,11 @@
 	self.changeDirectionBarButtonItem = nil;
 	self.changeLeadBarButtonItem = nil;
 	self.searchBarButtonItem = nil;
+    self.textBarButtonItem = nil;
+    self.numberOfPageTitleBarButtonItem = nil;
+    self.outlineBarButtonItem = nil;
+    self.bookmarkBarButtonItem = nil;
+    self.dismissBarButtonItem = nil;
     
     self.changeModeButton = nil;
 	self.zoomLockButton = nil;
@@ -2150,11 +2162,18 @@
     
     [rollawayToolbar release];
 	
+    // Bar button item.
+    
     [searchBarButtonItem release], searchBarButtonItem = nil;
 	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
 	[changeModeBarButtonItem release], changeModeBarButtonItem = nil;
 	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
 	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
+    [textBarButtonItem release], textBarButtonItem = nil;
+    [numberOfPageTitleBarButtonItem release], numberOfPageTitleBarButtonItem = nil;
+    [outlineBarButtonItem release], outlineBarButtonItem = nil;
+    [bookmarkBarButtonItem release], bookmarkBarButtonItem = nil;
+    [dismissBarButtonItem release], dismissBarButtonItem = nil;
     
     [zoomLockButton release],zoomLockButton = nil;
     [changeModeButton release],changeModeButton = nil;

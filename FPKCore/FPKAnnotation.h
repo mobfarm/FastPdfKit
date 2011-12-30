@@ -15,6 +15,9 @@
     
 }
 
+/**
+ Rect of the annotation in page coordinates (origin at the bottom left).
+ */
 @property (nonatomic,readwrite) CGRect rect;
 
 @end
