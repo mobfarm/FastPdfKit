@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/MFOverlayTouchable</TokenIdentifier>
-			<Abstract></Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>MFOverlayTouchable.h</DeclaredIn>
 			
 			<NodeRef refid="13"/>
@@ -13,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFOverlayTouchable/containsPoint:</TokenIdentifier>
-			<Abstract>Implement this method to perform a hit test. The CGPoint coordinates are defined in document user space.</Abstract>
+			<Abstract type="html">Implement this method to perform a hit test. The CGPoint coordinates are defined in document user space.</Abstract>
 			<DeclaredIn>MFOverlayTouchable.h</DeclaredIn>			
 			
 			<Declaration>- (BOOL)containsPoint:(CGPoint)point</Declaration>

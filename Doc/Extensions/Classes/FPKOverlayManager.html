@@ -1,0 +1,587 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>FPKOverlayManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 748)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">FastPdfKit Extensions </a></h1>
+				<a id="developerHome" href="../index.html">MobFarm</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">FPKOverlayManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/documentViewController">&nbsp;&nbsp;&nbsp;&nbsp;documentViewController</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithExtensions:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithExtensions:</option>
+	
+	<option value="//api/name/overlayViewWithTag:">&nbsp;&nbsp;&nbsp;&nbsp;- overlayViewWithTag:</option>
+	
+	<option value="//api/name/setExtensions:">&nbsp;&nbsp;&nbsp;&nbsp;- setExtensions:</option>
+	
+	<option value="//api/name/showAnnotationForOverlay:withRect:andUri:onPage:">&nbsp;&nbsp;&nbsp;&nbsp;- showAnnotationForOverlay:withRect:andUri:onPage:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentViewController">documentViewController</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithExtensions:">initWithExtensions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/overlayViewWithTag:">overlayViewWithTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setExtensions:">setExtensions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAnnotationForOverlay:withRect:andUri:onPage:">showAnnotationForOverlay:withRect:andUri:onPage:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="FPKOverlayManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">FPKOverlayManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">FPKOverlayViewDataSource<br />MFDocumentViewControllerDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">FPKOverlayManager.h<br />FPKOverlayManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class is the core for the Extensions. You are supposed to subclass it (<a href="../Classes/OverlayManager.html">OverlayManager</a> is an example) to enable or disable extensions.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentViewController">&nbsp;&nbsp;documentViewController</a></code>
+		<span class="tooltip"><p>You need to assign to the <a href="FPKOverlayManager.html">FPKOverlayManager</a> the MFDocumentViewController in order to access its MFDocumentManager and the coordinate conversion methods.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setExtensions:">&ndash;&nbsp;setExtensions:</a></code>
+		<span class="tooltip"><p>Method to set the supported Extensions.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithExtensions:">&ndash;&nbsp;initWithExtensions:</a></code>
+		<span class="tooltip"><p>You can init this object passing the extensions as array, or use the standard init method and then set the extensions manually.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAnnotationForOverlay:withRect:andUri:onPage:">&ndash;&nbsp;showAnnotationForOverlay:withRect:andUri:onPage:</a></code>
+		<span class="tooltip"><p>Method that is called to transform a pdf annotation into a <code>UIView</code> that will be added over the pdf page. The method itself checks if there is an Extension that support the url <em>prefix</em> and pass every parameter to the Extension.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/overlayViewWithTag:">&ndash;&nbsp;overlayViewWithTag:</a></code>
+		<span class="tooltip"><p>This method will search on the subviews for the one with a desired tag.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/documentViewController" title="documentViewController"></a>
+	<h3 class="subsubtitle method-title">documentViewController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>You need to assign to the <a href="FPKOverlayManager.html">FPKOverlayManager</a> the MFDocumentViewController in order to access its MFDocumentManager and the coordinate conversion methods.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) MFDocumentViewController&lt;FPKOverlayManagerDelegate&gt; *documentViewController</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>You need to assign to the <a href="FPKOverlayManager.html">FPKOverlayManager</a> the MFDocumentViewController in order to access its MFDocumentManager and the coordinate conversion methods.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKOverlayManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithExtensions:" title="initWithExtensions:"></a>
+	<h3 class="subsubtitle method-title">initWithExtensions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>You can init this object passing the extensions as array, or use the standard init method and then set the extensions manually.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (FPKOverlayManager *)initWithExtensions:(NSArray *)<em>ext</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ext</em></dt>
+			<dd><p>An array of strings that should contain every supported annotation like <strong><a href="../Classes/FPKMap.html">FPKMap</a></strong>, <strong><a href="../Classes/FPKYouTube.html">FPKYouTube</a></strong>, ecc.</p>
+
+<pre><code>[[anOverlayManager alloc] initWithExtensions:[[NSArray alloc] initWithObjects:@"FPKMap", @"FPKYouTube", nil]];
+</code></pre></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>You can init this object passing the extensions as array, or use the standard init method and then set the extensions manually.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKOverlayManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/overlayViewWithTag:" title="overlayViewWithTag:"></a>
+	<h3 class="subsubtitle method-title">overlayViewWithTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will search on the subviews for the one with a desired tag.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (UIView *)overlayViewWithTag:(int)<em>tag</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tap</em></dt>
+			<dd><p>The tag of the desired view.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The view for the corresponding tag.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method will search on the subviews for the one with a desired tag.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKOverlayManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setExtensions:" title="setExtensions:"></a>
+	<h3 class="subsubtitle method-title">setExtensions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method to set the supported Extensions.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setExtensions:(NSArray *)<em>ext</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ext</em></dt>
+			<dd><p>An array of strings that should contain every supported annotation like <strong><a href="../Classes/FPKMap.html">FPKMap</a></strong>, <strong><a href="../Classes/FPKYouTube.html">FPKYouTube</a></strong>, ecc.</p>
+
+<pre><code>[anOverlayManager setExtensions:[[NSArray alloc] initWithObjects:@"FPKMap", @"FPKYouTube", nil]];
+</code></pre></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method to set the supported Extensions.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKOverlayManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAnnotationForOverlay:withRect:andUri:onPage:" title="showAnnotationForOverlay:withRect:andUri:onPage:"></a>
+	<h3 class="subsubtitle method-title">showAnnotationForOverlay:withRect:andUri:onPage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method that is called to transform a pdf annotation into a <code>UIView</code> that will be added over the pdf page. The method itself checks if there is an Extension that support the url <em>prefix</em> and pass every parameter to the Extension.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (UIView *)showAnnotationForOverlay:(BOOL)<em>load</em> withRect:(CGRect)<em>rect</em> andUri:(NSString *)<em>uri</em> onPage:(NSUInteger)<em>page</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>load</em></dt>
+			<dd><p>If the method is called when the pdf page is going to be drawn the value should be YES, otherwise NO (usually when a user tapped on the page over the annotation rect).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rect</em></dt>
+			<dd><p>The CGRect in page coordinates of the annotation as extracted from the pdf tree.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uri</em></dt>
+			<dd><p>The uri contained in the annotation hyperlink in the form <em>prefix://path?param1&amp;param2</em>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>page</em></dt>
+			<dd><p>The pdf page that is requesting the view for the annotation.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIView</code> that has been created by the right Extension and will be added over the page.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method that is called to transform a pdf annotation into a <code>UIView</code> that will be added over the pdf page. The method itself checks if there is an Extension that support the url <em>prefix</em> and pass every parameter to the Extension.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKOverlayManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 MobFarm. All rights reserved. (Last updated: 2012-01-04)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 748)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

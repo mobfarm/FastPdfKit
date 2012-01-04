@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>README Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />	
+		<meta name="generator" content="appledoc 2.0.5 (build 748)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">FastPdfKit Extensions </a></h1>
+				<a id="developerHome" href="../index.html">MobFarm</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">README Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="README Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h1>FastPdfKit Extensions</h1>
+
+<p>In this repository you&rsquo;ll find every official Extension for <a href="http://git.io/fpk">FastPdfKit</a>.</p>
+
+<p>The <a href="http://doc.fastpdfkit.com/Extensions">complete documentation</a> for <strong>FPKExtensions</strong> is available <a href="http://doc.fastpdfkit.com/Extensions">here</a>, the one for <a href="http://doc.fastpdfkit.com">FastPdfKit</a> is available <a href="http://doc.fastpdfkit.com">here</a>.</p>
+
+<p><strong>Xcode docset</strong> are also available: there are feeds for <a href="http://doc.fastpdfkit.com/Extensions/docset.atom">FPKExtensions</a> and <a href="http://doc.fastpdfkit.com/docset.atom">FastPdfKit</a>.</p>
+
+<p>Visit <a href="http://fastpdfkit.com">fastpdfkit.com</a> to learn more about <strong>FastPdfKit</strong>.</p>
+
+<h2>Key Concept</h2>
+
+<p><strong>You can place any custom view over a pdf page just using standard pdf hyperlinks and FastPdfKit.</strong></p>
+
+<p>Extensions are designed to easily create the custom views.</p>
+
+<h2>Available Extensions</h2>
+
+<p><strong>FPK</strong> as name prefix identifies an official extension</p>
+
+<ul>
+<li><a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKPayPal.html">FPKPayPal</a> to create <strong>catalogs</strong> with <strong>items</strong> that can be <strong>purchased</strong> directly <strong>from the app</strong>;</li>
+<li><a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKYouTube.html">FPKYouTube</a> to place <strong>YouTube</strong> video on the page.</li>
+<li><a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKGallerySlide.html">FPKGallerySlide</a> interactive <strong>image gallery</strong> with manual or automatic advancement;</li>
+<li><a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKMap.html">FPKMap</a> to render an interactive google map;</li>
+<li><a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKGalleryFade.html">FPKGalleryFade</a> image gallery useful for the table of contents;</li>
+<li><a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKGalleryTap.html">FPKGalleryTap</a> to create a multi interactive image gallery;</li>
+<li><a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKMessage.html">FPKMessage</a> to show details or alerts;</li>
+<li><a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKWebPopup.html">FPKWebPopup</a> to open a <strong>web page</strong> in a popup view;</li>
+</ul>
+
+
+<p><strong>FPKShared</strong> contains some shared classes needed for every official Extension. Probably you&rsquo;ll find useful classes.</p>
+
+<p><strong>Common</strong> contains some third party shared classes.</p>
+
+<h2>Out of the box overlays</h2>
+
+<p>FastPdfKit supports some overlays out of the box like videos, sounds and web pages. If you like the way they works you can use them, otherwise you&rsquo;re free to develop your own solutions.</p>
+
+<p><strong>Remote</strong> is something on the web.</p>
+
+<p><strong>Local</strong> is something that resides in the <a href="http://doc.fastpdfkit.com/Classes/MFDocumentManager.html#//api/name/resourceFolder">resourceFolder</a> defined in the <a href="http://doc.fastpdfkit.com/Classes/MFDocumentManager.html">MFDocumentManager</a>.</p>
+
+<table>
+    <tr>
+        <td width="100"><b>Type</b></td><td width="60"><b>Local</b></td><td width="60"><b>Remote</b></td>
+    </tr>
+    <tr>
+        <td>Overlay Movie</td><td>fpkv://</td><td>fpky://</td>
+    </tr>
+    <tr>
+        <td>Modal Movie</td><td>fpke://</td><td>fpkz://</td>
+    </tr>
+    <tr>
+        <td>Overlay HTML</td><td>fpkh://</td><td>fpkw://</td>
+    </tr>
+    <tr>
+        <td>Modal HTML</td><td>fpki://</td><td>http://</td>
+    </tr>
+    <tr>
+        <td>Overlay Audio</td><td>fpka://</td><td>fpkb://</td>
+    </tr>
+</table>
+
+
+<h2>What is an Extension?</h2>
+
+<p>FastPdfKit is starting to be largely used for pdf documents, but many <strong>developers</strong> asked us to give them an easy way to <strong>interact with the pdf pages</strong> and in particular <strong>add overlay views</strong> on the document.</p>
+
+<p>Overlay views can be useful for <strong>magazines, newspapers, catalogs, textbooks, reports</strong> and many other implementations. But any publisher needs an easy way to <strong>customize the content</strong> of the overlays and <strong>create new ones</strong> to fulfill his needs. So we created the Extension concept and the classes behind it.</p>
+
+<p>Extensions are designed to add custom overlay views over a pdf page, but you can also add any other feature to enhance FastPdfKit.</p>
+
+<p>Extension are working out of the box with <strong>PDF hyperlinks</strong>. Any pdf viewer like Apple <em>Preview</em> or Adobe <em>Acrobat Reader</em> can add hyperlinks on existing pdf documents. Also any PDF authoring tool like Adobe <em>InDesign</em> and Apple <em>Pages</em> can add them.</p>
+
+<p>The <strong>key concept</strong> is that you define a <strong>custom url</strong> and if FastPdfKit finds a <strong>link of that kind</strong> in the pdf page, automatically creates an instance of the Extension and <strong>places the <code>UIView</code> over the page</strong>.</p>
+
+<p>A world of opportunities is now open.</p>
+
+<h2>Sample Project</h2>
+
+<p>Open the <em>SampleProject</em> folder and you&rsquo;ll find the Sample Xcode Project.</p>
+
+<p>Just launch it for Simulator or Device and you&rsquo;ll get a <a href="https://github.com/mobfarm/FPKExtensions/blob/master/SampleProject/SampleProject/Resources/sample.pdf">sample pdf</a> (the original InDesign document is also <a href="https://github.com/mobfarm/FPKExtensions/blob/master/SampleProject/SampleProject/Resources/sample.indd">included</a>) with and example of every official annotation and the relative url.</p>
+
+<h2>Structure</h2>
+
+<p>Each Extension is packed in its own <strong>framework</strong>. The framework is a <em>fake framework</em> created with the amazing <a href="https://github.com/kstenerud/iOS-Universal-Framework">iOS-Universal-Framework</a> by <a href="https://github.com/kstenerud">Karl Stenerud</a>.</p>
+
+<p>We&rsquo;ve chosen this approach to maintain separated the classes, images and xibs of each Extension and let you choose which one add to your app, just dragging the corresponding framework.</p>
+
+<h2>Activate an Extensions</h2>
+
+<p>To use the Extension in a project that uses FastPdfKit, just drag the .embeddedframework folder in the Xcode Navigation Bar.</p>
+
+<p>Then <code>#import</code> the <code>&lt;ExtensionName/ExtensionName.h&gt;</code> in your <code>MFOverlayDataSource</code> subclass.</p>
+
+<p>Add the ExtensionName as string to the <code>extensions</code> array.</p>
+
+<p>The standard <code>extensions</code> array should contain every supported Extension like</p>
+
+<pre><code>NSArray *extensions = [NSArray arrayWithObjects:@"FPKYouTube",
+                                                @"FPKMap",
+                                                @"FPKTransitionGallery", 
+                                                @"YourExtensionName",
+                                                nil];
+</code></pre>
+
+<h2>Support Extensions in your FastPdfKit application</h2>
+
+<p>To add an Extension to your application you need create a subclass of <a href="http://doc.fastpdfkit.com/Extensions/Classes/FPKOverlayManager.html">FPKOverlayManager</a>, just like <a href="https://github.com/mobfarm/FPKExtensions/blob/master/SampleProject/SampleProject/OverlayManager.m">OverlayManager</a> in the sample project.</p>
+
+<p>Add the <strong>FPKShared.embeddedframework</strong> to the Navigation bar.
+Then simply drag the desired Extension .embeddedframework folder to the Navigation bar, for example the <strong><a href="../Classes/FPKYouTube.html">FPKYouTube</a>.embeddedframework</strong>.</p>
+
+<p>In the <strong><a href="../Classes/FPKOverlayManager.html">FPKOverlayManager</a></strong> subclass <code>#import</code> the framework.</p>
+
+<pre><code>#import &lt;FPKYouTube/FPKYouTube.h&gt;
+</code></pre>
+
+<p>And add the Extension name as <code>NSString</code> to the Extensions array like <code>@"FPKYouTube"</code> in the custom init method.</p>
+
+<pre><code>- (FPKOverlayManager *)init
+{
+    self = [super init];
+    if (self != nil)
+    {
+        [self setExtensions:[[NSArray alloc] initWithObjects:@"FPKMap", @"FPKYouTube", nil]];
+    }
+    return self;
+}
+</code></pre>
+
+<h2>Create an Extension</h2>
+
+<p>To create an Extension you can create a copy of the <strong>FPKSampleExtension</strong> folder and open it with Xcode.</p>
+
+<ul>
+<li><p><strong>Rename the target</strong> and the project with a descriptive name.</p></li>
+<li><p><strong>Add your objects</strong> to the projects, classes, xibs and images. Please name the images and the xib document with a prefix, so they doesn&rsquo;t conflict with other extension ones. You can even pack the xibs and images in a bundle.</p></li>
+<li><p>Add every document to the framework target and <strong>build for iOS Device</strong>.</p></li>
+<li><p>You need to set as <strong>public</strong> just the headers that you need to access from the external project.</p></li>
+<li><p>A new folder called ExtensionName.embeddedframework will appear in the <strong>project root</strong>.</p></li>
+<li><p>If you need to use the same classes for many Extensions you should add them in a separate Framework. For ours we use the <strong>FPKShared</strong>.</p></li>
+<li><p>For code not developed by us, we&rsquo;ve created the <strong>Common</strong> framework to help you get the latest code an avoid conflicts.</p></li>
+</ul>
+
+
+<h2>Feedback</h2>
+
+<p>If you need or want suggest an Extension you can create a new <a href="https://github.com/mobfarm/FPKExtensions/issues/new">Feature Request</a>.</p>
+
+<p>There&rsquo;s also the <a href="http://support.fastpdfkit.com">support</a> website where you can find the <a href="http://support.fastpdfkit.com/kb">Knowledge Base</a> and some <a href="http://support.fastpdfkit.com/discussions">Discussions</a>.</p>
+
+<p>If you&rsquo;ve developed an Extension and want to <strong>share it</strong> with the community, please send a <strong>pull request</strong> on <a href="http://git.io/fpke">github</a>.</p>
+
+<p>If you are using FastPdfKit <strong>let us know</strong>, we will be happy to list your app!</p>
+
+<h2>In development Extensions</h2>
+
+<ul>
+<li><strong>FPKConfig</strong></li>
+<li><strong>FPKGlobalConfig</strong></li>
+<li><strong>FPKTextSelection</strong></li>
+<li><strong>FPKiCarouselPopup</strong></li>
+<li><strong>FPKImagePopup</strong></li>
+<li><strong>FPKVideoPopup</strong></li>
+<li><strong>FPKEmail</strong></li>
+<li><strong>FPKiMessage</strong></li>
+<li><strong>FPKShareKit</strong></li>
+<li><strong>FPKScreenshot</strong></li>
+<li><strong>FPKGalleryVertical</strong></li>
+</ul>
+
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 MobFarm. All rights reserved. (Last updated: 2012-01-04)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 748)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

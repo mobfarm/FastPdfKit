@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/MFAudioProvider</TokenIdentifier>
-			<Abstract></Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>MFAudioProvider.h</DeclaredIn>
 			
 			<NodeRef refid="9"/>
@@ -13,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/togglePlay</TokenIdentifier>
-			<Abstract>Play when stopped and viceversa.</Abstract>
+			<Abstract type="html">Play when stopped and viceversa.</Abstract>
 			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
 			
 			<Declaration>- (void)togglePlay</Declaration>
@@ -24,7 +24,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/isPlaying</TokenIdentifier>
-			<Abstract>Tell if the audio clip is playing.</Abstract>
+			<Abstract type="html">Tell if the audio clip is playing.</Abstract>
 			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
 			
 			<Declaration>- (BOOL)isPlaying</Declaration>
@@ -35,7 +35,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/setVolumeLevel:</TokenIdentifier>
-			<Abstract>Set the volume level, from 0.0 to 1.0.</Abstract>
+			<Abstract type="html">Set the volume level, from 0.0 to 1.0.</Abstract>
 			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
 			
 			<Declaration>- (void)setVolumeLevel:(float)volume</Declaration>
@@ -46,7 +46,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFAudioProvider/volumeLevel</TokenIdentifier>
-			<Abstract>Return the volume level.</Abstract>
+			<Abstract type="html">Return the volume level.</Abstract>
 			<DeclaredIn>MFAudioProvider.h</DeclaredIn>			
 			
 			<Declaration>- (float)volumeLevel</Declaration>

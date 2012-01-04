@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MFTextItem</TokenIdentifier>
-			<Abstract></Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>MFTextItem.h</DeclaredIn>
 			
 			<NodeRef refid="6"/>
@@ -13,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/initWithText:andHighlightPath:</TokenIdentifier>
-			<Abstract>Default initializer. Init the Text Item with some text and a path for the hilight that will be rendered in
+			<Abstract type="html">Default initializer. Init the Text Item with some text and a path for the hilight that will be rendered in
 page space.</Abstract>
 			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
@@ -25,7 +25,7 @@ page space.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/initWithText:highlightPath:andPage:</TokenIdentifier>
-			<Abstract>Default initializer, plus the page number.</Abstract>
+			<Abstract type="html">Default initializer, plus the page number.</Abstract>
 			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
 			<Declaration>- (id)initWithText:(NSString *)someText highlightPath:(CGPathRef)aPath andPage:(NSUInteger)aPage</Declaration>
@@ -36,7 +36,7 @@ page space.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/text</TokenIdentifier>
-			<Abstract>Some text to be displayed along with the item.</Abstract>
+			<Abstract type="html">Some text to be displayed along with the item.</Abstract>
 			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
 			<Declaration>@property (readonly) NSString *text</Declaration>
@@ -46,8 +46,30 @@ page space.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/text</TokenIdentifier>
+			<Abstract type="html">Some text to be displayed along with the item.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/setText:</TokenIdentifier>
+			<Abstract type="html">Some text to be displayed along with the item.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>- (void)setText:(NSString *)val</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/highlightPath</TokenIdentifier>
-			<Abstract>The path for the hilight. It is defined in page space.</Abstract>
+			<Abstract type="html">The path for the hilight. It is defined in page space.</Abstract>
 			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
 			<Declaration>@property (readonly) CGPathRef highlightPath</Declaration>
@@ -57,8 +79,30 @@ page space.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/highlightPath</TokenIdentifier>
+			<Abstract type="html">The path for the hilight. It is defined in page space.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>- (CGPathRef)highlightPath</Declaration>
+			
+			
+			<Anchor>//api/name/highlightPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/setHighlightPath:</TokenIdentifier>
+			<Abstract type="html">The path for the hilight. It is defined in page space.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>- (void)setHighlightPath:(CGPathRef)val</Declaration>
+			
+			
+			<Anchor>//api/name/highlightPath</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/page</TokenIdentifier>
-			<Abstract>The page of which this text item represent the position of a word.</Abstract>
+			<Abstract type="html">The page of which this text item represent the position of a word.</Abstract>
 			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
 			<Declaration>@property (readonly) NSUInteger page</Declaration>
@@ -68,8 +112,30 @@ page space.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/page</TokenIdentifier>
+			<Abstract type="html">The page of which this text item represent the position of a word.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>- (NSUInteger)page</Declaration>
+			
+			
+			<Anchor>//api/name/page</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/setPage:</TokenIdentifier>
+			<Abstract type="html">The page of which this text item represent the position of a word.</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>- (void)setPage:(NSUInteger)val</Declaration>
+			
+			
+			<Anchor>//api/name/page</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFTextItem/highlightColor</TokenIdentifier>
-			<Abstract>Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)</Abstract>
+			<Abstract type="html">Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)</Abstract>
 			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *highlightColor</Declaration>
@@ -79,8 +145,30 @@ page space.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/highlightColor</TokenIdentifier>
+			<Abstract type="html">Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>- (UIColor *)highlightColor</Declaration>
+			
+			
+			<Anchor>//api/name/highlightColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFTextItem/setHighlightColor:</TokenIdentifier>
+			<Abstract type="html">Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)</Abstract>
+			<DeclaredIn>MFTextItem.h</DeclaredIn>			
+			
+			<Declaration>- (void)setHighlightColor:(UIColor *)val</Declaration>
+			
+			
+			<Anchor>//api/name/highlightColor</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MFTextItem/highlightRedColor</TokenIdentifier>
-			<Abstract>A few usefult colors for the highlight. You are NOT responsible for releasing
+			<Abstract type="html">A few usefult colors for the highlight. You are NOT responsible for releasing
 the object.</Abstract>
 			<DeclaredIn>MFTextItem.h</DeclaredIn>			
 			

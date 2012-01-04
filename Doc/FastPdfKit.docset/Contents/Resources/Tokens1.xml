@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/FPKAnnotation</TokenIdentifier>
-			<Abstract></Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>FPKAnnotation.h</DeclaredIn>
 			
 			<NodeRef refid="1"/>
@@ -13,10 +13,32 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/FPKAnnotation/rect</TokenIdentifier>
-			<Abstract>Rect of the annotation in page coordinates (origin at the bottom left).</Abstract>
+			<Abstract type="html">Rect of the annotation in page coordinates (origin at the bottom left).</Abstract>
 			<DeclaredIn>FPKAnnotation.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readwrite) CGRect rect</Declaration>
+			
+			
+			<Anchor>//api/name/rect</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FPKAnnotation/rect</TokenIdentifier>
+			<Abstract type="html">Rect of the annotation in page coordinates (origin at the bottom left).</Abstract>
+			<DeclaredIn>FPKAnnotation.h</DeclaredIn>			
+			
+			<Declaration>- (CGRect)rect</Declaration>
+			
+			
+			<Anchor>//api/name/rect</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FPKAnnotation/setRect:</TokenIdentifier>
+			<Abstract type="html">Rect of the annotation in page coordinates (origin at the bottom left).</Abstract>
+			<DeclaredIn>FPKAnnotation.h</DeclaredIn>			
+			
+			<Declaration>- (void)setRect:(CGRect)val</Declaration>
 			
 			
 			<Anchor>//api/name/rect</Anchor>

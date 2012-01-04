@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/MFOverlayDrawable</TokenIdentifier>
-			<Abstract></Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>MFOverlayDrawable.h</DeclaredIn>
 			
 			<NodeRef refid="12"/>
@@ -13,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFOverlayDrawable/drawInContext:</TokenIdentifier>
-			<Abstract>Implement this method to perform drawing in an overlay over the document view. The context coordinate system is aligend
+			<Abstract type="html">Implement this method to perform drawing in an overlay over the document view. The context coordinate system is aligend
 to the user space of the document displayed.</Abstract>
 			<DeclaredIn>MFOverlayDrawable.h</DeclaredIn>			
 			
