@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MFDocumentViewController</TokenIdentifier>
-			<Abstract></Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>
 			
 			<NodeRef refid="4"/>
@@ -12,8 +12,65 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/documentDelegate</TokenIdentifier>
+			<Abstract type="html">This property let you add the main DocumentViewControllerDelegate.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) NSObject&lt;MFDocumentViewControllerDelegate&gt; *documentDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/documentDelegate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/documentDelegate</TokenIdentifier>
+			<Abstract type="html">This property let you add the main DocumentViewControllerDelegate.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (NSObject&lt;MFDocumentViewControllerDelegate&gt; *)documentDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/documentDelegate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setDocumentDelegate:</TokenIdentifier>
+			<Abstract type="html">This property let you add the main DocumentViewControllerDelegate.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setDocumentDelegate:(NSObject&lt;MFDocumentViewControllerDelegate&gt; *)val</Declaration>
+			
+			
+			<Anchor>//api/name/documentDelegate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/addDocumentDelegate:</TokenIdentifier>
+			<Abstract type="html">If you need to register objects as DocumentViewControllerDelegate you can add them using this method.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)addDocumentDelegate:(NSObject&lt;MFDocumentViewControllerDelegate&gt; *)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/addDocumentDelegate:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/removeDocumentDelegate:</TokenIdentifier>
+			<Abstract type="html">If you have more than one DocumentViewControllerDelegate you can remove any of them with this method.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeDocumentDelegate:(NSObject&lt;MFDocumentViewControllerDelegate&gt; *)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/removeDocumentDelegate:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/directionalLockEnabled</TokenIdentifier>
-			<Abstract>This property enable or disable the directional lock in the inner (document) scroll view. Default is NO.</Abstract>
+			<Abstract type="html">This property enable or disable the directional lock in the inner (document)
+scroll view.
+Default is NO.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readwrite, getter=isDirectionLockEnabled) BOOL directionalLockEnabled</Declaration>
@@ -23,8 +80,36 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/isDirectionLockEnabled</TokenIdentifier>
+			<Abstract type="html">This property enable or disable the directional lock in the inner (document)
+scroll view.
+Default is NO.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isDirectionLockEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/directionalLockEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setDirectionalLockEnabled:</TokenIdentifier>
+			<Abstract type="html">This property enable or disable the directional lock in the inner (document)
+scroll view.
+Default is NO.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setDirectionalLockEnabled:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/directionalLockEnabled</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/useTiledOverlayView</TokenIdentifier>
-			<Abstract>This property will enable an CATiledLayer version of the overlay view. This means overlay drawables will be drawn sharp, no matter the zoom of the scroll view.</Abstract>
+			<Abstract type="html">This property will enable an CATiledLayer version of the overlay view. This
+means overlay drawables will be drawn sharp, no matter the zoom of the scroll
+view.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (readwrite) BOOL useTiledOverlayView</Declaration>
@@ -34,8 +119,34 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/useTiledOverlayView</TokenIdentifier>
+			<Abstract type="html">This property will enable an CATiledLayer version of the overlay view. This
+means overlay drawables will be drawn sharp, no matter the zoom of the scroll
+view.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)useTiledOverlayView</Declaration>
+			
+			
+			<Anchor>//api/name/useTiledOverlayView</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setUseTiledOverlayView:</TokenIdentifier>
+			<Abstract type="html">This property will enable an CATiledLayer version of the overlay view. This
+means overlay drawables will be drawn sharp, no matter the zoom of the scroll
+view.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setUseTiledOverlayView:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/useTiledOverlayView</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/showHorizontalScroller</TokenIdentifier>
-			<Abstract>Use this property to hide or show the horizontal scroller under the pages.</Abstract>
+			<Abstract type="html">Use this property to hide or show the horizontal scroller under the pages.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readwrite) BOOL showHorizontalScroller</Declaration>
@@ -45,8 +156,31 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/showHorizontalScroller</TokenIdentifier>
+			<Abstract type="html">Use this property to hide or show the horizontal scroller under the pages.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)showHorizontalScroller</Declaration>
+			
+			
+			<Anchor>//api/name/showHorizontalScroller</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setShowHorizontalScroller:</TokenIdentifier>
+			<Abstract type="html">Use this property to hide or show the horizontal scroller under the pages.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setShowHorizontalScroller:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/showHorizontalScroller</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/showShadow</TokenIdentifier>
-			<Abstract>Set this flag to NO if you don't want the dropdown shadow under the pages. Default is YES.</Abstract>
+			<Abstract type="html">Set this flag to NO if you don't want the dropdown shadow under the pages.
+Default is YES.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readwrite) BOOL showShadow</Declaration>
@@ -56,8 +190,33 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/showShadow</TokenIdentifier>
+			<Abstract type="html">Set this flag to NO if you don't want the dropdown shadow under the pages.
+Default is YES.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)showShadow</Declaration>
+			
+			
+			<Anchor>//api/name/showShadow</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setShowShadow:</TokenIdentifier>
+			<Abstract type="html">Set this flag to NO if you don't want the dropdown shadow under the pages.
+Default is YES.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setShowShadow:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/showShadow</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/padding</TokenIdentifier>
-			<Abstract>Set the amount of minimum padding between the pages and the screen edge. Default is 5.0. Values are clipped between 0 and 100.</Abstract>
+			<Abstract type="html">Set the amount of minimum padding between the pages and the screen edge.
+Default is 5.0. Values are clipped between 0 and 100.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readwrite) CGFloat padding</Declaration>
@@ -67,8 +226,32 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/padding</TokenIdentifier>
+			<Abstract type="html">Set the amount of minimum padding between the pages and the screen edge.
+Default is 5.0. Values are clipped between 0 and 100.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (CGFloat)padding</Declaration>
+			
+			
+			<Anchor>//api/name/padding</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setPadding:</TokenIdentifier>
+			<Abstract type="html">Set the amount of minimum padding between the pages and the screen edge.
+Default is 5.0. Values are clipped between 0 and 100.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setPadding:(CGFloat)val</Declaration>
+			
+			
+			<Anchor>//api/name/padding</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/addOverlayDataSource:</TokenIdentifier>
-			<Abstract>Add and remove an Overlay Datasource for Drawables and Touchables.</Abstract>
+			<Abstract type="html">Add and remove an Overlay Datasource for Drawables and Touchables.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (void)addOverlayDataSource:(id&lt;MFDocumentOverlayDataSource&gt;)ods</Declaration>
@@ -78,8 +261,47 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/fpkAnnotationsEnabled</TokenIdentifier>
+			<Abstract type="html">Enable or disable FPK Annotations parsing at page load. Set it to NO if you
+don't use FPK Annotations and experience freezing while scrolling the pages.
+Default is YES (enabled).</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) BOOL fpkAnnotationsEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/fpkAnnotationsEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/fpkAnnotationsEnabled</TokenIdentifier>
+			<Abstract type="html">Enable or disable FPK Annotations parsing at page load. Set it to NO if you
+don't use FPK Annotations and experience freezing while scrolling the pages.
+Default is YES (enabled).</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)fpkAnnotationsEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/fpkAnnotationsEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setFpkAnnotationsEnabled:</TokenIdentifier>
+			<Abstract type="html">Enable or disable FPK Annotations parsing at page load. Set it to NO if you
+don't use FPK Annotations and experience freezing while scrolling the pages.
+Default is YES (enabled).</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setFpkAnnotationsEnabled:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/fpkAnnotationsEnabled</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/addOverlayViewDataSource:</TokenIdentifier>
-			<Abstract>Add and remove an Overlay View Datasource for overlay UIViews.</Abstract>
+			<Abstract type="html">Add an Overlay View Datasource for overlay UIViews.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (void)addOverlayViewDataSource:(id&lt;FPKOverlayViewDataSource&gt;)ovds</Declaration>
@@ -89,8 +311,20 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/removeOverlayViewDataSource:</TokenIdentifier>
+			<Abstract type="html">Remove an Overlay View Datasource for overlay UIViews.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeOverlayViewDataSource:(id&lt;FPKOverlayViewDataSource&gt;)ovds</Declaration>
+			
+			
+			<Anchor>//api/name/removeOverlayViewDataSource:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/reloadOverlay</TokenIdentifier>
-			<Abstract>This method will provoke the redraw of the overlay. Overlay Datasources will be asked to provide drawables.</Abstract>
+			<Abstract type="html">This method will provoke the redraw of the overlay. Overlay Datasources will be
+asked to provide drawables.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (void)reloadOverlay</Declaration>
@@ -101,8 +335,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/zoomLevelForAnnotationRect:ofPage:</TokenIdentifier>
-			<Abstract>This will return the appropriate zoom level to perfectly zoom onto an annotation. If return 0, there's no available
-page data to compute the zoom yet.</Abstract>
+			<Abstract type="html">This will return the appropriate zoom level to perfectly zoom onto an annotation.
+If return 0, there's no available page data to compute the zoom yet.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (float)zoomLevelForAnnotationRect:(CGRect)rect ofPage:(NSUInteger)page</Declaration>
@@ -113,7 +347,7 @@ page data to compute the zoom yet.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/zoomScale</TokenIdentifier>
-			<Abstract>Return the zoom scale of the page scroll view.</Abstract>
+			<Abstract type="html">Return the zoom scale of the page scroll view.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (float)zoomScale</Declaration>
@@ -124,7 +358,7 @@ page data to compute the zoom yet.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/zoomOffset</TokenIdentifier>
-			<Abstract>Return the offset of the page scroll view.</Abstract>
+			<Abstract type="html">Return the offset of the page scroll view.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (CGPoint)zoomOffset</Declaration>
@@ -135,7 +369,8 @@ page data to compute the zoom yet.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/leftPage</TokenIdentifier>
-			<Abstract>This method will return the page number of the left page displayed. If the mode is single page, the left page number is the current page.</Abstract>
+			<Abstract type="html">This method will return the page number of the left page displayed. If the mode
+is single page, the left page number is the current page.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (NSUInteger)leftPage</Declaration>
@@ -146,7 +381,8 @@ page data to compute the zoom yet.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/rightPage</TokenIdentifier>
-			<Abstract>This method will return the page number of the right page displayed. If the mode is single, right page number is invalid.</Abstract>
+			<Abstract type="html">This method will return the page number of the right page displayed. If the mode
+is single, right page number is invalid.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (NSUInteger)rightPage</Declaration>
@@ -157,8 +393,9 @@ page data to compute the zoom yet.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/startingPage</TokenIdentifier>
-			<Abstract>Set the starting page of the document. It is valid only after initialization and before the view is
-displayed on the screen. Tipically you want to set this just after the init of the viewController.
+			<Abstract type="html">Set the starting page of the document. It is valid only after initialization
+and before the view is displayed on the screen. Tipically you want to set this
+just after the init of the viewController.
 Default is 1.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
@@ -169,8 +406,36 @@ Default is 1.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/startingPage</TokenIdentifier>
+			<Abstract type="html">Set the starting page of the document. It is valid only after initialization
+and before the view is displayed on the screen. Tipically you want to set this
+just after the init of the viewController.
+Default is 1.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (NSUInteger)startingPage</Declaration>
+			
+			
+			<Anchor>//api/name/startingPage</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setStartingPage:</TokenIdentifier>
+			<Abstract type="html">Set the starting page of the document. It is valid only after initialization
+and before the view is displayed on the screen. Tipically you want to set this
+just after the init of the viewController.
+Default is 1.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setStartingPage:(NSUInteger)val</Declaration>
+			
+			
+			<Anchor>//api/name/startingPage</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/pageFlipOnEdgeTouchEnabled</TokenIdentifier>
-			<Abstract>Enable the page flip when the user touch the edges of the screen.</Abstract>
+			<Abstract type="html">Enable the page flip when the user touch the edges of the screen.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (assign, readwrite, getter=isPageFlipOnEdgeTouchEnabled) BOOL pageFlipOnEdgeTouchEnabled</Declaration>
@@ -180,8 +445,30 @@ Default is 1.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/isPageFlipOnEdgeTouchEnabled</TokenIdentifier>
+			<Abstract type="html">Enable the page flip when the user touch the edges of the screen.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isPageFlipOnEdgeTouchEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/pageFlipOnEdgeTouchEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setPageFlipOnEdgeTouchEnabled:</TokenIdentifier>
+			<Abstract type="html">Enable the page flip when the user touch the edges of the screen.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setPageFlipOnEdgeTouchEnabled:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/pageFlipOnEdgeTouchEnabled</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setEdgeFlipWidth:</TokenIdentifier>
-			<Abstract>Set and get the percentage of the screen associated with the page flip on edge
+			<Abstract type="html">Set and get the percentage of the screen associated with the page flip on edge
 touch action. Default value is 0.1, this mean that the 10% of the width of the
 screen on either side will receive such events. Values are clipped between 0.0
 and 0.5 to prevent overlap.</Abstract>
@@ -194,8 +481,19 @@ and 0.5 to prevent overlap.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/edgeFlipWidth</TokenIdentifier>
+			<Abstract type="html">Get the edge flip width</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (CGFloat)edgeFlipWidth</Declaration>
+			
+			
+			<Anchor>//api/name/edgeFlipWidth</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/defaultEdgeFlipWidth</TokenIdentifier>
-			<Abstract>Default value to wich the current value will be reset to after each page change.
+			<Abstract type="html">Default value to wich the current value will be reset to after each page change.
 Default is 0.1.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
@@ -206,8 +504,32 @@ Default is 0.1.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/defaultEdgeFlipWidth</TokenIdentifier>
+			<Abstract type="html">Default value to wich the current value will be reset to after each page change.
+Default is 0.1.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (CGFloat)defaultEdgeFlipWidth</Declaration>
+			
+			
+			<Anchor>//api/name/defaultEdgeFlipWidth</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setDefaultEdgeFlipWidth:</TokenIdentifier>
+			<Abstract type="html">Default value to wich the current value will be reset to after each page change.
+Default is 0.1.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setDefaultEdgeFlipWidth:(CGFloat)val</Declaration>
+			
+			
+			<Anchor>//api/name/defaultEdgeFlipWidth</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/zoomInOnDoubleTapEnabled</TokenIdentifier>
-			<Abstract>Enabled the zoom in when the user double tap on the screen.</Abstract>
+			<Abstract type="html">Enabled the zoom in when the user double tap on the screen.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (assign, readwrite, getter=isZoomInOnDoubleTapEnabled) BOOL zoomInOnDoubleTapEnabled</Declaration>
@@ -217,8 +539,64 @@ Default is 0.1.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/isZoomInOnDoubleTapEnabled</TokenIdentifier>
+			<Abstract type="html">Enabled the zoom in when the user double tap on the screen.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isZoomInOnDoubleTapEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/zoomInOnDoubleTapEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setZoomInOnDoubleTapEnabled:</TokenIdentifier>
+			<Abstract type="html">Enabled the zoom in when the user double tap on the screen.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setZoomInOnDoubleTapEnabled:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/zoomInOnDoubleTapEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/documentInteractionEnabled</TokenIdentifier>
+			<Abstract type="html">Enabled the document interaction.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>@property (assign, readwrite, getter=isDocumentInteractionEnabled) BOOL documentInteractionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/documentInteractionEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/isDocumentInteractionEnabled</TokenIdentifier>
+			<Abstract type="html">Enabled the document interaction.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isDocumentInteractionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/documentInteractionEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setDocumentInteractionEnabled:</TokenIdentifier>
+			<Abstract type="html">Enabled the document interaction.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setDocumentInteractionEnabled:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/documentInteractionEnabled</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/overlayEnabled</TokenIdentifier>
-			<Abstract>Enable or disable the display of overlay item over the document. Default is disabled.</Abstract>
+			<Abstract type="html">Enable or disable the display of overlay item over the document.
+Default is disabled.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (readwrite) BOOL overlayEnabled</Declaration>
@@ -228,8 +606,32 @@ Default is 0.1.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/overlayEnabled</TokenIdentifier>
+			<Abstract type="html">Enable or disable the display of overlay item over the document.
+Default is disabled.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)overlayEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/overlayEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setOverlayEnabled:</TokenIdentifier>
+			<Abstract type="html">Enable or disable the display of overlay item over the document.
+Default is disabled.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setOverlayEnabled:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/overlayEnabled</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/legacyModeEnabled</TokenIdentifier>
-			<Abstract>Enabled or force the legacy mode, or let the app choose to enable it or not
+			<Abstract type="html">Enabled or force the legacy mode, or let the app choose to enable it or not
 depending on the device. Default is disabled.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
@@ -240,8 +642,32 @@ depending on the device. Default is disabled.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/legacyModeEnabled</TokenIdentifier>
+			<Abstract type="html">Enabled or force the legacy mode, or let the app choose to enable it or not
+depending on the device. Default is disabled.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)legacyModeEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/legacyModeEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setLegacyModeEnabled:</TokenIdentifier>
+			<Abstract type="html">Enabled or force the legacy mode, or let the app choose to enable it or not
+depending on the device. Default is disabled.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setLegacyModeEnabled:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/legacyModeEnabled</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/defaultMaxZoomScale</TokenIdentifier>
-			<Abstract>This is the default maximum magnification the pdf will zoom.</Abstract>
+			<Abstract type="html">This is the default maximum magnification the pdf will zoom.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readwrite) float defaultMaxZoomScale</Declaration>
@@ -251,8 +677,41 @@ depending on the device. Default is disabled.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/defaultMaxZoomScale</TokenIdentifier>
+			<Abstract type="html">This is the default maximum magnification the pdf will zoom.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (float)defaultMaxZoomScale</Declaration>
+			
+			
+			<Anchor>//api/name/defaultMaxZoomScale</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setDefaultMaxZoomScale:</TokenIdentifier>
+			<Abstract type="html">This is the default maximum magnification the pdf will zoom.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setDefaultMaxZoomScale:(float)val</Declaration>
+			
+			
+			<Anchor>//api/name/defaultMaxZoomScale</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/initWithDocumentManager:</TokenIdentifier>
+			<Abstract type="html">Call this method to start working with the pdf.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDocumentManager:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/automodeOnRotation</TokenIdentifier>
-			<Abstract>This metod enable or disable the automatic mode switching upon rotation. If
+			<Abstract type="html">This metod enable or disable the automatic mode switching upon rotation. If
 enabled, the page mode will be automatically changed to single page in portrait
 and side-by-side (double) on landscape. Setting the mode manually will disable
 the automode.</Abstract>
@@ -266,7 +725,7 @@ the automode.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setAutomodeOnRotation:</TokenIdentifier>
-			<Abstract>Returns whether automode is enabled or not.</Abstract>
+			<Abstract type="html">Returns whether automode is enabled or not.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (void)setAutomodeOnRotation:(BOOL)automode</Declaration>
@@ -277,7 +736,7 @@ the automode.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setMode:</TokenIdentifier>
-			<Abstract>Set how the pages are presented to the user. MFDocumentModeSingle present a
+			<Abstract type="html">Set how the pages are presented to the user. MFDocumentModeSingle present a
 single page to the user, centered on the screen. MFDocumentModeDouble present
 two pages side-by-side, as they would appear on a magazine or a books. This
 will allow to preserve content split between the pages, for example a large
@@ -292,7 +751,7 @@ background image.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setAutoMode:</TokenIdentifier>
-			<Abstract>Set the mode to which the document will automatically switch to upon rotation.
+			<Abstract type="html">Set the mode to which the document will automatically switch to upon rotation.
 Pass MFDocumentAutoModeX values and not MFDocumentModeX values, since it is not
 guaranteed to be the same.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
@@ -305,7 +764,7 @@ guaranteed to be the same.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/mode</TokenIdentifier>
-			<Abstract>Returns the current mode used to display the document.</Abstract>
+			<Abstract type="html">Returns the current mode used to display the document.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (MFDocumentMode)mode</Declaration>
@@ -316,7 +775,7 @@ guaranteed to be the same.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setPage:</TokenIdentifier>
-			<Abstract>This metod will set the current page of the document and jump to the specified
+			<Abstract type="html">This metod will set the current page of the document and jump to the specified
 page. Current page is used to determine bookmarks position. On side-by-side
 (double) mode, it is usually the left-most page of the two.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
@@ -329,7 +788,7 @@ page. Current page is used to determine bookmarks position. On side-by-side
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setPage:withZoomOfLevel:onRect:</TokenIdentifier>
-			<Abstract>This metod will set the current page of the document and jump to the specified
+			<Abstract type="html">This metod will set the current page of the document and jump to the specified
 page, while trying to zoom in on the specified rect. Pass 0.0 as zoomLevel to
 let the application try to calculate the appropriate zoom level to fit the
 rectangle on screen.</Abstract>
@@ -343,7 +802,7 @@ rectangle on screen.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/page</TokenIdentifier>
-			<Abstract>Returns the current page of the document.</Abstract>
+			<Abstract type="html">Returns the current page of the document.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (NSUInteger)page</Declaration>
@@ -354,7 +813,7 @@ rectangle on screen.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setLead:</TokenIdentifier>
-			<Abstract>This method set the lead used to show the pages in side-by-side (double) mode.
+			<Abstract type="html">This method set the lead used to show the pages in side-by-side (double) mode.
 With MFDocumentLeadLeft, the cover will appear on the left side in side-by-side
 mode, whereas with MFDocumentLeadRight will appear on the right side. Use this
 method to keep pairing between pages for books and magazines. Single page mode
@@ -369,7 +828,7 @@ is not affected by this setting.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/lead</TokenIdentifier>
-			<Abstract>Returns the current lead used when presenting the document.</Abstract>
+			<Abstract type="html">Returns the current lead used when presenting the document.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (MFDocumentLead)lead</Declaration>
@@ -380,7 +839,7 @@ is not affected by this setting.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setDirection:</TokenIdentifier>
-			<Abstract>This method is used to set the page reading direction: left to right or right
+			<Abstract type="html">This method is used to set the page reading direction: left to right or right
 to left.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
@@ -392,7 +851,7 @@ to left.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/direction</TokenIdentifier>
-			<Abstract>Return the current direction used by the document.</Abstract>
+			<Abstract type="html">Return the current direction used by the document.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (MFDocumentDirection)direction</Declaration>
@@ -403,7 +862,7 @@ to left.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setAutozoomOnPageChange:</TokenIdentifier>
-			<Abstract>This method will turn on or off the autozoom feature. If on, the current zoom
+			<Abstract type="html">This method will turn on or off the autozoom feature. If on, the current zoom
 level will be kept between pages, otherwise will be rest to 100% on page
 change.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
@@ -416,7 +875,7 @@ change.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/autozoomOnPageChange</TokenIdentifier>
-			<Abstract>Returns whether the autozoom feature is enabled or not.</Abstract>
+			<Abstract type="html">Returns whether the autozoom feature is enabled or not.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (BOOL)autozoomOnPageChange</Declaration>
@@ -427,7 +886,7 @@ change.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/moveToNextPage</TokenIdentifier>
-			<Abstract>This method will begin an animated transition to the next page, if available.</Abstract>
+			<Abstract type="html">This method will begin an animated transition to the next page, if available.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (void)moveToNextPage</Declaration>
@@ -438,7 +897,7 @@ change.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/moveToPreviousPage</TokenIdentifier>
-			<Abstract>This method will begin an animated transition to the previous page, if
+			<Abstract type="html">This method will begin an animated transition to the previous page, if
 available.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
@@ -450,7 +909,7 @@ available.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/cleanUp</TokenIdentifier>
-			<Abstract>Call this method rightly after dismissing this MFDocumentViewController
+			<Abstract type="html">Call this method rightly after dismissing this MFDocumentViewController
 instance. It will release all the resources and stop the background threads.
 Once this method has been called, the MFDocumentViewController instance cannot
 be considered valid anymore and should be released.</Abstract>
@@ -464,7 +923,7 @@ be considered valid anymore and should be released.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/convertPoint:fromViewtoPage:</TokenIdentifier>
-			<Abstract>Convert a point from MFDocumentViewController's view space to page space.</Abstract>
+			<Abstract type="html">Convert a point from MFDocumentViewController's view space to page space.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (CGPoint)convertPoint:(CGPoint)point fromViewtoPage:(NSUInteger)page</Declaration>
@@ -475,7 +934,7 @@ be considered valid anymore and should be released.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/convertPoint:toViewFromPage:</TokenIdentifier>
-			<Abstract>Convert a point from page space to MFDocumentViewController's view space.</Abstract>
+			<Abstract type="html">Convert a point from page space to MFDocumentViewController's view space.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (CGPoint)convertPoint:(CGPoint)point toViewFromPage:(NSUInteger)page</Declaration>
@@ -486,7 +945,7 @@ be considered valid anymore and should be released.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/convertRect:fromViewToPage:</TokenIdentifier>
-			<Abstract>Convert a rect from MFDocumentViewController's view space to page space.</Abstract>
+			<Abstract type="html">Convert a rect from MFDocumentViewController's view space to page space.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (CGRect)convertRect:(CGRect)rect fromViewToPage:(NSUInteger)page</Declaration>
@@ -497,7 +956,7 @@ be considered valid anymore and should be released.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/convertRect:toViewFromPage:</TokenIdentifier>
-			<Abstract>Convert a rect from page space to MFDocumentViewController's view space.</Abstract>
+			<Abstract type="html">Convert a rect from page space to MFDocumentViewController's view space.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (CGRect)convertRect:(CGRect)rect toViewFromPage:(NSUInteger)page</Declaration>
@@ -508,7 +967,7 @@ be considered valid anymore and should be released.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/convertPoint:fromOverlayToPage:</TokenIdentifier>
-			<Abstract>Convert a point from overlay space (the whole view that hold the both left and
+			<Abstract type="html">Convert a point from overlay space (the whole view that hold the both left and
 right page, and that you can zoom in and scroll over) to page space.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
@@ -520,7 +979,7 @@ right page, and that you can zoom in and scroll over) to page space.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/convertPoint:toOverlayFromPage:</TokenIdentifier>
-			<Abstract>Convert a point from page space to overlay space.</Abstract>
+			<Abstract type="html">Convert a point from page space to overlay space.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (CGPoint)convertPoint:(CGPoint)point toOverlayFromPage:(NSUInteger)page</Declaration>
@@ -531,7 +990,7 @@ right page, and that you can zoom in and scroll over) to page space.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/convertRect:fromOverlayToPage:</TokenIdentifier>
-			<Abstract>Convert a rect from overlay space to page space.</Abstract>
+			<Abstract type="html">Convert a rect from overlay space to page space.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (CGRect)convertRect:(CGRect)rect fromOverlayToPage:(NSUInteger)page</Declaration>
@@ -542,7 +1001,7 @@ right page, and that you can zoom in and scroll over) to page space.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/convertRect:toOverlayFromPage:</TokenIdentifier>
-			<Abstract>Convert a ract from page to overlay space.</Abstract>
+			<Abstract type="html">Convert a ract from page to overlay space.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (CGRect)convertRect:(CGRect)rect toOverlayFromPage:(NSUInteger)page</Declaration>
@@ -553,7 +1012,7 @@ right page, and that you can zoom in and scroll over) to page space.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/gesturesDisabled</TokenIdentifier>
-			<Abstract>Override in your subclass to toggle gesture recognizer on overlay views on and
+			<Abstract type="html">Override in your subclass to toggle gesture recognizer on overlay views on and
 off.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
@@ -565,7 +1024,7 @@ off.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setScrollEnabled:</TokenIdentifier>
-			<Abstract>Set the paged scroll enabled or not. Useful to lock the user in the current
+			<Abstract type="html">Set the paged scroll enabled or not. Useful to lock the user in the current
 page during animations.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
@@ -577,13 +1036,88 @@ page during animations.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setMaximumZoomScale:</TokenIdentifier>
-			<Abstract>Set the maximum zoom scale for the pdf page.</Abstract>
+			<Abstract type="html">Set the maximum zoom scale for the pdf page.</Abstract>
 			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
 			
 			<Declaration>- (void)setMaximumZoomScale:(NSNumber *)scale</Declaration>
 			
 			
 			<Anchor>//api/name/setMaximumZoomScale:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/previewsCount</TokenIdentifier>
+			<Abstract type="html">Set the max number of preview images to use at any time. Call this before
+presenting the MFDocumentViewController subclass. Default is 4, sweet spot is
+3-4 and you should not exceed this number unless your target device are iPhone4
+iPad2 or newer devices and/or your PDF are scarce of images.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) NSUInteger previewsCount</Declaration>
+			
+			
+			<Anchor>//api/name/previewsCount</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/previewsCount</TokenIdentifier>
+			<Abstract type="html">Set the max number of preview images to use at any time. Call this before
+presenting the MFDocumentViewController subclass. Default is 4, sweet spot is
+3-4 and you should not exceed this number unless your target device are iPhone4
+iPad2 or newer devices and/or your PDF are scarce of images.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (NSUInteger)previewsCount</Declaration>
+			
+			
+			<Anchor>//api/name/previewsCount</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setPreviewsCount:</TokenIdentifier>
+			<Abstract type="html">Set the max number of preview images to use at any time. Call this before
+presenting the MFDocumentViewController subclass. Default is 4, sweet spot is
+3-4 and you should not exceed this number unless your target device are iPhone4
+iPad2 or newer devices and/or your PDF are scarce of images.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setPreviewsCount:(NSUInteger)val</Declaration>
+			
+			
+			<Anchor>//api/name/previewsCount</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentViewController/pagedScrollView</TokenIdentifier>
+			<Abstract type="html">Access the inner paged scroll view.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) UIScrollView *pagedScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/pagedScrollView</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/pagedScrollView</TokenIdentifier>
+			<Abstract type="html">Access the inner paged scroll view.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (UIScrollView *)pagedScrollView</Declaration>
+			
+			
+			<Anchor>//api/name/pagedScrollView</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentViewController/setPagedScrollView:</TokenIdentifier>
+			<Abstract type="html">Access the inner paged scroll view.</Abstract>
+			<DeclaredIn>MFDocumentViewController.h</DeclaredIn>			
+			
+			<Declaration>- (void)setPagedScrollView:(UIScrollView *)val</Declaration>
+			
+			
+			<Anchor>//api/name/pagedScrollView</Anchor>
 		</Token>
 		
 	</File>

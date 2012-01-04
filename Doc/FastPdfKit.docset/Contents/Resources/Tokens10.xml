@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/MFDocumentOverlayDataSource</TokenIdentifier>
-			<Abstract></Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>MFDocumentOverlayDataSource.h</DeclaredIn>
 			
 			<NodeRef refid="10"/>
@@ -13,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentOverlayDataSource/documentViewController:drawablesForPage:</TokenIdentifier>
-			<Abstract>This method is invoked when a new detail page is going to be drawn and overlayEnabled of the MFDocumentViewController is set
+			<Abstract type="html">This method is invoked when a new detail page is going to be drawn and overlayEnabled of the MFDocumentViewController is set
 to YES. The object setted as overlayDataSource is then required to return an array of MFOverlayDrawable object to be
 drawn on the page as overlay.</Abstract>
 			<DeclaredIn>MFDocumentOverlayDataSource.h</DeclaredIn>			
@@ -26,7 +26,7 @@ drawn on the page as overlay.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentOverlayDataSource/documentViewController:touchablesForPage:</TokenIdentifier>
-			<Abstract>This method is invoked when a new detail page is going to be drawn and overlayEnables is set to YES. Objects added as overlay
+			<Abstract type="html">This method is invoked when a new detail page is going to be drawn and overlayEnables is set to YES. Objects added as overlay
 data sources are required to submit touchables element to be tested against user input events.</Abstract>
 			<DeclaredIn>MFDocumentOverlayDataSource.h</DeclaredIn>			
 			
@@ -38,7 +38,7 @@ data sources are required to submit touchables element to be tested against user
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/MFDocumentOverlayDataSource/documentViewController:didReceiveTapOnTouchable:</TokenIdentifier>
-			<Abstract>This method will be called when an user does tap on an overlay touchable element.</Abstract>
+			<Abstract type="html">This method will be called when an user does tap on an overlay touchable element.</Abstract>
 			<DeclaredIn>MFDocumentOverlayDataSource.h</DeclaredIn>			
 			
 			<Declaration>- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnTouchable:(id&lt;MFOverlayTouchable&gt;)touchable</Declaration>

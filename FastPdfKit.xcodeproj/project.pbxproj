@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0103EFF614AD6D2900F96249 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103EFF514AD6D2900F96249 /* libFastPdfKit.a */; };
+		0103EFF714AD6D2900F96249 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103EFF514AD6D2900F96249 /* libFastPdfKit.a */; };
+		0103EFF814AD6D2900F96249 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103EFF514AD6D2900F96249 /* libFastPdfKit.a */; };
+		0103EFF914AD6D2900F96249 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103EFF514AD6D2900F96249 /* libFastPdfKit.a */; };
 		010D14AF13CAF5F400FD6F08 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */; };
 		010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */; };
@@ -162,10 +166,6 @@
 		0189D3BD1486C1C000635C5D /* FPKGlyphBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0189D3BF1486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; };
 		0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		018E95A2149B708D001C89F9 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018E95A1149B708D001C89F9 /* libFastPdfKit.a */; };
-		018E95A3149B708D001C89F9 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018E95A1149B708D001C89F9 /* libFastPdfKit.a */; };
-		018E95A4149B708D001C89F9 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018E95A1149B708D001C89F9 /* libFastPdfKit.a */; };
-		018E95A5149B708D001C89F9 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018E95A1149B708D001C89F9 /* libFastPdfKit.a */; };
 		01AB4AEA13EFE267008EB17B /* TVThumbnailView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AB4AE413EFE267008EB17B /* TVThumbnailView.h */; };
 		01AB4AEB13EFE267008EB17B /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView.m */; };
 		01AB4AEC13EFE267008EB17B /* TVThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB4AE513EFE267008EB17B /* TVThumbnailView.m */; };
@@ -212,7 +212,6 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		39224A281469334C004A3EB1 /* FastPdfKit_Kiosk-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */; };
 		39FD7651146D3B4C00CD4DA3 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FFCFA211355F57B0028DD38 /* next.png */; };
 		6F27B5C313D4837300C8C18F /* img_outline_triangledown.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F27B5C113D4837300C8C18F /* img_outline_triangledown.png */; };
 		6F27B5C413D4837300C8C18F /* img_outline_triangleright.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F27B5C213D4837300C8C18F /* img_outline_triangleright.png */; };
@@ -298,9 +297,6 @@
 		6FB977A713CC4E5E007C368C /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
 		6FE7E4A813CC5EB0006A7E68 /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080313C75B310077CE63 /* Kiosk_ipad.xib */; };
 		6FE7E4A913CC5EB4006A7E68 /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080413C75B310077CE63 /* Kiosk_phone.xib */; };
-		6FE7E4CF13CC6595006A7E68 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
-		6FE7E4D013CC6597006A7E68 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
-		6FE7E4D113CC659A006A7E68 /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
 		6FFE1F9013CDFFA90003BC10 /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */; };
 		9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
 		9505BB1913CCB187003163D2 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
@@ -311,8 +307,37 @@
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
 		950B37D0125CBEC4007BDDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		951AE312140298690025DA52 /* FastPdfKitFramework-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 951AE311140298690025DA52 /* FastPdfKitFramework-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		951AE31614029A6F0025DA52 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		951E4E4113D71E8400C9FC70 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E4E4013D71E8400C9FC70 /* libz.dylib */; };
+		954B74AF14B47F0D00503F90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
+		954B74B014B47F0D00503F90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
+		954B74B114B47F0D00503F90 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
+		954B74B714B47F0D00503F90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 954B74B514B47F0D00503F90 /* InfoPlist.strings */; };
+		954B74B914B47F0D00503F90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B74B814B47F0D00503F90 /* main.m */; };
+		954B74BD14B47F0D00503F90 /* FPKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B74BC14B47F0D00503F90 /* FPKAppDelegate.m */; };
+		954B74C314B47F0D00503F90 /* MainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954B74C114B47F0D00503F90 /* MainViewController_iPhone.xib */; };
+		954B74C614B47F0D00503F90 /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954B74C414B47F0D00503F90 /* MainViewController_iPad.xib */; };
+		954B74EE14B47FFB00503F90 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74CE14B47FFB00503F90 /* Common.framework */; };
+		954B74EF14B47FFB00503F90 /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D014B47FFB00503F90 /* libPayPalMPL.a */; };
+		954B74F014B47FFC00503F90 /* FPKGalleryFade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D214B47FFB00503F90 /* FPKGalleryFade.framework */; };
+		954B74F114B47FFC00503F90 /* FPKGallerySlide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D514B47FFB00503F90 /* FPKGallerySlide.framework */; };
+		954B74F214B47FFC00503F90 /* FPKGalleryTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D814B47FFB00503F90 /* FPKGalleryTap.framework */; };
+		954B74F314B47FFC00503F90 /* FPKMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74DB14B47FFB00503F90 /* FPKMap.framework */; };
+		954B74F414B47FFC00503F90 /* FPKMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74DE14B47FFB00503F90 /* FPKMessage.framework */; };
+		954B74F514B47FFC00503F90 /* fpkmessage-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74E014B47FFB00503F90 /* fpkmessage-info.png */; };
+		954B74F614B47FFC00503F90 /* FPKPayPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E214B47FFB00503F90 /* FPKPayPal.framework */; };
+		954B74F714B47FFC00503F90 /* FPKShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E514B47FFB00503F90 /* FPKShared.framework */; };
+		954B74F814B47FFC00503F90 /* FPKWebPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E814B47FFB00503F90 /* FPKWebPopup.framework */; };
+		954B74F914B47FFC00503F90 /* fpkwebpopup-safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74EA14B47FFB00503F90 /* fpkwebpopup-safari.png */; };
+		954B74FA14B47FFC00503F90 /* FPKYouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74EC14B47FFB00503F90 /* FPKYouTube.framework */; };
+		954B750214B4805100503F90 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FC14B4805100503F90 /* img1.png */; };
+		954B750314B4805100503F90 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FD14B4805100503F90 /* img2.png */; };
+		954B750414B4805100503F90 /* img3.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FE14B4805100503F90 /* img3.png */; };
+		954B750514B4805100503F90 /* img4.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FF14B4805100503F90 /* img4.png */; };
+		954B750614B4805100503F90 /* sample.indd in Resources */ = {isa = PBXBuildFile; fileRef = 954B750014B4805100503F90 /* sample.indd */; };
+		954B750714B4805100503F90 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 954B750114B4805100503F90 /* sample.pdf */; };
+		954B751F14B4810000503F90 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B751E14B4810000503F90 /* libxml2.dylib */; };
+		954B752114B4811500503F90 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752014B4811500503F90 /* Security.framework */; };
+		954B752314B4812700503F90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752214B4812700503F90 /* MapKit.framework */; };
 		956A056F14039F38003AE44D /* Drawable.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056C14039F38003AE44D /* Drawable.m */; };
 		956A057014039F38003AE44D /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056E14039F38003AE44D /* OverlayManager.m */; };
 		958A81BD14027F5300837C82 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -358,6 +383,19 @@
 		959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
 		95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5E13CCA59800195F0F /* Manual.pdf */; };
 		95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */; };
+		95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FFFB6D14B48C3100B1CD3B /* FastPdfKit.framework */; };
+		95EF544114B48E4800910B3D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
+		95EF544214B48E4C00910B3D /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
+		95EF544314B48E4F00910B3D /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
+		95EF544714B48EDD00910B3D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544414B48EDD00910B3D /* Icon.png */; };
+		95EF544814B48EDD00910B3D /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544514B48EDD00910B3D /* Icon72.png */; };
+		95EF544914B48EDD00910B3D /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544614B48EDD00910B3D /* Icon114.png */; };
+		95FFFB5014B488AE00B1CD3B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4C14B488AE00B1CD3B /* MainViewController.m */; };
+		95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */; };
+		95FFFB6B14B48BF200B1CD3B /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
+		95FFFB7314B48C3100B1CD3B /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */; };
+		95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */; };
+		95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7114B48C3100B1CD3B /* Snippets.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -392,6 +430,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0103EFF514AD6D2900F96249 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKReaderLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKKioskLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitKiosk-Prefix.pch"; sourceTree = "<group>"; };
@@ -496,7 +535,6 @@
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGlyphBox.h; sourceTree = "<group>"; };
 		0189D3BE1486C28400635C5D /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
-		018E95A1149B708D001C89F9 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		01AB4AE413EFE267008EB17B /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
 		01AB4AE513EFE267008EB17B /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
 		01B3DAD8146D920F00F8C740 /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
@@ -632,6 +670,37 @@
 		951AE313140298910025DA52 /* ReaderFramework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReaderFramework-Info.plist"; sourceTree = "<group>"; };
 		951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
 		951E4E4013D71E8400C9FC70 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		954B74AD14B47F0D00503F90 /* Extended.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extended.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		954B74B414B47F0D00503F90 /* Extended-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Extended-Info.plist"; sourceTree = "<group>"; };
+		954B74B614B47F0D00503F90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		954B74B814B47F0D00503F90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		954B74BA14B47F0D00503F90 /* Extended-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Extended-Prefix.pch"; sourceTree = "<group>"; };
+		954B74BB14B47F0D00503F90 /* FPKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = FPKAppDelegate.h; sourceTree = "<group>"; };
+		954B74BC14B47F0D00503F90 /* FPKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPKAppDelegate.m; sourceTree = "<group>"; };
+		954B74C214B47F0D00503F90 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController_iPhone.xib; sourceTree = "<group>"; };
+		954B74C514B47F0D00503F90 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController_iPad.xib; sourceTree = "<group>"; };
+		954B74CE14B47FFB00503F90 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		954B74D014B47FFB00503F90 /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
+		954B74D214B47FFB00503F90 /* FPKGalleryFade.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryFade.framework; sourceTree = "<group>"; };
+		954B74D514B47FFB00503F90 /* FPKGallerySlide.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGallerySlide.framework; sourceTree = "<group>"; };
+		954B74D814B47FFB00503F90 /* FPKGalleryTap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryTap.framework; sourceTree = "<group>"; };
+		954B74DB14B47FFB00503F90 /* FPKMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKMap.framework; sourceTree = "<group>"; };
+		954B74DE14B47FFB00503F90 /* FPKMessage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKMessage.framework; sourceTree = "<group>"; };
+		954B74E014B47FFB00503F90 /* fpkmessage-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fpkmessage-info.png"; sourceTree = "<group>"; };
+		954B74E214B47FFB00503F90 /* FPKPayPal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKPayPal.framework; sourceTree = "<group>"; };
+		954B74E514B47FFB00503F90 /* FPKShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKShared.framework; sourceTree = "<group>"; };
+		954B74E814B47FFB00503F90 /* FPKWebPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKWebPopup.framework; sourceTree = "<group>"; };
+		954B74EA14B47FFB00503F90 /* fpkwebpopup-safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fpkwebpopup-safari.png"; sourceTree = "<group>"; };
+		954B74EC14B47FFB00503F90 /* FPKYouTube.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKYouTube.framework; sourceTree = "<group>"; };
+		954B74FC14B4805100503F90 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
+		954B74FD14B4805100503F90 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
+		954B74FE14B4805100503F90 /* img3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img3.png; sourceTree = "<group>"; };
+		954B74FF14B4805100503F90 /* img4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img4.png; sourceTree = "<group>"; };
+		954B750014B4805100503F90 /* sample.indd */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.indd; sourceTree = "<group>"; };
+		954B750114B4805100503F90 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
+		954B751E14B4810000503F90 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		954B752014B4811500503F90 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		954B752214B4812700503F90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		956A056B14039F38003AE44D /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawable.h; sourceTree = "<group>"; };
 		956A056C14039F38003AE44D /* Drawable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawable.m; sourceTree = "<group>"; };
 		956A056D14039F38003AE44D /* OverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayManager.h; sourceTree = "<group>"; };
@@ -647,6 +716,17 @@
 		95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ManualCrypt.pdf; path = Doc/ManualCrypt.pdf; sourceTree = SOURCE_ROOT; };
 		95B8BDB613CCAB3200195F0F /* FPKKioskBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FPKKioskBundle.bundle; path = Bundle/FPKKioskBundle.bundle; sourceTree = SOURCE_ROOT; };
 		95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FPKReaderBundle.bundle; path = Bundle/FPKReaderBundle.bundle; sourceTree = SOURCE_ROOT; };
+		95EF544414B48EDD00910B3D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		95EF544514B48EDD00910B3D /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
+		95EF544614B48EDD00910B3D /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
+		95FFFB4B14B488AE00B1CD3B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = MainViewController.h; sourceTree = "<group>"; };
+		95FFFB4C14B488AE00B1CD3B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		95FFFB4D14B488AE00B1CD3B /* OverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = OverlayManager.h; sourceTree = "<group>"; };
+		95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayManager.m; sourceTree = "<group>"; };
+		95FFFB6D14B48C3100B1CD3B /* FastPdfKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FastPdfKit.framework; sourceTree = "<group>"; };
+		95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
+		95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FPKReaderBundle.bundle; sourceTree = "<group>"; };
+		95FFFB7114B48C3100B1CD3B /* Snippets.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -655,7 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				018E95A4149B708D001C89F9 /* libFastPdfKit.a in Frameworks */,
+				0103EFF814AD6D2900F96249 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +767,7 @@
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
-				018E95A3149B708D001C89F9 /* libFastPdfKit.a in Frameworks */,
+				0103EFF714AD6D2900F96249 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +784,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				018E95A2149B708D001C89F9 /* libFastPdfKit.a in Frameworks */,
+				0103EFF614AD6D2900F96249 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,12 +804,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		954B74AA14B47F0D00503F90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954B752314B4812700503F90 /* MapKit.framework in Frameworks */,
+				954B752114B4811500503F90 /* Security.framework in Frameworks */,
+				954B751F14B4810000503F90 /* libxml2.dylib in Frameworks */,
+				954B74AF14B47F0D00503F90 /* UIKit.framework in Frameworks */,
+				954B74B014B47F0D00503F90 /* Foundation.framework in Frameworks */,
+				954B74B114B47F0D00503F90 /* CoreGraphics.framework in Frameworks */,
+				954B74EE14B47FFB00503F90 /* Common.framework in Frameworks */,
+				954B74EF14B47FFB00503F90 /* libPayPalMPL.a in Frameworks */,
+				954B74F014B47FFC00503F90 /* FPKGalleryFade.framework in Frameworks */,
+				954B74F114B47FFC00503F90 /* FPKGallerySlide.framework in Frameworks */,
+				954B74F214B47FFC00503F90 /* FPKGalleryTap.framework in Frameworks */,
+				954B74F314B47FFC00503F90 /* FPKMap.framework in Frameworks */,
+				954B74F414B47FFC00503F90 /* FPKMessage.framework in Frameworks */,
+				954B74F614B47FFC00503F90 /* FPKPayPal.framework in Frameworks */,
+				954B74F714B47FFC00503F90 /* FPKShared.framework in Frameworks */,
+				954B74F814B47FFC00503F90 /* FPKWebPopup.framework in Frameworks */,
+				954B74FA14B47FFC00503F90 /* FPKYouTube.framework in Frameworks */,
+				95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		958A819B14027EEE00837C82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				018E95A5149B708D001C89F9 /* libFastPdfKit.a in Frameworks */,
+				0103EFF914AD6D2900F96249 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1080,6 +1185,7 @@
 				010D14D213CB002300FD6F08 /* SimpleApp */,
 				01BC080013C75B310077CE63 /* KioskApp */,
 				01BC07DC13C756130077CE63 /* Reader */,
+				954B74B214B47F0D00503F90 /* Extended */,
 				01BC07A013C755610077CE63 /* ThirdParties */,
 			);
 			path = Classes;
@@ -1095,6 +1201,7 @@
 				6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */,
 				6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */,
 				958A81A014027EEE00837C82 /* FastPdfKit.framework */,
+				954B74AD14B47F0D00503F90 /* Extended.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1160,8 +1267,11 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39224923146832B3004A3EB1 /* NewsstandKit.framework */,
 				951E4E4013D71E8400C9FC70 /* libz.dylib */,
+				954B751E14B4810000503F90 /* libxml2.dylib */,
+				954B752014B4811500503F90 /* Security.framework */,
+				954B752214B4812700503F90 /* MapKit.framework */,
+				39224923146832B3004A3EB1 /* NewsstandKit.framework */,
 				01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */,
 				01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */,
 				01884AC2131E96C50045038F /* SystemConfiguration.framework */,
@@ -1178,15 +1288,260 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		954B74B214B47F0D00503F90 /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				954B74BB14B47F0D00503F90 /* FPKAppDelegate.h */,
+				954B74BC14B47F0D00503F90 /* FPKAppDelegate.m */,
+				95FFFB4B14B488AE00B1CD3B /* MainViewController.h */,
+				95FFFB4C14B488AE00B1CD3B /* MainViewController.m */,
+				95FFFB4D14B488AE00B1CD3B /* OverlayManager.h */,
+				95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */,
+				954B74C114B47F0D00503F90 /* MainViewController_iPhone.xib */,
+				954B74C414B47F0D00503F90 /* MainViewController_iPad.xib */,
+				954B74CC14B47FE000503F90 /* Extensions */,
+				954B74FB14B4803800503F90 /* Resources */,
+				954B74B314B47F0D00503F90 /* Supporting Files */,
+			);
+			path = Extended;
+			sourceTree = "<group>";
+		};
+		954B74B314B47F0D00503F90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				954B74B414B47F0D00503F90 /* Extended-Info.plist */,
+				954B74B514B47F0D00503F90 /* InfoPlist.strings */,
+				954B74B814B47F0D00503F90 /* main.m */,
+				954B74BA14B47F0D00503F90 /* Extended-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		954B74CC14B47FE000503F90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95FFFB6C14B48C3100B1CD3B /* FastPdfKit.embeddedframework */,
+				954B74CD14B47FFB00503F90 /* Common.embeddedframework */,
+				954B74D114B47FFB00503F90 /* FPKGalleryFade.embeddedframework */,
+				954B74D414B47FFB00503F90 /* FPKGallerySlide.embeddedframework */,
+				954B74D714B47FFB00503F90 /* FPKGalleryTap.embeddedframework */,
+				954B74DA14B47FFB00503F90 /* FPKMap.embeddedframework */,
+				954B74DD14B47FFB00503F90 /* FPKMessage.embeddedframework */,
+				954B74E114B47FFB00503F90 /* FPKPayPal.embeddedframework */,
+				954B74E414B47FFB00503F90 /* FPKShared.embeddedframework */,
+				954B74E714B47FFB00503F90 /* FPKWebPopup.embeddedframework */,
+				954B74EB14B47FFB00503F90 /* FPKYouTube.embeddedframework */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		954B74CD14B47FFB00503F90 /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74CE14B47FFB00503F90 /* Common.framework */,
+				954B74CF14B47FFB00503F90 /* Resources */,
+			);
+			path = Common.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74CF14B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				954B74D014B47FFB00503F90 /* libPayPalMPL.a */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74D114B47FFB00503F90 /* FPKGalleryFade.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74D214B47FFB00503F90 /* FPKGalleryFade.framework */,
+				954B74D314B47FFB00503F90 /* Resources */,
+			);
+			path = FPKGalleryFade.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74D314B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74D414B47FFB00503F90 /* FPKGallerySlide.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74D514B47FFB00503F90 /* FPKGallerySlide.framework */,
+				954B74D614B47FFB00503F90 /* Resources */,
+			);
+			path = FPKGallerySlide.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74D614B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74D714B47FFB00503F90 /* FPKGalleryTap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74D814B47FFB00503F90 /* FPKGalleryTap.framework */,
+				954B74D914B47FFB00503F90 /* Resources */,
+			);
+			path = FPKGalleryTap.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74D914B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74DA14B47FFB00503F90 /* FPKMap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74DB14B47FFB00503F90 /* FPKMap.framework */,
+				954B74DC14B47FFB00503F90 /* Resources */,
+			);
+			path = FPKMap.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74DC14B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74DD14B47FFB00503F90 /* FPKMessage.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74DE14B47FFB00503F90 /* FPKMessage.framework */,
+				954B74DF14B47FFB00503F90 /* Resources */,
+			);
+			path = FPKMessage.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74DF14B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				954B74E014B47FFB00503F90 /* fpkmessage-info.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74E114B47FFB00503F90 /* FPKPayPal.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74E214B47FFB00503F90 /* FPKPayPal.framework */,
+				954B74E314B47FFB00503F90 /* Resources */,
+			);
+			path = FPKPayPal.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74E314B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74E414B47FFB00503F90 /* FPKShared.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74E514B47FFB00503F90 /* FPKShared.framework */,
+				954B74E614B47FFB00503F90 /* Resources */,
+			);
+			path = FPKShared.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74E614B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74E714B47FFB00503F90 /* FPKWebPopup.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74E814B47FFB00503F90 /* FPKWebPopup.framework */,
+				954B74E914B47FFB00503F90 /* Resources */,
+			);
+			path = FPKWebPopup.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74E914B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				954B74EA14B47FFB00503F90 /* fpkwebpopup-safari.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74EB14B47FFB00503F90 /* FPKYouTube.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				954B74EC14B47FFB00503F90 /* FPKYouTube.framework */,
+				954B74ED14B47FFB00503F90 /* Resources */,
+			);
+			path = FPKYouTube.embeddedframework;
+			sourceTree = "<group>";
+		};
+		954B74ED14B47FFB00503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		954B74FB14B4803800503F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				954B74FC14B4805100503F90 /* img1.png */,
+				954B74FD14B4805100503F90 /* img2.png */,
+				954B74FE14B4805100503F90 /* img3.png */,
+				954B74FF14B4805100503F90 /* img4.png */,
+				954B750014B4805100503F90 /* sample.indd */,
+				954B750114B4805100503F90 /* sample.pdf */,
+				95EF544414B48EDD00910B3D /* Icon.png */,
+				95EF544514B48EDD00910B3D /* Icon72.png */,
+				95EF544614B48EDD00910B3D /* Icon114.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				018E95A1149B708D001C89F9 /* libFastPdfKit.a */,
+				0103EFF514AD6D2900F96249 /* libFastPdfKit.a */,
 				01D73BB51474385300C142FE /* standard14fonts */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
 			path = FPKCore;
 			sourceTree = SOURCE_ROOT;
+		};
+		95FFFB6C14B48C3100B1CD3B /* FastPdfKit.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				95FFFB6D14B48C3100B1CD3B /* FastPdfKit.framework */,
+				95FFFB6E14B48C3100B1CD3B /* Resources */,
+			);
+			path = FastPdfKit.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		95FFFB6E14B48C3100B1CD3B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */,
+				95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */,
+				95FFFB7114B48C3100B1CD3B /* Snippets.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -1428,6 +1783,23 @@
 			productReference = 6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		954B74AC14B47F0D00503F90 /* Extended */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 954B74CA14B47F0D00503F90 /* Build configuration list for PBXNativeTarget "Extended" */;
+			buildPhases = (
+				954B74A914B47F0D00503F90 /* Sources */,
+				954B74AA14B47F0D00503F90 /* Frameworks */,
+				954B74AB14B47F0D00503F90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extended;
+			productName = Extended;
+			productReference = 954B74AD14B47F0D00503F90 /* Extended.app */;
+			productType = "com.apple.product-type.application";
+		};
 		958A819F14027EEE00837C82 /* FastPdfKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 958A81AB14027EEE00837C82 /* Build configuration list for PBXNativeTarget "FastPdfKit" */;
@@ -1455,7 +1827,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FastPdfKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1479,6 +1851,7 @@
 				6FB9770813CB6E76007C368C /* FPKKioskBundle */,
 				6FB9771A13CB6E8A007C368C /* FPKReaderBundle */,
 				958A819F14027EEE00837C82 /* FastPdfKit */,
+				954B74AC14B47F0D00503F90 /* Extended */,
 			);
 		};
 /* End PBXProject section */
@@ -1490,9 +1863,6 @@
 			files = (
 				6FB9779113CC3EA6007C368C /* FPKKioskBundle.bundle in Resources */,
 				6FB9779213CC3EA6007C368C /* FPKReaderBundle.bundle in Resources */,
-				6FE7E4CF13CC6595006A7E68 /* Icon.png in Resources */,
-				6FE7E4D013CC6597006A7E68 /* Icon72.png in Resources */,
-				6FE7E4D113CC659A006A7E68 /* Icon114.png in Resources */,
 				0123604313CC917600861EB7 /* AudioViewController.xib in Resources */,
 				0123605713CC917600861EB7 /* WebBrowser.xib in Resources */,
 				0123607213CCA18700861EB7 /* Default@2x.png in Resources */,
@@ -1500,7 +1870,9 @@
 				0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */,
 				0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */,
 				6FFE1F9013CDFFA90003BC10 /* MainWindow_Kiosk.xib in Resources */,
-				39224A281469334C004A3EB1 /* FastPdfKit_Kiosk-Info.plist in Resources */,
+				95EF544114B48E4800910B3D /* Icon.png in Resources */,
+				95EF544214B48E4C00910B3D /* Icon72.png in Resources */,
+				95EF544314B48E4F00910B3D /* Icon114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1623,13 +1995,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		954B74AB14B47F0D00503F90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954B74B714B47F0D00503F90 /* InfoPlist.strings in Resources */,
+				954B74C314B47F0D00503F90 /* MainViewController_iPhone.xib in Resources */,
+				954B74C614B47F0D00503F90 /* MainViewController_iPad.xib in Resources */,
+				954B74F514B47FFC00503F90 /* fpkmessage-info.png in Resources */,
+				954B74F914B47FFC00503F90 /* fpkwebpopup-safari.png in Resources */,
+				954B750214B4805100503F90 /* img1.png in Resources */,
+				954B750314B4805100503F90 /* img2.png in Resources */,
+				954B750414B4805100503F90 /* img3.png in Resources */,
+				954B750514B4805100503F90 /* img4.png in Resources */,
+				954B750614B4805100503F90 /* sample.indd in Resources */,
+				954B750714B4805100503F90 /* sample.pdf in Resources */,
+				95FFFB7314B48C3100B1CD3B /* FastPdfKitFramework.xcconfig in Resources */,
+				95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */,
+				95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */,
+				95EF544714B48EDD00910B3D /* Icon.png in Resources */,
+				95EF544814B48EDD00910B3D /* Icon72.png in Resources */,
+				95EF544914B48EDD00910B3D /* Icon114.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		958A819D14027EEE00837C82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */,
-				951AE31614029A6F0025DA52 /* FastPdfKitFramework.xcconfig in Resources */,
 				958CBAB5141E66060094D4C1 /* Snippets.txt in Resources */,
+				95FFFB6B14B48BF200B1CD3B /* FastPdfKitFramework.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1692,6 +2088,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n    eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\nexit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sf A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sf A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sf Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sf Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sf Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sf Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sf \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sf \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sf \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\nif [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\nthen\necho ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nfi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n\necho \"Copying the Framework to the project directory\"\nrm -rf \"${PROJECT_DIR}/${PRODUCT_NAME}.embeddedframework\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" \"${PROJECT_DIR}/\"\n\n# echo /Developer/Tools/Rez -append \"${PROJECT_DIR}/Resources/tempicns.rsrc\" -o \"$'${PROJECT_DIR}/${PRODUCT_NAME}.embeddedframework/Icon\\r'\"\n# /Developer/Tools/Rez -append \"${PROJECT_DIR}/Resources/tempicns.rsrc\" -o \"${PROJECT_DIR}/${PRODUCT_NAME}.embeddedframework/Icon\\r\"\n# /Developer/Tools/SetFile -a C \"${PROJECT_DIR}/${PRODUCT_NAME}.embeddedframework\"";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1819,6 +2216,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		954B74A914B47F0D00503F90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954B74B914B47F0D00503F90 /* main.m in Sources */,
+				954B74BD14B47F0D00503F90 /* FPKAppDelegate.m in Sources */,
+				95FFFB5014B488AE00B1CD3B /* MainViewController.m in Sources */,
+				95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		958A819A14027EEE00837C82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1866,6 +2274,33 @@
 			targetProxy = 951AE30F140295060025DA52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		954B74B514B47F0D00503F90 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				954B74B614B47F0D00503F90 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		954B74C114B47F0D00503F90 /* MainViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				954B74C214B47F0D00503F90 /* en */,
+			);
+			name = MainViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		954B74C414B47F0D00503F90 /* MainViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				954B74C514B47F0D00503F90 /* en */,
+			);
+			name = MainViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		01598DAB13CAE783007344EE /* Debug */ = {
@@ -2295,6 +2730,219 @@
 			};
 			name = "Ad Hoc";
 		};
+		954B74C714B47F0D00503F90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMap.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMessage.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKPayPal.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKShared.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKWebPopup.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKYouTube.embeddedframework\"",
+					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/Extended/Extended-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework/Resources\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					MediaPlayer,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreText,
+					"-framework",
+					UIKit,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					Foundation,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					SystemConfiguration,
+					"-lz",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		954B74C814B47F0D00503F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMap.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMessage.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKPayPal.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKShared.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKWebPopup.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKYouTube.embeddedframework\"",
+					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/Extended/Extended-Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework/Resources\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					MediaPlayer,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreText,
+					"-framework",
+					UIKit,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					Foundation,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					SystemConfiguration,
+					"-lz",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		954B74C914B47F0D00503F90 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMap.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMessage.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKPayPal.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKShared.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKWebPopup.embeddedframework\"",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKYouTube.embeddedframework\"",
+					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/Extended/Extended-Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework/Resources\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					MediaPlayer,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreText,
+					"-framework",
+					UIKit,
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					Foundation,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					AVFoundation,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					SystemConfiguration,
+					"-lz",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad Hoc";
+		};
 		958A81A814027EEE00837C82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2544,6 +3192,16 @@
 				6FB9772513CB6E8A007C368C /* Debug */,
 				6FB9772613CB6E8A007C368C /* Release */,
 				6FB9772713CB6E8A007C368C /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		954B74CA14B47F0D00503F90 /* Build configuration list for PBXNativeTarget "Extended" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954B74C714B47F0D00503F90 /* Debug */,
+				954B74C814B47F0D00503F90 /* Release */,
+				954B74C914B47F0D00503F90 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MFDocumentManager</TokenIdentifier>
-			<Abstract></Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>
 			
 			<NodeRef refid="3"/>
@@ -13,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/getCropbox:andRotation:forPageNumber:withBuffer:</TokenIdentifier>
-			<Abstract>Use this method to get the cropbox and the rotation of a certain pdf page.</Abstract>
+			<Abstract type="html">Use this method to get the cropbox and the rotation of a certain pdf page.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber withBuffer:(BOOL)withOrWithout</Declaration>
@@ -24,8 +24,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/createImageForThumbnailOfPageNumber:ofSize:andScale:</TokenIdentifier>
-			<Abstract>Create a thumbnail for a specific page. It will look far better than the thumbnail integrated inside the pdf, but
-it is also slower.</Abstract>
+			<Abstract type="html">Create a thumbnail for a specific page. It will look far better than the
+thumbnail integrated inside the pdf, but it is also slower.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (CGImageRef)createImageForThumbnailOfPageNumber:(NSUInteger)pageNr ofSize:(CGSize)size andScale:(CGFloat)scale</Declaration>
@@ -36,7 +36,7 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MFDocumentManager/documentManagerWithFilePath:</TokenIdentifier>
-			<Abstract>Factory method to create an MFDocumentManager instance from a know file path.</Abstract>
+			<Abstract type="html">Factory method to create an MFDocumentManager instance from a know file path.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>+ (MFDocumentManager *)documentManagerWithFilePath:(NSString *)filePath</Declaration>
@@ -47,7 +47,7 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/outline</TokenIdentifier>
-			<Abstract>Return an array of MFOutlineEntry as the outline/TOC of the pdf document.</Abstract>
+			<Abstract type="html">Return an array of MFOutlineEntry as the outline/TOC of the pdf document.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (NSMutableArray *)outline</Declaration>
@@ -58,7 +58,7 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/initWithFileUrl:</TokenIdentifier>
-			<Abstract>Initializer. You can also use the factory method above.</Abstract>
+			<Abstract type="html">Initializer. You can also use the factory method above.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (id)initWithFileUrl:(NSURL *)anUrl</Declaration>
@@ -69,7 +69,7 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/initWithDataProvider:</TokenIdentifier>
-			<Abstract>Initializer with data provider.</Abstract>
+			<Abstract type="html">Initializer with data provider.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (id)initWithDataProvider:(CGDataProviderRef)dataProvider</Declaration>
@@ -80,7 +80,7 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/isLocked</TokenIdentifier>
-			<Abstract>Check if a document is encrypted and blocked by a password or not.</Abstract>
+			<Abstract type="html">Check if a document is encrypted and blocked by a password or not.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (BOOL)isLocked</Declaration>
@@ -91,7 +91,8 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/tryUnlockWithPassword:</TokenIdentifier>
-			<Abstract>Try to unlock the document with a password and return if the unlock has been successful or not.</Abstract>
+			<Abstract type="html">Try to unlock the document with a password and return if the unlock has been
+successful or not.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (BOOL)tryUnlockWithPassword:(NSString *)aPassword</Declaration>
@@ -102,7 +103,7 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/numberOfPages</TokenIdentifier>
-			<Abstract>Return the number of pages that make up the document.</Abstract>
+			<Abstract type="html">Return the number of pages that make up the document.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (NSUInteger)numberOfPages</Declaration>
@@ -113,7 +114,8 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/pageNumberForDestinationNamed:</TokenIdentifier>
-			<Abstract>This method will return the page number of the destination with the name passed as argument.</Abstract>
+			<Abstract type="html">This method will return the page number of the destination with the name passed
+as argument.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (NSUInteger)pageNumberForDestinationNamed:(NSString *)name</Declaration>
@@ -124,8 +126,9 @@ it is also slower.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/emptyCache</TokenIdentifier>
-			<Abstract>Clear the page cache. It is important to call this method on memory warning as in the sample code
-to prevent the application being killed right for excessive memory usage.</Abstract>
+			<Abstract type="html">Clear the page cache. It is important to call this method on memory warning as
+in the sample code to prevent the application being killed right for excessive
+memory usage.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (void)emptyCache</Declaration>
@@ -135,9 +138,30 @@ to prevent the application being killed right for excessive memory usage.</Abstr
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/searchResultOnPage:forSearchTerms:mode:ignoreCase:</TokenIdentifier>
+			<Abstract type="html">Return an array of MFTextItem representing the matches of teh search term on
+the page passed as arguments. It is a good choice running this method in a
+secondary thread.
+FPKSearchMode has the following values:
+FPKSearchModeHard - if you search for 'bèzier' it will match 'bèzier' only but not
+'bezier'. If you search for 'bezier' it will match 'bezier' only.
+FPKSearchModeSoft - if you search for term 'bèzier' it will match both 'bezier' and 'bèzier'. Same
+if you search for 'bezier'.
+FPKSearchModeSmart - if you search for term 'bezier', it will also match 'bèzier', but if you
+search for 'bèzier' it will match 'bèzier' only.
+Ignore case is self explanatory.
+Default parameters are FPKSearchModeSmart and ignoreCase to YES.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm mode:(FPKSearchMode)mode ignoreCase:(BOOL)ignoreOrNot</Declaration>
+			
+			
+			<Anchor>//api/name/searchResultOnPage:forSearchTerms:mode:ignoreCase:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/searchResultOnPage:forSearchTerms:</TokenIdentifier>
-			<Abstract>Return an array of MFTextItem representing the matches of teh search term on the page passed
-as arguments. It is a good choice running this method in a secondary thread.</Abstract>
+			<Abstract type="html">Compatibility methods for older version. It will call the above method with default values.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm</Declaration>
@@ -147,8 +171,19 @@ as arguments. It is a good choice running this method in a secondary thread.</Ab
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/searchResultOnPage:forSearchTerms:ignoreCase:</TokenIdentifier>
+			<Abstract type="html">Compatibility methods for older version. It will call the above method with default values.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm ignoreCase:(BOOL)ignoreOrNot</Declaration>
+			
+			
+			<Anchor>//api/name/searchResultOnPage:forSearchTerms:ignoreCase:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/wholeTextForPage:</TokenIdentifier>
-			<Abstract>Return a string representation of the text contained in a pdf page.</Abstract>
+			<Abstract type="html">Return a string representation of the text contained in a pdf page.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (NSString *)wholeTextForPage:(NSUInteger)pageNr</Declaration>
@@ -159,7 +194,7 @@ as arguments. It is a good choice running this method in a secondary thread.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MFDocumentManager/version</TokenIdentifier>
-			<Abstract>Build version of this library. Useful for debugging purposes.</Abstract>
+			<Abstract type="html">Build version of this library. Useful for debugging purposes.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>+ (NSString *)version</Declaration>
@@ -170,7 +205,7 @@ as arguments. It is a good choice running this method in a secondary thread.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/uriAnnotationsForPageNumber:</TokenIdentifier>
-			<Abstract>Array of every uri annotation for a selected page.</Abstract>
+			<Abstract type="html">Array of every uri annotation for a selected page.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>- (NSArray *)uriAnnotationsForPageNumber:(NSUInteger)pageNr</Declaration>
@@ -181,7 +216,8 @@ as arguments. It is a good choice running this method in a secondary thread.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MFDocumentManager/paramsFromURI:</TokenIdentifier>
-			<Abstract>Get the parameters for a generic uri, useful to parse options passed with the annotations to customize the behaviour.</Abstract>
+			<Abstract type="html">Get the parameters for a generic uri, useful to parse options passed with the
+annotations to customize the behaviour.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>+ (NSDictionary *)paramsFromURI:(NSString *)uri</Declaration>
@@ -192,13 +228,89 @@ as arguments. It is a good choice running this method in a secondary thread.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentManager/resourceFolder</TokenIdentifier>
-			<Abstract>Resouce folder for the document. Video, audio and other files referenced in the pdf are contained here.</Abstract>
+			<Abstract type="html">Resouce folder for the document. Video, audio and other files referenced in the
+pdf are contained here.</Abstract>
 			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *resourceFolder</Declaration>
 			
 			
 			<Anchor>//api/name/resourceFolder</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/resourceFolder</TokenIdentifier>
+			<Abstract type="html">Resouce folder for the document. Video, audio and other files referenced in the
+pdf are contained here.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)resourceFolder</Declaration>
+			
+			
+			<Anchor>//api/name/resourceFolder</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/setResourceFolder:</TokenIdentifier>
+			<Abstract type="html">Resouce folder for the document. Video, audio and other files referenced in the
+pdf are contained here.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)setResourceFolder:(NSString *)val</Declaration>
+			
+			
+			<Anchor>//api/name/resourceFolder</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MFDocumentManager/fontCacheEnabled</TokenIdentifier>
+			<Abstract type="html">Enable/disable the font cache. Tipically, you want the cache turned on. If you
+get a lot of [] (notdef) characters in the text extracted or the search turn
+up nothing, try to disabled set this to NO. Default value is YES.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL fontCacheEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/fontCacheEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/fontCacheEnabled</TokenIdentifier>
+			<Abstract type="html">Enable/disable the font cache. Tipically, you want the cache turned on. If you
+get a lot of [] (notdef) characters in the text extracted or the search turn
+up nothing, try to disabled set this to NO. Default value is YES.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)fontCacheEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/fontCacheEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/setFontCacheEnabled:</TokenIdentifier>
+			<Abstract type="html">Enable/disable the font cache. Tipically, you want the cache turned on. If you
+get a lot of [] (notdef) characters in the text extracted or the search turn
+up nothing, try to disabled set this to NO. Default value is YES.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)setFontCacheEnabled:(BOOL)val</Declaration>
+			
+			
+			<Anchor>//api/name/fontCacheEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MFDocumentManager/glyphBoxesForPage:</TokenIdentifier>
+			<Abstract type="html">Return an array of FPKGlyphBox, that is, the bounding box of each glyph on the
+page and its unicode representation. Check FPKGlyphBox interface for details.</Abstract>
+			<DeclaredIn>MFDocumentManager.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)glyphBoxesForPage:(NSUInteger)pageNr</Declaration>
+			
+			
+			<Anchor>//api/name/glyphBoxesForPage:</Anchor>
 		</Token>
 		
 	</File>

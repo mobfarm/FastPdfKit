@@ -12,5 +12,9 @@
 @interface FPKURIAnnotation : FPKAnnotation {
     NSString * uri;
 }
+
+/**
+ URI associated to the annotation.
+ */
 @property (nonatomic,copy) NSString * uri;
 @end

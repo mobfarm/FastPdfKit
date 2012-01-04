@@ -299,6 +299,34 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.2 (Janyary 4th, 2012)
+* New Extended target that supports Extensions;
+* Out of the box supported Extensions:
+    * [**FPKPayPal**](http://doc.fastpdfkit.com/Extensions/Classes/FPKPayPal.html) to create **catalogs** with **items** that can be **purchased** directly **from the app**;
+    * [**FPKYouTube**](http://doc.fastpdfkit.com/Extensions/Classes/FPKYouTube.html) to place **YouTube** video on the page.
+    * [**FPKGallerySlide**](http://doc.fastpdfkit.com/Extensions/Classes/FPKGallerySlide.html) interactive **image gallery** with manual or automatic advancement;
+    * [**FPKMap**](http://doc.fastpdfkit.com/Extensions/Classes/FPKMap.html) to render an interactive google map;
+    * [**FPKGalleryFade**](http://doc.fastpdfkit.com/Extensions/Classes/FPKGalleryFade.html) image gallery useful for the table of contents;
+    * [**FPKGalleryTap**](http://doc.fastpdfkit.com/Extensions/Classes/FPKGalleryTap.html) to create a multi interactive image gallery;
+    * [**FPKMessage**](http://doc.fastpdfkit.com/Extensions/Classes/FPKMessage.html) to show details or alerts;
+    * [**FPKWebPopup**](http://doc.fastpdfkit.com/Extensions/Classes/FPKWebPopup.html) to open a **web page** in a popup view;
+* Updated documentation to version 3.2
+* Included Extensions documentation
+
+For more informations reagarding Extensions [git.io/fpke](git.io/fpke).
+
+
+### Update 3.1.3 (December 30th, 2011)
+* Reworked page metrics synchronization to reduce lag on slow pdfs (more to come).
+* Paged scroll view attribute is accessible again in the MFDocumentViewController
+    public interface.
+* FPK annotations parsing can be disabled by setting MFDocumentViewController's
+    fpkAnnotationsEnabled to NO. Use this if you experience frequent freezes while
+    skimming the pages.
+* You can add multiple MFDocumentViewControllerDelegates by calling MFDocumentViewController's
+    addDocumentDelegate: (and removeDocumentDelegate:). Check the interface for 
+    details
+
 ### Update 3.1.2 (December 16th, 2011)
 * Non-unlocked password protected douments should no more crash the application.
 * Cordinates for taps on the right page are now correct.

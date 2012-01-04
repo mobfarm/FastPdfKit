@@ -1,0 +1,663 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>FPKMessage Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 748)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">FastPdfKit Extensions </a></h1>
+				<a id="developerHome" href="../index.html">MobFarm</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">FPKMessage Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/acceptedPrefixes">&nbsp;&nbsp;&nbsp;&nbsp;+ acceptedPrefixes</option>
+	
+	<option value="//api/name/respondsToPrefix:">&nbsp;&nbsp;&nbsp;&nbsp;+ respondsToPrefix:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithParams:andFrame:from:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithParams:andFrame:from:</option>
+	
+	<option value="//api/name/rect">&nbsp;&nbsp;&nbsp;&nbsp;- rect</option>
+	
+	<option value="//api/name/setRect:">&nbsp;&nbsp;&nbsp;&nbsp;- setRect:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/acceptedPrefixes">acceptedPrefixes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/respondsToPrefix:">respondsToPrefix:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithParams:andFrame:from:">initWithParams:andFrame:from:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rect">rect</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRect:">setRect:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="FPKMessage Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">FPKMessage Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">UIView</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">DDSocialDialogDelegate<br /><a href="../Protocols/FPKView.html">FPKView</a></td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">FPKMessage.h<br />FPKMessage.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This Extension let you present a text message inside a Popup view like the Twitter login screen.
+It uses the <strong>DDSocialDiaolog</strong> from the <strong>Common</strong> framework.</p>
+
+<h2>Usage</h2>
+
+<ul>
+<li>Prefix: <strong>message://</strong></li>
+<li>Import: <strong>#import &lt;FPKMessage/<a href="FPKMessage.html">FPKMessage</a>.h></strong></li>
+<li>String: <strong>@&ldquo;FPKMessage&rdquo;</strong></li>
+</ul>
+
+
+<h3>Prefix</h3>
+
+<pre><code>message://
+</code></pre>
+
+<h3>Resources and Parameters</h3>
+
+<ul>
+<li>any resource
+
+<ul>
+<li><em>title</em> = <strong>STRING</strong> use %20 instead of spaces</li>
+<li><em>message</em> = <strong>STRING</strong> use %20 instead of spaces</li>
+<li><em>h</em> = <strong>FLOAT</strong>: popup height</li>
+<li><em>w</em> = <strong>FLOAT</strong>: popup width</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Sample url</h3>
+
+<pre><code>message://?title=The%20title&amp;message=The%20message&amp;h=400&amp;w=300
+</code></pre>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithParams:andFrame:from:">&ndash;&nbsp;initWithParams:andFrame:from:</a></code>
+		<span class="tooltip"><p>This method is called by the <a href="../Classes/FPKOverlayManager.html">FPKOverlayManager</a> if the Extension supports the requested prefix.
+You should return the <strong>UIView</strong> to be placed over the page. You can also return <code>nil</code> and perform some other operations like presenting a modal view on the</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/acceptedPrefixes">+&nbsp;acceptedPrefixes</a></code>
+		<span class="tooltip"><p>Get the accepted prefixes by an Extension encapsulated in an <strong>NSArray</strong> of <strong>NSString</strong>. Obviously you can support even just one prefix.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/respondsToPrefix:">+&nbsp;respondsToPrefix:</a></code>
+		<span class="tooltip"><p>You should implement this method to return a BOOL value only on supported prefixes.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rect">&ndash;&nbsp;rect</a></code>
+		<span class="tooltip"><p>The frame of the view can change when the pdf mode change and the device is rotated.
+The original frame is stored to perform the conversion on the fly when needed.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRect:">&ndash;&nbsp;setRect:</a></code>
+		<span class="tooltip"><p>Set the original frame. More info on <a href="../Protocols/FPKView.html#//api/name/rect">rect</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/acceptedPrefixes" title="acceptedPrefixes"></a>
+	<h3 class="subsubtitle method-title">acceptedPrefixes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the accepted prefixes by an Extension encapsulated in an <strong>NSArray</strong> of <strong>NSString</strong>. Obviously you can support even just one prefix.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)acceptedPrefixes</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get the accepted prefixes by an Extension encapsulated in an <strong>NSArray</strong> of <strong>NSString</strong>. Obviously you can support even just one prefix.</p>
+
+<pre><code>[NSArray arrayWithObjects:@"map", nil];
+</code></pre>
+
+<p>@return</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/respondsToPrefix:" title="respondsToPrefix:"></a>
+	<h3 class="subsubtitle method-title">respondsToPrefix:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>You should implement this method to return a BOOL value only on supported prefixes.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (BOOL)respondsToPrefix:(NSString *)<em>prefix</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>prefix</em></dt>
+			<dd><p>The prefix in the form <code>@"map"</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES or NO if the prefix is support by the Extension.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>You should implement this method to return a BOOL value only on supported prefixes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithParams:andFrame:from:" title="initWithParams:andFrame:from:"></a>
+	<h3 class="subsubtitle method-title">initWithParams:andFrame:from:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called by the <a href="../Classes/FPKOverlayManager.html">FPKOverlayManager</a> if the Extension supports the requested prefix.
+You should return the <strong>UIView</strong> to be placed over the page. You can also return <code>nil</code> and perform some other operations like presenting a modal view on the</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (UIView *)initWithParams:(NSDictionary *)<em>params</em> andFrame:(CGRect)<em>frame</em> from:(FPKOverlayManager *)<em>manager</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>This dictionary contains all the parameters extracted from the url</p>
+
+<ul>
+<li><strong>prefix</strong> the part in the url before <code>://</code></li>
+<li><strong>path</strong> the part in the url after <code>://</code></li>
+<li><strong>params</strong> another NSDictionary that contains the parsed parameters after the <code>://</code>
+
+<ul>
+<li> <strong>resource</strong> the part before <code>?</code></li>
+<li> &hellip; custom parameters included in the annotation separated by <code>&amp;</code></li>
+</ul>
+</li>
+<li><strong>load</strong> YES if the call for the view is made when the pdf page is going to be loaded, NO if the call is made when the user taps on the annotation area</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frame</em></dt>
+			<dd><p>The annotation frame in pdf page coordinates. If the <code>padding</code> parameter is specified in the url, the frame is a CGRectInset of the real annotation frame. This feature is useful if the pdf has been created with Adobe InDesign that creates the annotation 2 pixel wider than the original object. Just specify in the url a param <code>?padding=2</code> and the frame will be set accordingly.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The <a href="../Classes/FPKOverlayManager.html">FPKOverlayManager</a> that can be used to perform many operations like accessing the <a href="http://doc.fastpdfkit.com/Classes/MFDocumentViewController.html">MFDocumentViewController</a> or the <a href="http://doc.fastpdfkit.com/Classes/MFDocumentManager.html">MFDocumentManager</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><strong>UIView</strong> that will be placed over the pdf page by the <a href="../Classes/FPKOverlayManager.html">FPKOverlayManager</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is called by the <a href="../Classes/FPKOverlayManager.html">FPKOverlayManager</a> if the Extension supports the requested prefix.
+You should return the <strong>UIView</strong> to be placed over the page. You can also return <code>nil</code> and perform some other operations like presenting a modal view on the</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rect" title="rect"></a>
+	<h3 class="subsubtitle method-title">rect</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The frame of the view can change when the pdf mode change and the device is rotated.
+The original frame is stored to perform the conversion on the fly when needed.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)rect</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="../Protocols/FPKView.html#//api/name/rect">rect</a> The original frame of the <strong>UIView</strong>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The frame of the view can change when the pdf mode change and the device is rotated.
+The original frame is stored to perform the conversion on the fly when needed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRect:" title="setRect:"></a>
+	<h3 class="subsubtitle method-title">setRect:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the original frame. More info on <a href="../Protocols/FPKView.html#//api/name/rect">rect</a>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setRect:(CGRect)<em>aRect</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rect</em></dt>
+			<dd><p>The original frame.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set the original frame. More info on <a href="../Protocols/FPKView.html#//api/name/rect">rect</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FPKView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 MobFarm. All rights reserved. (Last updated: 2012-01-04)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 748)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>
