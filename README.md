@@ -299,7 +299,13 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
-### Update 3.2 (Janyary 4th, 2012)
+### Update 3.2.1 (January 5th, 2012)
+* Less aggressive tiled view rendering
+* Fixed a bug in the glyph name matching function
+* Better caching of annotations
+* Removed a few more synchronization point between main thread and worker th
+
+### Update 3.2 (January 4th, 2012)
 * New Extended target that supports Extensions;
 * Out of the box supported Extensions:
     * [**FPKPayPal**](http://doc.fastpdfkit.com/Extensions/Classes/FPKPayPal.html) to create **catalogs** with **items** that can be **purchased** directly **from the app**;
