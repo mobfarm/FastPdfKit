@@ -8,10 +8,11 @@
 
 #import "MFAudioPlayerViewImpl.h"
 #import "MFAudioProvider.h"
+#import "Stuff.h"
 
-#define PLAY_IMG @"play_player.png"
-#define PAUSE_IMG @"pause_player.png"
-#define BCKGR_IMG @"hud_player.png"
+#define PLAY_IMG @"play_player"
+#define PAUSE_IMG @"pause_player"
+#define BCKGR_IMG @"hud_player"
 
 @implementation MFAudioPlayerViewImpl
 
@@ -26,14 +27,14 @@
         
         // Initialization code
         
-        UIImageView *backgroundImageView =[[UIImageView alloc]initWithImage:[UIImage imageNamed:BCKGR_IMG]];
+        UIImageView *backgroundImageView =[[UIImageView alloc]initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",BCKGR_IMG,@"png")]];
         [backgroundImageView setFrame:CGRectMake(0, 0, 272, 40)];
         [self addSubview:backgroundImageView];
         [backgroundImageView release];
         
         UIButton *aBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        [aBtn setBackgroundImage:[UIImage imageNamed:PLAY_IMG] forState:UIControlStateNormal];
+        [aBtn setBackgroundImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",PLAY_IMG,@"png")] forState:UIControlStateNormal];
         [aBtn addTarget:self action:@selector(actionTogglePlay:) forControlEvents:UIControlEventTouchUpInside];
         [aBtn setFrame:CGRectMake(8, 2, 33, 33)];
         [self addSubview:aBtn];
@@ -41,7 +42,7 @@
         
         UISlider *aSlider = [[UISlider alloc] initWithFrame:CGRectMake(48, 8, 117, 23)];
         [aSlider addTarget:self action:@selector(actionAdjustVolume:) forControlEvents:UIControlEventValueChanged];
-        [aSlider setMinimumTrackImage:[[UIImage imageNamed:@"blackslider.png"] stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0] forState:UIControlStateNormal];
+        [aSlider setMinimumTrackImage:[[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"blackslider",@"png")] stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0] forState:UIControlStateNormal];
         [self addSubview:aSlider];
         self.volumeSlider = aSlider;
         [aSlider release];
@@ -77,9 +78,9 @@
     audioProvider = provider;
     
     if([audioProvider isPlaying]) {
-         [startStopButton setBackgroundImage:[UIImage imageNamed:PAUSE_IMG] forState:UIControlStateNormal];
+         [startStopButton setBackgroundImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",PAUSE_IMG,@"png")] forState:UIControlStateNormal];
     } else {
-         [startStopButton setBackgroundImage:[UIImage imageNamed:PLAY_IMG] forState:UIControlStateNormal];
+         [startStopButton setBackgroundImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",PLAY_IMG,@"png")] forState:UIControlStateNormal];
     }
     
     volumeLevel = [audioProvider volumeLevel];
@@ -93,7 +94,7 @@
 
 -(void)audioProviderDidStart:(id<MFAudioProvider>)mfeap{
 
-    [self.startStopButton setBackgroundImage:[UIImage imageNamed:PAUSE_IMG] forState:UIControlStateNormal];
+    [self.startStopButton setBackgroundImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",PAUSE_IMG,@"png")] forState:UIControlStateNormal];
     
     
 }
@@ -105,7 +106,7 @@
 
 -(void)audioProviderDidStop:(id<MFAudioProvider>)mfeap{
     
-    [self.startStopButton setBackgroundImage:[UIImage imageNamed:PLAY_IMG] forState:UIControlStateNormal];
+    [self.startStopButton setBackgroundImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",PLAY_IMG,@"png")] forState:UIControlStateNormal];
 
 }
 
