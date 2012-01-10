@@ -1,487 +1,0 @@
-TFPKReaderLib
-v4
-r1
-cCheck dependencies
-cProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch.pth OtherSources/FastPDFKitReader-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/NotificationFactory.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MiniSearchView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchManager.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultCellView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextDisplayViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextSearchOperation.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/AudioViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MFAudioPlayerViewImpl.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/WebBrowser.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/BookmarkViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/ReaderViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/OutlineViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailScrollView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLibtool /Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKReaderLib.a normal i386
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk
-c000000004EFACEFB0000000000000110
-t1325059835
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004E72F2960000000000353830
-t1316156054
-s3487792
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewController.m
-c000000004F0AD5910000000000001ADE
-t1326110097
-s6878
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.m
-c000000004F0AD5910000000000000AC6
-t1326110097
-s2758
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m
-c000000004F0AD5910000000000000CBB
-t1326110097
-s3259
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.m
-c000000004F0AD5910000000000000919
-t1326110097
-s2329
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewController.m
-c000000004F0AD5910000000000002D0B
-t1326110097
-s11531
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.m
-c000000004F0AD5A90000000000012BA2
-t1326110121
-s76706
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.m
-c000000004F0AD59100000000000023F3
-t1326110097
-s9203
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.m
-c000000004F0AD5910000000000000B7C
-t1326110097
-s2940
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.m
-c000000004F0AD5910000000000002428
-t1326110097
-s9256
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.m
-c000000004F0AD59100000000000008DC
-t1326110097
-s2268
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.m
-c000000004F0AD591000000000000261D
-t1326110097
-s9757
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m
-c000000004F0AD5910000000000002DC5
-t1326110097
-s11717
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewController.m
-c000000004F0AD5910000000000000D3B
-t1326110097
-s3387
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.m
-c000000004F0AD5910000000000000422
-t1326110097
-s1058
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.m
-c000000004F0AD5910000000000003D7E
-t1326110097
-s15742
-
-N/Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.m
-c000000004F0AD5910000000000002083
-t1326110097
-s8323
-
-N/Users/matteo/git/fastPdfKitSample/FPKCore/libFastPdfKit.a
-c000000004F0AD5A900000000007ADEC4
-t1326110121
-s8052420
-
-N/Users/matteo/git/fastPdfKitSample/OtherSources/FastPDFKitReader-Prefix.pch
-c000000004F0AD59100000000000000AD
-t1326110097
-s173
-
-N/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKReaderLib.a
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/AudioViewController.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/BookmarkViewController.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/FPKReaderLib.LinkFileList
-c000000004F0C11B300000000000008C7
-t1326191027
-s2247
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MFAudioPlayerViewImpl.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MiniSearchView.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/NotificationFactory.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/OutlineViewController.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/ReaderViewController.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchManager.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultCellView.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultView.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchViewController.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailScrollView.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailView.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextDisplayViewController.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextSearchOperation.o
-t2
-s0
-
-N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/WebBrowser.o
-t2
-s0
-
-N/var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch.pth
-t2
-s0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewController.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewController.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewController.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.m
-r0
-
-CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.m
-r0
-
-CCheck dependencies
-r0
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies7a6f543349bcb441^999fc73349bcb441^---0#1#0#--18"Check dependencies36"9B7C4EBA-F459-437F-B140-46546970E49F-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/AudioViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.796127
-e347883830.057082
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/AudioViewController.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.md788d03549bcb441^2ead0e3649bcb441^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.m0000000000000000^2765"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/AudioViewController.o Classes/Reader/Multimedia/AudioViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/AudioViewController.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/AudioViewController.o36"D900029A-A865-437D-85E4-CEC9AE5A6B48-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/BookmarkViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.979050
-e347883830.165121
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/BookmarkViewController.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewController.me2cdfa3549bcb441^3b552a3649bcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewController.m0000000000000000^2778"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/BookmarkViewController.o Classes/Reader/Bookmarks/BookmarkViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/BookmarkViewController.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewController.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/BookmarkViewController.o36"1BB22F6B-0E68-4CD8-80BB-542994713CBC-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MFAudioPlayerViewImpl.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.945416
-e347883830.093170
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MFAudioPlayerViewImpl.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m7231f23549bcb441^aaf4173649bcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m0000000000000000^2775"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MFAudioPlayerViewImpl.o Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MFAudioPlayerViewImpl.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/MFAudioPlayerViewImpl.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MFAudioPlayerViewImpl.o36"BC43E93D-9406-49C9-A8A2-C15D659D3B70-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MiniSearchView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.526702
-e347883829.763693
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MiniSearchView.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.mdbfd863549bcb441^b37ec33549bcb441^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.m0000000000000000^2740"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MiniSearchView.o Classes/Reader/TextSearch/MiniSearchView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MiniSearchView.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/MiniSearchView.o36"AFEE816A-2B79-43D3-8C0B-DEB84C619659-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/NotificationFactory.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.477484
-e347883829.525364
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/NotificationFactory.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.maa667a3549bcb441^5798863549bcb441^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.m0000000000000000^2765"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/NotificationFactory.o Classes/Reader/TextSearch/NotificationFactory.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/NotificationFactory.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/NotificationFactory.o36"CED0E619-528C-4A4D-853E-6C15E25452A0-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/OutlineViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883830.139559
-e347883830.375000
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/OutlineViewController.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewController.m58e4233649bcb441^8bff5f3649bcb441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewController.m0000000000000000^2769"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/OutlineViewController.o Classes/Reader/Outline/OutlineViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/OutlineViewController.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewController.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/OutlineViewController.o36"7286FB86-E14A-46F0-994B-65D090716F0B-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/ReaderViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883830.094457
-e347883830.645665
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/ReaderViewController.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.m8256183649bcb441^8715a63649bcb441^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.m0000000000000000^2748"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/ReaderViewController.o Classes/Reader/ReaderViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/ReaderViewController.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/ReaderViewController.o36"D5E8E87C-24F8-4D5B-92F9-6321810D7F00-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchManager.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.552908
-e347883829.769472
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchManager.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.m39b38d3549bcb441^b535c63549bcb441^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.m0000000000000000^2735"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchManager.o Classes/Reader/TextSearch/SearchManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchManager.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchManager.o36"0818ECB7-1085-4B76-A548-610B7BCA0E17-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultCellView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.591775
-e347883829.784720
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultCellView.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.md3a5973549bcb441^83fbc93549bcb441^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.m0000000000000000^2770"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultCellView.o Classes/Reader/TextSearch/SearchResultCellView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultCellView.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultCellView.o36"35578B22-1CE1-439E-A1B9-790C9F32D437-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.477605
-e347883829.733152
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultView.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.mcf697a3549bcb441^f0c1bb3549bcb441^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.m0000000000000000^2750"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultView.o Classes/Reader/TextSearch/SearchResultView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultView.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchResultView.o36"B02286B2-C112-4F82-89D0-D61764324863-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.759439
-e347883829.977745
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchViewController.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m4698c23549bcb441^e15dfa3549bcb441^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m0000000000000000^2770"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchViewController.o Classes/Reader/TextSearch/SearchViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchViewController.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/SearchViewController.o36"D5209CDE-4ECF-49F6-97A3-447FE4A23A62-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailScrollView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883830.166487
-e347883830.497770
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailScrollView.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.mb0c52a3649bcb441^656d7f3649bcb441^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.m0000000000000000^2785"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailScrollView.o Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailScrollView.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailScrollView.o36"9846988B-7641-43AA-98C2-6BE8E5CDB864-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailView.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883830.058383
-e347883830.255862
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailView.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.m651c0f3649bcb441^8a91413649bcb441^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.m0000000000000000^2755"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailView.o Classes/Reader/ThumbnailSlider/TVThumbnailView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailView.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TVThumbnailView.o36"5F13EA39-97DB-483B-B4AF-90A433AAB3A6-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextDisplayViewController.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.768409
-e347883829.961650
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextDisplayViewController.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewController.mc6ddc43549bcb441^7139f63549bcb441^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewController.m0000000000000000^2795"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextDisplayViewController.o Classes/Reader/TextSearch/TextDisplayViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextDisplayViewController.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewController.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextDisplayViewController.o36"17F21CCD-DB68-460C-A0D8-001F12B23174-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextSearchOperation.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.770789
-e347883829.944076
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextSearchOperation.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.mfa7fc53549bcb441^23bcf13549bcb441^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.m0000000000000000^2765"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextSearchOperation.o Classes/Reader/TextSearch/TextSearchOperation.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextSearchOperation.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/TextSearchOperation.o36"2D0AE4EC-0D7A-4CB9-9691-F6FDF20A3E2D-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/WebBrowser.o /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883829.962972
-e347883830.137736
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/WebBrowser.o
-x/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection81"Compile /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.md6adf63549bcb441^4b77233649bcb441^---0#0#0#-19%DVTDocumentLocation2@89"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.m0000000000000000^2720"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/WebBrowser.o Classes/Reader/Multimedia/WebBrowser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/WebBrowser.d -c /Users/matteo/git/fastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/WebBrowser.o36"7265DE23-8A50-42CE-BDF9-721B0D86145E-
-
-CLibtool /Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKReaderLib.a normal i386
-s347883830.693693
-e347883830.741479
-r1
-xLibtool
-x/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKReaderLib.a
-xnormal
-xi386
-o/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Libtool build/Debug-iphonesimulator/libFPKReaderLib.a normal i3863eb2b13649bcb441^39d2bd3649bcb441^---0#0#0#--924"Libtool build/Debug-iphonesimulator/libFPKReaderLib.a normal i386    cd /Users/matteo/git/fastPdfKitSample    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool -static -arch_only i386 -syslibroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -L/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator "-L/Users/matteo/git/fastPdfKitSample/FastPdfKit Library" -L/Users/matteo/git/fastPdfKitSample/FPKCore -filelist /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/Objects-normal/i386/FPKReaderLib.LinkFileList -ObjC -framework Foundation -lFastPdfKit -o /Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKReaderLib.a36"312B4A84-AE36-4A8C-A819-9536A5ABD670-
-
-CProcessPCH /Users/matteo/Library/Developer/Xcode/DerivedData/FastPDF-glougaudvzpaeaangchinpbrhmym/Index/PrecompiledHeaders/FastPDFKitReader-Prefix-crxnnsffarkmjseodlvevtyovibb_ast/FastPDFKitReader-Prefix.pch.pth OtherSources/FastPDFKitReader-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch.pth OtherSources/FastPDFKitReader-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347883828.946157
-e347883829.470757
-r1
-xProcessPCH
-x/var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch.pth
-xOtherSources/FastPDFKitReader-Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Precompile OtherSources/FastPDFKitReader-Prefix.pch5b5df23449bcb441^ff057a3549bcb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/matteo/git/fastPdfKitSample/OtherSources/FastPDFKitReader-Prefix.pch0000000000000000^2723"ProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch.pth OtherSources/FastPDFKitReader-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/FPKReaderLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKReaderLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -c /Users/matteo/git/fastPdfKitSample/OtherSources/FastPDFKitReader-Prefix.pch -o /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitReader-Prefix-fglupqokhvyaatfhwjyphxcduvhr/FastPDFKitReader-Prefix.pch.d36"67F35500-2471-4931-AF1F-F3CC032BE3B1-
-

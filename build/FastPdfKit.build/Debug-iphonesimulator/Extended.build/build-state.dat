@@ -1,663 +1,0 @@
-TExtended
-v4
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Info.plist Classes/Extended/Extended-Info.plist
-cProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch.pth Classes/Extended/Extended-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/main.o /Users/matteo/git/FastPdfKitSample/Classes/Extended/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKAppDelegate.o /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKMainViewController.o /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKMainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/OverlayManager.o /Users/matteo/git/FastPdfKitSample/Classes/Extended/OverlayManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended normal i386
-cGenerateDSYMFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app.dSYM /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended
-cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib
-cCopyStringsFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj/InfoPlist.strings Classes/Extended/en.lproj/InfoPlist.strings
-cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib
-cCpResource Classes/Extended/Extensions/FPKMessage.embeddedframework/Resources/fpkmessage-info.png build/Debug-iphonesimulator/Extended.app/fpkmessage-info.png
-cCpResource Classes/Extended/Extensions/FPKWebPopup.embeddedframework/Resources/fpkwebpopup-safari.png build/Debug-iphonesimulator/Extended.app/fpkwebpopup-safari.png
-cCpResource Classes/Extended/Resources/img1.png build/Debug-iphonesimulator/Extended.app/img1.png
-cCpResource Classes/Extended/Resources/img2.png build/Debug-iphonesimulator/Extended.app/img2.png
-cCpResource Classes/Extended/Resources/img3.png build/Debug-iphonesimulator/Extended.app/img3.png
-cCpResource Classes/Extended/Resources/img4.png build/Debug-iphonesimulator/Extended.app/img4.png
-cCpResource Classes/Extended/Resources/sample.indd build/Debug-iphonesimulator/Extended.app/sample.indd
-cCpResource Classes/Extended/Resources/sample.pdf build/Debug-iphonesimulator/Extended.app/sample.pdf
-cCpResource FastPdfKit.embeddedframework/Resources/FastPdfKitFramework.xcconfig build/Debug-iphonesimulator/Extended.app/FastPdfKitFramework.xcconfig
-cCpResource FastPdfKit.embeddedframework/Resources/FPKReaderBundle.bundle build/Debug-iphonesimulator/Extended.app/FPKReaderBundle.bundle
-cCpResource FastPdfKit.embeddedframework/Resources/Snippets.txt build/Debug-iphonesimulator/Extended.app/Snippets.txt
-cCpResource Classes/Extended/Resources/Icon.png build/Debug-iphonesimulator/Extended.app/Icon.png
-cCpResource Classes/Extended/Resources/Icon72.png build/Debug-iphonesimulator/Extended.app/Icon72.png
-cCpResource Classes/Extended/Resources/Icon114.png build/Debug-iphonesimulator/Extended.app/Icon114.png
-cTouch /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk
-c000000004EFACEFB0000000000000110
-t1325059835
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004E72F1CC0000000000245480
-t1316155852
-s2380928
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004E72F2960000000000353830
-t1316156054
-s3487792
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004E72F28F0000000000001534
-t1316156047
-s5428
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
-c000000004E7807EF00000000000D89E0
-t1316489199
-s887264
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Security.framework/Security
-c000000004E72F185000000000007F9C0
-t1316155781
-s522688
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004E78066A0000000000000BCB
-t1316488810
-s3019
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004E7806AB00000000008F7390
-t1316488875
-s9401232
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/usr/include/Availability.h
-c000000004E5C62D90000000000001B38
-t1314677465
-s6968
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/usr/lib/libxml2.dylib
-c000000004E72F1B5000000000011FDD0
-t1316155829
-s1179088
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extended-Prefix.pch
-c000000004F0AD5A9000000000000013F
-t1326110121
-s319
-i<Availability.h>
-i<UIKit/UIKit.h>
-i<Foundation/Foundation.h>
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework/Common.framework/Common
-c000000004F0AD5A900000000000424BC
-t1326110121
-s271548
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework/Resources/libPayPalMPL.a
-c000000004F0AD5A900000000015B5FCC
-t1326110121
-s22765516
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework/FPKGalleryFade.framework/FPKGalleryFade
-c000000004F0AD5A9000000000000B1B8
-t1326110121
-s45496
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework/FPKGallerySlide.framework/FPKGallerySlide
-c000000004F0AD5A9000000000000F420
-t1326110121
-s62496
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework/FPKGalleryTap.framework/FPKGalleryTap
-c000000004F0AD5A90000000000010290
-t1326110121
-s66192
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMap.embeddedframework/FPKMap.framework/FPKMap
-c000000004F0AD5A9000000000000B048
-t1326110121
-s45128
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework/FPKMessage.framework/FPKMessage
-c000000004F0AD5A90000000000006E70
-t1326110121
-s28272
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework/Resources/fpkmessage-info.png
-c000000004F0AD5A90000000000001BF9
-t1326110121
-s7161
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKPayPal.embeddedframework/FPKPayPal.framework/FPKPayPal
-c000000004F0AD5A9000000000001AAF8
-t1326110121
-s109304
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKShared.embeddedframework/FPKShared.framework/FPKShared
-c000000004F0AD5A90000000000010984
-t1326110121
-s67972
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework/FPKWebPopup.framework/FPKWebPopup
-c000000004F0AD5A90000000000007108
-t1326110121
-s28936
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework/Resources/fpkwebpopup-safari.png
-c000000004F0AD5A900000000000015E5
-t1326110121
-s5605
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKYouTube.embeddedframework/FPKYouTube.framework/FPKYouTube
-c000000004F0AD5A9000000000000A454
-t1326110121
-s42068
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m
-c000000004F0C132E0000000000000AEB
-t1326191406
-s2795
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKMainViewController.m
-c000000004F0C132200000000000009FB
-t1326191394
-s2555
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/OverlayManager.m
-c000000004F0AD5A90000000000000361
-t1326110121
-s865
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/Icon.png
-c000000004F0AD5A900000000000027CB
-t1326110121
-s10187
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/Icon114.png
-c000000004F0AD5A90000000000007606
-t1326110121
-s30214
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/Icon72.png
-c000000004F0AD5A9000000000000383A
-t1326110121
-s14394
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/img1.png
-c000000004F0AD5A9000000000002417D
-t1326110121
-s147837
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/img2.png
-c000000004F0AD5A9000000000001E48C
-t1326110121
-s124044
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/img3.png
-c000000004F0AD5A9000000000001F8B1
-t1326110121
-s129201
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/img4.png
-c000000004F0AD5A90000000000027D7B
-t1326110121
-s163195
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/sample.indd
-c000000004F0AD5A900000000000E8000
-t1326110121
-s950272
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/sample.pdf
-c000000004F0AD5A90000000000017ED4
-t1326110121
-s98004
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib
-c000000004F0AD5A90000000000002798
-t1326110121
-s10136
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib
-c000000004F0AD5A90000000000002815
-t1326110121
-s10261
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/InfoPlist.strings
-c000000004F0AD5A9000000000000002D
-t1326110121
-s45
-
-N/Users/matteo/git/FastPdfKitSample/Classes/Extended/main.m
-c000000004F0AD5A9000000000000015C
-t1326110121
-s348
-
-N/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework/FastPdfKit.framework/FastPdfKit
-c000000004F0C135F00000000004D4F8C
-t1326191455
-s5066636
-
-N/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework/Resources/FPKReaderBundle.bundle
-c000000004F0C13570000000000000A5C
-t1326191447
-s2652
-
-N/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework/Resources/FastPdfKitFramework.xcconfig
-c000000004F0C13570000000000000144
-t1326191447
-s324
-
-N/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework/Resources/Snippets.txt
-c000000004F0C1357000000000000076A
-t1326191447
-s1898
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app.dSYM
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/FPKReaderBundle.bundle
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/FastPdfKitFramework.xcconfig
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Icon.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Icon114.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Icon72.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Info.plist
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/PkgInfo
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Snippets.txt
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj/FPKMainViewController_iPad.nib
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj/FPKMainViewController_iPhone.nib
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj/InfoPlist.strings
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/fpkmessage-info.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/fpkwebpopup-safari.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/img1.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/img2.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/img3.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/img4.png
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/sample.indd
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/sample.pdf
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/Extended.LinkFileList
-c000000004F0C135F000000000000020D
-t1326191455
-s525
-
-N/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKAppDelegate.o
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKMainViewController.o
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/OverlayManager.o
-t2
-s0
-
-N/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/main.o
-t2
-s0
-
-N/var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch.pth
-t2
-s0
-
-NClasses/Extended/Extended-Info.plist
-c000000004F0AD5A90000000000000727
-t1326110121
-s1831
-
-CBuild AST from /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m
-r0
-
-CBuild AST from /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKMainViewController.m
-r0
-
-CBuild AST from /Users/matteo/git/FastPdfKitSample/Classes/Extended/OverlayManager.m
-r0
-
-CBuild AST from /Users/matteo/git/FastPdfKitSample/Classes/Extended/main.m
-r0
-
-CCheck dependencies
-r0
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies2383acdf4abcb441^fbb1addf4abcb441^---0#1#0#--18"Check dependencies36"C1019662-F725-4E5F-A4E4-A8F53C1E3954-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKAppDelegate.o /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347884256.023586
-e347884256.163393
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKAppDelegate.o
-x/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m:30:29:{30:31-30:135}: warning: incompatible pointer types assigning to 'MainViewController *' from 'FPKMainViewController *' [-Wincompatible-pointer-types,3]
-o         self.viewController = [[[FPKMainViewController alloc] initWithNibName:@"FPKMainViewController_iPhone" bundle:nil] autorelease];
-o                             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-o/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h:37:1: note: instance method 'autorelease' is assumed to return an instance of its receiver type ('FPKMainViewController *') [6]
-o - (id)autorelease NS_AUTOMATED_REFCOUNT_UNAVAILABLE;
-o ^
-o/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m:32:29:{32:31-32:133}: warning: incompatible pointer types assigning to 'MainViewController *' from 'FPKMainViewController *' [-Wincompatible-pointer-types,3]
-o         self.viewController = [[[FPKMainViewController alloc] initWithNibName:@"FPKMainViewController_iPad" bundle:nil] autorelease];
-o                             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-o/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h:37:1: note: instance method 'autorelease' is assumed to return an instance of its receiver type ('FPKMainViewController *') [6]
-o - (id)autorelease NS_AUTOMATED_REFCOUNT_UNAVAILABLE;
-o ^
-o/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m:35:36:{35:38-35:57}: warning: incompatible pointer types assigning to 'UIViewController *' from 'MainViewController *' [-Wincompatible-pointer-types,3]
-o     self.window.rootViewController = self.viewController;
-o                                    ^ ~~~~~~~~~~~~~~~~~~~
-o3 warnings generated.
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m693706e04abcb441^d8d429e04abcb441^-2026"/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m:30:29:{30:31-30:135}: warning: incompatible pointer types assigning to 'MainViewController *' from 'FPKMainViewController *' [-Wincompatible-pointer-types,3]         self.viewController = [[[FPKMainViewController alloc] initWithNibName:@"FPKMainViewController_iPhone" bundle:nil] autorelease];                             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h:37:1: note: instance method 'autorelease' is assumed to return an instance of its receiver type ('FPKMainViewController *') [6] - (id)autorelease NS_AUTOMATED_REFCOUNT_UNAVAILABLE; ^/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m:32:29:{32:31-32:133}: warning: incompatible pointer types assigning to 'MainViewController *' from 'FPKMainViewController *' [-Wincompatible-pointer-types,3]         self.viewController = [[[FPKMainViewController alloc] initWithNibName:@"FPKMainViewController_iPad" bundle:nil] autorelease];                             ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h:37:1: note: instance method 'autorelease' is assumed to return an instance of its receiver type ('FPKMainViewController *') [6] - (id)autorelease NS_AUTOMATED_REFCOUNT_UNAVAILABLE; ^/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m:35:36:{35:38-35:57}: warning: incompatible pointer types assigning to 'UIViewController *' from 'MainViewController *' [-Wincompatible-pointer-types,3]     self.window.rootViewController = self.viewController;                                    ^ ~~~~~~~~~~~~~~~~~~~3 warnings generated.5(21%IDEActivityLogMessage2@93"Incompatible pointer types assigning to 'MainViewController *' from 'FPKMainViewController *'-347884256#0#227#-1#-23%DVTTextDocumentLocation3@84"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m0000000000000000^29#28#29#28#18446744073709551615#0#14"Semantic Issue1(3@84"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m0000000000000000^29#30#29#134#18446744073709551615#0#-2@111"Instance method 'autorelease' is assumed to return an instance of its receiver type ('FPKMainViewController *')83"Instance method 'autorelease' is assumed to return an instance of its receiver type347884256#500#278#-0#-3@165"file://localhost/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h0000000000000000^36#0#36#0#18446744073709551615#0#25"Related Result Type Issue--2@93"Incompatible pointer types assigning to 'MainViewController *' from 'FPKMainViewController *'-347884256#835#227#-1#-3@84"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m0000000000000000^31#28#31#28#18446744073709551615#0#14"Semantic Issue1(3@84"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m0000000000000000^31#30#31#132#18446744073709551615#0#-2@111"Instance method 'autorelease' is assumed to return an instance of its receiver type ('FPKMainViewController *')83"Instance method 'autorelease' is assumed to return an instance of its receiver type347884256#1331#278#-0#-3@165"file://localhost/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h0000000000000000^36#0#36#0#18446744073709551615#0#25"Related Result Type Issue--2@88"Incompatible pointer types assigning to 'UIViewController *' from 'MainViewController *'-347884256#1666#221#-1#-3@84"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m0000000000000000^34#35#34#35#18446744073709551615#0#14"Semantic Issue1(3@84"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m0000000000000000^34#37#34#56#18446744073709551615#0#-0#0#0#-19%DVTDocumentLocation4@84"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m0000000000000000^3678"CompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKAppDelegate.o Classes/Extended/FPKAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/FastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-generated-files.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-own-target-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-all-target-headers.hmap -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-project-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources/i386 -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources -F/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKPayPal.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKShared.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKYouTube.embeddedframework -F/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKAppDelegate.d -c /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKAppDelegate.m -o /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKAppDelegate.o36"69CF58C2-E9B0-4A5C-8A8B-B6D11DA2A140-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKMainViewController.o /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKMainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347884256.023851
-e347884256.157918
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKMainViewController.o
-x/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKMainViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKMainViewController.mf73d06e04abcb441^0f7c28e04abcb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKMainViewController.m0000000000000000^3713"CompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKMainViewController.o Classes/Extended/FPKMainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/FastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-generated-files.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-own-target-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-all-target-headers.hmap -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-project-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources/i386 -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources -F/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKPayPal.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKShared.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKYouTube.embeddedframework -F/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKMainViewController.d -c /Users/matteo/git/FastPdfKitSample/Classes/Extended/FPKMainViewController.m -o /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/FPKMainViewController.o36"187DAB60-73B1-4E41-AE2F-CD83B8099B58-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/OverlayManager.o /Users/matteo/git/FastPdfKitSample/Classes/Extended/OverlayManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347884256.023868
-e347884256.125342
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/OverlayManager.o
-x/Users/matteo/git/FastPdfKitSample/Classes/Extended/OverlayManager.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/matteo/git/FastPdfKitSample/Classes/Extended/OverlayManager.maa4306e04abcb441^9a2620e04abcb441^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/OverlayManager.m0000000000000000^3678"CompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/OverlayManager.o Classes/Extended/OverlayManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/FastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-generated-files.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-own-target-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-all-target-headers.hmap -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-project-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources/i386 -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources -F/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKPayPal.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKShared.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKYouTube.embeddedframework -F/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/OverlayManager.d -c /Users/matteo/git/FastPdfKitSample/Classes/Extended/OverlayManager.m -o /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/OverlayManager.o36"31EE9B07-961A-4221-A372-F33B337782A6-
-
-CCompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/main.o /Users/matteo/git/FastPdfKitSample/Classes/Extended/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347884256.022941
-e347884256.068968
-r1
-xCompileC
-xbuild/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/main.o
-x/Users/matteo/git/FastPdfKitSample/Classes/Extended/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Compile /Users/matteo/git/FastPdfKitSample/Classes/Extended/main.m7c0c06e04abcb441^1bba11e04abcb441^---0#0#0#-19%DVTDocumentLocation2@74"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/main.m0000000000000000^3628"CompileC build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/main.o Classes/Extended/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/FastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-generated-files.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-own-target-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-all-target-headers.hmap -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-project-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources/i386 -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources -F/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKPayPal.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKShared.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKYouTube.embeddedframework -F/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/main.d -c /Users/matteo/git/FastPdfKitSample/Classes/Extended/main.m -o /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/main.o36"5B3DDD25-DC12-4AF8-ACC2-98184229A664-
-
-CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib
-s347884256.994918
-e347884257.173502
-r1
-xCompileXIB
-x/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib
-o/* com.apple.ibtool.document.warnings */
-o/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib:8: warning: Data Detection and Editable (These attributes are mutually exclusive) [9]
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib1dc8fee04abcb441^a7b22ce14abcb441^-219"/* com.apple.ibtool.document.warnings *//Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib:8: warning: Data Detection and Editable (These attributes are mutually exclusive) [9]1(21%IDEActivityLogMessage2@69"Data Detection and Editable (These attributes are mutually exclusive)27"Data Detection and Editable347884257#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@107"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib0000000000000000^7#18446744073709551615#7#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--0#0#0#-19%DVTDocumentLocation4@107"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib0000000000000000^752"CompileXIB Classes/Extended/en.lproj/FPKMainViewController_iPad.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj/FPKMainViewController_iPad.nib /Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPad.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"0809D54F-5A6B-423B-8975-BBED4F4DB38F-
-
-CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib
-s347884256.994608
-e347884257.077695
-r1
-xCompileXIB
-x/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib
-o/* com.apple.ibtool.document.warnings */
-o/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib:11: warning: Data Detection and Editable (These attributes are mutually exclusive) [9]
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib74b4fee04abcb441^f60d14e14abcb441^-222"/* com.apple.ibtool.document.warnings *//Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib:11: warning: Data Detection and Editable (These attributes are mutually exclusive) [9]1(21%IDEActivityLogMessage2@69"Data Detection and Editable (These attributes are mutually exclusive)27"Data Detection and Editable347884257#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@109"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib0000000000000000^10#18446744073709551615#10#18446744073709551615#18446744073709551615#0#25"Unsupported Configuration--0#0#0#-19%DVTDocumentLocation4@109"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib0000000000000000^758"CompileXIB Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj/FPKMainViewController_iPhone.nib /Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/FPKMainViewController_iPhone.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"8942FCEB-6CB2-4E7D-8590-DA4991DE74A5-
-
-CCopyStringsFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj/InfoPlist.strings Classes/Extended/en.lproj/InfoPlist.strings
-s347884256.994621
-e347884256.997277
-r1
-xCopyStringsFile
-x/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj/InfoPlist.strings
-xClasses/Extended/en.lproj/InfoPlist.strings
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection48"Copy Classes/Extended/en.lproj/InfoPlist.strings25b3fee04abcb441^2c7effe04abcb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/en.lproj/InfoPlist.strings0000000000000000^523"CopyStringsFile build/Debug-iphonesimulator/Extended.app/en.lproj/InfoPlist.strings Classes/Extended/en.lproj/InfoPlist.strings    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/en.lproj -- Classes/Extended/en.lproj/InfoPlist.strings36"F5E6A15D-1637-4A39-B987-B94B7E5DD912-
-
-CCpResource Classes/Extended/Extensions/FPKMessage.embeddedframework/Resources/fpkmessage-info.png build/Debug-iphonesimulator/Extended.app/fpkmessage-info.png
-s347884256.995099
-e347884257.003489
-r1
-xCpResource
-xClasses/Extended/Extensions/FPKMessage.embeddedframework/Resources/fpkmessage-info.png
-xbuild/Debug-iphonesimulator/Extended.app/fpkmessage-info.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Copy build/Debug-iphonesimulator/Extended.app/fpkmessage-info.png6ccdfee04abcb441^850b01e14abcb441^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/fpkmessage-info.png00f4a829ddffdf42^642"CpResource Classes/Extended/Extensions/FPKMessage.embeddedframework/Resources/fpkmessage-info.png build/Debug-iphonesimulator/Extended.app/fpkmessage-info.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework/Resources/fpkmessage-info.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"A197C660-8F66-46EE-8F8F-3569E981577D-
-
-CCpResource Classes/Extended/Extensions/FPKWebPopup.embeddedframework/Resources/fpkwebpopup-safari.png build/Debug-iphonesimulator/Extended.app/fpkwebpopup-safari.png
-s347884256.998869
-e347884257.003737
-r1
-xCpResource
-xClasses/Extended/Extensions/FPKWebPopup.embeddedframework/Resources/fpkwebpopup-safari.png
-xbuild/Debug-iphonesimulator/Extended.app/fpkwebpopup-safari.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Copy build/Debug-iphonesimulator/Extended.app/fpkwebpopup-safari.png92cbffe04abcb441^e01101e14abcb441^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/fpkwebpopup-safari.png00f4a829ddffdf42^653"CpResource Classes/Extended/Extensions/FPKWebPopup.embeddedframework/Resources/fpkwebpopup-safari.png build/Debug-iphonesimulator/Extended.app/fpkwebpopup-safari.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework/Resources/fpkwebpopup-safari.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"5925B449-6551-42BD-A44F-933CB13A1227-
-
-CCpResource Classes/Extended/Resources/Icon.png build/Debug-iphonesimulator/Extended.app/Icon.png
-s347884257.071944
-e347884257.076877
-r1
-xCpResource
-xClasses/Extended/Resources/Icon.png
-xbuild/Debug-iphonesimulator/Extended.app/Icon.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy build/Debug-iphonesimulator/Extended.app/Icon.pngc37f12e14abcb441^700914e14abcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Icon.png00f4a829ddffdf42^529"CpResource Classes/Extended/Resources/Icon.png build/Debug-iphonesimulator/Extended.app/Icon.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/Icon.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"C8463A08-4F2D-4E4B-9175-AED8D42EE3BA-
-
-CCpResource Classes/Extended/Resources/Icon114.png build/Debug-iphonesimulator/Extended.app/Icon114.png
-s347884257.080687
-e347884257.085443
-r1
-xCpResource
-xClasses/Extended/Resources/Icon114.png
-xbuild/Debug-iphonesimulator/Extended.app/Icon114.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Copy build/Debug-iphonesimulator/Extended.app/Icon114.pngd8ba14e14abcb441^4b0016e14abcb441^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Icon114.png00f4a829ddffdf42^538"CpResource Classes/Extended/Resources/Icon114.png build/Debug-iphonesimulator/Extended.app/Icon114.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/Icon114.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"8D001E8B-8B75-499C-B227-BBB412293BC5-
-
-CCpResource Classes/Extended/Resources/Icon72.png build/Debug-iphonesimulator/Extended.app/Icon72.png
-s347884257.080055
-e347884257.083886
-r1
-xCpResource
-xClasses/Extended/Resources/Icon72.png
-xbuild/Debug-iphonesimulator/Extended.app/Icon72.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy build/Debug-iphonesimulator/Extended.app/Icon72.png709814e14abcb441^448a15e14abcb441^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Icon72.png00f4a829ddffdf42^535"CpResource Classes/Extended/Resources/Icon72.png build/Debug-iphonesimulator/Extended.app/Icon72.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/Icon72.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"8A97493F-3F4E-4B7E-99D9-E165B4BFD462-
-
-CCpResource Classes/Extended/Resources/img1.png build/Debug-iphonesimulator/Extended.app/img1.png
-s347884257.004758
-e347884257.019536
-r1
-xCpResource
-xClasses/Extended/Resources/img1.png
-xbuild/Debug-iphonesimulator/Extended.app/img1.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy build/Debug-iphonesimulator/Extended.app/img1.png3c4e01e14abcb441^831305e14abcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/img1.png00f4a829ddffdf42^529"CpResource Classes/Extended/Resources/img1.png build/Debug-iphonesimulator/Extended.app/img1.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/img1.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"70BF352B-A7A5-45AE-807E-89722DD7CBF8-
-
-CCpResource Classes/Extended/Resources/img2.png build/Debug-iphonesimulator/Extended.app/img2.png
-s347884257.005832
-e347884257.022907
-r1
-xCpResource
-xClasses/Extended/Resources/img2.png
-xbuild/Debug-iphonesimulator/Extended.app/img2.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy build/Debug-iphonesimulator/Extended.app/img2.pngb09001e14abcb441^4df405e14abcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/img2.png00f4a829ddffdf42^529"CpResource Classes/Extended/Resources/img2.png build/Debug-iphonesimulator/Extended.app/img2.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/img2.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"B4B65B77-9104-483C-9E7C-8BE74B56BEF5-
-
-CCpResource Classes/Extended/Resources/img3.png build/Debug-iphonesimulator/Extended.app/img3.png
-s347884257.022232
-e347884257.032445
-r1
-xCpResource
-xClasses/Extended/Resources/img3.png
-xbuild/Debug-iphonesimulator/Extended.app/img3.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy build/Debug-iphonesimulator/Extended.app/img3.pngc1c605e14abcb441^246008e14abcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/img3.png00f4a829ddffdf42^529"CpResource Classes/Extended/Resources/img3.png build/Debug-iphonesimulator/Extended.app/img3.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/img3.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"F54EA4EB-75AE-4D1E-88A7-60F63222F259-
-
-CCpResource Classes/Extended/Resources/img4.png build/Debug-iphonesimulator/Extended.app/img4.png
-s347884257.024879
-e347884257.033347
-r1
-xCpResource
-xClasses/Extended/Resources/img4.png
-xbuild/Debug-iphonesimulator/Extended.app/img4.png
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy build/Debug-iphonesimulator/Extended.app/img4.pngf77306e14abcb441^e3a408e14abcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/img4.png00f4a829ddffdf42^529"CpResource Classes/Extended/Resources/img4.png build/Debug-iphonesimulator/Extended.app/img4.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/img4.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"52E1AB0E-B4C9-4D46-9AB5-C2735EE1FBD3-
-
-CCpResource Classes/Extended/Resources/sample.indd build/Debug-iphonesimulator/Extended.app/sample.indd
-s347884257.033648
-e347884257.070513
-r1
-xCpResource
-xClasses/Extended/Resources/sample.indd
-xbuild/Debug-iphonesimulator/Extended.app/sample.indd
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Copy build/Debug-iphonesimulator/Extended.app/sample.indd70b308e14abcb441^f62612e14abcb441^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/sample.indd00f4a829ddffdf42^538"CpResource Classes/Extended/Resources/sample.indd build/Debug-iphonesimulator/Extended.app/sample.indd    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/sample.indd /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"95DB7EA3-3685-40C1-9AD5-B9E5D5522024-
-
-CCpResource Classes/Extended/Resources/sample.pdf build/Debug-iphonesimulator/Extended.app/sample.pdf
-s347884257.033665
-e347884257.041637
-r1
-xCpResource
-xClasses/Extended/Resources/sample.pdf
-xbuild/Debug-iphonesimulator/Extended.app/sample.pdf
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy build/Debug-iphonesimulator/Extended.app/sample.pdf80b708e14abcb441^7aab0ae14abcb441^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/sample.pdf00f4a829ddffdf42^535"CpResource Classes/Extended/Resources/sample.pdf build/Debug-iphonesimulator/Extended.app/sample.pdf    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/Classes/Extended/Resources/sample.pdf /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"893FF7DC-2C99-4DD1-B8A3-C634D503E64E-
-
-CCpResource FastPdfKit.embeddedframework/Resources/FPKReaderBundle.bundle build/Debug-iphonesimulator/Extended.app/FPKReaderBundle.bundle
-s347884257.046541
-e347884257.071295
-r1
-xCpResource
-xFastPdfKit.embeddedframework/Resources/FPKReaderBundle.bundle
-xbuild/Debug-iphonesimulator/Extended.app/FPKReaderBundle.bundle
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Copy build/Debug-iphonesimulator/Extended.app/FPKReaderBundle.bundlef4fa0be14abcb441^e14212e14abcb441^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/FPKReaderBundle.bundle00f4a829ddffdf42^595"CpResource FastPdfKit.embeddedframework/Resources/FPKReaderBundle.bundle build/Debug-iphonesimulator/Extended.app/FPKReaderBundle.bundle    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework/Resources/FPKReaderBundle.bundle /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"0430987B-78D6-4182-839C-853EEC52AA5B-
-
-CCpResource FastPdfKit.embeddedframework/Resources/FastPdfKitFramework.xcconfig build/Debug-iphonesimulator/Extended.app/FastPdfKitFramework.xcconfig
-s347884257.042833
-e347884257.045347
-r1
-xCpResource
-xFastPdfKit.embeddedframework/Resources/FastPdfKitFramework.xcconfig
-xbuild/Debug-iphonesimulator/Extended.app/FastPdfKitFramework.xcconfig
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Copy build/Debug-iphonesimulator/Extended.app/FastPdfKitFramework.xcconfig31090be14abcb441^97ab0be14abcb441^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/FastPdfKitFramework.xcconfig00f4a829ddffdf42^613"CpResource FastPdfKit.embeddedframework/Resources/FastPdfKitFramework.xcconfig build/Debug-iphonesimulator/Extended.app/FastPdfKitFramework.xcconfig    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework/Resources/FastPdfKitFramework.xcconfig /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"40D739D5-8D87-46DC-875D-DBD746F52342-
-
-CCpResource FastPdfKit.embeddedframework/Resources/Snippets.txt build/Debug-iphonesimulator/Extended.app/Snippets.txt
-s347884257.071712
-e347884257.076817
-r1
-xCpResource
-xFastPdfKit.embeddedframework/Resources/Snippets.txt
-xbuild/Debug-iphonesimulator/Extended.app/Snippets.txt
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/Debug-iphonesimulator/Extended.app/Snippets.txtce7112e14abcb441^9f0214e14abcb441^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Snippets.txt00f4a829ddffdf42^565"CpResource FastPdfKit.embeddedframework/Resources/Snippets.txt build/Debug-iphonesimulator/Extended.app/Snippets.txt    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework/Resources/Snippets.txt /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"6942E76E-F553-4F44-A31F-35B4AA63CD62-
-
-CGenerateDSYMFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app.dSYM /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended
-s347884256.740518
-e347884256.987115
-r1
-xGenerateDSYMFile
-x/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app.dSYM
-x/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Generating /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app.dSYM5ab7bde04abcb441^cac1fce04abcb441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app.dSYM00f4a829ddffdf42^487"GenerateDSYMFile build/Debug-iphonesimulator/Extended.app.dSYM build/Debug-iphonesimulator/Extended.app/Extended    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended -o /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app.dSYM36"D7DDBA99-3B60-4C17-9B8C-DC94661C8928-
-
-CLd /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended normal i386
-s347884256.169947
-e347884256.721024
-r1
-xLd
-x/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended
-xnormal
-xi386
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Link /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended19ad2be04abcb441^76fbb8e04abcb441^---0#0#0#--3025"Ld build/Debug-iphonesimulator/Extended.app/Extended normal i386    cd /Users/matteo/git/FastPdfKitSample    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -L/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator -L/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework/Resources -F/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKPayPal.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKShared.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKYouTube.embeddedframework -F/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework -filelist /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Objects-normal/i386/Extended.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -ObjC -framework AudioToolbox -framework MediaPlayer -framework MobileCoreServices -framework CFNetwork -framework CoreText -framework UIKit -framework CoreGraphics -framework Foundation -framework QuartzCore -framework AVFoundation -framework CoreFoundation -framework SystemConfiguration -lz -ObjC -framework AudioToolbox -framework MediaPlayer -framework MobileCoreServices -framework CFNetwork -framework CoreText -framework UIKit -framework CoreGraphics -framework Foundation -framework QuartzCore -framework AVFoundation -framework CoreFoundation -framework SystemConfiguration -lz -ObjC -Xlinker -no_implicit_dylibs -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -framework MapKit -framework Security -lxml2 -framework UIKit -framework Foundation -framework CoreGraphics -framework Common -lPayPalMPL -framework FPKGalleryFade -framework FPKGallerySlide -framework FPKGalleryTap -framework FPKMap -framework FPKMessage -framework FPKPayPal -framework FPKShared -framework FPKWebPopup -framework FPKYouTube -framework FastPdfKit -o /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Extended36"24A5393B-F018-49AF-85FA-E2F645026150-
-
-CProcessInfoPlistFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Info.plist Classes/Extended/Extended-Info.plist
-s347884255.687859
-e347884255.691732
-r1
-xProcessInfoPlistFile
-x/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Info.plist
-xClasses/Extended/Extended-Info.plist
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Process Classes/Extended/Extended-Info.plistad31b0df4abcb441^3658b4df4abcb441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extended-Info.plist0000000000000000^597"ProcessInfoPlistFile build/Debug-iphonesimulator/Extended.app/Info.plist Classes/Extended/Extended-Info.plist    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Classes/Extended/Extended-Info.plist -genpkginfo /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app/Info.plist36"2F8BD61E-24CA-421D-9224-77DAAE303665-
-
-CProcessPCH /Users/matteo/Library/Developer/Xcode/DerivedData/FastPdfKit-eyipfhutywndjygogdhoyvmqchts/Index/PrecompiledHeaders/Extended-Prefix-dssxcnsvwweeurhjdxuygwkyrnsz_ast/Extended-Prefix.pch.pth Classes/Extended/Extended-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch.pth Classes/Extended/Extended-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s347884255.700560
-e347884256.015991
-r1
-xProcessPCH
-x/var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch.pth
-xClasses/Extended/Extended-Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Precompile Classes/Extended/Extended-Prefix.pchcb84b3df4abcb441^db1704e04abcb441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extended-Prefix.pch0000000000000000^3651"ProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch.pth Classes/Extended/Extended-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/FastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-generated-files.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-own-target-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-all-target-headers.hmap -iquote /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/Extended-project-headers.hmap -I/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources/i386 -I/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/Extended.build/DerivedSources -F/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/Common.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMap.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKMessage.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKPayPal.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKShared.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKWebPopup.embeddedframework -F/Users/matteo/git/FastPdfKitSample/Classes/Extended/Extensions/FPKYouTube.embeddedframework -F/Users/matteo/git/FastPdfKitSample/FastPdfKit.embeddedframework -c /Users/matteo/git/FastPdfKitSample/Classes/Extended/Extended-Prefix.pch -o /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Extended-Prefix-fscfnrgtewkfixdibxjbnwnxheko/Extended-Prefix.pch.d36"EF13FA07-0309-48D4-A2FE-A778DE78D6A3-
-
-CTouch /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app
-s347884257.183368
-e347884257.192138
-r1
-xTouch
-x/Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection81"Touch /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app25042fe14abcb441^894031e14abcb441^---0#0#0#--318"Touch build/Debug-iphonesimulator/Extended.app    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/matteo/git/FastPdfKitSample/build/Debug-iphonesimulator/Extended.app36"90145F03-9C19-4E8E-A52F-D077A5D1DF5C-
-
