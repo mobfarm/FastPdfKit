@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.m \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/MiniSearchView.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/MiniSearchViewControllerDelegate.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/Stuff.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/SimpleApp/Controllers/DocumentViewController.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFDocumentViewController.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFDocumentViewControllerDelegate.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFAudioPlayerViewProtocol.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFAudioProvider.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFDocumentOverlayDataSource.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFOverlayTouchable.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/FPKOverlayViewDataSource.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewControllerDelegate.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchViewControllerDelegate.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFTextItem.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFOverlayDrawable.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/Outline/OutlineViewControllerDelegate.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewControllerDelegate.h \
+  /Users/matteo/git/FastPdfKitSample/FPKCore/MFDocumentManager.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchManager.h \
+  /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchResultView.h

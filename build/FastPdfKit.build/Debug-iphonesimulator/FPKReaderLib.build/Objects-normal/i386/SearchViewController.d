@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.m \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewController.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultDataSource.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentOverlayDataSource.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFOverlayTouchable.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFTextItem.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFOverlayDrawable.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentManager.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/Stuff.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/SimpleApp/Controllers/DocumentViewController.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentViewController.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFAudioPlayerViewProtocol.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFAudioProvider.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/FPKOverlayViewDataSource.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextSearchOperation.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/mfprofile.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchManager.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchResultCellView.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/NotificationFactory.h

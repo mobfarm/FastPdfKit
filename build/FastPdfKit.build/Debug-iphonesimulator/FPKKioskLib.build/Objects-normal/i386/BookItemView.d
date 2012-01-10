@@ -1,0 +1,33 @@
+dependencies: \
+  /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.m \
+  /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequestConfig.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequestDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIProgressDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASICacheDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentViewController.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/Stuff.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFAudioPlayerViewProtocol.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFAudioProvider.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentOverlayDataSource.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFOverlayTouchable.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/FPKOverlayViewDataSource.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFTextItem.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFOverlayDrawable.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewControllerDelegate.h \
+  /Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentManager.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ZipArchive.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/minizip/zip.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/minizip/ioapi.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/minizip/unzip.h \
+  /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.h

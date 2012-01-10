@@ -1,0 +1,1326 @@
+TFPKReaderBundle
+v4
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/Info.plist Resources/ReaderBundle-Info.plist
+cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/Outline/OutlineView.xib
+cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/Bookmarks/BookmarkView.xib
+cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_pad.xib
+cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_phone.xib
+cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/TextDisplayView.xib
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/blackslider.png Resources/../img/blackslider.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close_player.png Resources/../img/close_player.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/play_player.png Resources/../img/play_player.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pause_player.png Resources/../img/pause_player.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/reload.png Resources/../img/reload.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close.png Resources/../img/close.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/prew.png Resources/../img/prew.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/stop.png Resources/../img/stop.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel@2x.png Resources/../img/minisearch_cancel@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full@2x.png Resources/../img/minisearch_full@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next@2x.png Resources/../img/minisearch_next@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev@2x.png Resources/../img/minisearch_prev@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone.png Resources/../img/bookmark_add_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone@2x.png Resources/../img/bookmark_add_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add.png Resources/../img/bookmark_add.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone.png Resources/../img/changeModeDouble_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone@2x.png Resources/../img/changeModeDouble_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble.png Resources/../img/changeModeDouble.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone.png Resources/../img/changeModeSingle_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone@2x.png Resources/../img/changeModeSingle_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle.png Resources/../img/changeModeSingle.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone.png Resources/../img/direction_l2r_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone@2x.png Resources/../img/direction_l2r_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r.png Resources/../img/direction_l2r.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone.png Resources/../img/direction_r2l_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone@2x.png Resources/../img/direction_r2l_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l.png Resources/../img/direction_r2l.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice_phone.png Resources/../img/indice_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice.png Resources/../img/indice.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_back.png Resources/../img/minisearch_back.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel.png Resources/../img/minisearch_cancel.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full.png Resources/../img/minisearch_full.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next.png Resources/../img/minisearch_next.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev.png Resources/../img/minisearch_prev.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click_phone.png Resources/../img/pagelead_click_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click.png Resources/../img/pagelead_click.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone.png Resources/../img/pagelead_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead.png Resources/../img/pagelead.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone@2x.png Resources/../img/pagelead_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone.png Resources/../img/search_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone@2x.png Resources/../img/search_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search.png Resources/../img/search.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone.png Resources/../img/text_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone@2x.png Resources/../img/text_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text.png Resources/../img/text.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone.png Resources/../img/X_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone@2x.png Resources/../img/X_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X.png Resources/../img/X.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone.png Resources/../img/zoomLock_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone@2x.png Resources/../img/zoomLock_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock.png Resources/../img/zoomLock.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone.png Resources/../img/zoomUnlock_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone@2x.png Resources/../img/zoomUnlock_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock.png Resources/../img/zoomUnlock.png
+cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.xib
+cCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.xib
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangledown.png Resources/../img/img_outline_triangledown.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangleright.png Resources/../img/img_outline_triangleright.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_pad.png Resources/../img/img_overflow_pad.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone.png Resources/../img/img_overflow_phone.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone@2x.png Resources/../img/img_overflow_phone@2x.png
+cCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/next.png Resources/../img/next.png
+cTouch /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle
+cPhaseScriptExecution "Run Script" /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Script-01235FE913CC7F7F00861EB7.sh
+
+N/Users/matteo/git/FastPdfKitSample/Bundle
+t1326110097
+s136
+
+N/Users/matteo/git/FastPdfKitSample/Classes/Reader/Bookmarks/BookmarkView.xib
+c000000004F0AD59100000000000048D3
+t1326110097
+s18643
+
+N/Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.xib
+c000000004F0AD59100000000000041F3
+t1326110097
+s16883
+
+N/Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.xib
+c000000004F0AD5910000000000004878
+t1326110097
+s18552
+
+N/Users/matteo/git/FastPdfKitSample/Classes/Reader/Outline/OutlineView.xib
+c000000004F0AD5910000000000003894
+t1326110097
+s14484
+
+N/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_pad.xib
+c000000004F0AD591000000000000385D
+t1326110097
+s14429
+
+N/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_phone.xib
+c000000004F0AD5910000000000004931
+t1326110097
+s18737
+
+N/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/TextDisplayView.xib
+c000000004F0AD59100000000000036B6
+t1326110097
+s14006
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/X.png
+c000000004F0AD5910000000000000ECB
+t1326110097
+s3787
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/X_phone.png
+c000000004F0AD5910000000000000ECB
+t1326110097
+s3787
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/X_phone@2x.png
+c000000004F0AD5910000000000001C28
+t1326110097
+s7208
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/blackslider.png
+c000000004F0AD5910000000000000B97
+t1326110097
+s2967
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add.png
+c000000004F0AD5910000000000000C22
+t1326110097
+s3106
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add_phone.png
+c000000004F0AD5910000000000000C22
+t1326110097
+s3106
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add_phone@2x.png
+c000000004F0AD5910000000000000D94
+t1326110097
+s3476
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble.png
+c000000004F0AD5910000000000000CAC
+t1326110097
+s3244
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble_phone.png
+c000000004F0AD5910000000000000CAC
+t1326110097
+s3244
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble_phone@2x.png
+c000000004F0AD5910000000000000EC7
+t1326110097
+s3783
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle.png
+c000000004F0AD5910000000000000C05
+t1326110097
+s3077
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle_phone.png
+c000000004F0AD5910000000000000C05
+t1326110097
+s3077
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle_phone@2x.png
+c000000004F0AD5910000000000000D55
+t1326110097
+s3413
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/close.png
+c000000004EBD39F70000000000000767
+t1321023991
+s1895
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/close_player.png
+c000000004F0AD5910000000000000753
+t1326110097
+s1875
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r.png
+c000000004F0AD5910000000000000D0C
+t1326110097
+s3340
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r_phone.png
+c000000004F0AD5910000000000000D0C
+t1326110097
+s3340
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r_phone@2x.png
+c000000004F0AD5910000000000000F59
+t1326110097
+s3929
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l.png
+c000000004F0AD5910000000000000D10
+t1326110097
+s3344
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l_phone.png
+c000000004F0AD5910000000000000D10
+t1326110097
+s3344
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l_phone@2x.png
+c000000004F0AD5910000000000000F5D
+t1326110097
+s3933
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/img_outline_triangledown.png
+c000000004F0AD591000000000000010A
+t1326110097
+s266
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/img_outline_triangleright.png
+c000000004F0AD5910000000000000136
+t1326110097
+s310
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_pad.png
+c000000004F0AD5910000000000000CF5
+t1326110097
+s3317
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_phone.png
+c000000004F0AD5910000000000000CF5
+t1326110097
+s3317
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_phone@2x.png
+c000000004F0AD5910000000000000FE7
+t1326110097
+s4071
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/indice.png
+c000000004F0AD5910000000000000C27
+t1326110097
+s3111
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/indice_phone.png
+c000000004F0AD5910000000000000C27
+t1326110097
+s3111
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_back.png
+c000000004EBD39F70000000000000901
+t1321023991
+s2305
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_cancel.png
+c000000004EBD39F700000000000006D2
+t1321023991
+s1746
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_cancel@2x.png
+c000000004EBD39F70000000000000DAF
+t1321023991
+s3503
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_full.png
+c000000004EBD39F70000000000000686
+t1321023991
+s1670
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_full@2x.png
+c000000004EBD39F70000000000000B71
+t1321023991
+s2929
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_next.png
+c000000004EBD39F700000000000006FA
+t1321023991
+s1786
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_next@2x.png
+c000000004EBD39F70000000000000AB0
+t1321023991
+s2736
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_prev.png
+c000000004EBD39F700000000000006F3
+t1321023991
+s1779
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_prev@2x.png
+c000000004EBD39F70000000000000AD7
+t1321023991
+s2775
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/next.png
+c000000004EBD3C67000000000000061C
+t1321024615
+s1564
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead.png
+c000000004F0AD5910000000000000DAC
+t1326110097
+s3500
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_click.png
+c000000004EBD39F70000000000000A02
+t1321023991
+s2562
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_click_phone.png
+c000000004EBD39F70000000000000A02
+t1321023991
+s2562
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_phone.png
+c000000004F0AD5910000000000000DAC
+t1326110097
+s3500
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_phone@2x.png
+c000000004F0AD5910000000000001133
+t1326110097
+s4403
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/pause_player.png
+c000000004F0AD59100000000000004E8
+t1326110097
+s1256
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/play_player.png
+c000000004F0AD591000000000000061C
+t1326110097
+s1564
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/prew.png
+c000000004EBD3C67000000000000063B
+t1321024615
+s1595
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/reload.png
+c000000004EBD39F7000000000000076A
+t1321023991
+s1898
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/search.png
+c000000004F0AD5910000000000000E43
+t1326110097
+s3651
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/search_phone.png
+c000000004F0AD5910000000000000E43
+t1326110097
+s3651
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/search_phone@2x.png
+c000000004F0AD591000000000000125D
+t1326110097
+s4701
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/stop.png
+c000000004EBD39F7000000000000048C
+t1321023991
+s1164
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/text.png
+c000000004F0AD5910000000000000DEF
+t1326110097
+s3567
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/text_phone.png
+c000000004F0AD5910000000000000DEF
+t1326110097
+s3567
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/text_phone@2x.png
+c000000004F0AD59100000000000011BB
+t1326110097
+s4539
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock.png
+c000000004F0AD5910000000000000D17
+t1326110097
+s3351
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock_phone.png
+c000000004F0AD5910000000000000D17
+t1326110097
+s3351
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock_phone@2x.png
+c000000004F0AD591000000000000101E
+t1326110097
+s4126
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock.png
+c000000004F0AD5910000000000000D15
+t1326110097
+s3349
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock_phone.png
+c000000004F0AD5910000000000000D15
+t1326110097
+s3349
+
+N/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock_phone@2x.png
+c000000004F0AD591000000000000100E
+t1326110097
+s4110
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/AudioViewController.nib
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/BookmarkView.nib
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/Info.plist
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/OutlineView.nib
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/SearchView2_pad.nib
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/SearchView2_phone.nib
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/TextDisplayView.nib
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/WebBrowser.nib
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/blackslider.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close_player.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangledown.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangleright.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_pad.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_back.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/next.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pause_player.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/play_player.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/prew.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/reload.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/stop.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone@2x.png
+t2
+s0
+
+N/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Script-01235FE913CC7F7F00861EB7.sh
+c000000004F0C1358000000000000007B
+t1326191448
+s123
+
+NResources/ReaderBundle-Info.plist
+c000000004F0AD5A9000000000000056F
+t1326110121
+s1391
+
+CCheck dependencies
+r0
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies5f9913d84abcb441^5cab35d84abcb441^---0#1#0#--18"Check dependencies36"93E0CC47-FF43-4207-8E98-4624A9D03A6F-
+
+CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/Bookmarks/BookmarkView.xib
+s347884248.264082
+e347884248.310572
+r1
+xCompileXIB
+x/Users/matteo/git/FastPdfKitSample/Classes/Reader/Bookmarks/BookmarkView.xib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Reader/Bookmarks/BookmarkView.xibf1f343d84abcb441^c7814fd84abcb441^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Reader/Bookmarks/BookmarkView.xib0000000000000000^764"CompileXIB Classes/Reader/Bookmarks/BookmarkView.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/BookmarkView.nib /Users/matteo/git/FastPdfKitSample/Classes/Reader/Bookmarks/BookmarkView.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"C0428B8F-5D14-4991-B486-3F50FE178E2E-
+
+CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.xib
+s347884249.927844
+e347884249.964025
+r1
+xCompileXIB
+x/Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.xib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.xibf8c1edd94abcb441^47caf6d94abcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.xib0000000000000000^787"CompileXIB Classes/Reader/Multimedia/AudioViewController.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/AudioViewController.nib /Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/AudioViewController.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"D4C22C85-861F-48FD-B294-2C0DC8687419-
+
+CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.xib
+s347884249.934839
+e347884250.242818
+r1
+xCompileXIB
+x/Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.xib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.xib76a7efd94abcb441^74293eda4abcb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.xib0000000000000000^760"CompileXIB Classes/Reader/Multimedia/WebBrowser.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/WebBrowser.nib /Users/matteo/git/FastPdfKitSample/Classes/Reader/Multimedia/WebBrowser.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"DB642BB6-94B0-4D90-B4D4-E3930630F203-
+
+CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/Outline/OutlineView.xib
+s347884248.264066
+e347884249.260086
+r1
+xCompileXIB
+x/Users/matteo/git/FastPdfKitSample/Classes/Reader/Outline/OutlineView.xib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Reader/Outline/OutlineView.xib13f443d84abcb441^6ac143d94abcb441^---0#0#0#-19%DVTDocumentLocation2@89"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Reader/Outline/OutlineView.xib0000000000000000^757"CompileXIB Classes/Reader/Outline/OutlineView.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/OutlineView.nib /Users/matteo/git/FastPdfKitSample/Classes/Reader/Outline/OutlineView.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"C9C21644-0311-43C4-B3CF-012F40D97F96-
+
+CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_pad.xib
+s347884248.316792
+e347884248.357772
+r1
+xCompileXIB
+x/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_pad.xib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_pad.xibd67051d84abcb441^63985bd84abcb441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_pad.xib0000000000000000^775"CompileXIB Classes/Reader/TextSearch/SearchView2_pad.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/SearchView2_pad.nib /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_pad.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"8A4C944F-3ACF-496C-B6F6-1694B4B02B5D-
+
+CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_phone.xib
+s347884248.359114
+e347884248.399723
+r1
+xCompileXIB
+x/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_phone.xib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_phone.xib34495cd84abcb441^615466d84abcb441^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_phone.xib0000000000000000^781"CompileXIB Classes/Reader/TextSearch/SearchView2_phone.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/SearchView2_phone.nib /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/SearchView2_phone.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"61F54647-BFD6-4075-B3FA-3E4F651D5C21-
+
+CCompileXIB /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/TextDisplayView.xib
+s347884248.400901
+e347884248.450000
+r1
+xCompileXIB
+x/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/TextDisplayView.xib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compiling /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/TextDisplayView.xib0ef666d84abcb441^823c73d84abcb441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/TextDisplayView.xib0000000000000000^775"CompileXIB Classes/Reader/TextSearch/TextDisplayView.xib    cd /Users/matteo/git/FastPdfKitSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/TextDisplayView.nib /Users/matteo/git/FastPdfKitSample/Classes/Reader/TextSearch/TextDisplayView.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk36"A3F789C0-1ECA-408B-9F99-C26983211EC4-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X.png Resources/../img/X.png
+s347884249.792841
+e347884249.824973
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X.png
+xResources/../img/X.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/X.png Resources/../img/X.png454acbd94abcb441^5d31d3d94abcb441^---0#0#0#-19%DVTDocumentLocation2@73"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/X.png0000000000000000^640"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/X.png Resources/../img/X.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/X.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X.png36"9808292E-FAE6-4CFD-B1BE-DA77F8AE3E25-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone.png Resources/../img/X_phone.png
+s347884249.757695
+e347884249.791556
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone.png
+xResources/../img/X_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone.png Resources/../img/X_phone.pngcf4ac2d94abcb441^6aa3cad94abcb441^---0#0#0#-19%DVTDocumentLocation2@79"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/X_phone.png0000000000000000^664"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone.png Resources/../img/X_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/X_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone.png36"8C656A91-948D-4019-96B3-8D93A9B88DF0-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone@2x.png Resources/../img/X_phone@2x.png
+s347884249.775542
+e347884249.814482
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone@2x.png
+xResources/../img/X_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone@2x.png Resources/../img/X_phone@2x.pngd2c5c6d94abcb441^c381d0d94abcb441^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/X_phone@2x.png0000000000000000^684"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone@2x.png" "Resources/../img/X_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/X_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/X_phone@2x.png"36"EEAC8E3A-C6E6-46BF-BA8C-C2188D37C8C1-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/blackslider.png Resources/../img/blackslider.png
+s347884248.452580
+e347884248.560206
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/blackslider.png
+xResources/../img/blackslider.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/blackslider.png Resources/../img/blackslider.pngf53074d84abcb441^88698fd84abcb441^---0#0#0#-19%DVTDocumentLocation2@83"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/blackslider.png0000000000000000^680"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/blackslider.png Resources/../img/blackslider.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/blackslider.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/blackslider.png36"5766DC12-082A-42A3-AADD-F4B2E12F384E-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add.png Resources/../img/bookmark_add.png
+s347884249.045905
+e347884249.074816
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add.png
+xResources/../img/bookmark_add.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add.png Resources/../img/bookmark_add.png88130cd94abcb441^032713d94abcb441^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add.png0000000000000000^684"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add.png Resources/../img/bookmark_add.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add.png36"731C77DC-78BB-4B3F-9198-315C5B12690E-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone.png Resources/../img/bookmark_add_phone.png
+s347884248.977095
+e347884249.011239
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone.png
+xResources/../img/bookmark_add_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone.png Resources/../img/bookmark_add_phone.png6476fad84abcb441^3be002d94abcb441^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add_phone.png0000000000000000^708"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone.png Resources/../img/bookmark_add_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone.png36"6AA69942-980E-4044-97C5-6E6C2EFF3CAF-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone@2x.png Resources/../img/bookmark_add_phone@2x.png
+s347884249.012542
+e347884249.044593
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone@2x.png
+xResources/../img/bookmark_add_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone@2x.png Resources/../img/bookmark_add_phone@2x.png147803d94abcb441^726a0bd94abcb441^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add_phone@2x.png0000000000000000^728"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone@2x.png" "Resources/../img/bookmark_add_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/bookmark_add_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/bookmark_add_phone@2x.png"36"A21FB1AF-27CE-431D-87F8-020322F66E7E-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble.png Resources/../img/changeModeDouble.png
+s347884249.144848
+e347884249.174948
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble.png
+xResources/../img/changeModeDouble.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble.png Resources/../img/changeModeDouble.png7e7125d94abcb441^64c92cd94abcb441^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble.png0000000000000000^700"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble.png Resources/../img/changeModeDouble.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble.png36"75EC4E04-4673-463B-8ABF-A4FB0BF98F68-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone.png Resources/../img/changeModeDouble_phone.png
+s347884249.075995
+e347884249.105771
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone.png
+xResources/../img/changeModeDouble_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection126"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone.png Resources/../img/changeModeDouble_phone.pngb9c613d94abcb441^ba141bd94abcb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble_phone.png0000000000000000^724"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone.png Resources/../img/changeModeDouble_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone.png36"8F69B544-4C61-4F55-BC9D-DC95CA278467-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone@2x.png Resources/../img/changeModeDouble_phone@2x.png
+s347884249.107085
+e347884249.143652
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone@2x.png
+xResources/../img/changeModeDouble_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone@2x.png Resources/../img/changeModeDouble_phone@2x.png84a01bd94abcb441^50c624d94abcb441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble_phone@2x.png0000000000000000^744"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone@2x.png" "Resources/../img/changeModeDouble_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeDouble_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeDouble_phone@2x.png"36"F657F7D2-F7BF-4DCF-AE7C-F76EA74FF392-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle.png Resources/../img/changeModeSingle.png
+s347884249.241029
+e347884249.290635
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle.png
+xResources/../img/changeModeSingle.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle.png Resources/../img/changeModeSingle.png7bf53dd94abcb441^b7b650d94abcb441^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle.png0000000000000000^700"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle.png Resources/../img/changeModeSingle.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle.png36"1A23673D-1DF7-428C-AA33-F8A7D3324343-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone.png Resources/../img/changeModeSingle_phone.png
+s347884249.176260
+e347884249.202918
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone.png
+xResources/../img/changeModeSingle_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection126"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone.png Resources/../img/changeModeSingle_phone.png72702dd94abcb441^d4f233d94abcb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle_phone.png0000000000000000^724"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone.png Resources/../img/changeModeSingle_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone.png36"A8B73D29-0D17-4959-B2E4-CFABF388C33D-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone@2x.png Resources/../img/changeModeSingle_phone@2x.png
+s347884249.204264
+e347884249.239752
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone@2x.png
+xResources/../img/changeModeSingle_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone@2x.png Resources/../img/changeModeSingle_phone@2x.png738034d94abcb441^406c3dd94abcb441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle_phone@2x.png0000000000000000^744"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone@2x.png" "Resources/../img/changeModeSingle_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/changeModeSingle_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/changeModeSingle_phone@2x.png"36"DD01182E-20B6-4C1B-8004-76A7AC0D1619-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close.png Resources/../img/close.png
+s347884248.688596
+e347884248.726207
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close.png
+xResources/../img/close.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/close.png Resources/../img/close.pngd47db0d84abcb441^5306bad84abcb441^---0#0#0#-19%DVTDocumentLocation2@77"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/close.png0000000000000000^656"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/close.png Resources/../img/close.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/close.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close.png36"EB5FBC46-B8BD-4B3C-89A2-CFD39D2343B6-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close_player.png Resources/../img/close_player.png
+s347884248.561601
+e347884248.591010
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close_player.png
+xResources/../img/close_player.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/close_player.png Resources/../img/close_player.png58ff8fd84abcb441^5e4c97d84abcb441^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/close_player.png0000000000000000^684"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/close_player.png Resources/../img/close_player.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/close_player.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/close_player.png36"FA759C35-2C76-45F1-8F9B-8291382D5802-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r.png Resources/../img/direction_l2r.png
+s347884249.334593
+e347884249.391419
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r.png
+xResources/../img/direction_l2r.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r.png Resources/../img/direction_l2r.pngb5fb55d94abcb441^753e64d94abcb441^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r.png0000000000000000^688"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r.png Resources/../img/direction_l2r.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r.png36"DA9D85A8-F7A8-4834-B9BF-A6E8C5A1D6FC-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone.png Resources/../img/direction_l2r_phone.png
+s347884249.276016
+e347884249.332721
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone.png
+xResources/../img/direction_l2r_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone.png Resources/../img/direction_l2r_phone.pngfcab47d94abcb441^213d55d94abcb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r_phone.png0000000000000000^712"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone.png Resources/../img/direction_l2r_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone.png36"9134AC2B-582F-4DB4-9C43-2BF4639E854F-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone@2x.png Resources/../img/direction_l2r_phone@2x.png
+s347884249.294220
+e347884249.378687
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone@2x.png
+xResources/../img/direction_l2r_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection126"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone@2x.png Resources/../img/direction_l2r_phone@2x.pngf4a94bd94abcb441^d2fd60d94abcb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r_phone@2x.png0000000000000000^732"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone@2x.png" "Resources/../img/direction_l2r_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_l2r_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_l2r_phone@2x.png"36"03D18412-55B8-47A3-8464-8E0D696A6A1C-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l.png Resources/../img/direction_r2l.png
+s347884249.420052
+e347884249.451802
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l.png
+xResources/../img/direction_r2l.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l.png Resources/../img/direction_r2l.png40de6bd94abcb441^4ca973d94abcb441^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l.png0000000000000000^688"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l.png Resources/../img/direction_r2l.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l.png36"350464BF-F01E-4C7E-8AC2-EBB9053AC1DC-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone.png Resources/../img/direction_r2l_phone.png
+s347884249.383559
+e347884249.418771
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone.png
+xResources/../img/direction_r2l_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone.png Resources/../img/direction_r2l_phone.png109162d94abcb441^61346bd94abcb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l_phone.png0000000000000000^712"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone.png Resources/../img/direction_r2l_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone.png36"A8ED1AD4-2F70-4DF1-92B0-8864B1EAE210-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone@2x.png Resources/../img/direction_r2l_phone@2x.png
+s347884249.392654
+e347884249.431979
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone@2x.png
+xResources/../img/direction_r2l_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection126"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone@2x.png Resources/../img/direction_r2l_phone@2x.png77dc64d94abcb441^f6966ed94abcb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l_phone@2x.png0000000000000000^732"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone@2x.png" "Resources/../img/direction_r2l_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/direction_r2l_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/direction_r2l_phone@2x.png"36"15F77D99-05EB-4171-BE8E-52AF90F490AA-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangledown.png Resources/../img/img_outline_triangledown.png
+s347884249.967147
+e347884250.016546
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangledown.png
+xResources/../img/img_outline_triangledown.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection130"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangledown.png Resources/../img/img_outline_triangledown.pngc4eaf7d94abcb441^e63b04da4abcb441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/img_outline_triangledown.png0000000000000000^732"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangledown.png Resources/../img/img_outline_triangledown.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/img_outline_triangledown.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangledown.png36"8B333AA3-0FAE-44E3-9F37-0935950400BF-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangleright.png Resources/../img/img_outline_triangleright.png
+s347884250.017829
+e347884250.055457
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangleright.png
+xResources/../img/img_outline_triangleright.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangleright.png Resources/../img/img_outline_triangleright.png60e504da4abcb441^da3c0eda4abcb441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/img_outline_triangleright.png0000000000000000^736"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangleright.png Resources/../img/img_outline_triangleright.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/img_outline_triangleright.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_outline_triangleright.png36"2094337A-9B91-49E9-8014-17F47C074F6C-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_pad.png Resources/../img/img_overflow_pad.png
+s347884250.056727
+e347884250.086726
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_pad.png
+xResources/../img/img_overflow_pad.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_pad.png Resources/../img/img_overflow_pad.pngecda0eda4abcb441^ad3316da4abcb441^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_pad.png0000000000000000^700"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_pad.png Resources/../img/img_overflow_pad.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_pad.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_pad.png36"AD358065-1A19-444D-ACDC-8DD00B291140-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone.png Resources/../img/img_overflow_phone.png
+s347884250.087992
+e347884250.118581
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone.png
+xResources/../img/img_overflow_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone.png Resources/../img/img_overflow_phone.pngf9bc16da4abcb441^645b1eda4abcb441^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_phone.png0000000000000000^708"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone.png Resources/../img/img_overflow_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone.png36"1523CEFD-DFD4-485B-A1D3-8B7076E7F799-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone@2x.png Resources/../img/img_overflow_phone@2x.png
+s347884250.119864
+e347884250.155479
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone@2x.png
+xResources/../img/img_overflow_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone@2x.png Resources/../img/img_overflow_phone@2x.png4fe71eda4abcb441^10ce27da4abcb441^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_phone@2x.png0000000000000000^728"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone@2x.png" "Resources/../img/img_overflow_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/img_overflow_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/img_overflow_phone@2x.png"36"BE454BBE-F4B3-4DB9-B9AC-0C9CAF5008A7-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice.png Resources/../img/indice.png
+s347884249.453069
+e347884249.482510
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice.png
+xResources/../img/indice.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/indice.png Resources/../img/indice.pnga54e74d94abcb441^a1867bd94abcb441^---0#0#0#-19%DVTDocumentLocation2@78"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/indice.png0000000000000000^660"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/indice.png Resources/../img/indice.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/indice.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice.png36"2EAFE635-5B87-4609-A8AB-9042EAD227E3-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice_phone.png Resources/../img/indice_phone.png
+s347884249.433266
+e347884249.464031
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice_phone.png
+xResources/../img/indice_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/indice_phone.png Resources/../img/indice_phone.png083d6fd94abcb441^bcca76d94abcb441^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/indice_phone.png0000000000000000^684"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/indice_phone.png Resources/../img/indice_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/indice_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/indice_phone.png36"FB011353-E13B-4C67-9B02-95AB1B7D6456-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_back.png Resources/../img/minisearch_back.png
+s347884249.465329
+e347884249.508484
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_back.png
+xResources/../img/minisearch_back.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_back.png Resources/../img/minisearch_back.pngd27377d94abcb441^933982d94abcb441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_back.png0000000000000000^696"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_back.png Resources/../img/minisearch_back.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_back.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_back.png36"9AA33083-75C5-40C9-BD89-B15E1BFF2944-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel.png Resources/../img/minisearch_cancel.png
+s347884249.483826
+e347884249.518569
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel.png
+xResources/../img/minisearch_cancel.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel.png Resources/../img/minisearch_cancel.png821c7cd94abcb441^f0c084d94abcb441^---0#0#0#-19%DVTDocumentLocation2@89"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_cancel.png0000000000000000^704"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel.png Resources/../img/minisearch_cancel.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_cancel.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel.png36"08C3BE32-DE23-4718-BD44-0EDB98412767-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel@2x.png Resources/../img/minisearch_cancel@2x.png
+s347884248.791241
+e347884248.830579
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel@2x.png
+xResources/../img/minisearch_cancel@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection122"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel@2x.png Resources/../img/minisearch_cancel@2x.pngc5e7cad84abcb441^b2a0d4d84abcb441^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_cancel@2x.png0000000000000000^724"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel@2x.png" "Resources/../img/minisearch_cancel@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_cancel@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_cancel@2x.png"36"F71255F8-6055-4370-9ED5-C360C2BAA418-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full.png Resources/../img/minisearch_full.png
+s347884249.513250
+e347884249.544784
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full.png
+xResources/../img/minisearch_full.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full.png Resources/../img/minisearch_full.png52f183d94abcb441^e6768bd94abcb441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_full.png0000000000000000^696"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full.png Resources/../img/minisearch_full.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_full.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full.png36"F90656C7-FE0A-4FFB-9505-EA8F9DD1BD92-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full@2x.png Resources/../img/minisearch_full@2x.png
+s347884248.831850
+e347884248.882369
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full@2x.png
+xResources/../img/minisearch_full@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full@2x.png Resources/../img/minisearch_full@2x.png9d47d5d84abcb441^43e3e1d84abcb441^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_full@2x.png0000000000000000^716"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full@2x.png" "Resources/../img/minisearch_full@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_full@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_full@2x.png"36"C7A1E5E0-3460-423B-9A4B-90372AEC5DA8-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next.png Resources/../img/minisearch_next.png
+s347884249.519812
+e347884249.550102
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next.png
+xResources/../img/minisearch_next.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next.png Resources/../img/minisearch_next.pnge44a85d94abcb441^6bd38cd94abcb441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_next.png0000000000000000^696"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next.png Resources/../img/minisearch_next.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_next.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next.png36"5049ECB9-3286-4CC2-B63F-ABFBA8790E10-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next@2x.png Resources/../img/minisearch_next@2x.png
+s347884248.883838
+e347884248.927550
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next@2x.png
+xResources/../img/minisearch_next@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next@2x.png Resources/../img/minisearch_next@2x.png079be2d84abcb441^edd7edd84abcb441^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_next@2x.png0000000000000000^716"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next@2x.png" "Resources/../img/minisearch_next@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_next@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_next@2x.png"36"DFB4DFA4-9D4A-4E6A-BB89-4863F0A32F00-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev.png Resources/../img/minisearch_prev.png
+s347884249.546073
+e347884249.576916
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev.png
+xResources/../img/minisearch_prev.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev.png Resources/../img/minisearch_prev.png72148cd94abcb441^d5b093d94abcb441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_prev.png0000000000000000^696"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev.png Resources/../img/minisearch_prev.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_prev.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev.png36"597B5AD9-65D0-45FB-81F4-417BA27095C5-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev@2x.png Resources/../img/minisearch_prev@2x.png
+s347884248.937521
+e347884248.975714
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev@2x.png
+xResources/../img/minisearch_prev@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev@2x.png Resources/../img/minisearch_prev@2x.pngd55af0d84abcb441^86c8f9d84abcb441^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_prev@2x.png0000000000000000^716"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev@2x.png" "Resources/../img/minisearch_prev@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/minisearch_prev@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/minisearch_prev@2x.png"36"2D9EC44C-FD31-46A9-AB81-897C80D54A58-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/next.png Resources/../img/next.png
+s347884250.156834
+e347884250.188190
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/next.png
+xResources/../img/next.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/next.png Resources/../img/next.pngc05b28da4abcb441^dc9b33da4abcb441^---0#0#0#-19%DVTDocumentLocation2@76"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/next.png0000000000000000^652"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/next.png Resources/../img/next.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/next.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/next.png36"20F5F228-B48E-4ECB-86CE-BD1D95067640-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead.png Resources/../img/pagelead.png
+s347884249.612882
+e347884249.643097
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead.png
+xResources/../img/pagelead.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead.png Resources/../img/pagelead.png1d3a9dd94abcb441^f1a1a4d94abcb441^---0#0#0#-19%DVTDocumentLocation2@80"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead.png0000000000000000^668"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead.png Resources/../img/pagelead.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead.png36"3B253683-2D44-41CC-8B37-69FC60992FA6-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click.png Resources/../img/pagelead_click.png
+s347884249.578204
+e347884249.611665
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click.png
+xResources/../img/pagelead_click.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click.png Resources/../img/pagelead_click.png344d94d94abcb441^af959cd94abcb441^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_click.png0000000000000000^692"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click.png Resources/../img/pagelead_click.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_click.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click.png36"674F99B2-0A16-49D5-AF60-E6E1B6CCE1D4-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click_phone.png Resources/../img/pagelead_click_phone.png
+s347884249.551359
+e347884249.581415
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click_phone.png
+xResources/../img/pagelead_click_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection122"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click_phone.png Resources/../img/pagelead_click_phone.pngab5f8dd94abcb441^6bd794d94abcb441^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_click_phone.png0000000000000000^716"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click_phone.png Resources/../img/pagelead_click_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_click_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_click_phone.png36"1926247F-7E97-4A35-9DA2-2038B158E74A-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone.png Resources/../img/pagelead_phone.png
+s347884249.582665
+e347884249.612762
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone.png
+xResources/../img/pagelead_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone.png Resources/../img/pagelead_phone.png465f95d94abcb441^6ede9cd94abcb441^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_phone.png0000000000000000^692"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone.png Resources/../img/pagelead_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone.png36"9609A110-05FE-4FBE-AA27-5F5A2BA1875B-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone@2x.png Resources/../img/pagelead_phone@2x.png
+s347884249.612894
+e347884249.651100
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone@2x.png
+xResources/../img/pagelead_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone@2x.png Resources/../img/pagelead_phone@2x.pngbc3c9dd94abcb441^c0aea6d94abcb441^---0#0#0#-19%DVTDocumentLocation2@89"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_phone@2x.png0000000000000000^712"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone@2x.png" "Resources/../img/pagelead_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/pagelead_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pagelead_phone@2x.png"36"B37C6F34-1B7E-4B86-8364-E03D55D87128-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pause_player.png Resources/../img/pause_player.png
+s347884248.626189
+e347884248.654909
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pause_player.png
+xResources/../img/pause_player.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pause_player.png Resources/../img/pause_player.png6b82a0d84abcb441^2fa8a7d84abcb441^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/pause_player.png0000000000000000^684"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/pause_player.png Resources/../img/pause_player.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/pause_player.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/pause_player.png36"CA3BBEEB-DC52-4C69-B209-0AC9F5BD11FE-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/play_player.png Resources/../img/play_player.png
+s347884248.592301
+e347884248.624914
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/play_player.png
+xResources/../img/play_player.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/play_player.png Resources/../img/play_player.pngc3f297d84abcb441^4cfa9fd84abcb441^---0#0#0#-19%DVTDocumentLocation2@83"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/play_player.png0000000000000000^680"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/play_player.png Resources/../img/play_player.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/play_player.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/play_player.png36"F5DBFB78-56ED-4F34-AE45-029B50C6F4F5-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/prew.png Resources/../img/prew.png
+s347884248.727426
+e347884248.759311
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/prew.png
+xResources/../img/prew.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/prew.png Resources/../img/prew.png8482bad84abcb441^3562c2d84abcb441^---0#0#0#-19%DVTDocumentLocation2@76"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/prew.png0000000000000000^652"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/prew.png Resources/../img/prew.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/prew.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/prew.png36"D431F0E7-55E3-4778-A9A9-A22CDF30D1CD-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/reload.png Resources/../img/reload.png
+s347884248.656239
+e347884248.687324
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/reload.png
+xResources/../img/reload.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/reload.png Resources/../img/reload.png7651a8d84abcb441^cbf4afd84abcb441^---0#0#0#-19%DVTDocumentLocation2@78"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/reload.png0000000000000000^660"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/reload.png Resources/../img/reload.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/reload.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/reload.png36"97220852-9C0C-4122-BEAE-639F0C04EF7F-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search.png Resources/../img/search.png
+s347884249.680202
+e347884249.717086
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search.png
+xResources/../img/search.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/search.png Resources/../img/search.pngd577aed94abcb441^b092b7d94abcb441^---0#0#0#-19%DVTDocumentLocation2@78"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/search.png0000000000000000^660"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/search.png Resources/../img/search.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/search.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search.png36"35BBFFB0-010C-4E46-BEE8-415A4EFDA00F-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone.png Resources/../img/search_phone.png
+s347884249.644414
+e347884249.678920
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone.png
+xResources/../img/search_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone.png Resources/../img/search_phone.png2730a5d94abcb441^2dcdadd94abcb441^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/search_phone.png0000000000000000^684"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone.png Resources/../img/search_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/search_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone.png36"62E70E18-5D31-40DB-9225-2AA9DDE88A32-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone@2x.png Resources/../img/search_phone@2x.png
+s347884249.652359
+e347884249.694271
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone@2x.png
+xResources/../img/search_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone@2x.png Resources/../img/search_phone@2x.png6556a7d94abcb441^2f35b2d94abcb441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/search_phone@2x.png0000000000000000^704"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone@2x.png" "Resources/../img/search_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/search_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/search_phone@2x.png"36"6D064BC8-6561-48D7-A207-E341733CA51D-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/stop.png Resources/../img/stop.png
+s347884248.760614
+e347884248.789936
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/stop.png
+xResources/../img/stop.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/stop.png Resources/../img/stop.png810ac3d84abcb441^2e39cad84abcb441^---0#0#0#-19%DVTDocumentLocation2@76"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/stop.png0000000000000000^652"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/stop.png Resources/../img/stop.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/stop.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/stop.png36"17CFC5DA-CF96-4A36-95EE-B08FF9616F33-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text.png Resources/../img/text.png
+s347884249.742925
+e347884249.774257
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text.png
+xResources/../img/text.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/text.png Resources/../img/text.pngba85bed94abcb441^1a36c6d94abcb441^---0#0#0#-19%DVTDocumentLocation2@76"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/text.png0000000000000000^652"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/text.png Resources/../img/text.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/text.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text.png36"FEE36833-1659-40AF-B477-9A06C604923E-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone.png Resources/../img/text_phone.png
+s347884249.704464
+e347884249.741641
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone.png
+xResources/../img/text_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone.png Resources/../img/text_phone.png300fb5d94abcb441^1edcbdd94abcb441^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/text_phone.png0000000000000000^676"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone.png Resources/../img/text_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/text_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone.png36"9CC21908-7776-4537-9C53-11CEC3D5D560-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone@2x.png Resources/../img/text_phone@2x.png
+s347884249.718375
+e347884249.756414
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone@2x.png
+xResources/../img/text_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone@2x.png Resources/../img/text_phone@2x.pnga33fb8d94abcb441^38a4c1d94abcb441^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/text_phone@2x.png0000000000000000^696"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone@2x.png" "Resources/../img/text_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/text_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/text_phone@2x.png"36"8D4738CE-F96E-4439-9F31-0824C914245A-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock.png Resources/../img/zoomLock.png
+s347884249.846809
+e347884249.877124
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock.png
+xResources/../img/zoomLock.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock.png Resources/../img/zoomLock.png7100d9d94abcb441^f88ce0d94abcb441^---0#0#0#-19%DVTDocumentLocation2@80"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock.png0000000000000000^668"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock.png Resources/../img/zoomLock.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock.png36"A8C8AD5C-662A-4CE6-8ABC-7250798144A6-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone.png Resources/../img/zoomLock_phone.png
+s347884249.815754
+e347884249.845544
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone.png
+xResources/../img/zoomLock_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone.png Resources/../img/zoomLock_phone.png4512d1d94abcb441^8275d8d94abcb441^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock_phone.png0000000000000000^692"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone.png Resources/../img/zoomLock_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone.png36"B68D9CF0-795B-418B-A80D-53E45814C954-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone@2x.png Resources/../img/zoomLock_phone@2x.png
+s347884249.826238
+e347884249.862539
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone@2x.png
+xResources/../img/zoomLock_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone@2x.png Resources/../img/zoomLock_phone@2x.pngd7bfd3d94abcb441^3acfdcd94abcb441^---0#0#0#-19%DVTDocumentLocation2@89"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock_phone@2x.png0000000000000000^712"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone@2x.png" "Resources/../img/zoomLock_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomLock_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomLock_phone@2x.png"36"4DA7CDDB-88DE-4530-B659-582E36ABA7D3-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock.png Resources/../img/zoomUnlock.png
+s347884249.902602
+e347884249.933562
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock.png
+xResources/../img/zoomUnlock.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock.png Resources/../img/zoomUnlock.pngb64be7d94abcb441^54fdeed94abcb441^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock.png0000000000000000^676"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock.png Resources/../img/zoomUnlock.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock.png36"4334014E-B160-4A2C-838F-43770430AE1F-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone.png Resources/../img/zoomUnlock_phone.png
+s347884249.863825
+e347884249.901313
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone.png
+xResources/../img/zoomUnlock_phone.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone.png Resources/../img/zoomUnlock_phone.pnga75cddd94abcb441^94bce6d94abcb441^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock_phone.png0000000000000000^700"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone.png Resources/../img/zoomUnlock_phone.png    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock_phone.png /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone.png36"67C22163-5229-4506-9E9A-FFEEED501B6B-
+
+CCopyPNGFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone@2x.png Resources/../img/zoomUnlock_phone@2x.png
+s347884249.886634
+e347884249.926643
+r1
+xCopyPNGFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone@2x.png
+xResources/../img/zoomUnlock_phone@2x.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"CopyPNGFile build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone@2x.png Resources/../img/zoomUnlock_phone@2x.png2845e3d94abcb441^2638edd94abcb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock_phone@2x.png0000000000000000^720"CopyPNGFile "build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone@2x.png" "Resources/../img/zoomUnlock_phone@2x.png"    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/PrivatePlugIns/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/matteo/git/FastPdfKitSample/Resources/../img/zoomUnlock_phone@2x.png" "/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/zoomUnlock_phone@2x.png"36"61971554-A4EF-4343-BC65-9342EE680303-
+
+CPhaseScriptExecution "Run Script" /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Script-01235FE913CC7F7F00861EB7.sh
+s347884250.267310
+e347884250.305098
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Script-01235FE913CC7F7F00861EB7.sh
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'da8e45da4abcb441^bc244eda4abcb441^---0#0#0#--18538"PhaseScriptExecution "Run Script" build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Script-01235FE913CC7F7F00861EB7.sh    cd /Users/matteo/git/FastPdfKitSample    setenv ACTION build    setenv AD_HOC_CODE_SIGNING_ALLOWED NO    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER matteo    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS armv7    setenv ARCHS_STANDARD_32_64_BIT armv7    setenv ARCHS_STANDARD_32_BIT armv7    setenv ARCHS_UNIVERSAL_IPHONE_OS armv7    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/matteo/git/FastPdfKitSample/build    setenv BUILD_ROOT /Users/matteo/git/FastPdfKitSample/build    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos    setenv CACHE_ROOT /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501    setenv CCHROOT /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle    setenv CODE_SIGNING_REQUIRED YES    setenv CODE_SIGN_CONTEXT_CLASS XCiPhoneOSCodeSignContext    setenv CODE_SIGN_IDENTITY "iPhone Developer"    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/CompositeSDKs    setenv COMPRESS_PNG_FILES YES    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos    setenv CONFIGURATION_TEMP_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos    setenv CONTENTS_FOLDER_PATH FPKReaderBundle.bundle    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH armv7    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING YES    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH FPKReaderBundle.bundle/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/FastPdfKit.dst    setenv DWARF_DSYM_FILE_NAME FPKReaderBundle.bundle.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos    setenv EFFECTIVE_PLATFORM_NAME -iphoneos    setenv EMBEDDED_PROFILE_NAME embedded.mobileprovision    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv ENTITLEMENTS_REQUIRED YES    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH FPKReaderBundle.bundle/Executables    setenv EXECUTABLE_FOLDER_PATH FPKReaderBundle.bundle    setenv EXECUTABLE_NAME FPKReaderBundle    setenv EXECUTABLE_PATH FPKReaderBundle.bundle/FPKReaderBundle    setenv FASTPDFKIT_DIR "~/git/FastPdfKitSample"    setenv FILE_LIST /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH FPKReaderBundle.bundle/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME FPKReaderBundle.bundle    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD gnu99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_ENABLE_OBJC_EXCEPTIONS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER "Other Sources/SimpleBundle-Prefix.pch"    setenv GCC_PREPROCESSOR_DEFINITIONS DEBUG    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_THUMB_SUPPORT YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_VERSION_IDENTIFIER com_apple_compilers_llvm_clang_1_0    setenv GCC_WARN_64_TO_32_BIT_CONVERSION YES    setenv GCC_WARN_ABOUT_RETURN_TYPE YES    setenv GCC_WARN_UNUSED_VARIABLE NO    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE NO    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HBS_DIR "~/git/HBS"    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/include\" "    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Resources/ReaderBundle-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT binary    setenv INFOPLIST_PATH FPKReaderBundle.bundle/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH FPKReaderBundle.bundle/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/FastPdfKit.dst/Library/Bundles    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER matteo    setenv INSTALL_PATH /Library/Bundles    setenv INSTALL_ROOT /tmp/FastPdfKit.dst    setenv IPHONEOS_DEPLOYMENT_TARGET 3.2    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH FPKReaderBundle.bundle/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/FPKReaderBundle-LinkMap-normal-armv7.txt    setenv LD_NO_PIE NO    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEGACY_DEVELOPER_DIR /Developer/Library/Xcode/PrivatePlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos\" "    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_armv7 /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Objects-normal/armv7/FPKReaderBundle.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH FPKReaderBundle.bundle/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_bundle    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 11C74    setenv MAC_OS_X_VERSION_ACTUAL 1072    setenv MAC_OS_X_VERSION_MAJOR 1070    setenv MAC_OS_X_VERSION_MINOR 0702    setenv MFSTUFF_DIR "~/git/MFStuff"    setenv NATIVE_ARCH armv7    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Objects-normal    setenv OBJROOT /Users/matteo/git/FastPdfKitSample/build    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_LDFLAGS -ObjC    setenv PACKAGE_TYPE com.apple.package-type.wrapper    setenv PASCAL_STRINGS YES    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH FPKReaderBundle.bundle/pbdevelopment.plist    setenv PKGINFO_FILE_PATH /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/PkgInfo    setenv PKGINFO_PATH FPKReaderBundle.bundle/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Platforms/iPhoneOS.platform/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library/Xcode/PrivatePlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/Platforms/iPhoneOS.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Platforms/iPhoneOS.platform/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/Platforms/iPhoneOS.platform/Developer/usr    setenv PLATFORM_DIR /Developer/Platforms/iPhoneOS.platform    setenv PLATFORM_NAME iphoneos    setenv PLATFORM_PREFERRED_ARCH i386    setenv PLATFORM_PRODUCT_BUILD_VERSION 9A334    setenv PLIST_FILE_OUTPUT_FORMAT binary    setenv PLUGINS_FOLDER_PATH FPKReaderBundle.bundle/PlugIns    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH FPKReaderBundle.bundle/PrivateHeaders    setenv PRODUCT_NAME FPKReaderBundle    setenv PRODUCT_SETTINGS_PATH /Users/matteo/git/FastPdfKitSample/Resources/ReaderBundle-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.bundle    setenv PROFILING_CODE NO    setenv PROJECT FastPdfKit    setenv PROJECT_DERIVED_FILE_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/DerivedSources    setenv PROJECT_DIR /Users/matteo/git/FastPdfKitSample    setenv PROJECT_FILE_PATH /Users/matteo/git/FastPdfKitSample/FastPdfKit.xcodeproj    setenv PROJECT_NAME FastPdfKit    setenv PROJECT_TEMP_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build    setenv PUBLIC_HEADERS_FOLDER_PATH FPKReaderBundle.bundle/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH FPKReaderBundle.bundle/Scripts    setenv SCRIPT_INPUT_FILE_0 /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle    setenv SCRIPT_INPUT_FILE_COUNT 1    setenv SCRIPT_OUTPUT_FILE_0 /Users/matteo/git/FastPdfKitSample/Bundle    setenv SCRIPT_OUTPUT_FILE_COUNT 1    setenv SDKROOT /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk    setenv SDK_DIR /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk    setenv SDK_NAME iphoneos5.0    setenv SDK_PRODUCT_BUILD_VERSION 9A334    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHALLOW_BUNDLE YES    setenv SHARED_DERIVED_FILE_DIR /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH FPKReaderBundle.bundle/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH FPKReaderBundle.bundle/SharedSupport    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/matteo/git/FastPdfKitSample    setenv SRCROOT /Users/matteo/git/FastPdfKitSample    setenv STRINGS_FILE_OUTPUT_ENCODING binary    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE non-global    setenv SUPPORTED_DEVICE_FAMILIES 1,2    setenv SUPPORTED_PLATFORMS "iphonesimulator iphoneos"    setenv SYMROOT /Users/matteo/git/FastPdfKitSample/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETED_DEVICE_FAMILY 1,2    setenv TARGETNAME FPKReaderBundle    setenv TARGET_BUILD_DIR /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos    setenv TARGET_NAME FPKReaderBundle    setenv TARGET_TEMP_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build    setenv TEMP_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build    setenv TEMP_FILES_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build    setenv TEMP_FILE_DIR /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build    setenv TEMP_ROOT /Users/matteo/git/FastPdfKitSample/build    setenv TEST_AFTER_BUILD YES    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH FPKReaderBundle.bundle    setenv UNSTRIPPED_PRODUCT NO    setenv USER matteo    setenv USER_APPS_DIR /Users/matteo/Applications    setenv USER_LIBRARY_DIR /Users/matteo/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "armv6 armv7"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH FPKReaderBundle.bundle/version.plist    setenv VERSION_INFO_BUILDER matteo    setenv VERSION_INFO_FILE FPKReaderBundle_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:FPKReaderBundle  PROJECT:FastPdfKit-\""    setenv WRAPPER_EXTENSION bundle    setenv WRAPPER_NAME FPKReaderBundle.bundle    setenv WRAPPER_SUFFIX .bundle    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 4D502    setenv XCODE_VERSION_ACTUAL 0421    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0420    setenv YACC /Developer/usr/bin/yacc    /bin/sh -c /Users/matteo/git/FastPdfKitSample/build/FastPdfKit.build/Debug-iphoneos/FPKReaderBundle.build/Script-01235FE913CC7F7F00861EB7.sh36"2BE73BAC-35FD-4C54-82E3-A47D79A9CA0B-
+
+CProcessInfoPlistFile /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/Info.plist Resources/ReaderBundle-Info.plist
+s347884248.247092
+e347884248.255621
+r1
+xProcessInfoPlistFile
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/Info.plist
+xResources/ReaderBundle-Info.plist
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Process Resources/ReaderBundle-Info.plist4a7a40d84abcb441^eb6f41d84abcb441^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/matteo/git/FastPdfKitSample/Resources/ReaderBundle-Info.plist0000000000000000^570"ProcessInfoPlistFile build/Debug-iphoneos/FPKReaderBundle.bundle/Info.plist Resources/ReaderBundle-Info.plist    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Resources/ReaderBundle-Info.plist -expandbuildsettings -format binary -platform iphoneos -o /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle/Info.plist36"AE92149E-712C-4064-AFCA-C7E952F25B67-
+
+CTouch /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle
+s347884250.251535
+e347884250.259213
+r1
+xTouch
+x/Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Touch /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle50a740da4abcb441^2d5c42da4abcb441^---0#0#0#--400"Touch build/Debug-iphoneos/FPKReaderBundle.bundle    cd /Users/matteo/git/FastPdfKitSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/matteo/git/FastPdfKitSample/build/Debug-iphoneos/FPKReaderBundle.bundle36"CE29C92E-2128-4C00-A16C-DFF4454B63AB-
+

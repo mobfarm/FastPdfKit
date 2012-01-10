@@ -1,0 +1,1 @@
+../FastPdfKit.framework/Resources/Snippets.txt

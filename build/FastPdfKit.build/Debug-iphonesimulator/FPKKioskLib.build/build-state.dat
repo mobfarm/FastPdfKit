@@ -1,0 +1,592 @@
+TFPKKioskLib
+v4
+r1
+cCheck dependencies
+cProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch.pth OtherSources/FastPDFKitKiosk-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIAuthenticationDialog.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIDownloadCache.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FastPDFKit_KioskAppDelegate.o /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/MenuViewController_Kiosk.o /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/BookItemView.o /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/XMLParser.o /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIFormDataRequest.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIHTTPRequest.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIInputStream.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/Reachability.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINetworkQueue.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINSStringAdditions.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKKioskLib.a normal i386
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk
+c000000004EFACEFB0000000000000110
+t1325059835
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004E72F2960000000000353830
+t1316156054
+s3487792
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
+c000000004E7807770000000000010F20
+t1316489079
+s69408
+
+N/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.h
+c000000004F0AD5910000000000000911
+t1326110097
+s2321
+
+N/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.m
+c000000004F0AD5A9000000000000852E
+t1326110121
+s34094
+
+N/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.h
+c000000004F0AD5910000000000000501
+t1326110097
+s1281
+
+N/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.m
+c000000004F0AD59100000000000020F0
+t1326110097
+s8432
+
+N/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.h
+c000000004F0AD5910000000000000144
+t1326110097
+s324
+
+N/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.m
+c000000004F0AD5910000000000000D78
+t1326110097
+s3448
+
+N/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.h
+c000000004F0AD591000000000000030E
+t1326110097
+s782
+
+N/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.m
+c000000004F0AD591000000000000307A
+t1326110097
+s12410
+
+N/Users/matteo/git/fastPdfKitSample/Classes/Reader/Bookmarks/BookmarkViewControllerDelegate.h
+c000000004F0AD59100000000000001E1
+t1326110097
+s481
+
+N/Users/matteo/git/fastPdfKitSample/Classes/Reader/Outline/OutlineViewControllerDelegate.h
+c000000004F0AD59100000000000001AC
+t1326110097
+s428
+
+N/Users/matteo/git/fastPdfKitSample/Classes/Reader/ReaderViewController.h
+c000000004F0AD591000000000000176D
+t1326110097
+s5997
+
+N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/MiniSearchViewControllerDelegate.h
+c000000004F0AD59100000000000001A1
+t1326110097
+s417
+
+N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/SearchViewControllerDelegate.h
+c000000004F0AD5910000000000000201
+t1326110097
+s513
+
+N/Users/matteo/git/fastPdfKitSample/Classes/Reader/TextSearch/TextDisplayViewControllerDelegate.h
+c000000004F0AD59100000000000001AA
+t1326110097
+s426
+
+N/Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailScrollView.h
+c000000004F0AD5910000000000000572
+t1326110097
+s1394
+
+N/Users/matteo/git/fastPdfKitSample/Classes/Reader/ThumbnailSlider/TVThumbnailView.h
+c000000004F0AD5910000000000000493
+t1326110097
+s1171
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.h
+c000000004F0AD5910000000000000453
+t1326110097
+s1107
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m
+c000000004F0AD5910000000000003CB7
+t1326110097
+s15543
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASICacheDelegate.h
+c000000004F0AD591000000000000085E
+t1326110097
+s2142
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.h
+c000000004F0AD5910000000000000804
+t1326110097
+s2052
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.m
+c000000004F0AD5A90000000000003559
+t1326110121
+s13657
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.h
+c000000004F0AD5910000000000000A6D
+t1326110097
+s2669
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m
+c000000004F0AD5910000000000002B52
+t1326110097
+s11090
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.h
+c000000004F0AD591000000000000911D
+t1326110097
+s37149
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m
+c000000004F0AD59100000000000249E1
+t1326110097
+s149985
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequestConfig.h
+c000000004F0AD59100000000000003B0
+t1326110097
+s944
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequestDelegate.h
+c000000004F0AD5910000000000000599
+t1326110097
+s1433
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.h
+c000000004F0AD59100000000000003C9
+t1326110097
+s969
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.m
+c000000004F0AD5910000000000000BF0
+t1326110097
+s3056
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.h
+c000000004F0AD5910000000000000173
+t1326110097
+s371
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.m
+c000000004F0AD591000000000000030B
+t1326110097
+s779
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.h
+c000000004F0AD591000000000000109B
+t1326110097
+s4251
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.m
+c000000004F0AD59100000000000027CB
+t1326110097
+s10187
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIProgressDelegate.h
+c000000004F0AD5910000000000000678
+t1326110097
+s1656
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.h
+c000000004F0AD5910000000000000F19
+t1326110097
+s3865
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.m
+c000000004F0AD59100000000000023D0
+t1326110097
+s9168
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ZipArchive.h
+c000000004F0AD59100000000000003B0
+t1326110097
+s944
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/libziparchive.a
+c000000004F0AD591000000000004E7B4
+t1326110097
+s321460
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/minizip/ioapi.h
+c000000004F0AD5910000000000000A32
+t1326110097
+s2610
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/minizip/unzip.h
+c000000004F0AD591000000000000340A
+t1326110097
+s13322
+
+N/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/minizip/zip.h
+c000000004F0AD591000000000000237A
+t1326110097
+s9082
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/FPKOverlayViewDataSource.h
+c000000004F0AD59100000000000005F2
+t1326110097
+s1522
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFAudioPlayerViewProtocol.h
+c000000004F0AD591000000000000039D
+t1326110097
+s925
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFAudioProvider.h
+c000000004F0AD5910000000000000211
+t1326110097
+s529
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentManager.h
+c000000004F0AD5A90000000000001606
+t1326110121
+s5638
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentOverlayDataSource.h
+c000000004F0AD59100000000000006CD
+t1326110097
+s1741
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentViewController.h
+c000000004F0AD5A90000000000002FE1
+t1326110121
+s12257
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFDocumentViewControllerDelegate.h
+c000000004F0AD591000000000000160D
+t1326110097
+s5645
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFOverlayDrawable.h
+c000000004F0AD59100000000000001BA
+t1326110097
+s442
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFOverlayTouchable.h
+c000000004F0AD591000000000000016B
+t1326110097
+s363
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/MFTextItem.h
+c000000004F0AD59100000000000005F4
+t1326110097
+s1524
+
+N/Users/matteo/git/fastPdfKitSample/FPKCore/Stuff.h
+c000000004F0AD5910000000000001C74
+t1326110097
+s7284
+
+N/Users/matteo/git/fastPdfKitSample/OtherSources/FastPDFKitKiosk-Prefix.pch
+c000000004F0AD59100000000000000AB
+t1326110097
+s171
+
+N/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKKioskLib.a
+t1326191029
+s1200320
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIAuthenticationDialog.o
+t1326191028
+s108928
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIDownloadCache.o
+t1326191028
+s55924
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIFormDataRequest.o
+t1326191028
+s48780
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIHTTPRequest.o
+t1326191029
+s399688
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIInputStream.o
+t1326191028
+s28108
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINSStringAdditions.o
+t1326191028
+s6532
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINetworkQueue.o
+t1326191028
+s60200
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/BookItemView.o
+t1326191028
+s145896
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FPKKioskLib.LinkFileList
+c000000004F0C11B30000000000000678
+t1326191027
+s1656
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FastPDFKit_KioskAppDelegate.o
+t1326191028
+s86640
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/MenuViewController_Kiosk.o
+t1326191028
+s88304
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/Reachability.o
+t1326191028
+s18692
+
+N/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/XMLParser.o
+t1326191028
+s22152
+
+N/var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch.pth
+t1326191028
+s2469156
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.m
+r0
+
+CBuild AST from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.m
+r0
+
+CCheck dependencies
+r0
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies361f63e249bcb441^062f66e249bcb441^---0#1#0#--18"Check dependencies36"BB1EEAF3-9FD9-477D-A2A9-07927522E7A4-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIAuthenticationDialog.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.156913
+e347883828.558003
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIAuthenticationDialog.o
+x/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m:132:26:{132:26-132:82}{132:22-132:23}: warning: implicit conversion from enumeration type 'UIInterfaceOrientation' to different enumeration type 'UIDeviceOrientation' [-Wconversion,3]
+o         UIDeviceOrientation o = [[UIApplication sharedApplication] statusBarOrientation];
+o                             ~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o1 warning generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compile /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.me276283449bcb441^a0548f3449bcb441^-476"/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m:132:26:{132:26-132:82}{132:22-132:23}: warning: implicit conversion from enumeration type 'UIInterfaceOrientation' to different enumeration type 'UIDeviceOrientation' [-Wconversion,3]         UIDeviceOrientation o = [[UIApplication sharedApplication] statusBarOrientation];                             ~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~1 warning generated.1(21%IDEActivityLogMessage2@118"Implicit conversion from enumeration type 'UIInterfaceOrientation' to different enumeration type 'UIDeviceOrientation'-347883828#0#274#-1#-23%DVTTextDocumentLocation3@105"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m0000000000000000^131#25#131#25#18446744073709551615#0#14"Semantic Issue2(3@105"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m0000000000000000^131#25#131#81#18446744073709551615#0#3@105"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m0000000000000000^131#21#131#22#18446744073709551615#0#-0#0#0#-19%DVTDocumentLocation4@105"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m0000000000000000^2776"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIAuthenticationDialog.o Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIAuthenticationDialog.d -c /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIAuthenticationDialog.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIAuthenticationDialog.o36"132198A2-5D29-4E7E-9073-CB3A6A18E471-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIDownloadCache.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.159782
+e347883828.357795
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIDownloadCache.o
+x/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.mdf15293449bcb441^d5b45b3449bcb441^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.m0000000000000000^2741"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIDownloadCache.o Classes/ThirdParties/ASIHTTP/ASIDownloadCache.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIDownloadCache.d -c /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIDownloadCache.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIDownloadCache.o36"39869BA3-79AE-4D94-92D6-06578F4CFB5E-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIFormDataRequest.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.549688
+e347883828.642374
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIFormDataRequest.o
+x/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m87e08c3449bcb441^0d6dc83449bcb441^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m0000000000000000^2751"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIFormDataRequest.o Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIFormDataRequest.d -c /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIFormDataRequest.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIFormDataRequest.o36"72656BD8-C235-4F21-9B0A-F714EEBB5B7F-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIHTTPRequest.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.559784
+e347883829.590569
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIHTTPRequest.o
+x/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m:16:
+o/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.h:69:58: warning: declaration of 'struct sockaddr_in' will not be visible outside of this function [3]
+o + (Reachability*) reachabilityWithAddress: (const struct sockaddr_in*) hostAddress;
+o                                                          ^
+o1 warning generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.mb8758f3449bcb441^7040973549bcb441^-445"In file included from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m:16:/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.h:69:58: warning: declaration of 'struct sockaddr_in' will not be visible outside of this function [3] + (Reachability*) reachabilityWithAddress: (const struct sockaddr_in*) hostAddress;                                                          ^1 warning generated.1(21%IDEActivityLogMessage2@80"Declaration of 'struct sockaddr_in' will not be visible outside of this function-347883828#107#172#2(36%IDEActivityLogHeaderInclusionMessage3@106"In file included from /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m:16:-347883828#0#107#-0#-23%DVTTextDocumentLocation4@96"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m0000000000000000^15#18446744073709551615#15#18446744073709551615#18446744073709551615#0#---2@154"Declaration of 'struct sockaddr_in' will not be visible outside of this function in /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.h-347883828#18446744073709551615#0#-0#-4@86"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.h0000000000000000^68#57#68#57#18446744073709551615#0#---1#-4@86"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.h0000000000000000^68#57#68#57#18446744073709551615#0#14"Semantic Issue--0#0#0#-19%DVTDocumentLocation5@96"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m0000000000000000^2731"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIHTTPRequest.o Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIHTTPRequest.d -c /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIHTTPRequest.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIHTTPRequest.o36"065780A0-C49A-4F84-A59B-71B2A2238E6F-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIInputStream.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.643730
+e347883828.753161
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIInputStream.o
+x/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.m83f8a43449bcb441^3a76c83449bcb441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.m0000000000000000^2731"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIInputStream.o Classes/ThirdParties/ASIHTTP/ASIInputStream.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIInputStream.d -c /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASIInputStream.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASIInputStream.o36"049BEC38-1CD8-41B8-B3CD-91A2C2CD0379-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINSStringAdditions.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.823837
+e347883828.860935
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINSStringAdditions.o
+x/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.maa10d33449bcb441^0185de3449bcb441^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.m0000000000000000^2761"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINSStringAdditions.o Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINSStringAdditions.d -c /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINSStringAdditions.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINSStringAdditions.o36"501E8C96-A43B-4C62-9A61-47F752E50EEB-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINetworkQueue.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.788207
+e347883828.898663
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINetworkQueue.o
+x/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.me1f1c93449bcb441^afb5ef3449bcb441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.m0000000000000000^2736"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINetworkQueue.o Classes/ThirdParties/ASIHTTP/ASINetworkQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINetworkQueue.d -c /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/ASIHTTP/ASINetworkQueue.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/ASINetworkQueue.o36"6E5ED04C-82EC-48EB-A37A-C2B323FCF0B8-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/BookItemView.o /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.362113
+e347883828.785928
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/BookItemView.o
+x/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.mc1e55d3449bcb441^1d02cf3449bcb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.m0000000000000000^2721"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/BookItemView.o Classes/KioskApp/Controllers/BookItemView.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/BookItemView.d -c /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/BookItemView.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/BookItemView.o36"15F8DD08-3A46-470F-9D54-040E4BE2A25B-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FastPDFKit_KioskAppDelegate.o /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.195784
+e347883828.545365
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FastPDFKit_KioskAppDelegate.o
+x/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.mb473323449bcb441^3ca58b3449bcb441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.m0000000000000000^2772"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FastPDFKit_KioskAppDelegate.o Classes/KioskApp/FastPDFKit_KioskAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FastPDFKit_KioskAppDelegate.d -c /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/FastPDFKit_KioskAppDelegate.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FastPDFKit_KioskAppDelegate.o36"550BCE6E-93DA-484D-ABB8-1653F196F7BD-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/MenuViewController_Kiosk.o /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.195786
+e347883828.548413
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/MenuViewController_Kiosk.o
+x/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.m6781323449bcb441^0d6d8c3449bcb441^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.m0000000000000000^2781"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/MenuViewController_Kiosk.o Classes/KioskApp/Controllers/MenuViewController_Kiosk.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/MenuViewController_Kiosk.d -c /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/MenuViewController_Kiosk.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/MenuViewController_Kiosk.o36"FC3E89C4-141F-44DB-A593-58990256BA22-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/Reachability.o /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.755500
+e347883828.833751
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/Reachability.o
+x/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.m9b91c13449bcb441^9babda3449bcb441^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.m0000000000000000^2705"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/Reachability.o Classes/ThirdParties/Reachability.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/Reachability.d -c /Users/matteo/git/fastPdfKitSample/Classes/ThirdParties/Reachability.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/Reachability.o36"39950F2F-8045-4583-BE6C-7BD5417FEEF6-
+
+CCompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/XMLParser.o /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883828.546901
+e347883828.822479
+r1
+xCompileC
+xbuild/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/XMLParser.o
+x/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.m8d258c3449bcb441^38a3da3449bcb441^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.m0000000000000000^2706"CompileC build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/XMLParser.o Classes/KioskApp/Controllers/XMLParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -include /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch -MMD -MT dependencies -MF /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/XMLParser.d -c /Users/matteo/git/fastPdfKitSample/Classes/KioskApp/Controllers/XMLParser.m -o /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/XMLParser.o36"F67801FF-EBF6-486E-8077-73223242E743-
+
+CLibtool /Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKKioskLib.a normal i386
+s347883829.734830
+e347883829.758061
+r1
+xLibtool
+x/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKKioskLib.a
+xnormal
+xi386
+o/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Libtool build/Debug-iphonesimulator/libFPKKioskLib.a normal i386a73ebc3549bcb441^651dc23549bcb441^---0#0#0#--1068"Libtool build/Debug-iphonesimulator/libFPKKioskLib.a normal i386    cd /Users/matteo/git/fastPdfKitSample    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool -static -arch_only i386 -syslibroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -L/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator "-L/Users/matteo/git/fastPdfKitSample/FastPdfKit Library" "-L/Users/matteo/git/fastPdfKitSample/Classes/Third parties" -L/Users/matteo/git/fastPdfKitSample/FPKCore -L/Users/matteo/git/fastPdfKitSample/Classes/ThirdParties -filelist /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/Objects-normal/i386/FPKKioskLib.LinkFileList -ObjC -framework Foundation -lziparchive -weak_framework NewsstandKit -o /Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/libFPKKioskLib.a36"49557C36-F94F-4241-9251-D25CCF346B1C-
+
+CProcessPCH /Users/matteo/Library/Developer/Xcode/DerivedData/FastPDF-glougaudvzpaeaangchinpbrhmym/Index/PrecompiledHeaders/FastPDFKitKiosk-Prefix-dzmxmtbnweuxoocosogtctggjtxw_ast/FastPDFKitKiosk-Prefix.pch.pth OtherSources/FastPDFKitKiosk-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch.pth OtherSources/FastPDFKitKiosk-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s347883827.755332
+e347883828.123490
+r1
+xProcessPCH
+x/var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch.pth
+xOtherSources/FastPDFKitKiosk-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Precompile OtherSources/FastPDFKitKiosk-Prefix.pched7ec13349bcb441^83c31f3449bcb441^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/matteo/git/fastPdfKitSample/OtherSources/FastPDFKitKiosk-Prefix.pch0000000000000000^2705"ProcessPCH /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch.pth OtherSources/FastPDFKitKiosk-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matteo/git/fastPdfKitSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-generated-files.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-own-target-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-all-target-headers.hmap -iquote /Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/FPKKioskLib-project-headers.hmap -I/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator/include -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources/i386 -I/Users/matteo/git/fastPdfKitSample/build/FastPdfKit.build/Debug-iphonesimulator/FPKKioskLib.build/DerivedSources -F/Users/matteo/git/fastPdfKitSample/build/Debug-iphonesimulator -c /Users/matteo/git/fastPdfKitSample/OtherSources/FastPDFKitKiosk-Prefix.pch -o /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/20/87bsxqm94dj2j2hvdby9yttm0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/FastPDFKitKiosk-Prefix-gcpunbbsgpanbtagfjyyappjojbm/FastPDFKitKiosk-Prefix.pch.d36"03108A7D-6FB5-4353-A743-F7428276B713-
+
