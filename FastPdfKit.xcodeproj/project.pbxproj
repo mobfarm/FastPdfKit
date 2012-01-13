@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0103EFF614AD6D2900F96249 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103EFF514AD6D2900F96249 /* libFastPdfKit.a */; };
-		0103EFF714AD6D2900F96249 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103EFF514AD6D2900F96249 /* libFastPdfKit.a */; };
-		0103EFF814AD6D2900F96249 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103EFF514AD6D2900F96249 /* libFastPdfKit.a */; };
-		0103EFF914AD6D2900F96249 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103EFF514AD6D2900F96249 /* libFastPdfKit.a */; };
 		010D14AF13CAF5F400FD6F08 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */; };
 		010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */; };
@@ -208,6 +204,10 @@
 		01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
+		01E0776414C0AF2A00BD272C /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E0776314C0AF2A00BD272C /* libFastPdfKit.a */; };
+		01E0776514C0AF2A00BD272C /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E0776314C0AF2A00BD272C /* libFastPdfKit.a */; };
+		01E0776614C0AF2A00BD272C /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E0776314C0AF2A00BD272C /* libFastPdfKit.a */; };
+		01E0776714C0AF2A00BD272C /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E0776314C0AF2A00BD272C /* libFastPdfKit.a */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -430,7 +430,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0103EFF514AD6D2900F96249 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKReaderLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKKioskLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitKiosk-Prefix.pch"; sourceTree = "<group>"; };
@@ -627,6 +626,7 @@
 		01D73BBF1474385300C142FE /* Times-BoldItalic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-BoldItalic.fpkfm"; sourceTree = "<group>"; };
 		01D73BC01474385300C142FE /* Times-Italic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Italic.fpkfm"; sourceTree = "<group>"; };
 		01D73BC11474385300C142FE /* Times-Roman.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Roman.fpkfm"; sourceTree = "<group>"; };
+		01E0776314C0AF2A00BD272C /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -735,7 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				0103EFF814AD6D2900F96249 /* libFastPdfKit.a in Frameworks */,
+				01E0776614C0AF2A00BD272C /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,7 +767,7 @@
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
-				0103EFF714AD6D2900F96249 /* libFastPdfKit.a in Frameworks */,
+				01E0776514C0AF2A00BD272C /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,7 +784,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				0103EFF614AD6D2900F96249 /* libFastPdfKit.a in Frameworks */,
+				01E0776414C0AF2A00BD272C /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +826,7 @@
 				954B74F814B47FFC00503F90 /* FPKWebPopup.framework in Frameworks */,
 				954B74FA14B47FFC00503F90 /* FPKYouTube.framework in Frameworks */,
 				95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */,
+				01E0776714C0AF2A00BD272C /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,7 +835,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				0103EFF914AD6D2900F96249 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1517,7 +1517,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				0103EFF514AD6D2900F96249 /* libFastPdfKit.a */,
+				01E0776314C0AF2A00BD272C /* libFastPdfKit.a */,
 				01D73BB51474385300C142FE /* standard14fonts */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
@@ -2770,6 +2770,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework/Resources\"",
+					"\"$(SRCROOT)/FPKCore\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2838,6 +2839,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework/Resources\"",
+					"\"$(SRCROOT)/FPKCore\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2907,6 +2909,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework/Resources\"",
+					"\"$(SRCROOT)/FPKCore\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

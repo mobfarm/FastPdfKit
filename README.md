@@ -299,6 +299,12 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.2.2 (January 13th, Friday, 2012)
+* Fixed tiled overlay view flag being ignored
+* Removed unneeded operator in the pdf scanner
+* Changed pdf detail view timings
+
+
 ### Update 3.2.1 (January 5th, 2012)
 * Less aggressive tiled view rendering
 * Fixed a bug in the glyph name matching function

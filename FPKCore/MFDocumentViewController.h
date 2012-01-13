@@ -80,8 +80,6 @@
     CGFloat padding;
 	
     BOOL useTiledOverlayView;
-    
-    
 }
 
 @property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
