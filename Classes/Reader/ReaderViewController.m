@@ -454,13 +454,13 @@
     
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
 		
-        [miniSearchView setFrame:CGRectMake(0, 44, self.view.bounds.size.width, 44)];
+        [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
         [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		[self.view bringSubviewToFront:rollawayToolbar];
         
 	}else {
         
-		[miniSearchView setFrame:CGRectMake(0, 44, self.view.bounds.size.width, 44)];
+		[miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
         [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		[self.view bringSubviewToFront:rollawayToolbar];
 	}
@@ -558,10 +558,10 @@
 	[UIView setAnimationDuration:0.15];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake(0,44 , self.view.bounds.size.width, 44)];
+		[miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
         [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 	}else {
-		[miniSearchView setFrame:CGRectMake(0,44 , self.view.bounds.size.width, 44)];
+		[miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
         [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 	}
 	
