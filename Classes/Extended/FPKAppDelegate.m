@@ -8,7 +8,7 @@
 
 #import "FPKAppDelegate.h"
 
-#import "MainViewController.h"
+#import "FPKMainViewController.h"
 
 @implementation FPKAppDelegate
 
@@ -27,9 +27,9 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[[MainViewController alloc] initWithNibName:@"MainViewController_iPhone" bundle:nil] autorelease];
+        self.viewController = [[[FPKMainViewController alloc] initWithNibName:@"FPKMainViewController_iPhone" bundle:nil] autorelease];
     } else {
-        self.viewController = [[[MainViewController alloc] initWithNibName:@"MainViewController_iPad" bundle:nil] autorelease];
+        self.viewController = [[[FPKMainViewController alloc] initWithNibName:@"FPKMainViewController_iPad" bundle:nil] autorelease];
     }
     
     self.window.rootViewController = self.viewController;

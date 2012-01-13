@@ -3,11 +3,11 @@
 //  SampleProject
 //
 
-#import "MainViewController.h"
+#import "FPKMainViewController.h"
 #import <FastPdfKit/ReaderViewController.h>
 #import "OverlayManager.h"
 
-@implementation MainViewController
+@implementation FPKMainViewController
 
 -(IBAction)actionOpenPlainDocument:(id)sender{
     /** Set document name */

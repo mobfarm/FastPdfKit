@@ -13,7 +13,7 @@
 
 */
 
-@interface MainViewController : UIViewController
+@interface FPKMainViewController : UIViewController
 
 /**
  The document to open a pdf document with FastPdfKit.

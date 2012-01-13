@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class MainViewController;
+@class FPKMainViewController;
 
 @interface FPKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) MainViewController *viewController;
+@property (strong, nonatomic) FPKMainViewController *viewController;
 
 @end
