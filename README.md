@@ -299,6 +299,11 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.2.3 (January 24th, Tuesday, 2012)
+* Removed a few debugging logs
+* Added support to remote link in the ToC/Outline
+* Internal document links work again
+
 ### Update 3.2.2 (January 13th, Friday, 2012)
 * Fixed tiled overlay view flag being ignored
 * Removed unneeded operator in the pdf scanner

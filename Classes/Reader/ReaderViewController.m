@@ -319,6 +319,18 @@
     [self dismissAlternateViewController];
 }
 
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestDestination:(NSString *)destinationName file:(NSString *)file {
+    
+    // Here's the chance to unload this view controller and load a new one with the starting page set to the page returned
+    // by MFDocumentManager's -pageForNamedDestination: method.
+}
+
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page file:(NSString *)file {
+    
+    // Here's the chance to unload this view controller and load a new one with the starting page set to page.
+    
+}
+
 -(IBAction) actionOutline:(id)sender {
 	
 	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 

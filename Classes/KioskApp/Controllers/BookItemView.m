@@ -867,10 +867,10 @@
 	NSString *doctype = [listItems objectAtIndex:listItems.count-1];
 	
 	if ([doctype isEqualToString:@"pdf"]) {
-		NSLog(@"Is Pdf");
+		// NSLog(@"Is Pdf");
 		return YES;
 	}else{
-		NSLog(@"Is fpk");
+		// NSLog(@"Is fpk");
 		return NO;
 	}
 }

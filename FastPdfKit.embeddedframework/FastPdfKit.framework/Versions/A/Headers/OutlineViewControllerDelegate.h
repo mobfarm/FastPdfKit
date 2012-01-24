@@ -14,6 +14,10 @@
 
 -(void)dismissOutlineViewController:(OutlineViewController *)ovc;
 
+@optional
+
 -(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page;
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page file:(NSString *)file;
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestDestination:(NSString *)destinationName file:(NSString *)file;
 
 @end

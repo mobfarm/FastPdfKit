@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "OutlineViewControllerDelegate.h"
 
-@class DocumentViewController;
-
 @interface OutlineViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
 
 	NSMutableArray *outlineEntries;

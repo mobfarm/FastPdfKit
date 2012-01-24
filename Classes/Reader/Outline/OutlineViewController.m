@@ -8,7 +8,7 @@
 
 #import "OutlineViewController.h"
 #import "MFPDFOutlineEntry.h"
-#import "DocumentViewController.h"
+#import "MFPDFOutlineRemoteEntry.h"
 #import "ReaderViewController.h"
 
 @implementation OutlineViewController
@@ -43,7 +43,7 @@
 	
 	static NSString *cellId = @"outlineCellId";
 	
-	MFPDFOutlineEntry *entry = [outlineEntries objectAtIndex:indexPath.row];
+	id entry = [outlineEntries objectAtIndex:indexPath.row];
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
 	
@@ -58,11 +58,36 @@
     [cell setAccessoryType:UITableViewCellAccessoryNone];
     [[cell imageView]setImage:nil];
     
-    if([entry pageNumber] != 0) { // Check if the link is valid.
-        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-    }
+    // In the case of MFPDFOutlineEntry we don't show the accessory if the pageNumber is 0. In the case of
+    // the MFPDFOutlineRemoteEntry we don't show the accessory if there's no destination file or if both
+    // the page number and destination name are missing.
     
-	if([[entry bookmarks]count]> 0) { // Check if the entry has children.
+    if([entry isKindOfClass:[MFPDFOutlineRemoteEntry class]]) { // Remote (another document) entry
+        
+        MFPDFOutlineRemoteEntry * outlineEntry = (MFPDFOutlineRemoteEntry *)entry;
+        
+        if(!(([outlineEntry file])&&(([outlineEntry pageNumber]!=0)||[outlineEntry destination]))) {
+            
+            [cell setAccessoryType:UITableViewCellAccessoryNone];            
+        }
+        
+    } else if ([entry isKindOfClass:[MFPDFOutlineEntry class]]) { // Local (this document) entry
+        
+        MFPDFOutlineEntry * outlineEntry = (MFPDFOutlineEntry *)entry;
+        
+        if([outlineEntry pageNumber] == 0) {
+            
+            [cell setAccessoryType:UITableViewCellAccessoryNone];
+        }
+        
+    } else {
+        
+        // This should never happen since the outline method of the manager only return
+        // instances of the above classes.
+    }
+
+    
+	if([[(MFPDFOutlineEntry *)entry bookmarks]count]> 0) { // Check if the entry has children.
         
         [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangleright",@"png")]];
 	}
@@ -76,19 +101,50 @@
 
 -(void) tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 	
-	MFPDFOutlineEntry *entry = [outlineEntries objectAtIndex:indexPath.row];
+    id entry = [outlineEntries objectAtIndex:indexPath.row];
 	
 	// Go to page if it is not 0. The point is that some kind of link are not supported, for example the ones
 	// that refer to actions linking to other pdf files. In this case the destination page is set to be 0, and
 	// it never exist. We already have a control in the cellForRowAtIndexPath: method and the setPage: method
 	// does nothing if the page is 0, but better be paranoid than sorry.
 	
-	NSUInteger pageNumber = [entry pageNumber];
-	if(pageNumber != 0) {
-		
-		[delegate outlineViewController:self didRequestPage:pageNumber];
-	}
-	
+    
+    if([entry isKindOfClass:[MFPDFOutlineRemoteEntry class]]) {
+        
+        MFPDFOutlineRemoteEntry * outlineEntry = (MFPDFOutlineRemoteEntry *)entry;
+        NSString * file = nil;
+        NSString * destination = nil;
+        NSUInteger pageNumber = 0;
+        
+        if((file = [outlineEntry file])) {
+            
+            if((pageNumber = [outlineEntry pageNumber])!=0) {
+                
+                if([delegate respondsToSelector:@selector(outlineViewController:didRequestPage:file:)])
+                    [delegate outlineViewController:self didRequestPage:pageNumber file:file];
+                
+            } else if ((destination = [outlineEntry destination])) {
+                
+                if([delegate respondsToSelector:@selector(outlineViewController:didRequestDestination:file:)])
+                    [delegate outlineViewController:self didRequestDestination:destination file:file];
+            }
+        }
+        
+    } else if ([entry isKindOfClass:[MFPDFOutlineEntry class]]) {
+        
+        
+        NSUInteger pageNumber = [(MFPDFOutlineEntry *)entry pageNumber];
+        if(pageNumber != 0) {
+            
+            if([delegate respondsToSelector:@selector(outlineViewController:didRequestPage:)])
+                [delegate outlineViewController:self didRequestPage:pageNumber];
+        }
+        
+    } else {
+        
+        // This should never happen!
+    }
+
 }
 
 -(void)recursivelyAddVisibleChildrenOfEntry:(MFPDFOutlineEntry *)entry toArray:(NSMutableArray *)array {
