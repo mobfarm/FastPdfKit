@@ -299,6 +299,9 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.2.4 (January 30, 2012)
+* Changed font cache again. This should avoid a few cases of creshes due to an NULL font name;
+
 ### Update 3.2.3 (January 24th, Tuesday, 2012)
 * Removed a few debugging logs
 * Added support to remote link in the ToC/Outline
