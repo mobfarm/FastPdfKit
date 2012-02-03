@@ -358,10 +358,10 @@
         pdfInDownload=NO;
     }else{
     
-        [self.httpRequest cancel];
+        
     }
     
-    
+    [self.httpRequest cancel];
     
     downloadPdfStopped = YES;
 	
