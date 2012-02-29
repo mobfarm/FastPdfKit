@@ -801,43 +801,47 @@
     
     if (![uri hasPrefix:@"#page="]){
         
-        NSArray *arrayParameter = nil;
-        NSString *uriType = nil;
-        NSString *uriResource = nil;
-        
-        NSString * documentPath = nil;
-        
-        arrayParameter = [uri componentsSeparatedByString:@"://"];
-        
-        uriType = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:0]];
-        
-        uriResource = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:1]];
-        
-        if ([uriType isEqualToString:@"fpke"]) {
+        if (![uri hasPrefix:@"mailto:"]) {
+            NSArray *arrayParameter = nil;
+            NSString *uriType = nil;
+            NSString *uriResource = nil;
             
-            documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+            NSString * documentPath = nil;
             
-            [self playVideo:documentPath local:YES];
+            arrayParameter = [uri componentsSeparatedByString:@"://"];
+            
+            uriType = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:0]];
+            
+            uriResource = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:1]];
+            
+            if ([uriType isEqualToString:@"fpke"]) {
+                
+                documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+                
+                [self playVideo:documentPath local:YES];
+            }
+            
+            if ([uriType isEqualToString:@"fpkz"]) {
+                
+                documentPath = [@"http://" stringByAppendingString:uriResource];
+                
+                [self playVideo:documentPath local:NO];
+            }
+            
+            if ([uriType isEqualToString:@"fpki"]){
+                
+                documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+                
+                [self showWebView:documentPath local:YES];
+            }
+            
+            if ([uriType isEqualToString:@"http"]){
+                
+                [self showWebView:uri local:NO];
+            }
         }
         
-        if ([uriType isEqualToString:@"fpkz"]) {
-            
-            documentPath = [@"http://" stringByAppendingString:uriResource];
-            
-            [self playVideo:documentPath local:NO];
-        }
         
-        if ([uriType isEqualToString:@"fpki"]){
-            
-            documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
-            
-            [self showWebView:documentPath local:YES];
-        }
-        
-        if ([uriType isEqualToString:@"http"]){
-            
-            [self showWebView:uri local:NO];
-        }
     
     
     }else{
