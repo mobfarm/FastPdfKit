@@ -299,6 +299,10 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.3 (February 8, 2012)
+* Improved support for the new retina iPad
+* Fixed (contained) a crash occurring when the pdf provokes a transform stack buffer underflow
+
 ### Update 3.2.4 (January 30, 2012)
 * Changed font cache again. This should avoid a few cases of creshes due to an NULL font name;
 
