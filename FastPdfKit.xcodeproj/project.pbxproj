@@ -362,6 +362,13 @@
 		959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
 		95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5E13CCA59800195F0F /* Manual.pdf */; };
 		95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */; };
+		95EAEE61150E615600AFED78 /* backThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EAEE5B150E615600AFED78 /* backThumb@2x.png */; };
+		95EAEE62150E615600AFED78 /* download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EAEE5C150E615600AFED78 /* download@2x.png */; };
+		95EAEE63150E615600AFED78 /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EAEE5D150E615600AFED78 /* header@2x.png */; };
+		95EAEE64150E615600AFED78 /* remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EAEE5E150E615600AFED78 /* remove@2x.png */; };
+		95EAEE65150E615600AFED78 /* resume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EAEE5F150E615600AFED78 /* resume@2x.png */; };
+		95EAEE66150E615600AFED78 /* view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EAEE60150E615600AFED78 /* view@2x.png */; };
+		95EAEE69150E623100AFED78 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EAEE68150E623000AFED78 /* pause@2x.png */; };
 		95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FFFB6D14B48C3100B1CD3B /* FastPdfKit.framework */; };
 		95EF544114B48E4800910B3D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
 		95EF544214B48E4C00910B3D /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
@@ -674,6 +681,13 @@
 		95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ManualCrypt.pdf; path = Doc/ManualCrypt.pdf; sourceTree = SOURCE_ROOT; };
 		95B8BDB613CCAB3200195F0F /* FPKKioskBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FPKKioskBundle.bundle; path = Bundle/FPKKioskBundle.bundle; sourceTree = SOURCE_ROOT; };
 		95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FPKReaderBundle.bundle; path = Bundle/FPKReaderBundle.bundle; sourceTree = SOURCE_ROOT; };
+		95EAEE5B150E615600AFED78 /* backThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backThumb@2x.png"; path = "../../../Dropbox/MobFarm/The new iPad/FastPdfKit/backThumb@2x.png"; sourceTree = "<group>"; };
+		95EAEE5C150E615600AFED78 /* download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "download@2x.png"; path = "../../../Dropbox/MobFarm/The new iPad/FastPdfKit/download@2x.png"; sourceTree = "<group>"; };
+		95EAEE5D150E615600AFED78 /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "header@2x.png"; path = "../../../Dropbox/MobFarm/The new iPad/FastPdfKit/header@2x.png"; sourceTree = "<group>"; };
+		95EAEE5E150E615600AFED78 /* remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "remove@2x.png"; path = "../../../Dropbox/MobFarm/The new iPad/FastPdfKit/remove@2x.png"; sourceTree = "<group>"; };
+		95EAEE5F150E615600AFED78 /* resume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "resume@2x.png"; path = "../../../Dropbox/MobFarm/The new iPad/FastPdfKit/resume@2x.png"; sourceTree = "<group>"; };
+		95EAEE60150E615600AFED78 /* view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "view@2x.png"; path = "../../../Dropbox/MobFarm/The new iPad/FastPdfKit/view@2x.png"; sourceTree = "<group>"; };
+		95EAEE68150E623000AFED78 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause@2x.png"; path = "../../../../../Dropbox/MobFarm/The new iPad/FastPdfKit/pause@2x.png"; sourceTree = "<group>"; };
 		95EF544414B48EDD00910B3D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		95EF544514B48EDD00910B3D /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
 		95EF544614B48EDD00910B3D /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
@@ -911,6 +925,7 @@
 				6FB976F913CB6E63007C368C /* resume.png */,
 				6FB976FA13CB6E63007C368C /* view.png */,
 				6FFCFA2C1356EC920028DD38 /* pause.png */,
+				95EAEE68150E623000AFED78 /* pause@2x.png */,
 				01884927131E8A6F0045038F /* border.png */,
 			);
 			name = Images;
@@ -958,6 +973,12 @@
 				95422FC71508ADE60016E78E /* zoomLock@2x.png */,
 				01884954131E8A6F0045038F /* zoomUnlock.png */,
 				95422FC51508ADDF0016E78E /* zoomUnlock@2x.png */,
+				95EAEE5B150E615600AFED78 /* backThumb@2x.png */,
+				95EAEE5C150E615600AFED78 /* download@2x.png */,
+				95EAEE5D150E615600AFED78 /* header@2x.png */,
+				95EAEE5E150E615600AFED78 /* remove@2x.png */,
+				95EAEE5F150E615600AFED78 /* resume@2x.png */,
+				95EAEE60150E615600AFED78 /* view@2x.png */,
 			);
 			name = img;
 			path = ../img;
@@ -1855,6 +1876,13 @@
 				6FB977A713CC4E5E007C368C /* kiosk_list.xml in Resources */,
 				6FE7E4A813CC5EB0006A7E68 /* Kiosk_ipad.xib in Resources */,
 				6FE7E4A913CC5EB4006A7E68 /* Kiosk_phone.xib in Resources */,
+				95EAEE61150E615600AFED78 /* backThumb@2x.png in Resources */,
+				95EAEE62150E615600AFED78 /* download@2x.png in Resources */,
+				95EAEE63150E615600AFED78 /* header@2x.png in Resources */,
+				95EAEE64150E615600AFED78 /* remove@2x.png in Resources */,
+				95EAEE65150E615600AFED78 /* resume@2x.png in Resources */,
+				95EAEE66150E615600AFED78 /* view@2x.png in Resources */,
+				95EAEE69150E623100AFED78 /* pause@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
