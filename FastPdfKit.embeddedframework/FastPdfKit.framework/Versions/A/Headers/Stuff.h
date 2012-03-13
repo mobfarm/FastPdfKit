@@ -81,6 +81,31 @@ enum MFDocumentDirection {
 };
 typedef NSUInteger MFDocumentDirection;
 
+/**
+ Supported orientation.
+ */
+enum FPKSupportedOrientation {
+    FPKSupportedOrientationNone = 0,
+    FPKSupportedOrientationPortrait = 1,
+    FPKSupportedOrientationPortraitUpsideDown = 2,
+    FPKSupportedOrientationLandscapeRight = 4,
+    FPKSupportedOrientationLandscapeLeft = 8
+};
+typedef NSUInteger FPKSupportedOrientation;
+
+
+static BOOL isOrientationSupported(NSUInteger orientation, NSUInteger orientations) {
+    
+    NSUInteger zeroOrNotZero;
+    zeroOrNotZero = (orientation & orientations);
+    
+    if(zeroOrNotZero) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 #define IS_DEVICE_PAD ([UIDevice instancesRespondToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
 

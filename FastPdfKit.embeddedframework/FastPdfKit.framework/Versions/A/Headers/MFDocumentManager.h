@@ -37,6 +37,8 @@
     NSMutableDictionary * fontCache;
     
     BOOL fontCacheEnabled;
+    
+    BOOL alternateURISchemesEnabled;
 }
 
 // These method are used internally.
@@ -170,5 +172,12 @@
  page and its unicode representation. Check FPKGlyphBox interface for details.
  */
 -(NSArray *)glyphBoxesForPage:(NSUInteger)pageNr;
+
+/**
+ Enable alternate URI annotations schemes like video://, videoremote://, audio://,
+ audioremote://, etcetera.
+ Default value is YES.
+ */
+@property (nonatomic,assign) BOOL alternateURISchemesEnabled;
 
 @end

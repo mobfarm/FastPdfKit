@@ -80,12 +80,24 @@
     CGFloat padding;
 	
     BOOL useTiledOverlayView;
+    
+    FPKSupportedOrientation supportedOrientation;
 }
 
 @property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
 -(void)addDocumentDelegate:(NSObject<MFDocumentViewControllerDelegate> *)delegate;
 -(void)removeDocumentDelegate:(NSObject<MFDocumentViewControllerDelegate> *)delegate;
 
+/**
+ Value representing supported orientation by this view controller. You can set
+ multiple values by OR-ing them together.
+ 
+ For example:
+ 
+ supportedOrientation = FPKSupportedOrientationPortrait | FPKSupportedOrientationPortaitUpsideDown
+ 
+ */
+@property (nonatomic,readwrite) FPKSupportedOrientation supportedOrientation;
 
 @property (readonly) MFDocumentManager * document;
 

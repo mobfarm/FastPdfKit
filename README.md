@@ -299,7 +299,11 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
-### Update 3.3 (February 8, 2012)
+### Update 3.3.1 (March 13, 2012)
+* Added a supportedOrientation attribute to allow change of supported orientation at runtime
+* Added alternate schemes (prefixes) for annotations' uri
+
+### Update 3.3 (March 8, 2012)
 * Improved support for the new retina iPad
 * Fixed (contained) a crash occurring when the pdf provokes a transform stack buffer underflow
 
