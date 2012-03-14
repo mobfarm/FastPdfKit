@@ -797,55 +797,61 @@
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri{
     
-    NSArray *arrayParameter = nil;
-    
-    if (![uri hasPrefix:@"#page="]){
+    if (![uri hasPrefix:@"#page="]) {
         
         if (![uri hasPrefix:@"mailto:"]) {
-            NSArray *arrayParameter = nil;
+            
+            //NSArray *arrayParameter = nil;
             NSString *uriType = nil;
             NSString *uriResource = nil;
             
             NSString * documentPath = nil;
             
-            arrayParameter = [uri componentsSeparatedByString:@"://"];
+            NSRange separatorRange = [uri rangeOfString:@"://"];
             
-            uriType = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:0]];
-            
-            uriResource = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:1]];
-            
-            if ([uriType isEqualToString:@"fpke"]) {
+            if(separatorRange.location!=NSNotFound) {
                 
-                documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+                //arrayParameter = [uri componentsSeparatedByString:@"://"];
                 
-                [self playVideo:documentPath local:YES];
-            }
-            
-            if ([uriType isEqualToString:@"fpkz"]) {
+                //uriType = [arrayParameter objectAtIndex:0];
+                uriType = [uri substringToIndex:separatorRange.location];
+                //uriResource = [arrayParameter objectAtIndex:1];
+                uriResource = [uri substringFromIndex:separatorRange.location + separatorRange.length];
                 
-                documentPath = [@"http://" stringByAppendingString:uriResource];
+                if ([uriType isEqualToString:@"fpke"]||[uriType isEqualToString:@"videomodal"]) {
+                    
+                    documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+                    
+                    [self playVideo:documentPath local:YES];
+                }
                 
-                [self playVideo:documentPath local:NO];
-            }
-            
-            if ([uriType isEqualToString:@"fpki"]){
+                if ([uriType isEqualToString:@"fpkz"]||[uriType isEqualToString:@"videoremotemodal"]) {
+                    
+                    documentPath = [@"http://" stringByAppendingString:uriResource];
+                    
+                    [self playVideo:documentPath local:NO];
+                }
                 
-                documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+                if ([uriType isEqualToString:@"fpki"]||[uriType isEqualToString:@"htmlmodal"]){
+                    
+                    documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
+                    
+                    [self showWebView:documentPath local:YES];
+                }
                 
-                [self showWebView:documentPath local:YES];
-            }
-            
-            if ([uriType isEqualToString:@"http"]){
-                
-                [self showWebView:uri local:NO];
+                if ([uriType isEqualToString:@"http"]){
+                    
+                    [self showWebView:uri local:NO];
+                }
             }
         }
         
+    } else {
         
-    
-    
-    }else{
-    
+        // Chop the page parameters into an array and set is as current page parameters
+        
+        NSArray *arrayParameter = nil;
+        
         arrayParameter = [uri componentsSeparatedByString:@"="];
         
         [self setPage:[[arrayParameter objectAtIndex:1]intValue]];

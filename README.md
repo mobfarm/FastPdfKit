@@ -299,6 +299,9 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.3.2 (March 14, 2012)
+* Alternate uri definition for modal annotations
+
 ### Update 3.3.1 (March 13, 2012)
 * Added a supportedOrientation attribute to allow change of supported orientation at runtime
 * Added alternate schemes (prefixes) for annotations' uri
