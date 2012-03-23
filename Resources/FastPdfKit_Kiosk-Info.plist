@@ -37,12 +37,6 @@
 			<string>UINewsstandBindingTypeMagazine</string>
 		</dict>
 	</dict>
-	<key>UINewsstandApp</key>
-	<false/>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>newsstand-content</string>
-	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.mobfarm.fastpdfkit.kiosk</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -56,7 +50,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>114</string>
+	<string>115</string>
 	<key>Icon alread includes gloss effects</key>
 	<true/>
 	<key>Icon files</key>
@@ -67,12 +61,18 @@
 	</array>
 	<key>NSMainNibFile</key>
 	<string>MainWindow_Kiosk</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>newsstand-content</string>
+	</array>
 	<key>UILaunchImageFile</key>
 	<string>Deafult.png</string>
 	<key>UILaunchImageFile~ipad</key>
 	<string>Default-Pad.png</string>
 	<key>UILaunchImageFile~iphone</key>
 	<string>Deafult.png</string>
+	<key>UINewsstandApp</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

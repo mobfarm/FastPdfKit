@@ -299,6 +299,11 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.3.3 (March 23, 2012)
+* New rendering approach just for the new iPad (and its weak A5X CPU)
+* Page thumbnails created for Retina Display on the new iPad
+* Core Library built with Xcode 4.2 and iOS 5.0 to avoid poor performances caused by a (reintroduced) CATiledLayer.
+
 ### Update 3.3.2 (March 14, 2012)
 * Alternate uri definition for modal annotations
 
