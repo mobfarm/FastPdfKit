@@ -17,6 +17,8 @@
 
 @interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
 	
+    NSString * documentId;
+    
 @private
 	
 	// Mode change callback delegate
@@ -28,7 +30,7 @@
     
 	// Resources.
 	NSOperationQueue * operationQueue;
-	
+    
 	// Document.
 	MFDocumentManager * document;
 	
@@ -84,8 +86,22 @@
     FPKSupportedOrientation supportedOrientation;
 }
 
+/**
+ This property let you add the main DocumentViewControllerDelegate.
+ */
+
 @property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
+
+/**
+ If you need to register objects as DocumentViewControllerDelegate you can add them using this method.
+ */
+
 -(void)addDocumentDelegate:(NSObject<MFDocumentViewControllerDelegate> *)delegate;
+
+/**
+ If you have more than one DocumentViewControllerDelegate you can remove any of them with this method.
+ */
+
 -(void)removeDocumentDelegate:(NSObject<MFDocumentViewControllerDelegate> *)delegate;
 
 /**
@@ -146,9 +162,14 @@
 @property (nonatomic,readwrite) BOOL fpkAnnotationsEnabled;
 
 /**
- Add and remove an Overlay View Datasource for overlay UIViews.
+ Add an Overlay View Datasource for overlay UIViews.
 */
 -(void)addOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
+
+/**
+ Remove an Overlay View Datasource for overlay UIViews.
+ */
+
 -(void)removeOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
 
 /**
@@ -186,6 +207,11 @@
 -(NSUInteger)rightPage;
 
 /**
+ Document identifier, to allow discriminate between different documents.
+ */
+@property (nonatomic, copy) NSString * documentId;
+
+/**
  Set the starting page of the document. It is valid only after initialization
  and before the view is displayed on the screen. Tipically you want to set this 
  just after the init of the viewController.
@@ -205,6 +231,11 @@
  and 0.5 to prevent overlap.
  */
 -(void)setEdgeFlipWidth:(CGFloat)edgeFlipWidth;
+
+/**
+ Get the edge flip width
+ */
+
 -(CGFloat)edgeFlipWidth;
 
 /**
@@ -219,6 +250,9 @@
  */
 @property (assign,readwrite,getter=isZoomInOnDoubleTapEnabled) BOOL zoomInOnDoubleTapEnabled;
 
+/**
+ Enabled the document interaction.
+ */
 @property (assign,readwrite,getter=isDocumentInteractionEnabled) BOOL documentInteractionEnabled;
 
 /**
@@ -239,6 +273,10 @@
  This is the default maximum magnification the pdf will zoom.
  */
 @property (nonatomic,readwrite) float defaultMaxZoomScale;
+
+/**
+ Call this method to start working with the pdf.
+ */
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
 
@@ -353,7 +391,6 @@
  */
 -(void)cleanUp;
 
-
 /**
  Convert a point from MFDocumentViewController's view space to page space.
  */
@@ -368,7 +405,6 @@
  Convert a rect from MFDocumentViewController's view space to page space.
  */
 -(CGRect)convertRect:(CGRect)rect fromViewToPage:(NSUInteger)page;
-
 
 /**
  Convert a rect from page space to MFDocumentViewController's view space.
@@ -412,6 +448,17 @@
  Set the maximum zoom scale for the pdf page.
  */
 -(void)setMaximumZoomScale:(NSNumber *)scale;
+
+
+/**
+ Hide the bottom thumbnail scroll view.
+ */
+-(void)hideThumbnails;
+
+/**
+ Show the bottom thumbnail scroll view.
+ */
+-(void)showThumbnails;
 
 /**
  Set the max number of preview images to use at any time. Call this before 

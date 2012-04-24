@@ -16,7 +16,6 @@
 #import "OutlineViewControllerDelegate.h"
 #import "TextDisplayViewControllerDelegate.h"
 #import "MediaPlayer/MediaPlayer.h"
-#import "TVThumbnailScrollView.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
@@ -34,10 +33,7 @@
 #define FPK_SEARCH_VIEW_MODE_MINI 0
 #define FPK_SEARCH_VIEW_MODE_FULL 1
 
-@interface ReaderViewController : MFDocumentViewController <TVThumbnailScrollViewDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
-	
-	TVThumbnailScrollView * thumbnailScrollView;
-	UIView * bottomToolbarView;
+@interface ReaderViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
 	
 	UILabel * numberOfPageTitleToolbar;
 	UILabel * pageNumLabel;
@@ -51,9 +47,7 @@
 	CGFloat thumbSliderViewBorderWidth;
 	CGFloat thumbSliderViewHeight;
 	
-	NSString * documentId;  // Keep an unique reference to the document in the application (could be an ID, the name, etc)
-	
-    // Child view controllers
+	// Child view controllers
     
 	SearchViewController * searchViewController;
 	SearchManager * searchManager;
@@ -128,7 +122,6 @@
 -(void)showToolbar;
 -(void)hideToolbar;
 
-@property (nonatomic, copy) NSString * documentId;
 
 @property (nonatomic, retain) UIToolbar * rollawayToolbar;
 @property (nonatomic, retain) UILabel * pageNumLabel;
@@ -149,9 +142,6 @@
 
 @property (nonatomic, retain) UILabel * numberOfPageTitleToolbar;
 
-@property (nonatomic, retain) TVThumbnailScrollView * thumbnailScrollView;
-@property (nonatomic, retain) UIView *bottomToolbarView;
-
 @property (nonatomic, retain) SearchViewController * searchViewController;
 @property (nonatomic, retain) SearchManager * searchManager;
 @property (nonatomic, retain) MiniSearchView * miniSearchView;
@@ -162,8 +152,6 @@
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
 
 
--(void)hideHorizontalThumbnails;
--(void)showHorizontalThumbnails;
 -(void)dismissAlternateViewController;
 -(void)playVideo:(NSString *)path local:(BOOL)isLocal;
 -(void)playAudio:(NSString *)path local:(BOOL)isLocal;

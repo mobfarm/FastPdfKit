@@ -39,7 +39,6 @@
 @synthesize textButton, textDisplayViewController;
 @synthesize searchViewController, searchButton, searchManager,miniSearchView;
 @synthesize thumbnailView;
-@synthesize documentId;
 @synthesize reusablePopover;
 @synthesize delegate;
 
@@ -1131,8 +1130,6 @@
 
 - (void)dealloc {
 	
-    [documentId release], documentId = nil;
-    
     [reusablePopover release], reusablePopover = nil;
     
 	[searchManager release], searchManager = nil;

@@ -70,9 +70,8 @@
 	MiniSearchView * miniSearchView;
 	
     // Document's ID. We use this as an unique id for bookmarks and other per-document data.
-    NSString * documentId;
-	
-	NSString * nomefile;
+    
+    NSString * nomefile;
 	
 	// Popover management.
 	
@@ -92,8 +91,6 @@
 -(IBAction) actionDismiss:(id)sender;
 
 @property (nonatomic, assign) id delegate;
-
-@property (nonatomic, copy) NSString * documentId;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 

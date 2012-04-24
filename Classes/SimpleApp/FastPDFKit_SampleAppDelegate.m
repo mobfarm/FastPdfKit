@@ -20,6 +20,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
+    // Load default settings
+    
+    NSString * bundlePath = [[NSBundle mainBundle]bundlePath];
+    NSString * settingsBundlePath = [bundlePath stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString * settingsPath = [NSBundle pathForResource:@"Root" ofType:@"plist" inDirectory:settingsBundlePath];
+    
+    NSLog(@"Settings %@", settingsPath);
+    
+    NSDictionary * settingsDictionary = [NSDictionary dictionaryWithContentsOfFile:settingsPath];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:settingsDictionary];
+    
     MenuViewController *aMenuViewController = nil;
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {

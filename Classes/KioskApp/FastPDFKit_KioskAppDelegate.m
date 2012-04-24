@@ -18,7 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    // Load default settings
+    
+    NSString * bundlePath = [[NSBundle mainBundle]bundlePath];
+    NSString * settingsBundlePath = [bundlePath stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString * settingsPath = [NSBundle pathForResource:@"Root" ofType:@"plist" inDirectory:settingsBundlePath];
+    
+    NSLog(@"Settings %@", settingsPath);
+    
+    NSDictionary * settingsDictionary = [NSDictionary dictionaryWithContentsOfFile:settingsPath];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:settingsDictionary];
+    
+    
     //Comment the line below to disable NewsStand remote Notification
+    
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",@"FastPdfKit_Kiosk-Info"]];
     
     NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];

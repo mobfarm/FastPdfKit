@@ -37,15 +37,13 @@
 
 @implementation ReaderViewController
 
-@synthesize bottomToolbarView;
-//@synthesize thumbImgArray;
 @synthesize rollawayToolbar;
 
 @synthesize searchBarButtonItem, changeModeBarButtonItem, zoomLockBarButtonItem, changeDirectionBarButtonItem, changeLeadBarButtonItem;
 @synthesize bookmarkBarButtonItem, textBarButtonItem, numberOfPageTitleBarButtonItem, dismissBarButtonItem, outlineBarButtonItem;
 @synthesize numberOfPageTitleToolbar;
 @synthesize pageNumLabel;
-@synthesize documentId;
+
 @synthesize textDisplayViewController;
 @synthesize searchViewController;
 @synthesize searchManager;
@@ -57,8 +55,6 @@
 @synthesize changeModeButton,zoomLockButton,changeDirectionButton,changeLeadButton;
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft, imgModeOverflow;
-
-@synthesize thumbnailScrollView;
 
 -(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
 
@@ -166,35 +162,10 @@
 -(IBAction) actionThumbnail:(id)sender{
 	
 	if (thumbsViewVisible) {
-		[self hideHorizontalThumbnails];
+		[self hideThumbnails];
 	}else {
-		[self showHorizontalThumbnails];
+		[self showThumbnails];
 	}
-}
-
--(void)showHorizontalThumbnails{
-    
-	if (bottomToolbarView.frame.origin.y >= self.view.bounds.size.height) {
-	
-		[UIView beginAnimations:@"show" context:NULL];
-		[UIView setAnimationDuration:0.35];
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		[bottomToolbarView setFrame:CGRectMake(0, bottomToolbarView.frame.origin.y-bottomToolbarView.frame.size.height, bottomToolbarView.frame.size.width, bottomToolbarView.frame.size.height)];
-		[UIView commitAnimations];
-		thumbsViewVisible = YES;
-        [thumbnailScrollView start];
-	}
-}
-
--(void)hideHorizontalThumbnails {
-    
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[bottomToolbarView setFrame:CGRectMake(0, bottomToolbarView.frame.origin.y+bottomToolbarView.frame.size.height, bottomToolbarView.frame.size.width, bottomToolbarView.frame.size.height)];
-	[UIView commitAnimations];
-	thumbsViewVisible = NO;
-    [thumbnailScrollView stop];
 }
 
 #pragma mark -
@@ -957,9 +928,6 @@
     
 	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(page,[[self document]numberOfPages])];
 	
-	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
-	
-    [thumbnailScrollView setPage:page animated:YES];
 	//[thumbsliderHorizontal goToPage:page-1 animated:YES];
 	
 	[self setNumberOfPageToolbar];
@@ -1091,7 +1059,7 @@
                 [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 			
                 [self showToolbar];
-                [self showHorizontalThumbnails];
+                [self showThumbnails];
 			
                 [miniSearchView setHidden:NO];
 			
@@ -1104,7 +1072,7 @@
                 [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 			
                 [self hideToolbar];
-                [self hideHorizontalThumbnails];
+                [self hideThumbnails];
 			
                 [miniSearchView setHidden:YES];
 			
@@ -1602,99 +1570,8 @@
 	
 	[super viewDidLoad];
 	
-    
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
-		// Initialize the thumb slider containter view. 
-		
-		aContainerView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width,204)];
-		thumbSliderToolbarHeight = 44; // Height of the thumb that include the slider.
-		thumbSliderViewBorderWidth = 100;
-		thumbSliderHeight = 20 ; // Height of the slider.
-		
-		thumbSliderOffsetY = aContainerView.frame.size.height-44; // Vertical offset of the toolbar.
-		thumbSliderOffsetX = thumbSliderOffsetY + 10; // Horizontal offset of the toolbar.
-		
-	} else {
-		
-		aContainerView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.bounds.size.width, 114)];
-		thumbSliderToolbarHeight = 44;
-		thumbSliderViewBorderWidth = 50;
-		thumbSliderHeight = 10;
-		thumbSliderOffsetY = aContainerView.frame.size.height-44;
-		thumbSliderOffsetX = thumbSliderOffsetY + 10;
-	}
-	
-    [aContainerView setBackgroundColor:[UIColor brownColor]];
-	[aContainerView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
-	[aContainerView setAutoresizesSubviews:YES];
-	[aContainerView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3]];
-	
-	aThumbSliderToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, thumbSliderOffsetY, self.view.frame.size.width, thumbSliderToolbarHeight)];
-	[aThumbSliderToolbar setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
-	aThumbSliderToolbar.barStyle = UIBarStyleBlackTranslucent;
-	
-	[aContainerView addSubview:aThumbSliderToolbar];
-	[aThumbSliderToolbar release];
-	
-	if(isPad) {
-		paddingSlider = 10;
-	}
-    
-    aSlider = nil;
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
-        aSlider = [[UISlider alloc]initWithFrame:CGRectMake((self.view.frame.size.width-(aContainerView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2)))/2, thumbSliderOffsetX, aContainerView.frame.size.width-thumbSliderViewBorderWidth-(paddingSlider*2),thumbSliderHeight)];
-    
-    }else{
-    
-        aSlider = [[UISlider alloc]initWithFrame:CGRectMake(10, thumbSliderOffsetX, 230,thumbSliderHeight)];
-    
-    }
-    
-    
-	//Page slider.
-	[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth];
-	[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
-	[aSlider setMinimumValue:1.0];
-	[aSlider setMaximumValue:[[self document] numberOfPages]];
-	[aSlider setContinuous:YES];
-	[aSlider addTarget:self action:@selector(actionPageSliderSlided:) forControlEvents:UIControlEventValueChanged];
-	[aSlider addTarget:self action:@selector(actionPageSliderStopped:) forControlEvents:UIControlEventTouchUpInside];
-	
-	[self setPageSlider:aSlider];
-	
-	[aContainerView addSubview:aSlider];
-	
-	[aSlider release];
-	
-	if(!isPad) {
-		
-		// Set the number of page into the toolbar at the right the slider on iPhone.
-		aLabel = [[UILabel alloc]initWithFrame:CGRectMake((thumbSliderViewBorderWidth/2)+(aContainerView.frame.size.width-thumbSliderViewBorderWidth)-60, thumbSliderOffsetX+6, 75, thumbSliderHeight)];
-		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-		aLabel.text = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
-		aLabel.textAlignment = UITextAlignmentCenter;
-		aLabel.backgroundColor = [UIColor clearColor];
-		aLabel.textColor = [UIColor whiteColor];
-		aLabel.font = [UIFont boldSystemFontOfSize:10.0];
-		[aContainerView addSubview:aLabel];
-		self.pageNumLabel = aLabel;
-		[aLabel release];
-	}
-	
-	[self.view addSubview:aContainerView];
-	
-	self.bottomToolbarView = aContainerView;
-	
-	[aContainerView release];
-	
-    // Utility method to prepare the rollaway toolbar.
-	
 	[self prepareToolbar];
     
-    [self prepareThumbSlider];
 }
 
 
@@ -1875,110 +1752,6 @@
 	[UIView commitAnimations];
 }
 
--(void)prepareThumbSlider {
-	
-    
-    TVThumbnailScrollView * aThumbScrollView = nil;
-    NSString * thumbnailCacheFolderPath = nil;
-    BOOL isPad = NO;
-    
-#ifdef UI_USER_INTERFACE_IDIOM
-    isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-    
-    if(isPad) {
-        aThumbScrollView = [[TVThumbnailScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 160)];
-        aThumbScrollView.thumbnailSize = CGSizeMake(100, 124);
-    } else {
-        aThumbScrollView = [[TVThumbnailScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 70)];
-        aThumbScrollView.thumbnailSize = CGSizeMake(50, 64);
-    }
-    
-    [aThumbScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-
-    
-    /*
-     If there is not an associated documentId use the <APPLICATION_HOME>/tmp
-     folder to store the thumbnail. Be sure that the folder is deleted when the 
-     documentview controller is loaded with a different document manager. 
-     Otherwise, if there's a valid documentId, it tries to reuse the appropriate
-     folder in the <APPLICATION_HOME>/Library/Caches a folder that will be kept
-     between application launches but will not be backed up by iTunes.
-     */
-    
-    NSFileManager * fileManager = [NSFileManager defaultManager];
-    BOOL isDirectory = NO;
-    
-    if(documentId) {
-        
-        thumbnailCacheFolderPath = [[[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"]stringByAppendingPathComponent:documentId]stringByAppendingPathComponent:@"thumbs"];
-        
-        if([fileManager fileExistsAtPath:thumbnailCacheFolderPath isDirectory:&isDirectory]) {
-            
-            // If the file exist and is not a directory, destroy it and creat it as a folder.
-            
-            if(!isDirectory) {
-                
-                [fileManager removeItemAtPath:thumbnailCacheFolderPath error:NULL];
-                [fileManager createDirectoryAtPath:thumbnailCacheFolderPath withIntermediateDirectories:YES attributes:nil error:NULL];
-            }
-            
-        } else {
-            
-            // Create the folder if it does not exist.
-        
-            [fileManager createDirectoryAtPath:thumbnailCacheFolderPath withIntermediateDirectories:YES attributes:nil error:NULL];
-        }
-        
-    } else {
-        
-        thumbnailCacheFolderPath = [NSHomeDirectory() stringByAppendingPathComponent:@"tmp/thumbs"];
-        
-        // Destroy the item, file or folder doesn't matter, then create the folder.
-        
-        if([fileManager fileExistsAtPath:thumbnailCacheFolderPath isDirectory:&isDirectory]) {
-            
-            if(!isDirectory) {
-                
-                // Remove the file.
-                
-                [fileManager removeItemAtPath:thumbnailCacheFolderPath error:NULL];
-                
-            } else {
-                
-                // Remove the contents of the folder, then the folder.
-                
-                NSArray * items = [fileManager contentsOfDirectoryAtPath:thumbnailCacheFolderPath error:NULL];
-                for (NSString * item in items) {
-                    [fileManager removeItemAtPath:item error:NULL];
-                }
-                
-                [fileManager removeItemAtPath:thumbnailCacheFolderPath error:NULL];
-                
-            }
-        } 
-        
-        // (Re)create the folder.
-        
-        [fileManager createDirectoryAtPath:thumbnailCacheFolderPath withIntermediateDirectories:YES attributes:nil error:NULL];
-    }
-    
-    // Setting stuff.
-
-    [aThumbScrollView setCacheFolderPath:thumbnailCacheFolderPath];
-    [aThumbScrollView setDocument:[self document]];
-    [aThumbScrollView setPagesCount:[self.document numberOfPages]];
-    [aThumbScrollView setDelegate:self];
-    
-    // Put the thumb scrollview inside the bottom view initialized in viewDidLoad.
-    
-    self.thumbnailScrollView = aThumbScrollView;
-    [bottomToolbarView addSubview:aThumbScrollView];
-
-    // Cleanup.
-    
-	[aThumbScrollView release];
-}
 
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -1987,12 +1760,8 @@
 	
 }
 
-
 #pragma mark - TVThumbnailScrollViewDelegate methods
 
--(void)thumbnailScrollView:(TVThumbnailScrollView *)scrollView didSelectPage:(NSUInteger)page {
-    [self setPage:page];
-}
 
 
 //- (void)didTappedOnPage:(int)number ofType:(int)type withObject:(id)object{
@@ -2122,6 +1891,8 @@
 	//	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
 	//	as long as you pass an instance of it to the superclass initializer.
 	
+    NSLog(@"Version %@",[MFDocumentManager version]);
+    
 	if((self = [super initWithDocumentManager:aDocumentManager])) {
 		[self setDocumentDelegate:self];
 	}
@@ -2140,8 +1911,6 @@
 - (void)viewDidUnload {
     
     self.pageSlider = nil;
-    self.thumbnailScrollView = nil;
-    self.bottomToolbarView = nil;
     self.miniSearchView = nil;
     self.pageNumLabel = nil;
     self.numberOfPageTitleToolbar = nil;
@@ -2212,11 +1981,7 @@
 	[miniSearchView release];
 	[searchManager release];
     
-    [thumbnailScrollView release];
-	
-    [documentId release];
-    
-	[super dealloc];
+    [super dealloc];
 }
 
 @end
