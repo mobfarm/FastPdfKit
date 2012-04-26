@@ -279,6 +279,7 @@
 		95422FE81508B0200016E78E /* zoomUnlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95422FC51508ADDF0016E78E /* zoomUnlock@2x.png */; };
 		95422FEB1508B0880016E78E /* changeModeOverflow.png in Resources */ = {isa = PBXBuildFile; fileRef = 95422FE91508B0870016E78E /* changeModeOverflow.png */; };
 		95422FEC1508B0880016E78E /* changeModeOverflow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95422FEA1508B0880016E78E /* changeModeOverflow@2x.png */; };
+		9544904915497F3800503390 /* ilfatto.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9544904815497F3800503390 /* ilfatto.pdf */; };
 		954B74AF14B47F0D00503F90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
 		954B74B014B47F0D00503F90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		954B74B114B47F0D00503F90 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
@@ -625,6 +626,7 @@
 		95422FDB1508AE610016E78E /* direction_r2l@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "direction_r2l@2x.png"; sourceTree = "<group>"; };
 		95422FE91508B0870016E78E /* changeModeOverflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeModeOverflow.png; sourceTree = "<group>"; };
 		95422FEA1508B0880016E78E /* changeModeOverflow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "changeModeOverflow@2x.png"; sourceTree = "<group>"; };
+		9544904815497F3800503390 /* ilfatto.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ilfatto.pdf; sourceTree = "<group>"; };
 		954B74AD14B47F0D00503F90 /* Extended.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Extended.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954B74B414B47F0D00503F90 /* Extended-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Extended-Info.plist"; sourceTree = "<group>"; };
 		954B74B614B47F0D00503F90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1195,6 +1197,7 @@
 				0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */,
 				951AE313140298910025DA52 /* ReaderFramework-Info.plist */,
 				95B8BD5E13CCA59800195F0F /* Manual.pdf */,
+				9544904815497F3800503390 /* ilfatto.pdf */,
 				95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */,
 				0123606D13CCA18700861EB7 /* Default@2x.png */,
 				0123606E13CCA18700861EB7 /* Default.png */,
@@ -1844,6 +1847,7 @@
 				95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */,
 				95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */,
 				0102A1D21547009B00F7A9AF /* Settings.bundle in Resources */,
+				9544904915497F3800503390 /* ilfatto.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
