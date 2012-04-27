@@ -20,7 +20,7 @@
 #define TITLE_PLAIN @"Open"
 #define TITLE_ENCRYPTED @"Open"
 
-#define DOC_PLAIN @"ilfatto"
+#define DOC_PLAIN @"Manual"
 #define DOC_ENCRYPTED @"ManualCrypt"
 
 @implementation MenuViewController

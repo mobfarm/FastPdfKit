@@ -299,6 +299,18 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.4b3 (April 28, 2012)
+* Added a new pdf engine. It is enabled by default. You can switch back to the old
+version by untick the appropriate option in the Settings (this will be available until
+the final release). Feedback on performances is welcomed.
+The new version will attempt to cache pdf page images. If no documentId is set in the
+MFDocumentViewController, the default folders are in Library/Caches/shared, otherwise
+the cache is located in Library/Caches/<documentId>.
+Default settings should provide good performance on all devices, from the first iPad to the
+new one.
+Thumbnails have been moved inside the lib. Customization options for the thumbnail
+scroll view will be available in the final version.
+
 ### Update 3.3.3 (March 23, 2012)
 * New rendering approach just for the new iPad (and its weak A5X CPU)
 * Page thumbnails created for Retina Display on the new iPad
