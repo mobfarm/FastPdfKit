@@ -10,7 +10,7 @@
 		0102A1D21547009B00F7A9AF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0102A1D11547009B00F7A9AF /* Settings.bundle */; };
 		0102A1D31547009B00F7A9AF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0102A1D11547009B00F7A9AF /* Settings.bundle */; };
 		0102A1DA1547022B00F7A9AF /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0102A1D91547022B00F7A9AF /* MFDocumentViewController.h */; };
-		0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0102A1D91547022B00F7A9AF /* MFDocumentViewController.h */; };
+		0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0102A1D91547022B00F7A9AF /* MFDocumentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010D14AF13CAF5F400FD6F08 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */; };
 		010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */; };
@@ -1580,6 +1580,7 @@
 				958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */,
 				958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */,
 				958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */,
+				0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,
 				958A81C414027F5B00837C82 /* SearchManager.h in Headers */,
 				958A81C614027F5B00837C82 /* SearchResultCellView.h in Headers */,
 				958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */,
@@ -1615,7 +1616,6 @@
 				0189D3BD1486C1C000635C5D /* FPKGlyphBox.h in Headers */,
 				0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */,
 				01AD4F1D14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */,
-				0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
