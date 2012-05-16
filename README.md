@@ -2,7 +2,7 @@
 
 ----
 
-### Version 3.4b3: for testing purposes
+### Version 3.4b4: for testing purposes
 
 **Use at your own risk**
 
@@ -306,6 +306,9 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 
 ## Changelog
+
+### Update 3.4b4 (May 16, 2012)
+* Fixed occasional crash with dual core devices on startup
 
 ### Update 3.4b3 (April 28, 2012)
 * Added a new pdf engine. It is enabled by default. You can switch back to the old version by untick the appropriate option in the *Settings* (this will be available until the final release). Feedback on performances is welcomed.
