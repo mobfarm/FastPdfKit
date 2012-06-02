@@ -31,7 +31,6 @@
 -(void)showToolbar;
 -(void)hideToolbar;
 -(void)prepareToolbar;
--(void)prepareThumbSlider;
 
 @end
 
