@@ -12,7 +12,7 @@ This Extension is useful to place a Google Map over the page.
 
 ## Usage
 
-* Prefix: **map://**
+* Prefix: **map:// **
 * Import: **#import <FPKMap/FPKMap.h>**
 * String: **@"FPKMap"**
 
@@ -42,5 +42,7 @@ This Extension is useful to place a Google Map over the page.
 
 @interface FPKMap : UIView <FPKView, MKMapViewDelegate>{
     CGRect _rect;
+    MKMapView *map;
+    BOOL animateDrops;
 }
 @end

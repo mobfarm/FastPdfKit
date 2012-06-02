@@ -20,7 +20,7 @@ The PayPal code and the library have been downloaded from the [x.com](http://www
 
 ## Usage
 
-* Prefix: **paypal://**
+* Prefix: **paypal:// **
 * Import: **#import <FPKPaPal/FPKPaPal.h>**
 * String: **@"FPKPayPal"**
 

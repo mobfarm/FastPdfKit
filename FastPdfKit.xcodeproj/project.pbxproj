@@ -298,7 +298,6 @@
 		954B74F614B47FFC00503F90 /* FPKPayPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E214B47FFB00503F90 /* FPKPayPal.framework */; };
 		954B74F714B47FFC00503F90 /* FPKShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E514B47FFB00503F90 /* FPKShared.framework */; };
 		954B74F814B47FFC00503F90 /* FPKWebPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E814B47FFB00503F90 /* FPKWebPopup.framework */; };
-		954B74F914B47FFC00503F90 /* fpkwebpopup-safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74EA14B47FFB00503F90 /* fpkwebpopup-safari.png */; };
 		954B74FA14B47FFC00503F90 /* FPKYouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74EC14B47FFB00503F90 /* FPKYouTube.framework */; };
 		954B750214B4805100503F90 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FC14B4805100503F90 /* img1.png */; };
 		954B750314B4805100503F90 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FD14B4805100503F90 /* img2.png */; };
@@ -643,7 +642,6 @@
 		954B74E214B47FFB00503F90 /* FPKPayPal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKPayPal.framework; sourceTree = "<group>"; };
 		954B74E514B47FFB00503F90 /* FPKShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKShared.framework; sourceTree = "<group>"; };
 		954B74E814B47FFB00503F90 /* FPKWebPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKWebPopup.framework; sourceTree = "<group>"; };
-		954B74EA14B47FFB00503F90 /* fpkwebpopup-safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fpkwebpopup-safari.png"; sourceTree = "<group>"; };
 		954B74EC14B47FFB00503F90 /* FPKYouTube.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKYouTube.framework; sourceTree = "<group>"; };
 		954B74FC14B4805100503F90 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 		954B74FD14B4805100503F90 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
@@ -1423,7 +1421,6 @@
 		954B74E914B47FFB00503F90 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				954B74EA14B47FFB00503F90 /* fpkwebpopup-safari.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1933,7 +1930,6 @@
 				954B74C314B47F0D00503F90 /* FPKMainViewController_iPhone.xib in Resources */,
 				954B74C614B47F0D00503F90 /* FPKMainViewController_iPad.xib in Resources */,
 				954B74F514B47FFC00503F90 /* fpkmessage-info.png in Resources */,
-				954B74F914B47FFC00503F90 /* fpkwebpopup-safari.png in Resources */,
 				954B750214B4805100503F90 /* img1.png in Resources */,
 				954B750314B4805100503F90 /* img2.png in Resources */,
 				954B750414B4805100503F90 /* img3.png in Resources */,
@@ -2685,6 +2681,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/Extended/Extended-Prefix.pch";
@@ -2761,6 +2758,7 @@
 					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/Extended/Extended-Prefix.pch";
 				GCC_VERSION = "";
@@ -2832,6 +2830,7 @@
 					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/Extended/Extended-Prefix.pch";
 				GCC_VERSION = "";

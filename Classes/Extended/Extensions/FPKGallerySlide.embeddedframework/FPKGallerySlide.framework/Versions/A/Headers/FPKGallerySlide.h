@@ -11,7 +11,7 @@ This Extension is useful to create an image gallery with horizontal slide transi
 
 ## Usage
 
-* Prefix: **galleryslide://**
+* Prefix: **galleryslide:// **
 * Import: **#import <FPKGallerySlide/FPKGallerySlide.h>**
 * String: **@"FPKGallerySlide"**
 

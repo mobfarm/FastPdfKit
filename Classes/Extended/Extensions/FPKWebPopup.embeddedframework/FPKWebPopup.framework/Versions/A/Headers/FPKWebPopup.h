@@ -11,7 +11,7 @@ This Extension is useful to open a web page in a popup view.
 
 ## Usage
 
-* Prefix: **webpopup://** or **webpopups://**
+* Prefix: **webpopup:// ** or **webpopups:// **
 * Import: **#import <FPKWebPopup/FPKWebPopup.h>**
 * String: **@"FPKWebPopup"**
 

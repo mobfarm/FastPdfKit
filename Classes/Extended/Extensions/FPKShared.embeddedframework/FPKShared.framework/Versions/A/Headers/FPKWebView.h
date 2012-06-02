@@ -1,9 +1,6 @@
 //
 //  MFWebView.h
-//  Overlay
-//
-//  Created by Matteo Gavagnin on 10/22/11.
-//  Copyright (c) 2011 MobFarm. All rights reserved.
+//  FPKShared
 //
 
 #import <UIKit/UIKit.h>

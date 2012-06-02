@@ -12,7 +12,7 @@ You can for example place it on the index page and show the article top photos.
 
 ## Usage
 
-* Prefix: **message://**
+* Prefix: **message:// **
 * Import: **#import <FPKGalleryFade/FPKGalleryFade.h>**
 * String: **@"FPKGalleryFade"**
 

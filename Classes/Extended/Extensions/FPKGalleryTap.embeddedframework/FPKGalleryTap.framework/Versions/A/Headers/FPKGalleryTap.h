@@ -13,7 +13,7 @@ You can even use just one annotation to place a single image over the page.
 
 ## Usage
 
-* Prefix: **gallerytap://**
+* Prefix: **gallerytap:// **
 * Import: **#import <FPKGalleryTap/FPKGalleryTap.h>**
 * String: **@"FPKGalleryTap"**
 

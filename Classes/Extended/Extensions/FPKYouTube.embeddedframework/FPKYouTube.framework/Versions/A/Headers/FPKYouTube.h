@@ -12,7 +12,7 @@ This Extension is useful to place a YouTube video over the page
 
 ## Usage
 
-* Prefix: **utube://**
+* Prefix: **utube:// **
 * Import: **#import <FPKYouTube/FPKYouTube.h>**
 * String: **@"FPKYouTube"**
 
