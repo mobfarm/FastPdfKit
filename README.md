@@ -301,6 +301,12 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 3.4.1 (June 2, 2012)
+
+* Removed some warnings;
+* Updated Extensions;
+* Fixed episodical crashes.
+
 ### Update 3.4 (May 17, 2012)
 
 * Added a new pdf engine. It is enabled by default. You can switch back to the old version by untick the appropriate option in the *Settings* (this will be available until the final release). Feedback on performances is welcomed.
