@@ -1,0 +1,6 @@
+//
+// Prefix header for all source files of the 'FastPdfKit' target in the 'FastPdfKit' project
+//
+
+#ifdef __OBJC__
+#endif
