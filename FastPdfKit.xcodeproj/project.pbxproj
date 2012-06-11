@@ -49,6 +49,8 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
+		013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */; };
+		013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */; };
 		0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; };
 		0155DDE81458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0155DE14145848590080FFEF /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; };
@@ -285,8 +287,6 @@
 		954B74B714B47F0D00503F90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 954B74B514B47F0D00503F90 /* InfoPlist.strings */; };
 		954B74B914B47F0D00503F90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B74B814B47F0D00503F90 /* main.m */; };
 		954B74BD14B47F0D00503F90 /* FPKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B74BC14B47F0D00503F90 /* FPKAppDelegate.m */; };
-		954B74C314B47F0D00503F90 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954B74C114B47F0D00503F90 /* FPKMainViewController_iPhone.xib */; };
-		954B74C614B47F0D00503F90 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954B74C414B47F0D00503F90 /* FPKMainViewController_iPad.xib */; };
 		954B74EE14B47FFB00503F90 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74CE14B47FFB00503F90 /* Common.framework */; };
 		954B74EF14B47FFB00503F90 /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D014B47FFB00503F90 /* libPayPalMPL.a */; };
 		954B74F014B47FFC00503F90 /* FPKGalleryFade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D214B47FFB00503F90 /* FPKGalleryFade.framework */; };
@@ -349,7 +349,6 @@
 		9597F995125D17E400E17B47 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9597F994125D17E400E17B47 /* iTunesArtwork */; };
 		959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
 		959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
-		95A965D5157FC6FE00925468 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5E13CCA59800195F0F /* Manual.pdf */; };
 		95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */; };
 		95B9C57D15110E6C00411AF6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C57C15110E6C00411AF6 /* pause@2x.png */; };
@@ -441,6 +440,8 @@
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailScrollView.h; sourceTree = "<group>"; };
 		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
+		013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPhone.xib; sourceTree = "<group>"; };
+		013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPad.xib; sourceTree = "<group>"; };
 		0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
 		0155DE13145848590080FFEF /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
 		015ED17B1455AE9700C7C372 /* FPKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKAnnotation.h; sourceTree = "<group>"; };
@@ -630,8 +631,6 @@
 		954B74BA14B47F0D00503F90 /* Extended-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Extended-Prefix.pch"; sourceTree = "<group>"; };
 		954B74BB14B47F0D00503F90 /* FPKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = FPKAppDelegate.h; sourceTree = "<group>"; };
 		954B74BC14B47F0D00503F90 /* FPKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPKAppDelegate.m; sourceTree = "<group>"; };
-		954B74C214B47F0D00503F90 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FPKMainViewController_iPhone.xib; sourceTree = "<group>"; };
-		954B74C514B47F0D00503F90 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FPKMainViewController_iPad.xib; sourceTree = "<group>"; };
 		954B74CE14B47FFB00503F90 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
 		954B74D014B47FFB00503F90 /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
 		954B74D214B47FFB00503F90 /* FPKGalleryFade.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryFade.framework; sourceTree = "<group>"; };
@@ -1242,8 +1241,8 @@
 				95FFFB4C14B488AE00B1CD3B /* FPKMainViewController.m */,
 				95FFFB4D14B488AE00B1CD3B /* OverlayManager.h */,
 				95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */,
-				954B74C114B47F0D00503F90 /* FPKMainViewController_iPhone.xib */,
-				954B74C414B47F0D00503F90 /* FPKMainViewController_iPad.xib */,
+				013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */,
+				013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */,
 				954B74CC14B47FE000503F90 /* Extensions */,
 				954B74FB14B4803800503F90 /* Resources */,
 				954B74B314B47F0D00503F90 /* Supporting Files */,
@@ -1254,7 +1253,6 @@
 		954B74B314B47F0D00503F90 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				954B74B414B47F0D00503F90 /* Extended-Info.plist */,
 				954B74B514B47F0D00503F90 /* InfoPlist.strings */,
 				954B74B814B47F0D00503F90 /* main.m */,
 				954B74BA14B47F0D00503F90 /* Extended-Prefix.pch */,
@@ -1445,6 +1443,7 @@
 		954B74FB14B4803800503F90 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				954B74B414B47F0D00503F90 /* Extended-Info.plist */,
 				954B74FC14B4805100503F90 /* img1.png */,
 				954B74FD14B4805100503F90 /* img2.png */,
 				954B74FE14B4805100503F90 /* img3.png */,
@@ -1928,8 +1927,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				954B74B714B47F0D00503F90 /* InfoPlist.strings in Resources */,
-				954B74C314B47F0D00503F90 /* FPKMainViewController_iPhone.xib in Resources */,
-				954B74C614B47F0D00503F90 /* FPKMainViewController_iPad.xib in Resources */,
+				013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */,
+				013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */,
 				954B74F514B47FFC00503F90 /* fpkmessage-info.png in Resources */,
 				954B750214B4805100503F90 /* img1.png in Resources */,
 				954B750314B4805100503F90 /* img2.png in Resources */,
@@ -1951,7 +1950,6 @@
 			files = (
 				958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */,
 				958CBAB5141E66060094D4C1 /* Snippets.txt in Resources */,
-				95A965D5157FC6FE00925468 /* FastPdfKitFramework.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2200,22 +2198,6 @@
 				954B74B614B47F0D00503F90 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		954B74C114B47F0D00503F90 /* FPKMainViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				954B74C214B47F0D00503F90 /* en */,
-			);
-			name = FPKMainViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		954B74C414B47F0D00503F90 /* FPKMainViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				954B74C514B47F0D00503F90 /* en */,
-			);
-			name = FPKMainViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2568,7 +2550,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
+				INFOPLIST_FILE = "Classes/Extended/Resources/Extended-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2640,7 +2622,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
+				INFOPLIST_FILE = "Classes/Extended/Resources/Extended-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

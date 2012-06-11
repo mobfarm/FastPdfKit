@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController.h"
-#import "MFDocumentManager.h"
+#import <FastPdfKit/MFDocumentManager.h>
 #import "DocumentViewController.h"
 #import "OverlayManager.h"
 

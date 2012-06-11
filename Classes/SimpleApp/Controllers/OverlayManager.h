@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MFDocumentOverlayDataSource.h"
+#import <FastPdfKit/MFDocumentOverlayDataSource.h>
 
 @interface OverlayManager : NSObject <MFDocumentOverlayDataSource>
 

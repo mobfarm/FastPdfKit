@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController_Kiosk.h"
-#import "ReaderViewController.h"
+#import <FastPdfKit/ReaderViewController.h>
 
 @class MFDocumentManager;
 
