@@ -301,6 +301,12 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+### Update 4.0 RC1 (Augusth 1st, 2012)
+* Fixed a bunch crash 
+* Fixed a few memory leaks (one quite large)
+* If you dont see Chinese, Japanese or Korean text extracted, please download, unzip and add the CMaps for the language. You can get them here http://partners.adobe.com/public/developer/font/index.html
+* There are a few more options for the embedded thumbnail scroll view and page slider, and you can also choose the label for the individual page
+
 ### Update 3.4.2 (June 28, 2012)
 * Fix for password protected documents not working anymore
 

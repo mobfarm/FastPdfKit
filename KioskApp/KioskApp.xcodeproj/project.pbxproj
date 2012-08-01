@@ -248,7 +248,7 @@
 			);
 			name = FastPdfKit.embeddedframework;
 			path = ../FastPdfKit.embeddedframework;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		011106CB1585F3580063A501 /* Resources */ = {
 			isa = PBXGroup;

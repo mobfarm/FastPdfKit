@@ -17,8 +17,6 @@
 
 	MFOffscreenRenderer *renderer;
 	
-	CGPDFDocumentRef document;
-	NSLock * lock;
 	NSURL * url;
     CGDataProviderRef provider;
     
@@ -48,6 +46,9 @@
 -(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage andRight:(NSInteger)rightPage size:(CGSize)size andScale:(CGFloat)scale useLegacy:(BOOL)legacy showShadow:(BOOL)shadow andPadding:(CGFloat)padding;
 -(CGImageRef)createImageFromPDFPage:(NSInteger)page size:(CGSize)size  andScale:(CGFloat)scale useLegacy:(BOOL)legacy showShadow:(BOOL)shadow andPadding:(CGFloat)padding;
 
+-(CGImageRef)createImageWithPage:(NSUInteger)page pixelScale:(float)scale imageScale:(NSUInteger)scaling screenDimension:(CGFloat)dimension;
+
+-(CGImageRef)createImageWithImage:(CGImageRef)imageToBeDrawn;
 
 -(void)drawPageNumber:(NSInteger)pageNumber onContext:(CGContextRef)ctx;
 
@@ -131,6 +132,9 @@
  Compatibility methods for older version. It will call the above method with default values.
  */
 -(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm;
+/**
+ Compatibility methods for older version. It will call the above method with default values.
+ */
 -(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm ignoreCase:(BOOL)ignoreOrNot;
 
 /**
