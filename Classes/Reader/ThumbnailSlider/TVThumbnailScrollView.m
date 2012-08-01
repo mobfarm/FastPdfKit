@@ -132,6 +132,7 @@ int nextOffset(int offset) {
     
     NSUInteger page;
     
+    
     TVThumbnailView * view = [thumbnailViews objectAtIndex:currentPosition%[thumbnailViews count]];
     
     if(view.position==currentPosition) {

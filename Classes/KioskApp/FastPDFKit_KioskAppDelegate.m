@@ -24,11 +24,8 @@
     NSString * settingsBundlePath = [bundlePath stringByAppendingPathComponent:@"Settings.bundle"];
     NSString * settingsPath = [NSBundle pathForResource:@"Root" ofType:@"plist" inDirectory:settingsBundlePath];
     
-    NSLog(@"Settings %@", settingsPath);
-    
     NSDictionary * settingsDictionary = [NSDictionary dictionaryWithContentsOfFile:settingsPath];
     [[NSUserDefaults standardUserDefaults] registerDefaults:settingsDictionary];
-    
     
     //Comment the line below to disable NewsStand remote Notification
     
