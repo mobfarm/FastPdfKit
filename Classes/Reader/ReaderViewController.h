@@ -99,6 +99,12 @@
 	
 	UIImage * imgLeadRight;
 	UIImage * imgLeadLeft;
+    
+    UIImage * imgDismiss;
+    UIImage * imgBookmark;
+    UIImage * imgSearch;
+    UIImage * imgOutline;
+    UIImage * imgText;
 
 }
 
@@ -116,6 +122,12 @@
 @property (nonatomic,retain) UIImage * imgLeadRight;
 @property (nonatomic,retain) UIImage * imgLeadLeft;
 @property (nonatomic,retain) UIImage * imgModeOverflow;
+@property (nonatomic,retain) UIImage * imgDismiss;
+@property (nonatomic,retain) UIImage * imgBookmark;
+@property (nonatomic,retain) UIImage * imgSearch;
+@property (nonatomic,retain) UIImage * imgOutline;
+@property (nonatomic,retain) UIImage * imgText;
+@property (nonatomic, readwrite) CGFloat toolbarHeight;
 
 -(void)setNumberOfPageToolbar;
 
