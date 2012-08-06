@@ -15,6 +15,13 @@
 @class MFDocumentManager;
 @class MFDocumentViewController;
 
+@protocol FPKThumbnailView
+
+@property (nonatomic, copy) NSString * title;
+@property (nonatomic, strong) UIImage * image;
+
+@end
+
 @interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
 	
     NSString * documentId;
@@ -472,5 +479,25 @@
  Access the inner paged scroll view.
  */
 @property (readonly) UIScrollView * pagedScrollView;
+
+/**
+ Height of the thumbnail in the scrollview. Height is 120 on iPad and 60 on iphone.
+ */
+@property (nonatomic, readwrite) CGFloat thumbnailHeight;
+
+/**
+ Background color of the thumbnail view.
+ */
+@property (nonatomic, retain) UIColor * thumbnailBackgroundColor;
+
+/**
+ Enabled or disable the page slider at the bottom.
+ */
+@property (nonatomic, readwrite, getter = isPageSliderEnabled) BOOL pageSliderEnabled;
+
+/**
+ Enable or disable the thumbnail slider at the bottom.
+ */
+@property (nonatomic, readwrite, getter = isThumbnailSliderEnabled) BOOL thumbnailSliderEnabled;
 
 @end

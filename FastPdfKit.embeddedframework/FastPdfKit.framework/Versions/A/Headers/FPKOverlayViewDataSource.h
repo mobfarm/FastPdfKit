@@ -30,8 +30,22 @@
  action that needs to be synchronized with the lifecycle of the view.
  */
 -(void)documentViewController:(MFDocumentViewController *)dvc willAddOverlayView:(UIView *)view;
+
+/**
+ This method is called when the Overlay Views have been added
+ */
 -(void)documentViewController:(MFDocumentViewController *)dvc didAddOverlayView:(UIView *)view;
+
+/**
+ This method is called when the Overlay View are going to be removed
+ 
+ */
 -(void)documentViewController:(MFDocumentViewController *)dvc willRemoveOverlayView:(UIView *)view;
+
+/**
+ This method is called when the Overlay View have been removed
+ 
+ */
 -(void)documentViewController:(MFDocumentViewController *)dvc didRemoveOverlayView:(UIView *)view;
 
 @end

@@ -1,0 +1,1 @@
+OTHER_LDFLAGS = $(inherited) -framework AudioToolbox -framework MediaPlayer -framework MobileCoreServices -framework CFNetwork -framework  CoreText -framework UIKit -framework CoreGraphics -framework Foundation -framework QuartzCore -framework AVFoundation -framework CoreFoundation -framework SystemConfiguration -lz -ObjC

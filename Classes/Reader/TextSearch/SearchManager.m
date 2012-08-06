@@ -127,7 +127,7 @@
 #pragma mark -
 #pragma mark Search methods
 
-int calculateNextSearchPage(int currentPage, int maxPage) {
+static int calculateNextSearchPage(int currentPage, int maxPage) {
 
 	// This is just an utility method used to calculate the next page, returning to the
 	// first one - 0 actually - when the last one is exceeded, like in circular buffers.

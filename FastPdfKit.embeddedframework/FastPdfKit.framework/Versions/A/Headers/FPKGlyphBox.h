@@ -12,6 +12,10 @@
 @interface FPKGlyphBox : NSObject {
     
     CGRect box;
+    CGPoint origin;
+    CGFloat ascent;
+    CGFloat descent;
+    CGFloat width;
     
     BOOL synthesized;
     unsigned int * unicodes;
@@ -28,7 +32,27 @@
 @property (nonatomic,readwrite) CGRect box;
 
 /**
- UTF-8 string representation of the text of this glyph box, usually is just a 
+ Origin of the glyph box. That is the point in space were the glyph is laid down.
+ */
+@property (nonatomic, readwrite) CGPoint origin;
+
+/**
+ Height of the glyph box above the text baseline.
+ */
+@property (nonatomic, readwrite) CGFloat ascent;
+
+/**
+ Descent of the glyph box below the text baseline.
+ */
+@property (nonatomic, readwrite) CGFloat descent;
+
+/**
+ Width of the glyph box.
+ */
+@property (nonatomic, readwrite) CGFloat width;
+
+/**
+ UTF-8 string representation of the text of this glyph box, usually is just a
  single unicode codepoint. It is synthesized from an opaque representation.
  */
 -(NSString *)text;

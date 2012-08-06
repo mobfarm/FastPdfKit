@@ -20,7 +20,6 @@
 	
 	// Structure
 	NSArray * bookmarks;
-	
 }
 
 /**
@@ -42,5 +41,10 @@
  Title for the outline entry.
  */
 @property (copy) NSString * title;
+
+/**
+ Default constructor.
+ */
+-(id)initWithTitle:(NSString *)aTitle;
 
 @end
