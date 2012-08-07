@@ -500,4 +500,10 @@
  */
 @property (nonatomic, readwrite, getter = isThumbnailSliderEnabled) BOOL thumbnailSliderEnabled;
 
+/**
+ Enable or disable background thumbnail rendering, even when the thumbnail slider is not visible.
+ Default is YES.
+ */
+@property (nonatomic, readwrite) BOOL backgroundThumbnailRenderingEnabled;
+
 @end
