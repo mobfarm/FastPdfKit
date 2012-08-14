@@ -58,9 +58,6 @@
     NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user
     NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini
     
-	UILabel * pageLabel;    // Page label at the bottom of the screen
-	UISlider * pageSlider;  // Page slider at the bottom of the screen
-    
     // Button content for bar button items
 
     UIButton *changeModeButton;
@@ -137,8 +134,6 @@
 
 @property (nonatomic, retain) UIToolbar * rollawayToolbar;
 @property (nonatomic, retain) UILabel * pageNumLabel;
-
-@property (nonatomic, retain) UISlider * pageSlider;
 
 @property (nonatomic, retain) UIBarButtonItem * searchBarButtonItem;
 @property (nonatomic, retain) UIBarButtonItem * changeModeBarButtonItem;

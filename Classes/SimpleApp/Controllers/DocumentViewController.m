@@ -611,7 +611,7 @@
     //  or, if presented as modalviewcontroller, tell the parent to dismiss it.
 	//  [[self parentViewController]dismissModalViewControllerAnimated:YES];
     
-	[[self navigationController]popViewControllerAnimated:YES];	
+	[[self navigationController]popToRootViewControllerAnimated:YES];
 }
 
 -(IBAction) actionPageSliderStopped:(id)sender {

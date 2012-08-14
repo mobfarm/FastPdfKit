@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FastPdfKit/MFDocumentViewController.h>
-#import <FastPdfKit/MFDocumentViewControllerDelegate.h>
-#import <FastPdfKit/BookmarkViewControllerDelegate.h>
-#import <FastPdfKit/SearchViewControllerDelegate.h>
-#import <FastPdfKit/MiniSearchViewControllerDelegate.h>
-#import <FastPdfKit/OutlineViewControllerDelegate.h>
-#import <FastPdfKit/TextDisplayViewControllerDelegate.h>
+#import "MFDocumentViewController.h"
+#import "MFDocumentViewControllerDelegate.h"
+#import "BookmarkViewControllerDelegate.h"
+#import "SearchViewControllerDelegate.h"
+#import "MiniSearchViewControllerDelegate.h"
+#import "OutlineViewControllerDelegate.h"
+#import "TextDisplayViewControllerDelegate.h"
 
 @class BookmarkViewController;
 @class SearchViewController;

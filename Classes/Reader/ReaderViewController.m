@@ -47,7 +47,6 @@
 @synthesize searchViewController;
 @synthesize searchManager;
 @synthesize miniSearchView;
-@synthesize pageSlider;
 @synthesize reusablePopover;
 @synthesize multimediaVisible;
 @synthesize toolbarHeight;
@@ -618,7 +617,10 @@
 	//
 	//	Just remove this controller from the navigation stack.
     if([self navigationController])
-        [[self navigationController] popViewControllerAnimated:YES];	
+    
+        [[self navigationController] popToRootViewControllerAnimated:YES];
+
+    
     else{
         // Or, if presented as modalviewcontroller, tell the parent to dismiss it.
         if ([self respondsToSelector:@selector(presentingViewController)])
@@ -657,8 +659,6 @@
 	
 	// Go to the page.
 	[self setPage:pageNumber];
-    
-    
 }
 
 -(IBAction)actionChangeMode:(id)sender {
@@ -1112,7 +1112,7 @@
  	if(isPad) {
 		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 768, 1024-20)];  // Status bar only
 	} else {
-		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 480-20)];   // Status bar only
+		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 568-20)];   // Status bar only
 	}
 	
 	[aView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
@@ -1617,22 +1617,22 @@
 	if((self = [super initWithDocumentManager:aDocumentManager])) {
 		[self setDocumentDelegate:self];
 	}
+    
 	return self;
 }
 
 
 - (void)didReceiveMemoryWarning {
 	
+    [super didReceiveMemoryWarning];
+	
 	self.textDisplayViewController = nil;
     self.searchViewController = nil;
-    
-	[super didReceiveMemoryWarning];
     
     if(!self.isViewLoaded) {
         
         // This will be called in place of viewDidUnload on iOS 6
         
-        self.pageSlider = nil;
         self.miniSearchView = nil;
         self.pageNumLabel = nil;
         self.numberOfPageTitleToolbar = nil;
@@ -1661,12 +1661,11 @@
 
 - (void)viewDidUnload {
     
-    self.pageSlider = nil;
+    self.rollawayToolbar = nil;
+    
     self.miniSearchView = nil;
     self.pageNumLabel = nil;
     self.numberOfPageTitleToolbar = nil;
-    
-    self.rollawayToolbar = nil;
     
     // Button and bar buttons
     
@@ -1690,7 +1689,7 @@
 }
 
 - (void)dealloc {
-	
+    
     // UI images.
     
 	[imgModeSingle release];
