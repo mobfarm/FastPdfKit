@@ -222,6 +222,30 @@
  5. Get the @"Rect" array to calculate the rect for the annotation
  6. Get the @"Contents" string to get the text for the annotation
  
+ like
+ 
+ NSDictionary * annotationsDict = [self.document cocoaAnnotationsForPage:self.page];
+    NSArray * annotations = [annotationsDict objectForKey:@"object"];
+    for (NSDictionary * annotation in annotations) {
+        NSLog(@"Found Annotations with Subtype: %@", [annotation valueForKey:@"Subtype"]);
+        if ([[annotation valueForKey:@"Subtype"] isEqualToString:@"Text"]){
+            NSLog(@"Note: %@", [annotation objectForKey:@"Contents"]);
+        }
+        if([annotation valueForKey:@"Rect"]) {
+            // Handle annotation rect (array of floats, two pairs of point) here
+            NSArray * rect = [annotation valueForKey:@"Rect"];
+            CGPoint p0 = CGPointMake([[rect objectAtIndex:0]floatValue], [[rect objectAtIndex:1]floatValue]);
+            CGPoint p1 = ...
+        }
+        if([annotation valueForKey:@"Popup"]) {
+            NSDictionary * popup = [annotation valueForKey:@"Popup"];
+            if([popup valueForKey:@"Rect"]) {
+ 
+                // Handle the annotation's popup frame
+            }
+        }
+    }
+ 
  */
 -(NSDictionary *)cocoaAnnotationsForPage:(NSUInteger)pageNr;
 
