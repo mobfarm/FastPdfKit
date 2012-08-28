@@ -184,4 +184,45 @@
  */
 @property (nonatomic,assign) BOOL alternateURISchemesEnabled;
 
+/**
+ This will return a Cocoa representation of the annotations array for each page.
+ The returned value is actually a ditionary, where the value you are looking for
+ is store with the key "object".
+ The other entries are there to allow the handling of circular refernces while
+ maintaining proper memory management.
+ 
+ By Cocoa representation is meant the following conversions from PDF to Cocoa
+ objects:
+ 
+ array -> NSArray
+ dictionary -> NSDictionary
+ name -> NSString
+ number -> NSNumber
+ real -> NSNumber
+ string -> NSString
+ 
+ The exception is the stream object, that is represented by a dictionary
+ 
+ stream -> NSDictionary
+ 
+ that stores stream data, the stream dictionary and the stream format. The stream
+ data is an NSData object with key @"streamData", the stream format is an 
+ NSString with the key @"streamFormat" whose value are @"raw", @"jpegEncoded" or
+ @"jpeg2000" and the dictionary is an NSDictionary with the key @"streamDictionary".
+ 
+ In other words, if you are looking for Text annotations and you want the position
+ of the annotation and the text associated with it, you'll do something
+ like this:
+ 1. Invoke the method and get the dictionary
+ 2. Get the object associated with the @"object" key in the dictionary. This
+ object will be an Array according to the pdf reference
+ 3. Each entry in the array will be a dictionary
+ 4. For each of this dictionary, check the key @"subtype", should be @"Text" for
+ a Text annotation
+ 5. Get the @"Rect" array to calculate the rect for the annotation
+ 6. Get the @"Contents" string to get the text for the annotation
+ 
+ */
+-(NSDictionary *)cocoaAnnotationsForPage:(NSUInteger)pageNr;
+
 @end
