@@ -306,6 +306,7 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 * Added cache encryption, check MFDocumentViewController's cacheEncryptionKey for
 details. Security.framework is now REQUIRED.
 * Shadow offset now takes padding into account
+* Uninitialized rect in background op fixed
 
 # Update Augusth 30th, 2012
 * Solved rootViewController nil property for window in the app delegate (prevent 
