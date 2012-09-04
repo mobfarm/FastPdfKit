@@ -1130,6 +1130,14 @@
 }
 
 
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
 - (void)dealloc {
 	
     [reusablePopover release], reusablePopover = nil;

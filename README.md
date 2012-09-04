@@ -298,8 +298,23 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 * Call the `actionOpenPlainDocument` method to open the document;
 * Enjoy.
 
-
 ## Changelog
+
+# Update September 4th, 2012
+* Fixed missing iPhone toolbar images
+* Thumbnails are now JPEG
+* Added cache encryption, check MFDocumentViewController's cacheEncryptionKey for
+details. Security.framework is now REQUIRED.
+* Shadow offset now takes padding into account
+
+# Update Augusth 30th, 2012
+* Solved rootViewController nil property for window in the app delegate (prevent 
+correct behavior on iOS6)
+
+# Update Augusth 28th, 2012
+* Page shadows are back
+* Added cocoaAnnotationsForPage: method to MFDocumentManager to get more Cocoa-friendly
+annotations data from the pdf
 
 ### Update 4.0 RC1 (Augusth 1st, 2012)
 * Fixed a bunch crash 

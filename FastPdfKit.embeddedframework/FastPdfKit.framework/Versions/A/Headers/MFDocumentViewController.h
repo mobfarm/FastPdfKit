@@ -506,4 +506,13 @@
  */
 @property (nonatomic, readwrite) BOOL backgroundThumbnailRenderingEnabled;
 
+/**
+ Key to encrypt cached images. If left to the nil default value, image will not 
+ be encrypted.
+ Keep in mind that, for now, you have to manually delete the thumbnail cache if
+ you change associated with a certain documentId (unlikely you'll ever need to
+ do that).
+ */
+@property (copy, nonatomic) NSString * cacheEncryptionKey;
+
 @end

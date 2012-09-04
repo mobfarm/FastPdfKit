@@ -1165,6 +1165,8 @@
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
+        // iPad
+        
         if(!self.imgDismiss)
             self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"X", @"png")];
         
@@ -1181,21 +1183,24 @@
             self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search", @"png")];    
         
     } else {
+        
+        // iPhone (same as iPad, the if else is just for convenience in the case
+        // you want to have different icons between ipad and iphone
      
         if(!self.imgDismiss)
-            self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"X_phone", @"png")];
+            self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"X", @"png")];
         
         if(!self.imgText)
-            self.imgText = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"text_phone", @"png")];
+            self.imgText = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"text", @"png")];
         
         if(!self.imgOutline)
-            self.imgOutline = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"indice_phone", @"png")];
+            self.imgOutline = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"indice", @"png")];
         
         if(!self.imgBookmark)
-            self.imgBookmark = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"bookmark_add_phone", @"png")];
+            self.imgBookmark = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"bookmark_add", @"png")];
         
         if(!self.imgSearch)
-            self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search_phone", @"png")];
+            self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search", @"png")];
     }
 }
 
@@ -1686,6 +1691,14 @@
 	self.changeLeadButton = nil;
     
     [super viewDidUnload];
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)dealloc {
