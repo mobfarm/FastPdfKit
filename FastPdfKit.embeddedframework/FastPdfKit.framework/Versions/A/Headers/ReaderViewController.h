@@ -102,8 +102,15 @@
     UIImage * imgSearch;
     UIImage * imgOutline;
     UIImage * imgText;
-
+    
+    void (^dismissBlock) ();
 }
+
+/**
+ This block will be executed inside the actionDismiss action. If not defined,
+ the ReaderViewController will try to guesstimate the appropriate action.
+ */
+@property (nonatomic, copy) void (^dismissBlock) ();
 
 @property (nonatomic,retain) UIButton *changeModeButton;
 @property (nonatomic,retain) UIButton *zoomLockButton;

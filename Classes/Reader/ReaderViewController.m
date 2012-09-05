@@ -36,6 +36,8 @@
 
 @implementation ReaderViewController
 
+@synthesize dismissBlock;
+
 @synthesize rollawayToolbar;
 
 @synthesize searchBarButtonItem, changeModeBarButtonItem, zoomLockBarButtonItem, changeDirectionBarButtonItem, changeLeadBarButtonItem;
@@ -614,19 +616,26 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES]; // Hide the status bar.
 	
-	//
-	//	Just remove this controller from the navigation stack.
-    if([self navigationController])
     
-        [[self navigationController] popToRootViewControllerAnimated:YES];
-
+    // If there's a dismiss block defined, use it. Otherwise, try to guesstimate
+    // what is the appropriate dismiss action
     
-    else{
-        // Or, if presented as modalviewcontroller, tell the parent to dismiss it.
-        if ([self respondsToSelector:@selector(presentingViewController)])
+	if(self.dismissBlock) {
+        
+        dismissBlock();
+        
+    } else {
+        
+        if ([self respondsToSelector:@selector(presentingViewController)]) {
             [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
-        else
+        }
+        else if (self.parentViewController) {
             [[self parentViewController] dismissModalViewControllerAnimated:YES];
+        }
+        else if ([self navigationController]) {
+            
+            [[self navigationController] popViewControllerAnimated:YES];
+        }
     }
 }
 
@@ -1752,6 +1761,8 @@
 	[textDisplayViewController release];
 	[miniSearchView release];
 	[searchManager release];
+    
+    self.dismissBlock = nil;
     
     [super dealloc];
 }

@@ -44,7 +44,6 @@
 	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
 	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",documentName,documentName]];
-	// pdfPath = [[NSBundle mainBundle] pathForResource:@"repubblica_20100302" ofType:@"pdf"];
     documentUrl = [NSURL fileURLWithPath:pdfPath];
     
     resourceFolder = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",documentName]];
@@ -58,10 +57,20 @@
 	
 	documentViewController = [[ReaderViewController alloc]initWithDocumentManager:documentManager];
 	documentViewController.documentId = documentName;
-    // documentViewController.documentId = @"repo";
     
-	[[self navigationController]pushViewController:documentViewController animated:YES];
-    //[self presentModalViewController:documentViewController animated:YES];
+    // Present as a navigation controller item
+    documentViewController.dismissBlock = ^{
+        [[self navigationController] popToViewController:self animated:YES];
+    };
+    [[self navigationController]pushViewController:documentViewController animated:YES]; // Present as vavigation controller item
+    
+    /*
+     // Present as a modal view controller
+    documentViewController.dismissBlock = ^{
+        [self dismissModalViewControllerAnimated:YES];
+    };
+     [self presentModalViewController:documentViewController animated:YES]; // Present as modal view controller
+    */
     
 	[documentViewController release];
 	[documentManager release];
