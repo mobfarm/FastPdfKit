@@ -2580,7 +2580,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
 				);
 				OTHER_LDFLAGS = (
@@ -2653,7 +2652,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
 				);
 				OTHER_LDFLAGS = (
