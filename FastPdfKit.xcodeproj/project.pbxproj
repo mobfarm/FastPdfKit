@@ -372,6 +372,10 @@
 		95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */; };
 		95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */; };
 		95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7114B48C3100B1CD3B /* Snippets.txt */; };
+		FF9E5BD81608B22E007C560A /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD61608B22E007C560A /* title.png */; };
+		FF9E5BD91608B22E007C560A /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD61608B22E007C560A /* title.png */; };
+		FF9E5BDA1608B22E007C560A /* version.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD71608B22E007C560A /* version.png */; };
+		FF9E5BDB1608B22E007C560A /* version.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD71608B22E007C560A /* version.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -689,6 +693,8 @@
 		95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
 		95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FPKReaderBundle.bundle; sourceTree = "<group>"; };
 		95FFFB7114B48C3100B1CD3B /* Snippets.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
+		FF9E5BD61608B22E007C560A /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		FF9E5BD71608B22E007C560A /* version.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = version.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1080,6 +1086,8 @@
 				6FB976F513CB6E63007C368C /* header_iphone.png */,
 				6FB976F613CB6E63007C368C /* header_iphone@2x.png */,
 				6FB976F713CB6E63007C368C /* header.png */,
+				FF9E5BD61608B22E007C560A /* title.png */,
+				FF9E5BD71608B22E007C560A /* version.png */,
 				6FB976F813CB6E63007C368C /* remove.png */,
 				6FB976F913CB6E63007C368C /* resume.png */,
 				6FB976FA13CB6E63007C368C /* view.png */,
@@ -1828,6 +1836,8 @@
 				95EF544214B48E4C00910B3D /* Icon72.png in Resources */,
 				95EF544314B48E4F00910B3D /* Icon114.png in Resources */,
 				0102A1D31547009B00F7A9AF /* Settings.bundle in Resources */,
+				FF9E5BD81608B22E007C560A /* title.png in Resources */,
+				FF9E5BDA1608B22E007C560A /* version.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1881,6 +1891,8 @@
 				95B9C58715110EAA00411AF6 /* remove@2x.png in Resources */,
 				95B9C58815110EAA00411AF6 /* resume@2x.png in Resources */,
 				95B9C58915110EAA00411AF6 /* view@2x.png in Resources */,
+				FF9E5BD91608B22E007C560A /* title.png in Resources */,
+				FF9E5BDB1608B22E007C560A /* version.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
