@@ -72,7 +72,7 @@
 						<int key="NSvFlags">289</int>
 						<string key="NSFrame">{{686, 87}, {74, 39}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="895052388"/>
+						<reference key="NSNextKeyView" ref="564385684"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -81,7 +81,7 @@
 							<string key="NSResourceName">version.png</string>
 						</object>
 					</object>
-					<object class="IBUIScrollView" id="895052388">
+					<object class="IBUIScrollView" id="564385684">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">311</int>
 						<string key="NSFrame">{{0, 128}, {768, 876}}</string>
@@ -121,7 +121,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">scrollView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="895052388"/>
+						<reference key="destination" ref="564385684"/>
 					</object>
 					<int key="connectionID">18</int>
 				</object>
@@ -145,7 +145,7 @@
 							<reference ref="898200445"/>
 							<reference ref="904736505"/>
 							<reference ref="990121900"/>
-							<reference ref="895052388"/>
+							<reference ref="564385684"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -177,7 +177,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
-						<reference key="object" ref="895052388"/>
+						<reference key="object" ref="564385684"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
