@@ -158,7 +158,7 @@
 		thumbHOffsetLeft = 20.0;
 		thumHOffsetRight = 380.0;
 		frameHeight = 325.0;
-		scrollViewWidth = 768.0;
+		scrollViewWidth = [[UIScreen mainScreen] bounds].size.width;
 		scrollViewHeight = 875.0;
 		detailViewHeight = 665.0;
 		scrollViewVOffset = 130.0;
@@ -170,7 +170,7 @@
 		thumbHOffsetLeft = 10.0;
 		thumHOffsetRight = 160.0;
 		frameHeight = 115.0;
-		scrollViewWidth = 323.0;
+		scrollViewWidth = [[UIScreen mainScreen] bounds].size.width;
 		scrollViewHeight = 404.0;
 		detailViewHeight = 240.0;
 		scrollViewVOffset = 60.0;

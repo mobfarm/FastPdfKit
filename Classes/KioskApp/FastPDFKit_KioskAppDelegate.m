@@ -68,7 +68,14 @@
 	if(isPad) {
 			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_ipad" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
 	} else {
-			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
+        
+        NSLog(@"schermo %f",[[UIScreen mainScreen] bounds].size.height);
+        
+        if ([[UIScreen mainScreen] bounds].size.height == 568 ) {
+            aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone5" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
+        }else{
+            aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
+        }		
 	}
     
     menuVC_Kiosk = aMenuViewController;
