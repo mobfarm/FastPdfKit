@@ -1698,7 +1698,7 @@
 }
 
 -(NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationPortrait;
 }
 
 - (void)dealloc {

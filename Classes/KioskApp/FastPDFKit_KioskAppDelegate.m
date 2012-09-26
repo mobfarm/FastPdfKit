@@ -18,7 +18,7 @@
 
 -(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     
-    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationPortrait;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
