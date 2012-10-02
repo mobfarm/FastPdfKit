@@ -1,0 +1,3 @@
+USER_HEADER_SEARCH_PATHS = $(inherited) $(FASTPDFKIT_DIR)/** $(FASTPDFKIT_DIR)/FPKCore $(FASTPDFKIT_DIR)/Classes/**
+LIBRARY_SEARCH_PATHS = $(inherited) $(FASTPDFKIT_DIR)/**
+OTHER_LDFLAGS = $(inherited) -framework AudioToolbox -framework MediaPlayer -framework MobileCoreServices -framework CFNetwork -framework  CoreText -framework UIKit -framework CoreGraphics -framework Foundation -framework QuartzCore -framework AVFoundation -framework CoreFoundation -framework SystemConfiguration -lz -lFPKReaderLib

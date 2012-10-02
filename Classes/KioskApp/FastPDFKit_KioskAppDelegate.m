@@ -18,7 +18,7 @@
 
 -(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     
-    return UIInterfaceOrientationPortrait;
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -69,11 +69,12 @@
 			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_ipad" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
 	} else {
         
-        NSLog(@"schermo %f",[[UIScreen mainScreen] bounds].size.height);
+        if (([[UIScreen mainScreen] bounds].size.height - 568.0) < FLT_EPSILON ) {
         
-        if ([[UIScreen mainScreen] bounds].size.height == 568 ) {
             aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone5" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
-        }else{
+        
+        } else {
+            
             aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
         }		
 	}
