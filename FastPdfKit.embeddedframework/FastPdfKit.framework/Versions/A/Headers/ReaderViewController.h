@@ -133,11 +133,10 @@
 @property (nonatomic,retain) UIImage * imgText;
 @property (nonatomic, readwrite) CGFloat toolbarHeight;
 
--(void)setNumberOfPageToolbar;
+-(void)updatePageNumberLabel;
 
 -(void)showToolbar;
 -(void)hideToolbar;
-
 
 @property (nonatomic, retain) UIToolbar * rollawayToolbar;
 @property (nonatomic, retain) UILabel * pageNumLabel;
@@ -165,6 +164,7 @@
 
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
 
+@property (copy, nonatomic, readwrite) NSString * pageLabelFormat;
 
 -(void)dismissAlternateViewController;
 -(void)playVideo:(NSString *)path local:(BOOL)isLocal;

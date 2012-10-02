@@ -300,6 +300,14 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+# Update October 2nd, 2012
+* Fixed a crash while reading certain documents annotations
+* Finally fixed layer shadow (again)
+* Fixed bad overflow mode page position with some documents
+* Sligthy changed starting page behavior, now the slider should update properly
+* Added a visited page system similar to web browser one, check the MFDocumentViewController.
+* You can now set the thumbnail and image cache folders
+
 # Update September 4th, 2012
 * Fixed missing iPhone toolbar images
 * Thumbnails are now JPEG

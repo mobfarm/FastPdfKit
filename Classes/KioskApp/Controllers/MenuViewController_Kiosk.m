@@ -135,7 +135,6 @@
 
 -(void)buildInterface{
 
-	UIScrollView * aScrollView = nil;
 	CGFloat yBorder = 0 ; 
 	UIImageView * anImageView = nil;
 	
@@ -168,7 +167,7 @@
 		thumbHOffsetLeft = 20.0;
 		thumHOffsetRight = 380.0;
 		frameHeight = 325.0;
-		scrollViewWidth = 771.0;
+		scrollViewWidth = [[UIScreen mainScreen] bounds].size.width;
 		scrollViewHeight = 875.0;
 		detailViewHeight = 665.0;
 		scrollViewVOffset = 130.0;
@@ -180,7 +179,7 @@
 		thumbHOffsetLeft = 10.0;
 		thumHOffsetRight = 160.0;
 		frameHeight = 115.0;
-		scrollViewWidth = 323.0;
+		scrollViewWidth = [[UIScreen mainScreen] bounds].size.width;
 		scrollViewHeight = 404.0;
 		detailViewHeight = 240.0;
 		scrollViewVOffset = 60.0;
@@ -188,23 +187,29 @@
 	
 	documentsCount = [documentsList count];
     
-       // Border.
-        
-        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            yBorder = scrollViewVOffset-3 ;
-        }else {
-            yBorder = scrollViewVOffset-1 ;
-        }
-        
-        anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, scrollViewWidth, 40)]; 
-        [anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"border",@"png")]];
-        [self.view addSubview:anImageView];
-        [anImageView release];
+    // Border.
     
-	aScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, scrollViewVOffset, scrollViewWidth, scrollViewHeight)];
-	aScrollView.backgroundColor = [UIColor whiteColor];
-	aScrollView.contentSize = CGSizeMake(scrollViewWidth, detailViewHeight * ((documentsCount/2)+(documentsCount%2)));
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        yBorder = scrollViewVOffset-3 ;
+    }else {
+        yBorder = scrollViewVOffset-1 ;
+    }
+    
+    anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, scrollViewWidth+2, 40)];
+    [anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"border",@"png")]];
+    [anImageView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleWidth];
+    [self.view addSubview:anImageView];
+    [anImageView release];
+    
+    
 	
+	scrollView.backgroundColor = [UIColor whiteColor];
+	[scrollView setShowsVerticalScrollIndicator:NO];
+    
+    UIView *testViewContainer = [[UIView alloc] initWithFrame:CGRectMake((scrollView.frame.size.width-scrollViewWidth)/2, 0, scrollViewWidth,0)];
+	
+	[testViewContainer setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+    
 	for (int i=1; i<= documentsCount ; i++) {
 		
 		titoloPdf = [[documentsList objectAtIndex: i-1] objectForKey: @"title"];
@@ -230,7 +235,7 @@
 		
 		bookItemView.view.frame = frame;
 		bookItemView.menuViewController = self;
-		[aScrollView addSubview:bookItemView.view];
+		[testViewContainer addSubview:bookItemView.view];
 		
 		// Adding stuff to their respective containers.
 		
@@ -244,11 +249,14 @@
 		
 	}
     
-	self.scrollView = aScrollView;
-    [aScrollView release];
+    [testViewContainer setFrame:CGRectMake((scrollView.frame.size.width-scrollViewWidth)/2, 0, scrollViewWidth,((documentsCount/2)+(documentsCount%2))*detailViewHeight)];
     
-	[self.view addSubview:scrollView];
+    [scrollView addSubview:testViewContainer];
     
+    [scrollView setContentSize:CGSizeMake(testViewContainer.frame.size.width, testViewContainer.frame.size.height)];
+	
+    [testViewContainer release];
+	
     interfaceLoaded = YES;
 }
 

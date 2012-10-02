@@ -4,7 +4,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FPKShared/FPKOverlayManager.h>
 
 /**
  This is the FPKOverlayManager simplest subclass.

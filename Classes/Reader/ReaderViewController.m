@@ -56,6 +56,7 @@
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft, imgModeOverflow;
 @synthesize imgSearch, imgDismiss, imgOutline, imgBookmark, imgText;
+@synthesize pageLabelFormat;
 
 -(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
 
@@ -650,13 +651,7 @@
 	
 	// Update the label.
     
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [pageNumLabel setText:PAGE_NUM_LABEL_TEXT(pageNumber,[[self document]numberOfPages])];
-    
-    }else{
-        
-        [pageNumLabel setText:PAGE_NUM_LABEL_TEXT_PHONE(pageNumber,[[self document]numberOfPages])];
-    }
+    [self updatePageNumberLabel];
 }
 
 -(IBAction) actionPageSliderStopped:(id)sender {
@@ -935,9 +930,7 @@
 	//	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 	//	in this callback.
     
-	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(page,[[self document]numberOfPages])];
-    
-	[self setNumberOfPageToolbar];
+	[self updatePageNumberLabel];
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didChangeModeTo:(MFDocumentMode)mode automatic:(BOOL)automatically {
@@ -951,13 +944,13 @@
         
         [changeModeButton setImage:imgModeSingle forState:UIControlStateNormal];
         
-		//[changeModeBarButtonItem setImage:imgModeSingle];
 	} else if (mode == MFDocumentModeDouble) {
+        
         [changeModeButton setImage:imgModeDouble forState:UIControlStateNormal];
-		//[changeModeBarButtonItem setImage:imgModeDouble];
+		
 	} else if (mode == MFDocumentModeOverflow) {
+        
         [changeModeButton setImage:imgModeOverflow forState:UIControlStateNormal];
-        //[changeModeBarButtonItem setImage:imgModeOverflow];
     }
 }
 
@@ -1100,8 +1093,6 @@
 #pragma mark -
 #pragma mark UIViewController lifcecycle
 
-
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 	
 	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar. If
@@ -1140,6 +1131,10 @@
 	[aView release];
 }
 
+/**
+ * This method will load the image for the toolbar icons. You can override this
+ * method to load different images.
+ */
 -(void)loadResources {
     
     if(self.toolbarHeight == 0)
@@ -1213,6 +1208,9 @@
     }
 }
 
+/**
+ * This method will create and customize the toolbar.
+ */
 -(void)prepareToolbar {
 
     NSMutableArray * items = nil;
@@ -1572,23 +1570,39 @@
 	[self prepareToolbar];
 }
 
-
--(void)setNumberOfPageToolbar{
+/**
+ * This method will update the page number label according to either the 
+ * pageLabelFormat, if not nil, or the default format and the page and
+ * total number of pages.
+ */
+-(void)updatePageNumberLabel{
 	
 	NSString *labelTitle = nil;
     
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if(self.pageLabelFormat) {
         
-        labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
-    
-    } else {
-    
-        labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
+        labelTitle = [NSString stringWithFormat:self.pageLabelFormat, [self page], [[self document] numberOfPages]];
     }
+    else {
+        
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            
+            labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+            
+        }
+        else {
+            
+            labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
+        }
+    }
+    
     
 	self.pageNumLabel.text = labelTitle;
 }
 
+/**
+ * This method will show the toolbar.
+ */
 -(void)showToolbar {
 	
 	// Show toolbar, with animation.
@@ -1601,6 +1615,9 @@
 	[UIView commitAnimations];		
 }
 
+/**
+ * This method will hide the toolbar.
+ */
 -(void)hideToolbar{
 	
 	// Hide the toolbar, with animation.	

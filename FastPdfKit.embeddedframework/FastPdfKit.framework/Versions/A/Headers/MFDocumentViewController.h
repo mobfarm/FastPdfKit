@@ -515,4 +515,44 @@
  */
 @property (copy, nonatomic) NSString * cacheEncryptionKey;
 
+/**
+ This path will be used to cache the thumbnails images. If left undefined by the
+ user, the kit will generate one depending on the documentId first, then a 
+ shared one.
+ */
+@property (copy, atomic, readwrite) NSString * thumbnailsCachePath;
+
+/**
+ This path will be used to cache the page images. If left undefined by the
+ user, the kit will generate one depending on the documentId first, then a
+ shared one.
+ */
+@property (copy, atomic, readwrite) NSString * imagesCachePath;
+
+/**
+ Visited pages system.
+ */
+
+/**
+ * This will move to the next visited page, if any.
+ */
+-(void)nextVisitedPage;
+
+/**
+ * This will go back to the previously visited page, if any.
+ */
+-(void)previousVisitedPage;
+
+/**
+ * Amount of forward visited pages. It will be greather than 0
+ * only when the user as jumped back.
+ */
+-(NSInteger)nextVisitedPagesCount;
+
+/**
+ * Amount of previously visited pages. It is usually greather than 0,
+ * unless the user has already jumped to the bottom of the stack.
+ */
+-(NSInteger)previousVisitedPagesCount;
+
 @end

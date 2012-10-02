@@ -23,7 +23,7 @@
 	
 	NSMutableArray *documentsList;
     
-    UIScrollView *scrollView;
+    IBOutlet UIScrollView *scrollView;
     
 	UIView * downloadProgressContainerView;
 	UIProgressView * downloadProgressView;

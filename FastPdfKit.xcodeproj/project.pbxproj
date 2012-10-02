@@ -174,6 +174,8 @@
 		0189D3BD1486C1C000635C5D /* FPKGlyphBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0189D3BF1486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; };
 		0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0193CA0A161B43BA0060A401 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0193CA09161B43B90060A401 /* ZipArchive.mm */; };
+		0193CA0B161B43BA0060A401 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0193CA09161B43B90060A401 /* ZipArchive.mm */; };
 		01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; };
 		01AD4F1D14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; };
@@ -230,8 +232,6 @@
 		6FB9772D13CB6EB7007C368C /* backThumb_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F213CB6E63007C368C /* backThumb_iphone@2x.png */; };
 		6FB9772E13CB6EB7007C368C /* backThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F313CB6E63007C368C /* backThumb.png */; };
 		6FB9772F13CB6EB7007C368C /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F413CB6E63007C368C /* download.png */; };
-		6FB9773013CB6EB7007C368C /* header_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F513CB6E63007C368C /* header_iphone.png */; };
-		6FB9773113CB6EB7007C368C /* header_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F613CB6E63007C368C /* header_iphone@2x.png */; };
 		6FB9773213CB6EB7007C368C /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F713CB6E63007C368C /* header.png */; };
 		6FB9773313CB6EB7007C368C /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F813CB6E63007C368C /* remove.png */; };
 		6FB9773413CB6EB7007C368C /* resume.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F913CB6E63007C368C /* resume.png */; };
@@ -350,8 +350,6 @@
 		958CBAB4141E65770094D4C1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		958CBAB5141E66060094D4C1 /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 890986A913CECF0F00656A49 /* Snippets.txt */; };
 		9597F995125D17E400E17B47 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9597F994125D17E400E17B47 /* iTunesArtwork */; };
-		959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
-		959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
 		95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5E13CCA59800195F0F /* Manual.pdf */; };
 		95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */; };
 		95B9C57D15110E6C00411AF6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C57C15110E6C00411AF6 /* pause@2x.png */; };
@@ -372,6 +370,14 @@
 		95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */; };
 		95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */; };
 		95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7114B48C3100B1CD3B /* Snippets.txt */; };
+		FF9E5BD81608B22E007C560A /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD61608B22E007C560A /* title.png */; };
+		FF9E5BD91608B22E007C560A /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD61608B22E007C560A /* title.png */; };
+		FF9E5BDA1608B22E007C560A /* version.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD71608B22E007C560A /* version.png */; };
+		FF9E5BDB1608B22E007C560A /* version.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD71608B22E007C560A /* version.png */; };
+		FFB9B94F1609F63E00A6F8EC /* Kiosk_phone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B94E1609F63E00A6F8EC /* Kiosk_phone5.xib */; };
+		FFB9B956160A025F00A6F8EC /* Deafult-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */; };
+		FFB9B959160A04B000A6F8EC /* header_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B957160A04B000A6F8EC /* header_iphone.png */; };
+		FFB9B95A160A04B000A6F8EC /* header_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B958160A04B000A6F8EC /* header_iphone@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -494,6 +500,7 @@
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGlyphBox.h; sourceTree = "<group>"; };
 		0189D3BE1486C28400635C5D /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
+		0193CA09161B43B90060A401 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		01AB4AE413EFE267008EB17B /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
 		01AB4AE513EFE267008EB17B /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
 		01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPDFOutlineRemoteEntry.h; sourceTree = "<group>"; };
@@ -516,7 +523,6 @@
 		01BC07B113C755610077CE63 /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINSStringAdditions.h; sourceTree = "<group>"; };
 		01BC07B213C755610077CE63 /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINSStringAdditions.m; sourceTree = "<group>"; };
 		01BC07B313C755610077CE63 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
-		01BC07B413C755610077CE63 /* libziparchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libziparchive.a; sourceTree = "<group>"; };
 		01BC07B613C755610077CE63 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		01BC07B713C755610077CE63 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		01BC07B813C755610077CE63 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -596,8 +602,6 @@
 		6FB976F213CB6E63007C368C /* backThumb_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backThumb_iphone@2x.png"; sourceTree = "<group>"; };
 		6FB976F313CB6E63007C368C /* backThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backThumb.png; sourceTree = "<group>"; };
 		6FB976F413CB6E63007C368C /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
-		6FB976F513CB6E63007C368C /* header_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_iphone.png; sourceTree = "<group>"; };
-		6FB976F613CB6E63007C368C /* header_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_iphone@2x.png"; sourceTree = "<group>"; };
 		6FB976F713CB6E63007C368C /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		6FB976F813CB6E63007C368C /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove.png; sourceTree = "<group>"; };
 		6FB976F913CB6E63007C368C /* resume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resume.png; sourceTree = "<group>"; };
@@ -689,6 +693,12 @@
 		95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
 		95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FPKReaderBundle.bundle; sourceTree = "<group>"; };
 		95FFFB7114B48C3100B1CD3B /* Snippets.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
+		FF9E5BD61608B22E007C560A /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		FF9E5BD71608B22E007C560A /* version.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = version.png; sourceTree = "<group>"; };
+		FFB9B94E1609F63E00A6F8EC /* Kiosk_phone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kiosk_phone5.xib; sourceTree = "<group>"; };
+		FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deafult-568h@2x.png"; sourceTree = "<group>"; };
+		FFB9B957160A04B000A6F8EC /* header_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_iphone.png; sourceTree = "<group>"; };
+		FFB9B958160A04B000A6F8EC /* header_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_iphone@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -706,7 +716,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
-				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
 				39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,7 +737,6 @@
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
-				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
 				0124AE3215D98F2000EBFA22 /* libFastPdfKit.a in Frameworks */,
 			);
@@ -1034,6 +1042,7 @@
 			children = (
 				01BC080313C75B310077CE63 /* Kiosk_ipad.xib */,
 				01BC080413C75B310077CE63 /* Kiosk_phone.xib */,
+				FFB9B94E1609F63E00A6F8EC /* Kiosk_phone5.xib */,
 				01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */,
 				01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */,
 				01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */,
@@ -1077,9 +1086,11 @@
 				6FB976F213CB6E63007C368C /* backThumb_iphone@2x.png */,
 				6FB976F313CB6E63007C368C /* backThumb.png */,
 				6FB976F413CB6E63007C368C /* download.png */,
-				6FB976F513CB6E63007C368C /* header_iphone.png */,
-				6FB976F613CB6E63007C368C /* header_iphone@2x.png */,
 				6FB976F713CB6E63007C368C /* header.png */,
+				FFB9B957160A04B000A6F8EC /* header_iphone.png */,
+				FFB9B958160A04B000A6F8EC /* header_iphone@2x.png */,
+				FF9E5BD61608B22E007C560A /* title.png */,
+				FF9E5BD71608B22E007C560A /* version.png */,
 				6FB976F813CB6E63007C368C /* remove.png */,
 				6FB976F913CB6E63007C368C /* resume.png */,
 				6FB976FA13CB6E63007C368C /* view.png */,
@@ -1150,8 +1161,8 @@
 				01BC07B513C755610077CE63 /* minizip */,
 				01BC07BF13C755610077CE63 /* Reachability.h */,
 				01BC07C013C755610077CE63 /* Reachability.m */,
+				0193CA09161B43B90060A401 /* ZipArchive.mm */,
 				01BC07C113C755610077CE63 /* ZipArchive.h */,
-				01BC07B413C755610077CE63 /* libziparchive.a */,
 			);
 			path = ThirdParties;
 			sourceTree = "<group>";
@@ -1324,6 +1335,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */,
 				011E42B81472D1510099754E /* README.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				95F5A3511270A2A700F65929 /* FPKCore */,
@@ -1828,6 +1840,9 @@
 				95EF544214B48E4C00910B3D /* Icon72.png in Resources */,
 				95EF544314B48E4F00910B3D /* Icon114.png in Resources */,
 				0102A1D31547009B00F7A9AF /* Settings.bundle in Resources */,
+				FF9E5BD81608B22E007C560A /* title.png in Resources */,
+				FF9E5BDA1608B22E007C560A /* version.png in Resources */,
+				FFB9B956160A025F00A6F8EC /* Deafult-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1863,8 +1878,6 @@
 				6FB9772D13CB6EB7007C368C /* backThumb_iphone@2x.png in Resources */,
 				6FB9772E13CB6EB7007C368C /* backThumb.png in Resources */,
 				6FB9772F13CB6EB7007C368C /* download.png in Resources */,
-				6FB9773013CB6EB7007C368C /* header_iphone.png in Resources */,
-				6FB9773113CB6EB7007C368C /* header_iphone@2x.png in Resources */,
 				6FB9773213CB6EB7007C368C /* header.png in Resources */,
 				6FB9773313CB6EB7007C368C /* remove.png in Resources */,
 				6FB9773413CB6EB7007C368C /* resume.png in Resources */,
@@ -1881,6 +1894,11 @@
 				95B9C58715110EAA00411AF6 /* remove@2x.png in Resources */,
 				95B9C58815110EAA00411AF6 /* resume@2x.png in Resources */,
 				95B9C58915110EAA00411AF6 /* view@2x.png in Resources */,
+				FF9E5BD91608B22E007C560A /* title.png in Resources */,
+				FF9E5BDB1608B22E007C560A /* version.png in Resources */,
+				FFB9B94F1609F63E00A6F8EC /* Kiosk_phone5.xib in Resources */,
+				FFB9B959160A04B000A6F8EC /* header_iphone.png in Resources */,
+				FFB9B95A160A04B000A6F8EC /* header_iphone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2082,6 +2100,7 @@
 				01598DED13CAEAA6007344EE /* Reachability.m in Sources */,
 				01598DEA13CAEA78007344EE /* ASINetworkQueue.m in Sources */,
 				01598DEB13CAEA78007344EE /* ASINSStringAdditions.m in Sources */,
+				0193CA0B161B43BA0060A401 /* ZipArchive.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2120,6 +2139,7 @@
 				0123605313CC917600861EB7 /* WebBrowser.m in Sources */,
 				0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
 				0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
+				0193CA0A161B43BA0060A401 /* ZipArchive.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2234,6 +2254,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/FastPDFKitReader.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2252,6 +2273,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2259,6 +2281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/FastPDFKitReader.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2274,6 +2297,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -2302,6 +2326,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2327,6 +2352,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -2334,6 +2360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2351,13 +2378,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/ThirdParties\"/**",
+					"\"$(SRCROOT)/Classes/ThirdParties\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2365,6 +2393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2381,13 +2410,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/ThirdParties\"/**",
+					"\"$(SRCROOT)/Classes/ThirdParties\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2396,6 +2426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -2415,7 +2446,7 @@
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2423,6 +2454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -2441,7 +2473,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -2449,7 +2481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2475,7 +2507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2497,7 +2529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2523,7 +2555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2615,7 +2647,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2688,7 +2720,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2725,7 +2757,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386";
+				VALID_ARCHS = "armv7 i386 armv7s";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -2759,7 +2791,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386";
+				VALID_ARCHS = "armv7 i386 armv7s";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -2778,7 +2810,7 @@
 				PRODUCT_NAME = "FastPdfKit Sample";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				WARNING_CFLAGS = "";
 			};
 			name = Debug;
@@ -2798,7 +2830,7 @@
 				PRODUCT_NAME = "FastPdfKit Sample";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				WARNING_CFLAGS = "";
 			};
 			name = Release;
