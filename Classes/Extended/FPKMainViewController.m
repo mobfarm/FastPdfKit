@@ -42,7 +42,7 @@
 
     /** Add the FPKOverlayManager as OverlayViewDataSource to the ReaderViewController */
     [pdfViewController addOverlayViewDataSource:_overlayManager];
-    
+
     /** Register as DocumentDelegate to receive tap */
     [pdfViewController addDocumentDelegate:_overlayManager];
     
