@@ -318,26 +318,25 @@
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:miniSearchView];
 	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
-		
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
-		
-	}
-
-    
-	[UIView commitAnimations];
-	
-    currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
-    currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
+    [UIView animateWithDuration:0.25
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+                         }
+                         else {
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+                         }
+                     }
+                     completion:^(BOOL finished) {
+                         
+                         currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
+                         currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
+                         
+                     }];
 }
 
 
@@ -346,42 +345,44 @@
 	// Remove from the superview and release the mini search view.
 	
 	// Animation.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
-	}
-	[UIView commitAnimations];
-	
-	// Actual removal.
-	if(miniSearchView!=nil) {
-		
-		[miniSearchView removeFromSuperview];
-		MF_COCOA_RELEASE(miniSearchView);
-	}
-	
-	[self removeOverlayDataSource:self.searchManager];
-    [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+                         } else {
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+                         }
+                     }
+                     completion:^(BOOL finished){
+                         // Actual removal.
+                         if(miniSearchView!=nil) {
+                             [miniSearchView removeFromSuperview];
+                             MF_COCOA_RELEASE(miniSearchView);
+                         }
+                         
+                         [self removeOverlayDataSource:self.searchManager];
+                         [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+                     }];
 }
 
 -(void)showMiniSearchView {
 	
 	// Remove from the superview and release the mini search view.
 	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
-	}
-	
-	[UIView commitAnimations];
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+                         } else {
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+                         }
+                     }
+                     completion:NULL];
 }
 
 

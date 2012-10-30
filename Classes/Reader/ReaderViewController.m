@@ -433,27 +433,30 @@
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:miniSearchView];
 	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		
-        [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
-        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
-		[self.view bringSubviewToFront:rollawayToolbar];
-        
-	}else {
-        
-		[miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
-        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
-		[self.view bringSubviewToFront:rollawayToolbar];
-	}
-    
-	[UIView commitAnimations];
-	
-    currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
-    currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             
+                             [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
+                             [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+                             
+                         }else {
+                             
+                             [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
+                             [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+                             
+                         }
+                     }
+                     completion:^(BOOL finished){
+                         
+                         [self.view bringSubviewToFront:rollawayToolbar];
+                         
+                         currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
+                         currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
+                         
+                     }];
 }
 
 -(SearchViewController *)searchViewController {
@@ -513,44 +516,49 @@
 	// Remove from the superview and release the mini search view.
 	
 	// Animation.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
-	}else {
-		[miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
-	}
-	[UIView commitAnimations];
-	
-	// Actual removal.
-	if(miniSearchView!=nil) {
-		
-		[miniSearchView removeFromSuperview];
-		MF_COCOA_RELEASE(miniSearchView);
-	}
-	
-	[self removeOverlayDataSource:self.searchManager];
-    [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             
+                             [miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
+                         } else {
+                             
+                             [miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
+                         }
+                         
+                     }
+                     completion:^(BOOL finished){
+                         // Actual removal.
+                         if(miniSearchView!=nil) {
+                             
+                             [miniSearchView removeFromSuperview];
+                             MF_COCOA_RELEASE(miniSearchView);
+                         }
+                         
+                         [self removeOverlayDataSource:self.searchManager];
+                         [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+                     }];
 }
 
 -(void)showMiniSearchView {
 	
 	// Remove from the superview and release the mini search view.
 	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
-        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
-	}else {
-		[miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
-        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
-	}
-	
-	[UIView commitAnimations];
+    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        
+            [miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
+            [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+        
+        }else {
+            
+            [miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
+            [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+        }
+    } completion:NULL];
 }
 
 -(SearchManager *)searchManager {
@@ -1606,13 +1614,17 @@
 -(void)showToolbar {
 	
 	// Show toolbar, with animation.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[self.rollawayToolbar setHidden:NO];
-    [self.rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
-	[UIView commitAnimations];		
+	[UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
+                     }
+                     completion:^(BOOL finished) {
+                         if(finished) {
+                             [self.rollawayToolbar setHidden:NO];
+                         }
+                     }];
 }
 
 /**
@@ -1620,13 +1632,16 @@
  */
 -(void)hideToolbar{
 	
-	// Hide the toolbar, with animation.	
-    
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[self.rollawayToolbar setFrame:CGRectMake(0, -toolbarHeight, rollawayToolbar.frame.size.width, toolbarHeight)];
-	[UIView commitAnimations];
+	// Hide the toolbar, with animation.
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.rollawayToolbar setFrame:CGRectMake(0, -toolbarHeight, rollawayToolbar.frame.size.width, toolbarHeight)];
+                     }
+                     completion:^(BOOL finished){
+                         [self.rollawayToolbar setHidden:YES];
+                     }];
 }
 
 
