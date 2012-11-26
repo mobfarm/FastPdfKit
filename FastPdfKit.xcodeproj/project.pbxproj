@@ -219,6 +219,7 @@
 		01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		01F46FD515CC312300D06464 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
+		01F840B6163FC810009104F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -591,6 +592,7 @@
 		01D73BC11474385300C142FE /* Times-Roman.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Roman.fpkfm"; sourceTree = "<group>"; };
 		01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		01F840B5163FC810009104F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39224923146832B3004A3EB1 /* NewsstandKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NewsstandKit.framework; path = System/Library/Frameworks/NewsstandKit.framework; sourceTree = SDKROOT; };
@@ -1335,6 +1337,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				01F840B5163FC810009104F0 /* Default-568h@2x.png */,
 				FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */,
 				011E42B81472D1510099754E /* README.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -1972,6 +1975,7 @@
 				95EF544814B48EDD00910B3D /* Icon72.png in Resources */,
 				95EF544914B48EDD00910B3D /* Icon114.png in Resources */,
 				010FE6ED15EE582200304C02 /* fpkmessage-info.png in Resources */,
+				01F840B6163FC810009104F0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2360,7 +2364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7s;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2393,7 +2397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7s;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2611,7 +2615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Classes/Extended/Resources/Extended-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
@@ -2683,7 +2687,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Classes/Extended/Resources/Extended-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",

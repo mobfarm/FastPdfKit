@@ -302,6 +302,7 @@
     
     // Here's the chance to unload this view controller and load a new one with the starting page set to page.
     
+    NSLog(@"%@ %d", file, page);
 }
 
 -(IBAction) actionOutline:(id)sender {
@@ -1618,13 +1619,11 @@
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
+                         [self.rollawayToolbar setHidden:NO];
                          [self.rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
                      }
-                     completion:^(BOOL finished) {
-                         if(finished) {
-                             [self.rollawayToolbar setHidden:NO];
-                         }
-                     }];
+                     completion:NULL
+                     ];
 }
 
 /**

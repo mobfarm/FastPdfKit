@@ -300,6 +300,10 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+# Update November 26, 2012
+* Improved handling of space glyph in the text
+* Bunch of small tweaks and fixes
+
 # Update October 2nd, 2012
 * Fixed a crash while reading certain documents annotations
 * Finally fixed layer shadow (again)

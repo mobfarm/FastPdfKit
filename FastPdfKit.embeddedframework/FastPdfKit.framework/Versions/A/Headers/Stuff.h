@@ -164,8 +164,6 @@ static inline CGSize sizeForContent(NSInteger numberOfPages, CGSize pageSize) {
 	
     size = CGSizeMake(contentWidth, contentHeight);
     
-    //NSLog(@"%d %@ -> %@", numberOfPages, NSStringFromCGSize(pageSize), NSStringFromCGSize(size));
-    
     return size;
 }
 
