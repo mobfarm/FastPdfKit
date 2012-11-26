@@ -42,7 +42,7 @@
 
     /** Add the FPKOverlayManager as OverlayViewDataSource to the ReaderViewController */
     [pdfViewController addOverlayViewDataSource:_overlayManager];
-    
+
     /** Register as DocumentDelegate to receive tap */
     [pdfViewController addDocumentDelegate:_overlayManager];
     
@@ -50,6 +50,9 @@
     [_overlayManager setDocumentViewController:(MFDocumentViewController <FPKOverlayManagerDelegate> *)pdfViewController];
     
 	/** Present the pdf on screen in a modal view */
+    [pdfViewController setDismissBlock:^{
+        [self dismissModalViewControllerAnimated:YES];
+    }];
     [self presentModalViewController:pdfViewController animated:YES]; 
     
     /** Release the pdf controller*/

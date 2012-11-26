@@ -17,8 +17,6 @@
 
 	MFOffscreenRenderer *renderer;
 	
-	CGPDFDocumentRef document;
-	NSLock * lock;
 	NSURL * url;
     CGDataProviderRef provider;
     
@@ -48,6 +46,9 @@
 -(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage andRight:(NSInteger)rightPage size:(CGSize)size andScale:(CGFloat)scale useLegacy:(BOOL)legacy showShadow:(BOOL)shadow andPadding:(CGFloat)padding;
 -(CGImageRef)createImageFromPDFPage:(NSInteger)page size:(CGSize)size  andScale:(CGFloat)scale useLegacy:(BOOL)legacy showShadow:(BOOL)shadow andPadding:(CGFloat)padding;
 
+-(CGImageRef)createImageWithPage:(NSUInteger)page pixelScale:(float)scale imageScale:(NSUInteger)scaling screenDimension:(CGFloat)dimension;
+
+-(CGImageRef)createImageWithImage:(CGImageRef)imageToBeDrawn;
 
 -(void)drawPageNumber:(NSInteger)pageNumber onContext:(CGContextRef)ctx;
 
@@ -131,6 +132,9 @@
  Compatibility methods for older version. It will call the above method with default values.
  */
 -(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm;
+/**
+ Compatibility methods for older version. It will call the above method with default values.
+ */
 -(NSArray *)searchResultOnPage:(NSUInteger)pageNr forSearchTerms:(NSString *)searchTerm ignoreCase:(BOOL)ignoreOrNot;
 
 /**
@@ -179,5 +183,70 @@
  Default value is YES.
  */
 @property (nonatomic,assign) BOOL alternateURISchemesEnabled;
+
+/**
+ This will return a Cocoa representation of the annotations array for each page.
+ The returned value is actually a ditionary, where the value you are looking for
+ is store with the key "object".
+ The other entries are there to allow the handling of circular refernces while
+ maintaining proper memory management.
+ 
+ By Cocoa representation is meant the following conversions from PDF to Cocoa
+ objects:
+ 
+ array -> NSArray
+ dictionary -> NSDictionary
+ name -> NSString
+ number -> NSNumber
+ real -> NSNumber
+ string -> NSString
+ 
+ The exception is the stream object, that is represented by a dictionary
+ 
+ stream -> NSDictionary
+ 
+ that stores stream data, the stream dictionary and the stream format. The stream
+ data is an NSData object with key @"streamData", the stream format is an 
+ NSString with the key @"streamFormat" whose value are @"raw", @"jpegEncoded" or
+ @"jpeg2000" and the dictionary is an NSDictionary with the key @"streamDictionary".
+ 
+ In other words, if you are looking for Text annotations and you want the position
+ of the annotation and the text associated with it, you'll do something
+ like this:
+ 1. Invoke the method and get the dictionary
+ 2. Get the object associated with the @"object" key in the dictionary. This
+ object will be an Array according to the pdf reference
+ 3. Each entry in the array will be a dictionary
+ 4. For each of this dictionary, check the key @"subtype", should be @"Text" for
+ a Text annotation
+ 5. Get the @"Rect" array to calculate the rect for the annotation
+ 6. Get the @"Contents" string to get the text for the annotation
+ 
+ like
+ 
+ NSDictionary * annotationsDict = [self.document cocoaAnnotationsForPage:self.page];
+    NSArray * annotations = [annotationsDict objectForKey:@"object"];
+    for (NSDictionary * annotation in annotations) {
+        NSLog(@"Found Annotations with Subtype: %@", [annotation valueForKey:@"Subtype"]);
+        if ([[annotation valueForKey:@"Subtype"] isEqualToString:@"Text"]){
+            NSLog(@"Note: %@", [annotation objectForKey:@"Contents"]);
+        }
+        if([annotation valueForKey:@"Rect"]) {
+            // Handle annotation rect (array of floats, two pairs of point) here
+            NSArray * rect = [annotation valueForKey:@"Rect"];
+            CGPoint p0 = CGPointMake([[rect objectAtIndex:0]floatValue], [[rect objectAtIndex:1]floatValue]);
+            CGPoint p1 = ...
+        }
+        if([annotation valueForKey:@"Popup"]) {
+            NSDictionary * popup = [annotation valueForKey:@"Popup"];
+            if([popup valueForKey:@"Rect"]) {
+ 
+                // Handle the annotation's popup frame
+            }
+        }
+    }
+ 
+ */
+-(NSDictionary *)cocoaAnnotationsForPage:(NSUInteger)pageNr;
 
 @end

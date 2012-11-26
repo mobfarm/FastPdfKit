@@ -15,6 +15,13 @@
 @class MFDocumentManager;
 @class MFDocumentViewController;
 
+@protocol FPKThumbnailView
+
+@property (nonatomic, copy) NSString * title;
+@property (nonatomic, strong) UIImage * image;
+
+@end
+
 @interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
 	
     NSString * documentId;
@@ -472,5 +479,80 @@
  Access the inner paged scroll view.
  */
 @property (readonly) UIScrollView * pagedScrollView;
+
+/**
+ Height of the thumbnail in the scrollview. Height is 120 on iPad and 60 on iphone.
+ */
+@property (nonatomic, readwrite) CGFloat thumbnailHeight;
+
+/**
+ Background color of the thumbnail view.
+ */
+@property (nonatomic, retain) UIColor * thumbnailBackgroundColor;
+
+/**
+ Enabled or disable the page slider at the bottom.
+ */
+@property (nonatomic, readwrite, getter = isPageSliderEnabled) BOOL pageSliderEnabled;
+
+/**
+ Enable or disable the thumbnail slider at the bottom.
+ */
+@property (nonatomic, readwrite, getter = isThumbnailSliderEnabled) BOOL thumbnailSliderEnabled;
+
+/**
+ Enable or disable background thumbnail rendering, even when the thumbnail slider is not visible.
+ Default is YES.
+ */
+@property (nonatomic, readwrite) BOOL backgroundThumbnailRenderingEnabled;
+
+/**
+ Key to encrypt cached images. If left to the nil default value, image will not 
+ be encrypted.
+ Keep in mind that, for now, you have to manually delete the thumbnail cache if
+ you change associated with a certain documentId (unlikely you'll ever need to
+ do that).
+ */
+@property (copy, nonatomic) NSString * cacheEncryptionKey;
+
+/**
+ This path will be used to cache the thumbnails images. If left undefined by the
+ user, the kit will generate one depending on the documentId first, then a 
+ shared one.
+ */
+@property (copy, atomic, readwrite) NSString * thumbnailsCachePath;
+
+/**
+ This path will be used to cache the page images. If left undefined by the
+ user, the kit will generate one depending on the documentId first, then a
+ shared one.
+ */
+@property (copy, atomic, readwrite) NSString * imagesCachePath;
+
+/**
+ Visited pages system.
+ */
+
+/**
+ * This will move to the next visited page, if any.
+ */
+-(void)nextVisitedPage;
+
+/**
+ * This will go back to the previously visited page, if any.
+ */
+-(void)previousVisitedPage;
+
+/**
+ * Amount of forward visited pages. It will be greather than 0
+ * only when the user as jumped back.
+ */
+-(NSInteger)nextVisitedPagesCount;
+
+/**
+ * Amount of previously visited pages. It is usually greather than 0,
+ * unless the user has already jumped to the bottom of the stack.
+ */
+-(NSInteger)previousVisitedPagesCount;
 
 @end

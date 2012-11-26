@@ -24,11 +24,25 @@
 		010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14D913CB002300FD6F08 /* MainWindow.xib */; };
 		010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DA13CB002300FD6F08 /* MenuView_pad.xib */; };
 		010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DB13CB002300FD6F08 /* MenuView_phone.xib */; };
-		010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14DD13CB002300FD6F08 /* MenuViewController.m */; };
+		010FE6E515EE582100304C02 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6C615EE582100304C02 /* Common.framework */; };
+		010FE6E615EE582200304C02 /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6C815EE582100304C02 /* libPayPalMPL.a */; };
+		010FE6E715EE582200304C02 /* FPKConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6CA15EE582100304C02 /* FPKConfig.framework */; };
+		010FE6E815EE582200304C02 /* FPKGalleryFade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6CD15EE582100304C02 /* FPKGalleryFade.framework */; };
+		010FE6E915EE582200304C02 /* FPKGallerySlide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6CF15EE582100304C02 /* FPKGallerySlide.framework */; };
+		010FE6EA15EE582200304C02 /* FPKGalleryTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6D215EE582100304C02 /* FPKGalleryTap.framework */; };
+		010FE6EB15EE582200304C02 /* FPKMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6D715EE582100304C02 /* FPKMap.framework */; };
+		010FE6EC15EE582200304C02 /* FPKMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6D915EE582100304C02 /* FPKMessage.framework */; };
+		010FE6ED15EE582200304C02 /* fpkmessage-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 010FE6DB15EE582100304C02 /* fpkmessage-info.png */; };
+		010FE6EE15EE582200304C02 /* FPKPayPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6DD15EE582100304C02 /* FPKPayPal.framework */; };
+		010FE6EF15EE582200304C02 /* FPKShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6DF15EE582100304C02 /* FPKShared.framework */; };
+		010FE6F015EE582200304C02 /* FPKWebPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6E215EE582100304C02 /* FPKWebPopup.framework */; };
+		010FE6F115EE582200304C02 /* FPKYouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6E415EE582100304C02 /* FPKYouTube.framework */; };
+		01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01142A2D15CFC38E001B5374 /* MenuViewController.m */; };
+		01142A3B15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
+		01142A3D15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
 		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
-		0123603E13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123603F13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123604013CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123604313CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
@@ -49,6 +63,9 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
+		0124AE3215D98F2000EBFA22 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
+		013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */; };
+		013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */; };
 		0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; };
 		0155DDE81458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0155DE14145848590080FFEF /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; };
@@ -144,6 +161,8 @@
 		0168707E1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */; };
 		0168707F1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
+		0181A3BC15F6790200AC476F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752014B4811500503F90 /* Security.framework */; };
+		0181A3BE15F6791500AC476F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752014B4811500503F90 /* Security.framework */; };
 		01884A47131E92B30045038F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		01884A49131E92B30045038F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
 		01884A67131E93A80045038F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
@@ -155,10 +174,8 @@
 		0189D3BD1486C1C000635C5D /* FPKGlyphBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0189D3BF1486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; };
 		0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		018D334D1547049700EB3DCD /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D334C1547049700EB3DCD /* libFastPdfKit.a */; };
-		018D334E1547049700EB3DCD /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D334C1547049700EB3DCD /* libFastPdfKit.a */; };
-		018D334F1547049700EB3DCD /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D334C1547049700EB3DCD /* libFastPdfKit.a */; };
-		018D33501547049700EB3DCD /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 018D334C1547049700EB3DCD /* libFastPdfKit.a */; };
+		0193CA0A161B43BA0060A401 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0193CA09161B43B90060A401 /* ZipArchive.mm */; };
+		0193CA0B161B43BA0060A401 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0193CA09161B43B90060A401 /* ZipArchive.mm */; };
 		01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; };
 		01AD4F1D14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; };
@@ -199,7 +216,15 @@
 		01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
+		01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
+		01DF25DE166385E100433BE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
+		01DF25E11663863400433BE7 /* Deafult.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E01663863400433BE7 /* Deafult.png */; };
+		01DF25E31663863E00433BE7 /* Deafult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E21663863E00433BE7 /* Deafult@2x.png */; };
+		01DF25E51663867F00433BE7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E41663867F00433BE7 /* Default.png */; };
+		01DF25E71663868300433BE7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E61663868300433BE7 /* Default@2x.png */; };
+		01F46FD515CC312300D06464 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
+		01F840B6163FC810009104F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -213,8 +238,6 @@
 		6FB9772D13CB6EB7007C368C /* backThumb_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F213CB6E63007C368C /* backThumb_iphone@2x.png */; };
 		6FB9772E13CB6EB7007C368C /* backThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F313CB6E63007C368C /* backThumb.png */; };
 		6FB9772F13CB6EB7007C368C /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F413CB6E63007C368C /* download.png */; };
-		6FB9773013CB6EB7007C368C /* header_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F513CB6E63007C368C /* header_iphone.png */; };
-		6FB9773113CB6EB7007C368C /* header_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F613CB6E63007C368C /* header_iphone@2x.png */; };
 		6FB9773213CB6EB7007C368C /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F713CB6E63007C368C /* header.png */; };
 		6FB9773313CB6EB7007C368C /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F813CB6E63007C368C /* remove.png */; };
 		6FB9773413CB6EB7007C368C /* resume.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB976F913CB6E63007C368C /* resume.png */; };
@@ -285,20 +308,6 @@
 		954B74B714B47F0D00503F90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 954B74B514B47F0D00503F90 /* InfoPlist.strings */; };
 		954B74B914B47F0D00503F90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B74B814B47F0D00503F90 /* main.m */; };
 		954B74BD14B47F0D00503F90 /* FPKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B74BC14B47F0D00503F90 /* FPKAppDelegate.m */; };
-		954B74C314B47F0D00503F90 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954B74C114B47F0D00503F90 /* FPKMainViewController_iPhone.xib */; };
-		954B74C614B47F0D00503F90 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954B74C414B47F0D00503F90 /* FPKMainViewController_iPad.xib */; };
-		954B74EE14B47FFB00503F90 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74CE14B47FFB00503F90 /* Common.framework */; };
-		954B74EF14B47FFB00503F90 /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D014B47FFB00503F90 /* libPayPalMPL.a */; };
-		954B74F014B47FFC00503F90 /* FPKGalleryFade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D214B47FFB00503F90 /* FPKGalleryFade.framework */; };
-		954B74F114B47FFC00503F90 /* FPKGallerySlide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D514B47FFB00503F90 /* FPKGallerySlide.framework */; };
-		954B74F214B47FFC00503F90 /* FPKGalleryTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74D814B47FFB00503F90 /* FPKGalleryTap.framework */; };
-		954B74F314B47FFC00503F90 /* FPKMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74DB14B47FFB00503F90 /* FPKMap.framework */; };
-		954B74F414B47FFC00503F90 /* FPKMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74DE14B47FFB00503F90 /* FPKMessage.framework */; };
-		954B74F514B47FFC00503F90 /* fpkmessage-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74E014B47FFB00503F90 /* fpkmessage-info.png */; };
-		954B74F614B47FFC00503F90 /* FPKPayPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E214B47FFB00503F90 /* FPKPayPal.framework */; };
-		954B74F714B47FFC00503F90 /* FPKShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E514B47FFB00503F90 /* FPKShared.framework */; };
-		954B74F814B47FFC00503F90 /* FPKWebPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74E814B47FFB00503F90 /* FPKWebPopup.framework */; };
-		954B74FA14B47FFC00503F90 /* FPKYouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B74EC14B47FFB00503F90 /* FPKYouTube.framework */; };
 		954B750214B4805100503F90 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FC14B4805100503F90 /* img1.png */; };
 		954B750314B4805100503F90 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FD14B4805100503F90 /* img2.png */; };
 		954B750414B4805100503F90 /* img3.png in Resources */ = {isa = PBXBuildFile; fileRef = 954B74FE14B4805100503F90 /* img3.png */; };
@@ -347,9 +356,6 @@
 		958CBAB4141E65770094D4C1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		958CBAB5141E66060094D4C1 /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 890986A913CECF0F00656A49 /* Snippets.txt */; };
 		9597F995125D17E400E17B47 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9597F994125D17E400E17B47 /* iTunesArtwork */; };
-		959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
-		959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BC07B413C755610077CE63 /* libziparchive.a */; };
-		95A965D5157FC6FE00925468 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5E13CCA59800195F0F /* Manual.pdf */; };
 		95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */; };
 		95B9C57D15110E6C00411AF6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C57C15110E6C00411AF6 /* pause@2x.png */; };
@@ -370,6 +376,14 @@
 		95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */; };
 		95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */; };
 		95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7114B48C3100B1CD3B /* Snippets.txt */; };
+		FF9E5BD81608B22E007C560A /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD61608B22E007C560A /* title.png */; };
+		FF9E5BD91608B22E007C560A /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD61608B22E007C560A /* title.png */; };
+		FF9E5BDA1608B22E007C560A /* version.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD71608B22E007C560A /* version.png */; };
+		FF9E5BDB1608B22E007C560A /* version.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD71608B22E007C560A /* version.png */; };
+		FFB9B94F1609F63E00A6F8EC /* Kiosk_phone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B94E1609F63E00A6F8EC /* Kiosk_phone5.xib */; };
+		FFB9B956160A025F00A6F8EC /* Deafult-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */; };
+		FFB9B959160A04B000A6F8EC /* header_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B957160A04B000A6F8EC /* header_iphone.png */; };
+		FFB9B95A160A04B000A6F8EC /* header_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B958160A04B000A6F8EC /* header_iphone@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -420,7 +434,21 @@
 		010D14DA13CB002300FD6F08 /* MenuView_pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_pad.xib; sourceTree = "<group>"; };
 		010D14DB13CB002300FD6F08 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
 		010D14DC13CB002300FD6F08 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		010D14DD13CB002300FD6F08 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		010FE6C615EE582100304C02 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		010FE6C815EE582100304C02 /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
+		010FE6CA15EE582100304C02 /* FPKConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKConfig.framework; sourceTree = "<group>"; };
+		010FE6CD15EE582100304C02 /* FPKGalleryFade.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryFade.framework; sourceTree = "<group>"; };
+		010FE6CF15EE582100304C02 /* FPKGallerySlide.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGallerySlide.framework; sourceTree = "<group>"; };
+		010FE6D215EE582100304C02 /* FPKGalleryTap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryTap.framework; sourceTree = "<group>"; };
+		010FE6D715EE582100304C02 /* FPKMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKMap.framework; sourceTree = "<group>"; };
+		010FE6D915EE582100304C02 /* FPKMessage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKMessage.framework; sourceTree = "<group>"; };
+		010FE6DB15EE582100304C02 /* fpkmessage-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fpkmessage-info.png"; sourceTree = "<group>"; };
+		010FE6DD15EE582100304C02 /* FPKPayPal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKPayPal.framework; sourceTree = "<group>"; };
+		010FE6DF15EE582100304C02 /* FPKShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKShared.framework; sourceTree = "<group>"; };
+		010FE6E215EE582100304C02 /* FPKWebPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKWebPopup.framework; sourceTree = "<group>"; };
+		010FE6E415EE582100304C02 /* FPKYouTube.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKYouTube.framework; sourceTree = "<group>"; };
+		01142A2D15CFC38E001B5374 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		01142A3A15CFCE48001B5374 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		011E42B81472D1510099754E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
 		0123602813CC908E00861EB7 /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
@@ -441,6 +469,8 @@
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailScrollView.h; sourceTree = "<group>"; };
 		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
+		013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPhone.xib; sourceTree = "<group>"; };
+		013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPad.xib; sourceTree = "<group>"; };
 		0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
 		0155DE13145848590080FFEF /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
 		015ED17B1455AE9700C7C372 /* FPKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKAnnotation.h; sourceTree = "<group>"; };
@@ -476,7 +506,7 @@
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGlyphBox.h; sourceTree = "<group>"; };
 		0189D3BE1486C28400635C5D /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
-		018D334C1547049700EB3DCD /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
+		0193CA09161B43B90060A401 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		01AB4AE413EFE267008EB17B /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
 		01AB4AE513EFE267008EB17B /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
 		01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPDFOutlineRemoteEntry.h; sourceTree = "<group>"; };
@@ -499,7 +529,6 @@
 		01BC07B113C755610077CE63 /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINSStringAdditions.h; sourceTree = "<group>"; };
 		01BC07B213C755610077CE63 /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINSStringAdditions.m; sourceTree = "<group>"; };
 		01BC07B313C755610077CE63 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
-		01BC07B413C755610077CE63 /* libziparchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libziparchive.a; sourceTree = "<group>"; };
 		01BC07B613C755610077CE63 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		01BC07B713C755610077CE63 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		01BC07B813C755610077CE63 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -566,8 +595,13 @@
 		01D73BBF1474385300C142FE /* Times-BoldItalic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-BoldItalic.fpkfm"; sourceTree = "<group>"; };
 		01D73BC01474385300C142FE /* Times-Italic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Italic.fpkfm"; sourceTree = "<group>"; };
 		01D73BC11474385300C142FE /* Times-Roman.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Roman.fpkfm"; sourceTree = "<group>"; };
+		01DF25E01663863400433BE7 /* Deafult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deafult.png; sourceTree = "<group>"; };
+		01DF25E21663863E00433BE7 /* Deafult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deafult@2x.png"; sourceTree = "<group>"; };
+		01DF25E41663867F00433BE7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		01DF25E61663868300433BE7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		01F840B5163FC810009104F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39224923146832B3004A3EB1 /* NewsstandKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NewsstandKit.framework; path = System/Library/Frameworks/NewsstandKit.framework; sourceTree = SDKROOT; };
@@ -579,8 +613,6 @@
 		6FB976F213CB6E63007C368C /* backThumb_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backThumb_iphone@2x.png"; sourceTree = "<group>"; };
 		6FB976F313CB6E63007C368C /* backThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backThumb.png; sourceTree = "<group>"; };
 		6FB976F413CB6E63007C368C /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
-		6FB976F513CB6E63007C368C /* header_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_iphone.png; sourceTree = "<group>"; };
-		6FB976F613CB6E63007C368C /* header_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_iphone@2x.png"; sourceTree = "<group>"; };
 		6FB976F713CB6E63007C368C /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		6FB976F813CB6E63007C368C /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove.png; sourceTree = "<group>"; };
 		6FB976F913CB6E63007C368C /* resume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resume.png; sourceTree = "<group>"; };
@@ -630,20 +662,6 @@
 		954B74BA14B47F0D00503F90 /* Extended-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Extended-Prefix.pch"; sourceTree = "<group>"; };
 		954B74BB14B47F0D00503F90 /* FPKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = FPKAppDelegate.h; sourceTree = "<group>"; };
 		954B74BC14B47F0D00503F90 /* FPKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPKAppDelegate.m; sourceTree = "<group>"; };
-		954B74C214B47F0D00503F90 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FPKMainViewController_iPhone.xib; sourceTree = "<group>"; };
-		954B74C514B47F0D00503F90 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FPKMainViewController_iPad.xib; sourceTree = "<group>"; };
-		954B74CE14B47FFB00503F90 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
-		954B74D014B47FFB00503F90 /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
-		954B74D214B47FFB00503F90 /* FPKGalleryFade.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryFade.framework; sourceTree = "<group>"; };
-		954B74D514B47FFB00503F90 /* FPKGallerySlide.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGallerySlide.framework; sourceTree = "<group>"; };
-		954B74D814B47FFB00503F90 /* FPKGalleryTap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryTap.framework; sourceTree = "<group>"; };
-		954B74DB14B47FFB00503F90 /* FPKMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKMap.framework; sourceTree = "<group>"; };
-		954B74DE14B47FFB00503F90 /* FPKMessage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKMessage.framework; sourceTree = "<group>"; };
-		954B74E014B47FFB00503F90 /* fpkmessage-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fpkmessage-info.png"; sourceTree = "<group>"; };
-		954B74E214B47FFB00503F90 /* FPKPayPal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKPayPal.framework; sourceTree = "<group>"; };
-		954B74E514B47FFB00503F90 /* FPKShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKShared.framework; sourceTree = "<group>"; };
-		954B74E814B47FFB00503F90 /* FPKWebPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKWebPopup.framework; sourceTree = "<group>"; };
-		954B74EC14B47FFB00503F90 /* FPKYouTube.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKYouTube.framework; sourceTree = "<group>"; };
 		954B74FC14B4805100503F90 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 		954B74FD14B4805100503F90 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
 		954B74FE14B4805100503F90 /* img3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img3.png; sourceTree = "<group>"; };
@@ -686,6 +704,12 @@
 		95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
 		95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FPKReaderBundle.bundle; sourceTree = "<group>"; };
 		95FFFB7114B48C3100B1CD3B /* Snippets.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
+		FF9E5BD61608B22E007C560A /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		FF9E5BD71608B22E007C560A /* version.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = version.png; sourceTree = "<group>"; };
+		FFB9B94E1609F63E00A6F8EC /* Kiosk_phone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Kiosk_phone5.xib; sourceTree = "<group>"; };
+		FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deafult-568h@2x.png"; sourceTree = "<group>"; };
+		FFB9B957160A04B000A6F8EC /* header_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_iphone.png; sourceTree = "<group>"; };
+		FFB9B958160A04B000A6F8EC /* header_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_iphone@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -694,7 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				018D334F1547049700EB3DCD /* libFastPdfKit.a in Frameworks */,
+				01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,7 +727,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
-				959BB88C13D974D8004CB203 /* libziparchive.a in Frameworks */,
 				39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +735,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0181A3BC15F6790200AC476F /* Security.framework in Frameworks */,
 				951E4E4113D71E8400C9FC70 /* libz.dylib in Frameworks */,
 				01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */,
 				01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */,
@@ -724,9 +748,8 @@
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
-				959BB88B13D974D2004CB203 /* libziparchive.a in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
-				018D334E1547049700EB3DCD /* libFastPdfKit.a in Frameworks */,
+				0124AE3215D98F2000EBFA22 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +757,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0181A3BE15F6791500AC476F /* Security.framework in Frameworks */,
 				950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */,
 				950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */,
 				950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */,
@@ -743,7 +767,7 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				018D334D1547049700EB3DCD /* libFastPdfKit.a in Frameworks */,
+				01142A3B15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,18 +797,19 @@
 				954B74AF14B47F0D00503F90 /* UIKit.framework in Frameworks */,
 				954B74B014B47F0D00503F90 /* Foundation.framework in Frameworks */,
 				954B74B114B47F0D00503F90 /* CoreGraphics.framework in Frameworks */,
-				954B74EE14B47FFB00503F90 /* Common.framework in Frameworks */,
-				954B74EF14B47FFB00503F90 /* libPayPalMPL.a in Frameworks */,
-				954B74F014B47FFC00503F90 /* FPKGalleryFade.framework in Frameworks */,
-				954B74F114B47FFC00503F90 /* FPKGallerySlide.framework in Frameworks */,
-				954B74F214B47FFC00503F90 /* FPKGalleryTap.framework in Frameworks */,
-				954B74F314B47FFC00503F90 /* FPKMap.framework in Frameworks */,
-				954B74F414B47FFC00503F90 /* FPKMessage.framework in Frameworks */,
-				954B74F614B47FFC00503F90 /* FPKPayPal.framework in Frameworks */,
-				954B74F714B47FFC00503F90 /* FPKShared.framework in Frameworks */,
-				954B74F814B47FFC00503F90 /* FPKWebPopup.framework in Frameworks */,
-				954B74FA14B47FFC00503F90 /* FPKYouTube.framework in Frameworks */,
 				95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */,
+				010FE6E515EE582100304C02 /* Common.framework in Frameworks */,
+				010FE6E615EE582200304C02 /* libPayPalMPL.a in Frameworks */,
+				010FE6E715EE582200304C02 /* FPKConfig.framework in Frameworks */,
+				010FE6E815EE582200304C02 /* FPKGalleryFade.framework in Frameworks */,
+				010FE6E915EE582200304C02 /* FPKGallerySlide.framework in Frameworks */,
+				010FE6EA15EE582200304C02 /* FPKGalleryTap.framework in Frameworks */,
+				010FE6EB15EE582200304C02 /* FPKMap.framework in Frameworks */,
+				010FE6EC15EE582200304C02 /* FPKMessage.framework in Frameworks */,
+				010FE6EE15EE582200304C02 /* FPKPayPal.framework in Frameworks */,
+				010FE6EF15EE582200304C02 /* FPKShared.framework in Frameworks */,
+				010FE6F015EE582200304C02 /* FPKWebPopup.framework in Frameworks */,
+				010FE6F115EE582200304C02 /* FPKYouTube.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,7 +818,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958CBAB4141E65770094D4C1 /* (null) in Frameworks */,
-				018D33501547049700EB3DCD /* libFastPdfKit.a in Frameworks */,
+				01142A3D15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +847,171 @@
 			path = Classes/SimpleApp;
 			sourceTree = SOURCE_ROOT;
 		};
+		010FE6C515EE582100304C02 /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6C615EE582100304C02 /* Common.framework */,
+				010FE6C715EE582100304C02 /* Resources */,
+			);
+			name = Common.embeddedframework;
+			path = Extensions/Common.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6C715EE582100304C02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6C815EE582100304C02 /* libPayPalMPL.a */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		010FE6C915EE582100304C02 /* FPKConfig.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6CA15EE582100304C02 /* FPKConfig.framework */,
+				010FE6CB15EE582100304C02 /* Resources */,
+			);
+			name = FPKConfig.embeddedframework;
+			path = Extensions/FPKConfig.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6CB15EE582100304C02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		010FE6CC15EE582100304C02 /* FPKGalleryFade.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6CD15EE582100304C02 /* FPKGalleryFade.framework */,
+			);
+			name = FPKGalleryFade.embeddedframework;
+			path = Extensions/FPKGalleryFade.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6CE15EE582100304C02 /* FPKGallerySlide.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6CF15EE582100304C02 /* FPKGallerySlide.framework */,
+				010FE6D015EE582100304C02 /* Resources */,
+			);
+			name = FPKGallerySlide.embeddedframework;
+			path = Extensions/FPKGallerySlide.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6D015EE582100304C02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		010FE6D115EE582100304C02 /* FPKGalleryTap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6D215EE582100304C02 /* FPKGalleryTap.framework */,
+				010FE6D315EE582100304C02 /* Resources */,
+			);
+			name = FPKGalleryTap.embeddedframework;
+			path = Extensions/FPKGalleryTap.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6D315EE582100304C02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		010FE6D415EE582100304C02 /* FPKImage.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6D515EE582100304C02 /* Resources */,
+			);
+			name = FPKImage.embeddedframework;
+			path = Extensions/FPKImage.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6D515EE582100304C02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		010FE6D615EE582100304C02 /* FPKMap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6D715EE582100304C02 /* FPKMap.framework */,
+			);
+			name = FPKMap.embeddedframework;
+			path = Extensions/FPKMap.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6D815EE582100304C02 /* FPKMessage.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6D915EE582100304C02 /* FPKMessage.framework */,
+				010FE6DA15EE582100304C02 /* Resources */,
+			);
+			name = FPKMessage.embeddedframework;
+			path = Extensions/FPKMessage.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6DA15EE582100304C02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6DB15EE582100304C02 /* fpkmessage-info.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		010FE6DC15EE582100304C02 /* FPKPayPal.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6DD15EE582100304C02 /* FPKPayPal.framework */,
+			);
+			name = FPKPayPal.embeddedframework;
+			path = Extensions/FPKPayPal.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6DE15EE582100304C02 /* FPKShared.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6DF15EE582100304C02 /* FPKShared.framework */,
+				010FE6E015EE582100304C02 /* Resources */,
+			);
+			name = FPKShared.embeddedframework;
+			path = Extensions/FPKShared.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6E015EE582100304C02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		010FE6E115EE582100304C02 /* FPKWebPopup.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6E215EE582100304C02 /* FPKWebPopup.framework */,
+			);
+			name = FPKWebPopup.embeddedframework;
+			path = Extensions/FPKWebPopup.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		010FE6E315EE582100304C02 /* FPKYouTube.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				010FE6E415EE582100304C02 /* FPKYouTube.framework */,
+			);
+			name = FPKYouTube.embeddedframework;
+			path = Extensions/FPKYouTube.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
 		0123603113CC917600861EB7 /* Multimedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,11 +1030,11 @@
 		0123605813CC93B700861EB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01142A2D15CFC38E001B5374 /* MenuViewController.m */,
 				010D14D913CB002300FD6F08 /* MainWindow.xib */,
 				010D14DA13CB002300FD6F08 /* MenuView_pad.xib */,
 				010D14DB13CB002300FD6F08 /* MenuView_phone.xib */,
 				010D14DC13CB002300FD6F08 /* MenuViewController.h */,
-				010D14DD13CB002300FD6F08 /* MenuViewController.m */,
 				010D14D313CB002300FD6F08 /* BasicLauncherController.h */,
 				010D14D413CB002300FD6F08 /* BasicLauncherController.m */,
 				010D14D513CB002300FD6F08 /* DocumentViewController.h */,
@@ -863,6 +1053,7 @@
 			children = (
 				01BC080313C75B310077CE63 /* Kiosk_ipad.xib */,
 				01BC080413C75B310077CE63 /* Kiosk_phone.xib */,
+				FFB9B94E1609F63E00A6F8EC /* Kiosk_phone5.xib */,
 				01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */,
 				01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */,
 				01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */,
@@ -906,9 +1097,11 @@
 				6FB976F213CB6E63007C368C /* backThumb_iphone@2x.png */,
 				6FB976F313CB6E63007C368C /* backThumb.png */,
 				6FB976F413CB6E63007C368C /* download.png */,
-				6FB976F513CB6E63007C368C /* header_iphone.png */,
-				6FB976F613CB6E63007C368C /* header_iphone@2x.png */,
 				6FB976F713CB6E63007C368C /* header.png */,
+				FFB9B957160A04B000A6F8EC /* header_iphone.png */,
+				FFB9B958160A04B000A6F8EC /* header_iphone@2x.png */,
+				FF9E5BD61608B22E007C560A /* title.png */,
+				FF9E5BD71608B22E007C560A /* version.png */,
 				6FB976F813CB6E63007C368C /* remove.png */,
 				6FB976F913CB6E63007C368C /* resume.png */,
 				6FB976FA13CB6E63007C368C /* view.png */,
@@ -979,8 +1172,8 @@
 				01BC07B513C755610077CE63 /* minizip */,
 				01BC07BF13C755610077CE63 /* Reachability.h */,
 				01BC07C013C755610077CE63 /* Reachability.m */,
+				0193CA09161B43B90060A401 /* ZipArchive.mm */,
 				01BC07C113C755610077CE63 /* ZipArchive.h */,
-				01BC07B413C755610077CE63 /* libziparchive.a */,
 			);
 			path = ThirdParties;
 			sourceTree = "<group>";
@@ -1153,6 +1346,11 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				01DF25E61663868300433BE7 /* Default@2x.png */,
+				01DF25E41663867F00433BE7 /* Default.png */,
+				01DF25E21663863E00433BE7 /* Deafult@2x.png */,
+				01DF25E01663863400433BE7 /* Deafult.png */,
+				FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */,
 				011E42B81472D1510099754E /* README.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				95F5A3511270A2A700F65929 /* FPKCore */,
@@ -1185,6 +1383,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				01F840B5163FC810009104F0 /* Default-568h@2x.png */,
 				0102A1D11547009B00F7A9AF /* Settings.bundle */,
 				018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */,
 				8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */,
@@ -1242,8 +1441,8 @@
 				95FFFB4C14B488AE00B1CD3B /* FPKMainViewController.m */,
 				95FFFB4D14B488AE00B1CD3B /* OverlayManager.h */,
 				95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */,
-				954B74C114B47F0D00503F90 /* FPKMainViewController_iPhone.xib */,
-				954B74C414B47F0D00503F90 /* FPKMainViewController_iPad.xib */,
+				013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */,
+				013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */,
 				954B74CC14B47FE000503F90 /* Extensions */,
 				954B74FB14B4803800503F90 /* Resources */,
 				954B74B314B47F0D00503F90 /* Supporting Files */,
@@ -1254,7 +1453,6 @@
 		954B74B314B47F0D00503F90 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				954B74B414B47F0D00503F90 /* Extended-Info.plist */,
 				954B74B514B47F0D00503F90 /* InfoPlist.strings */,
 				954B74B814B47F0D00503F90 /* main.m */,
 				954B74BA14B47F0D00503F90 /* Extended-Prefix.pch */,
@@ -1265,186 +1463,27 @@
 		954B74CC14B47FE000503F90 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				010FE6C515EE582100304C02 /* Common.embeddedframework */,
+				010FE6C915EE582100304C02 /* FPKConfig.embeddedframework */,
+				010FE6CC15EE582100304C02 /* FPKGalleryFade.embeddedframework */,
+				010FE6CE15EE582100304C02 /* FPKGallerySlide.embeddedframework */,
+				010FE6D115EE582100304C02 /* FPKGalleryTap.embeddedframework */,
+				010FE6D415EE582100304C02 /* FPKImage.embeddedframework */,
+				010FE6D615EE582100304C02 /* FPKMap.embeddedframework */,
+				010FE6D815EE582100304C02 /* FPKMessage.embeddedframework */,
+				010FE6DC15EE582100304C02 /* FPKPayPal.embeddedframework */,
+				010FE6DE15EE582100304C02 /* FPKShared.embeddedframework */,
+				010FE6E115EE582100304C02 /* FPKWebPopup.embeddedframework */,
+				010FE6E315EE582100304C02 /* FPKYouTube.embeddedframework */,
 				95FFFB6C14B48C3100B1CD3B /* FastPdfKit.embeddedframework */,
-				954B74CD14B47FFB00503F90 /* Common.embeddedframework */,
-				954B74D114B47FFB00503F90 /* FPKGalleryFade.embeddedframework */,
-				954B74D414B47FFB00503F90 /* FPKGallerySlide.embeddedframework */,
-				954B74D714B47FFB00503F90 /* FPKGalleryTap.embeddedframework */,
-				954B74DA14B47FFB00503F90 /* FPKMap.embeddedframework */,
-				954B74DD14B47FFB00503F90 /* FPKMessage.embeddedframework */,
-				954B74E114B47FFB00503F90 /* FPKPayPal.embeddedframework */,
-				954B74E414B47FFB00503F90 /* FPKShared.embeddedframework */,
-				954B74E714B47FFB00503F90 /* FPKWebPopup.embeddedframework */,
-				954B74EB14B47FFB00503F90 /* FPKYouTube.embeddedframework */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		954B74CD14B47FFB00503F90 /* Common.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74CE14B47FFB00503F90 /* Common.framework */,
-				954B74CF14B47FFB00503F90 /* Resources */,
-			);
-			path = Common.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74CF14B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				954B74D014B47FFB00503F90 /* libPayPalMPL.a */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74D114B47FFB00503F90 /* FPKGalleryFade.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74D214B47FFB00503F90 /* FPKGalleryFade.framework */,
-				954B74D314B47FFB00503F90 /* Resources */,
-			);
-			path = FPKGalleryFade.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74D314B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74D414B47FFB00503F90 /* FPKGallerySlide.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74D514B47FFB00503F90 /* FPKGallerySlide.framework */,
-				954B74D614B47FFB00503F90 /* Resources */,
-			);
-			path = FPKGallerySlide.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74D614B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74D714B47FFB00503F90 /* FPKGalleryTap.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74D814B47FFB00503F90 /* FPKGalleryTap.framework */,
-				954B74D914B47FFB00503F90 /* Resources */,
-			);
-			path = FPKGalleryTap.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74D914B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74DA14B47FFB00503F90 /* FPKMap.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74DB14B47FFB00503F90 /* FPKMap.framework */,
-				954B74DC14B47FFB00503F90 /* Resources */,
-			);
-			path = FPKMap.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74DC14B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74DD14B47FFB00503F90 /* FPKMessage.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74DE14B47FFB00503F90 /* FPKMessage.framework */,
-				954B74DF14B47FFB00503F90 /* Resources */,
-			);
-			path = FPKMessage.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74DF14B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				954B74E014B47FFB00503F90 /* fpkmessage-info.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74E114B47FFB00503F90 /* FPKPayPal.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74E214B47FFB00503F90 /* FPKPayPal.framework */,
-				954B74E314B47FFB00503F90 /* Resources */,
-			);
-			path = FPKPayPal.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74E314B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74E414B47FFB00503F90 /* FPKShared.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74E514B47FFB00503F90 /* FPKShared.framework */,
-				954B74E614B47FFB00503F90 /* Resources */,
-			);
-			path = FPKShared.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74E614B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74E714B47FFB00503F90 /* FPKWebPopup.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74E814B47FFB00503F90 /* FPKWebPopup.framework */,
-				954B74E914B47FFB00503F90 /* Resources */,
-			);
-			path = FPKWebPopup.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74E914B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		954B74EB14B47FFB00503F90 /* FPKYouTube.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				954B74EC14B47FFB00503F90 /* FPKYouTube.framework */,
-				954B74ED14B47FFB00503F90 /* Resources */,
-			);
-			path = FPKYouTube.embeddedframework;
-			sourceTree = "<group>";
-		};
-		954B74ED14B47FFB00503F90 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		954B74FB14B4803800503F90 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				954B74B414B47F0D00503F90 /* Extended-Info.plist */,
 				954B74FC14B4805100503F90 /* img1.png */,
 				954B74FD14B4805100503F90 /* img2.png */,
 				954B74FE14B4805100503F90 /* img3.png */,
@@ -1461,7 +1500,7 @@
 		95F5A3511270A2A700F65929 /* FPKCore */ = {
 			isa = PBXGroup;
 			children = (
-				018D334C1547049700EB3DCD /* libFastPdfKit.a */,
+				01142A3A15CFCE48001B5374 /* libFastPdfKit.a */,
 				01D73BB51474385300C142FE /* standard14fonts */,
 				01448A0D134C70A700FD83D8 /* headers */,
 			);
@@ -1770,7 +1809,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FastPdfKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1817,6 +1856,11 @@
 				95EF544214B48E4C00910B3D /* Icon72.png in Resources */,
 				95EF544314B48E4F00910B3D /* Icon114.png in Resources */,
 				0102A1D31547009B00F7A9AF /* Settings.bundle in Resources */,
+				FF9E5BD81608B22E007C560A /* title.png in Resources */,
+				FF9E5BDA1608B22E007C560A /* version.png in Resources */,
+				FFB9B956160A025F00A6F8EC /* Deafult-568h@2x.png in Resources */,
+				01DF25E11663863400433BE7 /* Deafult.png in Resources */,
+				01DF25E31663863E00433BE7 /* Deafult@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1841,6 +1885,7 @@
 				95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */,
 				95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */,
 				0102A1D21547009B00F7A9AF /* Settings.bundle in Resources */,
+				01DF25DE166385E100433BE7 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1852,8 +1897,6 @@
 				6FB9772D13CB6EB7007C368C /* backThumb_iphone@2x.png in Resources */,
 				6FB9772E13CB6EB7007C368C /* backThumb.png in Resources */,
 				6FB9772F13CB6EB7007C368C /* download.png in Resources */,
-				6FB9773013CB6EB7007C368C /* header_iphone.png in Resources */,
-				6FB9773113CB6EB7007C368C /* header_iphone@2x.png in Resources */,
 				6FB9773213CB6EB7007C368C /* header.png in Resources */,
 				6FB9773313CB6EB7007C368C /* remove.png in Resources */,
 				6FB9773413CB6EB7007C368C /* resume.png in Resources */,
@@ -1870,6 +1913,11 @@
 				95B9C58715110EAA00411AF6 /* remove@2x.png in Resources */,
 				95B9C58815110EAA00411AF6 /* resume@2x.png in Resources */,
 				95B9C58915110EAA00411AF6 /* view@2x.png in Resources */,
+				FF9E5BD91608B22E007C560A /* title.png in Resources */,
+				FF9E5BDB1608B22E007C560A /* version.png in Resources */,
+				FFB9B94F1609F63E00A6F8EC /* Kiosk_phone5.xib in Resources */,
+				FFB9B959160A04B000A6F8EC /* header_iphone.png in Resources */,
+				FFB9B95A160A04B000A6F8EC /* header_iphone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1929,9 +1977,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				954B74B714B47F0D00503F90 /* InfoPlist.strings in Resources */,
-				954B74C314B47F0D00503F90 /* FPKMainViewController_iPhone.xib in Resources */,
-				954B74C614B47F0D00503F90 /* FPKMainViewController_iPad.xib in Resources */,
-				954B74F514B47FFC00503F90 /* fpkmessage-info.png in Resources */,
+				013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */,
+				013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */,
 				954B750214B4805100503F90 /* img1.png in Resources */,
 				954B750314B4805100503F90 /* img2.png in Resources */,
 				954B750414B4805100503F90 /* img3.png in Resources */,
@@ -1943,6 +1990,10 @@
 				95EF544714B48EDD00910B3D /* Icon.png in Resources */,
 				95EF544814B48EDD00910B3D /* Icon72.png in Resources */,
 				95EF544914B48EDD00910B3D /* Icon114.png in Resources */,
+				010FE6ED15EE582200304C02 /* fpkmessage-info.png in Resources */,
+				01F840B6163FC810009104F0 /* Default-568h@2x.png in Resources */,
+				01DF25E51663867F00433BE7 /* Default.png in Resources */,
+				01DF25E71663868300433BE7 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1952,7 +2003,7 @@
 			files = (
 				958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */,
 				958CBAB5141E66060094D4C1 /* Snippets.txt in Resources */,
-				95A965D5157FC6FE00925468 /* FastPdfKitFramework.xcconfig in Resources */,
+				01F46FD515CC312300D06464 /* FastPdfKitFramework.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2028,7 +2079,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n    eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\nexit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sfh \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\nif [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\nthen\necho ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nfi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n\n# Copying the framework to the project dir\n\necho \"Copying the Framework to the project directory\"\nrm -rf \"${PROJECT_DIR}/${PRODUCT_NAME}.embeddedframework\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" \"${PROJECT_DIR}/\"\n";
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n    eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\nexit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sfh \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\nif [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\nthen\necho ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nfi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n\n# Copying the framework to the project dir\n\necho \"Copying the Framework to the project directory\"\nrm -rf \"${PROJECT_DIR}/${PRODUCT_NAME}.embeddedframework\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" \"${PROJECT_DIR}/\"\n\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2071,6 +2122,7 @@
 				01598DED13CAEAA6007344EE /* Reachability.m in Sources */,
 				01598DEA13CAEA78007344EE /* ASINetworkQueue.m in Sources */,
 				01598DEB13CAEA78007344EE /* ASINSStringAdditions.m in Sources */,
+				0193CA0B161B43BA0060A401 /* ZipArchive.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2109,6 +2161,7 @@
 				0123605313CC917600861EB7 /* WebBrowser.m in Sources */,
 				0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
 				0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
+				0193CA0A161B43BA0060A401 /* ZipArchive.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2129,11 +2182,10 @@
 				010D14DE13CB002300FD6F08 /* BasicLauncherController.m in Sources */,
 				010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */,
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
-				010D14E413CB002300FD6F08 /* MenuViewController.m in Sources */,
-				0123603E13CC917600861EB7 /* AudioViewController.m in Sources */,
 				956A056F14039F38003AE44D /* Drawable.m in Sources */,
 				956A057014039F38003AE44D /* OverlayManager.m in Sources */,
 				0161F22D141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
+				01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2217,22 +2269,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		954B74C114B47F0D00503F90 /* FPKMainViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				954B74C214B47F0D00503F90 /* en */,
-			);
-			name = FPKMainViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		954B74C414B47F0D00503F90 /* FPKMainViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				954B74C514B47F0D00503F90 /* en */,
-			);
-			name = FPKMainViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2240,6 +2276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/FastPDFKitReader.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2258,6 +2295,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2265,6 +2303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/FastPDFKitReader.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2280,6 +2319,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -2287,10 +2327,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/FastPDFKitKiosk.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2311,6 +2348,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2318,10 +2356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/FastPDFKitKiosk.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2339,6 +2374,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -2346,6 +2382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2359,9 +2396,10 @@
 				);
 				INFOPLIST_FILE = "Resources/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/FPKCore\"",
+					"\"$(SRCROOT)/ThirdParties\"/**",
 					"\"$(SRCROOT)/Classes/ThirdParties\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -2369,6 +2407,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2376,6 +2415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2388,9 +2428,10 @@
 				);
 				INFOPLIST_FILE = "Resources/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/FPKCore\"",
+					"\"$(SRCROOT)/ThirdParties\"/**",
 					"\"$(SRCROOT)/Classes/ThirdParties\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -2398,6 +2439,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				VALID_ARCHS = "armv7 armv7s";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2406,6 +2448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -2415,8 +2458,9 @@
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitSimple-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Resources/FastPdfKit_Sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				PROVISIONING_PROFILE = "";
@@ -2424,6 +2468,7 @@
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2431,6 +2476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -2438,8 +2484,9 @@
 				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitSimple-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Resources/FastPdfKit_Sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				PROVISIONING_PROFILE = "";
@@ -2448,6 +2495,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -2455,7 +2503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2481,7 +2529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2503,7 +2551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2529,7 +2577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2557,17 +2605,18 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMap.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMessage.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKPayPal.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKShared.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKWebPopup.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKYouTube.embeddedframework\"",
 					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/Common.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKConfig.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKGalleryFade.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKGallerySlide.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKGalleryTap.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKMap.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKMessage.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKPayPal.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKShared.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKWebPopup.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKYouTube.embeddedframework\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2583,12 +2632,11 @@
 				GCC_VERSION = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				INFOPLIST_FILE = "Classes/Extended/Resources/Extended-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework/Resources\"",
-					"\"$(SRCROOT)/FPKCore\"",
+					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2621,7 +2669,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2636,17 +2684,18 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryFade.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGallerySlide.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKGalleryTap.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMap.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKMessage.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKPayPal.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKShared.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKWebPopup.embeddedframework\"",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/FPKYouTube.embeddedframework\"",
 					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/Common.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKConfig.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKGalleryFade.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKGallerySlide.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKGalleryTap.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKMap.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKMessage.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKPayPal.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKShared.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKWebPopup.embeddedframework\"",
+					"\"$(SRCROOT)/Extensions/FPKYouTube.embeddedframework\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -2655,12 +2704,11 @@
 				GCC_VERSION = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				INFOPLIST_FILE = "Classes/Extended/Resources/Extended-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Extended/Extensions/Common.embeddedframework/Resources\"",
-					"\"$(SRCROOT)/FPKCore\"",
+					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2694,7 +2742,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2703,6 +2751,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
 				DEAD_CODE_STRIPPING = NO;
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -2730,6 +2779,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				VALID_ARCHS = "armv7 i386 armv7s";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -2738,6 +2788,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
 				DEAD_CODE_STRIPPING = NO;
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -2762,6 +2813,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
+				VALID_ARCHS = "armv7 i386 armv7s";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -2769,10 +2821,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -2783,6 +2832,7 @@
 				PRODUCT_NAME = "FastPdfKit Sample";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 				WARNING_CFLAGS = "";
 			};
 			name = Debug;
@@ -2790,10 +2840,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -2805,6 +2852,7 @@
 				PRODUCT_NAME = "FastPdfKit Sample";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 				WARNING_CFLAGS = "";
 			};
 			name = Release;

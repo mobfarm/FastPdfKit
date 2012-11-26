@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController_Kiosk.h"
-#import "ReaderViewController.h"
+#import <FastPdfKit/ReaderViewController.h>
 
 @class MFDocumentManager;
 
@@ -23,7 +23,7 @@
 	
 	NSMutableArray *documentsList;
     
-    UIScrollView *scrollView;
+    IBOutlet UIScrollView *scrollView;
     
 	UIView * downloadProgressContainerView;
 	UIProgressView * downloadProgressView;

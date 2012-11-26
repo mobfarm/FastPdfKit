@@ -16,6 +16,11 @@
 @synthesize window,navigationController;
 @synthesize menuVC_Kiosk;
 
+-(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    
+    return UIInterfaceOrientationMaskAll;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // Load default settings
@@ -63,7 +68,15 @@
 	if(isPad) {
 			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_ipad" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
 	} else {
-			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
+        
+        if (([[UIScreen mainScreen] bounds].size.height - 568.0) < FLT_EPSILON ) {
+        
+            aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone5" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
+        
+        } else {
+            
+            aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
+        }		
 	}
     
     menuVC_Kiosk = aMenuViewController;
@@ -72,7 +85,7 @@
 	[aNavController setNavigationBarHidden:YES];
 	[self setNavigationController:aNavController];
 	
-	[window addSubview:[aNavController view]];
+	[window setRootViewController:self.navigationController];
     [window makeKeyAndVisible];
 	
 	// Cleanup

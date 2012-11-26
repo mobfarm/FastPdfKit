@@ -9,14 +9,16 @@
  Just import every Extension you need, that's it!
  */
 
-#import <FPKYouTube/FPKYouTube.h>
-#import <FPKMap/FPKMap.h>
-#import <FPKGalleryFade/FPKGalleryFade.h>
-#import <FPKGalleryTap/FPKGalleryTap.h>
-#import <FPKMessage/FPKMessage.h>
-#import <FPKWebPopup/FPKWebPopup.h>
-#import <FPKGallerySlide/FPKGallerySlide.h>
-#import <FPKPayPal/FPKPayPal.h>
+//#import <FPKYouTube/FPKYouTube.h>
+//
+//#import <FPKMap/FPKMap.h>
+//
+//#import <FPKGalleryFade/FPKGalleryFade.h>
+//#import <FPKGalleryTap/FPKGalleryTap.h>
+//#import <FPKMessage/FPKMessage.h>
+//#import <FPKWebPopup/FPKWebPopup.h>
+//#import <FPKGallerySlide/FPKGallerySlide.h>
+//#import <FPKPayPal/FPKPayPal.h>
 
 @implementation OverlayManager
 

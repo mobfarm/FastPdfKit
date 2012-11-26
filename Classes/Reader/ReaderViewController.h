@@ -58,9 +58,6 @@
     NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user
     NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini
     
-	UILabel * pageLabel;    // Page label at the bottom of the screen
-	UISlider * pageSlider;  // Page slider at the bottom of the screen
-    
     // Button content for bar button items
 
     UIButton *changeModeButton;
@@ -105,8 +102,15 @@
     UIImage * imgSearch;
     UIImage * imgOutline;
     UIImage * imgText;
-
+    
+    void (^dismissBlock) ();
 }
+
+/**
+ This block will be executed inside the actionDismiss action. If not defined,
+ the ReaderViewController will try to guesstimate the appropriate action.
+ */
+@property (nonatomic, copy) void (^dismissBlock) ();
 
 @property (nonatomic,retain) UIButton *changeModeButton;
 @property (nonatomic,retain) UIButton *zoomLockButton;
@@ -129,16 +133,13 @@
 @property (nonatomic,retain) UIImage * imgText;
 @property (nonatomic, readwrite) CGFloat toolbarHeight;
 
--(void)setNumberOfPageToolbar;
+-(void)updatePageNumberLabel;
 
 -(void)showToolbar;
 -(void)hideToolbar;
 
-
 @property (nonatomic, retain) UIToolbar * rollawayToolbar;
 @property (nonatomic, retain) UILabel * pageNumLabel;
-
-@property (nonatomic, retain) UISlider * pageSlider;
 
 @property (nonatomic, retain) UIBarButtonItem * searchBarButtonItem;
 @property (nonatomic, retain) UIBarButtonItem * changeModeBarButtonItem;
@@ -163,6 +164,7 @@
 
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
 
+@property (copy, nonatomic, readwrite) NSString * pageLabelFormat;
 
 -(void)dismissAlternateViewController;
 -(void)playVideo:(NSString *)path local:(BOOL)isLocal;

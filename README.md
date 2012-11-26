@@ -298,8 +298,42 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 * Call the `actionOpenPlainDocument` method to open the document;
 * Enjoy.
 
-
 ## Changelog
+
+# Update November 26, 2012
+* Improved handling of space glyph in the text
+* Bunch of small tweaks and fixes
+
+# Update October 2nd, 2012
+* Fixed a crash while reading certain documents annotations
+* Finally fixed layer shadow (again)
+* Fixed bad overflow mode page position with some documents
+* Sligthy changed starting page behavior, now the slider should update properly
+* Added a visited page system similar to web browser one, check the MFDocumentViewController.
+* You can now set the thumbnail and image cache folders
+
+# Update September 4th, 2012
+* Fixed missing iPhone toolbar images
+* Thumbnails are now JPEG
+* Added cache encryption, check MFDocumentViewController's cacheEncryptionKey for
+details. Security.framework is now REQUIRED.
+* Shadow offset now takes padding into account
+* Uninitialized rect in background op fixed
+
+# Update Augusth 30th, 2012
+* Solved rootViewController nil property for window in the app delegate (prevent 
+correct behavior on iOS6)
+
+# Update Augusth 28th, 2012
+* Page shadows are back
+* Added cocoaAnnotationsForPage: method to MFDocumentManager to get more Cocoa-friendly
+annotations data from the pdf
+
+### Update 4.0 RC1 (Augusth 1st, 2012)
+* Fixed a bunch crash 
+* Fixed a few memory leaks (one quite large)
+* If you dont see Chinese, Japanese or Korean text extracted, please download, unzip and add the CMaps for the language. You can get them here http://partners.adobe.com/public/developer/font/index.html
+* There are a few more options for the embedded thumbnail scroll view and page slider, and you can also choose the label for the individual page
 
 ### Update 3.4.2 (June 28, 2012)
 * Fix for password protected documents not working anymore

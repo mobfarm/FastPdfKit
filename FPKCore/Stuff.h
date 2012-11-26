@@ -156,9 +156,15 @@ static inline NSInteger pageNumberForPosition(NSInteger position) {
 }
 
 static inline CGSize sizeForContent(NSInteger numberOfPages, CGSize pageSize) {
-	CGFloat contentHeight = pageSize.height;
+	
+    CGSize size;
+    
+    CGFloat contentHeight = pageSize.height;
 	CGFloat contentWidth = numberOfPages * pageSize.width;
-	return CGSizeMake(contentWidth, contentHeight);
+	
+    size = CGSizeMake(contentWidth, contentHeight);
+    
+    return size;
 }
 
 static inline NSUInteger numberOfPositions(NSUInteger numberOfPages, MFDocumentMode pagesForPositions, MFDocumentLead lead) {

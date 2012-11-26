@@ -36,6 +36,8 @@
 
 @implementation ReaderViewController
 
+@synthesize dismissBlock;
+
 @synthesize rollawayToolbar;
 
 @synthesize searchBarButtonItem, changeModeBarButtonItem, zoomLockBarButtonItem, changeDirectionBarButtonItem, changeLeadBarButtonItem;
@@ -47,7 +49,6 @@
 @synthesize searchViewController;
 @synthesize searchManager;
 @synthesize miniSearchView;
-@synthesize pageSlider;
 @synthesize reusablePopover;
 @synthesize multimediaVisible;
 @synthesize toolbarHeight;
@@ -55,6 +56,7 @@
 
 @synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft, imgModeOverflow;
 @synthesize imgSearch, imgDismiss, imgOutline, imgBookmark, imgText;
+@synthesize pageLabelFormat;
 
 -(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
 
@@ -300,6 +302,7 @@
     
     // Here's the chance to unload this view controller and load a new one with the starting page set to page.
     
+    NSLog(@"%@ %d", file, page);
 }
 
 -(IBAction) actionOutline:(id)sender {
@@ -431,27 +434,30 @@
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:miniSearchView];
 	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		
-        [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
-        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
-		[self.view bringSubviewToFront:rollawayToolbar];
-        
-	}else {
-        
-		[miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
-        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
-		[self.view bringSubviewToFront:rollawayToolbar];
-	}
-    
-	[UIView commitAnimations];
-	
-    currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
-    currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             
+                             [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
+                             [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+                             
+                         }else {
+                             
+                             [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
+                             [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+                             
+                         }
+                     }
+                     completion:^(BOOL finished){
+                         
+                         [self.view bringSubviewToFront:rollawayToolbar];
+                         
+                         currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
+                         currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
+                         
+                     }];
 }
 
 -(SearchViewController *)searchViewController {
@@ -511,44 +517,49 @@
 	// Remove from the superview and release the mini search view.
 	
 	// Animation.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
-	}else {
-		[miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
-	}
-	[UIView commitAnimations];
-	
-	// Actual removal.
-	if(miniSearchView!=nil) {
-		
-		[miniSearchView removeFromSuperview];
-		MF_COCOA_RELEASE(miniSearchView);
-	}
-	
-	[self removeOverlayDataSource:self.searchManager];
-    [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             
+                             [miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
+                         } else {
+                             
+                             [miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
+                         }
+                         
+                     }
+                     completion:^(BOOL finished){
+                         // Actual removal.
+                         if(miniSearchView!=nil) {
+                             
+                             [miniSearchView removeFromSuperview];
+                             MF_COCOA_RELEASE(miniSearchView);
+                         }
+                         
+                         [self removeOverlayDataSource:self.searchManager];
+                         [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+                     }];
 }
 
 -(void)showMiniSearchView {
 	
 	// Remove from the superview and release the mini search view.
 	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
-        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
-	}else {
-		[miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
-        [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
-	}
-	
-	[UIView commitAnimations];
+    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        
+            [miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
+            [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+        
+        }else {
+            
+            [miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
+            [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+        }
+    } completion:NULL];
 }
 
 -(SearchManager *)searchManager {
@@ -615,16 +626,26 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES]; // Hide the status bar.
 	
-	//
-	//	Just remove this controller from the navigation stack.
-    if([self navigationController])
-        [[self navigationController] popViewControllerAnimated:YES];	
-    else{
-        // Or, if presented as modalviewcontroller, tell the parent to dismiss it.
-        if ([self respondsToSelector:@selector(presentingViewController)])
+    
+    // If there's a dismiss block defined, use it. Otherwise, try to guesstimate
+    // what is the appropriate dismiss action
+    
+	if(self.dismissBlock) {
+        
+        dismissBlock();
+        
+    } else {
+        
+        if ([self respondsToSelector:@selector(presentingViewController)]) {
             [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
-        else
+        }
+        else if (self.parentViewController) {
             [[self parentViewController] dismissModalViewControllerAnimated:YES];
+        }
+        else if ([self navigationController]) {
+            
+            [[self navigationController] popViewControllerAnimated:YES];
+        }
     }
 }
 
@@ -639,13 +660,7 @@
 	
 	// Update the label.
     
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [pageNumLabel setText:PAGE_NUM_LABEL_TEXT(pageNumber,[[self document]numberOfPages])];
-    
-    }else{
-        
-        [pageNumLabel setText:PAGE_NUM_LABEL_TEXT_PHONE(pageNumber,[[self document]numberOfPages])];
-    }
+    [self updatePageNumberLabel];
 }
 
 -(IBAction) actionPageSliderStopped:(id)sender {
@@ -657,8 +672,6 @@
 	
 	// Go to the page.
 	[self setPage:pageNumber];
-    
-    
 }
 
 -(IBAction)actionChangeMode:(id)sender {
@@ -926,9 +939,7 @@
 	//	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 	//	in this callback.
     
-	[pageNumLabel setText:PAGE_NUM_LABEL_TEXT(page,[[self document]numberOfPages])];
-    
-	[self setNumberOfPageToolbar];
+	[self updatePageNumberLabel];
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didChangeModeTo:(MFDocumentMode)mode automatic:(BOOL)automatically {
@@ -942,13 +953,13 @@
         
         [changeModeButton setImage:imgModeSingle forState:UIControlStateNormal];
         
-		//[changeModeBarButtonItem setImage:imgModeSingle];
 	} else if (mode == MFDocumentModeDouble) {
+        
         [changeModeButton setImage:imgModeDouble forState:UIControlStateNormal];
-		//[changeModeBarButtonItem setImage:imgModeDouble];
+		
 	} else if (mode == MFDocumentModeOverflow) {
+        
         [changeModeButton setImage:imgModeOverflow forState:UIControlStateNormal];
-        //[changeModeBarButtonItem setImage:imgModeOverflow];
     }
 }
 
@@ -1091,8 +1102,6 @@
 #pragma mark -
 #pragma mark UIViewController lifcecycle
 
-
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 	
 	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar. If
@@ -1112,7 +1121,7 @@
  	if(isPad) {
 		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 768, 1024-20)];  // Status bar only
 	} else {
-		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 480-20)];   // Status bar only
+		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 568-20)];   // Status bar only
 	}
 	
 	[aView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
@@ -1131,6 +1140,10 @@
 	[aView release];
 }
 
+/**
+ * This method will load the image for the toolbar icons. You can override this
+ * method to load different images.
+ */
 -(void)loadResources {
     
     if(self.toolbarHeight == 0)
@@ -1165,6 +1178,8 @@
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
+        // iPad
+        
         if(!self.imgDismiss)
             self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"X", @"png")];
         
@@ -1181,24 +1196,30 @@
             self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search", @"png")];    
         
     } else {
+        
+        // iPhone (same as iPad, the if else is just for convenience in the case
+        // you want to have different icons between ipad and iphone
      
         if(!self.imgDismiss)
-            self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"X_phone", @"png")];
+            self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"X", @"png")];
         
         if(!self.imgText)
-            self.imgText = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"text_phone", @"png")];
+            self.imgText = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"text", @"png")];
         
         if(!self.imgOutline)
-            self.imgOutline = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"indice_phone", @"png")];
+            self.imgOutline = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"indice", @"png")];
         
         if(!self.imgBookmark)
-            self.imgBookmark = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"bookmark_add_phone", @"png")];
+            self.imgBookmark = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"bookmark_add", @"png")];
         
         if(!self.imgSearch)
-            self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search_phone", @"png")];
+            self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search", @"png")];
     }
 }
 
+/**
+ * This method will create and customize the toolbar.
+ */
 -(void)prepareToolbar {
 
     NSMutableArray * items = nil;
@@ -1558,44 +1579,68 @@
 	[self prepareToolbar];
 }
 
-
--(void)setNumberOfPageToolbar{
+/**
+ * This method will update the page number label according to either the 
+ * pageLabelFormat, if not nil, or the default format and the page and
+ * total number of pages.
+ */
+-(void)updatePageNumberLabel{
 	
 	NSString *labelTitle = nil;
     
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if(self.pageLabelFormat) {
         
-        labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
-    
-    } else {
-    
-        labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
+        labelTitle = [NSString stringWithFormat:self.pageLabelFormat, [self page], [[self document] numberOfPages]];
     }
+    else {
+        
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            
+            labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+            
+        }
+        else {
+            
+            labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
+        }
+    }
+    
     
 	self.pageNumLabel.text = labelTitle;
 }
 
+/**
+ * This method will show the toolbar.
+ */
 -(void)showToolbar {
 	
 	// Show toolbar, with animation.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[self.rollawayToolbar setHidden:NO];
-    [self.rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
-	[UIView commitAnimations];		
+	[UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.rollawayToolbar setHidden:NO];
+                         [self.rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
+                     }
+                     completion:NULL
+                     ];
 }
 
+/**
+ * This method will hide the toolbar.
+ */
 -(void)hideToolbar{
 	
-	// Hide the toolbar, with animation.	
-    
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[self.rollawayToolbar setFrame:CGRectMake(0, -toolbarHeight, rollawayToolbar.frame.size.width, toolbarHeight)];
-	[UIView commitAnimations];
+	// Hide the toolbar, with animation.
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.rollawayToolbar setFrame:CGRectMake(0, -toolbarHeight, rollawayToolbar.frame.size.width, toolbarHeight)];
+                     }
+                     completion:^(BOOL finished){
+                         [self.rollawayToolbar setHidden:YES];
+                     }];
 }
 
 
@@ -1617,22 +1662,22 @@
 	if((self = [super initWithDocumentManager:aDocumentManager])) {
 		[self setDocumentDelegate:self];
 	}
+    
 	return self;
 }
 
 
 - (void)didReceiveMemoryWarning {
 	
+    [super didReceiveMemoryWarning];
+	
 	self.textDisplayViewController = nil;
     self.searchViewController = nil;
-    
-	[super didReceiveMemoryWarning];
     
     if(!self.isViewLoaded) {
         
         // This will be called in place of viewDidUnload on iOS 6
         
-        self.pageSlider = nil;
         self.miniSearchView = nil;
         self.pageNumLabel = nil;
         self.numberOfPageTitleToolbar = nil;
@@ -1661,12 +1706,11 @@
 
 - (void)viewDidUnload {
     
-    self.pageSlider = nil;
+    self.rollawayToolbar = nil;
+    
     self.miniSearchView = nil;
     self.pageNumLabel = nil;
     self.numberOfPageTitleToolbar = nil;
-    
-    self.rollawayToolbar = nil;
     
     // Button and bar buttons
     
@@ -1689,8 +1733,16 @@
     [super viewDidUnload];
 }
 
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
 - (void)dealloc {
-	
+    
     // UI images.
     
 	[imgModeSingle release];
@@ -1740,6 +1792,8 @@
 	[textDisplayViewController release];
 	[miniSearchView release];
 	[searchManager release];
+    
+    self.dismissBlock = nil;
     
     [super dealloc];
 }

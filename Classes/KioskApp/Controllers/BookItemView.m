@@ -336,11 +336,8 @@
 }
 
 -(void)actionOpenPdf:(id)sender {
-	//Open Pdf
-	//senderButton = sender;
-	//NSString * [NSString stringWithFormat:@"%@", page];
-	//[mvc setDocumentName:pdfToDownload];
-	[menuViewController actionOpenPlainDocument:page];
+	
+    [menuViewController actionOpenPlainDocument:page];
 }
 
 -(void)actionStopPdf:(id)sender {
@@ -426,7 +423,7 @@
         
         [request release];
         
-    }else{
+    } else {
         
         NSURL *url = nil;
         ASIHTTPRequest * request = nil;
@@ -466,14 +463,16 @@
         pdfPathTempForResume = [documentsDirectory stringByAppendingPathComponent:@"temp"];
         
         if (isPdfLink) {
+        
             pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",namePdf]];
+        
         }else {
-            pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.fpk",namePdf]];
             
+            pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.fpk",namePdf]];
         }
         
         url = [NSURL URLWithString:sourceURL];
-        //url = [NSURL URLWithString:@"http://hbsflip.chalco.net/aspx/doc.pdf?path=8Ka9CXdfH8fai6qI2wRdz-8JoPDJfvqz0"];
+        
         request = [ASIHTTPRequest requestWithURL:url];
         [request setDelegate:self];
         

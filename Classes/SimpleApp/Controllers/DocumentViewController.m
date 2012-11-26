@@ -6,16 +6,18 @@
 //  Copyright 2010 MobFarm S.r.l. All rights reserved.
 //
 
-#import "DocumentViewController.h"
-#import "BookmarkViewController.h"
-#import "OutlineViewController.h"
-#import "MFDocumentManager.h"
-#import "SearchViewController.h"
-#import "TextDisplayViewController.h"
-#import "SearchManager.h"
-#import "MiniSearchView.h"
-#import "mfprofile.h"
+
+#import <FastPdfKit/BookmarkViewController.h>
+#import <FastPdfKit/OutlineViewController.h>
+#import <FastPdfKit/MFDocumentManager.h>
+#import <FastPdfKit/SearchViewController.h>
+#import <FastPdfKit/TextDisplayViewController.h>
+#import <FastPdfKit/SearchManager.h>
+#import <FastPdfKit/MiniSearchView.h>
+#import <FastPdfKit/mfprofile.h>
+
 #import "MenuViewController.h"
+#import "DocumentViewController.h"
 
 #define TITLE_MODE_SINGLE @"Single"
 #define TITLE_MODE_DOUBLE @"Double"
@@ -316,26 +318,25 @@
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:miniSearchView];
 	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.35];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
-		
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
-		
-	}
-
-    
-	[UIView commitAnimations];
-	
-    currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
-    currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
+    [UIView animateWithDuration:0.25
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+                         }
+                         else {
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2, 50, 320, 44)];
+                         }
+                     }
+                     completion:^(BOOL finished) {
+                         
+                         currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
+                         currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
+                         
+                     }];
 }
 
 
@@ -344,42 +345,44 @@
 	// Remove from the superview and release the mini search view.
 	
 	// Animation.
-	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
-	}
-	[UIView commitAnimations];
-	
-	// Actual removal.
-	if(miniSearchView!=nil) {
-		
-		[miniSearchView removeFromSuperview];
-		MF_COCOA_RELEASE(miniSearchView);
-	}
-	
-	[self removeOverlayDataSource:self.searchManager];
-    [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+                         } else {
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,-50 , 320, 44)];
+                         }
+                     }
+                     completion:^(BOOL finished){
+                         // Actual removal.
+                         if(miniSearchView!=nil) {
+                             [miniSearchView removeFromSuperview];
+                             MF_COCOA_RELEASE(miniSearchView);
+                         }
+                         
+                         [self removeOverlayDataSource:self.searchManager];
+                         [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+                     }];
 }
 
 -(void)showMiniSearchView {
 	
 	// Remove from the superview and release the mini search view.
 	
-	[UIView beginAnimations:@"show" context:NULL];
-	[UIView setAnimationDuration:0.15];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
-	}else {
-		[miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
-	}
-	
-	[UIView commitAnimations];
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+                         } else {
+                             [miniSearchView setFrame:CGRectMake((self.view.frame.size.width-320)/2,50 , 320, 44)];
+                         }
+                     }
+                     completion:NULL];
 }
 
 
@@ -609,7 +612,7 @@
     //  or, if presented as modalviewcontroller, tell the parent to dismiss it.
 	//  [[self parentViewController]dismissModalViewControllerAnimated:YES];
     
-	[[self navigationController]popViewControllerAnimated:YES];	
+	[[self navigationController]popToRootViewControllerAnimated:YES];
 }
 
 -(IBAction) actionPageSliderStopped:(id)sender {
@@ -1127,6 +1130,14 @@
 	[super viewDidUnload];
 }
 
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
 
 - (void)dealloc {
 	
