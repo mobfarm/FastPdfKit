@@ -26,7 +26,7 @@
 @synthesize graphicsMode;
 @synthesize scrollView;
 @synthesize interfaceLoaded;
-
+@synthesize xmlURL;
 
 -(IBAction)actionOpenPlainDocument:(NSString *)documentName {
 	
@@ -88,7 +88,8 @@
 		bookItemViews = [[NSMutableArray alloc]init];
         
         xmlDirty = YES;
-		
+        
+		self.xmlURL = [NSURL URLWithString:FPK_KIOSK_XML_URL];
 	}
 	
 	return self;
@@ -107,14 +108,14 @@
         xmlDirty = NO;
     
         parser = [[XMLParser alloc] init];
-        xmlUrl = [NSURL URLWithString:FPK_KIOSK_XML_URL];
-        [parser parseXMLFileAtURL:xmlUrl];
+        
+        [parser parseXMLFileAtURL:self.xmlURL];
     
         if([parser isDone]) {
             
             self.documentsList = [parser parsedItems];
             
-        } else {
+        } else { // Embedded xml as backup.
             
             xmlUrl = [MF_BUNDLED_BUNDLE(@"FPKKioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
             
@@ -128,7 +129,6 @@
         [parser release];
     }
     
-	//[self performSelector:@selector(buildInterface) withObject:nil afterDelay:0.5];
     [self buildInterface];
 }
 
@@ -310,7 +310,7 @@
     [downloadProgressView release];
     
     [scrollView release];
-    
+    [xmlURL release];
 	[bookItemViews release];
 	
     [super dealloc];

@@ -300,6 +300,11 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+# Update Novembre 27, 2012
+* Added an xmlURL property to the Kiosk MenuViewController to customize the list 
+without subclassing.
+* Security framework added in xcconfig.
+
 # Update November 26, 2012
 * Improved handling of space glyph in the text
 * Bunch of small tweaks and fixes

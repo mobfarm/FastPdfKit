@@ -39,7 +39,7 @@
 
 @property (nonatomic, retain) NSMutableArray *documentsList;
 @property (nonatomic, retain) UIScrollView *scrollView;
-
+@property (nonatomic, strong) NSURL * xmlURL;
 @property (nonatomic,retain ) NSDictionary *buttonRemoveDict;
 @property (nonatomic,retain ) NSDictionary *openButtons;
 @property (nonatomic,retain ) NSDictionary *progressViewDict;
