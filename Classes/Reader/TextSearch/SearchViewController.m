@@ -32,6 +32,7 @@
 @synthesize switchToMiniBarButtonItem, activityIndicatorView;
 @synthesize delegate;
 @synthesize searchManager;
+@synthesize toolbar;
 
 #pragma mark - Notification listeners
 
@@ -104,7 +105,10 @@
 	
 	// Tell the manager to start the search  and let the delegate's methods to refresh this view.
 	
-	[searchManager startSearchOfTerm:aSearchTerm fromPage:[delegate page]];
+	[searchManager startSearchOfTerm:aSearchTerm 
+                            fromPage:[delegate page] 
+                          ignoreCase:ignoreCase 
+                          exactMatch:exactMatch];
 }
 
 -(void)cancelSearch {
@@ -248,28 +252,7 @@
 	[cell setPage:[searchItem page]];
 	[cell setBoldRange:[searchItem searchTermRange]];
 	
-     
-    /*
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-	
-	if(nil == cell) {
-		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId]autorelease];
-		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        //[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-	}
-	
-    cell.textLabel.text = [searchItem text];
-    cell.textLabel.minimumFontSize = 12;
-
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i",[searchItem page]];
-     
-     */
-
     return cell;
-    
-	
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
@@ -306,16 +289,20 @@
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        searchManager = nil;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) 
+    {
 		switchToMiniBarButtonItem.enabled = NO;
+        ignoreCase = YES;
+        exactMatch = NO;
 	}
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated {
-
+-(void)viewWillAppear:(BOOL)animated 
+{
 	// Different setup if search is running or not.
 	[super viewWillAppear:animated];
     
@@ -349,22 +336,88 @@
 		[searchBar becomeFirstResponder];
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    
+-(void)viewWillDisappear:(BOOL)animated 
+{    
     [super viewWillDisappear:animated];
     
 }
 
+-(IBAction)actionToggleIgnoreCase:(id)sender
+{
+    ignoreCase=!ignoreCase;
+}
+
+-(IBAction)actionToggleExactMatch:(id)sender
+{
+    exactMatch=!exactMatch;
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-	
+- (void)viewDidLoad 
+{	
     [super viewDidLoad];
     
+    /* Register for notifications. */
+    
     NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(handleSearchDidStartNotification:) name:kNotificationSearchDidStart object:nil];
-    [notificationCenter addObserver:self selector:@selector(handleSearchDidStopNotification:) name:kNotificationSearchDidStop object:nil];
-    [notificationCenter addObserver:self selector:@selector(handleSearchGotCancelledNotification:) name:kNotificationSearchGotCancelled object:nil];
-    [notificationCenter addObserver:self selector:@selector(handleSearchResultsAvailableNotification:) name:kNotificationSearchResultAvailable object:nil];
+    
+    [notificationCenter addObserver:self 
+                           selector:@selector(handleSearchDidStartNotification:) 
+                               name:kNotificationSearchDidStart 
+                             object:nil];
+    [notificationCenter addObserver:self 
+                           selector:@selector(handleSearchDidStopNotification:) 
+                               name:kNotificationSearchDidStop 
+                             object:nil];
+    [notificationCenter addObserver:self 
+                           selector:@selector(handleSearchGotCancelledNotification:) 
+                               name:kNotificationSearchGotCancelled 
+                             object:nil];
+    [notificationCenter addObserver:self 
+                           selector:@selector(handleSearchResultsAvailableNotification:) 
+                               name:kNotificationSearchResultAvailable 
+                             object:nil];
+    
+    /* Setup bottom toolbar with label and switches */
+    
+    // Ignore case label and switch.
+    
+    UILabel * ignoreCaseLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 25)];
+    ignoreCaseLabel.text = @"Ignore case";
+    ignoreCaseLabel.textColor = [UIColor lightTextColor];
+    ignoreCaseLabel.backgroundColor = [UIColor clearColor];
+    UIBarButtonItem * ignoreCaseLabelBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ignoreCaseLabel];
+    [ignoreCaseLabel release];
+    
+    UISwitch * ignoreCaseSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+    ignoreCaseSwitch.on = ignoreCase;
+    [ignoreCaseSwitch addTarget:self action:@selector(actionToggleIgnoreCase:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem * ignoreCaseSwitchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ignoreCaseSwitch];
+    [ignoreCaseSwitch release];
+    
+    // Exact match label and switch.
+    
+    UILabel * exactMatchLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 25)];
+    exactMatchLabel.text = @"Exact phrase";
+    exactMatchLabel.textColor = [UIColor lightTextColor];
+    exactMatchLabel.backgroundColor = [UIColor clearColor];
+    UIBarButtonItem * exactMatchLabelBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:exactMatchLabel];
+    [exactMatchLabel release];
+    
+    UISwitch * exactMatchSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+    exactMatchSwitch.on = exactMatch;
+    [exactMatchSwitch addTarget:self action:@selector(actionToggleExactMatch:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem * exactMatchSwitchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:exactMatchSwitch];
+    [exactMatchSwitch release];
+    
+    // Toolbar.
+    
+    [self.toolbar setItems: [NSArray arrayWithObjects:ignoreCaseLabelBarButtonItem,ignoreCaseSwitchBarButtonItem,exactMatchLabelBarButtonItem, exactMatchSwitchBarButtonItem, nil] animated:YES];
+    
+    [exactMatchLabelBarButtonItem release];
+    [exactMatchSwitchBarButtonItem release];
+    [ignoreCaseSwitchBarButtonItem release];
+    [ignoreCaseLabelBarButtonItem release];
 }
 
 
@@ -376,36 +429,40 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-   
+- (void)didReceiveMemoryWarning 
+{
 	[super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
-    
+- (void)viewDidUnload 
+{    
     [super viewDidUnload];
     
-	[self setSearchBar:nil];
-	[self setSearchTableView:nil];
-	[self setSwitchToMiniBarButtonItem:nil];
-	[self setActivityIndicatorView:nil];
-    
     [[NSNotificationCenter defaultCenter]removeObserver:self];
+	
+    self.searchBar = nil;
+    self.searchTableView = nil;
+    self.switchToMiniBarButtonItem = nil;
+    self.activityIndicatorView = nil;
+    self.toolbar = nil;
 }
 
 
-- (void)dealloc {
-	
+- (void)dealloc 
+{	    
+    [super dealloc];
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    
 	searchManager = nil;
 	
-	[switchToMiniBarButtonItem release],switchToMiniBarButtonItem = nil;
-	[cancelStopBarButtonItem release],cancelStopBarButtonItem = nil;
+	MF_COCOA_RELEASE(switchToMiniBarButtonItem);
+	MF_COCOA_RELEASE(cancelStopBarButtonItem);
 	
-	[searchBar release],searchBar = nil;
-	[searchTableView release], searchTableView = nil;
-	[activityIndicatorView release],activityIndicatorView = nil;
-	
-    [super dealloc];
+    MF_COCOA_RELEASE(searchBar);
+    MF_COCOA_RELEASE(searchTableView);
+	MF_COCOA_RELEASE(activityIndicatorView);
+    MF_COCOA_RELEASE(toolbar);
 }
 
 

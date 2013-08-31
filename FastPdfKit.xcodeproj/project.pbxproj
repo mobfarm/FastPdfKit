@@ -40,6 +40,7 @@
 		01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01142A2D15CFC38E001B5374 /* MenuViewController.m */; };
 		01142A3B15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		01142A3D15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
+		011DF92617D1755B0007DEAD /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
 		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
@@ -63,7 +64,6 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
-		0124AE3215D98F2000EBFA22 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */; };
 		013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */; };
 		0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; };
@@ -749,7 +749,7 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
-				0124AE3215D98F2000EBFA22 /* libFastPdfKit.a in Frameworks */,
+				011DF92617D1755B0007DEAD /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

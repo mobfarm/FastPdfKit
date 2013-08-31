@@ -300,12 +300,21 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
-# Update Novembre 27, 2012
+# Update August 30th, 2013
+* Added exact match option to search.
+* Added exact match and ignore case switch to SearchDisplayViewController.
+* Updated text extraction algorithm.
+
+# Update April 19th, 2013
+* Exposed pdf rendering settings.
+* Tweaks and bugfixes.
+
+# Update Novembre 27th, 2012
 * Added an xmlURL property to the Kiosk MenuViewController to customize the list 
 without subclassing.
 * Security framework added in xcconfig.
 
-# Update November 26, 2012
+# Update November 26th, 2012
 * Improved handling of space glyph in the text
 * Bunch of small tweaks and fixes
 

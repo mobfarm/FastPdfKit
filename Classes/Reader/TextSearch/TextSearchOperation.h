@@ -16,6 +16,9 @@
 	id<NSObject> delegate;                      // Delegate.
 	MFProfile profile;							// Search profile.
 	MFDocumentManager *document;				// Document manager.
+    
+    BOOL ignoreCase;
+    BOOL exactMatch;
 }
 
 @property (retain) MFDocumentManager *document;
@@ -23,5 +26,8 @@
 @property (copy) NSString *searchTerm;
 @property (assign) id<NSObject> delegate;
 @property (nonatomic,readwrite) MFProfile profile;
+
+@property (nonatomic, readwrite) BOOL ignoreCase;
+@property (nonatomic, readwrite) BOOL exactMatch;
 
 @end

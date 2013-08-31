@@ -58,7 +58,6 @@
 	MFDocumentLead currentLead;
 	NSUInteger currentPage;
 	NSUInteger startingPage;
-	//MFLegacyMode legacyMode;
 	
 	NSInteger currentPosition;              // Currently displayed position.
 	NSUInteger currentOrientation;          // Current orientation as intended by the application.
@@ -272,7 +271,6 @@
  Enabled or force the legacy mode, or let the app choose to enable it or not 
  depending on the device. Default is disabled.
  */
-// Private status variable about legacyMode...
 @property (readwrite) BOOL legacyModeEnabled;
 
 
@@ -554,5 +552,60 @@
  * unless the user has already jumped to the bottom of the stack.
  */
 -(NSInteger)previousVisitedPagesCount;
+
+/**
+ * This will set the image cache scale to use. You can choose between 
+ * FPKImageCacheStandard, FPKImageCacheTrueToPixels and FPKImageCacheAnamorphic.
+ *
+ * Default si FPKImageCacheTrueToPixels.
+ */
+-(void)setImageCacheScaling:(FPKImageCacheScale)scale;
+-(FPKImageCacheScale)imageCacheScaling;
+
+/**
+ * This set if image cache will use JPEG or the default PNG compression.
+ *
+ * Default is YES (it will use JPEG).
+ */
+-(void)setUseJPEG:(BOOL)useJPEGOrNot;
+-(BOOL)useJPEG;
+
+/**
+ * This set the compressione level for the JPEG image compression, if JPEG
+ * image compression is used (greather the value lesser the compression). 
+ * Level 0.75 is a good compromise between image quality, speed and size.
+ *
+ * Default is 0.75.
+ */
+-(void)setImageCacheCompression:(CGFloat)level;
+-(CGFloat)imageCacheCompression;
+
+/**
+ * This will set if high detailed tiles will be shown at 1x zoom factor. You 
+ * can choose between FPKForceTilesNever, FPKForceTilesAlways,
+ * FPKForceTilesOverflowOnly.
+ *
+ * Default is FPKForceTilesOverflowOnly.
+ */
+-(void)setForceTiles:(FPKForceTiles)force;
+-(FPKForceTiles)forceTiles;
+
+/**
+ * This wil set the oversize of the image cache. Image size will be calculated
+ * taking screen size and page cropbox size into account to produce and image 
+ * that will fit the screen. Oversize is a factor of how much the final image 
+ * will be bigger than the optimal. Oversize of 0.05 will generate an image 
+ * with roughly 10% more pixel than the screen (1.05 * 1.05 = 1.1).
+ *
+ * Default is 0.05.
+ */
+-(void)setImageCacheOversize:(CGFloat)oversize;
+-(CGFloat)imageCacheOversize;
+
+/**
+ * This flag will force the controller to delete the cache at launch. The flag
+ * will be reset to NO after clean up.
+ */
+@property (readwrite, nonatomic) BOOL cleanUpCacheAtLaunch;
 
 @end

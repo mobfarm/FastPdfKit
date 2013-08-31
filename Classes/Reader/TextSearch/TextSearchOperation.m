@@ -12,25 +12,26 @@
 @implementation TextSearchOperation
 @synthesize page, searchTerm, delegate, document;
 @synthesize profile;
+@synthesize exactMatch, ignoreCase;
 
--(void)main {
-	
+-(void)main 
+{	
 	// Allocate an autorelease pool.
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
 	
-	// Get the search result from the document.
-	
+	// Get the result from the document.
     
-    // Get the result from the document.
-    NSArray *searchResult = [[document searchResultOnPage:page forSearchTerms:searchTerm]copy];
+    NSArray *searchResult = [[document searchResultOnPage:page 
+                                           forSearchTerms:searchTerm 
+                                               ignoreCase:ignoreCase 
+                                               exactMatch:exactMatch]copy];
     
-	if(![self isCancelled]) {
-		
+	if(![self isCancelled]) 
+    {
 		if([delegate respondsToSelector:@selector(handleSearchResult:)])
 			[(NSObject *)delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
 	}
-	
 	
 	// Cleanup.
 	
@@ -38,11 +39,13 @@
 	[pool release];
 }
 
--(void)dealloc {
-	
-	[document release],document = nil;
+-(void)dealloc 
+{	
 	delegate = nil;
-	[searchTerm release],searchTerm = nil;
+	
+    MF_COCOA_RELEASE(searchTerm);
+    MF_COCOA_RELEASE(document);
+    
 	[super dealloc];
 }
 

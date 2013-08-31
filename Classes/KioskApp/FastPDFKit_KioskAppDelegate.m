@@ -16,10 +16,13 @@
 @synthesize window,navigationController;
 @synthesize menuVC_Kiosk;
 
+#ifdef __IPHONE_6_0
 -(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     
     return UIInterfaceOrientationMaskAll;
 }
+
+#endif
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 

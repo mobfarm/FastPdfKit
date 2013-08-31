@@ -26,6 +26,10 @@
 	NSUInteger currentPage;			// Current page.
 	NSString * currentSearchTerm;	// Current search term.
 	
+    // Options.
+    BOOL ignoreCase;
+    BOOL exactMatch;
+    
 	// Concurrent operations.
 	NSOperation * currentSearchOperation;		// Reference to the current op.
 	NSOperationQueue * searchOperationQueue;	// The operation queue.
@@ -47,6 +51,11 @@
 
 -(NSArray *)searchResultsAsPlainArray;
 -(void)stopSearch;
--(void)startSearchOfTerm:(NSString *)term fromPage:(NSUInteger)startingPage;
--(void)cancelSearch;
+-(void)cancelSearch; 
+-(void)startSearchOfTerm:(NSString *)term 
+                fromPage:(NSUInteger)startingPage;
+-(void)startSearchOfTerm:(NSString *)term 
+                fromPage:(NSUInteger)page 
+              ignoreCase:(BOOL)ignoreCaseOrNot 
+              exactMatch:(BOOL)exactMatchOrNot;
 @end

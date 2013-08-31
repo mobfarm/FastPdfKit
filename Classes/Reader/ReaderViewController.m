@@ -1733,13 +1733,16 @@
     [super viewDidUnload];
 }
 
+#ifdef __IPHONE_6_0
 -(BOOL)shouldAutorotate {
     return YES;
 }
 
 -(NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
+
+    return UIInterfaceOrientationMaskAll
 }
+#endif
 
 - (void)dealloc {
     

@@ -29,6 +29,9 @@
 	NSObject<SearchViewControllerDelegate> *delegate; // A delegate to change the page.
 	
 	SearchManager * searchManager;	// Data source.
+    
+    BOOL ignoreCase;
+    BOOL exactMatch;
 }
 
 @property (assign) SearchManager * searchManager;
@@ -38,8 +41,9 @@
 -(IBAction)actionMinimize:(id)sender;
 -(IBAction)actionBack:(id)sender;
 
-@property (nonatomic,retain) IBOutlet UISearchBar *searchBar;
-@property (nonatomic,retain) IBOutlet UITableView *searchTableView;
-@property (nonatomic,retain) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic,retain) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
+@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, retain) IBOutlet UITableView *searchTableView;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
+@property (nonatomic, retain) IBOutlet UIToolbar * toolbar;
 @end

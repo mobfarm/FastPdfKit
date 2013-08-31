@@ -27,8 +27,12 @@
 
 @interface SearchManager()
 
--(void)startSearchOperationForSearchTerm:(NSString*)term andPage:(NSUInteger)page;
-
+-(void)startSearchOperationForSearchTerm:(NSString*)term 
+                                 andPage:(NSUInteger)page;
+-(void)startSearchOperationForSearchTerm:(NSString*)term 
+                                 andPage:(NSUInteger)page 
+                              ignoreCase:(BOOL)ignoreCase 
+                              exactMatch:(BOOL)exactMatch;
 @end
 
 @implementation SearchManager
@@ -42,7 +46,9 @@
 #pragma mark -
 #pragma mark SearchResultDelegate 
 
--(NSArray *)documentViewController:(MFDocumentViewController *)dvc drawablesForPage:(NSUInteger)page {
+-(NSArray *)documentViewController:(MFDocumentViewController *)dvc 
+                  drawablesForPage:(NSUInteger)page 
+{
 	
     // This method will get called when the document view controller will ask for drawables for the
 	// page being displayed. In our case, the drawables - overlay items - are the highlighted bounding
@@ -214,7 +220,10 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 			
 			// Keep searching on the next page.
 			
-			[self startSearchOperationForSearchTerm:self.searchTerm andPage:currentPage];
+			[self startSearchOperationForSearchTerm:self.searchTerm 
+                                            andPage:currentPage 
+                                         ignoreCase:ignoreCase 
+                                         exactMatch:exactMatch];
 			
 		} else {
 			
@@ -229,8 +238,60 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 	} 
 }
 
--(void)startSearchOperationForSearchTerm:(NSString*)term andPage:(NSUInteger)page {
+-(void)startSearchOfTerm:(NSString *)term 
+                fromPage:(NSUInteger)page 
+              ignoreCase:(BOOL)ignoreCaseOrNot 
+              exactMatch:(BOOL)exactMatchOrNot
+{
+    // Save the sarch term and set the starting and current page to the page passed as argument. We will
+	// cycle over the entire document until we get back to the starting page.
+	
+	self.searchTerm = term;
+	
+	startingPage = page;
+	currentPage = page;
+    
+    ignoreCase = ignoreCaseOrNot;
+    exactMatch = exactMatchOrNot;
+	
+	// Set the status flags.
+	
+    FPK_SRCMGR_STATUS_GO_ON(status);
+	
+	// Allocate a new mutable array to not modify the precedent one in the case it has been
+	// retained by another object.
+	NSMutableArray * tmpArray = [[NSMutableArray alloc]init];
+	self.searchResults = tmpArray;
+	[tmpArray release];
+	
+	// Call the utility method to start a search operation and notify the event.
+    
+	[self startSearchOperationForSearchTerm:term 
+                                    andPage:page 
+                                 ignoreCase:ignoreCaseOrNot 
+                                 exactMatch:exactMatchOrNot];
+	
+    NSNotification * notification = [NotificationFactory notificationSearchDidStartWithSearchTerm:searchTerm onPage:[NSNumber numberWithInt:page] fromSender:self];
+    
+    [[NSNotificationCenter defaultCenter]postNotification:notification];
+}
 
+-(void)startSearchOfTerm:(NSString *)term fromPage:(NSUInteger)aStartingPage 
+{
+	[self startSearchOfTerm:term 
+                   fromPage:aStartingPage 
+                 ignoreCase:YES 
+                 exactMatch:NO];
+}
+
+#pragma mark - Operation
+
+-(void)startSearchOperationForSearchTerm:(NSString*)term 
+                                 andPage:(NSUInteger)page 
+                              ignoreCase:(BOOL)ignoreCaseOrNot 
+                              exactMatch:(BOOL)exactMatchOrNot 
+{
+    
 	// Utility method to set up the search operation with the right parameters.
 	
 	TextSearchOperation * operation = [[TextSearchOperation alloc]init];
@@ -252,6 +313,8 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 	operation.delegate = self;			// Delegate for handling the results.
 	operation.document = self.document;	// Document.
 	operation.profile = profile;        // This is going to be ignored if you use the test_ version of the search.
+    operation.exactMatch = exactMatchOrNot;
+    operation.ignoreCase = ignoreCaseOrNot;
 	
 	// Set the operation as the current one and add it to the operation queue.
 	
@@ -261,39 +324,13 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 	[operation release];
 }
 
--(void)startSearchOfTerm:(NSString *)term fromPage:(NSUInteger)aStartingPage {
-	
-    NSNotification * notification = nil;
-    NSMutableArray * tmpArray = nil;
-    
-	// Start the sarch.
-	
-	// Save the sarch term and set the starting and current page to the page passed as argument. We will
-	// cycle over the entire document until we get back to the starting page.
-	
-	self.searchTerm = term;
-	
-	startingPage = aStartingPage;
-	currentPage = aStartingPage;
-	
-	// Set the status flags.
-	
-    FPK_SRCMGR_STATUS_GO_ON(status);
-	
-	// Allocate a new mutable array to not modify the precedent one in the case it has been
-	// retained by another object.
-	tmpArray = [[NSMutableArray alloc]init];
-	self.searchResults = tmpArray;
-	[tmpArray release];
-	
-	// Call the utility method to start a search operation and notify the event.
-    
-    notification = [NotificationFactory notificationSearchDidStartWithSearchTerm:searchTerm onPage:[NSNumber numberWithInt:aStartingPage] fromSender:self];
-    
-	[self startSearchOperationForSearchTerm:term andPage:aStartingPage];
-	
-    [[NSNotificationCenter defaultCenter]postNotification:notification];
-    
+-(void)startSearchOperationForSearchTerm:(NSString*)term 
+                                 andPage:(NSUInteger)page 
+{
+    [self startSearchOperationForSearchTerm:term 
+                                    andPage:page 
+                                 ignoreCase:YES 
+                                 exactMatch:NO];
 }
 
 #pragma mark -
@@ -315,8 +352,8 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 }
 
 
-- (void)dealloc {
-	
+- (void)dealloc 
+{	
 	MF_COCOA_RELEASE(document);
 	
 	MF_COCOA_RELEASE(searchTerm);
