@@ -1740,7 +1740,7 @@
 
 -(NSUInteger)supportedInterfaceOrientations {
 
-    return UIInterfaceOrientationMaskAll
+    return UIInterfaceOrientationMaskAll;
 }
 #endif
 
