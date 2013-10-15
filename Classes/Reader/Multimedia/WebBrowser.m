@@ -31,13 +31,13 @@
 
 - (void)dealloc
 {
-    [super dealloc];
-    
     docViewController = nil;
     
     [closeButton release];
     [webView release];
     [uri release];
+    
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning

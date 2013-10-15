@@ -449,9 +449,7 @@
 
 
 - (void)dealloc 
-{	    
-    [super dealloc];
-    
+{
     [[NSNotificationCenter defaultCenter]removeObserver:self];
     
 	searchManager = nil;
@@ -463,6 +461,8 @@
     MF_COCOA_RELEASE(searchTableView);
 	MF_COCOA_RELEASE(activityIndicatorView);
     MF_COCOA_RELEASE(toolbar);
+    
+    [super dealloc];
 }
 
 

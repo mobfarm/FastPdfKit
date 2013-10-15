@@ -18,30 +18,24 @@
 {	
 	// Allocate an autorelease pool.
 	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
-	
-	// Get the result from the document.
-    
-    NSArray *searchResult = [[document searchResultOnPage:page 
-                                           forSearchTerms:searchTerm 
-                                               ignoreCase:ignoreCase 
-                                               exactMatch:exactMatch]copy];
-    
-	if(![self isCancelled]) 
-    {
-		if([delegate respondsToSelector:@selector(handleSearchResult:)])
-			[(NSObject *)delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
-	}
-	
-	// Cleanup.
-	
-	[searchResult release];
-	[pool release];
+	@autoreleasepool {
+        
+        NSArray *searchResult = [document searchResultOnPage:page
+                                               forSearchTerms:searchTerm
+                                                   ignoreCase:ignoreCase
+                                                   exactMatch:exactMatch];
+        
+        if(![self isCancelled])
+        {
+            if([delegate respondsToSelector:@selector(handleSearchResult:)])
+                [(NSObject *)delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
+        }
+    }
 }
 
 -(void)dealloc 
 {	
-	delegate = nil;
+	self.delegate = nil;
 	
     MF_COCOA_RELEASE(searchTerm);
     MF_COCOA_RELEASE(document);
