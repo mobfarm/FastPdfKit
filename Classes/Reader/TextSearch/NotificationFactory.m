@@ -27,7 +27,6 @@
                                                         
     notification = [NSNotification notificationWithName:kNotificationSearchResultAvailable object:self userInfo:info];
     
-    [info release];
     
     return notification;
 }
@@ -45,7 +44,6 @@
     
     notification = [NSNotification notificationWithName:kNotificationSearchDidStart object:self userInfo:info];
     
-    [info release];
     
     return notification;
 }
@@ -60,7 +58,6 @@
     
     notification = [NSNotification notificationWithName:kNotificationSearchDidStop object:self userInfo:info];
     
-    [info release];
     
     return notification;
 }
@@ -76,7 +73,6 @@
     
     notification = [NSNotification notificationWithName:kNotificationSearchGotCancelled object:self userInfo:info];
     
-    [info release];
     
     return notification;
 }

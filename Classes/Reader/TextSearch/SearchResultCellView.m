@@ -29,7 +29,6 @@
 
 	if(![newTextSnippet isEqualToString:textSnippet]) {
 		
-		[textSnippet release];
 		textSnippet = [newTextSnippet copy];
 		
 		[searchResultView setText:textSnippet];
@@ -91,10 +90,8 @@
 
 - (void)dealloc {
 	
-	[textSnippet release],textSnippet = nil;
-	[searchResultView release],searchResultView = nil;
+	textSnippet = nil;
 	
-    [super dealloc];
 }
 
 

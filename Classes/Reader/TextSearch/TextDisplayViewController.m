@@ -35,13 +35,13 @@
 	
 	// This is going to be run in the background, so we need to create an autorelease pool for the thread.
 	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
+	@autoreleasepool {
 	
 	// Just call the -wholeTextForPage: method of MFDocumentManager. Pass NULL as profile to use the default profile.
 	// If you want to use a different profile pass a reference to a MFProfile.
     
     // Use -(void)test_wholeTextForPage:(NSUInteger)page if you want to test the new text extraction engine instead.
-    NSString * someText = [[documentManager wholeTextForPage:[page unsignedIntValue]]copy];
+        NSString * someText = [[documentManager wholeTextForPage:[page unsignedIntValue]]copy];
 	
 	// NSString *someText = [[documentManager wholeTextForPage:[page intValue] withProfile:NULL]copy];
 	
@@ -50,8 +50,7 @@
 	[self performSelectorOnMainThread:@selector(updateTextToTextDisplayView:) withObject:someText  waitUntilDone:YES];
 	
 	// Cleanup.
-	[someText release];
-	[pool release];
+	}
 	
 }
 
@@ -116,12 +115,7 @@
 - (void)dealloc {
 	
 	delegate = nil;
-	[textView release],textView = nil;
-	[activityIndicatorView release],activityIndicatorView = nil;
-	[text release],text = nil;
-	[documentManager release];
 	
-    [super dealloc];
 }
 
 

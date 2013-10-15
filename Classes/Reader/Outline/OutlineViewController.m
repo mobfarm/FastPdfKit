@@ -49,7 +49,7 @@
 	
 	if(nil == cell) {
 		
-		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+		cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 		
 	}
@@ -188,7 +188,6 @@
 				[self recursivelyAddVisibleChildrenOfEntry:e toArray:array];
 			}
 			
-			[children release];
 			
 		} else {
 			
@@ -285,7 +284,6 @@
         
         [[cell imageView]setImage:aImage];
         
-        [aImage release];
         
 		// Add the visible children of the selected entry to the outlineEntries array and update
 		// the tableview by addind the cell at the corresponding indexPaths
@@ -358,15 +356,6 @@
 }
 
 
-- (void)dealloc {
-	
-	[outlineEntries release];
-	[openOutlineEntries release];
-	
-	[outlineTableView release];
-	
-    [super dealloc];
-}
 
 
 @end

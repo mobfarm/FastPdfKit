@@ -51,7 +51,6 @@
 		
         audioData = [[NSData alloc] initWithContentsOfURL:url];
 		audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
-		[audioData release];
 	}
 
 	if (error) {
@@ -104,15 +103,6 @@
 	
 }
 
-- (void)dealloc{
-	
-    [audioPlayer release];
-    [volumeControl release];
-    [url release];
-    
-    [super dealloc];
-	
-}
 
 - (void)didReceiveMemoryWarning
 {

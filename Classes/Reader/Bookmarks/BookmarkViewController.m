@@ -31,7 +31,7 @@
 	NSMutableArray * bookmarksArray = nil;
 	NSArray * storedBookmarks = [[NSUserDefaults standardUserDefaults]objectForKey:KEY_FROM_DOCUMENT_ID(documentId)];
 	if(storedBookmarks) {
-		bookmarksArray = [[storedBookmarks mutableCopy]autorelease];
+		bookmarksArray = [storedBookmarks mutableCopy];
 	} else {
 		bookmarksArray = [NSMutableArray array];
 	}
@@ -51,7 +51,6 @@
 	
     [bookmarksTableView setEditing:YES];
     status = STATUS_EDITING;
-    [items release];
 }
 
 -(void)disableEditing {
@@ -66,7 +65,6 @@
     [bookmarksTableView setEditing:NO];
     status = STATUS_NORMAL;
     
-    [items release];
 }
 
 -(IBAction)actionDone:(id)sender {
@@ -203,7 +201,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
 	
 	if(nil == cell) {
-		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+		cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	}
@@ -236,16 +234,6 @@
 }
 
 
-- (void)dealloc {
-
-	[toolbar release], toolbar = nil;
-	[bookmarksTableView release], bookmarksTableView = nil;
-	[editButton release];
-	
-	[bookmarks release];
-	
-    [super dealloc];
-}
 
 
 @end

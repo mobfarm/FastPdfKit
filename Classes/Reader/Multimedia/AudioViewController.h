@@ -17,14 +17,14 @@
 	UISlider *volumeControl;
 	BOOL local;
 	NSURL *url;
-	ReaderViewController *documentViewController;
+	ReaderViewController *__weak documentViewController;
 }
 
-@property (nonatomic, retain) IBOutlet UISlider *volumeControl;
-@property (nonatomic, assign) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) IBOutlet UISlider *volumeControl;
+@property (nonatomic) AVAudioPlayer *audioPlayer;
 @property (nonatomic, readwrite, getter = isLocal) BOOL local;
-@property (nonatomic, retain) NSURL *url; 
-@property (nonatomic,assign) ReaderViewController *documentViewController;
+@property (nonatomic, strong) NSURL *url; 
+@property (nonatomic,weak) ReaderViewController *documentViewController;
 
 - (IBAction) playAudio;
 - (IBAction) stopAudio;

@@ -33,11 +33,7 @@
 {
     docViewController = nil;
     
-    [closeButton release];
-    [webView release];
-    [uri release];
     
-    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,8 +65,6 @@
 		
 		request = [[NSURLRequest alloc ]initWithURL:url];
 		[webView loadRequest:request];
-		[url release];
-		[request release];
 		
 	} else {
 		
@@ -78,8 +72,6 @@
         
 		request = [[NSURLRequest alloc ]initWithURL:url];
 		[webView loadRequest:request];
-		[url release];
-		[request release];		
 	}
 }
 

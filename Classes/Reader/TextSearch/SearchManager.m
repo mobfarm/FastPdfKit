@@ -12,6 +12,7 @@
 #import "MFTextItem.h"
 #import "MFDocumentViewController.h"
 #import "NotificationFactory.h"
+#import "MFDocumentManager.h"
 
 #define FPK_SRCMGR_STATUS_CANCELLED 0
 #define FPK_SRCMGR_STATUS_ONGOING 1
@@ -83,9 +84,8 @@
         }
 	}
 	
-	[results release];
 	
-	return [drawables autorelease];
+	return drawables;
 }
 
 
@@ -110,8 +110,7 @@
 	
 	if(adocument!=document) {
 		
-		[document release];
-		document = [adocument retain];
+		document = adocument;
 		
 		maxPage = [document numberOfPages];
 	}
@@ -262,7 +261,6 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 	// retained by another object.
 	NSMutableArray * tmpArray = [[NSMutableArray alloc]init];
 	self.searchResults = tmpArray;
-	[tmpArray release];
 	
 	// Call the utility method to start a search operation and notify the event.
     
@@ -321,7 +319,6 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 	self.currentSearchOperation = operation;	
 	[searchOperationQueue addOperation:operation];	
 	
-	[operation release];
 }
 
 -(void)startSearchOperationForSearchTerm:(NSString*)term 
@@ -364,7 +361,6 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 	
 	MF_COCOA_RELEASE(currentSearchTerm);
 	
-    [super dealloc];
 }
 
 

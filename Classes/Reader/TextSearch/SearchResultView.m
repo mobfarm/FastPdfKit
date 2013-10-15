@@ -45,7 +45,6 @@
 	
 	if(![text isEqualToString:aText]) {
 	
-		[text release];
 		text = [aText copy];
 	
 		[self setNeedsDisplay];
@@ -237,7 +236,7 @@
 		
         CGContextSetTextMatrix(ctx, CGAffineTransformIdentity);
 		
-		snippetString = (CFStringRef)text;
+		snippetString = (__bridge CFStringRef)text;
 		
 		snippetAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(snippetAttrString, CFRangeMake(0, 0), snippetString);
@@ -308,12 +307,6 @@
 	}
 }
 
-- (void)dealloc {
-	
-	[text release],text = nil;
-	
-    [super dealloc];
-}
 
 
 @end

@@ -258,17 +258,8 @@
         
         
         [bar setItems:[NSArray arrayWithObjects:doneItem, flexibleSpace, prevItem,nextItem, fixedSpace, fullItem, nil] animated:NO];
-        [flexibleSpace release];
-        [fixedSpace release];
-        [prevItem release];
-        [nextItem release];
-        [doneItem release];
-        [fullItem release];
-        [btnNext release];
-        [btnPrev release];
         
         [self addSubview:bar];
-        [bar release];
         
         
         // Register notification listeners.
@@ -294,7 +285,6 @@
 	
 	MF_COCOA_RELEASE(searchResultView);
 	
-    [super dealloc];
 }
 
 

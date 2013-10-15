@@ -68,7 +68,6 @@
         popoverController.delegate = self;
         self.reusablePopover = popoverController;
         self.reusablePopover.delegate = self;
-        [popoverController release];
         
     } else {
         
@@ -203,7 +202,6 @@
 		
 		alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 		
 	} else {
         
@@ -263,7 +261,6 @@
 			[self presentModalViewController:bookmarksVC animated:YES];
 		}
         
-		[bookmarksVC release];
 	}
 }
 
@@ -341,7 +338,6 @@
 			[self presentModalViewController:outlineVC animated:YES];
 		}
         
-		[outlineVC release];
 
 	} else {
         
@@ -406,11 +402,11 @@
 		
 		// If nil, allocate and initialize it.
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)]autorelease];
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 			
 		}else {
-			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)]autorelease];
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		}
 		
@@ -856,7 +852,6 @@
 	
 	[self.view addSubview:audioVC.view];
     
-    [audioVC release];
 }
 
 - (void)playVideo:(NSString *)videoPath local:(BOOL)isLocal{
@@ -881,7 +876,6 @@
 			openVideo = NO;
 		}
         
-		[fileManager release];
 		
 	} else {
         
@@ -901,7 +895,6 @@
 			[moviePlayViewController.moviePlayer play];
 		}
         
-        [moviePlayViewController release];
 	}
 }
 
@@ -927,7 +920,6 @@
 	webBrowser.docViewController = self;
 	[self presentModalViewController:webBrowser animated:YES];
 	
-	[webBrowser release];
 }
 
 #pragma mark -
@@ -1137,7 +1129,6 @@
 	
 	[self setView:aView];
 	
-	[aView release];
 }
 
 /**
@@ -1246,7 +1237,6 @@
 		self.dismissBarButtonItem = aBarButtonItem;
 
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 				
 		// Zoom lock.
@@ -1260,7 +1250,6 @@
         
 		self.zoomLockBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Change direction.
         
@@ -1273,7 +1262,6 @@
         
         self.changeDirectionBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Change lead.
         
@@ -1287,7 +1275,6 @@
         self.changeLeadBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
         
-		[aBarButtonItem release];
 		
 		// Change mode.
         
@@ -1299,13 +1286,11 @@
         
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Space.
 		
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Page number.
 		
@@ -1325,15 +1310,12 @@
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aLabel];
 		self.numberOfPageTitleBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
-		[aLabel release];
 		
 		// Space.
         
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Text.
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1347,7 +1329,6 @@
 		self.textBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Outline.
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1361,7 +1342,6 @@
 		self.outlineBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
 		// Bookmarks.
         
@@ -1376,7 +1356,6 @@
 		self.bookmarkBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
         // Search.
         
@@ -1391,7 +1370,6 @@
 		self.searchBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
 		
 	} else { // Iphone.
@@ -1410,14 +1388,12 @@
 		self.dismissBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		
          // Space
          
          aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
          [items addObject:aBarButtonItem];
-         [aBarButtonItem release];
          
 		
 		// Zoom lock.
@@ -1432,7 +1408,6 @@
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgZoomUnlock style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
 		self.zoomLockBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Change direction.
         
@@ -1446,7 +1421,6 @@
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
 		self.changeDirectionBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Change lead.
         
@@ -1461,7 +1435,6 @@
 		self.changeLeadBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
         
-		[aBarButtonItem release];
 		
 		// Change mode.
         
@@ -1473,13 +1446,11 @@
         
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
         // Space
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         [items addObject:aBarButtonItem];
-        [aBarButtonItem release];
         
 		
 		// Text.
@@ -1495,7 +1466,6 @@
 		self.textBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
 		
 		// Outline.
@@ -1511,7 +1481,6 @@
 		self.outlineBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
         
 		// Bookmarks.
@@ -1528,7 +1497,6 @@
 		self.bookmarkBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
         // Search.
         
@@ -1543,7 +1511,6 @@
 		self.searchBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 	}
 	
 	aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, toolbarHeight)];
@@ -1556,8 +1523,6 @@
 	
 	self.rollawayToolbar = aToolbar;
 	
-	[aToolbar release];
-	[items release];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -1744,61 +1709,5 @@
 }
 #endif
 
-- (void)dealloc {
-    
-    // UI images.
-    
-	[imgModeSingle release];
-	[imgModeDouble release];
-    [imgModeOverflow release];
-	[imgZoomLock release];
-	[imgZoomUnlock release];
-	[imgl2r release];
-	[imgr2l release];
-	[imgLeadRight release];
-	[imgLeadLeft release];
-    [imgBookmark release];
-    [imgDismiss release];
-    [imgText release];
-    [imgSearch release];
-    [imgOutline release];
-    
-    [rollawayToolbar release];
-	
-    // Bar button item.
-    
-    [searchBarButtonItem release], searchBarButtonItem = nil;
-	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
-	[changeModeBarButtonItem release], changeModeBarButtonItem = nil;
-	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
-	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
-    [textBarButtonItem release], textBarButtonItem = nil;
-    [numberOfPageTitleBarButtonItem release], numberOfPageTitleBarButtonItem = nil;
-    [outlineBarButtonItem release], outlineBarButtonItem = nil;
-    [bookmarkBarButtonItem release], bookmarkBarButtonItem = nil;
-    [dismissBarButtonItem release], dismissBarButtonItem = nil;
-    
-    // Inner buttons.
-    
-    [zoomLockButton release],zoomLockButton = nil;
-    [changeModeButton release],changeModeButton = nil;
-    [changeLeadButton release],changeLeadButton = nil;
-    [changeDirectionButton release],changeDirectionButton = nil;
-	
-    // Popovers.
-    
-    [reusablePopover release];
-   
-	[numberOfPageTitleBarButtonItem release];
-	
-	[searchViewController release];
-	[textDisplayViewController release];
-	[miniSearchView release];
-	[searchManager release];
-    
-    self.dismissBlock = nil;
-    
-    [super dealloc];
-}
 
 @end

@@ -38,7 +38,7 @@
 
 -(void)handleSearchResultsAvailableNotification:(NSNotification *)notification {
  
-    NSDictionary * userInfo = [[notification userInfo]retain];
+    NSDictionary * userInfo = [notification userInfo];
     
     NSArray * searchResult = [userInfo objectForKey:kNotificationSearchInfoResults];
     
@@ -47,7 +47,6 @@
         [searchTableView reloadData];
     }
     
-    [userInfo release];
 }
 
 -(void)handleSearchDidStopNotification:(NSNotification *)notification {
@@ -241,7 +240,7 @@
 	
 		// Simple initialization.
 		
-		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+		cell = [[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
@@ -387,13 +386,11 @@
     ignoreCaseLabel.textColor = [UIColor lightTextColor];
     ignoreCaseLabel.backgroundColor = [UIColor clearColor];
     UIBarButtonItem * ignoreCaseLabelBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ignoreCaseLabel];
-    [ignoreCaseLabel release];
     
     UISwitch * ignoreCaseSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
     ignoreCaseSwitch.on = ignoreCase;
     [ignoreCaseSwitch addTarget:self action:@selector(actionToggleIgnoreCase:) forControlEvents:UIControlEventValueChanged];
     UIBarButtonItem * ignoreCaseSwitchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ignoreCaseSwitch];
-    [ignoreCaseSwitch release];
     
     // Exact match label and switch.
     
@@ -402,22 +399,16 @@
     exactMatchLabel.textColor = [UIColor lightTextColor];
     exactMatchLabel.backgroundColor = [UIColor clearColor];
     UIBarButtonItem * exactMatchLabelBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:exactMatchLabel];
-    [exactMatchLabel release];
     
     UISwitch * exactMatchSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
     exactMatchSwitch.on = exactMatch;
     [exactMatchSwitch addTarget:self action:@selector(actionToggleExactMatch:) forControlEvents:UIControlEventValueChanged];
     UIBarButtonItem * exactMatchSwitchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:exactMatchSwitch];
-    [exactMatchSwitch release];
     
     // Toolbar.
     
     [self.toolbar setItems: [NSArray arrayWithObjects:ignoreCaseLabelBarButtonItem,ignoreCaseSwitchBarButtonItem,exactMatchLabelBarButtonItem, exactMatchSwitchBarButtonItem, nil] animated:YES];
     
-    [exactMatchLabelBarButtonItem release];
-    [exactMatchSwitchBarButtonItem release];
-    [ignoreCaseSwitchBarButtonItem release];
-    [ignoreCaseLabelBarButtonItem release];
 }
 
 
@@ -462,7 +453,6 @@
 	MF_COCOA_RELEASE(activityIndicatorView);
     MF_COCOA_RELEASE(toolbar);
     
-    [super dealloc];
 }
 
 

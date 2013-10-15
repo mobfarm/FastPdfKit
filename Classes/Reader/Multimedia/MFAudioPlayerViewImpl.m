@@ -30,7 +30,6 @@
         UIImageView *backgroundImageView =[[UIImageView alloc]initWithImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",BCKGR_IMG,@"png")]];
         [backgroundImageView setFrame:CGRectMake(0, 0, 272, 40)];
         [self addSubview:backgroundImageView];
-        [backgroundImageView release];
         
         UIButton *aBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
@@ -45,7 +44,6 @@
         [aSlider setMinimumTrackImage:[[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"blackslider",@"png")] stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0] forState:UIControlStateNormal];
         [self addSubview:aSlider];
         self.volumeSlider = aSlider;
-        [aSlider release];
               
     }
     return self;
@@ -67,7 +65,7 @@
 +(UIView *)audioPlayerViewInstance{
     
     MFAudioPlayerViewImpl *view = [[MFAudioPlayerViewImpl alloc] initWithFrame:CGRectMake(0, 0, 272, 40)];
-    return [view autorelease];
+    return view;
 }
 
 
@@ -110,11 +108,5 @@
 
 }
 
-- (void)dealloc
-{
-    [volumeSlider release];
-    [startStopButton release];
-    [super dealloc];
-}
 
 @end
