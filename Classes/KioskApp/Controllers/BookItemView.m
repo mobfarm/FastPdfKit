@@ -142,7 +142,6 @@
 		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)];
 		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"backThumb",@"png")]];
 		[[self view] addSubview:anImageView];
-		[anImageView release];
 
 		// Cover.
 		
@@ -152,7 +151,6 @@
 		[anImageView setTag:documentNumber];
 		[[self view] addSubview:anImageView];
 		self.thumbImage = anImageView;
-		[anImageView release];
 		
 	} else {
 		
@@ -161,7 +159,6 @@
 		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)];
 		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"backThumb_iphone",@"png")]];
 		[[self view] addSubview:anImageView];
-		[anImageView release];
 
 		// Cover.
 		
@@ -171,7 +168,6 @@
 		[anImageView setTag:documentNumber];
 		[[self view] addSubview:anImageView];
 		self.thumbImage = anImageView;
-		[anImageView release];
 	}
 	
 	// Open button.
@@ -201,8 +197,6 @@
 	aProgressView.hidden = TRUE;
 	[[self view] addSubview:aProgressView];
 	self.progressDownload = aProgressView;
-	[aProgressView release];
-	
 	
 	// Open/download button.
 	
@@ -280,9 +274,6 @@
 	aLabelTitle = [NSString stringWithFormat:@"%@",self.titleOfPdf];
 	[aLabel setText:aLabelTitle]; 
 	[[self view] addSubview:aLabel];
-	[aLabel release];
-    [fileManager release];
-	
 }
 
 -(void)actionremovePdf:(id)sender{
@@ -305,7 +296,6 @@
 	
 	filemanager = [[NSFileManager alloc]init];
 	[filemanager removeItemAtPath:pdfPath error:NULL];
-	[filemanager release];
 	
 	// Hide the remove button.
 	aButton = [menuViewController.buttonRemoveDict objectForKey:page];
@@ -421,8 +411,6 @@
         
         [self updateBtnDownload];
         
-        [request release];
-        
     } else {
         
         NSURL *url = nil;
@@ -451,7 +439,6 @@
         
         filemanager = [[NSFileManager alloc]init];
         [filemanager createDirectoryAtPath:pathContainPdf withIntermediateDirectories:YES attributes:nil error:&error];
-        [filemanager release];
         
         if (isPdfLink) {
             pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",namePdf,namePdf]];
@@ -495,8 +482,6 @@
         
         [request startAsynchronous];
     }
-	
-    [plistDict release];
 }
 
 
@@ -666,7 +651,6 @@
     [zipFile UnzipOpenFile:saveLocation];
     zipStatus = [zipFile UnzipFileTo:unzippedDestination overWrite:YES];    
     [zipFile UnzipCloseFile];
-    [zipFile release];
     
     dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
     
@@ -733,8 +717,6 @@
 		[aRequest startSynchronous];
 		
 	}
-	
-	[fileManager release];
 }
 
 -(void)requestStarted:(ASIHTTPRequest *)request{
@@ -811,7 +793,6 @@
 		[zipFile UnzipOpenFile:saveLocation];
 		[zipFile UnzipFileTo:unzippedDestination overWrite:YES];
 		[zipFile UnzipCloseFile];
-		[zipFile release];
 		
 		// rename the file pdf ( only one must be exists in the fpk folder ) correctly 
         // With this rename of the pdf we are sure that the pdf name is correct.  
@@ -887,24 +868,5 @@
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
 }
-
-
-- (void)dealloc {
-	
-	[corner release];
-	[httpRequest release];
-	[thumbName release];
-	[page release];
-	[downloadUrl release];
-	
-	[removeButton release];
-	[openButton release];
-	[thumbImage release];
-	[openButtonFromImage release];
-	[progressDownload release];
-	
-	[super dealloc];
-}
-
 
 @end
