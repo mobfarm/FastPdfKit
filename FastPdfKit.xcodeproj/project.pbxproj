@@ -447,7 +447,7 @@
 		0161F228141FABE8000EA8E4 /* ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderViewController.m; sourceTree = "<group>"; };
 		0161F22C141FAC24000EA8E4 /* OutlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewController.m; sourceTree = "<group>"; };
 		0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
-		017465AA18154D4C003E20F2 /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
+		017465AA18154D4C003E20F2 /* podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		017466641816B520003E20F2 /* Default-Pad-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Pad-Landscape.png"; sourceTree = "<group>"; };
 		017466651816B520003E20F2 /* Default-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPad.png"; sourceTree = "<group>"; };
 		017466661816B520003E20F2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };

@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.preferred_dependency = 'Reader'
 
-
     s.subspec 'Reader' do |r|
         r.source_files = 'Reader/**/*.{h,m}'
         r.resources = 'Reader/**/*.xib'
+        r.exclude_files = 'Reader/ThumbnailSlider/*.{h,m}'
         r.dependency 'FastPdfKit/Core'
     end
     
