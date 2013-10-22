@@ -15,7 +15,7 @@
 	IBOutlet UIActivityIndicatorView *activityIndicatorView;
 	IBOutlet UITextView *textView;
 	
-	NSObject<TextDisplayViewControllerDelegate> *delegate;
+	NSObject<TextDisplayViewControllerDelegate> *__weak delegate;
 	
 	NSString *text;
 	
@@ -23,11 +23,11 @@
 }
 
 -(IBAction)actionBack:(id)sender;
-@property (nonatomic,retain) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic,retain) UITextView *textView;
-@property (nonatomic,retain) MFDocumentManager *documentManager;
+@property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic,strong) UITextView *textView;
+@property (nonatomic,strong) MFDocumentManager *documentManager;
 @property (nonatomic,copy) NSString *text;
-@property (nonatomic,assign) NSObject<TextDisplayViewControllerDelegate> *delegate;
+@property (nonatomic,weak) NSObject<TextDisplayViewControllerDelegate> *delegate;
 -(void)clearText;
 -(void)updateWithTextOfPage:(NSUInteger)page;
 

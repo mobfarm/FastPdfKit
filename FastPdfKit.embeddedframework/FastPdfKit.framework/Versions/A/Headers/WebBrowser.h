@@ -13,14 +13,14 @@
     IBOutlet UIBarButtonItem *closeButton;
 	IBOutlet UIWebView *webView;
 	NSString *uri;
-	ReaderViewController *docViewController;
+	ReaderViewController *__weak docViewController;
 	BOOL local;
 }
 
-@property (nonatomic,retain)IBOutlet UIBarButtonItem *closeButton;
-@property (nonatomic,retain)IBOutlet UIWebView *webView;
+@property (nonatomic,strong)IBOutlet UIBarButtonItem *closeButton;
+@property (nonatomic,strong)IBOutlet UIWebView *webView;
 @property (nonatomic,copy) NSString *uri;
-@property (nonatomic,assign) ReaderViewController *docViewController;
+@property (nonatomic,weak) ReaderViewController *docViewController;
 @property (nonatomic,readwrite,getter = isLocal) BOOL local;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil link:(NSString *)uri local:(BOOL)isLocal;

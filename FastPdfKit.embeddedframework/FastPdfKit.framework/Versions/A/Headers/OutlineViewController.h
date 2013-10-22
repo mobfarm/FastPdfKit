@@ -14,15 +14,15 @@
 	NSMutableArray *outlineEntries;
 	NSMutableArray *openOutlineEntries;
 	
-	NSObject<OutlineViewControllerDelegate> *delegate;
+	NSObject<OutlineViewControllerDelegate> *__weak delegate;
 	
 	IBOutlet UITableView *outlineTableView;
 }
 
 -(IBAction)actionBack:(id)sender;
 
-@property (nonatomic, retain) NSArray *outlineEntries;
-@property (nonatomic, retain) NSArray *openOutlineEntries;
-@property (nonatomic, retain) IBOutlet UITableView *outlineTableView;
-@property (assign) NSObject<OutlineViewControllerDelegate> *delegate;
+@property (nonatomic, strong) NSArray *outlineEntries;
+@property (nonatomic, strong) NSArray *openOutlineEntries;
+@property (nonatomic, strong) IBOutlet UITableView *outlineTableView;
+@property (weak) NSObject<OutlineViewControllerDelegate> *delegate;
 @end

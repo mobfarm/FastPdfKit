@@ -21,7 +21,7 @@
 	NSUInteger page;			// Page of the pdf document with the search term.
 }
 
-@property (nonatomic,retain) SearchResultView *searchResultView;
+@property (nonatomic,strong) SearchResultView *searchResultView;
 
 @property (nonatomic, copy) NSString * textSnippet;
 @property (nonatomic, readwrite) NSRange boldRange;

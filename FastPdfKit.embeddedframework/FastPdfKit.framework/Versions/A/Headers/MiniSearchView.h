@@ -25,24 +25,24 @@
 	// This is the same content view presented in the search result table view.
 	SearchResultView *searchResultView;
  	
-	SearchManager *dataSource;	// Data sources for the serarch.
-	NSObject<MiniSearchViewControllerDelegate> *documentDelegate;	// Delegate.
+	SearchManager *__weak dataSource;	// Data sources for the serarch.
+	NSObject<MiniSearchViewControllerDelegate> *__weak documentDelegate;	// Delegate.
 	
 	long int currentSearchResultIndex;	// Current index of the search result.
 }
 
-@property (nonatomic,assign) NSObject<MiniSearchViewControllerDelegate> * documentDelegate;
-@property (nonatomic,assign) SearchManager *dataSource;
+@property (nonatomic,weak) NSObject<MiniSearchViewControllerDelegate> * documentDelegate;
+@property (nonatomic,weak) SearchManager *dataSource;
 
-@property (nonatomic,retain) UIButton *nextButton;
-@property (nonatomic,retain) UIButton *prevButton;
-@property (nonatomic,retain) UIButton *cancelButton;
-@property (nonatomic,retain) UIButton *fullButton;
+@property (nonatomic,strong) UIButton *nextButton;
+@property (nonatomic,strong) UIButton *prevButton;
+@property (nonatomic,strong) UIButton *cancelButton;
+@property (nonatomic,strong) UIButton *fullButton;
 
-@property (nonatomic,retain) UILabel *pageLabel;
-@property (nonatomic,retain) UILabel *snippetLabel;
+@property (nonatomic,strong) UILabel *pageLabel;
+@property (nonatomic,strong) UILabel *snippetLabel;
 
-@property (nonatomic,retain) SearchResultView *searchResultView;
+@property (nonatomic,strong) SearchResultView *searchResultView;
 
 -(void)reloadData;
 -(void)setCurrentResultIndex:(NSUInteger)index;

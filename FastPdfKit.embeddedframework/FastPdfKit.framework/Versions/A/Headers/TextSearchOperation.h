@@ -13,7 +13,7 @@
 @interface TextSearchOperation : NSOperation {
 
 	NSString *searchTerm;						// Search term.
-	id<NSObject> delegate;                      // Delegate.
+	id<NSObject> __weak delegate;                      // Delegate.
 	MFProfile profile;							// Search profile.
 	MFDocumentManager *document;				// Document manager.
     
@@ -21,10 +21,10 @@
     BOOL exactMatch;
 }
 
-@property (retain) MFDocumentManager *document;
+@property (strong) MFDocumentManager *document;
 @property (readwrite) NSUInteger page;
 @property (copy) NSString *searchTerm;
-@property (assign) id<NSObject> delegate;
+@property (weak) id<NSObject> delegate;
 @property (nonatomic,readwrite) MFProfile profile;
 
 @property (nonatomic, readwrite) BOOL ignoreCase;

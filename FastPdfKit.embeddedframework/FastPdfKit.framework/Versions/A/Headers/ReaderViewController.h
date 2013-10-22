@@ -112,25 +112,25 @@
  */
 @property (nonatomic, copy) void (^dismissBlock) ();
 
-@property (nonatomic,retain) UIButton *changeModeButton;
-@property (nonatomic,retain) UIButton *zoomLockButton;
-@property (nonatomic,retain) UIButton *changeDirectionButton;
-@property (nonatomic,retain) UIButton *changeLeadButton;
+@property (nonatomic,strong) UIButton *changeModeButton;
+@property (nonatomic,strong) UIButton *zoomLockButton;
+@property (nonatomic,strong) UIButton *changeDirectionButton;
+@property (nonatomic,strong) UIButton *changeLeadButton;
 
-@property (nonatomic,retain) UIImage * imgModeSingle;
-@property (nonatomic,retain) UIImage * imgModeDouble;
-@property (nonatomic,retain) UIImage * imgZoomLock;
-@property (nonatomic,retain) UIImage * imgZoomUnlock;
-@property (nonatomic,retain) UIImage * imgl2r;
-@property (nonatomic,retain) UIImage * imgr2l;
-@property (nonatomic,retain) UIImage * imgLeadRight;
-@property (nonatomic,retain) UIImage * imgLeadLeft;
-@property (nonatomic,retain) UIImage * imgModeOverflow;
-@property (nonatomic,retain) UIImage * imgDismiss;
-@property (nonatomic,retain) UIImage * imgBookmark;
-@property (nonatomic,retain) UIImage * imgSearch;
-@property (nonatomic,retain) UIImage * imgOutline;
-@property (nonatomic,retain) UIImage * imgText;
+@property (nonatomic,strong) UIImage * imgModeSingle;
+@property (nonatomic,strong) UIImage * imgModeDouble;
+@property (nonatomic,strong) UIImage * imgZoomLock;
+@property (nonatomic,strong) UIImage * imgZoomUnlock;
+@property (nonatomic,strong) UIImage * imgl2r;
+@property (nonatomic,strong) UIImage * imgr2l;
+@property (nonatomic,strong) UIImage * imgLeadRight;
+@property (nonatomic,strong) UIImage * imgLeadLeft;
+@property (nonatomic,strong) UIImage * imgModeOverflow;
+@property (nonatomic,strong) UIImage * imgDismiss;
+@property (nonatomic,strong) UIImage * imgBookmark;
+@property (nonatomic,strong) UIImage * imgSearch;
+@property (nonatomic,strong) UIImage * imgOutline;
+@property (nonatomic,strong) UIImage * imgText;
 @property (nonatomic, readwrite) CGFloat toolbarHeight;
 
 -(void)updatePageNumberLabel;
@@ -138,31 +138,31 @@
 -(void)showToolbar;
 -(void)hideToolbar;
 
-@property (nonatomic, retain) UIToolbar * rollawayToolbar;
-@property (nonatomic, retain) UILabel * pageNumLabel;
+@property (nonatomic, strong) UIToolbar * rollawayToolbar;
+@property (nonatomic, strong) UILabel * pageNumLabel;
 
-@property (nonatomic, retain) UIBarButtonItem * searchBarButtonItem;
-@property (nonatomic, retain) UIBarButtonItem * changeModeBarButtonItem;
-@property (nonatomic, retain) UIBarButtonItem * zoomLockBarButtonItem;
-@property (nonatomic, retain) UIBarButtonItem * changeDirectionBarButtonItem;
-@property (nonatomic, retain) UIBarButtonItem * changeLeadBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * searchBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * changeModeBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * zoomLockBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * changeDirectionBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * changeLeadBarButtonItem;
 
-@property (nonatomic, retain) UIBarButtonItem * bookmarkBarButtonItem;
-@property (nonatomic, retain) UIBarButtonItem * textBarButtonItem;
-@property (nonatomic, retain) UIBarButtonItem * numberOfPageTitleBarButtonItem;
-@property (nonatomic, retain) UIBarButtonItem * dismissBarButtonItem;
-@property (nonatomic, retain) UIBarButtonItem * outlineBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * bookmarkBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * textBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * numberOfPageTitleBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * dismissBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem * outlineBarButtonItem;
 
-@property (nonatomic, retain) UILabel * numberOfPageTitleToolbar;
+@property (nonatomic, strong) UILabel * numberOfPageTitleToolbar;
 
-@property (nonatomic, retain) SearchViewController * searchViewController;
-@property (nonatomic, retain) SearchManager * searchManager;
-@property (nonatomic, retain) MiniSearchView * miniSearchView;
-@property (nonatomic, retain) TextDisplayViewController * textDisplayViewController;
+@property (nonatomic, strong) SearchViewController * searchViewController;
+@property (nonatomic, strong) SearchManager * searchManager;
+@property (nonatomic, strong) MiniSearchView * miniSearchView;
+@property (nonatomic, strong) TextDisplayViewController * textDisplayViewController;
 
 @property (nonatomic, readwrite, getter = isMultimediaVisible) BOOL multimediaVisible;
 
-@property (nonatomic, retain) UIPopoverController * reusablePopover;
+@property (nonatomic, strong) UIPopoverController * reusablePopover;
 
 @property (copy, nonatomic, readwrite) NSString * pageLabelFormat;
 

@@ -39,10 +39,10 @@
 	NSMutableArray * searchResults;	// Array of results. It's an array of array.
 }
 
-@property (nonatomic,retain) NSOperation * currentSearchOperation;
-@property (nonatomic,retain) MFDocumentManager * document;
+@property (nonatomic,strong) NSOperation * currentSearchOperation;
+@property (nonatomic,strong) MFDocumentManager * document;
 @property (nonatomic,copy) NSString * searchTerm;
-@property (nonatomic,retain) NSMutableArray * searchResults;
+@property (nonatomic,strong) NSMutableArray * searchResults;
 @property (nonatomic,copy) NSString *currentSearchTerm;
 
 -(BOOL)isRunning;

@@ -26,24 +26,24 @@
 	IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
 	IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
 	
-	NSObject<SearchViewControllerDelegate> *delegate; // A delegate to change the page.
+	NSObject<SearchViewControllerDelegate> *__weak delegate; // A delegate to change the page.
 	
-	SearchManager * searchManager;	// Data source.
+	SearchManager * __weak searchManager;	// Data source.
     
     BOOL ignoreCase;
     BOOL exactMatch;
 }
 
-@property (assign) SearchManager * searchManager;
-@property (assign) NSObject<SearchViewControllerDelegate> *delegate;
+@property (weak) SearchManager * searchManager;
+@property (weak) NSObject<SearchViewControllerDelegate> *delegate;
 
 -(IBAction)actionCancelStop:(id)sender;
 -(IBAction)actionMinimize:(id)sender;
 -(IBAction)actionBack:(id)sender;
 
-@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, retain) IBOutlet UITableView *searchTableView;
-@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
-@property (nonatomic, retain) IBOutlet UIToolbar * toolbar;
+@property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) IBOutlet UITableView *searchTableView;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
+@property (nonatomic, strong) IBOutlet UIToolbar * toolbar;
 @end
