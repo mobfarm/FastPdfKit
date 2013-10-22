@@ -30,22 +30,22 @@
     
     UIImage * thumbnailImage;
     
-    id<TVThumbnailViewDelegate> delegate;
+    id<TVThumbnailViewDelegate> __weak delegate;
 }
 
-@property (nonatomic,retain) NSNumber * pageNumber;
-@property (nonatomic,retain) UILabel * pageNumberLabel;
+@property (nonatomic,strong) NSNumber * pageNumber;
+@property (nonatomic,strong) UILabel * pageNumberLabel;
 
-@property (nonatomic,retain) UIImageView * thumbnailView;
+@property (nonatomic,strong) UIImageView * thumbnailView;
 @property (nonatomic,copy) NSString *thumbnailImagePath;
 
-@property (nonatomic,retain) UIActivityIndicatorView * activityIndicator;
+@property (nonatomic,strong) UIActivityIndicatorView * activityIndicator;
 
-@property (nonatomic,assign) id<TVThumbnailViewDelegate> delegate;
+@property (nonatomic,weak) id<TVThumbnailViewDelegate> __weak delegate;
 
 @property (nonatomic,readwrite) NSInteger position;
 
-@property (nonatomic,retain) UIImage * thumbnailImage;
+@property (nonatomic,strong) UIImage * thumbnailImage;
 
 -(void)reloadImage:(UIImage *)image;
 

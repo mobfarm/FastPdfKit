@@ -10,15 +10,15 @@
 
 @interface TVThumbnailScrollView()
 
-@property (nonatomic,retain) NSDictionary * pendingRequests;
-@property (nonatomic,retain) UIScrollView * scrollView;
-@property (nonatomic,retain) NSArray * thumbnailViews;
-@property (nonatomic,retain) UIView * scrollContainerView;
+@property (nonatomic,strong) NSDictionary * pendingRequests;
+@property (nonatomic,strong) UIScrollView * scrollView;
+@property (nonatomic,strong) NSArray * thumbnailViews;
+@property (nonatomic,strong) UIView * scrollContainerView;
 
 @property (readwrite) NSInteger startingPosition;
 @property (nonatomic, readwrite) NSInteger offset;
 @property (readwrite) NSInteger currentPosition;
-@property (retain) NSFileManager * fileManager;
+@property (strong) NSFileManager * fileManager;
 
 -(NSUInteger)pageForPosition:(NSInteger)position;
 -(NSInteger)positionForPage:(NSUInteger)page;
@@ -234,7 +234,6 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
 
         [aScrollContainerView addSubview:aScrollView];
         [self addSubview:aScrollContainerView];
-        [aScrollView release];
     }
     
     return self;
