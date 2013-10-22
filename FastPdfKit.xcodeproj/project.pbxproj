@@ -428,6 +428,7 @@
 		0123603913CC917600861EB7 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
 		0123603A13CC917600861EB7 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
 		0123603B13CC917600861EB7 /* WebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebBrowser.xib; sourceTree = "<group>"; };
+		0127C56B181719BF00AAA3E9 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailScrollView.h; sourceTree = "<group>"; };
 		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
 		013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -1260,6 +1261,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0127C56B181719BF00AAA3E9 /* LICENSE.txt */,
 				011E42B81472D1510099754E /* README.md */,
 				0174666E1816B69A003E20F2 /* FastPdfKit.podspec */,
 				017465AA18154D4C003E20F2 /* podfile */,

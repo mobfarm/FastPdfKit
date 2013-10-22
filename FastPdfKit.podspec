@@ -5,9 +5,11 @@ Pod::Spec.new do |s|
     s.homepage = 'http://www.fastpdfkit.com'
     s.authors = 'MobFarm'
     s.summary = 'PDF library for iOS'
+    s.license = {:type => 'CCPL', :file => 'LICENSE.txt'}
     s.source = {:git => 'raspo:/git/FastPdfKit.git', :tag => s.version.to_s}
     s.requires_arc = true
     s.preferred_dependency = 'Reader'
+
 
     s.subspec 'Reader' do |r|
         r.source_files = 'Reader/**/*.{h,m}'
