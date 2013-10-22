@@ -53,7 +53,7 @@
             if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // Pad.
                 
                 aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 120, 60, 15) ];
-                aLabel.textAlignment =  UITextAlignmentCenter;
+                aLabel.textAlignment =  NSTextAlignmentCenter;
                 aLabel.textColor = [UIColor whiteColor];
                 aLabel.backgroundColor = [UIColor clearColor];
                 aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(20.0)];
@@ -61,7 +61,7 @@
             } else { // Phone.
                 
                 aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(6, 50, 40, 15) ];
-                aLabel.textAlignment =  UITextAlignmentCenter;
+                aLabel.textAlignment =  NSTextAlignmentCenter;
                 aLabel.textColor = [UIColor whiteColor];
                 aLabel.backgroundColor = [UIColor clearColor];
                 aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(9.0)];
@@ -170,8 +170,7 @@
 
 -(void)setThumbnailImage:(UIImage *)newThumbnailImage {
     if(thumbnailImage!=newThumbnailImage) {
-        [thumbnailImage release];
-        thumbnailImage = [newThumbnailImage retain];
+        thumbnailImage = newThumbnailImage;
         [self setNeedsLayout];
     }
 }
