@@ -89,9 +89,9 @@ int nextOffset(int offset) {
 
 -(void)generateThumbnailOrSkip:(id)something {
     
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
+    @autoreleasepool {
     
-    if(!fileManager) {
+        if(!fileManager) {
         fileManager = [[NSFileManager alloc]init];
     }
     
@@ -121,11 +121,9 @@ int nextOffset(int offset) {
         CGImageRelease(image);         // You are responsible for release the CGImageRef.
         
         [self performSelectorOnMainThread:@selector(handleThumbDone:) withObject:img waitUntilDone:NO];
-        
-        [img autorelease];
     }
     
-    [pool release];
+    }
 }
 
 -(void)handleThumbDone:(UIImage *)image {
@@ -237,7 +235,6 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
         [aScrollContainerView addSubview:aScrollView];
         [self addSubview:aScrollContainerView];
         [aScrollView release];
-        [aScrollContainerView release];
     }
     
     return self;
@@ -269,8 +266,6 @@ CGFloat rightOffsetForThumbnailPosition(int position, CGFloat thumbWidth, CGFloa
         
         [aScrollContainerView addSubview:aScrollView];
         [self addSubview:aScrollContainerView];
-        [aScrollView release];
-        [aScrollContainerView release];
     }
     
     return self;
@@ -455,12 +450,10 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
             thumbnailView.delegate = self;
             [thumbnailArray addObject:thumbnailView];
             [scrollView addSubview:thumbnailView];
-            [thumbnailView release];
         }
         
         self.thumbnailViews = thumbnailArray;
         
-        [thumbnailArray release];
     }
     
     thumbnailCount = newThumbnailCount;
@@ -504,24 +497,6 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
     
     CGFloat contentOffset = rightOffsetForThumbnailPosition(currentThumbnailPosition, thumbnailSize.width, padding, bounds.size.width);   
     [scrollView setContentOffset:CGPointMake(contentOffset, 0) animated:NO];
-}
-
--(void)dealloc {
-    
-    [cacheFolderPath release];
-    [thumbnailViews release];
-
-    scrollView.delegate = nil, [scrollView release], scrollView = nil;
-    
-    [scrollContainerView release];
-    
-    delegate = nil;
-    
-    [fileManager release],fileManager = nil;
-    
-    [document release];
-    
-    [super dealloc];
 }
 
 @end

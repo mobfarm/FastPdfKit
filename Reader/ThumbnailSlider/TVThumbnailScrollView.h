@@ -32,7 +32,7 @@
     CGSize thumbnailSize;
     CGFloat padding;
     
-    id<TVThumbnailScrollViewDelegate> delegate;
+    id<TVThumbnailScrollViewDelegate> __weak delegate;
     
     BOOL backgroundWorkStillGoingOn;
     BOOL shouldContinueBackgrounWork;
@@ -47,10 +47,10 @@
 @property (nonatomic,readwrite) CGSize thumbnailSize;
 @property (nonatomic,readwrite) CGFloat padding;
 
-@property (nonatomic,assign) id<TVThumbnailScrollViewDelegate> delegate;
+@property (nonatomic,weak) id<TVThumbnailScrollViewDelegate> __weak delegate;
 @property (nonatomic, copy) NSString * cacheFolderPath;
 
-@property (nonatomic,retain) MFDocumentManager * document;
+@property (nonatomic,strong) MFDocumentManager * document;
 
 -(void)setPage:(NSUInteger)page animated:(BOOL)animated;
 -(NSUInteger)page;

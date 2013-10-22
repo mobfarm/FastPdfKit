@@ -13,14 +13,14 @@
 
 @interface BookItemView : UIViewController <UIActionSheetDelegate,NSURLConnectionDownloadDelegate>{
 	
-	id object;
+	id __weak object;
 	NSString *thumbName;
 	CGSize size;
 	NSString *page;
 	NSString *downloadUrl;
     NSString *titleOfPdf;
 	id delegate;
-	id dataSource;
+	id __weak dataSource;
 	UIImageView *corner;
 	BOOL temp;
 	int documentNumber;

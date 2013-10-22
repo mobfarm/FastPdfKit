@@ -33,7 +33,6 @@
         [anActivityIndicatorView startAnimating];
         
         self.activityIndicator = anActivityIndicatorView;
-        [anActivityIndicatorView release];
         
     }
     return self;
@@ -70,7 +69,6 @@
             
             self.pageNumberLabel = aLabel;
             [self addSubview:aLabel];
-            [aLabel release];
         }
      
         pageNumberLabel.text = labelText;
@@ -120,7 +118,6 @@
             
             [self addSubview:anImageView];
             
-            [anImageView release];
         }
         
         // Set the image view frame and content, then show it (ignored if already shown).
@@ -147,8 +144,7 @@
     
     if(newPageNumber!=pageNumber) {
         
-        [pageNumber release];
-        pageNumber = [newPageNumber retain];
+        pageNumber = newPageNumber;
         
         [self setNeedsLayout];
     }
@@ -159,7 +155,7 @@
     
     // Do this IO operation on background thread.
     
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
+    @autoreleasepool {
     
     UIImage * image = [[UIImage alloc]initWithContentsOfFile:path];
     
@@ -169,10 +165,7 @@
         [self performSelectorOnMainThread:@selector(setThumbnailImage:) withObject:image waitUntilDone:NO];
     }
     
-    // Cleanup.
-    
-    [image autorelease];
-    [pool release];
+    }
 }
 
 -(void)setThumbnailImage:(UIImage *)newThumbnailImage {
@@ -210,7 +203,6 @@
         
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadThumbImg:) object:thumbnailImagePath];
         
-        [thumbnailImagePath release];
         thumbnailImagePath = [newThumbnailImagePath copy];
         [self setThumbnailImage:nil];
         
@@ -250,23 +242,6 @@
 		default:
 			break;
 	}
-}
-
-- (void)dealloc
-{
-    delegate = nil;
-    
-    [thumbnailImagePath release];
-    [thumbnailView release];
-    
-    [activityIndicator release];
-    
-    [pageNumberLabel release];
-    [pageNumber release];
-    
-    [thumbnailImage release];
-    
-    [super dealloc];
 }
 
 @end
