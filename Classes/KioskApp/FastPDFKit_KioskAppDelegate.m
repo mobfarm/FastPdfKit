@@ -93,10 +93,6 @@
 	
 	// Cleanup
 	
-	[aNavController release];
-	[aMenuViewController release];
-    [plistDict release];
-	
 	return YES;
 }
 
@@ -177,7 +173,7 @@
             NKAssetDownload *asset = [issue addAssetWithRequest:request];
             [asset setUserInfo:[NSDictionary dictionaryWithObject:namePdf forKey:@"filename"]];
             [asset downloadWithDelegate:self];
-            [request release];
+            
         }        
     }
 
@@ -265,7 +261,6 @@
     [zipFile UnzipOpenFile:saveLocation];
     zipStatus = [zipFile UnzipFileTo:unzippedDestination overWrite:YES];    
     [zipFile UnzipCloseFile];
-    [zipFile release];
     
     dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
     
@@ -333,16 +328,6 @@
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
 }
-
-
-- (void)dealloc {
-	
-	[navigationController release];
-    [window release];
-    [menuVC_Kiosk release];
-    [super dealloc];
-}
-
 
 @end
 

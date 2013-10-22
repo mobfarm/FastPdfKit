@@ -71,9 +71,6 @@
     };
      [self presentModalViewController:documentViewController animated:YES]; // Present as modal view controller
     */
-    
-	[documentViewController release];
-	[documentManager release];
 }
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -125,8 +122,6 @@
                 self.documentsList = [parser parsedItems];
             }
         }
-        
-        [parser release];
     }
     
     [self buildInterface];
@@ -199,9 +194,6 @@
     [anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"border",@"png")]];
     [anImageView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleWidth];
     [self.view addSubview:anImageView];
-    [anImageView release];
-    
-    
 	
 	scrollView.backgroundColor = [UIColor whiteColor];
 	[scrollView setShowsVerticalScrollIndicator:NO];
@@ -245,8 +237,6 @@
 		[progressViewDict setValue:bookItemView.progressDownload forKey:titoloPdfNoSpace];
 		
 		[bookItemViews addObject:bookItemView];
-		[bookItemView release];
-		
 	}
     
     [testViewContainer setFrame:CGRectMake((scrollView.frame.size.width-scrollViewWidth)/2, 0, scrollViewWidth,((documentsCount/2)+(documentsCount%2))*detailViewHeight)];
@@ -255,7 +245,6 @@
     
     [scrollView setContentSize:CGSizeMake(testViewContainer.frame.size.width, testViewContainer.frame.size.height)];
 	
-    [testViewContainer release];
 	
     interfaceLoaded = YES;
 }
@@ -295,25 +284,6 @@
     self.scrollView = nil; 
     
     [super viewDidUnload];
-}
-
-
-- (void)dealloc {
-	
-	[documentsList release];
-	
-	[buttonRemoveDict release];
-	[openButtons release];
-	[progressViewDict release];
-	[imgDict release];
-	[downloadProgressContainerView release];
-    [downloadProgressView release];
-    
-    [scrollView release];
-    [xmlURL release];
-	[bookItemViews release];
-	
-    [super dealloc];
 }
 
 @end

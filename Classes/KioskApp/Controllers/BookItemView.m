@@ -257,7 +257,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
 		aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 495, 300, 30) ];
-		aLabel.textAlignment =  UITextAlignmentCenter;
+		aLabel.textAlignment =  NSTextAlignmentCenter;
 		aLabel.textColor = [UIColor blackColor];
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(25.0)];
@@ -265,7 +265,7 @@
     }else {
 		
 		aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 170, 105, 20) ];
-		aLabel.textAlignment =  UITextAlignmentCenter;
+		aLabel.textAlignment =  NSTextAlignmentCenter;
 		aLabel.textColor = [UIColor blackColor];
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)];
@@ -414,7 +414,8 @@
     } else {
         
         NSURL *url = nil;
-        ASIHTTPRequest * request = nil;
+        
+        AFHTTPRequestOperation * request = nil;
         
         NSArray * paths = nil;
         NSString * documentsDirectory = nil;
@@ -460,7 +461,31 @@
         
         url = [NSURL URLWithString:sourceURL];
         
-        request = [ASIHTTPRequest requestWithURL:url];
+        
+        if([[[UIDevice currentDevice]systemVersion]compare:@"7.0" options:NSNumericSearch]!=NSOrderedAscending) {
+            
+            AFURLSessionManager
+            
+        } else {
+            
+        }
+        
+        NSURLRequest * urlRequest = [NSURLRequest requestWithURL:url];
+        
+        
+        
+        
+        request = [[AFHTTPRequestOperation alloc]initWithRequest:urlRequest];
+        
+        
+        [request setOutputStream:outputStream];
+        
+        [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+        
         [request setDelegate:self];
         
         [request setUseKeychainPersistence:YES];

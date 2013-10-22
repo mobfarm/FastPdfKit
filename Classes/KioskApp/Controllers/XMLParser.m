@@ -47,7 +47,7 @@
 	NSXMLParser * xmlParser = nil;
     NSData * xmlData = nil;
 	
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool {
     
     self.downloadError = NO;
     self.endOfDocumentReached = NO;
@@ -62,17 +62,13 @@
     [xmlParser setShouldResolveExternalEntities:NO];
 	
     [xmlParser parse]; // Start parsing.
-	
-	[xmlParser release];
-    
-	[pool release];
+}
 }
 
 -(void)parserDidStartDocument:(NSXMLParser *)parser {
     
     NSMutableArray * documentsArray = [[NSMutableArray alloc] init];
 	self.documents = documentsArray;
-	[documentsArray release];
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
@@ -89,7 +85,6 @@
 		// Create a new dictionary and release the old one (if necessary).
 		dictionary = [[NSMutableDictionary alloc] init];
 		self.currentItem = dictionary;
-        [dictionary release];
 	}
 }
 
@@ -123,17 +118,5 @@
 	
     self.endOfDocumentReached = YES;
 }
-
-
-- (void)dealloc {
-	
-	[documents release];
-	
-	[currentItem release];
-	[currentString release];
-	
-    [super dealloc];
-}
-
 
 @end
