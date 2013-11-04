@@ -80,9 +80,9 @@
 	docViewController.multimediaVisible = NO;
     
     if ([self respondsToSelector:@selector(presentingViewController)])
-        [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     else
-        [[self parentViewController] dismissModalViewControllerAnimated:YES];
+        [[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
 
 }
 

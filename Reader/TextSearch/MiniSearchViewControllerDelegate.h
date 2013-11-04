@@ -10,7 +10,7 @@
 
 @class MiniSearchView;
 
-@protocol MiniSearchViewControllerDelegate
+@protocol MiniSearchViewControllerDelegate <NSObject>
 
 -(void)dismissMiniSearchView;
 -(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;

@@ -348,20 +348,4 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
     return self;
 }
 
-
-- (void)dealloc 
-{	
-	MF_COCOA_RELEASE(document);
-	
-	MF_COCOA_RELEASE(searchTerm);
-	MF_COCOA_RELEASE(searchResults);
-	
-	MF_COCOA_RELEASE(currentSearchOperation);
-	MF_COCOA_RELEASE(searchOperationQueue);
-	
-	MF_COCOA_RELEASE(currentSearchTerm);
-	
-}
-
-
 @end

@@ -15,26 +15,29 @@
 @implementation BasicLauncherController
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
-    //
-	//	We are using NSBundle to lookup the file for us, but if you store the pdf somewhere else than the application
-	//	bundle, you should use the NSFileManager instead or be able to provide the right file path for the file.
+    
+	/*
+     We are using NSBundle to lookup the file for us, but if you store the pdf 
+     somewhere else than the application bundle, you should use the NSFileManager 
+     instead or be able to provide the right file path for the file.*/
 	
 	NSString *documentPath = [[NSBundle mainBundle]pathForResource:DOC_PLAIN ofType:@"pdf"];
 	NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
 	
-	//
-	// Now that we have the URL, we can allocate an istance of the MFDocumentManager class (a wrapper) and use
-	// it to initialize an MFDocumentViewController subclass 	
+	/*
+     Now that we have the URL, we can allocate an istance of the MFDocumentManager 
+     class (a wrapper) and use it to initialize an MFDocumentViewController subclass. */
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
 	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	
-	//	In this example we use a a modal viewcontroller to present the document view controller but you can present it
-	//	with a navigation viewcontroller or just show a single PDF right from the beginning
-	[self presentModalViewController:aDocViewController animated:YES]; 
-	
-	[aDocViewController release];
-	[aDocManager release];
+	/* 
+     In this example we use a a modal viewcontroller to present the document
+    view controller but you can present it with a navigation viewcontroller or 
+     just show a single PDF right from the beginning. */
+	[self presentViewController:aDocViewController
+                       animated:YES
+                     completion:nil];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -61,11 +64,6 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-}
-
-
-- (void)dealloc {
-    [super dealloc];
 }
 
 @end

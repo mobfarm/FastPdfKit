@@ -10,6 +10,7 @@
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
 #import "OverlayManager.h"
+#import "ReaderViewController.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,25 +44,32 @@
 	// it to initialize an MFDocumentViewController subclass 	
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
     
+#if ORIGINALE
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	[aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
 	[aDocViewController setDocumentDelegate:aDocViewController];
+#else
+    
+    ReaderViewController * aDocViewController = [[ReaderViewController alloc]initWithDocumentManager:aDocManager];
+    [aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
+	[aDocViewController setDocumentDelegate:aDocViewController];
+    
+#endif
     
     // We are adding an image overlay on the first page on the bottom left corner
     OverlayManager *ovManager = [[OverlayManager alloc] init];
     [aDocViewController addOverlayDataSource:ovManager];
-    [ovManager release];
     
     // This delegate has been added just to manage the links between pdfs, skip it if you just need standard visualization
-    [aDocViewController setDelegate:self];
+    // [aDocViewController setDelegate:self];
     
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
 	// [self presentModalViewController:aDocViewController animated:YES]; 
 	[[self navigationController]pushViewController:aDocViewController animated:YES];
 	
-	[aDocViewController release];
-	[aDocManager release];
+	//[aDocViewController release];
+	//[aDocManager release];
 	
 }
 
@@ -83,7 +91,6 @@
 	if([aDocManager isLocked]) {
 		
 		[self setDocument:aDocManager];
-        [aDocManager release];
         
 		// 
 		//	Create and alert a reference (assign) to it
@@ -107,7 +114,6 @@
 		// Now show it
 		[alert addSubview:passwordField];
 		[alert show];
-		[alert release];
 		
 	} else {
 		
@@ -135,8 +141,7 @@
         [aDocViewController setDocumentId:DOC_ENCRYPTED]; // We know that in this sample that the file can only be this one.
 		[[self navigationController]pushViewController:aDocViewController animated:YES];
 		aDocViewController.documentId = DOC_ENCRYPTED;
-		[aDocViewController release];
-		
+        
 	} else {
 		
 		//
@@ -144,7 +149,6 @@
 		
 		UIAlertView * anAlertView = [[UIAlertView alloc]initWithTitle:@"Wrong Password" message:@"The password is wrong" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[anAlertView show];
-		[anAlertView release];
 	}
 }
 
@@ -184,10 +188,6 @@
     [aDocViewController setDelegate:self];
     
 	[[self navigationController]pushViewController:aDocViewController animated:YES];
-	
-	[aDocViewController release];
-	[aDocManager release];
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -255,11 +255,6 @@
 	[self setManualTextView:nil];
 	[self setReferenceButton:nil];
 	[self setReferenceTextView:nil];
-}
-
-
-- (void)dealloc {
-    [super dealloc];
 }
 
 @end

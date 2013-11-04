@@ -32,6 +32,7 @@
 @synthesize delegate;
 @synthesize searchManager;
 @synthesize toolbar;
+@synthesize cancelStopBarButtonItem;
 
 #pragma mark - Notification listeners
 
@@ -142,7 +143,7 @@
     if ([self respondsToSelector:@selector(presentingViewController)])
         [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
     else
-        [[self parentViewController] dismissModalViewControllerAnimated:YES];
+        [[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
 
 }
 
@@ -406,52 +407,42 @@
     
     // Toolbar.
     
-    [self.toolbar setItems: [NSArray arrayWithObjects:ignoreCaseLabelBarButtonItem,ignoreCaseSwitchBarButtonItem,exactMatchLabelBarButtonItem, exactMatchSwitchBarButtonItem, nil] animated:YES];
+    [toolbar setBackgroundImage:[ReaderViewController defaultToolbarBackgroundImage]
+             forToolbarPosition:UIBarPositionAny
+                     barMetrics:UIBarMetricsDefault];
+    [toolbar setItems: [NSArray arrayWithObjects:ignoreCaseLabelBarButtonItem,ignoreCaseSwitchBarButtonItem,exactMatchLabelBarButtonItem, exactMatchSwitchBarButtonItem, nil] animated:YES];
+    
+
+    if([[[UIDevice currentDevice]systemVersion]compare:@"7.0" options:NSNumericSearch]!=NSOrderedAscending) {
+        [searchBar setBackgroundImage:[ReaderViewController defaultToolbarBackgroundImage]
+                       forBarPosition:UIBarPositionAny
+                           barMetrics:UIBarMetricsDefault];
+    } else {
+        [searchBar setBackgroundImage:[ReaderViewController defaultToolbarBackgroundImage]];
+    }
     
 }
 
-
-
-// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 
     return YES;
 }
 
-
-- (void)didReceiveMemoryWarning 
-{
-	[super didReceiveMemoryWarning];
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
-- (void)viewDidUnload 
+- (void)viewDidUnload
 {    
     [super viewDidUnload];
     
     [[NSNotificationCenter defaultCenter]removeObserver:self];
-	
-    self.searchBar = nil;
-    self.searchTableView = nil;
-    self.switchToMiniBarButtonItem = nil;
-    self.activityIndicatorView = nil;
-    self.toolbar = nil;
 }
 
 
 - (void)dealloc 
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
-    
-	searchManager = nil;
-	
-	MF_COCOA_RELEASE(switchToMiniBarButtonItem);
-	MF_COCOA_RELEASE(cancelStopBarButtonItem);
-	
-    MF_COCOA_RELEASE(searchBar);
-    MF_COCOA_RELEASE(searchTableView);
-	MF_COCOA_RELEASE(activityIndicatorView);
-    MF_COCOA_RELEASE(toolbar);
-    
 }
 
 

@@ -473,19 +473,16 @@
         NSURLRequest * urlRequest = [NSURLRequest requestWithURL:url];
         
         
-        
+        NSOutputStream * outputStream = [[NSOutputStream alloc]initToFileAtPath:pdfPathTempForResume append:NO];
         
         request = [[AFHTTPRequestOperation alloc]initWithRequest:urlRequest];
-        
-        
         [request setOutputStream:outputStream];
-        
         [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
         }];
-        
+        [request set]
         [request setDelegate:self];
         
         [request setUseKeychainPersistence:YES];

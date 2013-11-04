@@ -80,7 +80,7 @@
     NSUInteger currentSearchViewMode;
     
     // Needed to support links between pdf documents: points to MenuViewController
-    id delegate;
+    id __weak delegate;
 }
 
 
@@ -90,7 +90,7 @@
 -(void)showMiniSearchView;
 -(IBAction) actionDismiss:(id)sender;
 
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, weak) id __weak delegate;
 
 @property (nonatomic, retain) UIImageView *thumbnailView;
 

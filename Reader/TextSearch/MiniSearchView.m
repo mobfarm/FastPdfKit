@@ -220,37 +220,38 @@
         [bar setBarStyle:UIBarStyleBlack];
         [bar setTranslucent:YES];
 		
-        /*NSArray *items = [NSArray arrayWithObjects:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prew",@"png")], [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")], nil];
-        UISegmentedControl *segControl = [[UISegmentedControl alloc] initWithItems:items];
-        [segControl setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-        [segControl addTarget:self action:@selector(segmentSwitch:) forControlEvents:UIControlEventValueChanged];
-        [segControl setSegmentedControlStyle:UISegmentedControlStyleBar];
-        [segControl setMomentary:YES];
-        [self addSubview:segControl];
-        [segControl release];
-         */
+        // Previous
+        UIButton *prevBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 37, 30)];
+        [prevBtn setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prev",@"png")] forState:UIControlStateNormal];
+        [prevBtn addTarget:self
+                    action:@selector(actionPrev:)
+          forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *prevItem = [[UIBarButtonItem alloc] initWithCustomView:prevBtn];
         
-        UIButton *btnPrev = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 37, 30)];
+        // Next
+        UIButton *nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 37, 30)];
+        [nextBtn setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")] forState:UIControlStateNormal];
+        [nextBtn addTarget:self
+                    action:@selector(actionNext:)
+          forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *nextItem = [[UIBarButtonItem alloc] initWithCustomView:nextBtn];
         
-        [btnPrev setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prew",@"png")] forState:UIControlStateNormal];
+        // Cancel
+        UIButton * cancButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 37, 30)];
+        [cancButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"dismiss", @"png")] forState:UIControlStateNormal];
+        [cancButton addTarget:self
+                       action:@selector(actionCancel:)
+             forControlEvents:UIControlEventTouchUpInside];
+		UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithCustomView:cancButton];
         
-        [btnPrev addTarget:self action:@selector(actionPrev:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        UIBarButtonItem *prevItem = [[UIBarButtonItem alloc] initWithCustomView:btnPrev];
-        
-        UIButton *btnNext = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 37, 30)];
-        
-        [btnNext setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")] forState:UIControlStateNormal];
-        
-        [btnNext addTarget:self action:@selector(actionNext:) forControlEvents:UIControlEventTouchUpInside];
-        
-        UIBarButtonItem *nextItem = [[UIBarButtonItem alloc] initWithCustomView:btnNext];
-        
-        
-		UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(actionCancel:)];
 		
-        UIBarButtonItem *fullItem = [[UIBarButtonItem alloc] initWithTitle:@"Search" style:UIBarButtonItemStyleBordered target:self action:@selector(actionFull:)];
+        UIButton * srcBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 37, 30)];
+        [srcBtn setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search", @"png")] forState:UIControlStateNormal];
+        [srcBtn addTarget:self
+                   action:@selector(actionFull:)
+         forControlEvents:UIControlEventTouchUpInside];
+		
+        UIBarButtonItem *fullItem = [[UIBarButtonItem alloc] initWithCustomView:srcBtn];
         
         UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -273,17 +274,6 @@
 - (void)dealloc {
 	
     [[NSNotificationCenter defaultCenter]removeObserver:self];
-    
-	MF_COCOA_RELEASE(nextButton);
-	MF_COCOA_RELEASE(prevButton);
-	MF_COCOA_RELEASE(fullButton);
-	MF_COCOA_RELEASE(cancelButton);
-    
-	MF_COCOA_RELEASE(pageLabel);
-	MF_COCOA_RELEASE(snippetLabel);
-	
-	MF_COCOA_RELEASE(searchResultView);
-	
 }
 
 

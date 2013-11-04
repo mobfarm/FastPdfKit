@@ -21,9 +21,9 @@
 	
 	MFDocumentManager *document;
 	
-	UIAlertView *passwordAlertView;
+	UIAlertView * __weak passwordAlertView;
 	
-	NSString *nomePdfDaAprire;
+	NSString * __weak nomePdfDaAprire;
 	
 }
 
@@ -38,8 +38,8 @@
 @property (nonatomic, retain) IBOutlet UITextView *manualTextView;
 
 @property (nonatomic, retain) MFDocumentManager *document;
-@property (nonatomic, assign) UIAlertView *passwordAlertView;
-@property (nonatomic, assign) NSString *nomePdfDaAprire;
+@property (nonatomic, weak) UIAlertView *passwordAlertView;
+@property (nonatomic, weak) NSString *nomePdfDaAprire;
 
 
 
