@@ -161,7 +161,7 @@
 
 -(void)handleSearchDidStopNotification:(NSNotification *)notification {
     
-    [cancelButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"dismiss", @"png")] forState:UIControlStateNormal];
+    [cancelButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"close", @"png")] forState:UIControlStateNormal];
 }
 
 -(void)handleSearchGotCancelledNotification:(NSNotification *)notification {
@@ -242,7 +242,7 @@
     
     self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelButton.frame = CGRectMake(0, 0, 42, 33);
-    [cancelButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"dismiss", @"png")] forState:UIControlStateNormal];
+    [cancelButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"close", @"png")] forState:UIControlStateNormal];
     [cancelButton addTarget:self
                      action:@selector(actionCancel:)
            forControlEvents:UIControlEventTouchUpInside];

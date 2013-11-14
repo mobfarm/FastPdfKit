@@ -10,9 +10,9 @@
 #import "MFAudioProvider.h"
 #import "Stuff.h"
 
-#define PLAY_IMG @"play_player"
-#define PAUSE_IMG @"pause_player"
-#define BCKGR_IMG @"hud_player"
+#define PLAY_IMG @"play"
+#define PAUSE_IMG @"pause"
+#define BCKGR_IMG @"alpha_75"
 
 @implementation MFAudioPlayerViewImpl
 

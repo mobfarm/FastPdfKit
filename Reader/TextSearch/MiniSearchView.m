@@ -238,7 +238,7 @@
         
         // Cancel
         UIButton * cancButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 37, 30)];
-        [cancButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"dismiss", @"png")] forState:UIControlStateNormal];
+        [cancButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"close", @"png")] forState:UIControlStateNormal];
         [cancButton addTarget:self
                        action:@selector(actionCancel:)
              forControlEvents:UIControlEventTouchUpInside];

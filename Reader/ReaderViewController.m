@@ -622,31 +622,6 @@
     }
 }
 
--(IBAction) actionPageSliderSlided:(id)sender {
-	
-	// When the user move the slider, we update the label.
-	
-	// Get the slider value.
-	UISlider *slider = (UISlider *)sender;
-	NSNumber *number = [NSNumber numberWithFloat:[slider value]];
-	NSUInteger pageNumber = [number unsignedIntValue];
-	
-	// Update the label.
-    
-    [self updatePageNumberLabel];
-}
-
--(IBAction) actionPageSliderStopped:(id)sender {
-	
-	// Get the requested page number from the slider.
-	UISlider *slider = (UISlider *)sender;
-	NSNumber *number = [NSNumber numberWithFloat:[slider value]];
-	NSUInteger pageNumber = [number unsignedIntValue];
-	
-	// Go to the page.
-	[self setPage:pageNumber];
-}
-
 -(IBAction)actionChangeMode:(id)sender {
 	
 	//
@@ -1144,7 +1119,7 @@
         self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"page_lead_left",@"png")];
     
     if(!self.imgDismiss)
-        self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"dismiss", @"png")];
+        self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"close", @"png")];
         
     if(!self.imgText)
         self.imgText = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"text", @"png")];
@@ -1383,8 +1358,9 @@
 		aLabel.textColor = [UIColor whiteColor];
 		aLabel.font = [UIFont boldSystemFontOfSize:20.0];
 		
-		labelText = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);		
-		aLabel.text = labelText;
+		//labelText = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+		
+        aLabel.text = self.title;
 		self.pageNumLabel = aLabel;
 		
 		titleView = aLabel;
@@ -1428,17 +1404,17 @@
         UIBarButtonItem * zoomLockBBItem = self.zoomLockBarButtonItem;
 		[leftItems addObject:zoomLockBBItem];
 		
-		// Change direction.
-        
         UIBarButtonItem * changeDirectionBBItem = self.changeDirectionBarButtonItem;
         [leftItems addObject:changeDirectionBBItem];
 		
 		// Change lead.
+        //[leftItems addObject:spacer];
         
         UIBarButtonItem * changeLeadBBItem = self.changeLeadBarButtonItem;
 		[leftItems addObject:changeLeadBBItem];
         
 		// Change mode.
+        //[leftItems addObject:spacer];
         
         UIBarButtonItem * changeModeBBItem = self.changeModeBarButtonItem;
         [leftItems addObject:changeModeBBItem];
