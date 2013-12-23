@@ -20,6 +20,7 @@
 @class BookmarkViewController;
 @class SearchViewController;
 @class TextDisplayViewController;
+@class MiniSearchViewController;
 @class SearchManager;
 @class MiniSearchView;
 @class MFTextItem;
@@ -41,37 +42,10 @@
 	id senderText;
 	id senderSearch;
     
-	UIToolbar * rollawayToolbar;
-    
-    CGFloat toolbarHeight;
-	CGFloat thumbSliderViewBorderWidth;
-	CGFloat thumbSliderViewHeight;
+    CGFloat navigationbarHeight;
 	
-	// Child view controllers
-    
-	SearchViewController * searchViewController;
-	SearchManager * searchManager;
-	MiniSearchView * miniSearchView;
-	TextDisplayViewController * textDisplayViewController;
-	    
-	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller
     NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user
     NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini
-    
-    // Button content for bar button items
-
-    UIButton *changeModeButton;
-	UIButton *zoomLockButton;
-	UIButton *changeDirectionButton;
-	UIButton *changeLeadButton;
-    
-    // Bar button items
-    
-    UIBarButtonItem *changeModeBarButtonItem;
-	UIBarButtonItem *zoomLockBarButtonItem;
-	UIBarButtonItem *changeDirectionBarButtonItem;
-	UIBarButtonItem *changeLeadBarButtonItem;
-	UIBarButtonItem *searchBarButtonItem;
     
     // Flags
     
@@ -82,29 +56,25 @@
 	BOOL thumbsViewVisible;
     BOOL waitingForTextInput;
     
-    // Cached images for dynamic interface elements
-	
-	UIImage * imgModeSingle;
-	UIImage * imgModeDouble;
-    UIImage * imgModeOverflow;
-	
-	UIImage * imgZoomLock;
-	UIImage * imgZoomUnlock;
-	
-	UIImage * imgl2r;
-	UIImage * imgr2l;
-	
-	UIImage * imgLeadRight;
-	UIImage * imgLeadLeft;
-    
-    UIImage * imgDismiss;
-    UIImage * imgBookmark;
-    UIImage * imgSearch;
-    UIImage * imgOutline;
-    UIImage * imgText;
-    
     void (^dismissBlock) ();
 }
+
+/**
+ * If set to YES, this controller will populate the navigation bar with its own
+ * item.
+ */
+@property (nonatomic, readwrite) BOOL useNavigationControllerNavigationbar;
+
+/**
+ * This is the navigation bar used as top toolbar, unless you choose to populate
+ * the navigation controller navigation bar.
+ */
+@property (nonatomic, strong) UINavigationBar * navigationbar;
+
+/**
+ * This value is used to determine where to place the top bar.
+ */
+@property (nonatomic, readwrite) CGFloat topBarMarginFroTop;
 
 /**
  This block will be executed inside the actionDismiss action. If not defined,
@@ -131,14 +101,14 @@
 @property (nonatomic,strong) UIImage * imgSearch;
 @property (nonatomic,strong) UIImage * imgOutline;
 @property (nonatomic,strong) UIImage * imgText;
-@property (nonatomic, readwrite) CGFloat toolbarHeight;
+@property (nonatomic, readwrite) CGFloat navigationbarHeight;
 
 -(void)updatePageNumberLabel;
 
 -(void)showToolbar;
 -(void)hideToolbar;
 
-@property (nonatomic, strong) UIToolbar * rollawayToolbar;
+@property (nonatomic, strong) UINavigationBar * rollawayNavigationbar;
 @property (nonatomic, strong) UILabel * pageNumLabel;
 
 @property (nonatomic, strong) UIBarButtonItem * searchBarButtonItem;
@@ -159,9 +129,13 @@
 @property (nonatomic, strong) SearchManager * searchManager;
 @property (nonatomic, strong) MiniSearchView * miniSearchView;
 @property (nonatomic, strong) TextDisplayViewController * textDisplayViewController;
+@property (nonatomic, strong) MiniSearchViewController * miniSearchViewController;
 
 @property (nonatomic, readwrite, getter = isMultimediaVisible) BOOL multimediaVisible;
 
+/**
+ * This is a single popover controller that will be used to display alternate content view controller.
+ */
 @property (nonatomic, strong) UIPopoverController * reusablePopover;
 
 @property (copy, nonatomic, readwrite) NSString * pageLabelFormat;

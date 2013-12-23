@@ -55,8 +55,6 @@
 		0123605413CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		0123605713CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
 		0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
-		012735011827337B0051DCAF /* page_lead_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 012734FF182733610051DCAF /* page_lead_left.png */; };
-		012735021827337E0051DCAF /* page_lead_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01273500182733610051DCAF /* page_lead_left@2x.png */; };
 		012735041827342B0051DCAF /* prev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 012735031827342B0051DCAF /* prev@2x.png */; };
 		012735061827343D0051DCAF /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 012735051827343D0051DCAF /* next@2x.png */; };
 		0127350B182935220051DCAF /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 01273507182935220051DCAF /* pause.png */; };
@@ -189,6 +187,8 @@
 		0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; };
 		01AD4F1D14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01B37D8E186897F7005C8E50 /* page_lead_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B37D8C186897F7005C8E50 /* page_lead_left.png */; };
+		01B37D8F186897F7005C8E50 /* page_lead_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B37D8D186897F7005C8E50 /* page_lead_left@2x.png */; };
 		01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; };
 		01B3DADA146D920F00F8C740 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01BC080C13C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */; };
@@ -446,8 +446,6 @@
 		0123603913CC917600861EB7 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
 		0123603A13CC917600861EB7 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
 		0123603B13CC917600861EB7 /* WebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebBrowser.xib; sourceTree = "<group>"; };
-		012734FF182733610051DCAF /* page_lead_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page_lead_left.png; path = ../../FPKImages/page_lead_left.png; sourceTree = "<group>"; };
-		01273500182733610051DCAF /* page_lead_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "page_lead_left@2x.png"; path = "../../FPKImages/page_lead_left@2x.png"; sourceTree = "<group>"; };
 		012735031827342B0051DCAF /* prev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "prev@2x.png"; sourceTree = "<group>"; };
 		012735051827343D0051DCAF /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@2x.png"; sourceTree = "<group>"; };
 		01273507182935220051DCAF /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
@@ -531,6 +529,8 @@
 		01AB4AE413EFE267008EB17B /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
 		01AB4AE513EFE267008EB17B /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
 		01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPDFOutlineRemoteEntry.h; sourceTree = "<group>"; };
+		01B37D8C186897F7005C8E50 /* page_lead_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_lead_left.png; sourceTree = "<group>"; };
+		01B37D8D186897F7005C8E50 /* page_lead_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_lead_left@2x.png"; sourceTree = "<group>"; };
 		01B3DAD8146D920F00F8C740 /* Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stuff.h; sourceTree = "<group>"; };
 		01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_KioskAppDelegate.h; sourceTree = "<group>"; };
 		01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_KioskAppDelegate.m; sourceTree = "<group>"; };
@@ -1146,8 +1146,8 @@
 				95422FD11508AE250016E78E /* table_of_contents@2x.png */,
 				01884943131E8A6F0045038F /* page_lead_right.png */,
 				95422FCF1508AE080016E78E /* page_lead_right@2x.png */,
-				012734FF182733610051DCAF /* page_lead_left.png */,
-				01273500182733610051DCAF /* page_lead_left@2x.png */,
+				01B37D8C186897F7005C8E50 /* page_lead_left.png */,
+				01B37D8D186897F7005C8E50 /* page_lead_left@2x.png */,
 				01884947131E8A6F0045038F /* search.png */,
 				95422FCD1508ADFB0016E78E /* search@2x.png */,
 				0188494A131E8A6F0045038F /* text.png */,
@@ -1877,11 +1877,11 @@
 				6FB9775213CC3BF5007C368C /* stop.png in Resources */,
 				6FB9775913CC3BF5007C368C /* bookmark.png in Resources */,
 				6FB9775D13CC3BF5007C368C /* mode_double_page.png in Resources */,
+				01B37D8F186897F7005C8E50 /* page_lead_left@2x.png in Resources */,
 				6FB9776013CC3BF5007C368C /* mode_single_page.png in Resources */,
 				012735041827342B0051DCAF /* prev@2x.png in Resources */,
 				01273512182936040051DCAF /* stop@2x.png in Resources */,
 				0127350B182935220051DCAF /* pause.png in Resources */,
-				012735021827337E0051DCAF /* page_lead_left@2x.png in Resources */,
 				6FB9776313CC3BF5007C368C /* direction_l2r.png in Resources */,
 				6FB9776613CC3BF5007C368C /* direction_r2l.png in Resources */,
 				6FB9776813CC3BF5007C368C /* table_of_contents.png in Resources */,
@@ -1901,7 +1901,6 @@
 				0127350D182935220051DCAF /* play.png in Resources */,
 				01273510182935F80051DCAF /* reload@2x.png in Resources */,
 				95422FDD1508AFF70016E78E /* bookmark@2x.png in Resources */,
-				012735011827337B0051DCAF /* page_lead_left.png in Resources */,
 				01273518182940370051DCAF /* alpha_75.png in Resources */,
 				95422FDE1508AFFB0016E78E /* mode_double_page@2x.png in Resources */,
 				95422FDF1508AFFF0016E78E /* mode_single_page@2x.png in Resources */,
@@ -1912,6 +1911,7 @@
 				95422FE41508B0120016E78E /* search@2x.png in Resources */,
 				95422FE51508B0150016E78E /* text@2x.png in Resources */,
 				95422FE61508B0180016E78E /* close@2x.png in Resources */,
+				01B37D8E186897F7005C8E50 /* page_lead_left.png in Resources */,
 				95422FE71508B01B0016E78E /* zoom_lock@2x.png in Resources */,
 				95422FE81508B0200016E78E /* zoom_unlock@2x.png in Resources */,
 				95422FEB1508B0880016E78E /* mode_overflow.png in Resources */,
@@ -2264,7 +2264,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/FastPDFKitReader.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2283,7 +2283,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -2291,7 +2291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/FastPDFKitReader.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2307,7 +2307,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -2435,7 +2435,7 @@
 			baseConfigurationReference = 1FC2C511936343378D8B9A1E /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2456,7 +2456,7 @@
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -2465,7 +2465,7 @@
 			baseConfigurationReference = 1FC2C511936343378D8B9A1E /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2485,7 +2485,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -2745,7 +2745,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
 				DEAD_CODE_STRIPPING = NO;
@@ -2774,7 +2774,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 armv7s";
+				VALID_ARCHS = "armv7 i386 armv7s arm64 x86_64";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -2783,7 +2783,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
 				DEAD_CODE_STRIPPING = NO;
@@ -2809,7 +2809,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 armv7s";
+				VALID_ARCHS = "armv7 i386 armv7s arm64 x86_64";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

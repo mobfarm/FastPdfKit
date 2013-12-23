@@ -17,20 +17,7 @@
 
 @interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
 
-	// UI elements.
-	IBOutlet UISearchBar *searchBar;
-	IBOutlet UITableView *searchTableView;
-	
-	UIActivityIndicatorView *activityIndicatorView;
-	
-	IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
-	IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
-	
-	NSObject<SearchViewControllerDelegate> *__weak delegate; // A delegate to change the page.
-	
-	SearchManager * __weak searchManager;	// Data source.
-    
-    BOOL ignoreCase;
+	BOOL ignoreCase;
     BOOL exactMatch;
 }
 
@@ -41,9 +28,10 @@
 -(IBAction)actionMinimize:(id)sender;
 -(IBAction)actionBack:(id)sender;
 
-@property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, strong) IBOutlet UITableView *searchTableView;
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
-@property (nonatomic, strong) IBOutlet UIToolbar * toolbar;
+@property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, weak) IBOutlet UITableView *searchTableView;
+@property (nonatomic, weak) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
+@property (nonatomic, weak) IBOutlet UIToolbar * toolbar;
 @end
