@@ -222,6 +222,7 @@
 		01DF25E31663863E00433BE7 /* Deafult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E21663863E00433BE7 /* Deafult@2x.png */; };
 		01DF25E51663867F00433BE7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E41663867F00433BE7 /* Default.png */; };
 		01DF25E71663868300433BE7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E61663868300433BE7 /* Default@2x.png */; };
+		01ECFCEC18351DD8003FB9C5 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		01F840B6163FC810009104F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -2000,6 +2001,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01ECFCEC18351DD8003FB9C5 /* FastPdfKitFramework.xcconfig in Resources */,
 				958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */,
 				958CBAB5141E66060094D4C1 /* Snippets.txt in Resources */,
 			);
