@@ -206,14 +206,14 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 			
             [searchResults addObject:searchResult];
             
-            notification = [NotificationFactory notificationSearchResultsAvailable:searchResults forSearchTerm:searchTerm onPage:[NSNumber numberWithInt:currentPage] fromSender:self];
+            notification = [NotificationFactory notificationSearchResultsAvailable:searchResults forSearchTerm:searchTerm onPage:[NSNumber numberWithInteger:currentPage] fromSender:self];
             [[NSNotificationCenter defaultCenter]postNotification:notification];
 		}
 		
 		// If we endend up on the starting page we can stop, otherwise take the next page and 
 		// search on it too.
 		
-		currentPage = calculateNextSearchPage(currentPage,maxPage);
+		currentPage = calculateNextSearchPage((int)currentPage, (int)maxPage);
 		
 		if(currentPage != startingPage) {
 			
@@ -269,7 +269,7 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
                                  ignoreCase:ignoreCaseOrNot 
                                  exactMatch:exactMatchOrNot];
 	
-    NSNotification * notification = [NotificationFactory notificationSearchDidStartWithSearchTerm:searchTerm onPage:[NSNumber numberWithInt:page] fromSender:self];
+    NSNotification * notification = [NotificationFactory notificationSearchDidStartWithSearchTerm:searchTerm onPage:[NSNumber numberWithInteger:page] fromSender:self];
     
     [[NSNotificationCenter defaultCenter]postNotification:notification];
 }

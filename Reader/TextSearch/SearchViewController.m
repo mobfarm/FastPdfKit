@@ -245,7 +245,7 @@
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i",[searchItem page]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[searchItem page]];
     
 	[cell setTextSnippet:[searchItem text]];
 	[cell setPage:[searchItem page]];

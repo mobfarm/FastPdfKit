@@ -50,7 +50,7 @@
 
 -(void)updateSearchResultViewWithItem:(MFTextItem *)item {
     
-	self.pageLabel.text = [NSString stringWithFormat:@"%d", item.page];
+	self.pageLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)item.page];
     
     NSAttributedString * attributedTextSnippeet = [MiniSearchViewController attributedTextSnippet:item];
 	self.snippetLabel.attributedText = attributedTextSnippeet;

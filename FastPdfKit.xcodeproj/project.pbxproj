@@ -216,6 +216,9 @@
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
 		01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
+		01CD0D2F1869BD79003ACB91 /* MiniSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016070D618227F2700C8C15C /* MiniSearchViewController.xib */; };
+		01CD0D301869BE84003ACB91 /* MiniSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016070D518227F2700C8C15C /* MiniSearchViewController.m */; };
+		01CD0D311869BECB003ACB91 /* MiniSearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 016070D418227F2700C8C15C /* MiniSearchViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01F46FD515CC312300D06464 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -1544,6 +1547,7 @@
 			files = (
 				958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */,
 				958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */,
+				01CD0D311869BECB003ACB91 /* MiniSearchViewController.h in Headers */,
 				958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */,
 				0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,
 				958A81C414027F5B00837C82 /* SearchManager.h in Headers */,
@@ -1912,6 +1916,7 @@
 				95422FE51508B0150016E78E /* text@2x.png in Resources */,
 				95422FE61508B0180016E78E /* close@2x.png in Resources */,
 				01B37D8E186897F7005C8E50 /* page_lead_left.png in Resources */,
+				01CD0D2F1869BD79003ACB91 /* MiniSearchViewController.xib in Resources */,
 				95422FE71508B01B0016E78E /* zoom_lock@2x.png in Resources */,
 				95422FE81508B0200016E78E /* zoom_unlock@2x.png in Resources */,
 				95422FEB1508B0880016E78E /* mode_overflow.png in Resources */,
@@ -2208,6 +2213,7 @@
 			files = (
 				958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */,
 				958A81C314027F5B00837C82 /* NotificationFactory.m in Sources */,
+				01CD0D301869BE84003ACB91 /* MiniSearchViewController.m in Sources */,
 				958A81C514027F5B00837C82 /* SearchManager.m in Sources */,
 				958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */,
 				958A81CA14027F5B00837C82 /* SearchResultView.m in Sources */,

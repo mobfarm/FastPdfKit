@@ -68,7 +68,7 @@
 	
 	[activityIndicatorView startAnimating];
 	
-	[self performSelectorInBackground:@selector(selectorWholeTextForPage:) withObject:[NSNumber numberWithInt:page]];
+	[self performSelectorInBackground:@selector(selectorWholeTextForPage:) withObject:[NSNumber numberWithInteger:page]];
 }
 
 #pragma mark -

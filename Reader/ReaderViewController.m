@@ -20,8 +20,8 @@
 #import "AudioViewController.h"
 #import "MFAudioPlayerViewImpl.h"
 
-#define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %d of %d",(x),(y)]
-#define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%d / %d",(x),(y)]
+#define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %lu of %lu",(x),(y)]
+#define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%lu / %lu",(x),(y)]
 
 @interface ReaderViewController()
 
@@ -297,8 +297,6 @@
 -(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page file:(NSString *)file {
     
     // Here's the chance to unload this view controller and load a new one with the starting page set to page.
-    
-    NSLog(@"%@ %d", file, page);
 }
 
 -(IBAction) actionOutline:(id)sender {
@@ -1541,12 +1539,12 @@
         
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             
-            labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+            labelTitle = PAGE_NUM_LABEL_TEXT((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
             
         }
         else {
             
-            labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
+            labelTitle = PAGE_NUM_LABEL_TEXT_PHONE((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
         }
     }
     
