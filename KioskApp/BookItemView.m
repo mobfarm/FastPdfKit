@@ -472,7 +472,6 @@
         
         NSURLRequest * urlRequest = [NSURLRequest requestWithURL:url];
         
-        
         NSOutputStream * outputStream = [[NSOutputStream alloc]initToFileAtPath:pdfPathTempForResume append:NO];
         
         request = [[AFHTTPRequestOperation alloc]initWithRequest:urlRequest];

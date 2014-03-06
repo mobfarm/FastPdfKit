@@ -58,6 +58,8 @@
 @synthesize pageLabelFormat;
 @synthesize topBarMarginFroTop;
 
+#pragma mark - Popover
+
 -(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
 
     UIPopoverController * popoverController = nil;
@@ -212,25 +214,27 @@
 #pragma mark -
 #pragma mark BookmarkViewController, _Delegate and _Actions
 
--(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
-	
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+-(void)dismissBookmarkViewController:(BookmarkViewController *)bvc
+{
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
         [reusablePopover dismissPopoverAnimated:YES];
-    } else {
+    }
+    else
+    {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     currentReusableView = FPK_REUSABLE_VIEW_NONE;
 }
 
--(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
-	
+-(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page
+{
     self.page = page;
-    
     [self dismissAlternateViewController];
 }
 
--(IBAction) actionBookmarks:(id)sender {
-	
+-(IBAction) actionBookmarks:(id)sender
+{
 		//
 	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 	//	you can also push the controller with the navigation controller or use an UIActionSheet.
@@ -238,70 +242,70 @@
     BookmarkViewController *bookmarksVC = nil;
     UIBarButtonItem * bbItem = nil;
     
-	if (currentReusableView == FPK_REUSABLE_VIEW_BOOKMARK) {
-        
-		[self dismissAlternateViewController];
-		
-	} else {
-		
-        currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
+	if (currentReusableView == FPK_REUSABLE_VIEW_BOOKMARK)
+    {
+    	[self dismissAlternateViewController];
+	}
+    else
+    {
+	    currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
         
 		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
 		bookmarksVC.delegate = self;
 		
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
             [self prepareReusablePopoverControllerWithController:bookmarksVC];
-            
-			[reusablePopover setPopoverContentSize:CGSizeMake(372, 650) animated:YES];
+        	[reusablePopover setPopoverContentSize:CGSizeMake(372, 650) animated:YES];
 			[reusablePopover presentPopoverFromBarButtonItem:bookmarkBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-            
-		} else {
-			
+		}
+        else
+        {
 			[self presentViewController:bookmarksVC animated:YES completion:nil];
 		}
 	}
 }
 
-
 #pragma mark -
 #pragma mark OutlineViewController, _Delegate and _Actions
 
--(void)dismissOutlineViewController:(OutlineViewController *)anOutlineViewController {
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
+-(void)dismissOutlineViewController:(OutlineViewController *)anOutlineViewController
+{
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
         [reusablePopover dismissPopoverAnimated:YES];
-        
-    } else {
-        
+    }
+    else
+    {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
     currentReusableView = FPK_REUSABLE_VIEW_NONE;
 }
 
--(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
-	
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page
+{
     self.page = page;
-	
     [self dismissAlternateViewController];
 }
 
--(void)outlineViewController:(OutlineViewController *)ovc didRequestDestination:(NSString *)destinationName file:(NSString *)file {
-    
+-(void)outlineViewController:(OutlineViewController *)ovc
+       didRequestDestination:(NSString *)destinationName
+                        file:(NSString *)file
+{
     // Here's the chance to unload this view controller and load a new one with the starting page set to the page returned
     // by MFDocumentManager's -pageForNamedDestination: method.
 }
 
--(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page file:(NSString *)file {
-    
+-(void)outlineViewController:(OutlineViewController *)ovc
+              didRequestPage:(NSUInteger)page
+                        file:(NSString *)file
+{
     // Here's the chance to unload this view controller and load a new one with the starting page set to page.
 }
 
--(IBAction) actionOutline:(id)sender {
-	
-	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
+-(IBAction) actionOutline:(id)sender
+{
+	// We create an instance of the OutlineViewController and push it onto the stack like we did with the
 	// BookmarksViewController. However, you can show them in the same view with a segmented control, just
 	// switch datasources and take it into account in the various tableView delegate methods. Another thing
 	// to consider is that the view will be resetted once removed, and for an complex outline is not a nice thing.
@@ -311,11 +315,11 @@
 	
 	OutlineViewController *outlineVC = nil;
     
-	if (currentReusableView != FPK_REUSABLE_VIEW_OUTLINE) {
-		
+	if (currentReusableView != FPK_REUSABLE_VIEW_OUTLINE)
+    {
         currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
-		
-        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView"
+                                                           bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
         [outlineVC setDelegate:self];
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
@@ -323,20 +327,22 @@
 		
 		[outlineVC setOutlineEntries:[[self document] outline]];
 		
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
             [self prepareReusablePopoverControllerWithController:outlineVC];
-            
-			[reusablePopover setPopoverContentSize:CGSizeMake(372, 650) animated:YES];
-			[reusablePopover presentPopoverFromBarButtonItem:outlineBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-            
-		} else {
-			
+			[reusablePopover setPopoverContentSize:CGSizeMake(372, 650)
+                                          animated:YES];
+			[reusablePopover presentPopoverFromBarButtonItem:outlineBarButtonItem
+                                    permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                    animated:YES];
+		}
+        else
+        {
 			[self presentViewController:outlineVC animated:YES completion:nil];
 		}
-        
-	} else {
-        
+	}
+    else
+    {
         [self dismissAlternateViewController];
 
     }
@@ -345,8 +351,8 @@
 #pragma mark -
 #pragma mark SearchViewController, _Delegate and _Action
 
--(void)presentFullSearchView {
-	
+-(void)presentFullSearchView
+{
 	// Get the search manager lazily and set up the document.
 	
 	SearchManager * manager = self.searchManager;
@@ -364,15 +370,16 @@
 	[self addOverlayDataSource:searchManager];
 	self.overlayEnabled = YES;
     
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
         [self prepareReusablePopoverControllerWithController:controller];
         
 		[reusablePopover setPopoverContentSize:CGSizeMake(450, 650) animated:YES];
 		[reusablePopover presentPopoverFromBarButtonItem:searchBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 		
-	} else {
-		
+	}
+    else
+    {
 		[self presentViewController:controller animated:YES completion:nil];
     }
 	
@@ -865,8 +872,10 @@
     
 	multimediaVisible = YES;
     
-	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") link:url local:isLocal];
-	
+	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser"
+                                             bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")
+                                               link:url
+                                              local:isLocal];
 	webBrowser.docViewController = self;
     
 	[self presentViewController:webBrowser animated:YES completion:nil];
@@ -971,12 +980,16 @@
 }
 
 
--(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnPage:(NSUInteger)page atPoint:(CGPoint)point {
-	
+-(void) documentViewController:(MFDocumentViewController *)dvc
+           didReceiveTapOnPage:(NSUInteger)page
+                       atPoint:(CGPoint)point
+{
         //unused
 }
 
--(void)documentViewController:(MFDocumentViewController *)dvc willFollowLinkToPage:(NSUInteger)page {
+-(void)documentViewController:(MFDocumentViewController *)dvc
+         willFollowLinkToPage:(NSUInteger)page
+{
     willFollowLink = YES; 
 }
 
@@ -992,11 +1005,10 @@
 	// If the flag waitingForTextInput is enabled, we use the touch event to select the page. Otherwise,
 	// we are free to use it to show/hide the selected HUD elements.
     
-	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
-		
+	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad))
+    {
 		[self dismissAlternateViewController];
 	}
-	
 	
 	if(!waitingForTextInput) {
 		
@@ -1087,63 +1099,72 @@
 -(void)loadResources {
     
     if(self.navigationbarHeight == 0)
-        self.navigationbarHeight = 44.0;
+    {
+        if([[[UIDevice currentDevice]systemVersion]compare:@"7.0" options:NSNumericSearch]!=NSOrderedAscending)
+        {
+            self.navigationbarHeight = 64.0;
+        }
+        else
+        {
+            self.navigationbarHeight = 44.0;
+        }
+    }
     
     if(!self.imgModeSingle)
-        self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"mode_single_page",@"png")];
+        self.imgModeSingle = [UIImage imageNamed:@"mode_single_page"];
     
     if(!self.imgModeDouble)
-        self.imgModeDouble = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"mode_double_page",@"png")];
+        self.imgModeDouble = [UIImage imageNamed:@"mode_double_page"];
     
     if(!self.imgModeOverflow)
-		self.imgModeOverflow = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"mode_overflow", @"png")];
+		self.imgModeOverflow = [UIImage imageNamed:@"mode_overflow"];
     
     if(!self.imgZoomLock)
-        self.imgZoomLock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"zoom_lock",@"png")];
+        self.imgZoomLock = [UIImage imageNamed:@"zoom_lock"];
     
     if(!self.imgZoomUnlock)
-        self.imgZoomUnlock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"zoom_unlock",@"png")];
+        self.imgZoomUnlock = [UIImage imageNamed:@"zoom_unlock"];
     
     if(!self.imgl2r)
-        self.imgl2r = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"direction_l2r",@"png")];
+        self.imgl2r = [UIImage imageNamed:@"direction_l2r"];
     
     if(!self.imgr2l)
-        self.imgr2l = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"direction_r2l",@"png")];
+        self.imgr2l = [UIImage imageNamed:@"direction_r2l"];
     
     if(!self.imgLeadRight)
-        self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"page_lead_right",@"png")];
+        self.imgLeadRight = [UIImage imageNamed:@"page_lead_right"];
     
     if(!self.imgLeadLeft)
-        self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"page_lead_left",@"png")];
+        self.imgLeadLeft = [UIImage imageNamed:@"page_lead_left"];
     
     if(!self.imgDismiss)
-        self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"close", @"png")];
+        self.imgDismiss = [UIImage imageNamed:@"close"];
         
     if(!self.imgText)
-        self.imgText = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"text", @"png")];
+        self.imgText = [UIImage imageNamed:@"text"];
         
     if(!self.imgOutline)
-        self.imgOutline = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"table_of_contents", @"png")];
+        self.imgOutline = [UIImage imageNamed:@"table_of_contents"];
         
     if(!self.imgBookmark)
-        self.imgBookmark = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"bookmark", @"png")];
+        self.imgBookmark = [UIImage imageNamed:@"bookmark"];
         
     if(!self.imgSearch)
-        self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search", @"png")];    
+        self.imgSearch = [UIImage imageNamed:@"search"];
 }
 
 /**
  * This method will create and customize the toolbar.
  */
 
--(UIBarButtonItem *)searchBarButtonItem {
-    if(!searchBarButtonItem) {
-        
+-(UIBarButtonItem *)searchBarButtonItem
+{
+    if(!searchBarButtonItem)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, 0, 30, 30);
         [button setImage:self.imgSearch forState:UIControlStateNormal];
         [button addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
-        
         
         UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
         self.searchBarButtonItem = barButtonItem;
@@ -1152,8 +1173,10 @@
     return searchBarButtonItem;
 }
 
--(UIButton *)changeModeButton {
-    if(!changeModeButton) {
+-(UIButton *)changeModeButton
+{
+    if(!changeModeButton)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake( 0, 0, 30 , 30 );
         [button setImage:self.imgModeSingle forState:UIControlStateNormal];
@@ -1163,9 +1186,10 @@
     return changeModeButton;
 }
 
--(UIBarButtonItem *)changeModeBarButtonItem {
-    if(!changeModeBarButtonItem) {
-       
+-(UIBarButtonItem *)changeModeBarButtonItem
+{
+    if(!changeModeBarButtonItem)
+    {
         UIButton * button = self.changeModeButton;
         UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
 		self.changeModeBarButtonItem = barButtonItem;
@@ -1173,8 +1197,10 @@
     return changeModeBarButtonItem;
 }
 
--(UIButton *)zoomLockButton {
-    if(!zoomLockButton) {
+-(UIButton *)zoomLockButton
+{
+    if(!zoomLockButton)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake( 0, 0, 30 , 30 );
         [button setImage:self.imgZoomUnlock forState:UIControlStateNormal];
@@ -1184,8 +1210,10 @@
     return zoomLockButton;
 }
 
--(UIBarButtonItem *)zoomLockBarButtonItem {
-    if(!zoomLockBarButtonItem) {
+-(UIBarButtonItem *)zoomLockBarButtonItem
+{
+    if(!zoomLockBarButtonItem)
+    {
         UIButton * button = self.zoomLockButton;
         UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.zoomLockBarButtonItem = barButtonItem;
@@ -1193,8 +1221,10 @@
     return zoomLockBarButtonItem;
 }
 
--(UIButton *)changeDirectionButton {
-    if(!changeDirectionButton) {
+-(UIButton *)changeDirectionButton
+{
+    if(!changeDirectionButton)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake( 0, 0, 30 , 30 );
         [button setImage:self.imgl2r forState:UIControlStateNormal];
@@ -1205,9 +1235,10 @@
     return changeDirectionButton;
 }
 
--(UIBarButtonItem *)changeDirectionBarButtonItem {
-    if(!changeDirectionBarButtonItem) {
-        
+-(UIBarButtonItem *)changeDirectionBarButtonItem
+{
+    if(!changeDirectionBarButtonItem)
+    {
         UIButton * button = self.changeDirectionButton;
         UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.changeDirectionBarButtonItem = barButtonItem;
@@ -1215,9 +1246,10 @@
     return changeDirectionBarButtonItem;
 }
 
--(UIButton *)changeLeadButton {
-    if(!changeLeadButton) {
-        
+-(UIButton *)changeLeadButton
+{
+    if(!changeLeadButton)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake( 0, 0, 30 , 30 );
         [button setImage:self.imgLeadRight forState:UIControlStateNormal];
@@ -1227,9 +1259,10 @@
     return changeLeadButton;
 }
 
--(UIBarButtonItem *)changeLeadBarButtonItem {
-    if(!changeLeadBarButtonItem) {
-        
+-(UIBarButtonItem *)changeLeadBarButtonItem
+{
+    if(!changeLeadBarButtonItem)
+    {
         UIButton * button = self.changeLeadButton;
         UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.changeLeadBarButtonItem = barButtonItem;
@@ -1237,9 +1270,10 @@
     return changeLeadBarButtonItem;
 }
 
--(UIBarButtonItem *) bookmarkBarButtonItem {
-    if(!bookmarkBarButtonItem) {
-        
+-(UIBarButtonItem *) bookmarkBarButtonItem
+{
+    if(!bookmarkBarButtonItem)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, 0, 30, 30);
         [button setImage:self.imgBookmark forState:UIControlStateNormal];
@@ -1250,9 +1284,11 @@
     }
     return bookmarkBarButtonItem;
 }
-- (UIBarButtonItem *) textBarButtonItem {
-    if(!textBarButtonItem) {
-        
+
+- (UIBarButtonItem *) textBarButtonItem
+{
+    if(!textBarButtonItem)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, 0, 30, 30);
         [button setImage:self.imgText forState:UIControlStateNormal];
@@ -1264,16 +1300,19 @@
     return textBarButtonItem;
 }
 
--(UIBarButtonItem *) numberOfPageTitleBarButtonItem {
-    if(!numberOfPageTitleBarButtonItem) {
+-(UIBarButtonItem *) numberOfPageTitleBarButtonItem
+{
+    if(!numberOfPageTitleBarButtonItem)
+    {
         
     }
     return numberOfPageTitleBarButtonItem;
 }
 
--(UIBarButtonItem *) dismissBarButtonItem {
-    if(!dismissBarButtonItem) {
-        
+-(UIBarButtonItem *) dismissBarButtonItem
+{
+    if(!dismissBarButtonItem)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, 0, 30, 30);
         [button setImage:self.imgDismiss forState:UIControlStateNormal];
@@ -1285,9 +1324,10 @@
     return dismissBarButtonItem;
 }
 
--(UIBarButtonItem *) outlineBarButtonItem {
-    if(!outlineBarButtonItem) {
-        
+-(UIBarButtonItem *) outlineBarButtonItem
+{
+    if(!outlineBarButtonItem)
+    {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, 0, 30, 30);
         [button setImage:self.imgOutline forState:UIControlStateNormal];
@@ -1354,7 +1394,7 @@
 		aLabel.shadowColor = [UIColor whiteColor];
 		aLabel.shadowOffset = CGSizeMake(0, 1);
 		aLabel.textColor = [UIColor whiteColor];
-		aLabel.font = [UIFont boldSystemFontOfSize:20.0];
+		aLabel.font = [UIFont systemFontOfSize:17.0];
 		
 		//labelText = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
 		
@@ -1609,8 +1649,8 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-	
+- (void)didReceiveMemoryWarning
+{	
     [super didReceiveMemoryWarning];
 	
 	self.textDisplayViewController = nil;
@@ -1620,12 +1660,13 @@
 
 #pragma mark - Rotation
 
--(BOOL)shouldAutorotate {
+-(BOOL)shouldAutorotate
+{
     return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations {
-
+-(NSUInteger)supportedInterfaceOrientations
+{
     return UIInterfaceOrientationMaskAll;
 }
 
