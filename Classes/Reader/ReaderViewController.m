@@ -132,7 +132,7 @@
                 
             } else {
                 
-                [self dismissModalViewControllerAnimated:YES];
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
             currentReusableView = FPK_REUSABLE_VIEW_NONE;
             break;
@@ -219,7 +219,7 @@
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [reusablePopover dismissPopoverAnimated:YES];
     } else {
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     currentReusableView = FPK_REUSABLE_VIEW_NONE;
 }
@@ -260,7 +260,7 @@
             
 		} else {
 			
-			[self presentModalViewController:bookmarksVC animated:YES];
+			[self presentViewController:bookmarksVC animated:YES completion:nil];
 		}
         
 		[bookmarksVC release];
@@ -279,7 +279,7 @@
         
     } else {
         
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
     currentReusableView = FPK_REUSABLE_VIEW_NONE;
@@ -338,7 +338,7 @@
             
 		} else {
 			
-			[self presentModalViewController:outlineVC animated:YES];
+			[self presentViewController:outlineVC animated:YES completion:nil];
 		}
         
 		[outlineVC release];
@@ -387,7 +387,7 @@
 		
 	} else {
 		
-		[self presentModalViewController:(UIViewController *)controller animated:YES];
+		[self presentViewController:controller animated:YES completion:nil];
     }
 	
     currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
@@ -598,7 +598,7 @@
         
 	} else {
 		
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
 	}
     
     [self removeOverlayDataSource:self.searchManager];
@@ -636,15 +636,13 @@
         
     } else {
         
-        if ([self respondsToSelector:@selector(presentingViewController)]) {
-            [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
-        }
-        else if (self.parentViewController) {
-            [[self parentViewController] dismissModalViewControllerAnimated:YES];
-        }
-        else if ([self navigationController]) {
+        if ([self navigationController]) {
             
             [[self navigationController] popViewControllerAnimated:YES];
+        }
+        else
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
 }
@@ -925,7 +923,7 @@
 	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") link:url local:isLocal];
 	
 	webBrowser.docViewController = self;
-	[self presentModalViewController:webBrowser animated:YES];
+	[self presentViewController:webBrowser animated:YES completion:nil];
 	
 	[webBrowser release];
 }
@@ -1002,7 +1000,8 @@
 
 -(void)dismissTextDisplayViewController:(TextDisplayViewController *)controller {
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
     currentReusableView = FPK_REUSABLE_VIEW_NONE;
 }
 
@@ -1023,7 +1022,7 @@
         controller.modalPresentationStyle = UIModalPresentationFormSheet;
     }
     
-    [self presentModalViewController:controller animated:YES];
+    [self presentViewController:controller animated:YES completion:nil];
    
     currentReusableView = FPK_REUSABLE_VIEW_TEXT;
 }
@@ -1311,7 +1310,7 @@
 		
 		aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 23)];
 		
-		aLabel.textAlignment = UITextAlignmentLeft;
+		aLabel.textAlignment = NSTextAlignmentLeft;
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.shadowColor = [UIColor whiteColor];
 		aLabel.shadowOffset = CGSizeMake(0, 1);

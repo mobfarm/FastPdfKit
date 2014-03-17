@@ -16,8 +16,6 @@
 
 -(void)main 
 {	
-	// Allocate an autorelease pool.
-	
 	@autoreleasepool {
         
         NSArray *searchResult = [document searchResultOnPage:page
@@ -27,8 +25,10 @@
         
         if(![self isCancelled])
         {
-            if([delegate respondsToSelector:@selector(handleSearchResult:)])
-                [(NSObject *)delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
+            __block TextSearchOperation * operation = self;
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [delegate textSearchOperation:operation didCompleteWithResults:searchResult];
+            });
         }
     }
 }

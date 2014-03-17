@@ -263,7 +263,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
 		aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 495, 300, 30) ];
-		aLabel.textAlignment =  UITextAlignmentCenter;
+		aLabel.textAlignment =  NSTextAlignmentCenter;
 		aLabel.textColor = [UIColor blackColor];
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(25.0)];
@@ -271,7 +271,7 @@
     }else {
 		
 		aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 170, 105, 20) ];
-		aLabel.textAlignment =  UITextAlignmentCenter;
+		aLabel.textAlignment =  NSTextAlignmentCenter;
 		aLabel.textColor = [UIColor blackColor];
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)];
@@ -540,10 +540,6 @@
     float progress = (float)totalBytesWritten/(float)expectedTotalBytes;
     
     [self.progressDownload setProgress:progress animated:YES];
-    
-    /*NSArray *tempArray = [NSArray arrayWithObjects:page, [NSNumber numberWithInt:[page intValue]], [NSNumber numberWithFloat:(float)totalBytesWritten/(float)expectedTotalBytes], nil];   
-     */
-    //[[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_Progress" object:tempArray];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
@@ -605,8 +601,7 @@
     
     //write pdf
     
-    
-    NSArray *tempArray = [NSArray arrayWithObjects:page, [NSNumber numberWithInt:[page intValue]], nil];  
+    NSArray *tempArray = [NSArray arrayWithObjects:page, @([page intValue]), nil];
     NKAssetDownload *asset = [connection newsstandAssetDownload];
     NSString *filename = [[asset userInfo] objectForKey:@"filename"];
     NSString *suffix = nil;

@@ -139,13 +139,9 @@
 }
 
 
--(IBAction)actionBack:(id)sender {
-	
-    if ([self respondsToSelector:@selector(presentingViewController)])
-        [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
-    else
-        [[self parentViewController] dismissModalViewControllerAnimated:YES];
-
+-(IBAction)actionBack:(id)sender
+{	
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(IBAction)actionMinimize:(id)sender {
@@ -246,7 +242,7 @@
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i",[searchItem page]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[searchItem page]];
     
 	[cell setTextSnippet:[searchItem text]];
 	[cell setPage:[searchItem page]];

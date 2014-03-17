@@ -370,7 +370,7 @@ BOOL isViewOutsideRange(int viewPosition, int currentPosition, int count) {
                 frame.origin.x = thumbnailOffset(position, thumbnailSize.width, padding, self.bounds.size.width);
                 view.frame = frame;
                 pageNr = [self pageForPosition:position];                
-                view.pageNumber = [NSNumber numberWithUnsignedInt:pageNr];
+                view.pageNumber = @(pageNr);
                 view.thumbnailImagePath = [[self class]thumbnailImagePathForPage:pageNr cacheFolderPath:cacheFolderPath];
             }
         }
@@ -494,7 +494,7 @@ int numberOfThumbnails(CGFloat viewportWidth, CGFloat thumbWidth, CGFloat paddin
 
         CGRect frame = CGRectMake(thumbnailOffset(position, thumbnailSize.width, padding, bounds.size.width), (bounds.size.height - thumbnailSize.height) * 0.5, thumbnailSize.width, thumbnailSize.height);
         view.frame = frame;
-        view.pageNumber = [NSNumber numberWithUnsignedInt:[self pageForPosition:position]];
+        view.pageNumber = @([self pageForPosition:position]);
         view.thumbnailImagePath = [[self class]thumbnailImagePathForPage:[self pageForPosition:position] cacheFolderPath:cacheFolderPath];
     }
     

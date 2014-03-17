@@ -147,7 +147,7 @@
                 
             } else {
                 
-                [self dismissModalViewControllerAnimated:YES];
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
             currentReusableView = FPK_REUSABLE_VIEW_NONE;
             break;
@@ -192,7 +192,7 @@
 
 -(void)dismissTextDisplayViewController:(TextDisplayViewController *)controller {
  
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
@@ -262,7 +262,7 @@
 		[reusablePopover presentPopoverFromRect:self.searchButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 	} else {
 		
-		[self presentModalViewController:(UIViewController *)controller animated:YES];
+		[self presentViewController:controller animated:YES completion:nil];
     }
 	
     currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
@@ -278,7 +278,8 @@
 	[self presentFullSearchView];	// This method will take care of everything.
 }
 
--(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
+-(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item
+{
 	
 	// This could be rather tricky.
 	
@@ -286,20 +287,28 @@
 	// mini search view if necessary, then set the mini search view as the delegate for the current
 	// search manager - associated until now to the full SVC - then present it to the user.
 	
-	if(miniSearchView == nil) {
+	if(miniSearchView == nil)
+    {
 		
 		// If nil, allocate and initialize it.
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
-			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            MiniSearchView * searchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+			self.miniSearchView = searchView;
+            [searchView release];
 			
-		}else {
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
-			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+		}
+        else
+        {
+            
+            MiniSearchView * searchView =[[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+			self.miniSearchView = searchView;
+            [searchView release];
 		}
 		
-	} else {
-		
+	}
+    else
+    {
 		// If not nil, remove it from the superview.
 		if([miniSearchView superview]!=nil)
 			[miniSearchView removeFromSuperview];
@@ -421,7 +430,7 @@
         
 	} else {
 		
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
 	}
     
     [self removeOverlayDataSource:self.searchManager];
@@ -439,7 +448,7 @@
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [reusablePopover dismissPopoverAnimated:YES];
     } else {
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     currentReusableView = FPK_REUSABLE_VIEW_NONE;
 }
@@ -479,7 +488,7 @@
             
 		} else {
 			
-			[self presentModalViewController:bookmarksVC animated:YES];
+			[self presentViewController:bookmarksVC animated:YES completion:nil];
 		}
         
 		[bookmarksVC release];
@@ -497,7 +506,7 @@
         
     } else {
         
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
     currentReusableView = FPK_REUSABLE_VIEW_NONE;
@@ -543,7 +552,7 @@
             
 		} else {
 			
-			[self presentModalViewController:outlineVC animated:YES];
+			[self presentViewController:outlineVC animated:YES completion:nil];
 		}
         
 		[outlineVC release];
@@ -653,7 +662,7 @@
 	//thumbPage = pageNumber;
 	
 	// Update the label.
-	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
+	[pageLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)pageNumber,(unsigned long)[[self document]numberOfPages]]];
 	
 }
 
@@ -747,7 +756,7 @@
 //	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 //	in this callback.
 	
-	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
+	[pageLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)page,(unsigned long)[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
@@ -815,7 +824,7 @@
 		TextDisplayViewController *controller = self.textDisplayViewController;
 		controller.delegate = self;
 		[controller updateWithTextOfPage:page];
-		[self presentModalViewController:controller animated:YES];
+		[self presentViewController:controller animated:YES completion:nil];
 		
 	}
 }
@@ -940,7 +949,7 @@
 	
 	CGFloat buttonHeight = 20;
 	CGFloat buttonWidth = 60;
-	CGFloat padding = 10;
+	CGFloat pad = 10;
 	
 	UIFont *font = nil;
 	
@@ -968,7 +977,7 @@
 	
 		// Mode button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding, padding, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad, pad, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_MODE_SINGLE forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];
@@ -978,7 +987,7 @@
 	
 		// Lead button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding*2 + buttonWidth, padding, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad*2 + buttonWidth, pad, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_LEAD_RIGHT forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];
@@ -988,7 +997,7 @@
 	
 		// Direction button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding*3 + buttonWidth * 2, padding, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad*3 + buttonWidth * 2, pad, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_DIR_L2R forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];
@@ -999,7 +1008,7 @@
 	
 		// Automode button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, pad, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_AUTOMODE_NO forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionChangeAutomode:) forControlEvents:UIControlEventTouchUpInside];
@@ -1009,7 +1018,7 @@
 	
 		// Autozoom button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding*2 + buttonHeight, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, pad*2 + buttonHeight, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_AUTOZOOM_NO forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];
@@ -1020,7 +1029,7 @@
 	
 		// Text button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*4-buttonHeight*4, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, viewSize.height-pad*4-buttonHeight*4, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Text" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
@@ -1030,7 +1039,7 @@
 	
 		// Search button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*5-buttonHeight*5, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, viewSize.height-pad*5-buttonHeight*5, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Search" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
@@ -1041,7 +1050,7 @@
 	
 		// Dismiss button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, viewSize.height-pad*2-buttonHeight*2, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Dismiss" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionDismiss:) forControlEvents:UIControlEventTouchUpInside];
@@ -1051,7 +1060,7 @@
 	
 		// Bookmarks.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad, viewSize.height-pad*2-buttonHeight*2, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Bookmarks" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
@@ -1061,7 +1070,7 @@
 	
 		// Outline.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding, viewSize.height-padding*3-buttonHeight*3, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad, viewSize.height-pad*3-buttonHeight*3, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Outline" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
@@ -1074,18 +1083,18 @@
 		// |<-- 20 px -->| Label (80 x 40 px) |<-- 20 px -->| Slider ((view_width - labelwidth - padding) x 40 px) |<-- 20 px -->|
 	
 		// Page label.
-		UILabel *aLabel = [[UILabel alloc]initWithFrame:CGRectMake(padding, viewSize.height-padding-buttonHeight, buttonWidth, buttonHeight)];
+		UILabel *aLabel = [[UILabel alloc]initWithFrame:CGRectMake(pad, viewSize.height-pad-buttonHeight, buttonWidth, buttonHeight)];
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aLabel setBackgroundColor:[UIColor clearColor]];
 		[aLabel setFont:font];
-		[aLabel setText:[NSString stringWithFormat:@"%u/%u",[self page],[[self document]numberOfPages]]];
-		[aLabel setTextAlignment:UITextAlignmentCenter];
+		[aLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)[self page],(unsigned long)[[self document]numberOfPages]]];
+		[aLabel setTextAlignment:NSTextAlignmentCenter];
 		[self setPageLabel:aLabel];
 		[[self view]addSubview:aLabel];
 		[aLabel release];
 		
 		//Page slider.
-		UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(padding*8, viewSize.height-padding-buttonHeight,self.view.frame.size.width-buttonWidth-40, buttonHeight)];
+		UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(pad*8, viewSize.height-pad-buttonHeight,self.view.frame.size.width-buttonWidth-40, buttonHeight)];
 		[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
 		[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
 		[aSlider setMinimumValue:1.0];

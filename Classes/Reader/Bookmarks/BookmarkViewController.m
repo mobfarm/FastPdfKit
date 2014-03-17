@@ -94,7 +94,7 @@
 	
 	NSUInteger currentPage = [delegate page];
 	
-	[bookmarks addObject:[NSNumber numberWithUnsignedInt:currentPage]];
+	[bookmarks addObject:@(currentPage)];
 	
     [self saveBookmarks];
     

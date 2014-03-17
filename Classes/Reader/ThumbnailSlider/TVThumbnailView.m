@@ -155,17 +155,18 @@
 }
 
 
--(void)loadThumbImg:(NSString *)path {
+-(void)loadThumbImg:(NSString *)path
+{
     
     // Do this IO operation on background thread.
-    
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc]init];
     
     UIImage * image = [[UIImage alloc]initWithContentsOfFile:path];
     
     // If we got an image from the disk, set it as the current image.
     
-    if(image) {
+    if(image)
+    {
         [self performSelectorOnMainThread:@selector(setThumbnailImage:) withObject:image waitUntilDone:NO];
     }
     
@@ -175,7 +176,8 @@
     [pool release];
 }
 
--(void)setThumbnailImage:(UIImage *)newThumbnailImage {
+-(void)setThumbnailImage:(UIImage *)newThumbnailImage
+{
     if(thumbnailImage!=newThumbnailImage) {
         [thumbnailImage release];
         thumbnailImage = [newThumbnailImage retain];
@@ -191,8 +193,6 @@
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadThumbImg:) object:thumbnailImagePath];
     
     [self setThumbnailImage:image];
-    
-    // [self performSelectorInBackground:@selector(loadThumbImg:) withObject:thumbnailImagePath]; // OLD.  
 }
 
 -(void)setThumbnailImagePath:(NSString *)newThumbnailImagePath {

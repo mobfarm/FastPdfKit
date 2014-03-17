@@ -35,24 +35,27 @@
 	
 	// This is going to be run in the background, so we need to create an autorelease pool for the thread.
 	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
-	
-	// Just call the -wholeTextForPage: method of MFDocumentManager. Pass NULL as profile to use the default profile.
-	// If you want to use a different profile pass a reference to a MFProfile.
-    
-    // Use -(void)test_wholeTextForPage:(NSUInteger)page if you want to test the new text extraction engine instead.
-    NSString * someText = [[documentManager wholeTextForPage:[page unsignedIntValue]]copy];
-	
-	// NSString *someText = [[documentManager wholeTextForPage:[page intValue] withProfile:NULL]copy];
-	
-	
-	// Call back performed on the main thread.
-	[self performSelectorOnMainThread:@selector(updateTextToTextDisplayView:) withObject:someText  waitUntilDone:YES];
-	
-	// Cleanup.
-	[someText release];
-	[pool release];
-	
+	@autoreleasepool {
+        
+        // Just call the -wholeTextForPage: method of MFDocumentManager. Pass NULL as profile to use the default profile.
+        // If you want to use a different profile pass a reference to a MFProfile.
+        
+        // Use -(void)test_wholeTextForPage:(NSUInteger)page if you want to test the new text extraction engine instead.
+        NSString * someText = [[documentManager wholeTextForPage:[page unsignedIntValue]]copy];
+        
+        // NSString *someText = [[documentManager wholeTextForPage:[page intValue] withProfile:NULL]copy];
+        
+        // Call back performed on the main thread.
+        [self performSelectorOnMainThread:@selector(updateTextToTextDisplayView:) withObject:someText  waitUntilDone:YES];
+        
+        __block id this = self;
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [this updateTextToTextDisplayView:someText];
+        });
+        
+        // Cleanup.
+        [someText release];
+    }
 }
 
 -(void)clearText {
@@ -70,7 +73,11 @@
 	
 	[activityIndicatorView startAnimating];
 	
-	[self performSelectorInBackground:@selector(selectorWholeTextForPage:) withObject:[NSNumber numberWithInt:page]];
+    __block id this = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        [this selectorWholeTextForPage:@(page)];
+    });
 }
 
 #pragma mark -
