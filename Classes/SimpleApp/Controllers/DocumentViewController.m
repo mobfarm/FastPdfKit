@@ -44,7 +44,6 @@
 @synthesize reusablePopover;
 @synthesize delegate;
 
-
 #pragma mark Thumbnail utility functions
 
 -(void)hideThumbnailView {

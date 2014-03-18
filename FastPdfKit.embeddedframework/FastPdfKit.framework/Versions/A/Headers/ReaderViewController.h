@@ -166,6 +166,8 @@
 
 @property (copy, nonatomic, readwrite) NSString * pageLabelFormat;
 
+@property (readwrite, nonatomic) CGFloat topBarMarginFromTop;
+
 -(void)dismissAlternateViewController;
 -(void)playVideo:(NSString *)path local:(BOOL)isLocal;
 -(void)playAudio:(NSString *)path local:(BOOL)isLocal;

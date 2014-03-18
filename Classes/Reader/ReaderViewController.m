@@ -19,8 +19,8 @@
 #import "AudioViewController.h"
 #import "MFAudioPlayerViewImpl.h"
 
-#define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %d of %d",(x),(y)]
-#define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%d / %d",(x),(y)]
+#define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %lu of %lu",(x),(y)]
+#define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%lu / %lu",(x),(y)]
 
 @interface ReaderViewController()
 
@@ -302,7 +302,7 @@
     
     // Here's the chance to unload this view controller and load a new one with the starting page set to page.
     
-    NSLog(@"%@ %d", file, page);
+    NSLog(@"%@ %lu", file, (unsigned long)page);
 }
 
 -(IBAction) actionOutline:(id)sender {
@@ -1230,7 +1230,8 @@
         
 	items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // Ipad.
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    { // Ipad.
         
 		// Dismiss.
         
@@ -1317,7 +1318,7 @@
 		aLabel.textColor = [UIColor whiteColor];
 		aLabel.font = [UIFont boldSystemFontOfSize:20.0];
 		
-		labelText = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);		
+		labelText = PAGE_NUM_LABEL_TEXT((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
 		aLabel.text = labelText;
 		self.pageNumLabel = aLabel;
 		
@@ -1454,7 +1455,6 @@
         [self.changeLeadButton setImage:imgLeadRight forState:UIControlStateNormal];
         [self.changeLeadButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
-        
 		
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
 		self.changeLeadBarButtonItem = aBarButtonItem;
@@ -1595,12 +1595,12 @@
         
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             
-            labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
+            labelTitle = PAGE_NUM_LABEL_TEXT((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
             
         }
         else {
             
-            labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
+            labelTitle = PAGE_NUM_LABEL_TEXT_PHONE((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
         }
     }
     
@@ -1611,15 +1611,15 @@
 /**
  * This method will show the toolbar.
  */
--(void)showToolbar {
-	
+-(void)showToolbar
+{
 	// Show toolbar, with animation.
 	[UIView animateWithDuration:0.25f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          [self.rollawayToolbar setHidden:NO];
-                         [self.rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
+                         [self.rollawayToolbar setFrame:CGRectMake(0, self.topBarMarginFromTop, rollawayToolbar.frame.size.width, toolbarHeight)];
                      }
                      completion:NULL
                      ];
@@ -1628,8 +1628,8 @@
 /**
  * This method will hide the toolbar.
  */
--(void)hideToolbar{
-	
+-(void)hideToolbar
+{
 	// Hide the toolbar, with animation.
     [UIView animateWithDuration:0.25f
                           delay:0.0f
@@ -1644,10 +1644,9 @@
 
 
 
--(void)viewWillAppear:(BOOL)animated {
-
+-(void)viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:animated];
-	
 }
 
 
@@ -1659,7 +1658,17 @@
 	//	as long as you pass an instance of it to the superclass initializer.
 	    
 	if((self = [super initWithDocumentManager:aDocumentManager])) {
-		[self setDocumentDelegate:self];
+		
+        [self setDocumentDelegate:self];
+        
+        if([[[UIDevice currentDevice]systemVersion]compare:@"7.0" options:NSNumericSearch]!=NSOrderedAscending)
+        {
+            self.topBarMarginFromTop = 0.0;
+        }
+        else
+        {
+            self.topBarMarginFromTop = 20.0;
+        }
 	}
     
 	return self;

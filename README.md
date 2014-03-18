@@ -300,6 +300,10 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+# Update March 18, 2014
+* Some minor updates
+* Fixed a few leaks
+
 # Update August 30th, 2013
 * Added exact match option to search.
 * Added exact match and ignore case switch to SearchDisplayViewController.

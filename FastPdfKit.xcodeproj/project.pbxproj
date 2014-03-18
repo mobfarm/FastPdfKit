@@ -2765,10 +2765,11 @@
 				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 armv7s";
+				VALID_ARCHS = "armv7 arm64 armv7s x86_64 i386";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -2798,10 +2799,11 @@
 				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 armv7s";
+				VALID_ARCHS = "armv7 arm64 armv7s x86_64 i386";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

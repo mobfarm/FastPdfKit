@@ -49,6 +49,8 @@
 -(BOOL)isCancelled;
 -(BOOL)isStopped;
 
+-(void)handleSearchResult:(NSArray *)searchResult;
+
 -(NSArray *)searchResultsAsPlainArray;
 -(void)stopSearch;
 -(void)cancelSearch; 

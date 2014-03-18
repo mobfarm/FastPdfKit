@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "mfprofile.h"
 
+@protocol TextSearchOperationDelegate;
+
 @class MFDocumentManager;
 @interface TextSearchOperation : NSOperation {
 
 	NSString *searchTerm;						// Search term.
-	id<NSObject> delegate;                      // Delegate.
+	id<TextSearchOperationDelegate> delegate;   // Delegate.
 	MFProfile profile;							// Search profile.
 	MFDocumentManager *document;				// Document manager.
     
@@ -21,13 +23,19 @@
     BOOL exactMatch;
 }
 
-@property (retain) MFDocumentManager *document;
-@property (readwrite) NSUInteger page;
-@property (copy) NSString *searchTerm;
-@property (assign) id<NSObject> delegate;
+@property (nonatomic, retain) MFDocumentManager *document;
+@property (nonatomic, readwrite) NSUInteger page;
+@property (nonatomic, copy) NSString *searchTerm;
+@property (nonatomic, assign) id<TextSearchOperationDelegate> delegate;
 @property (nonatomic,readwrite) MFProfile profile;
 
 @property (nonatomic, readwrite) BOOL ignoreCase;
 @property (nonatomic, readwrite) BOOL exactMatch;
+
+@end
+
+@protocol TextSearchOperationDelegate
+
+-(void)textSearchOperation:(TextSearchOperation *)operation didCompleteWithResults:(NSArray *)results;
 
 @end

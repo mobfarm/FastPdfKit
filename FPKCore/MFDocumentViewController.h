@@ -29,7 +29,7 @@
     NSString * documentId;
     
 	// Mode change callback delegate
-	NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
+	NSObject<MFDocumentViewControllerDelegate> *__weak documentDelegate;
 	CFMutableArrayRef documentDelegates;
     
     NSMutableSet * overlayDataSources;
@@ -45,7 +45,7 @@
 	
 	// Previews
     MFDeferredContentLayerWrapper * current;        // Currently 'focused' layer wrapper.
-    MFDeferredContentLayerWrapper * focused;
+    MFDeferredContentLayerWrapper * __weak focused;
     int nextBias, prevBias, wrapperCount;           // Wrappers info.
 	NSArray * wrappers;                             // Wrappers.
 	
@@ -96,7 +96,7 @@
  This property let you add the main DocumentViewControllerDelegate.
  */
 
-@property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
+@property (weak) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
 
 /**
  If you need to register objects as DocumentViewControllerDelegate you can add them using this method.
@@ -121,7 +121,7 @@
  */
 @property (nonatomic,readwrite) FPKSupportedOrientation supportedOrientation;
 
-@property (readonly) MFDocumentManager * document;
+@property (strong, readonly) MFDocumentManager * document;
 
 /**
  This property enable or disable the directional lock in the inner (document)
@@ -476,7 +476,7 @@
 /**
  Access the inner paged scroll view.
  */
-@property (readonly) UIScrollView * pagedScrollView;
+@property (strong, readonly) UIScrollView * pagedScrollView;
 
 /**
  * Height of the thumbnail in the scrollview. Default is 80.
@@ -486,7 +486,7 @@
 /**
  * Background color of the thumbnail view.
  */
-@property (nonatomic, retain) UIColor * thumbnailBackgroundColor;
+@property (nonatomic, strong) UIColor * thumbnailBackgroundColor;
 
 /**
  * Enabled or disable the page slider item in the toolbar.
@@ -623,7 +623,7 @@
  * used if page slider is enabled, 88.0 if thumbnails are enabled. 
  * Default is -1.0.
  */
-@property (readwrite, nonatomic) CGFloat toolbarHeight;
+@property (readwrite, nonatomic) CGFloat thumbnailBarHeight;
 
 /**
  * Toolbar. It will return nil if useNavigationToolbar has been set to YES.
