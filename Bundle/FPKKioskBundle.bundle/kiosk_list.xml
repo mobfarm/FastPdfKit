@@ -24,7 +24,7 @@
         <pdf>
 		    <title>Documentation</title>
 			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/manual.pdf</link>
-			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/doc.jpg</cover>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/manual.jpg</cover>
 		</pdf>
         <pdf>
 		    <title>Documentation</title>
