@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FPK_KIOSK_XML_URL @"http://go.mobfarm.eu/pdf/kiosk_list.xml"
+#define FPK_KIOSK_XML_URL @"https://raw.github.com/mobfarm/FastPdfKit/resources/Classes/KioskApp/KioskResources/kiosk_list.xml"
 #define FPK_KIOSK_XML_NAME @"kiosk_list"
 
 @implementation MenuViewController_Kiosk
