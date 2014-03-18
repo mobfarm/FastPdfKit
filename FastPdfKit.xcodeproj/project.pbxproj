@@ -599,7 +599,7 @@
 		01DF25E21663863E00433BE7 /* Deafult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deafult@2x.png"; sourceTree = "<group>"; };
 		01DF25E41663867F00433BE7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01DF25E61663868300433BE7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		01E28AC618D8475100508EF3 /* Kiosk Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Kiosk Resources"; sourceTree = "<group>"; };
+		01E28AC618D8475100508EF3 /* KioskResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KioskResources; sourceTree = "<group>"; };
 		01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		01F840B5163FC810009104F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -1237,7 +1237,7 @@
 		01BC080013C75B310077CE63 /* KioskApp */ = {
 			isa = PBXGroup;
 			children = (
-				01E28AC618D8475100508EF3 /* Kiosk Resources */,
+				01E28AC618D8475100508EF3 /* KioskResources */,
 				01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */,
 				01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */,
 				01598E3D13CAEDD2007344EE /* Images */,
