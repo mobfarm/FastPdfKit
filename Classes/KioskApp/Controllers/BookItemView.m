@@ -732,7 +732,8 @@
 	[fileManager release];
 }
 
--(void)requestStarted:(ASIHTTPRequest *)request{
+-(void)requestStarted:(ASIHTTPRequest *)request
+{
 	
     UIButton *aButton = nil;
     UIProgressView *progressView = nil;

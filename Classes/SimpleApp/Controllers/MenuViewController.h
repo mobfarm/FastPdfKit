@@ -12,7 +12,7 @@
 
 @class MFDocumentManager;
 
-@interface MenuViewController : UIViewController {
+@interface MenuViewController : UIViewController<UIAlertViewDelegate> {
 
 	IBOutlet UIButton *referenceButton;
 	IBOutlet UIButton *manualButton;

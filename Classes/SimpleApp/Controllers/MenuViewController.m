@@ -87,26 +87,15 @@
         
 		// 
 		//	Create and alert a reference (assign) to it
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Insert Password" message:[NSString stringWithFormat:@"This get covered"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Insert Password" message:[NSString stringWithFormat:@"The password is 12345"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
 		[self setPasswordAlertView:alert];
-		
+        
+        alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+        
 		//
 		// Let's add a password field to the alert
 		
-		UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 45.0, 260.0, 25.0)];
-		[passwordField setAutocorrectionType:UITextAutocorrectionTypeNo];
-		[passwordField setSecureTextEntry:YES];
-		passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-		[passwordField setKeyboardType:UIKeyboardTypeASCIICapable];
-		[passwordField setSecureTextEntry:YES];
-		[passwordField setKeyboardAppearance:UIKeyboardAppearanceAlert];
-		[passwordField setBackgroundColor:[UIColor whiteColor]];
-		[passwordField setTag:TAG_PASSWORDFIELD];
-		
-		//
-		// Now show it
-		[alert addSubview:passwordField];
-		[alert show];
+        [alert show];
 		[alert release];
 		
 	} else {
@@ -118,15 +107,15 @@
 }
 
 
--(void)tryOpenPendingDocumentWithPassword:(NSString *)password {
-	
+-(void)tryOpenPendingDocumentWithPassword:(NSString *)password
+{	
 	//
 	//	The selector tryUnlockWithPassword will attemp to unlock the encrypted document and will
 	//	return YES on success
 	
-	if([document tryUnlockWithPassword:password]) {
+	if([document tryUnlockWithPassword:password])
+    {
 		
-		//
 		//		It works, the document is unlocked. Now you can create the DocumentViewController and push
 		//		it onto the stack for display. If you want to store the password for the document, you can use
 		//		core data, the settings or the keychain
@@ -137,10 +126,10 @@
 		aDocViewController.documentId = DOC_ENCRYPTED;
 		[aDocViewController release];
 		
-	} else {
-		
-		//
-		//	The password is wrong. Display an error alert to let the user know
+	}
+    else
+    {
+		//	The password is wrong. Display an error alert to let the user know. */
 		
 		UIAlertView * anAlertView = [[UIAlertView alloc]initWithTitle:@"Wrong Password" message:@"The password is wrong" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[anAlertView show];
@@ -151,7 +140,10 @@
 
 /* This method should be called from the DocumentViewController when you get a link to another document */
 
--(void)setLinkedDocument:(NSString *)documentName withPage:(NSUInteger)destinationPage orDestinationName:(NSString *)destinationName{
+-(void)setLinkedDocument:(NSString *)documentName
+                withPage:(NSUInteger)destinationPage
+       orDestinationName:(NSString *)destinationName
+{
     
     NSArray *params = [NSArray arrayWithObjects:documentName,destinationName,@(destinationPage), nil];
     [self performSelector:@selector(openDocumentWithParams:) withObject:params afterDelay:0.5];
@@ -159,7 +151,8 @@
 
 /* This method opens a linked document after a delay to let you pop the controller */
 
--(void)openDocumentWithParams:(NSArray *)params{
+-(void)openDocumentWithParams:(NSArray *)params
+{
     
     // Depending on the link format you need to manage the destination path accordingly to your own application path
     // In this example we are assuming that every document is placed in your application bundle at the same level
@@ -172,9 +165,12 @@
 	[aDocViewController setDocumentId:[params objectAtIndex:0]];
     
     NSUInteger page;
-    if([[params objectAtIndex:2] intValue] != -1){
+    if([[params objectAtIndex:2] intValue] != -1)
+    {
         page = [[params objectAtIndex:2] intValue];
-    } else {
+    }
+    else
+    {
         // We need to parse the pdf to get the correct page
         page = [aDocManager pageNumberForDestinationNamed:[params objectAtIndex:1]];
     }
@@ -190,19 +186,24 @@
     
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
 	
 	//
 //	Since we are displaying multiple alert, first check if the alertView is the password one. Once
 //	we are sure of that, we can try to get the content of the password text field and use it
 //	to attemp to unlock the document by calling the appropriate method
 	
-	if (alertView==passwordAlertView)	{
+	if (alertView==passwordAlertView)
+    {
 		
-		if(buttonIndex == 1) {
+		if(buttonIndex == 1)
+        {
 			
-			UITextField *passwordField = (UITextField *)[alertView viewWithTag:TAG_PASSWORDFIELD]; 
-			NSString * password = [passwordField text];
+			UITextField *passwordField = [alertView textFieldAtIndex:0];
+        	NSString * password = [passwordField text];
 			if(password == nil) {
 				password = @"";
 			}
@@ -212,8 +213,11 @@
 	}	
 }
 
+#pragma mark - Lifecycle
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 	
 		//No graphics visualization
@@ -227,29 +231,34 @@
 		
 		[referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
 		[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
-			
 }
 
-
-
 // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
     // Return YES for supported orientations
 	return YES;
 }
 
+-(BOOL)shouldAutorotate
+{
+    return YES;
+}
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [super viewDidUnload];
-	
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 	
 	[self setManualButton:nil];
 	[self setManualTextView:nil];
@@ -258,7 +267,8 @@
 }
 
 
-- (void)dealloc {
+- (void)dealloc
+{
     [super dealloc];
 }
 
