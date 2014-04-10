@@ -2,9 +2,14 @@
 <response>
 	<list>
         <pdf>
+		    <title>FastPdfKit Demo</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/fastpdfkit.fpk</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/FastPdfKit.jpg</cover>
+		</pdf>
+        <pdf>
 		    <title>Multimedia</title>
 			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/Multimedia.pdf</link>
-			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/Aperture.png</cover>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/Multimedia.jpg</cover>
 		</pdf>
         <pdf>
 		    <title>Readme</title>
