@@ -176,6 +176,7 @@
 		0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0193CA0A161B43BA0060A401 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0193CA09161B43B90060A401 /* ZipArchive.mm */; };
 		0193CA0B161B43BA0060A401 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0193CA09161B43B90060A401 /* ZipArchive.mm */; };
+		0194B58218FFD4A30075C170 /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0194B58118FFD4A30075C170 /* header@2x.png */; };
 		01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; };
 		01AD4F1D14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; };
@@ -361,7 +362,6 @@
 		95B9C57D15110E6C00411AF6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C57C15110E6C00411AF6 /* pause@2x.png */; };
 		95B9C58415110EAA00411AF6 /* backThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C57E15110EAA00411AF6 /* backThumb@2x.png */; };
 		95B9C58515110EAA00411AF6 /* download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C57F15110EAA00411AF6 /* download@2x.png */; };
-		95B9C58615110EAA00411AF6 /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58015110EAA00411AF6 /* header@2x.png */; };
 		95B9C58715110EAA00411AF6 /* remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58115110EAA00411AF6 /* remove@2x.png */; };
 		95B9C58815110EAA00411AF6 /* resume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58215110EAA00411AF6 /* resume@2x.png */; };
 		95B9C58915110EAA00411AF6 /* view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58315110EAA00411AF6 /* view@2x.png */; };
@@ -507,6 +507,7 @@
 		0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGlyphBox.h; sourceTree = "<group>"; };
 		0189D3BE1486C28400635C5D /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		0193CA09161B43B90060A401 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		0194B58118FFD4A30075C170 /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@2x.png"; sourceTree = "<group>"; };
 		01AB4AE413EFE267008EB17B /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
 		01AB4AE513EFE267008EB17B /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
 		01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPDFOutlineRemoteEntry.h; sourceTree = "<group>"; };
@@ -690,7 +691,6 @@
 		95B9C57C15110E6C00411AF6 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause@2x.png"; path = "img/pause@2x.png"; sourceTree = SOURCE_ROOT; };
 		95B9C57E15110EAA00411AF6 /* backThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backThumb@2x.png"; sourceTree = "<group>"; };
 		95B9C57F15110EAA00411AF6 /* download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "download@2x.png"; sourceTree = "<group>"; };
-		95B9C58015110EAA00411AF6 /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@2x.png"; sourceTree = "<group>"; };
 		95B9C58115110EAA00411AF6 /* remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remove@2x.png"; sourceTree = "<group>"; };
 		95B9C58215110EAA00411AF6 /* resume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resume@2x.png"; sourceTree = "<group>"; };
 		95B9C58315110EAA00411AF6 /* view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view@2x.png"; sourceTree = "<group>"; };
@@ -1098,6 +1098,7 @@
 				6FB976F313CB6E63007C368C /* backThumb.png */,
 				6FB976F413CB6E63007C368C /* download.png */,
 				6FB976F713CB6E63007C368C /* header.png */,
+				0194B58118FFD4A30075C170 /* header@2x.png */,
 				FFB9B957160A04B000A6F8EC /* header_iphone.png */,
 				FFB9B958160A04B000A6F8EC /* header_iphone@2x.png */,
 				FF9E5BD61608B22E007C560A /* title.png */,
@@ -1156,7 +1157,6 @@
 				95422FC51508ADDF0016E78E /* zoomUnlock@2x.png */,
 				95B9C57E15110EAA00411AF6 /* backThumb@2x.png */,
 				95B9C57F15110EAA00411AF6 /* download@2x.png */,
-				95B9C58015110EAA00411AF6 /* header@2x.png */,
 				95B9C58115110EAA00411AF6 /* remove@2x.png */,
 				95B9C58215110EAA00411AF6 /* resume@2x.png */,
 				95B9C58315110EAA00411AF6 /* view@2x.png */,
@@ -1900,6 +1900,7 @@
 				6FB9773213CB6EB7007C368C /* header.png in Resources */,
 				6FB9773313CB6EB7007C368C /* remove.png in Resources */,
 				6FB9773413CB6EB7007C368C /* resume.png in Resources */,
+				0194B58218FFD4A30075C170 /* header@2x.png in Resources */,
 				6FB9773513CB6EB7007C368C /* view.png in Resources */,
 				6FB9779613CC3F7F007C368C /* pause.png in Resources */,
 				6FB977A613CC4DE2007C368C /* border.png in Resources */,
@@ -1909,7 +1910,6 @@
 				95B9C57D15110E6C00411AF6 /* pause@2x.png in Resources */,
 				95B9C58415110EAA00411AF6 /* backThumb@2x.png in Resources */,
 				95B9C58515110EAA00411AF6 /* download@2x.png in Resources */,
-				95B9C58615110EAA00411AF6 /* header@2x.png in Resources */,
 				95B9C58715110EAA00411AF6 /* remove@2x.png in Resources */,
 				95B9C58815110EAA00411AF6 /* resume@2x.png in Resources */,
 				95B9C58915110EAA00411AF6 /* view@2x.png in Resources */,
@@ -2294,7 +2294,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -2317,7 +2317,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -2345,7 +2345,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -2370,7 +2370,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -2402,7 +2402,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -2433,7 +2433,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2461,7 +2461,7 @@
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -2487,7 +2487,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -2592,6 +2592,7 @@
 			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2670,6 +2671,7 @@
 			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2768,7 +2770,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 armv7s";
+				VALID_ARCHS = "armv7 i386 armv7s x86_64 arm64";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -2801,7 +2803,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 armv7s";
+				VALID_ARCHS = "armv7 i386 armv7s x86_64 arm64";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

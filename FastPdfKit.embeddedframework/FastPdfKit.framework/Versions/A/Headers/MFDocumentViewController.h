@@ -24,10 +24,10 @@
 
 @interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
 	
+    @protected
+    
     NSString * documentId;
     
-@private
-	
 	// Mode change callback delegate
 	NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
 	CFMutableArrayRef documentDelegates;
@@ -479,28 +479,29 @@
 @property (readonly) UIScrollView * pagedScrollView;
 
 /**
- Height of the thumbnail in the scrollview. Height is 120 on iPad and 60 on iphone.
+ * Height of the thumbnail in the scrollview. Default is 80.
  */
 @property (nonatomic, readwrite) CGFloat thumbnailHeight;
 
 /**
- Background color of the thumbnail view.
+ * Background color of the thumbnail view.
  */
 @property (nonatomic, retain) UIColor * thumbnailBackgroundColor;
 
 /**
- Enabled or disable the page slider at the bottom.
+ * Enabled or disable the page slider item in the toolbar.
  */
 @property (nonatomic, readwrite, getter = isPageSliderEnabled) BOOL pageSliderEnabled;
 
 /**
- Enable or disable the thumbnail slider at the bottom.
+ * Enable or disable the thumbnail slider item in the toolbar. The page slider will
+ * take the precedence over this one.
  */
 @property (nonatomic, readwrite, getter = isThumbnailSliderEnabled) BOOL thumbnailSliderEnabled;
 
 /**
- Enable or disable background thumbnail rendering, even when the thumbnail slider is not visible.
- Default is YES.
+ * Enable or disable background thumbnail rendering, even when the thumbnail slider is not visible.
+ * Default is YES.
  */
 @property (nonatomic, readwrite) BOOL backgroundThumbnailRenderingEnabled;
 
@@ -607,5 +608,38 @@
  * will be reset to NO after clean up.
  */
 @property (readwrite, nonatomic) BOOL cleanUpCacheAtLaunch;
+
+/**
+ * This will tell the controller to use the navigation controller's toolbar
+ * instead of its own. Toolbar items will be replaced with document controller's
+ * own items. Default is NO. Since navigation toolbar is usually 44 points high, 
+ * it would be better to set pageSliderEnabled to YES and thumbnailSliderEnabled
+ * to NO rather to try fit the thumbnails into the navigation toolbar.
+ */
+@property (readwrite, nonatomic) BOOL useNavigationControllerToolbar;
+
+/**
+ * Height of the toolbar. Set to force toolbar height, otherwise 44.0 will be
+ * used if page slider is enabled, 88.0 if thumbnails are enabled. 
+ * Default is -1.0.
+ */
+@property (readwrite, nonatomic) CGFloat toolbarHeight;
+
+/**
+ * Toolbar. It will return nil if useNavigationToolbar has been set to YES.
+ */
+@property (strong, nonatomic) UIToolbar * toolbar;
+
+/**
+ * This will return the default toolbar background image. It is a resizable a
+ * resizable image.
+ */
++(UIImage *)defaultToolbarBackgroundImage;
+
+/**
+ * This is the resizable image used as background for both the embedded navigation
+ * bar and the bottom toolbar. If not set will use the defaultToolbarBackgroundImage.
+ */
+@property (strong, nonatomic) UIImage * toolbarBackgroundImage;
 
 @end

@@ -157,7 +157,9 @@
 		unz_global_info  globalInfo = {0};
 		if( unzGetGlobalInfo(_unzFile, &globalInfo )==UNZ_OK )
 		{
+#if DEBUG
 			NSLog([NSString stringWithFormat:@"%d entries in the zip file",globalInfo.number_entry] );
+#endif
 		}
 	}
 	return _unzFile!=NULL;

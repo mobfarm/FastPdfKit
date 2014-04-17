@@ -213,7 +213,8 @@
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 	
 		//No graphics visualization
@@ -227,7 +228,6 @@
 		
 		[referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
 		[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
-			
 }
 
 
