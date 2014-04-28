@@ -300,6 +300,9 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+# Update April 28th, 2014
+* More stability fixes.
+
 # Update April 24th, 2014
 * Stability fixes.
 
