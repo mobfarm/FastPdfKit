@@ -200,8 +200,6 @@
     [anImageView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleWidth];
     [self.view addSubview:anImageView];
     [anImageView release];
-    
-    
 	
 	scrollView.backgroundColor = [UIColor whiteColor];
 	[scrollView setShowsVerticalScrollIndicator:NO];
@@ -259,9 +257,6 @@
 	
     interfaceLoaded = YES;
 }
-
-
-
 
 
 // Override to allow orientations other than the default portrait orientation.

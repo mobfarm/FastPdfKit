@@ -66,6 +66,7 @@
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */; };
 		013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */; };
+		014FF1CA190F8DF3000B0C8B /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014FF1C9190F8DF3000B0C8B /* CoreImage.framework */; };
 		0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; };
 		0155DDE81458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0155DE14145848590080FFEF /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; };
@@ -218,6 +219,8 @@
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
 		01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
+		01C2DD8319113F85002D981A /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014FF1C9190F8DF3000B0C8B /* CoreImage.framework */; };
+		01C2DD8419113F8C002D981A /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014FF1C9190F8DF3000B0C8B /* CoreImage.framework */; };
 		01DF25DE166385E100433BE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
 		01DF25E11663863400433BE7 /* Deafult.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E01663863400433BE7 /* Deafult.png */; };
 		01DF25E31663863E00433BE7 /* Deafult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E21663863E00433BE7 /* Deafult@2x.png */; };
@@ -471,6 +474,7 @@
 		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
 		013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPhone.xib; sourceTree = "<group>"; };
 		013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPad.xib; sourceTree = "<group>"; };
+		014FF1C9190F8DF3000B0C8B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
 		0155DE13145848590080FFEF /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
 		015ED17B1455AE9700C7C372 /* FPKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKAnnotation.h; sourceTree = "<group>"; };
@@ -735,6 +739,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014FF1CA190F8DF3000B0C8B /* CoreImage.framework in Frameworks */,
 				0181A3BC15F6790200AC476F /* Security.framework in Frameworks */,
 				951E4E4113D71E8400C9FC70 /* libz.dylib in Frameworks */,
 				01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */,
@@ -757,6 +762,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C2DD8319113F85002D981A /* CoreImage.framework in Frameworks */,
 				0181A3BE15F6791500AC476F /* Security.framework in Frameworks */,
 				950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */,
 				950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */,
@@ -791,6 +797,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C2DD8419113F8C002D981A /* CoreImage.framework in Frameworks */,
 				954B752314B4812700503F90 /* MapKit.framework in Frameworks */,
 				954B752114B4811500503F90 /* Security.framework in Frameworks */,
 				954B751F14B4810000503F90 /* libxml2.dylib in Frameworks */,
@@ -1411,6 +1418,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				014FF1C9190F8DF3000B0C8B /* CoreImage.framework */,
 				951E4E4013D71E8400C9FC70 /* libz.dylib */,
 				954B751E14B4810000503F90 /* libxml2.dylib */,
 				954B752014B4811500503F90 /* Security.framework */,

@@ -38,13 +38,36 @@
 }
 
 // These method are used internally.
--(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage andRight:(NSInteger)rightPage size:(CGSize)size andScale:(CGFloat)scale useLegacy:(BOOL)legacy;
--(CGImageRef)createImageFromPDFPage:(NSInteger)page size:(CGSize)size  andScale:(CGFloat)scale useLegacy:(BOOL)legacy;
+-(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage
+                                andRight:(NSInteger)rightPage
+                                    size:(CGSize)size
+                                andScale:(CGFloat)scale
+                               useLegacy:(BOOL)legacy;
 
--(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage andRight:(NSInteger)rightPage size:(CGSize)size andScale:(CGFloat)scale useLegacy:(BOOL)legacy showShadow:(BOOL)shadow andPadding:(CGFloat)padding;
--(CGImageRef)createImageFromPDFPage:(NSInteger)page size:(CGSize)size  andScale:(CGFloat)scale useLegacy:(BOOL)legacy showShadow:(BOOL)shadow andPadding:(CGFloat)padding;
+-(CGImageRef)createImageFromPDFPage:(NSInteger)page
+                               size:(CGSize)size
+                           andScale:(CGFloat)scale
+                          useLegacy:(BOOL)legacy;
 
--(CGImageRef)createImageWithPage:(NSUInteger)page pixelScale:(float)scale imageScale:(NSUInteger)scaling screenDimension:(CGFloat)dimension;
+-(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage
+                                andRight:(NSInteger)rightPage
+                                    size:(CGSize)size
+                                andScale:(CGFloat)scale
+                               useLegacy:(BOOL)legacy
+                              showShadow:(BOOL)shadow
+                              andPadding:(CGFloat)padding;
+
+-(CGImageRef)createImageFromPDFPage:(NSInteger)page
+                               size:(CGSize)size
+                           andScale:(CGFloat)scale
+                          useLegacy:(BOOL)legacy
+                         showShadow:(BOOL)shadow
+                         andPadding:(CGFloat)padding;
+
+-(CGImageRef)createImageWithPage:(NSUInteger)page
+                      pixelScale:(float)scale
+                      imageScale:(NSUInteger)scaling
+                 screenDimension:(CGFloat)dimension;
 
 -(CGImageRef)createImageWithImage:(CGImageRef)imageToBeDrawn;
 
@@ -53,13 +76,18 @@
 /**
  Use this method to get the cropbox and the rotation of a certain pdf page.
  */
--(void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber withBuffer:(BOOL)withOrWithout;
+-(void)getCropbox:(CGRect *)cropbox
+      andRotation:(NSInteger *)rotation
+    forPageNumber:(NSInteger)pageNumber
+       withBuffer:(BOOL)withOrWithout;
 
 /**
  Create a thumbnail for a specific page. It will look far better than the 
  thumbnail integrated inside the pdf, but it is also slower.
  */
--(CGImageRef)createImageForThumbnailOfPageNumber:(NSUInteger)pageNr ofSize:(CGSize)size andScale:(CGFloat)scale;
+-(CGImageRef)createImageForThumbnailOfPageNumber:(NSUInteger)pageNr
+                                          ofSize:(CGSize)size
+                                        andScale:(CGFloat)scale;
 
 /** 
  Factory method to create an MFDocumentManager instance from a know file path.

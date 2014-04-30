@@ -300,6 +300,9 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+# Update April 30th, 2014
+* Development engine and view hierarchy.
+
 # Update April 28th, 2014
 * More stability fixes.
 

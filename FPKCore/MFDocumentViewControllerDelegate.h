@@ -37,6 +37,11 @@
 -(void)documentViewController:(MFDocumentViewController *)dvc didChangeDirectionTo:(MFDocumentDirection)direction;
 
 /**
+ * This method will notify change in the auto mode.
+ */
+-(void)documentViewController:(MFDocumentViewController *)dvc didChangeAutoModeTo:(MFDocumentAutoMode)autoMode;
+
+/**
  This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.
  */
 -(void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point;
@@ -102,7 +107,7 @@
 /**
  This method will be invoked before automatically moving to a page due to the user tapping on an embedded internal link inside the document.
  */
--(void)documentViewController:(MFDocumentViewController *)dvc willFollowLinkToPage:(NSUInteger)page;
+-(BOOL)documentViewController:(MFDocumentViewController *)dvc willFollowLinkToPage:(NSUInteger)page;
 
 /**
  This method will be invoked when the user tap on an annotation with an associated Go-To Remote action. The user can then load the file passed as third argument

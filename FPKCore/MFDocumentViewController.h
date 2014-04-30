@@ -11,7 +11,7 @@
 #import "MFDocumentOverlayDataSource.h"
 #import "FPKOverlayViewDataSource.h"
 
-@class MFDeferredContentLayerWrapper;
+@class TSVRootView;
 @class MFDocumentManager;
 @class MFDocumentViewController;
 
@@ -29,14 +29,11 @@
     NSString * documentId;
     
 	// Mode change callback delegate
-	NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
+	NSObject<MFDocumentViewControllerDelegate> *__weak documentDelegate;
 	CFMutableArrayRef documentDelegates;
     
     NSMutableSet * overlayDataSources;
     NSMutableSet * overlayViewDataSources;
-    
-	// Resources.
-	NSOperationQueue * operationQueue;
     
 	// Document.
 	MFDocumentManager * document;
@@ -44,28 +41,17 @@
 	// Detail view
 	
 	// Previews
-    MFDeferredContentLayerWrapper * current;        // Currently 'focused' layer wrapper.
-    MFDeferredContentLayerWrapper * focused;
-    int nextBias, prevBias, wrapperCount;           // Wrappers info.
-	NSArray * wrappers;                             // Wrappers.
+    TSVRootView * current;                  // Currently 'focused' layer wrapper.
+    TSVRootView * __weak focused;
+    int nextBias, prevBias, wrapperCount;   // Wrappers info.
+	NSArray * wrappers;                     // Wrappers.
 	
-	// Internal status
-	MFDocumentDirection currentDirection;
-	BOOL autoMode;
-	MFDocumentMode currentMode;
-    MFDocumentAutoMode currentAutoMode;
-    
-	MFDocumentLead currentLead;
-	NSUInteger currentPage;
 	NSUInteger startingPage;
 	
-	NSInteger currentPosition;              // Currently displayed position.
 	NSUInteger currentOrientation;          // Current orientation as intended by the application.
 	NSUInteger currentNumberOfPositions;    // Current number of "screens".
     
 	NSInteger currentDetailPosition;        // Current position of the detail view.
-    
-	NSInteger maxNumberOfPages;
 	
 	CGSize currentSize;                     // Current size as intended by the application.
 	
@@ -77,7 +63,6 @@
 	int loads;
 	
     float defaultMaxZoomScale;
-    CGFloat defaultPageFlipWidth;
     
 	BOOL pageFlipOnEdgeTouchEnabled;
 	BOOL zoomInOnDoubleTapEnabled;
@@ -92,22 +77,49 @@
     FPKSupportedOrientation supportedOrientation;
 }
 
-/**
- This property let you add the main DocumentViewControllerDelegate.
+
+@property (nonatomic, readwrite) NSUInteger overlayDataSourcesCount;
+
+/** 
+ * Single tap gesture recognizer.
  */
-
-@property (assign) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
+@property (nonatomic, readonly) UIGestureRecognizer * singleTapGestureRecognizer;
 
 /**
- If you need to register objects as DocumentViewControllerDelegate you can add them using this method.
+ * Double tap gesture recognizer.
  */
+@property (nonatomic, readonly) UIGestureRecognizer * doubleTapGestureRecognizer;
 
+/**
+ * You can override this method to implement custom action on single tap. You should
+ * consider invoking the super implementation at some point.
+ */
+-(void)handleSingleTap:(UIGestureRecognizer *)gr;
+
+/**
+ * You can override this method to implement custom action on double tap. You should
+ * consider invoking the super implementation at some point.
+ */
+-(void)handleDoubleTap:(UIGestureRecognizer *)gr;
+
+/**
+ * Toggle for the automode.
+ */
+@property (nonatomic, readwrite, getter = isAutoModeEnabled) BOOL autoModeEnabled;
+
+/**
+ * This property let you add the main DocumentViewControllerDelegate.
+ */
+@property (weak) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
+
+/**
+ * If you need to register objects as DocumentViewControllerDelegate you can add them using this method.
+ */
 -(void)addDocumentDelegate:(NSObject<MFDocumentViewControllerDelegate> *)delegate;
 
 /**
- If you have more than one DocumentViewControllerDelegate you can remove any of them with this method.
+ * If you have more than one DocumentViewControllerDelegate you can remove any of them with this method.
  */
-
 -(void)removeDocumentDelegate:(NSObject<MFDocumentViewControllerDelegate> *)delegate;
 
 /**
@@ -121,7 +133,7 @@
  */
 @property (nonatomic,readwrite) FPKSupportedOrientation supportedOrientation;
 
-@property (readonly) MFDocumentManager * document;
+@property (strong, readonly) MFDocumentManager * document;
 
 /**
  This property enable or disable the directional lock in the inner (document)
@@ -234,22 +246,14 @@
  Set and get the percentage of the screen associated with the page flip on edge 
  touch action. Default value is 0.1, this mean that the 10% of the width of the 
  screen on either side will receive such events. Values are clipped between 0.0 
- and 0.5 to prevent overlap.
- */
--(void)setEdgeFlipWidth:(CGFloat)edgeFlipWidth;
-
-/**
- Get the edge flip width
- */
-
--(CGFloat)edgeFlipWidth;
+ and 0.5 to prevent overlap.*/
+@property (nonatomic, readwrite) CGFloat edgeFlipWidth;
 
 /**
  Default value to wich the current value will be reset to after each page change.
  Default is 0.1.
  */
 @property (nonatomic,readwrite) CGFloat defaultEdgeFlipWidth;
-
 
 /**
  Enabled the zoom in when the user double tap on the screen.
@@ -476,7 +480,7 @@
 /**
  Access the inner paged scroll view.
  */
-@property (readonly) UIScrollView * pagedScrollView;
+@property (strong, readonly) UIScrollView * pagedScrollView;
 
 /**
  * Height of the thumbnail in the scrollview. Default is 80.
@@ -486,7 +490,7 @@
 /**
  * Background color of the thumbnail view.
  */
-@property (nonatomic, retain) UIColor * thumbnailBackgroundColor;
+@property (nonatomic, strong) UIColor * thumbnailBackgroundColor;
 
 /**
  * Enabled or disable the page slider item in the toolbar.
@@ -623,7 +627,7 @@
  * used if page slider is enabled, 88.0 if thumbnails are enabled. 
  * Default is -1.0.
  */
-@property (readwrite, nonatomic) CGFloat toolbarHeight;
+@property (readwrite, nonatomic) CGFloat thumbnailBarHeight;
 
 /**
  * Toolbar. It will return nil if useNavigationToolbar has been set to YES.
