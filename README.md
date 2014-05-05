@@ -300,6 +300,9 @@ This guide is also available as [screencast number 4](http://fastpdfkit.com/tuto
 
 ## Changelog
 
+# Update May 5th 2014
+* Renamed a few c functions to avoid conflicts.
+
 # Update April 28th, 2014
 * More stability fixes.
 
