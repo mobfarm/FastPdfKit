@@ -1395,8 +1395,7 @@
         
 		
 	} else { // Iphone.
-             
-       
+             PAGE_NUM_LABEL_TEXT_PHONE
         // Dismiss
         
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1588,23 +1587,21 @@
 	
 	NSString *labelTitle = nil;
     
-    if(self.pageLabelFormat) {
-        
+    if(self.pageLabelFormat)
+    {
         labelTitle = [NSString stringWithFormat:self.pageLabelFormat, [self page], [[self document] numberOfPages]];
     }
-    else {
-        
-        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            
+    else
+    {
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
             labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
-            
         }
-        else {
-            
+        else
+        {
             labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
         }
     }
-    
     
 	self.pageNumLabel.text = labelTitle;
 }
