@@ -11,15 +11,7 @@
 
 @class DocumentViewController;
 @interface TextDisplayViewController : UIViewController {
-
-	IBOutlet UIActivityIndicatorView *activityIndicatorView;
-	IBOutlet UITextView *textView;
-	
-	NSObject<TextDisplayViewControllerDelegate> *__weak delegate;
-	
-	NSString *text;
-	
-	MFDocumentManager *documentManager;
+    
 }
 
 -(IBAction)actionBack:(id)sender;

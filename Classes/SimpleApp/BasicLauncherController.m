@@ -19,7 +19,7 @@
 	/*
      We are using NSBundle to lookup the file for us, but if you store the pdf 
      somewhere else than the application bundle, you should use the NSFileManager 
-     instead or be able to provide the right file path for the file.*/
+     instead or be able to provide the right file path for the file. */
 	
 	NSString *documentPath = [[NSBundle mainBundle]pathForResource:DOC_PLAIN ofType:@"pdf"];
 	NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
@@ -28,7 +28,6 @@
      Now that we have the URL, we can allocate an istance of the MFDocumentManager 
      class (a wrapper) and use it to initialize an MFDocumentViewController subclass. */
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
-	
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	
 	/* 

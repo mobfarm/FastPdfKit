@@ -21,4 +21,9 @@ Pod::Spec.new do |s|
         c.source_files = 'Core/**/*.{h,m}'
         c.vendored_libraries = 'Core/libFastPdfKit.a'
     end
+    
+    s.subspec 'Extensions' do |e|
+        e.source_files = 'Extensions/**/*.{h,m}'
+        r.dependency 'FastPdfKit/Reader'
+    end
 end

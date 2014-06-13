@@ -23,35 +23,17 @@
 		010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14D913CB002300FD6F08 /* MainWindow.xib */; };
 		010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DA13CB002300FD6F08 /* MenuView_pad.xib */; };
 		010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DB13CB002300FD6F08 /* MenuView_phone.xib */; };
-		010FE6E515EE582100304C02 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6C615EE582100304C02 /* Common.framework */; };
-		010FE6E615EE582200304C02 /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6C815EE582100304C02 /* libPayPalMPL.a */; };
-		010FE6E715EE582200304C02 /* FPKConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6CA15EE582100304C02 /* FPKConfig.framework */; };
-		010FE6E815EE582200304C02 /* FPKGalleryFade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6CD15EE582100304C02 /* FPKGalleryFade.framework */; };
-		010FE6E915EE582200304C02 /* FPKGallerySlide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6CF15EE582100304C02 /* FPKGallerySlide.framework */; };
-		010FE6EA15EE582200304C02 /* FPKGalleryTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6D215EE582100304C02 /* FPKGalleryTap.framework */; };
-		010FE6EB15EE582200304C02 /* FPKMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6D715EE582100304C02 /* FPKMap.framework */; };
-		010FE6EC15EE582200304C02 /* FPKMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6D915EE582100304C02 /* FPKMessage.framework */; };
-		010FE6ED15EE582200304C02 /* fpkmessage-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 010FE6DB15EE582100304C02 /* fpkmessage-info.png */; };
-		010FE6EE15EE582200304C02 /* FPKPayPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6DD15EE582100304C02 /* FPKPayPal.framework */; };
-		010FE6EF15EE582200304C02 /* FPKShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6DF15EE582100304C02 /* FPKShared.framework */; };
-		010FE6F015EE582200304C02 /* FPKWebPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6E215EE582100304C02 /* FPKWebPopup.framework */; };
-		010FE6F115EE582200304C02 /* FPKYouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6E415EE582100304C02 /* FPKYouTube.framework */; };
 		01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01142A2D15CFC38E001B5374 /* MenuViewController.m */; };
-		01142A3B15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		01142A3D15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
-		011DF92617D1755B0007DEAD /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
 		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
-		0123603F13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123604013CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123604313CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
 		0123604413CC917600861EB7 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; };
 		0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; };
-		0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
 		0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
 		0123605013CC917600861EB7 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; };
-		0123605313CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		0123605413CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		0123605713CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
 		0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
@@ -100,11 +82,6 @@
 		016070D718227F2700C8C15C /* MiniSearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 016070D418227F2700C8C15C /* MiniSearchViewController.h */; };
 		016070D918227F2700C8C15C /* MiniSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016070D518227F2700C8C15C /* MiniSearchViewController.m */; };
 		016070DA18227F2700C8C15C /* MiniSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016070D618227F2700C8C15C /* MiniSearchViewController.xib */; };
-		016070DB182281F400C8C15C /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
-		016070DC1822821F00C8C15C /* MiniSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016070D518227F2700C8C15C /* MiniSearchViewController.m */; };
-		016070DD1822869100C8C15C /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
-		016070DE1822869100C8C15C /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
-		016070DF1822869100C8C15C /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		016070E01822A00800C8C15C /* MiniSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016070D618227F2700C8C15C /* MiniSearchViewController.xib */; };
 		016095E414482814003CEAAA /* FPKURIAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D414482814003CEAAA /* FPKURIAnnotation.h */; };
 		016095E514482814003CEAAA /* FPKURIAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D414482814003CEAAA /* FPKURIAnnotation.h */; };
@@ -130,11 +107,8 @@
 		0160960214482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; };
 		0160960314482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; };
 		0160960414482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
 		0161F22A141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
 		0161F22B141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
-		0161F22D141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
-		0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
 		0161F22F141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
 		0161F230141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
 		0168707E1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */; };
@@ -174,7 +148,6 @@
 		0189D3BD1486C1C000635C5D /* FPKGlyphBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0189D3BF1486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; };
 		0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		018FB58A18C5F5790045D297 /* FPKReader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018FB58918C5F5790045D297 /* FPKReader.xcassets */; };
 		01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; };
 		01AD4F1D14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; };
@@ -183,27 +156,42 @@
 		01BC081013C75B310077CE63 /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */; };
 		01BC081113C75B310077CE63 /* BookItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* BookItemView.m */; };
 		01BC081213C75B310077CE63 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080B13C75B310077CE63 /* XMLParser.m */; };
-		01BC083A13C75D3A0077CE63 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
-		01BC083B13C75D3A0077CE63 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
-		01BC084013C75D3A0077CE63 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
-		01BC084113C75D3A0077CE63 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
-		01BC084213C75D3A0077CE63 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
-		01BC084313C75D3A0077CE63 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
-		01BC084413C75D3A0077CE63 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
-		01BC084513C75D3A0077CE63 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
-		01BC084613C75D3A0077CE63 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
-		01BC084713C75D3A0077CE63 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
-		01BC084813C75D3A0077CE63 /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082A13C75D3A0077CE63 /* SearchResultView.m */; };
-		01BC084913C75D3A0077CE63 /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082A13C75D3A0077CE63 /* SearchResultView.m */; };
-		01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
-		01BC085313C75D3A0077CE63 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
-		01BC085613C75D3A0077CE63 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
-		01BC085713C75D3A0077CE63 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
-		01BC085813C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
-		01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
 		01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
+		01C06DA519498CA90044B5FF /* DDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D6619498CA90044B5FF /* DDPageControl.m */; };
+		01C06DA619498CA90044B5FF /* DDSocialDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D6819498CA90044B5FF /* DDSocialDialog.m */; };
+		01C06DA819498CAA0044B5FF /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D6B19498CA90044B5FF /* OpenUDID.m */; };
+		01C06DA919498CAA0044B5FF /* FPKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D7819498CA90044B5FF /* FPKConfig.m */; };
+		01C06DAA19498CAA0044B5FF /* FPKGalleryFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D7B19498CA90044B5FF /* FPKGalleryFade.m */; };
+		01C06DAB19498CAA0044B5FF /* TransitionGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D7D19498CA90044B5FF /* TransitionGalleryView.m */; };
+		01C06DAC19498CAA0044B5FF /* FPKGallerySlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D8019498CA90044B5FF /* FPKGallerySlide.m */; };
+		01C06DAD19498CAA0044B5FF /* UIImagesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D8219498CA90044B5FF /* UIImagesScrollView.m */; };
+		01C06DAE19498CAA0044B5FF /* BorderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D8519498CA90044B5FF /* BorderImageView.m */; };
+		01C06DAF19498CAA0044B5FF /* FPKGalleryTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D8719498CA90044B5FF /* FPKGalleryTap.m */; };
+		01C06DB019498CAA0044B5FF /* TransitionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D8919498CA90044B5FF /* TransitionImageView.m */; };
+		01C06DB119498CAA0044B5FF /* FPKDraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D8C19498CA90044B5FF /* FPKDraggableImageView.m */; };
+		01C06DB219498CAA0044B5FF /* FPKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D8E19498CA90044B5FF /* FPKImage.m */; };
+		01C06DB319498CAA0044B5FF /* FPKTransitionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D9019498CA90044B5FF /* FPKTransitionImageView.m */; };
+		01C06DB419498CAA0044B5FF /* FPKMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D9319498CA90044B5FF /* FPKMap.m */; };
+		01C06DB519498CAA0044B5FF /* FPKMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D9519498CA90044B5FF /* FPKMapAnnotation.m */; };
+		01C06DB619498CAA0044B5FF /* FPKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D9819498CA90044B5FF /* FPKMessage.m */; };
+		01C06DB719498CAA0044B5FF /* FPKOverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D9B19498CA90044B5FF /* FPKOverlayManager.m */; };
+		01C06DB819498CAA0044B5FF /* FPKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D9E19498CA90044B5FF /* FPKWebView.m */; };
+		01C06DB919498CAA0044B5FF /* FPKWebPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DA119498CA90044B5FF /* FPKWebPopup.m */; };
+		01C06DBB19498F6A0044B5FF /* FPKYouTube.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DA419498CA90044B5FF /* FPKYouTube.m */; };
+		01C06DD2194990FB0044B5FF /* FPKPayPal.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DCB194990FB0044B5FF /* FPKPayPal.m */; };
+		01C06DD3194990FB0044B5FF /* FPKPayPalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DCD194990FB0044B5FF /* FPKPayPalController.m */; };
+		01C06DD4194990FB0044B5FF /* FPKPayPalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DCF194990FB0044B5FF /* FPKPayPalItem.m */; };
+		01C06DD5194990FB0044B5FF /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DD1194990FB0044B5FF /* SuccessViewController.m */; };
+		01C06DE11949A1E00044B5FF /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C06DD61949A1E00044B5FF /* libPayPalMPL.a */; };
+		01C06DE61949A8320044B5FF /* FPKReader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018FB58918C5F5790045D297 /* FPKReader.xcassets */; };
+		01C06DE71949A8340044B5FF /* FPKReader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018FB58918C5F5790045D297 /* FPKReader.xcassets */; };
+		01C06DE81949A8350044B5FF /* FPKReader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018FB58918C5F5790045D297 /* FPKReader.xcassets */; };
+		01C06DE91949AFD80044B5FF /* libFPKReaderLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */; };
+		01C06DEB1949B1450044B5FF /* libFPKReaderLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */; };
+		01C06DF11949BB000044B5FF /* libFPKReaderLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */; };
+		01C06DF51949BB950044B5FF /* FPKKiosk.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C06DF41949BB950044B5FF /* FPKKiosk.xcassets */; };
 		01CD0D2F1869BD79003ACB91 /* MiniSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016070D618227F2700C8C15C /* MiniSearchViewController.xib */; };
 		01CD0D301869BE84003ACB91 /* MiniSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016070D518227F2700C8C15C /* MiniSearchViewController.m */; };
 		01CD0D311869BECB003ACB91 /* MiniSearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 016070D418227F2700C8C15C /* MiniSearchViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -238,6 +226,7 @@
 		6FE7E4A813CC5EB0006A7E68 /* Kiosk_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080313C75B310077CE63 /* Kiosk_ipad.xib */; };
 		6FE7E4A913CC5EB4006A7E68 /* Kiosk_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080413C75B310077CE63 /* Kiosk_phone.xib */; };
 		6FFE1F9013CDFFA90003BC10 /* MainWindow_Kiosk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC080513C75B310077CE63 /* MainWindow_Kiosk.xib */; };
+		7AD051D71D7E4103B977CE68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFFC7171C4640458F619CE1 /* libPods.a */; };
 		9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
 		9505BB1913CCB187003163D2 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
 		9505BB1B13CCB1A6003163D2 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
@@ -311,14 +300,11 @@
 		95B9C58715110EAA00411AF6 /* remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58115110EAA00411AF6 /* remove@2x.png */; };
 		95B9C58815110EAA00411AF6 /* resume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58215110EAA00411AF6 /* resume@2x.png */; };
 		95B9C58915110EAA00411AF6 /* view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58315110EAA00411AF6 /* view@2x.png */; };
-		95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FFFB6D14B48C3100B1CD3B /* FastPdfKit.framework */; };
 		95EF544714B48EDD00910B3D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544414B48EDD00910B3D /* Icon.png */; };
 		95EF544814B48EDD00910B3D /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544514B48EDD00910B3D /* Icon72.png */; };
 		95EF544914B48EDD00910B3D /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544614B48EDD00910B3D /* Icon114.png */; };
 		95FFFB5014B488AE00B1CD3B /* FPKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4C14B488AE00B1CD3B /* FPKMainViewController.m */; };
 		95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */; };
-		95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */; };
-		95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7114B48C3100B1CD3B /* Snippets.txt */; };
 		C8F9876ED01D4B228B25ED62 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFFC7171C4640458F619CE1 /* libPods.a */; };
 		F80CAF00728D4DB6BE8246CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFFC7171C4640458F619CE1 /* libPods.a */; };
 		FF9E5BD81608B22E007C560A /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5BD61608B22E007C560A /* title.png */; };
@@ -331,6 +317,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		01C06DE41949A7AB0044B5FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01598DA513CAE783007344EE;
+			remoteInfo = FPKReaderLib;
+		};
+		01C06DEC1949B14B0044B5FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01598DA513CAE783007344EE;
+			remoteInfo = FPKReaderLib;
+		};
+		01C06DEF1949BAEB0044B5FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01598DA513CAE783007344EE;
+			remoteInfo = FPKReaderLib;
+		};
 		6FB9772813CB6E97007C368C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -378,19 +385,6 @@
 		010D14DA13CB002300FD6F08 /* MenuView_pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_pad.xib; sourceTree = "<group>"; };
 		010D14DB13CB002300FD6F08 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
 		010D14DC13CB002300FD6F08 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		010FE6C615EE582100304C02 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
-		010FE6C815EE582100304C02 /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
-		010FE6CA15EE582100304C02 /* FPKConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKConfig.framework; sourceTree = "<group>"; };
-		010FE6CD15EE582100304C02 /* FPKGalleryFade.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryFade.framework; sourceTree = "<group>"; };
-		010FE6CF15EE582100304C02 /* FPKGallerySlide.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGallerySlide.framework; sourceTree = "<group>"; };
-		010FE6D215EE582100304C02 /* FPKGalleryTap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKGalleryTap.framework; sourceTree = "<group>"; };
-		010FE6D715EE582100304C02 /* FPKMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKMap.framework; sourceTree = "<group>"; };
-		010FE6D915EE582100304C02 /* FPKMessage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKMessage.framework; sourceTree = "<group>"; };
-		010FE6DB15EE582100304C02 /* fpkmessage-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fpkmessage-info.png"; sourceTree = "<group>"; };
-		010FE6DD15EE582100304C02 /* FPKPayPal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKPayPal.framework; sourceTree = "<group>"; };
-		010FE6DF15EE582100304C02 /* FPKShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKShared.framework; sourceTree = "<group>"; };
-		010FE6E215EE582100304C02 /* FPKWebPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKWebPopup.framework; sourceTree = "<group>"; };
-		010FE6E415EE582100304C02 /* FPKYouTube.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FPKYouTube.framework; sourceTree = "<group>"; };
 		01142A2D15CFC38E001B5374 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		01142A3A15CFCE48001B5374 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		011E42B81472D1510099754E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -510,6 +504,69 @@
 		01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewControllerDelegate.h; sourceTree = "<group>"; };
 		01BC083613C75D3A0077CE63 /* TextSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSearchOperation.h; sourceTree = "<group>"; };
 		01BC083713C75D3A0077CE63 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
+		01C06D6519498CA90044B5FF /* DDPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPageControl.h; sourceTree = "<group>"; };
+		01C06D6619498CA90044B5FF /* DDPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPageControl.m; sourceTree = "<group>"; };
+		01C06D6719498CA90044B5FF /* DDSocialDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSocialDialog.h; sourceTree = "<group>"; };
+		01C06D6819498CA90044B5FF /* DDSocialDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSocialDialog.m; sourceTree = "<group>"; };
+		01C06D6A19498CA90044B5FF /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		01C06D6B19498CA90044B5FF /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		01C06D7719498CA90044B5FF /* FPKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKConfig.h; sourceTree = "<group>"; };
+		01C06D7819498CA90044B5FF /* FPKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKConfig.m; sourceTree = "<group>"; };
+		01C06D7A19498CA90044B5FF /* FPKGalleryFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGalleryFade.h; sourceTree = "<group>"; };
+		01C06D7B19498CA90044B5FF /* FPKGalleryFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKGalleryFade.m; sourceTree = "<group>"; };
+		01C06D7C19498CA90044B5FF /* TransitionGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionGalleryView.h; sourceTree = "<group>"; };
+		01C06D7D19498CA90044B5FF /* TransitionGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionGalleryView.m; sourceTree = "<group>"; };
+		01C06D7F19498CA90044B5FF /* FPKGallerySlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGallerySlide.h; sourceTree = "<group>"; };
+		01C06D8019498CA90044B5FF /* FPKGallerySlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKGallerySlide.m; sourceTree = "<group>"; };
+		01C06D8119498CA90044B5FF /* UIImagesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImagesScrollView.h; sourceTree = "<group>"; };
+		01C06D8219498CA90044B5FF /* UIImagesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImagesScrollView.m; sourceTree = "<group>"; };
+		01C06D8419498CA90044B5FF /* BorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderImageView.h; sourceTree = "<group>"; };
+		01C06D8519498CA90044B5FF /* BorderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderImageView.m; sourceTree = "<group>"; };
+		01C06D8619498CA90044B5FF /* FPKGalleryTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGalleryTap.h; sourceTree = "<group>"; };
+		01C06D8719498CA90044B5FF /* FPKGalleryTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKGalleryTap.m; sourceTree = "<group>"; };
+		01C06D8819498CA90044B5FF /* TransitionImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionImageView.h; sourceTree = "<group>"; };
+		01C06D8919498CA90044B5FF /* TransitionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionImageView.m; sourceTree = "<group>"; };
+		01C06D8B19498CA90044B5FF /* FPKDraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKDraggableImageView.h; sourceTree = "<group>"; };
+		01C06D8C19498CA90044B5FF /* FPKDraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKDraggableImageView.m; sourceTree = "<group>"; };
+		01C06D8D19498CA90044B5FF /* FPKImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKImage.h; sourceTree = "<group>"; };
+		01C06D8E19498CA90044B5FF /* FPKImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKImage.m; sourceTree = "<group>"; };
+		01C06D8F19498CA90044B5FF /* FPKTransitionImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKTransitionImageView.h; sourceTree = "<group>"; };
+		01C06D9019498CA90044B5FF /* FPKTransitionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKTransitionImageView.m; sourceTree = "<group>"; };
+		01C06D9219498CA90044B5FF /* FPKMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKMap.h; sourceTree = "<group>"; };
+		01C06D9319498CA90044B5FF /* FPKMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKMap.m; sourceTree = "<group>"; };
+		01C06D9419498CA90044B5FF /* FPKMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKMapAnnotation.h; sourceTree = "<group>"; };
+		01C06D9519498CA90044B5FF /* FPKMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKMapAnnotation.m; sourceTree = "<group>"; };
+		01C06D9719498CA90044B5FF /* FPKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKMessage.h; sourceTree = "<group>"; };
+		01C06D9819498CA90044B5FF /* FPKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKMessage.m; sourceTree = "<group>"; };
+		01C06D9A19498CA90044B5FF /* FPKOverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayManager.h; sourceTree = "<group>"; };
+		01C06D9B19498CA90044B5FF /* FPKOverlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKOverlayManager.m; sourceTree = "<group>"; };
+		01C06D9C19498CA90044B5FF /* FPKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKView.h; sourceTree = "<group>"; };
+		01C06D9D19498CA90044B5FF /* FPKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKWebView.h; sourceTree = "<group>"; };
+		01C06D9E19498CA90044B5FF /* FPKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKWebView.m; sourceTree = "<group>"; };
+		01C06DA019498CA90044B5FF /* FPKWebPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKWebPopup.h; sourceTree = "<group>"; };
+		01C06DA119498CA90044B5FF /* FPKWebPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKWebPopup.m; sourceTree = "<group>"; };
+		01C06DA319498CA90044B5FF /* FPKYouTube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKYouTube.h; sourceTree = "<group>"; };
+		01C06DA419498CA90044B5FF /* FPKYouTube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKYouTube.m; sourceTree = "<group>"; };
+		01C06DCA194990FB0044B5FF /* FPKPayPal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKPayPal.h; sourceTree = "<group>"; };
+		01C06DCB194990FB0044B5FF /* FPKPayPal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKPayPal.m; sourceTree = "<group>"; };
+		01C06DCC194990FB0044B5FF /* FPKPayPalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKPayPalController.h; sourceTree = "<group>"; };
+		01C06DCD194990FB0044B5FF /* FPKPayPalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKPayPalController.m; sourceTree = "<group>"; };
+		01C06DCE194990FB0044B5FF /* FPKPayPalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKPayPalItem.h; sourceTree = "<group>"; };
+		01C06DCF194990FB0044B5FF /* FPKPayPalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKPayPalItem.m; sourceTree = "<group>"; };
+		01C06DD0194990FB0044B5FF /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
+		01C06DD1194990FB0044B5FF /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
+		01C06DD61949A1E00044B5FF /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
+		01C06DD71949A1E00044B5FF /* PayPal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPal.h; sourceTree = "<group>"; };
+		01C06DD81949A1E00044B5FF /* PayPalAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAddress.h; sourceTree = "<group>"; };
+		01C06DD91949A1E00044B5FF /* PayPalAdvancedPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAdvancedPayment.h; sourceTree = "<group>"; };
+		01C06DDA1949A1E00044B5FF /* PayPalAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAmounts.h; sourceTree = "<group>"; };
+		01C06DDB1949A1E00044B5FF /* PayPalInvoiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInvoiceData.h; sourceTree = "<group>"; };
+		01C06DDC1949A1E00044B5FF /* PayPalInvoiceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInvoiceItem.h; sourceTree = "<group>"; };
+		01C06DDD1949A1E00044B5FF /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
+		01C06DDE1949A1E00044B5FF /* PayPalPreapprovalDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPreapprovalDetails.h; sourceTree = "<group>"; };
+		01C06DDF1949A1E00044B5FF /* PayPalReceiverAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverAmounts.h; sourceTree = "<group>"; };
+		01C06DE01949A1E00044B5FF /* PayPalReceiverPaymentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverPaymentDetails.h; sourceTree = "<group>"; };
+		01C06DF41949BB950044B5FF /* FPKKiosk.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FPKKiosk.xcassets; sourceTree = "<group>"; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
 		01D73BB61474385300C142FE /* Courier-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-Bold.fpkfm"; sourceTree = "<group>"; };
 		01D73BB71474385300C142FE /* Courier-BoldOblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-BoldOblique.fpkfm"; sourceTree = "<group>"; };
@@ -599,10 +656,6 @@
 		95FFFB4C14B488AE00B1CD3B /* FPKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKMainViewController.m; sourceTree = "<group>"; };
 		95FFFB4D14B488AE00B1CD3B /* OverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = OverlayManager.h; sourceTree = "<group>"; };
 		95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayManager.m; sourceTree = "<group>"; };
-		95FFFB6D14B48C3100B1CD3B /* FastPdfKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FastPdfKit.framework; sourceTree = "<group>"; };
-		95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
-		95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FPKReaderBundle.bundle; sourceTree = "<group>"; };
-		95FFFB7114B48C3100B1CD3B /* Snippets.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
 		AFFFC7171C4640458F619CE1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9E5BD61608B22E007C560A /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		FF9E5BD71608B22E007C560A /* version.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = version.png; sourceTree = "<group>"; };
@@ -634,6 +687,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C06DF11949BB000044B5FF /* libFPKReaderLib.a in Frameworks */,
 				0181A3BC15F6790200AC476F /* Security.framework in Frameworks */,
 				951E4E4113D71E8400C9FC70 /* libz.dylib in Frameworks */,
 				01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */,
@@ -648,7 +702,6 @@
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
-				011DF92617D1755B0007DEAD /* libFastPdfKit.a in Frameworks */,
 				C8F9876ED01D4B228B25ED62 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +710,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C06DEB1949B1450044B5FF /* libFPKReaderLib.a in Frameworks */,
 				0181A3BE15F6791500AC476F /* Security.framework in Frameworks */,
 				950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */,
 				950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */,
@@ -667,7 +721,6 @@
 				010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */,
 				010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */,
 				010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */,
-				01142A3B15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */,
 				F80CAF00728D4DB6BE8246CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,25 +745,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C06DE91949AFD80044B5FF /* libFPKReaderLib.a in Frameworks */,
 				954B752314B4812700503F90 /* MapKit.framework in Frameworks */,
 				954B752114B4811500503F90 /* Security.framework in Frameworks */,
 				954B751F14B4810000503F90 /* libxml2.dylib in Frameworks */,
 				954B74AF14B47F0D00503F90 /* UIKit.framework in Frameworks */,
+				01C06DE11949A1E00044B5FF /* libPayPalMPL.a in Frameworks */,
 				954B74B014B47F0D00503F90 /* Foundation.framework in Frameworks */,
 				954B74B114B47F0D00503F90 /* CoreGraphics.framework in Frameworks */,
-				95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */,
-				010FE6E515EE582100304C02 /* Common.framework in Frameworks */,
-				010FE6E615EE582200304C02 /* libPayPalMPL.a in Frameworks */,
-				010FE6E715EE582200304C02 /* FPKConfig.framework in Frameworks */,
-				010FE6E815EE582200304C02 /* FPKGalleryFade.framework in Frameworks */,
-				010FE6E915EE582200304C02 /* FPKGallerySlide.framework in Frameworks */,
-				010FE6EA15EE582200304C02 /* FPKGalleryTap.framework in Frameworks */,
-				010FE6EB15EE582200304C02 /* FPKMap.framework in Frameworks */,
-				010FE6EC15EE582200304C02 /* FPKMessage.framework in Frameworks */,
-				010FE6EE15EE582200304C02 /* FPKPayPal.framework in Frameworks */,
-				010FE6EF15EE582200304C02 /* FPKShared.framework in Frameworks */,
-				010FE6F015EE582200304C02 /* FPKWebPopup.framework in Frameworks */,
-				010FE6F115EE582200304C02 /* FPKYouTube.framework in Frameworks */,
+				7AD051D71D7E4103B977CE68 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,171 +802,6 @@
 			);
 			name = SimpleApp;
 			path = Classes/SimpleApp;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6C515EE582100304C02 /* Common.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6C615EE582100304C02 /* Common.framework */,
-				010FE6C715EE582100304C02 /* Resources */,
-			);
-			name = Common.embeddedframework;
-			path = Extensions/Common.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6C715EE582100304C02 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6C815EE582100304C02 /* libPayPalMPL.a */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		010FE6C915EE582100304C02 /* FPKConfig.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6CA15EE582100304C02 /* FPKConfig.framework */,
-				010FE6CB15EE582100304C02 /* Resources */,
-			);
-			name = FPKConfig.embeddedframework;
-			path = Extensions/FPKConfig.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6CB15EE582100304C02 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		010FE6CC15EE582100304C02 /* FPKGalleryFade.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6CD15EE582100304C02 /* FPKGalleryFade.framework */,
-			);
-			name = FPKGalleryFade.embeddedframework;
-			path = Extensions/FPKGalleryFade.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6CE15EE582100304C02 /* FPKGallerySlide.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6CF15EE582100304C02 /* FPKGallerySlide.framework */,
-				010FE6D015EE582100304C02 /* Resources */,
-			);
-			name = FPKGallerySlide.embeddedframework;
-			path = Extensions/FPKGallerySlide.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6D015EE582100304C02 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		010FE6D115EE582100304C02 /* FPKGalleryTap.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6D215EE582100304C02 /* FPKGalleryTap.framework */,
-				010FE6D315EE582100304C02 /* Resources */,
-			);
-			name = FPKGalleryTap.embeddedframework;
-			path = Extensions/FPKGalleryTap.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6D315EE582100304C02 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		010FE6D415EE582100304C02 /* FPKImage.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6D515EE582100304C02 /* Resources */,
-			);
-			name = FPKImage.embeddedframework;
-			path = Extensions/FPKImage.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6D515EE582100304C02 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		010FE6D615EE582100304C02 /* FPKMap.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6D715EE582100304C02 /* FPKMap.framework */,
-			);
-			name = FPKMap.embeddedframework;
-			path = Extensions/FPKMap.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6D815EE582100304C02 /* FPKMessage.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6D915EE582100304C02 /* FPKMessage.framework */,
-				010FE6DA15EE582100304C02 /* Resources */,
-			);
-			name = FPKMessage.embeddedframework;
-			path = Extensions/FPKMessage.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6DA15EE582100304C02 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6DB15EE582100304C02 /* fpkmessage-info.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		010FE6DC15EE582100304C02 /* FPKPayPal.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6DD15EE582100304C02 /* FPKPayPal.framework */,
-			);
-			name = FPKPayPal.embeddedframework;
-			path = Extensions/FPKPayPal.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6DE15EE582100304C02 /* FPKShared.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6DF15EE582100304C02 /* FPKShared.framework */,
-				010FE6E015EE582100304C02 /* Resources */,
-			);
-			name = FPKShared.embeddedframework;
-			path = Extensions/FPKShared.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6E015EE582100304C02 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		010FE6E115EE582100304C02 /* FPKWebPopup.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6E215EE582100304C02 /* FPKWebPopup.framework */,
-			);
-			name = FPKWebPopup.embeddedframework;
-			path = Extensions/FPKWebPopup.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		010FE6E315EE582100304C02 /* FPKYouTube.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				010FE6E415EE582100304C02 /* FPKYouTube.framework */,
-			);
-			name = FPKYouTube.embeddedframework;
-			path = Extensions/FPKYouTube.embeddedframework;
 			sourceTree = SOURCE_ROOT;
 		};
 		0123603113CC917600861EB7 /* Multimedia */ = {
@@ -1000,6 +878,7 @@
 				6FFCFA2C1356EC920028DD38 /* pause.png */,
 				95B9C57C15110E6C00411AF6 /* pause@2x.png */,
 				01884927131E8A6F0045038F /* border.png */,
+				01C06DF41949BB950044B5FF /* FPKKiosk.xcassets */,
 			);
 			name = "Suppporting Files";
 			sourceTree = "<group>";
@@ -1135,6 +1014,152 @@
 			path = TextSearch;
 			sourceTree = "<group>";
 		};
+		01C06D6419498CA90044B5FF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				01C06DD61949A1E00044B5FF /* libPayPalMPL.a */,
+				01C06DD71949A1E00044B5FF /* PayPal.h */,
+				01C06DD81949A1E00044B5FF /* PayPalAddress.h */,
+				01C06DD91949A1E00044B5FF /* PayPalAdvancedPayment.h */,
+				01C06DDA1949A1E00044B5FF /* PayPalAmounts.h */,
+				01C06DDB1949A1E00044B5FF /* PayPalInvoiceData.h */,
+				01C06DDC1949A1E00044B5FF /* PayPalInvoiceItem.h */,
+				01C06DDD1949A1E00044B5FF /* PayPalPayment.h */,
+				01C06DDE1949A1E00044B5FF /* PayPalPreapprovalDetails.h */,
+				01C06DDF1949A1E00044B5FF /* PayPalReceiverAmounts.h */,
+				01C06DE01949A1E00044B5FF /* PayPalReceiverPaymentDetails.h */,
+				01C06D6519498CA90044B5FF /* DDPageControl.h */,
+				01C06D6619498CA90044B5FF /* DDPageControl.m */,
+				01C06D6719498CA90044B5FF /* DDSocialDialog.h */,
+				01C06D6819498CA90044B5FF /* DDSocialDialog.m */,
+				01C06D6A19498CA90044B5FF /* OpenUDID.h */,
+				01C06D6B19498CA90044B5FF /* OpenUDID.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		01C06D7619498CA90044B5FF /* FPKConfig */ = {
+			isa = PBXGroup;
+			children = (
+				01C06D7719498CA90044B5FF /* FPKConfig.h */,
+				01C06D7819498CA90044B5FF /* FPKConfig.m */,
+			);
+			path = FPKConfig;
+			sourceTree = "<group>";
+		};
+		01C06D7919498CA90044B5FF /* FPKGalleryFade */ = {
+			isa = PBXGroup;
+			children = (
+				01C06D7A19498CA90044B5FF /* FPKGalleryFade.h */,
+				01C06D7B19498CA90044B5FF /* FPKGalleryFade.m */,
+				01C06D7C19498CA90044B5FF /* TransitionGalleryView.h */,
+				01C06D7D19498CA90044B5FF /* TransitionGalleryView.m */,
+			);
+			path = FPKGalleryFade;
+			sourceTree = "<group>";
+		};
+		01C06D7E19498CA90044B5FF /* FPKGallerySlide */ = {
+			isa = PBXGroup;
+			children = (
+				01C06D7F19498CA90044B5FF /* FPKGallerySlide.h */,
+				01C06D8019498CA90044B5FF /* FPKGallerySlide.m */,
+				01C06D8119498CA90044B5FF /* UIImagesScrollView.h */,
+				01C06D8219498CA90044B5FF /* UIImagesScrollView.m */,
+			);
+			path = FPKGallerySlide;
+			sourceTree = "<group>";
+		};
+		01C06D8319498CA90044B5FF /* FPKGalleryTap */ = {
+			isa = PBXGroup;
+			children = (
+				01C06D8419498CA90044B5FF /* BorderImageView.h */,
+				01C06D8519498CA90044B5FF /* BorderImageView.m */,
+				01C06D8619498CA90044B5FF /* FPKGalleryTap.h */,
+				01C06D8719498CA90044B5FF /* FPKGalleryTap.m */,
+				01C06D8819498CA90044B5FF /* TransitionImageView.h */,
+				01C06D8919498CA90044B5FF /* TransitionImageView.m */,
+			);
+			path = FPKGalleryTap;
+			sourceTree = "<group>";
+		};
+		01C06D8A19498CA90044B5FF /* FPKImage */ = {
+			isa = PBXGroup;
+			children = (
+				01C06D8B19498CA90044B5FF /* FPKDraggableImageView.h */,
+				01C06D8C19498CA90044B5FF /* FPKDraggableImageView.m */,
+				01C06D8D19498CA90044B5FF /* FPKImage.h */,
+				01C06D8E19498CA90044B5FF /* FPKImage.m */,
+				01C06D8F19498CA90044B5FF /* FPKTransitionImageView.h */,
+				01C06D9019498CA90044B5FF /* FPKTransitionImageView.m */,
+			);
+			path = FPKImage;
+			sourceTree = "<group>";
+		};
+		01C06D9119498CA90044B5FF /* FPKMap */ = {
+			isa = PBXGroup;
+			children = (
+				01C06D9219498CA90044B5FF /* FPKMap.h */,
+				01C06D9319498CA90044B5FF /* FPKMap.m */,
+				01C06D9419498CA90044B5FF /* FPKMapAnnotation.h */,
+				01C06D9519498CA90044B5FF /* FPKMapAnnotation.m */,
+			);
+			path = FPKMap;
+			sourceTree = "<group>";
+		};
+		01C06D9619498CA90044B5FF /* FPKMessage */ = {
+			isa = PBXGroup;
+			children = (
+				01C06D9719498CA90044B5FF /* FPKMessage.h */,
+				01C06D9819498CA90044B5FF /* FPKMessage.m */,
+			);
+			path = FPKMessage;
+			sourceTree = "<group>";
+		};
+		01C06D9919498CA90044B5FF /* FPKShared */ = {
+			isa = PBXGroup;
+			children = (
+				01C06D9A19498CA90044B5FF /* FPKOverlayManager.h */,
+				01C06D9B19498CA90044B5FF /* FPKOverlayManager.m */,
+				01C06D9C19498CA90044B5FF /* FPKView.h */,
+				01C06D9D19498CA90044B5FF /* FPKWebView.h */,
+				01C06D9E19498CA90044B5FF /* FPKWebView.m */,
+			);
+			path = FPKShared;
+			sourceTree = "<group>";
+		};
+		01C06D9F19498CA90044B5FF /* FPKWebPopup */ = {
+			isa = PBXGroup;
+			children = (
+				01C06DA019498CA90044B5FF /* FPKWebPopup.h */,
+				01C06DA119498CA90044B5FF /* FPKWebPopup.m */,
+			);
+			path = FPKWebPopup;
+			sourceTree = "<group>";
+		};
+		01C06DA219498CA90044B5FF /* FPKYouTube */ = {
+			isa = PBXGroup;
+			children = (
+				01C06DA319498CA90044B5FF /* FPKYouTube.h */,
+				01C06DA419498CA90044B5FF /* FPKYouTube.m */,
+			);
+			path = FPKYouTube;
+			sourceTree = "<group>";
+		};
+		01C06DC9194990FB0044B5FF /* FPKPayPal */ = {
+			isa = PBXGroup;
+			children = (
+				01C06DCA194990FB0044B5FF /* FPKPayPal.h */,
+				01C06DCB194990FB0044B5FF /* FPKPayPal.m */,
+				01C06DCC194990FB0044B5FF /* FPKPayPalController.h */,
+				01C06DCD194990FB0044B5FF /* FPKPayPalController.m */,
+				01C06DCE194990FB0044B5FF /* FPKPayPalItem.h */,
+				01C06DCF194990FB0044B5FF /* FPKPayPalItem.m */,
+				01C06DD0194990FB0044B5FF /* SuccessViewController.h */,
+				01C06DD1194990FB0044B5FF /* SuccessViewController.m */,
+			);
+			path = FPKPayPal;
+			sourceTree = "<group>";
+		};
 		01D73BB51474385300C142FE /* standard14fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1184,12 +1209,13 @@
 				011E42B81472D1510099754E /* README.md */,
 				0174666E1816B69A003E20F2 /* FastPdfKit.podspec */,
 				017465AA18154D4C003E20F2 /* podfile */,
-				01BC07DC13C756130077CE63 /* Reader */,
-				010D14D213CB002300FD6F08 /* SimpleApp */,
 				01BC080013C75B310077CE63 /* KioskApp */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				95F5A3511270A2A700F65929 /* Core */,
+				954B74CC14B47FE000503F90 /* Extensions */,
 				29B97315FDCFA39411CA2CEA /* OtherSources */,
+				01BC07DC13C756130077CE63 /* Reader */,
+				010D14D213CB002300FD6F08 /* SimpleApp */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -1263,7 +1289,6 @@
 				95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */,
 				013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */,
 				013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */,
-				954B74CC14B47FE000503F90 /* Extensions */,
 				954B74FB14B4803800503F90 /* Resources */,
 				954B74B314B47F0D00503F90 /* Supporting Files */,
 			);
@@ -1283,19 +1308,18 @@
 		954B74CC14B47FE000503F90 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				010FE6C515EE582100304C02 /* Common.embeddedframework */,
-				010FE6C915EE582100304C02 /* FPKConfig.embeddedframework */,
-				010FE6CC15EE582100304C02 /* FPKGalleryFade.embeddedframework */,
-				010FE6CE15EE582100304C02 /* FPKGallerySlide.embeddedframework */,
-				010FE6D115EE582100304C02 /* FPKGalleryTap.embeddedframework */,
-				010FE6D415EE582100304C02 /* FPKImage.embeddedframework */,
-				010FE6D615EE582100304C02 /* FPKMap.embeddedframework */,
-				010FE6D815EE582100304C02 /* FPKMessage.embeddedframework */,
-				010FE6DC15EE582100304C02 /* FPKPayPal.embeddedframework */,
-				010FE6DE15EE582100304C02 /* FPKShared.embeddedframework */,
-				010FE6E115EE582100304C02 /* FPKWebPopup.embeddedframework */,
-				010FE6E315EE582100304C02 /* FPKYouTube.embeddedframework */,
-				95FFFB6C14B48C3100B1CD3B /* FastPdfKit.embeddedframework */,
+				01C06DC9194990FB0044B5FF /* FPKPayPal */,
+				01C06D6419498CA90044B5FF /* Common */,
+				01C06D7619498CA90044B5FF /* FPKConfig */,
+				01C06D7919498CA90044B5FF /* FPKGalleryFade */,
+				01C06D7E19498CA90044B5FF /* FPKGallerySlide */,
+				01C06D8319498CA90044B5FF /* FPKGalleryTap */,
+				01C06D8A19498CA90044B5FF /* FPKImage */,
+				01C06D9119498CA90044B5FF /* FPKMap */,
+				01C06D9619498CA90044B5FF /* FPKMessage */,
+				01C06D9919498CA90044B5FF /* FPKShared */,
+				01C06D9F19498CA90044B5FF /* FPKWebPopup */,
+				01C06DA219498CA90044B5FF /* FPKYouTube */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1326,25 +1350,6 @@
 			);
 			path = Core;
 			sourceTree = SOURCE_ROOT;
-		};
-		95FFFB6C14B48C3100B1CD3B /* FastPdfKit.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				95FFFB6D14B48C3100B1CD3B /* FastPdfKit.framework */,
-				95FFFB6E14B48C3100B1CD3B /* Resources */,
-			);
-			path = FastPdfKit.embeddedframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		95FFFB6E14B48C3100B1CD3B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */,
-				95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */,
-				95FFFB7114B48C3100B1CD3B /* Snippets.txt */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -1512,6 +1517,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				01C06DF01949BAEB0044B5FF /* PBXTargetDependency */,
 				6FB9779013CC3D45007C368C /* PBXTargetDependency */,
 				6FB9772913CB6E97007C368C /* PBXTargetDependency */,
 			);
@@ -1533,6 +1539,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				01C06DED1949B14B0044B5FF /* PBXTargetDependency */,
 				6FB9772B13CB6EA3007C368C /* PBXTargetDependency */,
 			);
 			name = FPKSimpleApp;
@@ -1580,13 +1587,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 954B74CA14B47F0D00503F90 /* Build configuration list for PBXNativeTarget "Extended" */;
 			buildPhases = (
+				FB4C8F39EBC54D049E3DA52B /* Check Pods Manifest.lock */,
 				954B74A914B47F0D00503F90 /* Sources */,
 				954B74AA14B47F0D00503F90 /* Frameworks */,
 				954B74AB14B47F0D00503F90 /* Resources */,
+				D5E0902873B046B4A5508B39 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				01C06DE51949A7AB0044B5FF /* PBXTargetDependency */,
 			);
 			name = Extended;
 			productName = Extended;
@@ -1657,9 +1667,11 @@
 			files = (
 				6FB9779113CC3EA6007C368C /* FPKKioskBundle.bundle in Resources */,
 				017466A61816D87E003E20F2 /* Default-Pad-Landscape.png in Resources */,
+				01C06DE71949A8340044B5FF /* FPKReader.xcassets in Resources */,
 				6FB9779213CC3EA6007C368C /* FPKReaderBundle.bundle in Resources */,
 				017466A91816D87E003E20F2 /* Default-iPad.png in Resources */,
 				0123604313CC917600861EB7 /* AudioViewController.xib in Resources */,
+				01C06DF51949BB950044B5FF /* FPKKiosk.xcassets in Resources */,
 				0123605713CC917600861EB7 /* WebBrowser.xib in Resources */,
 				017466A71816D87E003E20F2 /* Default-iPad~ipad.png in Resources */,
 				016070DA18227F2700C8C15C /* MiniSearchViewController.xib in Resources */,
@@ -1685,11 +1697,11 @@
 				016070E01822A00800C8C15C /* MiniSearchViewController.xib in Resources */,
 				017466841816C9F9003E20F2 /* Icon114.png in Resources */,
 				9597F995125D17E400E17B47 /* iTunesArtwork in Resources */,
+				01C06DE61949A8320044B5FF /* FPKReader.xcassets in Resources */,
 				017466C91816D99A003E20F2 /* Default-iPad.png in Resources */,
 				017466831816C9F9003E20F2 /* Icon72.png in Resources */,
 				010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */,
 				017466C71816D99A003E20F2 /* Default-568h@2x.png in Resources */,
-				018FB58A18C5F5790045D297 /* FPKReader.xcassets in Resources */,
 				010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */,
 				010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */,
 				017466C81816D99A003E20F2 /* Default-Landscape~ipad.png in Resources */,
@@ -1767,14 +1779,12 @@
 				954B750314B4805100503F90 /* img2.png in Resources */,
 				954B750414B4805100503F90 /* img3.png in Resources */,
 				954B750514B4805100503F90 /* img4.png in Resources */,
+				01C06DE81949A8350044B5FF /* FPKReader.xcassets in Resources */,
 				954B750614B4805100503F90 /* sample.indd in Resources */,
 				954B750714B4805100503F90 /* sample.pdf in Resources */,
-				95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */,
-				95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */,
 				95EF544714B48EDD00910B3D /* Icon.png in Resources */,
 				95EF544814B48EDD00910B3D /* Icon72.png in Resources */,
 				95EF544914B48EDD00910B3D /* Icon114.png in Resources */,
-				010FE6ED15EE582200304C02 /* fpkmessage-info.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1923,6 +1933,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D5E0902873B046B4A5508B39 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB4C8F39EBC54D049E3DA52B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1967,21 +2007,7 @@
 				01BC081013C75B310077CE63 /* MenuViewController_Kiosk.m in Sources */,
 				01BC081113C75B310077CE63 /* BookItemView.m in Sources */,
 				01BC081213C75B310077CE63 /* XMLParser.m in Sources */,
-				01BC083B13C75D3A0077CE63 /* BookmarkViewController.m in Sources */,
-				01BC084113C75D3A0077CE63 /* MiniSearchView.m in Sources */,
-				01BC084313C75D3A0077CE63 /* NotificationFactory.m in Sources */,
-				01BC084513C75D3A0077CE63 /* SearchManager.m in Sources */,
-				01BC084713C75D3A0077CE63 /* SearchResultCellView.m in Sources */,
 				017466711816C50A003E20F2 /* main.m in Sources */,
-				01BC084913C75D3A0077CE63 /* SearchResultView.m in Sources */,
-				01BC085313C75D3A0077CE63 /* SearchViewController.m in Sources */,
-				01BC085713C75D3A0077CE63 /* TextDisplayViewController.m in Sources */,
-				01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
-				0123603F13CC917600861EB7 /* AudioViewController.m in Sources */,
-				0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
-				0123605313CC917600861EB7 /* WebBrowser.m in Sources */,
-				0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
-				0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1989,26 +2015,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				016070DC1822821F00C8C15C /* MiniSearchViewController.m in Sources */,
-				01BC083A13C75D3A0077CE63 /* BookmarkViewController.m in Sources */,
-				01BC084013C75D3A0077CE63 /* MiniSearchView.m in Sources */,
-				01BC084213C75D3A0077CE63 /* NotificationFactory.m in Sources */,
-				016070DB182281F400C8C15C /* ReaderViewController.m in Sources */,
-				016070DD1822869100C8C15C /* AudioViewController.m in Sources */,
-				01BC084413C75D3A0077CE63 /* SearchManager.m in Sources */,
-				01BC084613C75D3A0077CE63 /* SearchResultCellView.m in Sources */,
-				01BC084813C75D3A0077CE63 /* SearchResultView.m in Sources */,
-				01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */,
-				01BC085613C75D3A0077CE63 /* TextDisplayViewController.m in Sources */,
-				01BC085813C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
 				010D14DE13CB002300FD6F08 /* BasicLauncherController.m in Sources */,
 				010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */,
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
 				956A056F14039F38003AE44D /* Drawable.m in Sources */,
-				016070DE1822869100C8C15C /* MFAudioPlayerViewImpl.m in Sources */,
 				956A057014039F38003AE44D /* OverlayManager.m in Sources */,
-				0161F22D141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
-				016070DF1822869100C8C15C /* WebBrowser.m in Sources */,
 				017466741816C7FB003E20F2 /* main.m in Sources */,
 				01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */,
 			);
@@ -2033,9 +2044,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				954B74B914B47F0D00503F90 /* main.m in Sources */,
+				01C06DD3194990FB0044B5FF /* FPKPayPalController.m in Sources */,
+				01C06DAD19498CAA0044B5FF /* UIImagesScrollView.m in Sources */,
+				01C06DB719498CAA0044B5FF /* FPKOverlayManager.m in Sources */,
+				01C06DB919498CAA0044B5FF /* FPKWebPopup.m in Sources */,
+				01C06DBB19498F6A0044B5FF /* FPKYouTube.m in Sources */,
+				01C06DA519498CA90044B5FF /* DDPageControl.m in Sources */,
+				01C06DB019498CAA0044B5FF /* TransitionImageView.m in Sources */,
+				01C06DB219498CAA0044B5FF /* FPKImage.m in Sources */,
+				01C06DB619498CAA0044B5FF /* FPKMessage.m in Sources */,
+				01C06DD5194990FB0044B5FF /* SuccessViewController.m in Sources */,
+				01C06DB319498CAA0044B5FF /* FPKTransitionImageView.m in Sources */,
+				01C06DAA19498CAA0044B5FF /* FPKGalleryFade.m in Sources */,
 				954B74BD14B47F0D00503F90 /* FPKAppDelegate.m in Sources */,
+				01C06DD4194990FB0044B5FF /* FPKPayPalItem.m in Sources */,
+				01C06DA819498CAA0044B5FF /* OpenUDID.m in Sources */,
 				95FFFB5014B488AE00B1CD3B /* FPKMainViewController.m in Sources */,
+				01C06DAB19498CAA0044B5FF /* TransitionGalleryView.m in Sources */,
+				01C06DAF19498CAA0044B5FF /* FPKGalleryTap.m in Sources */,
+				01C06DB119498CAA0044B5FF /* FPKDraggableImageView.m in Sources */,
+				01C06DB819498CAA0044B5FF /* FPKWebView.m in Sources */,
+				01C06DA919498CAA0044B5FF /* FPKConfig.m in Sources */,
+				01C06DA619498CA90044B5FF /* DDSocialDialog.m in Sources */,
+				01C06DD2194990FB0044B5FF /* FPKPayPal.m in Sources */,
+				01C06DAC19498CAA0044B5FF /* FPKGallerySlide.m in Sources */,
+				01C06DAE19498CAA0044B5FF /* BorderImageView.m in Sources */,
 				95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */,
+				01C06DB419498CAA0044B5FF /* FPKMap.m in Sources */,
+				01C06DB519498CAA0044B5FF /* FPKMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2064,6 +2100,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		01C06DE51949A7AB0044B5FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01598DA513CAE783007344EE /* FPKReaderLib */;
+			targetProxy = 01C06DE41949A7AB0044B5FF /* PBXContainerItemProxy */;
+		};
+		01C06DED1949B14B0044B5FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01598DA513CAE783007344EE /* FPKReaderLib */;
+			targetProxy = 01C06DEC1949B14B0044B5FF /* PBXContainerItemProxy */;
+		};
+		01C06DF01949BAEB0044B5FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01598DA513CAE783007344EE /* FPKReaderLib */;
+			targetProxy = 01C06DEF1949BAEB0044B5FF /* PBXContainerItemProxy */;
+		};
 		6FB9772913CB6E97007C368C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6FB9770813CB6E76007C368C /* FPKKioskBundle */;
@@ -2103,6 +2154,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/FastPDFKitReader.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2130,6 +2182,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/FastPDFKitReader.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2226,7 +2279,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/KioskApp/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Core\"";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				PROVISIONING_PROFILE = "";
@@ -2257,7 +2310,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/KioskApp/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Core\"";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				PROVISIONING_PROFILE = "";
@@ -2287,7 +2340,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Classes/SimpleApp/FastPDFKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Core\"";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -2315,7 +2368,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Classes/SimpleApp/FastPDFKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Core\"";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -2435,27 +2488,14 @@
 		};
 		954B74C714B47F0D00503F90 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
+			baseConfigurationReference = 1FC2C511936343378D8B9A1E /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/Common.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKConfig.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKGalleryFade.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKGallerySlide.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKGalleryTap.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKMap.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKMessage.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKPayPal.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKShared.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKWebPopup.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKYouTube.embeddedframework\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -2474,7 +2514,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
+					"$(SRCROOT)/Extensions/Common",
+					"$(PROJECT_DIR)/Extensions/Common",
+					"$(PROJECT_DIR)/Core",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2507,6 +2549,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALIDATE_PRODUCT = NO;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2514,27 +2557,14 @@
 		};
 		954B74C814B47F0D00503F90 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
+			baseConfigurationReference = 1FC2C511936343378D8B9A1E /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/Common.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKConfig.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKGalleryFade.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKGallerySlide.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKGalleryTap.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKMap.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKMessage.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKPayPal.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKShared.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKWebPopup.embeddedframework\"",
-					"\"$(SRCROOT)/Extensions/FPKYouTube.embeddedframework\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2546,7 +2576,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
+					"$(SRCROOT)/Extensions/Common",
+					"$(PROJECT_DIR)/Extensions/Common",
+					"$(PROJECT_DIR)/Core",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2677,6 +2709,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Core\"";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				SDKROOT = iphoneos;
@@ -2705,6 +2738,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Core\"";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Sample";

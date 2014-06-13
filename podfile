@@ -1,6 +1,6 @@
 platform :ios, '6.0'
 
-link_with ['FPKSimpleApp','FPKKioskApp']
+link_with ['FPKKioskApp','Extended','FPKSimpleApp']
 
 pod 'AFNetworking', '~> 2.0'
 pod 'ZipArchive','~> 1.2.0'

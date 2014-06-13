@@ -18,3 +18,4 @@ FastPdfKit.xcworkspace/
 Podfile.lock
 Pods/
 FastPdfKit.xcodeproj/project.xcworkspace/xcshareddata/
+Bundle/*

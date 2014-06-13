@@ -11,14 +11,6 @@
 
 @implementation TextDisplayViewController
 
-@synthesize textView, activityIndicatorView;
-@synthesize text;
-@synthesize delegate;
-@synthesize documentManager;
-
-#pragma mark -
-#pragma mark Text extraction in background
-
 -(void)updateTextToTextDisplayView:(NSString *)someText {
 	
 	// We got the text, now we can send it to the textView.
@@ -26,13 +18,11 @@
 	self.text = someText;
 	
 	// Stop the activity indictor.
-	[activityIndicatorView stopAnimating];
+	[self.activityIndicatorView stopAnimating];
 	
 }
 
 -(void)selectorWholeTextForPage:(NSNumber *)page {
-	
-	// This is going to be run in the background, so we need to create an autorelease pool for the thread.
 	
 	@autoreleasepool {
 	
@@ -40,24 +30,21 @@
 	// If you want to use a different profile pass a reference to a MFProfile.
     
     // Use -(void)test_wholeTextForPage:(NSUInteger)page if you want to test the new text extraction engine instead.
-        NSString * someText = [[documentManager wholeTextForPage:[page unsignedIntValue]]copy];
+        NSString * text = [[self.documentManager wholeTextForPage:[page unsignedIntValue]]copy];
 	
-	// NSString *someText = [[documentManager wholeTextForPage:[page intValue] withProfile:NULL]copy];
-	
-	
-	// Call back performed on the main thread.
-	[self performSelectorOnMainThread:@selector(updateTextToTextDisplayView:) withObject:someText  waitUntilDone:YES];
-	
-	// Cleanup.
+	    // Call back performed on the main thread.
+        id __weak this = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [this updateTextToTextDisplayView:text];
+        });
 	}
-	
 }
 
 -(void)clearText {
-	
+    
 	// Clear both the view and the saved text.
-	self.text = nil;
-	textView.text = nil;	
+	self.text = @"";
+	self.textView.text = @"";
 }
 
 -(void)updateWithTextOfPage:(NSUInteger)page {
@@ -66,56 +53,42 @@
 	
 	[self clearText];
 	
-	[activityIndicatorView startAnimating];
+	[self.activityIndicatorView startAnimating];
 	
-	[self performSelectorInBackground:@selector(selectorWholeTextForPage:) withObject:[NSNumber numberWithInteger:page]];
+    id __weak this = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        [this selectorWholeTextForPage:@(page)];
+    });
 }
 
-#pragma mark -
-#pragma mark Actions
+#pragma mark - Actions
 
 -(IBAction)actionBack:(id)sender {
 	[[self delegate] dismissTextDisplayViewController:self];
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     
 	// Set up the view accordingly to the saved text (if any).
 	[super viewDidLoad];
-	[textView setText:text];
+    
+    // Restore the text if required.
+    if(self.text.length > 0)
+    {
+        [self.textView setText:self.text];
+    }
 }
 
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
+-(BOOL)shouldAutorotate
+{
     return YES;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
 }
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	self.activityIndicatorView = nil;
-	
-	self.text = self.textView.text;
-	self.textView = nil;
-}
-
-
-- (void)dealloc {
-	
-	delegate = nil;
-	
-}
-
 
 @end

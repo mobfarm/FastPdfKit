@@ -27,8 +27,9 @@
         
         if(![self isCancelled])
         {
-            if([delegate respondsToSelector:@selector(handleSearchResult:)])
-                [(NSObject *)delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
+            SEL selector = NSSelectorFromString(@"handleSearchResult:");
+            if([delegate respondsToSelector:selector])
+                [(NSObject *)delegate performSelectorOnMainThread:selector withObject:searchResult waitUntilDone:YES];
         }
     }
 }

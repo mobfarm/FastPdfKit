@@ -83,7 +83,6 @@
     id __weak delegate;
 }
 
-
 -(void)switchToMiniSearchView:(MFTextItem *)index;
 -(void)dismissMiniSearchView;
 -(void)revertToFullSearchView;

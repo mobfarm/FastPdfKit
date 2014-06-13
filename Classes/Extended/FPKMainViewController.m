@@ -4,7 +4,8 @@
 //
 
 #import "FPKMainViewController.h"
-#import <FastPdfKit/ReaderViewController.h>
+#import "ReaderViewController.h"
+#import "MFDocumentManager.h"
 #import "OverlayManager.h"
 
 @implementation FPKMainViewController
@@ -38,7 +39,7 @@
      OverlayManager *_overlayManager = [[[OverlayManager alloc] initWithExtensions:extensions] autorelease];
      */
     
-    OverlayManager *_overlayManager = [[[OverlayManager alloc] init] autorelease];
+    OverlayManager *_overlayManager = [[OverlayManager alloc] init];
 
     /** Add the FPKOverlayManager as OverlayViewDataSource to the ReaderViewController */
     [pdfViewController addOverlayViewDataSource:_overlayManager];
@@ -51,12 +52,11 @@
     
 	/** Present the pdf on screen in a modal view */
     [pdfViewController setDismissBlock:^{
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
-    [self presentModalViewController:pdfViewController animated:YES]; 
+    [self presentViewController:pdfViewController animated:YES completion:nil];
     
     /** Release the pdf controller*/
-    [pdfViewController release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

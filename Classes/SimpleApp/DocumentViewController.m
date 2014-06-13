@@ -652,7 +652,7 @@
 	//thumbPage = pageNumber;
 	
 	// Update the label.
-	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
+	[pageLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)pageNumber,(unsigned long)[[self document]numberOfPages]]];
 	
 }
 
@@ -746,7 +746,7 @@
 //	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 //	in this callback.
 	
-	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
+	[pageLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)page,(unsigned long)[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
@@ -1074,7 +1074,7 @@
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aLabel setBackgroundColor:[UIColor clearColor]];
 		[aLabel setFont:font];
-		[aLabel setText:[NSString stringWithFormat:@"%u/%u",[self page],[[self document]numberOfPages]]];
+		[aLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)[self page],(unsigned long)[[self document]numberOfPages]]];
 		[aLabel setTextAlignment:NSTextAlignmentCenter];
 		[self setPageLabel:aLabel];
 		[[self view]addSubview:aLabel];

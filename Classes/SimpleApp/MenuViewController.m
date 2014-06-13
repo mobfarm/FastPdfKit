@@ -157,7 +157,7 @@
 
 -(void)setLinkedDocument:(NSString *)documentName withPage:(NSUInteger)destinationPage orDestinationName:(NSString *)destinationName{
     
-    NSArray *params = [NSArray arrayWithObjects:documentName,destinationName,[NSNumber numberWithInt:destinationPage], nil];
+    NSArray *params = [NSArray arrayWithObjects:documentName,destinationName,[NSNumber numberWithInteger:destinationPage], nil];
     [self performSelector:@selector(openDocumentWithParams:) withObject:params afterDelay:0.5];
 }
 
