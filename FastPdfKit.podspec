@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name  = 'FastPdfKit'
-    s.version = '4.5.2'
+    s.version = '4.5.4'
     s.platform = :ios, '6.0'
     s.homepage = 'http://www.fastpdfkit.com'
     s.authors = 'MobFarm'
