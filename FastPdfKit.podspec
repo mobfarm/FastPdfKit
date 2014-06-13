@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name  = 'FastPdfKit'
-    s.version = '4.5.4'
+    s.version = '4.5.5'
     s.platform = :ios, '6.0'
     s.homepage = 'http://www.fastpdfkit.com'
     s.authors = 'MobFarm'
@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
     
     s.subspec 'Extensions' do |e|
         e.source_files = 'Extensions/**/*.{h,m}'
-        r.dependency 'FastPdfKit/Reader'
+        e.dependency 'FastPdfKit/Reader'
     end
 end
