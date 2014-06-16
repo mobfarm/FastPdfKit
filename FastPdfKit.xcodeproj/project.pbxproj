@@ -181,11 +181,6 @@
 		01C06DB819498CAA0044B5FF /* FPKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06D9E19498CA90044B5FF /* FPKWebView.m */; };
 		01C06DB919498CAA0044B5FF /* FPKWebPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DA119498CA90044B5FF /* FPKWebPopup.m */; };
 		01C06DBB19498F6A0044B5FF /* FPKYouTube.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DA419498CA90044B5FF /* FPKYouTube.m */; };
-		01C06DD2194990FB0044B5FF /* FPKPayPal.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DCB194990FB0044B5FF /* FPKPayPal.m */; };
-		01C06DD3194990FB0044B5FF /* FPKPayPalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DCD194990FB0044B5FF /* FPKPayPalController.m */; };
-		01C06DD4194990FB0044B5FF /* FPKPayPalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DCF194990FB0044B5FF /* FPKPayPalItem.m */; };
-		01C06DD5194990FB0044B5FF /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C06DD1194990FB0044B5FF /* SuccessViewController.m */; };
-		01C06DE11949A1E00044B5FF /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C06DD61949A1E00044B5FF /* libPayPalMPL.a */; };
 		01C06DE61949A8320044B5FF /* FPKReader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018FB58918C5F5790045D297 /* FPKReader.xcassets */; };
 		01C06DE71949A8340044B5FF /* FPKReader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018FB58918C5F5790045D297 /* FPKReader.xcassets */; };
 		01C06DE81949A8350044B5FF /* FPKReader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018FB58918C5F5790045D297 /* FPKReader.xcassets */; };
@@ -549,25 +544,6 @@
 		01C06DA119498CA90044B5FF /* FPKWebPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKWebPopup.m; sourceTree = "<group>"; };
 		01C06DA319498CA90044B5FF /* FPKYouTube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKYouTube.h; sourceTree = "<group>"; };
 		01C06DA419498CA90044B5FF /* FPKYouTube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKYouTube.m; sourceTree = "<group>"; };
-		01C06DCA194990FB0044B5FF /* FPKPayPal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKPayPal.h; sourceTree = "<group>"; };
-		01C06DCB194990FB0044B5FF /* FPKPayPal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKPayPal.m; sourceTree = "<group>"; };
-		01C06DCC194990FB0044B5FF /* FPKPayPalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKPayPalController.h; sourceTree = "<group>"; };
-		01C06DCD194990FB0044B5FF /* FPKPayPalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKPayPalController.m; sourceTree = "<group>"; };
-		01C06DCE194990FB0044B5FF /* FPKPayPalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKPayPalItem.h; sourceTree = "<group>"; };
-		01C06DCF194990FB0044B5FF /* FPKPayPalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKPayPalItem.m; sourceTree = "<group>"; };
-		01C06DD0194990FB0044B5FF /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
-		01C06DD1194990FB0044B5FF /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
-		01C06DD61949A1E00044B5FF /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
-		01C06DD71949A1E00044B5FF /* PayPal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPal.h; sourceTree = "<group>"; };
-		01C06DD81949A1E00044B5FF /* PayPalAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAddress.h; sourceTree = "<group>"; };
-		01C06DD91949A1E00044B5FF /* PayPalAdvancedPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAdvancedPayment.h; sourceTree = "<group>"; };
-		01C06DDA1949A1E00044B5FF /* PayPalAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAmounts.h; sourceTree = "<group>"; };
-		01C06DDB1949A1E00044B5FF /* PayPalInvoiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInvoiceData.h; sourceTree = "<group>"; };
-		01C06DDC1949A1E00044B5FF /* PayPalInvoiceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInvoiceItem.h; sourceTree = "<group>"; };
-		01C06DDD1949A1E00044B5FF /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
-		01C06DDE1949A1E00044B5FF /* PayPalPreapprovalDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPreapprovalDetails.h; sourceTree = "<group>"; };
-		01C06DDF1949A1E00044B5FF /* PayPalReceiverAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverAmounts.h; sourceTree = "<group>"; };
-		01C06DE01949A1E00044B5FF /* PayPalReceiverPaymentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverPaymentDetails.h; sourceTree = "<group>"; };
 		01C06DF41949BB950044B5FF /* FPKKiosk.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FPKKiosk.xcassets; sourceTree = "<group>"; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
 		01D73BB61474385300C142FE /* Courier-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-Bold.fpkfm"; sourceTree = "<group>"; };
@@ -752,7 +728,6 @@
 				954B752114B4811500503F90 /* Security.framework in Frameworks */,
 				954B751F14B4810000503F90 /* libxml2.dylib in Frameworks */,
 				954B74AF14B47F0D00503F90 /* UIKit.framework in Frameworks */,
-				01C06DE11949A1E00044B5FF /* libPayPalMPL.a in Frameworks */,
 				954B74B014B47F0D00503F90 /* Foundation.framework in Frameworks */,
 				954B74B114B47F0D00503F90 /* CoreGraphics.framework in Frameworks */,
 				7AD051D71D7E4103B977CE68 /* libPods.a in Frameworks */,
@@ -1020,17 +995,6 @@
 		01C06D6419498CA90044B5FF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				01C06DD61949A1E00044B5FF /* libPayPalMPL.a */,
-				01C06DD71949A1E00044B5FF /* PayPal.h */,
-				01C06DD81949A1E00044B5FF /* PayPalAddress.h */,
-				01C06DD91949A1E00044B5FF /* PayPalAdvancedPayment.h */,
-				01C06DDA1949A1E00044B5FF /* PayPalAmounts.h */,
-				01C06DDB1949A1E00044B5FF /* PayPalInvoiceData.h */,
-				01C06DDC1949A1E00044B5FF /* PayPalInvoiceItem.h */,
-				01C06DDD1949A1E00044B5FF /* PayPalPayment.h */,
-				01C06DDE1949A1E00044B5FF /* PayPalPreapprovalDetails.h */,
-				01C06DDF1949A1E00044B5FF /* PayPalReceiverAmounts.h */,
-				01C06DE01949A1E00044B5FF /* PayPalReceiverPaymentDetails.h */,
 				01C06D6519498CA90044B5FF /* DDPageControl.h */,
 				01C06D6619498CA90044B5FF /* DDPageControl.m */,
 				01C06D6719498CA90044B5FF /* DDSocialDialog.h */,
@@ -1146,21 +1110,6 @@
 				01C06DA419498CA90044B5FF /* FPKYouTube.m */,
 			);
 			path = FPKYouTube;
-			sourceTree = "<group>";
-		};
-		01C06DC9194990FB0044B5FF /* FPKPayPal */ = {
-			isa = PBXGroup;
-			children = (
-				01C06DCA194990FB0044B5FF /* FPKPayPal.h */,
-				01C06DCB194990FB0044B5FF /* FPKPayPal.m */,
-				01C06DCC194990FB0044B5FF /* FPKPayPalController.h */,
-				01C06DCD194990FB0044B5FF /* FPKPayPalController.m */,
-				01C06DCE194990FB0044B5FF /* FPKPayPalItem.h */,
-				01C06DCF194990FB0044B5FF /* FPKPayPalItem.m */,
-				01C06DD0194990FB0044B5FF /* SuccessViewController.h */,
-				01C06DD1194990FB0044B5FF /* SuccessViewController.m */,
-			);
-			path = FPKPayPal;
 			sourceTree = "<group>";
 		};
 		01D73BB51474385300C142FE /* standard14fonts */ = {
@@ -1311,7 +1260,6 @@
 		954B74CC14B47FE000503F90 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				01C06DC9194990FB0044B5FF /* FPKPayPal */,
 				01C06D6419498CA90044B5FF /* Common */,
 				01C06D7619498CA90044B5FF /* FPKConfig */,
 				01C06D7919498CA90044B5FF /* FPKGalleryFade */,
@@ -2048,7 +1996,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				954B74B914B47F0D00503F90 /* main.m in Sources */,
-				01C06DD3194990FB0044B5FF /* FPKPayPalController.m in Sources */,
 				01C06DAD19498CAA0044B5FF /* UIImagesScrollView.m in Sources */,
 				01C06DB719498CAA0044B5FF /* FPKOverlayManager.m in Sources */,
 				01C06DB919498CAA0044B5FF /* FPKWebPopup.m in Sources */,
@@ -2057,11 +2004,9 @@
 				01C06DB019498CAA0044B5FF /* TransitionImageView.m in Sources */,
 				01C06DB219498CAA0044B5FF /* FPKImage.m in Sources */,
 				01C06DB619498CAA0044B5FF /* FPKMessage.m in Sources */,
-				01C06DD5194990FB0044B5FF /* SuccessViewController.m in Sources */,
 				01C06DB319498CAA0044B5FF /* FPKTransitionImageView.m in Sources */,
 				01C06DAA19498CAA0044B5FF /* FPKGalleryFade.m in Sources */,
 				954B74BD14B47F0D00503F90 /* FPKAppDelegate.m in Sources */,
-				01C06DD4194990FB0044B5FF /* FPKPayPalItem.m in Sources */,
 				01C06DA819498CAA0044B5FF /* OpenUDID.m in Sources */,
 				95FFFB5014B488AE00B1CD3B /* FPKMainViewController.m in Sources */,
 				01C06DAB19498CAA0044B5FF /* TransitionGalleryView.m in Sources */,
@@ -2070,7 +2015,6 @@
 				01C06DB819498CAA0044B5FF /* FPKWebView.m in Sources */,
 				01C06DA919498CAA0044B5FF /* FPKConfig.m in Sources */,
 				01C06DA619498CA90044B5FF /* DDSocialDialog.m in Sources */,
-				01C06DD2194990FB0044B5FF /* FPKPayPal.m in Sources */,
 				01C06DAC19498CAA0044B5FF /* FPKGallerySlide.m in Sources */,
 				01C06DAE19498CAA0044B5FF /* BorderImageView.m in Sources */,
 				95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */,

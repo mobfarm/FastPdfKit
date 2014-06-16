@@ -40,6 +40,7 @@
 #define kOpenUDIDErrorCompromised   2
 
 @interface OpenUDID : NSObject {
+    
 }
 + (NSString*) value;
 + (NSString*) valueWithError:(NSError**)error;

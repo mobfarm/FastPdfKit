@@ -65,6 +65,196 @@
     return [documentViewController.view viewWithTag:tag];
 }
 
++(NSDictionary *)paramsForAltURI:(NSString *)uri
+{
+    NSMutableDictionary * parameters = [NSMutableDictionary new];
+    
+    NSScanner * scanner = [NSScanner scannerWithString:uri];
+    scanner.charactersToBeSkipped = [NSCharacterSet characterSetWithCharactersInString:@"[]"];
+    
+    if([uri rangeOfString:@"["].location!=NSNotFound)
+    {
+        NSString * __autoreleasing params = nil;
+        [scanner scanUpToString:@"]" intoString:&params];
+        
+        NSArray * paramsComponents = [params componentsSeparatedByCharactersInSet:[self alternateParametersSeparatorsCharacterSet]];
+        if(paramsComponents.count % 2 == 0)
+        {
+            for(int i = 0; i < paramsComponents.count; i+=2)
+            {
+                parameters[paramsComponents[i]] = paramsComponents[i+1];
+            }
+        }
+    }
+    
+    // Resource
+    NSString * __autoreleasing resource = nil;
+    [scanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&resource];
+    parameters[@"resource"] = resource;
+    
+    return parameters;
+}
+
++(NSMutableDictionary *)alternateParamsDictionaryWithURI:(NSString *)uri
+{
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    NSMutableDictionary *parameters = [NSMutableDictionary new];
+    
+    NSArray *uriComponents = [uri componentsSeparatedByString:@"://"];
+    
+	if(uriComponents.count > 0)
+    {
+        NSString *prefix = [uriComponents objectAtIndex:0];
+        
+        // 1. Prefix
+        dic[@"prefix"] = prefix;
+        
+        if(uriComponents.count > 1)
+        {
+            NSString * otherThanPrefixString = uriComponents[1];
+            
+            parameters[@"load"] = @YES; // By default the annotations are loaded at startup
+            
+            NSScanner * scanner = [NSScanner scannerWithString:otherThanPrefixString];
+            scanner.charactersToBeSkipped = [NSCharacterSet characterSetWithCharactersInString:@"[]"];
+            
+            NSString * __autoreleasing paramString = nil;
+            [scanner scanUpToString:@"]" intoString:&paramString];
+            
+            NSCharacterSet * parametersSeparators = [FPKOverlayManager alternateParametersSeparatorsCharacterSet];
+            NSArray * paramComponents = [paramString componentsSeparatedByCharactersInSet:parametersSeparators];
+            
+            if(paramComponents.count % 2 == 0)
+            {
+                for(int i = 0; i < paramComponents.count; i+=2)
+                {
+                    NSString * paramName = paramComponents[i];
+                    NSString * paramValue = paramComponents[i+1];
+                    parameters[paramName] = paramValue;
+                }
+            }
+            
+            NSString * __autoreleasing path = nil;
+            [scanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&path];
+            dic[@"path"] = path;
+            
+            NSString * resource = nil;
+            parameters[@"resource"] = resource;
+            
+            dic[@"params"] = parameters;
+        }
+    }
+    
+    return dic;
+}
+
++(NSMutableDictionary *)paramsDictionaryWithURI:(NSString *)uri
+{
+    
+    /*
+     Let's take the following annotation URI
+    map://maps.google.com/maps?ll=41.889811,12.492088&spn=0.009073,0.01031&padding=2.0
+    as example.
+     */
+    
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    NSMutableDictionary *parameters = [NSMutableDictionary new];
+
+    /*
+     1. We split the uri in prefix and path. Prefix is going to be 'map' while
+     'maps.google.com/maps...' is the path.
+     */
+    
+    NSArray *uriComponents = [uri componentsSeparatedByString:@"://"];
+    
+	if(uriComponents.count > 0)
+    {
+        /*
+         2. Store the 'map' prefix.
+        */
+        
+        NSString *uriType = [uriComponents objectAtIndex:0];
+        
+        dic[@"prefix"] = uriType;
+        
+        if(uriComponents.count > 1)
+        {
+            
+            /* 
+             3. Store the whole path, including the parameters. The path might
+             include parameter required by the remote service to work. It will
+             ignore our custom params.
+            */
+            
+            NSString *path = [uriComponents objectAtIndex:1];
+            
+            dic[@"path"] = path;
+            
+            parameters[@"load"] = @YES; // By default the annotations are loaded at startup
+            
+            /*
+             4. Separate the parameters from the resource ('map.google.com/maps').
+             Store the resource and then process the parameters.
+            */
+            
+            NSArray * pathComponents = [path componentsSeparatedByString:@"?"];
+            
+            if(pathComponents.count > 0)
+            {
+                parameters[@"resource"] = pathComponents[0];
+            }
+            
+            if(pathComponents.count == 2)
+            {
+                /*
+                 5. Parameters are <name>=<value> pairs separated by commas, so 
+                 split the params using '=' and ',' as separators.
+                 */
+                
+                NSCharacterSet * parametersSeparators = [FPKOverlayManager defaultParametersSeparatorsCharacterSet];
+                
+                NSArray * paramComponents = [pathComponents[1] componentsSeparatedByCharactersInSet:parametersSeparators];
+                
+                if(paramComponents.count % 2 == 0) // We should get an even number of components.
+                {
+                    for(int i = 0; i < paramComponents.count; i+=2)
+                    {
+                        NSString * paramName = paramComponents[i];
+                        NSString * paramValue = paramComponents[i+1];
+                        parameters[paramName] = paramValue;
+                    }
+                }
+            }
+            
+            dic[@"params"] = parameters;
+        }
+    }
+    
+    return dic;
+}
+
++(NSCharacterSet *)defaultParametersSeparatorsCharacterSet
+{
+    static NSCharacterSet * set = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        set = [NSCharacterSet characterSetWithCharactersInString:@",="];
+    });
+    return set;
+}
+
++(NSCharacterSet *)alternateParametersSeparatorsCharacterSet
+{
+    static NSCharacterSet * set = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        set = [NSCharacterSet characterSetWithCharactersInString:@":,;"];
+    });
+    return set;
+}
+
+
+
 - (UIView *)showAnnotationForOverlay:(BOOL)load
                             withRect:(CGRect)rect
                               andUri:(NSString *)uri
@@ -72,8 +262,10 @@
 {
     // NSLog(@"Uri: %@", uri);
     
-    NSMutableDictionary * dic = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary * dic = [FPKOverlayManager paramsDictionaryWithURI:uri];
     
+    dic[@"load"] = @(load);
+                                 
     /** 
         Set the supported extensions array when you instantiate your FPKOverlayManager subclass
         [self setExtensions:[[NSArray alloc] initWithObjects:@"FPKYouTube", nil]];
@@ -83,61 +275,14 @@
         [self setExtensions:[NSArray new]];
     }
     
-    NSArray *arrayParameter = nil;
-	NSString *uriType = nil;
-    NSString *uriResource = nil;
-    NSArray *arrayAfterResource = nil;
-    NSArray *arrayArguments = nil;
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    NSString * uriType = dic[@"prefix"];
     
-    UIView *retVal = nil;
-    
-    arrayParameter = [uri componentsSeparatedByString:@"://"];
-	if([arrayParameter count] > 0){
+    NSString *class = nil;
         
-        uriType = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:0]];
-        [dic setObject:uriType forKey:@"prefix"];
-        [dic setObject:[NSNumber numberWithBool:load] forKey:@"load"];
-        
-        // NSLog(@"URI Type %@", uriType);
-        
-        if([arrayParameter count] > 1){
-            uriResource = [NSString stringWithFormat:@"%@", [arrayParameter objectAtIndex:1]];
-            [dic setObject:uriResource forKey:@"path"];
-            
-            // NSLog(@"Uri Resource: %@", uriResource);
-
-            // Set default parameters
-            [parameters setObject:[NSNumber numberWithBool:YES] forKey:@"load"]; // By default the annotations are loaded at startup
-            
-            arrayAfterResource = [uriResource componentsSeparatedByString:@"?"];
-            if([arrayAfterResource count] > 0)
-                [parameters setObject:[arrayAfterResource objectAtIndex:0] forKey:@"resource"];
-            if([arrayAfterResource count] == 2){
-                arrayArguments = [[arrayAfterResource objectAtIndex:1] componentsSeparatedByString:@"&"];
-                                
-                for (NSString *param in arrayArguments) {
-                    NSArray *keyAndObject = [param componentsSeparatedByString:@"="];
-                    if ([keyAndObject count] == 2) {
-                        [parameters setObject:[[keyAndObject objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] forKey:[keyAndObject objectAtIndex:0]];
-                        // NSLog(@"%@ = %@", [keyAndObject objectAtIndex:0], [parameters objectForKey:[keyAndObject objectAtIndex:0]]);
-                    }
-                }    
-            }
-            if ([parameters objectForKey:@"padding"]) {
-                // NSLog(@"Rect: %@", NSStringFromCGRect(rect));
-                // rect = CGRectOffset(rect, -[[parameters objectForKey:@"padding"] floatValue], -[[parameters objectForKey:@"padding"] floatValue]);
-                rect = CGRectMake(rect.origin.x + [[parameters objectForKey:@"padding"] floatValue], rect.origin.y + [[parameters objectForKey:@"padding"] floatValue], rect.size.width - 2*[[parameters objectForKey:@"padding"] floatValue], rect.size.height - 2*[[parameters objectForKey:@"padding"] floatValue]);
-                // NSLog(@"Rect: %@", NSStringFromCGRect(rect));
-            }
-            
-            [dic setObject:parameters forKey:@"params"];
-        } 
-         
-        NSString *class = nil;
-        
-        if(_extensions && [_extensions count] > 0){
-            for(NSString *extension in _extensions){
+        if(_extensions && [_extensions count] > 0)
+        {
+            for(NSString *extension in _extensions)
+            {
                 
                 Class classType = NSClassFromString(extension);
                 
@@ -147,15 +292,32 @@
                 }
             } 
         }
+    
+    
+    NSDictionary * parameters = dic[@"params"];
+    
+        BOOL loadByParam = [parameters[@"load"] boolValue];
+    
+
+    if (parameters[@"padding"])
+    {
+        CGFloat padding = [parameters[@"padding"] floatValue];
+        CGFloat doublePadding = padding * 2;
         
-        if (class && ((load && [[parameters objectForKey:@"load"] boolValue]) || !load)){
+        rect = CGRectMake(rect.origin.x + padding, rect.origin.y + padding, rect.size.width - doublePadding, rect.size.height - doublePadding);
+    }
+    
+    UIView * retVal = nil;
+    
+        if (class && ((load && loadByParam) || !load))
+        {
             UIView *aView = [(UIView <FPKView> *)[NSClassFromString(class) alloc] initWithParams:dic andFrame:[documentViewController convertRect:rect toViewFromPage:page] from:self];
             retVal = aView;
-            // [aView release];
-        } else {
+        }
+        else
+        {
             NSLog(@"FPKOverlayManager - No Extension found that supports %@", uriType);
         }
-    }
     
     return retVal;
 }

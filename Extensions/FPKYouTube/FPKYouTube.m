@@ -10,41 +10,109 @@
 #pragma mark -
 #pragma mark Initialization
 
++(NSString *)guessYoutubeLinkWithPath:(NSString *)path
+{
+    NSRange location = NSMakeRange(0, 0);
+    
+    if((location=[path rangeOfString:@".com/watch?v="]).location!=NSNotFound)
+    {
+        return [path substringFromIndex:location.location + location.length];
+    }
+    else if ((location = [path rangeOfString:@".com/v/"]).location!=NSNotFound)
+    {
+        return [path substringFromIndex:location.location + location.length];
+    }
+    else if ((location = [path rangeOfString:@".com/embed/"]).location!=NSNotFound)
+    {
+        return [path substringFromIndex:location.location + location.length];
+    }
+    return path;
+    
+}
+
 - (UIView *)initWithParams:(NSDictionary *)params andFrame:(CGRect)frame from:(FPKOverlayManager *)manager{
     
-    if (self = [super initWithFrame:frame]) {        
-        
+    if (self = [super initWithFrame:frame])
+    {
         [self setFrame:frame];
         _rect = frame;
         
         /**
-         As we are an FPKWebView we can remove the background, otherwise a grayish borded will appear sometimes
+         * As we are an FPKWebView we can remove the background, otherwise a grayish borded will appear sometimes
          */
         [self removeBackground];
         
         self.autoresizesSubviews = YES;
-        self.autoresizingMask=(UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
-
-        NSString * url = [NSString stringWithFormat:@"http://www.youtube.com/watch?v=%@", [params objectForKey:@"path"]];
         
-        NSString *youTubeVideoHTML = [NSString stringWithFormat:@"<html><head><meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = %0.0f\"/></head><body style=\"background:000000;margin-top:0px;margin-left:0px\"><div><object width=\"%0.0f\" height=\"%0.0f\"><param name=\"movie\" value=\"%@\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"%@\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"%0.0f\" height=\"%0.0f\"></embed></object></div></body></html>", frame.size.height, frame.size.width, frame.size.height, url, url, frame.size.width, frame.size.height];
-        [self loadHTMLString:youTubeVideoHTML baseURL:[NSURL URLWithString:@"http://www.youtube.com"]];                
+        self.autoresizingMask = (UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth);
+        
+        NSString * prefix = params[@"prefix"];
+        
+        if([prefix isEqualToString:@"utube"])
+        {
+            
+            NSString * path = params[@"path"];
+            
+            NSString * url = [FPKYouTube guessYoutubeLinkWithPath:path];
+            
+            NSString *youTubeVideoHTML = [NSString stringWithFormat:@"<html>"
+                                          "<head>"
+                                          "<style type=\"text/css\">body {background-color: transparent;color: blue;}</style>"
+                                          "</head>"
+                                          "<body style=\"margin:0\">"
+                                          "<iframe width=\"%d\" height=\"%d\" src=\"http://www.youtube-nocookie.com/embed/%@\" frameborder=\"0\"></iframe>"
+                                          "</body>"
+                                          "</html>",
+                                          (unsigned int)frame.size.width,
+                                          (unsigned int)frame.size.height,
+                                          url];
+            
+            [self loadHTMLString:youTubeVideoHTML baseURL:[NSURL URLWithString:@"http://www.youtube.com"]];
+        }
+        else if ([prefix isEqualToString:@"youtube"])
+        {
+            NSString * path = params[@"path"];
+            
+            NSString * url = [FPKYouTube guessYoutubeLinkWithPath:path];
+            
+            NSString *youTubeVideoHTML = [NSString stringWithFormat:@"<html>"
+                                          "<head>"
+                                          "<style type=\"text/css\">body {background-color: transparent;color: blue;}</style>"
+                                          "</head>"
+                                          "<body style=\"margin:0\">"
+                                          "<iframe width=\"%d\" height=\"%d\" src=\"http://www.youtube-nocookie.com/embed/%@\" frameborder=\"0\"></iframe>"
+                                          "</body>"
+                                          "</html>",
+                                          (unsigned int)frame.size.width,
+                                          (unsigned int)frame.size.height,
+                                          url];
+            
+            [self loadHTMLString:youTubeVideoHTML baseURL:[NSURL URLWithString:@"http://www.youtube.com"]];
+        }
     }
-    return self;  
+    return self;
 }
 
-+ (NSArray *)acceptedPrefixes{
-    return [NSArray arrayWithObjects:@"utube", nil];
++ (NSArray *)acceptedPrefixes
+{
+    return [NSArray arrayWithObjects:@"utube",@"youtube", nil];
 }
 
-+ (BOOL)respondsToPrefix:(NSString *)prefix{
++ (BOOL)respondsToPrefix:(NSString *)prefix
+{
     if([prefix isEqualToString:@"utube"])
+    {
         return YES;
-    else 
-        return NO;
+    }
+    else if([prefix isEqualToString:@"youtube"])
+    {
+        return YES;
+    }
+    return NO;
 }
 
-- (CGRect)rect{
+- (CGRect)rect
+{
     return _rect;
 }
 
