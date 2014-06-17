@@ -32,53 +32,48 @@
  
  @return **UIView** that will be placed over the pdf page by the FPKOverlayManager.
  */
-
-- (UIView *)initWithParams:(NSDictionary *)params andFrame:(CGRect)frame from:(FPKOverlayManager *)manager;
+-(UIView *)initWithParams:(NSDictionary *)params andFrame:(CGRect)frame from:(FPKOverlayManager *)manager;
 
 /**
- Get the accepted prefixes by an Extension encapsulated in an **NSArray** of **NSString**. Obviously you can support even just one prefix.
- 
- 	[NSArray arrayWithObjects:@"map", nil];
- 
- @return 
+ Get the accepted prefixes by an Extension encapsulated in an **NSArray** of **NSString**.
+ @return An array of NSString objects, each being a supported prefixes.
  */
-
-+ (NSArray *)acceptedPrefixes;
++(NSArray *)acceptedPrefixes;
 
 /**
-You should implement this method to return a BOOL value only on supported prefixes.
- 
+ This method should return if this extension is capable of handling the specified uri.
+ @param uri The URI to handle.
+ @return YES if the extension does handle the URI, NO otherwise.
+ */
++(BOOL)matchesURI:(NSString *)uri;
+
+/**
+ You should implement this method to return a BOOL value only on supported prefixes.
  @param prefix The prefix in the form `@"map"`.
  @return YES or NO if the prefix is support by the Extension.
  */
-
-+ (BOOL)respondsToPrefix:(NSString *)prefix;
++(BOOL)respondsToPrefix:(NSString *)prefix;
 
 /**
  The frame of the view can change when the pdf mode change and the device is rotated.
  The original frame is stored to perform the conversion on the fly when needed.
- 
  @return rect The original frame of the **UIView**.
  */
-
-- (CGRect)rect;
+-(CGRect)rect;
 
 /**
  Set the original frame. More info on rect.
- 
  @param rect The original frame.
  */
-
-- (void)setRect:(CGRect)rect;
+-(void)setRect:(CGRect)rect;
 
 @optional
 
 /**
  The view will be notified if it will be removed from the screen. 
  You can decide to perform some operations like stopping timers and release objects.
- 
  @param manager The manager is the sender. It could be useful.
  */
+-(void)willRemoveOverlayView:(FPKOverlayManager *)manager;
 
-- (void)willRemoveOverlayView:(FPKOverlayManager *)manager;
 @end

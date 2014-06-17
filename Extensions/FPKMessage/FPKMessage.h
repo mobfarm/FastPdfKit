@@ -33,7 +33,8 @@ It uses the **DDSocialDiaolog** from the **Common** framework.
 
 */
 
-@interface FPKMessage : UIView <FPKView>{
-    CGRect _rect;
-}
+@interface FPKMessage : UIView <FPKView>
+
+@property (nonatomic, readwrite) CGRect rect;
+
 @end

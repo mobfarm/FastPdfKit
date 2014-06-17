@@ -38,7 +38,7 @@ the VIDEO_KEY is xtmmuGIh0F4
 */
 
 
-@interface FPKYouTube : FPKWebView <FPKView>{
-    CGRect _rect;
-}
+@interface FPKYouTube : FPKWebView <FPKView>
+
+@property (nonatomic, readwrite) CGRect rect;
 @end

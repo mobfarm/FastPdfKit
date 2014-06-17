@@ -259,15 +259,29 @@
     return [NSArray arrayWithObjects:@"map", nil];
 }
 
-+ (BOOL)respondsToPrefix:(NSString *)prefix{
-    if([prefix isEqualToString:@"map"])
-        return YES;
-    else 
-        return NO;
++(BOOL)matchesURI:(NSString *)uri
+{
+    NSArray * prefixes = self.acceptedPrefixes;
+    for(NSString * prefix in prefixes)
+    {
+        if([uri hasPrefix:prefix])
+            return YES;
+    }
+    return NO;
 }
 
-- (CGRect)rect{
-    return _rect;
++ (BOOL)respondsToPrefix:(NSString *)prefix
+{
+    
+    NSArray * prefixes = self.acceptedPrefixes;
+    for(NSString * supportedPrefix in prefixes)
+    {
+        if([prefix caseInsensitiveCompare:supportedPrefix] == 0)
+        {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)setRect:(CGRect)aRect{

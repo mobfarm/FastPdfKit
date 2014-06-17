@@ -33,7 +33,7 @@ You can for example place it on the index page and show the article top photos.
 */
 
 
-@interface FPKImage : UIView <FPKView>{
-    CGRect _rect;
-}
+@interface FPKImage : UIView <FPKView>
+
+@property (nonatomic, readwrite) CGRect rect;
 @end

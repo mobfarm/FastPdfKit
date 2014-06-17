@@ -3,7 +3,7 @@
 //  FPKShared
 //
 
-#import <FastPdfKit/MFDocumentViewController.h>
+#import "MFDocumentViewController.h"
 
 @protocol FPKOverlayManagerDelegate <NSObject>
 @optional

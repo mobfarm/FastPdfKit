@@ -10,6 +10,18 @@
 #pragma mark -
 #pragma mark Initialization
 
+static NSString * embedURLMask = @"http://youtube.com/v/%@";
+
++(NSString *)youtubeEmbedURLMask
+{
+    return embedURLMask;
+}
+
++(void)setYoutubeEmbedURLMask:(NSString *)mask
+{
+    embedURLMask = [mask copy];
+}
+
 +(NSString *)guessYoutubeLinkWithPath:(NSString *)path
 {
     NSRange location = NSMakeRange(0, 0);
@@ -45,7 +57,7 @@
         self.autoresizesSubviews = YES;
         
         self.autoresizingMask = (UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth);
-        
+
         NSString * prefix = params[@"prefix"];
         
         if([prefix isEqualToString:@"utube"])
@@ -90,30 +102,37 @@
             [self loadHTMLString:youTubeVideoHTML baseURL:[NSURL URLWithString:@"http://www.youtube.com"]];
         }
     }
-    return self;
+    return self;  
 }
 
 + (NSArray *)acceptedPrefixes
 {
-    return [NSArray arrayWithObjects:@"utube",@"youtube", nil];
+    return [NSArray arrayWithObjects:@"utube", @"youtube", nil];
 }
 
-+ (BOOL)respondsToPrefix:(NSString *)prefix
++(BOOL)matchesURI:(NSString *)uri
 {
-    if([prefix isEqualToString:@"utube"])
+    NSArray * prefixes = self.acceptedPrefixes;
+    for(NSString * prefix in prefixes)
     {
-        return YES;
-    }
-    else if([prefix isEqualToString:@"youtube"])
-    {
-        return YES;
+        if([uri hasPrefix:prefix])
+            return YES;
     }
     return NO;
 }
 
-- (CGRect)rect
++ (BOOL)respondsToPrefix:(NSString *)prefix
 {
-    return _rect;
+    
+    NSArray * prefixes = self.acceptedPrefixes;
+    for(NSString * supportedPrefix in prefixes)
+    {
+        if([prefix caseInsensitiveCompare:supportedPrefix] == 0)
+        {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)setRect:(CGRect)aRect{

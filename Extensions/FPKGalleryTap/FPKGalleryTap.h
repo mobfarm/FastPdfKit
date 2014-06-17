@@ -45,8 +45,8 @@ You can even use just one annotation to place a single image over the page.
 
 */
 
-@interface FPKGalleryTap : UIView <FPKView>{
-    CGRect _rect;
-}
+@interface FPKGalleryTap : UIView <FPKView>
+
+@property (nonatomic, readwrite) CGRect rect;
 
 @end

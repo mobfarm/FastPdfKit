@@ -41,8 +41,11 @@ This Extension is useful to place a Google Map over the page.
 */
 
 @interface FPKMap : UIView <FPKView, MKMapViewDelegate>{
-    CGRect _rect;
     MKMapView *map;
     BOOL animateDrops;
 }
+
+@property (nonatomic, readwrite) CGRect rect;
+
+
 @end

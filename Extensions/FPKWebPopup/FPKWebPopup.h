@@ -35,7 +35,7 @@ Use *webpopups* in replacement of *https* protocol.
 
 */
 
-@interface FPKWebPopup : UIView <FPKView, DDSocialDialogDelegate>{
-    CGRect _rect;
-}
+@interface FPKWebPopup : UIView <FPKView, DDSocialDialogDelegate>
+
+@property (nonatomic, readwrite) CGRect rect;
 @end

@@ -4,10 +4,10 @@
 //
 
 #import "FPKOverlayManager.h"
-#import <FastPdfKit/FPKURIAnnotation.h>
-#import <FastPdfKit/MFDocumentManager.h>
+#import "FPKURIAnnotation.h"
+#import "MFDocumentManager.h"
 #import "FPKView.h"
-#import <FastPdfKit/Stuff.h>
+#import "Stuff.h"
 
 @implementation FPKOverlayManager
 @synthesize documentViewController;
@@ -15,8 +15,8 @@
 - (FPKOverlayManager *)initWithExtensions:(NSArray *)ext
 {
 	self = [super init];
-	if (self != nil) {
-	
+	if (self != nil)
+    {
         [self setExtensions:ext];
 	}
     
@@ -28,40 +28,46 @@
     // Set the supported extension list. If the list is different than the
     // previous one clean up the overlays'array and prepare a fresh one.
     
-    if(_extensions!=ext) {
-        
+    if(_extensions!=ext)
+    {
         _extensions = ext;
-        
-        if(!_overlays) {
-        
+        if(!_overlays)
+        {
             _overlays = [[NSMutableArray alloc] init];
-        
-        } else {
-            
+        }
+        else
+        {
             [_overlays removeAllObjects];
         }
     }
 }
 
-- (void)setScrollLock:(BOOL)lock{
+- (void)setScrollLock:(BOOL)lock
+{
     [documentViewController setScrollEnabled:!lock];
     [documentViewController setGesturesDisabled:lock];
 }
 
--(void)documentViewController:(MFDocumentViewController *)dvc willRemoveOverlayView:(UIView *)view{
-    for(UIView <FPKView> *view in _overlays){
-        if([view respondsToSelector:@selector(willRemoveOverlayView:)]){
+-(void)documentViewController:(MFDocumentViewController *)dvc willRemoveOverlayView:(UIView *)view
+{
+    for(UIView <FPKView> *view in _overlays)
+    {
+        if([view respondsToSelector:@selector(willRemoveOverlayView:)])
+        {
             [view willRemoveOverlayView:self];
         }
     }
 }
 
-- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri onPage:(NSUInteger)page{
-    /** We are registered as delegate for the documentViewController, so we can receive tap on annotations */
+- (void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapOnAnnotationRect:(CGRect)rect withUri:(NSString *)uri onPage:(NSUInteger)page
+{
+    /** We are registered as delegate for the documentViewController, so we can 
+     receive tap on annotations */
     [self showAnnotationForOverlay:NO withRect:rect andUri:uri onPage:page];
 }
 
--(UIView *)overlayViewWithTag:(int)tag{
+-(UIView *)overlayViewWithTag:(int)tag
+{
     return [documentViewController.view viewWithTag:tag];
 }
 
@@ -80,7 +86,7 @@
         NSArray * paramsComponents = [params componentsSeparatedByCharactersInSet:[self alternateParametersSeparatorsCharacterSet]];
         if(paramsComponents.count % 2 == 0)
         {
-            for(int i = 0; i < paramsComponents.count; i+=2)
+            for(int i = 0; i < paramsComponents.count; i += 2)
             {
                 parameters[paramsComponents[i]] = paramsComponents[i+1];
             }
@@ -138,8 +144,13 @@
             [scanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&path];
             dic[@"path"] = path;
             
-            NSString * resource = nil;
-            parameters[@"resource"] = resource;
+            NSArray * pathComponents = [path componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"?"]];
+            
+            if(pathComponents.count > 0)
+            {
+                NSString * resource = pathComponents[0];
+                parameters[@"resource"] = resource;
+            }
             
             dic[@"params"] = parameters;
         }
@@ -150,12 +161,14 @@
 
 +(NSMutableDictionary *)paramsDictionaryWithURI:(NSString *)uri
 {
-    
     /*
      Let's take the following annotation URI
     map://maps.google.com/maps?ll=41.889811,12.492088&spn=0.009073,0.01031&padding=2.0
-    as example.
-     */
+    as example. */
+    if([uri rangeOfString:@"://[" options:NSCaseInsensitiveSearch].location != NSNotFound)
+    {
+        return [self alternateParamsDictionaryWithURI:uri];
+    }
     
     NSMutableDictionary *dic = [NSMutableDictionary new];
     NSMutableDictionary *parameters = [NSMutableDictionary new];
@@ -164,19 +177,14 @@
      1. We split the uri in prefix and path. Prefix is going to be 'map' while
      'maps.google.com/maps...' is the path.
      */
-    
     NSArray *uriComponents = [uri componentsSeparatedByString:@"://"];
-    
 	if(uriComponents.count > 0)
     {
         /*
          2. Store the 'map' prefix.
         */
-        
-        NSString *uriType = [uriComponents objectAtIndex:0];
-        
+        NSString *uriType = uriComponents[0];
         dic[@"prefix"] = uriType;
-        
         if(uriComponents.count > 1)
         {
             
@@ -186,10 +194,8 @@
              ignore our custom params.
             */
             
-            NSString *path = [uriComponents objectAtIndex:1];
-            
+            NSString *path = uriComponents[1];
             dic[@"path"] = path;
-            
             parameters[@"load"] = @YES; // By default the annotations are loaded at startup
             
             /*
@@ -198,7 +204,6 @@
             */
             
             NSArray * pathComponents = [path componentsSeparatedByString:@"?"];
-            
             if(pathComponents.count > 0)
             {
                 parameters[@"resource"] = pathComponents[0];
@@ -210,11 +215,8 @@
                  5. Parameters are <name>=<value> pairs separated by commas, so 
                  split the params using '=' and ',' as separators.
                  */
-                
                 NSCharacterSet * parametersSeparators = [FPKOverlayManager defaultParametersSeparatorsCharacterSet];
-                
                 NSArray * paramComponents = [pathComponents[1] componentsSeparatedByCharactersInSet:parametersSeparators];
-                
                 if(paramComponents.count % 2 == 0) // We should get an even number of components.
                 {
                     for(int i = 0; i < paramComponents.count; i+=2)
@@ -238,7 +240,7 @@
     static NSCharacterSet * set = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        set = [NSCharacterSet characterSetWithCharactersInString:@",="];
+        set = [NSCharacterSet characterSetWithCharactersInString:@"=&"];
     });
     return set;
 }
@@ -253,52 +255,45 @@
     return set;
 }
 
-
-
 - (UIView *)showAnnotationForOverlay:(BOOL)load
                             withRect:(CGRect)rect
                               andUri:(NSString *)uri
                               onPage:(NSUInteger)page
 {
-    // NSLog(@"Uri: %@", uri);
-    
     NSMutableDictionary * dic = [FPKOverlayManager paramsDictionaryWithURI:uri];
     
     dic[@"load"] = @(load);
-                                 
-    /** 
-        Set the supported extensions array when you instantiate your FPKOverlayManager subclass
-        [self setExtensions:[[NSArray alloc] initWithObjects:@"FPKYouTube", nil]];
-    */
     
-    if(!_extensions) {
+    /**
+     Set the supported extensions array when you instantiate your FPKOverlayManager subclass
+     [self setExtensions:[[NSArray alloc] initWithObjects:@"FPKYouTube", nil]];
+     */
+    if(!_extensions)
+    {
         [self setExtensions:[NSArray new]];
     }
     
     NSString * uriType = dic[@"prefix"];
     
     NSString *class = nil;
-        
-        if(_extensions && [_extensions count] > 0)
-        {
-            for(NSString *extension in _extensions)
-            {
-                
-                Class classType = NSClassFromString(extension);
-                
-                if ([classType respondsToPrefix:uriType]) {
-                    class = extension;
-                    // NSLog(@"FPKOverlayManager - Found Extension %@ that supports %@", extension, uriType);
-                }
-            } 
-        }
     
+    if(_extensions && [_extensions count] > 0)
+    {
+        for(NSString *extension in _extensions)
+        {
+            Class classType = NSClassFromString(extension);
+            
+            if ([classType respondsToPrefix:uriType])
+            {
+                class = extension;
+            }
+        }
+    }
     
     NSDictionary * parameters = dic[@"params"];
     
-        BOOL loadByParam = [parameters[@"load"] boolValue];
+    BOOL loadByParam = [parameters[@"load"] boolValue];
     
-
     if (parameters[@"padding"])
     {
         CGFloat padding = [parameters[@"padding"] floatValue];
@@ -309,15 +304,15 @@
     
     UIView * retVal = nil;
     
-        if (class && ((load && loadByParam) || !load))
-        {
-            UIView *aView = [(UIView <FPKView> *)[NSClassFromString(class) alloc] initWithParams:dic andFrame:[documentViewController convertRect:rect toViewFromPage:page] from:self];
-            retVal = aView;
-        }
-        else
-        {
-            NSLog(@"FPKOverlayManager - No Extension found that supports %@", uriType);
-        }
+    if (class && ((load && loadByParam) || !load))
+    {
+        UIView *aView = [(UIView <FPKView> *)[NSClassFromString(class) alloc] initWithParams:dic andFrame:[documentViewController convertRect:rect toViewFromPage:page] from:self];
+        retVal = aView;
+    }
+    else
+    {
+        NSLog(@"FPKOverlayManager - No Extension found that supports %@", uriType);
+    }
     
     return retVal;
 }
@@ -350,8 +345,9 @@
     return [(UIView <FPKView> *)view rect];
 }
 
-- (void)setGlobalParametersFromAnnotation{
-    NSString *uri;
+- (void)setGlobalParametersFromAnnotation
+{
+    NSString *uri = nil;
     BOOL globalFound = NO;
     NSArray *ann = [[documentViewController document] uriAnnotationsForPageNumber:1];
     if([ann count] > 0){
@@ -366,7 +362,8 @@
         }    
     }
     
-    if(globalFound){
+    if(globalFound)
+    {
         NSArray *arrayParameter = nil;
         NSString *uriResource = nil;
         NSArray *arrayAfterResource = nil;
@@ -400,32 +397,48 @@
             // Place it on the first pdf page
             //    settings://?mode=3&automode=3&zoom=1.0&padding=0&shadow=YES&sides=0.1&status=NO
             
-            if([parameters objectForKey:@"mode"]){
+            if([parameters objectForKey:@"mode"])
+            {
                 int mode = 1;
-                if([[parameters objectForKey:@"mode"] isEqualToString:@"Single"]){
+                if([[parameters objectForKey:@"mode"] isEqualToString:@"Single"])
+                {
                     mode = 1;
-                } else  if([[parameters objectForKey:@"mode"] isEqualToString:@"Double"]){
+                }
+                else  if([[parameters objectForKey:@"mode"] isEqualToString:@"Double"])
+                {
                     mode = 2;
-                } else if([[parameters objectForKey:@"mode"] isEqualToString:@"Overflow"]){
+                }
+                else if([[parameters objectForKey:@"mode"] isEqualToString:@"Overflow"])
+                {
                     mode = 3;
                 }
                 [documentViewController setMode:mode];
             }
                 
-            if([parameters objectForKey:@"automode"]){
+            if([parameters objectForKey:@"automode"])
+            {
                 int mode = 1;
-                if([[parameters objectForKey:@"automode"] isEqualToString:@"None"]){
+                if([[parameters objectForKey:@"automode"] isEqualToString:@"None"])
+                {
                     mode = 1;
-                }else if([[parameters objectForKey:@"automode"] isEqualToString:@"Single"]){
+                }
+                else if([[parameters objectForKey:@"automode"] isEqualToString:@"Single"])
+                {
                     mode = 2;
-                } else  if([[parameters objectForKey:@"automode"] isEqualToString:@"Double"]){
+                }
+                else  if([[parameters objectForKey:@"automode"] isEqualToString:@"Double"])
+                {
                     mode = 3;
-                } else if([[parameters objectForKey:@"automode"] isEqualToString:@"Overflow"]){
+                }
+                else if([[parameters objectForKey:@"automode"] isEqualToString:@"Overflow"])
+                {
                     mode = 4;
                 }
+                
                 [documentViewController setAutoMode:mode];        
             }
-            if([parameters objectForKey:@"zoom"]){
+            if([parameters objectForKey:@"zoom"])
+            {
                 [documentViewController setDefaultMaxZoomScale:[[parameters objectForKey:@"zoom"] floatValue]];
                 // NSLog(@"Zoom set to %f", [documentViewController defaultMaxZoomScale]);
             }
@@ -459,9 +472,9 @@
 }
 
 
--(NSUInteger)supportedOrientations:(NSArray *)orientations {
+-(NSUInteger)supportedOrientations:(NSArray *)orientations
+{
     NSUInteger v = 0;
-
     for(NSNumber * number in orientations) {
         v|=[number intValue];
     }

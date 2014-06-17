@@ -32,8 +32,9 @@ This Extension is useful to create an image gallery with horizontal slide transi
 */
 
 @interface FPKGallerySlide : UIView <FPKView>{
-    CGRect _rect;
     id _pagingViewController;
 }
+
+@property (nonatomic, readwrite) CGRect rect;
 
 @end

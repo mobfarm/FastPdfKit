@@ -5,7 +5,7 @@
 
 #import "FPKGalleryFade.h"
 #import "TransitionGalleryView.h"
-#import <FastPdfKit/MFDocumentManager.h>
+#import "MFDocumentManager.h"
 
 @implementation FPKGalleryFade
 
@@ -14,7 +14,7 @@
 
 // NSLog(@"FPKGalleryFade - ");
 
--(UIView *)initWithParams:(NSDictionary *)params andFrame:(CGRect)frame from:(FPKOverlayManager *)manager{
+-(UIView *)initWithParams:(NSDictionary *)params andFrame:(CGRect)frame from:(FPKOverlayManager *)manager {
     if (self = [super init]) 
     {        
         [self setFrame:frame];
@@ -27,60 +27,119 @@
             resource = [manager performSelector:@selector(resourcePath)];
         }
         
-        NSMutableArray *items = [NSMutableArray array];
-        NSArray *images = [[[params objectForKey:@"params"] objectForKey:@"images"] componentsSeparatedByString:@","];
-        if([images count] == 0){
-//            NSLog(@"FPKGalleryFade - No images provided. Please use an url with format:");
-//            NSLog(@"FPKGalleryFade - galleryfade://?images=img1.png,img2.png");
-        }
+        NSString * prefix = params[@"prefix"];
         
-        for(NSString *image in images){
+        if([prefix caseInsensitiveCompare:@"galleryfade"] == 0)
+        {
+            NSDictionary * parameters = params[@"params"];
             
-            UIImage *imageI = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",resource, image]];
+            NSMutableArray *items = [NSMutableArray array];
+            NSArray *images = [parameters[@"images"] componentsSeparatedByString:@","];
+            if([images count] == 0){
+                //            NSLog(@"FPKGalleryFade - No images provided. Please use an url with format:");
+                //            NSLog(@"FPKGalleryFade - galleryfade://?images=img1.png,img2.png");
+            }
             
-            if (imageI) {
-                [items addObject:imageI];
-            } else {
-//                NSLog(@"FPKGalleryFade - Image named %@ not found at the path you specified.", image);
+            for(NSString *image in images)
+            {
+                UIImage *imageI = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",resource, image]];
+                if (imageI)
+                {
+                    [items addObject:imageI];
+                }
+            }
+            
+            if ([items count] > 0)
+            {
+                TransitionGalleryView * gallery = [[TransitionGalleryView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
+                [gallery setBackgroundColor:[UIColor clearColor]];
+                id timeValue = parameters[@"time"];
+                if(timeValue)
+                {
+                    [gallery setDuration:[timeValue floatValue]];
+                }
+                
+                [gallery setImage:[items objectAtIndex:0]];
+                [gallery setImages:items];
+                [gallery startFadeAnimation];
+                
+                [self addSubview:gallery];
             }
         }
-        if ([items count] > 0) {   
-            TransitionGalleryView * gallery = [[TransitionGalleryView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
-            [gallery setBackgroundColor:[UIColor clearColor]];
-            if([[params objectForKey:@"params"] objectForKey:@"time"])
-                [gallery setDuration:[[[params objectForKey:@"params"] objectForKey:@"time"] floatValue]];
+        else if ([prefix caseInsensitiveCompare:@"images"] == 0)
+        {
             
-            [gallery setImage:[items objectAtIndex:0]];
-            [gallery setImages:items];
-            // [images release];
-            [gallery startFadeAnimation];
+            NSDictionary * parameters = params[@"params"];
             
-            [self addSubview:gallery];
+            NSMutableArray *items = [NSMutableArray array];
+            NSArray *images = [parameters[@"resource"] componentsSeparatedByString:@";"];
+            if([images count] == 0){
+                //            NSLog(@"FPKGalleryFade - No images provided. Please use an url with format:");
+                //            NSLog(@"FPKGalleryFade - galleryfade://?images=img1.png,img2.png");
+            }
             
-        } else {
-//            NSLog(@"FPKGalleryFade - Images not found at path that you specified:");
-//            NSLog(@"FPKGalleryFade - %@", resource);
+            for(NSString *image in images)
+            {
+                UIImage *imageI = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",resource, image]];
+                if (imageI)
+                {
+                    [items addObject:imageI];
+                }
+            }
+            
+            if ([items count] > 0)
+            {
+                TransitionGalleryView * gallery = [[TransitionGalleryView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
+                [gallery setBackgroundColor:[UIColor clearColor]];
+                id timeValue = parameters[@"time"];
+                if(timeValue)
+                {
+                    [gallery setDuration:[timeValue floatValue]];
+                }
+                
+                [gallery setImage:[items objectAtIndex:0]];
+                [gallery setImages:items];
+                [gallery startFadeAnimation];
+                
+                [self addSubview:gallery];
+                
+            }
         }
     }
     return self;  
 }
 
-+ (NSArray *)acceptedPrefixes{
-    return [NSArray arrayWithObjects:@"galleryfade", nil];
++ (NSArray *)acceptedPrefixes
+{
+    return [NSArray arrayWithObjects:@"galleryfade",@"images", nil];
 }
 
-+ (BOOL)respondsToPrefix:(NSString *)prefix{
-    if([prefix isEqualToString:@"galleryfade"])
-        return YES;
-    else 
-        return NO;
++(BOOL)matchesURI:(NSString *)uri
+{
+    NSArray * prefixes = self.acceptedPrefixes;
+    for(NSString * prefix in prefixes)
+    {
+        if([uri hasPrefix:prefix])
+            return YES;
+    }
+    return NO;
 }
 
-- (CGRect)rect{
-    return _rect;
++ (BOOL)respondsToPrefix:(NSString *)prefix
+{
+    NSArray * prefixes = self.acceptedPrefixes;
+    for(NSString * supportedPrefix in prefixes)
+    {
+        if([prefix caseInsensitiveCompare:supportedPrefix] == 0)
+        {
+            return YES;
+        }
+    }
+    return NO;
 }
 
-- (void)setRect:(CGRect)aRect{
+- (void)setRect:(CGRect)aRect
+{
     [self setFrame:aRect];
     _rect = aRect;
 }
