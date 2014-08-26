@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+	<list>
+        <pdf>
+		    <title>FastPdfKit Demo</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/fastpdfkit.fpk</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/FastPdfKit.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Multimedia</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/Multimedia.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/Multimedia.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Readme</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/readme.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/readme.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Sources</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/sources.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/sources.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>License</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/license.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/license.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Documentation</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/manual.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/manual.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Documentation</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/kb.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/kb.jpg</cover>
+		</pdf>
+        <pdf>
+		    <title>Aperture</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/Aperture.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/Aperture.png</cover>
+		</pdf>
+        <pdf>
+            <title>MacBook Air</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/MacBookAir.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/MacBookAir.png</cover>
+		</pdf>
+        <pdf>
+            <title>iMac</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/iMac.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/iMac.png</cover>
+		</pdf>
+		<pdf>
+            <title>iPad</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/iPad.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/iPad.png</cover>
+		</pdf>
+		<pdf>
+            <title>iPhone</title>
+			<link>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/iPhone.pdf</link>
+			<cover>https://github.com/mobfarm/FastPdfKit/raw/resources/Classes/KioskApp/KioskResources/iPhone.png</cover>
+		</pdf>
+	</list>
+</response>
