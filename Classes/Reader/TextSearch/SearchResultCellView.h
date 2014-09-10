@@ -1,6 +1,6 @@
 //
 //  SearchResultCellView.h
-//  FastPDFKitTest
+//  FastPdfKit
 //
 //  Created by Nicolò Tosi on 1/20/11.
 //  Copyright 2011 com.mobfarm. All rights reserved.

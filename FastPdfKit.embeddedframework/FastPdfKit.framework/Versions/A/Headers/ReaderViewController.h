@@ -1,6 +1,6 @@
 //
-//  DocumentViewController.h
-//  FastPDFKitTest
+//  ReaderViewController.h
+//  FastPDFKit
 //
 //  Created by Nicolò Tosi on 8/25/10.
 //  Copyright 2010 MobFarm S.r.l. All rights reserved.
@@ -24,14 +24,6 @@
 @class MiniSearchView;
 @class MFTextItem;
 
-#define FPK_REUSABLE_VIEW_NONE 0
-#define FPK_REUSABLE_VIEW_SEARCH 1
-#define FPK_REUSABLE_VIEW_TEXT 2
-#define FPK_REUSABLE_VIEW_OUTLINE 3
-#define FPK_REUSABLE_VIEW_BOOKMARK 4
-
-#define FPK_SEARCH_VIEW_MODE_MINI 0
-#define FPK_SEARCH_VIEW_MODE_FULL 1
 
 @interface ReaderViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
 	

@@ -1,6 +1,6 @@
 //
 //  FPKOverlayViewDataSource.h
-//  FastPDFKitTest
+//  FastPdfKit
 //
 //  Created by Nicolò Tosi on 6/3/11.
 //  Copyright 2011 com.mobfarm. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  MiniSearchViewControllerDelegate.h
-//  FastPdfKit Sample
+//  FastPdfKit
 //
 //  Created by Mac Book Pro on 28/02/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.

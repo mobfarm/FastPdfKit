@@ -1,6 +1,6 @@
 //
 //  MFAudioPlayerViewImpl.h
-//  FastPdfKit Sample
+//  FastPdfKit
 //
 //  Created by Mac Book Pro on 19/04/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.

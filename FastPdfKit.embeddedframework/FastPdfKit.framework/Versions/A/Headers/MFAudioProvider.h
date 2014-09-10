@@ -1,6 +1,6 @@
 //
 //  MFAudioProvider.h
-//  FastPDFKitTest
+//  FastPdfKit
 //
 //  Created by Nicolò Tosi on 4/18/11.
 //  Copyright 2011 com.mobfarm. All rights reserved.

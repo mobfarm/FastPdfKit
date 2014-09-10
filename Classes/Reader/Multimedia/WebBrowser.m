@@ -1,6 +1,6 @@
 //
 //  WebBrowser.m
-//  FastPdfKit Sample
+//  FastPdfKit
 //
 //  Created by Gianluca Orsini on 28/03/11.
 //  Copyright 2010 MobFarm S.r.l. All rights reserved.

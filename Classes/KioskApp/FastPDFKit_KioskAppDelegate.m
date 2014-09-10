@@ -1,6 +1,6 @@
 //
 //  FastPDFKit_KioskAppDelegate.m
-//  FastPdfKit Sample
+//  FastPdfKit
 //
 //  Created by Gianluca Orsini on 28/02/11.
 //  Copyright 2010 MobFarm S.r.l. All rights reserved.

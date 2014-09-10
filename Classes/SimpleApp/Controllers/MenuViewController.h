@@ -1,6 +1,6 @@
 //
 //  MenuViewController.h
-//  FastPDFKitTest
+//  FastPdfKit
 //
 //  Created by Nicolò Tosi on 8/26/10.
 //  Copyright 2010 MobFarm S.r.l. All rights reserved.
