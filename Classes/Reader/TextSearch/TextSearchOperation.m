@@ -27,8 +27,10 @@
         
         if(![self isCancelled])
         {
-            if([delegate respondsToSelector:@selector(handleSearchResult:)])
-                [(NSObject *)delegate performSelectorOnMainThread:@selector(handleSearchResult:) withObject:searchResult waitUntilDone:YES];
+            dispatch_async(dispatch_get_main_queue(), ^{
+               
+                [delegate handleSearchResult:searchResult];
+            });
         }
     }
 }

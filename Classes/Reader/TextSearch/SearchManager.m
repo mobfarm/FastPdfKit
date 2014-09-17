@@ -25,7 +25,7 @@
 #define FPK_SRCMGR_STATUS_GO_ON(x) ((x) = FPK_SRCMGR_STATUS_ONGOING)
 #define FPK_SRCMGR_STATUS_STOP(x) ((x) = FPK_SRCMGR_STATUS_STOPPED)
 
-@interface SearchManager()
+@interface SearchManager() <TextSearchOperationDelegate>
 
 -(void)startSearchOperationForSearchTerm:(NSString*)term 
                                  andPage:(NSUInteger)page;
@@ -133,7 +133,7 @@
 #pragma mark -
 #pragma mark Search methods
 
-static int calculateNextSearchPage(int currentPage, int maxPage) {
+static NSInteger calculateNextSearchPage(NSInteger currentPage, NSInteger maxPage) {
 
 	// This is just an utility method used to calculate the next page, returning to the
 	// first one - 0 actually - when the last one is exceeded, like in circular buffers.
@@ -207,7 +207,7 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
 			
             [searchResults addObject:searchResult];
             
-            notification = [NotificationFactory notificationSearchResultsAvailable:searchResults forSearchTerm:searchTerm onPage:[NSNumber numberWithInt:currentPage] fromSender:self];
+            notification = [NotificationFactory notificationSearchResultsAvailable:searchResults forSearchTerm:searchTerm onPage:[NSNumber numberWithInteger:currentPage] fromSender:self];
             [[NSNotificationCenter defaultCenter]postNotification:notification];
 		}
 		
@@ -271,7 +271,7 @@ static int calculateNextSearchPage(int currentPage, int maxPage) {
                                  ignoreCase:ignoreCaseOrNot 
                                  exactMatch:exactMatchOrNot];
 	
-    NSNotification * notification = [NotificationFactory notificationSearchDidStartWithSearchTerm:searchTerm onPage:[NSNumber numberWithInt:page] fromSender:self];
+    NSNotification * notification = [NotificationFactory notificationSearchDidStartWithSearchTerm:searchTerm onPage:[NSNumber numberWithUnsignedInteger:page] fromSender:self];
     
     [[NSNotificationCenter defaultCenter]postNotification:notification];
 }

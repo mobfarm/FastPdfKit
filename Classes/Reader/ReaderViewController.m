@@ -37,8 +37,8 @@ static const NSInteger FPKReusableViewBookmarks = FPK_REUSABLE_VIEW_BOOKMARK;
 static const NSInteger FPKSearchViewModeMini = FPK_SEARCH_VIEW_MODE_MINI;
 static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
-#define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %d of %d",(x),(y)]
-#define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%d / %d",(x),(y)]
+#define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %lu of %lu",(x),(y)]
+#define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%lu / %lu",(x),(y)]
 
 @interface ReaderViewController() <UIPopoverPresentationControllerDelegate>
 
@@ -406,7 +406,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     // Here's the chance to unload this view controller and load a new one with the starting page set to page.
     
-    NSLog(@"%@ %d", file, page);
+    NSLog(@"%@ %lu", file, (unsigned long)page);
 }
 
 -(IBAction) actionOutline:(id)sender {
@@ -1402,14 +1402,14 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		
 		aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 23)];
 		
-		aLabel.textAlignment = UITextAlignmentLeft;
+        aLabel.textAlignment = NSTextAlignmentLeft;
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.shadowColor = [UIColor whiteColor];
 		aLabel.shadowOffset = CGSizeMake(0, 1);
 		aLabel.textColor = [UIColor whiteColor];
 		aLabel.font = [UIFont boldSystemFontOfSize:20.0];
 		
-		labelText = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);		
+        labelText = [self pageLabelString];
 		aLabel.text = labelText;
 		self.pageNumLabel = aLabel;
 		
@@ -1670,34 +1670,33 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	[self prepareToolbar];
 }
 
+-(NSString *)pageLabelString {
+    
+    if(self.pageLabelFormat) {
+        
+        return [NSString stringWithFormat:self.pageLabelFormat, [self page], [[self document] numberOfPages]];
+        
+    } else if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        return PAGE_NUM_LABEL_TEXT((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
+        
+    }
+    else {
+        
+        return PAGE_NUM_LABEL_TEXT_PHONE((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
+    }
+}
+
 /**
- * This method will update the page number label according to either the 
+ * This method will update the page number label according to either the
  * pageLabelFormat, if not nil, or the default format and the page and
  * total number of pages.
  */
 -(void)updatePageNumberLabel{
 	
-	NSString *labelTitle = nil;
+    NSString *labelTitle = [self pageLabelString];
     
-    if(self.pageLabelFormat) {
-        
-        labelTitle = [NSString stringWithFormat:self.pageLabelFormat, [self page], [[self document] numberOfPages]];
-    }
-    else {
-        
-        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            
-            labelTitle = PAGE_NUM_LABEL_TEXT([self page],[[self document]numberOfPages]);
-            
-        }
-        else {
-            
-            labelTitle = PAGE_NUM_LABEL_TEXT_PHONE([self page],[[self document]numberOfPages]);
-        }
-    }
-    
-    
-	self.pageNumLabel.text = labelTitle;
+    self.pageNumLabel.text = labelTitle;
 }
 
 /**
@@ -1767,8 +1766,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     if(!self.isViewLoaded) {
         
-        // This will be called in place of viewDidUnload on iOS 6
-        
         self.miniSearchView = nil;
         self.pageNumLabel = nil;
         self.numberOfPageTitleToolbar = nil;
@@ -1793,35 +1790,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         self.changeDirectionButton = nil;
         self.changeLeadButton = nil;
     }
-}
-
-- (void)viewDidUnload {
-    
-    self.rollawayToolbar = nil;
-    
-    self.miniSearchView = nil;
-    self.pageNumLabel = nil;
-    self.numberOfPageTitleToolbar = nil;
-    
-    // Button and bar buttons
-    
-    self.changeModeBarButtonItem = nil;
-	self.zoomLockBarButtonItem = nil;
-	self.changeDirectionBarButtonItem = nil;
-	self.changeLeadBarButtonItem = nil;
-	self.searchBarButtonItem = nil;
-    self.textBarButtonItem = nil;
-    self.numberOfPageTitleBarButtonItem = nil;
-    self.outlineBarButtonItem = nil;
-    self.bookmarkBarButtonItem = nil;
-    self.dismissBarButtonItem = nil;
-    
-    self.changeModeButton = nil;
-	self.zoomLockButton = nil;
-	self.changeDirectionButton = nil;
-	self.changeLeadButton = nil;
-    
-    [super viewDidUnload];
 }
 
 #ifdef __IPHONE_6_0

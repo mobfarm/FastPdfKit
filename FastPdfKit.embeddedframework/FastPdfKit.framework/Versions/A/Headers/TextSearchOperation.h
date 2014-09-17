@@ -10,21 +10,19 @@
 #import "mfprofile.h"
 
 @class MFDocumentManager;
-@interface TextSearchOperation : NSOperation {
 
-	NSString *searchTerm;						// Search term.
-	id<NSObject> delegate;                      // Delegate.
-	MFProfile profile;							// Search profile.
-	MFDocumentManager *document;				// Document manager.
-    
-    BOOL ignoreCase;
-    BOOL exactMatch;
-}
+@protocol TextSearchOperationDelegate
+
+-(void)handleSearchResult:(NSArray *)results;
+
+@end
+
+@interface TextSearchOperation : NSOperation
 
 @property (retain) MFDocumentManager *document;
 @property (readwrite) NSUInteger page;
 @property (copy) NSString *searchTerm;
-@property (assign) id<NSObject> delegate;
+@property (assign) id<TextSearchOperationDelegate> delegate;
 @property (nonatomic,readwrite) MFProfile profile;
 
 @property (nonatomic, readwrite) BOOL ignoreCase;

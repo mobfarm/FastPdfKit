@@ -263,7 +263,7 @@
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		
 		aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(45, 495, 300, 30) ];
-		aLabel.textAlignment =  UITextAlignmentCenter;
+		aLabel.textAlignment =  NSTextAlignmentCenter;
 		aLabel.textColor = [UIColor blackColor];
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(25.0)];
@@ -271,7 +271,7 @@
     }else {
 		
 		aLabel = [[UILabel alloc ] initWithFrame:CGRectMake(20, 170, 105, 20) ];
-		aLabel.textAlignment =  UITextAlignmentCenter;
+		aLabel.textAlignment =  NSTextAlignmentCenter;
 		aLabel.textColor = [UIColor blackColor];
 		aLabel.backgroundColor = [UIColor clearColor];
 		aLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)];

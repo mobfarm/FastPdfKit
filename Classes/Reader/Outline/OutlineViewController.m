@@ -66,26 +66,20 @@
         
         MFPDFOutlineRemoteEntry * outlineEntry = (MFPDFOutlineRemoteEntry *)entry;
         
-        if(!(([outlineEntry file])&&(([outlineEntry pageNumber]!=0)||[outlineEntry destination]))) {
+        if((([outlineEntry file])&&(([outlineEntry pageNumber]!=0)||[outlineEntry destination]))) {
             
-            [cell setAccessoryType:UITableViewCellAccessoryNone];            
+            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         }
         
     } else if ([entry isKindOfClass:[MFPDFOutlineEntry class]]) { // Local (this document) entry
         
         MFPDFOutlineEntry * outlineEntry = (MFPDFOutlineEntry *)entry;
         
-        if([outlineEntry pageNumber] == 0) {
+        if([outlineEntry pageNumber] != 0) {
             
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
+            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         }
-        
-    } else {
-        
-        // This should never happen since the outline method of the manager only return
-        // instances of the above classes.
     }
-
     
 	if([[(MFPDFOutlineEntry *)entry bookmarks]count]> 0) { // Check if the entry has children.
         
