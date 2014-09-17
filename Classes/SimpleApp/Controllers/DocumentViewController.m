@@ -190,7 +190,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
         case FPKReusableViewText:
             
-            [self dismissViewControllerAnimated:YES completion:nil];
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
             
             currentReusableView = FPKReusableViewNone;
             
@@ -211,7 +213,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                 
                 /* On iPad iOS 8 and iPhone whe have a presented view controller */
                 
-                [self dismissViewControllerAnimated:YES completion:nil];
+                if(self.presentedViewController) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
             }
             currentReusableView = FPKReusableViewNone;
             break;
@@ -242,8 +246,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
             
             controller.modalPresentationStyle = UIModalPresentationPopover;
             
@@ -276,7 +278,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
             
-            [self dismissViewControllerAnimated:YES completion:nil];
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
             
             controller.modalPresentationStyle = UIModalPresentationPopover;
             
@@ -544,7 +548,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
 	} else {
 		
-        [self dismissModalViewControllerAnimated:YES];
+        if(self.presentedViewController) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
 	}
     
     [self removeOverlayDataSource:self.searchManager];
@@ -914,8 +920,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		TextDisplayViewController *controller = self.textDisplayViewController;
 		controller.delegate = self;
 		[controller updateWithTextOfPage:page];
-		[self presentModalViewController:controller animated:YES];
-		
+        [self presentViewController:controller animated:YES completion:nil];
 	}
 }
 
@@ -1039,7 +1044,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 	CGFloat buttonHeight = 20;
 	CGFloat buttonWidth = 60;
-	CGFloat padding = 10;
+	CGFloat pad = 10;
 	
 	UIFont *font = nil;
 	
@@ -1067,7 +1072,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Mode button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding, padding, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad, pad, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_MODE_SINGLE forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];
@@ -1077,7 +1082,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Lead button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding*2 + buttonWidth, padding, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad*2 + buttonWidth, pad, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_LEAD_RIGHT forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];
@@ -1087,7 +1092,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Direction button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding*3 + buttonWidth * 2, padding, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad*3 + buttonWidth * 2, pad, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_DIR_L2R forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];
@@ -1098,7 +1103,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Automode button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, pad, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_AUTOMODE_NO forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionChangeAutomode:) forControlEvents:UIControlEventTouchUpInside];
@@ -1108,7 +1113,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Autozoom button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, padding*2 + buttonHeight, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, pad*2 + buttonHeight, buttonWidth, buttonHeight)];
 		[aButton setTitle:TITLE_AUTOZOOM_NO forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];
@@ -1119,7 +1124,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Text button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*4-buttonHeight*4, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, viewSize.height-pad*4-buttonHeight*4, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Text" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
@@ -1129,7 +1134,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Search button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*5-buttonHeight*5, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, viewSize.height-pad*5-buttonHeight*5, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Search" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
@@ -1140,7 +1145,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Dismiss button.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(viewSize.width - padding - buttonWidth, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(viewSize.width - pad - buttonWidth, viewSize.height-pad*2-buttonHeight*2, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Dismiss" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
 		[aButton addTarget:self action:@selector(actionDismiss:) forControlEvents:UIControlEventTouchUpInside];
@@ -1150,7 +1155,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Bookmarks.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding, viewSize.height-padding*2-buttonHeight*2, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad, viewSize.height-pad*2-buttonHeight*2, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Bookmarks" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
@@ -1160,7 +1165,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 		// Outline.
 		aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[aButton setFrame:CGRectMake(padding, viewSize.height-padding*3-buttonHeight*3, buttonWidth, buttonHeight)];
+		[aButton setFrame:CGRectMake(pad, viewSize.height-pad*3-buttonHeight*3, buttonWidth, buttonHeight)];
 		[aButton setTitle:@"Outline" forState:UIControlStateNormal];
 		[aButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin];
 		[aButton addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
@@ -1173,18 +1178,18 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		// |<-- 20 px -->| Label (80 x 40 px) |<-- 20 px -->| Slider ((view_width - labelwidth - padding) x 40 px) |<-- 20 px -->|
 	
 		// Page label.
-		UILabel *aLabel = [[UILabel alloc]initWithFrame:CGRectMake(padding, viewSize.height-padding-buttonHeight, buttonWidth, buttonHeight)];
+		UILabel *aLabel = [[UILabel alloc]initWithFrame:CGRectMake(pad, viewSize.height-pad-buttonHeight, buttonWidth, buttonHeight)];
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aLabel setBackgroundColor:[UIColor clearColor]];
 		[aLabel setFont:font];
 		[aLabel setText:[NSString stringWithFormat:@"%u/%u",[self page],[[self document]numberOfPages]]];
-		[aLabel setTextAlignment:UITextAlignmentCenter];
+		[aLabel setTextAlignment:NSTextAlignmentCenter];
 		[self setPageLabel:aLabel];
 		[[self view]addSubview:aLabel];
 		[aLabel release];
 		
 		//Page slider.
-		UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(padding*8, viewSize.height-padding-buttonHeight,self.view.frame.size.width-buttonWidth-40, buttonHeight)];
+		UISlider *aSlider = [[UISlider alloc]initWithFrame:CGRectMake(pad*8, viewSize.height-pad-buttonHeight,self.view.frame.size.width-buttonWidth-40, buttonHeight)];
 		[aSlider setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth];
 		[aSlider setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0]];
 		[aSlider setMinimumValue:1.0];

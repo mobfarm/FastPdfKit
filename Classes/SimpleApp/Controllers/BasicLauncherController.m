@@ -31,7 +31,7 @@
 	
 	//	In this example we use a a modal viewcontroller to present the document view controller but you can present it
 	//	with a navigation viewcontroller or just show a single PDF right from the beginning
-	[self presentModalViewController:aDocViewController animated:YES]; 
+    [self presentViewController:aDocViewController animated:YES completion:nil];
 	
 	[aDocViewController release];
 	[aDocManager release];

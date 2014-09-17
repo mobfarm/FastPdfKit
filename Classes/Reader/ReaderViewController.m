@@ -171,7 +171,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
         case FPKReusableViewText:
             
-            [self dismissViewControllerAnimated:YES completion:nil];
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
             
             currentReusableView = FPKReusableViewNone;
             
@@ -192,7 +194,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                 
                 /* On iPad iOS 8 and iPhone whe have a presented view controller */
                 
-                [self dismissViewControllerAnimated:YES completion:nil];
+                if(self.presentedViewController) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
             }
             currentReusableView = FPKReusableViewNone;
             break;
@@ -224,7 +228,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
             
-            [self dismissViewControllerAnimated:YES completion:nil];
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
             
             controller.modalPresentationStyle = UIModalPresentationPopover;
             
@@ -258,7 +264,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
             
-            [self dismissViewControllerAnimated:YES completion:nil];
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
             
             controller.modalPresentationStyle = UIModalPresentationPopover;
             
@@ -688,7 +696,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         /* Dismiss the presented view controller on iPad iOS 8 and iPhone */
 		
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if(self.presentedViewController) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
 	}
     
     [self removeOverlayDataSource:self.searchManager];
@@ -726,16 +736,16 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
     } else {
         
-        if ([self respondsToSelector:@selector(presentingViewController)]) {
-            [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
-        }
-        else if (self.parentViewController) {
-            
-            [[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
-        }
-        else if ([self navigationController]) {
+        /* Default behavior is to pop itself if on a navigation stack or
+         tell the presenting view controller to dimiss the presented view
+         controller (this) */
+        
+        if ([self navigationController]) {
             
             [[self navigationController] popViewControllerAnimated:YES];
+            
+        } else if(self.presentingViewController) {
+                [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         }
     }
 }
