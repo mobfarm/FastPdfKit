@@ -51,7 +51,11 @@ static const NSInteger FPKReusableViewBookmarks = FPK_REUSABLE_VIEW_BOOKMARK;
 static const NSInteger FPKSearchViewModeMini = FPK_SEARCH_VIEW_MODE_MINI;
 static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
+#ifdef __IPHONE_8_0
 @interface DocumentViewController() <UIPopoverPresentationControllerDelegate>
+#else
+@interface DocumentViewController()
+#endif
 
 @end
 
@@ -148,6 +152,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
+#ifdef __IPHONE_8_0
+
 -(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
     switch(currentReusableView) {
             
@@ -175,8 +181,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
         default: break;
     }
-    
 }
+#endif
 
 -(void)dismissAlternateViewController {
     
@@ -203,11 +209,22 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             // Same procedure for both outline and bookmark.
             
-            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) {
+            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
                 
-                /* On iPad pre iOS 8 we have UIPopoverController */
-                
-                [reusablePopover dismissPopoverAnimated:YES];
+#ifdef __IPHONE_8_0
+                if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+                {
+                    if(self.presentedViewController) {
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    }
+                }
+                else
+#endif
+                {
+                    
+                    [reusablePopover dismissPopoverAnimated:YES];
+                }
                 
             } else {
                 
@@ -244,7 +261,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(void)presentViewController:(UIViewController *)controller fromRect:(CGRect)rect sourceView:(UIView *)view contentSize:(CGSize)contentSize {
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
+#ifdef __IPHONE_8_0
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
             
             controller.modalPresentationStyle = UIModalPresentationPopover;
@@ -258,7 +275,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             [self presentViewController:controller animated:YES completion:nil];
             
-        } else {
+        } else
+#endif
+        {
             
             [self prepareReusablePopoverControllerWithController:controller];
             
@@ -276,6 +295,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
+#ifdef __IPHONE_8_0
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
             
             if(self.presentedViewController) {
@@ -292,7 +312,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             [self presentViewController:controller animated:YES completion:nil];
             
-        } else {
+        } else
+#endif
+        {
             
             [self prepareReusablePopoverControllerWithController:controller];
             
@@ -758,7 +780,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	//thumbPage = pageNumber;
 	
 	// Update the label.
-	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",pageNumber,[[self document]numberOfPages]]];
+	[pageLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)pageNumber,(unsigned long)[[self document]numberOfPages]]];
 	
 }
 
@@ -852,7 +874,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 //	slider to reflect that. If you save the current page as a bookmark to it is a good idea to store the value
 //	in this callback.
 	
-	[pageLabel setText:[NSString stringWithFormat:@"%u/%u",page,[[self document]numberOfPages]]];
+	[pageLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)page,(unsigned long)[[self document]numberOfPages]]];
 	
 	[pageSlider setValue:[[NSNumber numberWithUnsignedInteger:page]floatValue] animated:YES];
 	
@@ -1182,7 +1204,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		[aLabel setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin];
 		[aLabel setBackgroundColor:[UIColor clearColor]];
 		[aLabel setFont:font];
-		[aLabel setText:[NSString stringWithFormat:@"%u/%u",[self page],[[self document]numberOfPages]]];
+		[aLabel setText:[NSString stringWithFormat:@"%lu/%lu",(unsigned long)[self page],(unsigned long)[[self document]numberOfPages]]];
 		[aLabel setTextAlignment:NSTextAlignmentCenter];
 		[self setPageLabel:aLabel];
 		[[self view]addSubview:aLabel];

@@ -40,7 +40,11 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %lu of %lu",(x),(y)]
 #define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%lu / %lu",(x),(y)]
 
+#ifdef __IPHONE_8_0
 @interface ReaderViewController() <UIPopoverPresentationControllerDelegate>
+#else
+@interface ReaderViewController()
+#endif
 
 -(void)dismissMiniSearchView;
 -(void)presentTextDisplayViewControllerForPage:(NSUInteger)page;
@@ -129,8 +133,11 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
--(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
-    switch(currentReusableView) {
+#ifdef __IPHONE_8_0
+-(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
+{
+    switch(currentReusableView)
+    {
             
         case FPKReusableViewNone: // This should never happens.
             break;
@@ -145,7 +152,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
         case FPKReusableViewSearch:
             
-            if(currentSearchViewMode == FPKSearchViewModeFull) {
+            if(currentSearchViewMode == FPKSearchViewModeFull)
+            {
                 
                 [searchManager cancelSearch];
                 
@@ -156,8 +164,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
         default: break;
     }
-
 }
+#endif
 
 -(void)dismissAlternateViewController {
     
@@ -184,11 +192,20 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             // Same procedure for both outline and bookmark.
             
-            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) {
+            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                 
-                /* On iPad pre iOS 8 we have UIPopoverController */
-                
-                [reusablePopover dismissPopoverAnimated:YES];
+#ifdef __IPHONE_8_0
+                if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+                {
+                    if(self.presentedViewController) {
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    }
+                }
+                else
+#endif
+                {
+                    [reusablePopover dismissPopoverAnimated:YES];
+                }
                 
             } else {
                 
@@ -222,11 +239,16 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
--(void)presentViewController:(UIViewController *)controller fromRect:(CGRect)rect sourceView:(UIView *)view contentSize:(CGSize)contentSize {
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
-        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+-(void)presentViewController:(UIViewController *)controller
+                    fromRect:(CGRect)rect
+                  sourceView:(UIView *)view
+                 contentSize:(CGSize)contentSize
+{
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+#ifdef __IPHONE_8_0
+        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+        {
             
             if(self.presentedViewController) {
                 [self dismissViewControllerAnimated:YES completion:nil];
@@ -243,25 +265,30 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             [self presentViewController:controller animated:YES completion:nil];
             
-        } else {
-            
+        }
+        else
+#endif
+        {
             [self prepareReusablePopoverControllerWithController:controller];
             
             [reusablePopover setPopoverContentSize:contentSize animated:YES];
             [reusablePopover presentPopoverFromRect:rect inView:view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         }
-        
-    } else {
+    }
+    else
+    {
         
         [self presentViewController:controller animated:YES completion:nil];
     }
 }
 
-
--(void)presentViewController:(UIViewController *)controller barButtonItem:(UIBarButtonItem *)barButtonItem contentSize:(CGSize)contentSize {
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
+-(void)presentViewController:(UIViewController *)controller
+               barButtonItem:(UIBarButtonItem *)barButtonItem
+                 contentSize:(CGSize)contentSize
+{
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+#ifdef __IPHONE_8_0
         if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
             
             if(self.presentedViewController) {
@@ -277,17 +304,18 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             popoverPresentationController.delegate = self;
             
             [self presentViewController:controller animated:YES completion:nil];
-            
-        } else {
-            
+        }
+        else
+#endif
+        {
             [self prepareReusablePopoverControllerWithController:controller];
             
             [reusablePopover setPopoverContentSize:contentSize animated:YES];
             [reusablePopover presentPopoverFromBarButtonItem:barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         }
-        
-    } else {
-        
+    }
+    else
+    {
         [self presentViewController:controller animated:YES completion:nil];
     }
 }
@@ -686,16 +714,24 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 -(void)dismissSearchViewController:(SearchViewController *)aSearchViewController {
 	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) {
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
         /* Dismiss the popover on iPad pre iOS 8 */
-        
+#ifdef __IPHONE_8_0
+        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
+        else
+#endif
+        {
         [reusablePopover dismissPopoverAnimated:YES];
-
-	} else {
-        
+        }
+	}
+    else
+    {
         /* Dismiss the presented view controller on iPad iOS 8 and iPhone */
-		
         if(self.presentedViewController) {
             [self dismissViewControllerAnimated:YES completion:nil];
         }

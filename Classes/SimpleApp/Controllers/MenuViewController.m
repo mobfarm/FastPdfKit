@@ -155,7 +155,7 @@
 
 -(void)setLinkedDocument:(NSString *)documentName withPage:(NSUInteger)destinationPage orDestinationName:(NSString *)destinationName{
     
-    NSArray *params = [NSArray arrayWithObjects:documentName,destinationName,[NSNumber numberWithInt:destinationPage], nil];
+    NSArray *params = [NSArray arrayWithObjects:documentName,destinationName,[NSNumber numberWithUnsignedInteger:destinationPage], nil];
     [self performSelector:@selector(openDocumentWithParams:) withObject:params afterDelay:0.5];
 }
 
@@ -173,7 +173,7 @@
 	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
 	[aDocViewController setDocumentId:[params objectAtIndex:0]];
     
-    int page;
+    NSInteger page;
     if([[params objectAtIndex:2] intValue] != -1){
         page = [[params objectAtIndex:2] intValue];
     } else {
