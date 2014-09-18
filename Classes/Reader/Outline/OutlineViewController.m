@@ -68,7 +68,7 @@
         
         if((([outlineEntry file])&&(([outlineEntry pageNumber]!=0)||[outlineEntry destination]))) {
             
-            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+            [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
         }
         
     } else if ([entry isKindOfClass:[MFPDFOutlineEntry class]]) { // Local (this document) entry
@@ -77,7 +77,7 @@
         
         if([outlineEntry pageNumber] != 0) {
             
-            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+            [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
         }
     }
     
