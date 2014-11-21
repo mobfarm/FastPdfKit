@@ -226,6 +226,11 @@
 		01ECFCEC18351DD8003FB9C5 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		01F840B6163FC810009104F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
+		01F84DD31A00F4F700AB4996 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E4E4013D71E8400C9FC70 /* libz.dylib */; };
+		01F84DD41A00F55500AB4996 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07B713C755610077CE63 /* ioapi.c */; };
+		01F84DD51A00F55500AB4996 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07B913C755610077CE63 /* mztools.c */; };
+		01F84DD61A00F55500AB4996 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BB13C755610077CE63 /* unzip.c */; };
+		01F84DD71A00F55500AB4996 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BD13C755610077CE63 /* zip.c */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -757,6 +762,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F84DD31A00F4F700AB4996 /* libz.dylib in Frameworks */,
 				0181A3BE15F6791500AC476F /* Security.framework in Frameworks */,
 				950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */,
 				950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */,
@@ -2170,6 +2176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				01F84DD41A00F55500AB4996 /* ioapi.c in Sources */,
 				01BC083A13C75D3A0077CE63 /* BookmarkViewController.m in Sources */,
 				01BC084013C75D3A0077CE63 /* MiniSearchView.m in Sources */,
 				01BC084213C75D3A0077CE63 /* NotificationFactory.m in Sources */,
@@ -2178,9 +2185,12 @@
 				01BC084813C75D3A0077CE63 /* SearchResultView.m in Sources */,
 				01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */,
 				01BC085613C75D3A0077CE63 /* TextDisplayViewController.m in Sources */,
+				01F84DD71A00F55500AB4996 /* zip.c in Sources */,
 				01BC085813C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
 				010D14DE13CB002300FD6F08 /* BasicLauncherController.m in Sources */,
 				010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */,
+				01F84DD51A00F55500AB4996 /* mztools.c in Sources */,
+				01F84DD61A00F55500AB4996 /* unzip.c in Sources */,
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
 				956A056F14039F38003AE44D /* Drawable.m in Sources */,
 				956A057014039F38003AE44D /* OverlayManager.m in Sources */,
