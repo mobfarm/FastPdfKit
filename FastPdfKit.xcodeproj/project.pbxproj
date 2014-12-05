@@ -231,6 +231,8 @@
 		01F84DD51A00F55500AB4996 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07B913C755610077CE63 /* mztools.c */; };
 		01F84DD61A00F55500AB4996 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BB13C755610077CE63 /* unzip.c */; };
 		01F84DD71A00F55500AB4996 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BD13C755610077CE63 /* zip.c */; };
+		01F98AED1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F98AEC1A31AB020097D82D /* FPKThumbnailDataStore.h */; };
+		01F98AEE1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F98AEC1A31AB020097D82D /* FPKThumbnailDataStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -608,6 +610,7 @@
 		01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		01F840B5163FC810009104F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		01F98AEC1A31AB020097D82D /* FPKThumbnailDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKThumbnailDataStore.h; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39224923146832B3004A3EB1 /* NewsstandKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NewsstandKit.framework; path = System/Library/Frameworks/NewsstandKit.framework; sourceTree = SDKROOT; };
@@ -1087,6 +1090,7 @@
 				016095D414482814003CEAAA /* FPKURIAnnotation.h */,
 				016095D514482814003CEAAA /* MFAudioPlayerViewProtocol.h */,
 				016095D614482814003CEAAA /* MFAudioProvider.h */,
+				01F98AEC1A31AB020097D82D /* FPKThumbnailDataStore.h */,
 				016095D814482814003CEAAA /* MFDocumentOverlayDataSource.h */,
 				016095DB14482814003CEAAA /* MFOverlayDrawable.h */,
 				016095DC14482814003CEAAA /* MFOverlayTouchable.h */,
@@ -1577,6 +1581,7 @@
 				0189D3BF1486C28400635C5D /* MFDocumentManager.h in Headers */,
 				01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */,
 				0102A1DA1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,
+				01F98AED1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1619,6 +1624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */,
+				01F98AEE1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */,
 				958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */,
 				958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */,
 				0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,

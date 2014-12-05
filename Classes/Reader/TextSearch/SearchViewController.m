@@ -450,13 +450,13 @@
     
 	searchManager = nil;
 	
-	MF_COCOA_RELEASE(switchToMiniBarButtonItem);
-	MF_COCOA_RELEASE(cancelStopBarButtonItem);
+    [switchToMiniBarButtonItem release];
+    [cancelStopBarButtonItem release];
 	
-    MF_COCOA_RELEASE(searchBar);
-    MF_COCOA_RELEASE(searchTableView);
-	MF_COCOA_RELEASE(activityIndicatorView);
-    MF_COCOA_RELEASE(toolbar);
+    [searchBar release];
+    [searchTableView release];
+    [activityIndicatorView release];
+    [toolbar release];
     
     [super dealloc];
 }

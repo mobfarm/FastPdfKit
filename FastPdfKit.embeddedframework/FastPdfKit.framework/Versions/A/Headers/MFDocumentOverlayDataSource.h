@@ -1,6 +1,6 @@
 //
 //  MFDocumentOverlayDataSource.h
-//  FastPdfKit
+//  FastPDFKitTest
 //
 //  Created by Nicolò Tosi on 12/10/10.
 //  Copyright 2010 com.mobfarm. All rights reserved.

@@ -284,15 +284,15 @@
 	
     [[NSNotificationCenter defaultCenter]removeObserver:self];
     
-	MF_COCOA_RELEASE(nextButton);
-	MF_COCOA_RELEASE(prevButton);
-	MF_COCOA_RELEASE(fullButton);
-	MF_COCOA_RELEASE(cancelButton);
+    [nextButton release];
+    [prevButton release];
+    [fullButton release];
+    [cancelButton release];
     
-	MF_COCOA_RELEASE(pageLabel);
-	MF_COCOA_RELEASE(snippetLabel);
+    [pageLabel release];
+    [snippetLabel release];
 	
-	MF_COCOA_RELEASE(searchResultView);
+    [searchResultView release];
 	
     [super dealloc];
 }

@@ -35,7 +35,7 @@
 /**
  Child entries.
  */
-@property (retain) NSArray * bookmarks;
+@property (strong) NSArray * bookmarks;
 
 /**
  Title for the outline entry.

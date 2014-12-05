@@ -1,6 +1,6 @@
 //
 //  MFDocumentViewControllerDelegate.h
-//  FastPdfKit
+//  FastPDFKitTest
 //
 //  Created by Nicolò Tosi on 8/19/10.
 //  Copyright 2010 MobFarm S.r.l. All rights reserved.
@@ -35,6 +35,11 @@
  This method will notify a change in the direction used to present the document.
  */
 -(void)documentViewController:(MFDocumentViewController *)dvc didChangeDirectionTo:(MFDocumentDirection)direction;
+
+/**
+ * This method will notify change in the auto mode.
+ */
+-(void)documentViewController:(MFDocumentViewController *)dvc didChangeAutoModeTo:(MFDocumentAutoMode)autoMode;
 
 /**
  This method will notify if the user has tapped the document view at a point different from a document element, like an annotation.

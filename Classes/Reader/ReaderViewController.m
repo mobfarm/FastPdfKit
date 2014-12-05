@@ -637,7 +637,10 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(void)dismissMiniSearchView {
 	
 	// Remove from the superview and release the mini search view.
-	
+    
+    [self removeOverlayDataSource:self.searchManager];
+    [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+    
 	// Animation.
     [UIView animateWithDuration:0.25f
                           delay:0.0f
@@ -657,11 +660,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                          if(miniSearchView!=nil) {
                              
                              [miniSearchView removeFromSuperview];
-                             MF_COCOA_RELEASE(miniSearchView);
+                             [miniSearchView release];
                          }
                          
-                         [self removeOverlayDataSource:self.searchManager];
-                         [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
                      }];
 }
 
@@ -1256,9 +1257,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #endif
     
  	if(isPad) {
-		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 768, 1024-20)];  // Status bar only
+		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 768, 1024)];  // Status bar only
 	} else {
-		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 568-20)];   // Status bar only
+		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 568)];   // Status bar only
 	}
 	
 	[aView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];

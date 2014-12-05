@@ -39,8 +39,8 @@
 {	
 	self.delegate = nil;
 	
-    MF_COCOA_RELEASE(searchTerm);
-    MF_COCOA_RELEASE(document);
+    [searchTerm release];
+    [document release];
     
 	[super dealloc];
 }

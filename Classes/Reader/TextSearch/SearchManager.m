@@ -353,17 +353,20 @@ static NSInteger calculateNextSearchPage(NSInteger currentPage, NSInteger maxPag
 
 
 - (void)dealloc 
-{	
-	MF_COCOA_RELEASE(document);
-	
-	MF_COCOA_RELEASE(searchTerm);
-	MF_COCOA_RELEASE(searchResults);
-	
-	MF_COCOA_RELEASE(currentSearchOperation);
-	MF_COCOA_RELEASE(searchOperationQueue);
-	
-	MF_COCOA_RELEASE(currentSearchTerm);
-	
+{
+    [currentSearchOperation cancel];
+    [currentSearchOperation release];
+    [searchOperationQueue cancelAllOperations];
+    [searchOperationQueue waitUntilAllOperationsAreFinished];
+    [searchOperationQueue release];
+    
+    [currentSearchTerm release];
+    
+    [document release];
+    
+    [searchTerm release];
+    [searchResults release];
+    
     [super dealloc];
 }
 

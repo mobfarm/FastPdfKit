@@ -24,8 +24,6 @@
 	
 	NSUInteger numberOfPages;
 	
-	NSLock * pageDataLock;
-    
 	int *dataSetFlags;
 	CGRect *cropboxes;
 	int *rotations;
