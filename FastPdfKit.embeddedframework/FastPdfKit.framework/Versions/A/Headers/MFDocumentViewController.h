@@ -233,13 +233,7 @@
  screen on either side will receive such events. Values are clipped between 0.0 
  and 0.5 to prevent overlap.
  */
--(void)setEdgeFlipWidth:(CGFloat)edgeFlipWidth;
-
-/**
- Get the edge flip width
- */
-
--(CGFloat)edgeFlipWidth;
+@property (nonatomic,readwrite) CGFloat edgeFlipWidth;
 
 /**
  Default value to wich the current value will be reset to after each page change.
