@@ -633,4 +633,24 @@
  */
 @property (strong, nonatomic) UIImage * toolbarBackgroundImage;
 
+/**
+ * Invoked when the user cancel the page slider movement by touching up outside
+ * the slider. Call super if you want the embedded pageSliderLabel to reset
+ * to the actual page number.
+ */
+-(void)pageSliderCancel:(UISlider *)slider;
+
+/**
+ * Invoked when the slider slided. This is used to update the pageSliderLabel to
+ * show the page that will be loaded when the slider is released. When you override
+ * this method, remember to call super.
+ */
+-(void)pageSliderSlided:(UISlider *)slider;
+
+/**
+ * Invoked when the user stop dragging the slider and release it by touching up 
+ * inside the slider bounds. When you override this, call super if you want the 
+ * current displayed page to be updated accordingly.
+ */
+-(void)pageSliderStopped:(UISlider *)slider;
 @end

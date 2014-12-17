@@ -21,7 +21,7 @@
     
 	/** Instancing the readerViewController */
     ReaderViewController *pdfViewController = [[ReaderViewController alloc]initWithDocumentManager:documentManager];
-    
+
     /** Set resources folder on the manager */
     documentManager.resourceFolder = [[NSBundle mainBundle] resourcePath];
     

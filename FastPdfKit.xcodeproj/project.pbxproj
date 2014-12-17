@@ -64,6 +64,12 @@
 		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
 		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
 		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
+		0123E95F1A41A95900E1A521 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E95E1A41A95900E1A521 /* AVKit.framework */; };
+		0123E9611A41A96400E1A521 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E9601A41A96400E1A521 /* CoreMedia.framework */; };
+		0123E9621A41A98800E1A521 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E95E1A41A95900E1A521 /* AVKit.framework */; };
+		0123E9631A41A98D00E1A521 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E9601A41A96400E1A521 /* CoreMedia.framework */; };
+		0123E9641A41A99800E1A521 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E95E1A41A95900E1A521 /* AVKit.framework */; };
+		0123E9651A41A99E00E1A521 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E9601A41A96400E1A521 /* CoreMedia.framework */; };
 		013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */; };
 		013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */; };
 		0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; };
@@ -474,6 +480,8 @@
 		0123606E13CCA18700861EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		0123E95E1A41A95900E1A521 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		0123E9601A41A96400E1A521 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0134EE0B1456D9B2007D543F /* TVThumbnailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailScrollView.h; sourceTree = "<group>"; };
 		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
 		013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -743,6 +751,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0123E9611A41A96400E1A521 /* CoreMedia.framework in Frameworks */,
+				0123E95F1A41A95900E1A521 /* AVKit.framework in Frameworks */,
 				0181A3BC15F6790200AC476F /* Security.framework in Frameworks */,
 				951E4E4113D71E8400C9FC70 /* libz.dylib in Frameworks */,
 				01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */,
@@ -765,6 +775,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0123E9631A41A98D00E1A521 /* CoreMedia.framework in Frameworks */,
+				0123E9621A41A98800E1A521 /* AVKit.framework in Frameworks */,
 				01F84DD31A00F4F700AB4996 /* libz.dylib in Frameworks */,
 				0181A3BE15F6791500AC476F /* Security.framework in Frameworks */,
 				950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */,
@@ -800,6 +812,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0123E9651A41A99E00E1A521 /* CoreMedia.framework in Frameworks */,
+				0123E9641A41A99800E1A521 /* AVKit.framework in Frameworks */,
 				954B752314B4812700503F90 /* MapKit.framework in Frameworks */,
 				954B752114B4811500503F90 /* Security.framework in Frameworks */,
 				954B751F14B4810000503F90 /* libxml2.dylib in Frameworks */,
@@ -1421,6 +1435,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0123E9601A41A96400E1A521 /* CoreMedia.framework */,
+				0123E95E1A41A95900E1A521 /* AVKit.framework */,
 				951E4E4013D71E8400C9FC70 /* libz.dylib */,
 				954B751E14B4810000503F90 /* libxml2.dylib */,
 				954B752014B4811500503F90 /* Security.framework */,

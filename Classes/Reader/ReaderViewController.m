@@ -787,29 +787,23 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
--(IBAction) actionPageSliderSlided:(id)sender {
-	
-	// When the user move the slider, we update the label.
-	
-	// Get the slider value.
-	UISlider *slider = (UISlider *)sender;
-	NSNumber *number = [NSNumber numberWithFloat:[slider value]];
-	NSUInteger pageNumber = [number unsignedIntValue];
-	
-	// Update the label.
+-(void)pageSliderCancel:(UISlider *)slider {
+    [super pageSliderCancel:slider];
     
     [self updatePageNumberLabel];
 }
 
--(IBAction) actionPageSliderStopped:(id)sender {
-	
-	// Get the requested page number from the slider.
-	UISlider *slider = (UISlider *)sender;
-	NSNumber *number = [NSNumber numberWithFloat:[slider value]];
-	NSUInteger pageNumber = [number unsignedIntValue];
-	
-	// Go to the page.
-	[self setPage:pageNumber];
+-(void)pageSliderSlided:(UISlider *)slider {
+    
+    [super pageSliderSlided:slider];
+    
+    // Get the slider value.
+    NSNumber *number = [NSNumber numberWithFloat:[slider value]];
+    NSUInteger pageNumber = [number unsignedIntValue];
+    
+    // Update the label.
+    
+    [self updatePageNumberLabelWithPage:pageNumber];
 }
 
 -(IBAction)actionChangeMode:(id)sender {
@@ -1717,21 +1711,24 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	[self prepareToolbar];
 }
 
--(NSString *)pageLabelString {
-    
+-(NSString *)pageLabelTitleForPage:(NSUInteger)page {
     if(self.pageLabelFormat) {
         
-        return [NSString stringWithFormat:self.pageLabelFormat, [self page], [[self document] numberOfPages]];
-        
+        return [NSString stringWithFormat:self.pageLabelFormat, page, [[self document] numberOfPages]];
+    
     } else if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
-        return PAGE_NUM_LABEL_TEXT((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
-        
+        return PAGE_NUM_LABEL_TEXT((unsigned long)page,(unsigned long)[[self document]numberOfPages]);
     }
     else {
         
-        return PAGE_NUM_LABEL_TEXT_PHONE((unsigned long)[self page],(unsigned long)[[self document]numberOfPages]);
+        return PAGE_NUM_LABEL_TEXT_PHONE((unsigned long)page,(unsigned long)[[self document]numberOfPages]);
     }
+}
+
+-(NSString *)pageLabelString {
+    
+    return [self pageLabelTitleForPage:[self page]];
 }
 
 /**
@@ -1740,11 +1737,21 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
  * total number of pages.
  */
 -(void)updatePageNumberLabel{
-	
-    NSString *labelTitle = [self pageLabelString];
     
+    NSString *labelTitle = [self pageLabelString];
     self.pageNumLabel.text = labelTitle;
 }
+
+/**
+ * This method will update the page number label with an arbitrary page number,
+ * for example while the slider is being dragged by the user.
+ */
+-(void)updatePageNumberLabelWithPage:(NSUInteger)page {
+    
+    NSString *labelTitle = [self pageLabelTitleForPage:page];
+    self.pageNumLabel.text = labelTitle;
+}
+
 
 /**
  * This method will show the toolbar.
