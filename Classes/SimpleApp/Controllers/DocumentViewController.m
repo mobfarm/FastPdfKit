@@ -509,7 +509,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                          // Actual removal.
                          if(miniSearchView!=nil) {
                              [miniSearchView removeFromSuperview];
-                             MF_COCOA_RELEASE(miniSearchView);
+                             [miniSearchView release];
                          }
                          
                          [self removeOverlayDataSource:self.searchManager];
