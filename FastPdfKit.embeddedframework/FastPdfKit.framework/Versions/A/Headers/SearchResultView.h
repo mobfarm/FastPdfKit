@@ -1,31 +1,29 @@
 //
-//  SearchResultView.h
+//  SearchResultView2.h
 //  FastPdfKit
 //
-//  Created by Nicolò Tosi on 1/20/11.
-//  Copyright 2011 com.mobfarm. All rights reserved.
+//  Created by Nicolo' on 13/01/15.
+//
 //
 
 #import <UIKit/UIKit.h>
 
+@interface SearchResultView : UIView
 
-@interface SearchResultView : UIView {
-	
-	NSString *text;			// Text snippet.
-	NSRange boldRange;		// Range of the search term inside the snippet.
-	NSUInteger page;		// Page of the pdf document.
-	NSUInteger boldStart;
-	
-	BOOL highlighted;		// If highlited.
-	BOOL editing;			// If in editing mode.
-}
+@property (nonatomic, strong) IBOutlet UILabel * pageNumberLabel;
+@property (nonatomic, strong) IBOutlet UILabel * snippetLabel;
 
-@property (nonatomic,copy) NSString *text;
-@property (nonatomic,readwrite) NSRange boldRange;
-@property (nonatomic,readwrite) NSUInteger page;
-@property (nonatomic,readwrite) NSUInteger boldStart;
+@property (nonatomic, strong) UIFont * boldSnippetFont;
 
-@property (nonatomic,getter=isHighlighted) BOOL highlighted;
-@property (nonatomic,getter=isEditing) BOOL editing;
+@property (nonatomic, strong) UIFont * regularSnippetFont;
+
+/**
+ * Utility method to set an NSSAttributedString as attributeText of
+ * the snippet label, where the substring in the range passed as argument
+ * is marked as bold.
+ * @param snippet NSString with the text snippet to show
+ * @param range NSRange indicating where the bold attribute should be applied
+ */
+-(void)setSnippet:(NSString *)snippet boldRange:(NSRange)range;
 
 @end

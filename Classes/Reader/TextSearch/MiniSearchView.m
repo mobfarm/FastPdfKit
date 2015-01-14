@@ -45,9 +45,8 @@
 
 -(void)updateSearchResultViewWithItem:(MFTextItem *)item {
     
-	self.searchResultView.page = item.page;
-	self.searchResultView.text = item.text;
-	self.searchResultView.boldRange = item.searchTermRange;
+    [self.searchResultView setSnippet:item.text boldRange:item.searchTermRange];
+    self.searchResultView.pageNumberLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[item page]];
 }
 
 -(void)reloadData {

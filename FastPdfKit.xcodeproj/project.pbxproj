@@ -81,7 +81,6 @@
 		01598DBF13CAE7CD007344EE /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
 		01598DC013CAE7CD007344EE /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
 		01598DC113CAE7CD007344EE /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
-		01598DC213CAE7CD007344EE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082A13C75D3A0077CE63 /* SearchResultView.m */; };
 		01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		01598DC413CAE7CD007344EE /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
 		01598DC513CAE7CD007344EE /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
@@ -107,7 +106,6 @@
 		01598E0713CAEBCF007344EE /* SearchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082413C75D3A0077CE63 /* SearchManager.h */; };
 		01598E0813CAEBCF007344EE /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; };
 		01598E0913CAEBCF007344EE /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; };
-		01598E0A13CAEBCF007344EE /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082913C75D3A0077CE63 /* SearchResultView.h */; };
 		01598E0B13CAEBCF007344EE /* SearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082F13C75D3A0077CE63 /* SearchViewController.h */; };
 		01598E0C13CAEBCF007344EE /* SearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */; };
 		01598E0D13CAEBCF007344EE /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; };
@@ -213,8 +211,6 @@
 		01BC084513C75D3A0077CE63 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
 		01BC084613C75D3A0077CE63 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
 		01BC084713C75D3A0077CE63 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
-		01BC084813C75D3A0077CE63 /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082A13C75D3A0077CE63 /* SearchResultView.m */; };
-		01BC084913C75D3A0077CE63 /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082A13C75D3A0077CE63 /* SearchResultView.m */; };
 		01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		01BC085313C75D3A0077CE63 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		01BC085613C75D3A0077CE63 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
@@ -224,6 +220,12 @@
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
 		01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
+		01CB28061A655D9900FDF2DE /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CB28041A655D9900FDF2DE /* SearchResultView.h */; };
+		01CB28071A655D9900FDF2DE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB28051A655D9900FDF2DE /* SearchResultView.m */; };
+		01CB28081A655D9900FDF2DE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB28051A655D9900FDF2DE /* SearchResultView.m */; };
+		01CB28091A655D9900FDF2DE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB28051A655D9900FDF2DE /* SearchResultView.m */; };
+		01CB280B1A655DA700FDF2DE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB28051A655D9900FDF2DE /* SearchResultView.m */; };
+		01CB280C1A655DAF00FDF2DE /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CB28041A655D9900FDF2DE /* SearchResultView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01DF25DE166385E100433BE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
 		01DF25E11663863400433BE7 /* Deafult.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E01663863400433BE7 /* Deafult.png */; };
 		01DF25E31663863E00433BE7 /* Deafult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E21663863E00433BE7 /* Deafult@2x.png */; };
@@ -344,8 +346,6 @@
 		958A81C614027F5B00837C82 /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
 		958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81C914027F5B00837C82 /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082913C75D3A0077CE63 /* SearchResultView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81CA14027F5B00837C82 /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082A13C75D3A0077CE63 /* SearchResultView.m */; };
 		958A81CD14027F5B00837C82 /* SearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082F13C75D3A0077CE63 /* SearchViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		958A81CF14027F5B00837C82 /* SearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -585,8 +585,6 @@
 		01BC082613C75D3A0077CE63 /* SearchResultCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCellView.h; sourceTree = "<group>"; };
 		01BC082713C75D3A0077CE63 /* SearchResultCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCellView.m; sourceTree = "<group>"; };
 		01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultDataSource.h; sourceTree = "<group>"; };
-		01BC082913C75D3A0077CE63 /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
-		01BC082A13C75D3A0077CE63 /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
 		01BC082B13C75D3A0077CE63 /* SearchView2_pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView2_pad.xib; sourceTree = "<group>"; };
 		01BC082C13C75D3A0077CE63 /* SearchView2_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView2_phone.xib; sourceTree = "<group>"; };
 		01BC082F13C75D3A0077CE63 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -598,6 +596,8 @@
 		01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDisplayViewControllerDelegate.h; sourceTree = "<group>"; };
 		01BC083613C75D3A0077CE63 /* TextSearchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSearchOperation.h; sourceTree = "<group>"; };
 		01BC083713C75D3A0077CE63 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
+		01CB28041A655D9900FDF2DE /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
+		01CB28051A655D9900FDF2DE /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
 		01D73BB61474385300C142FE /* Courier-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-Bold.fpkfm"; sourceTree = "<group>"; };
 		01D73BB71474385300C142FE /* Courier-BoldOblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-BoldOblique.fpkfm"; sourceTree = "<group>"; };
@@ -1304,8 +1304,8 @@
 				01BC082613C75D3A0077CE63 /* SearchResultCellView.h */,
 				01BC082713C75D3A0077CE63 /* SearchResultCellView.m */,
 				01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */,
-				01BC082913C75D3A0077CE63 /* SearchResultView.h */,
-				01BC082A13C75D3A0077CE63 /* SearchResultView.m */,
+				01CB28041A655D9900FDF2DE /* SearchResultView.h */,
+				01CB28051A655D9900FDF2DE /* SearchResultView.m */,
 				01BC082B13C75D3A0077CE63 /* SearchView2_pad.xib */,
 				01BC082C13C75D3A0077CE63 /* SearchView2_phone.xib */,
 				01BC082F13C75D3A0077CE63 /* SearchViewController.h */,
@@ -1568,7 +1568,6 @@
 				01598E0713CAEBCF007344EE /* SearchManager.h in Headers */,
 				01598E0813CAEBCF007344EE /* SearchResultCellView.h in Headers */,
 				01598E0913CAEBCF007344EE /* SearchResultDataSource.h in Headers */,
-				01598E0A13CAEBCF007344EE /* SearchResultView.h in Headers */,
 				01598E0B13CAEBCF007344EE /* SearchViewController.h in Headers */,
 				01598E0C13CAEBCF007344EE /* SearchViewControllerDelegate.h in Headers */,
 				01598E0D13CAEBCF007344EE /* TextDisplayViewController.h in Headers */,
@@ -1578,6 +1577,7 @@
 				0123603C13CC917600861EB7 /* AudioViewController.h in Headers */,
 				0123604413CC917600861EB7 /* ReaderViewController.h in Headers */,
 				0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
+				01CB28061A655D9900FDF2DE /* SearchResultView.h in Headers */,
 				0123605013CC917600861EB7 /* WebBrowser.h in Headers */,
 				0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */,
 				016095E414482814003CEAAA /* FPKURIAnnotation.h in Headers */,
@@ -1647,10 +1647,10 @@
 				958A81C414027F5B00837C82 /* SearchManager.h in Headers */,
 				958A81C614027F5B00837C82 /* SearchResultCellView.h in Headers */,
 				958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */,
-				958A81C914027F5B00837C82 /* SearchResultView.h in Headers */,
 				958A81CD14027F5B00837C82 /* SearchViewController.h in Headers */,
 				958A81CF14027F5B00837C82 /* SearchViewControllerDelegate.h in Headers */,
 				958A81D114027F5B00837C82 /* TextDisplayViewController.h in Headers */,
+				01CB280C1A655DAF00FDF2DE /* SearchResultView.h in Headers */,
 				958A81D314027F5B00837C82 /* TextDisplayViewControllerDelegate.h in Headers */,
 				958A81D414027F5B00837C82 /* TextSearchOperation.h in Headers */,
 				958A81D614027F7100837C82 /* OutlineViewController.h in Headers */,
@@ -2121,11 +2121,11 @@
 				01598DBF13CAE7CD007344EE /* NotificationFactory.m in Sources */,
 				01598DC013CAE7CD007344EE /* SearchManager.m in Sources */,
 				01598DC113CAE7CD007344EE /* SearchResultCellView.m in Sources */,
-				01598DC213CAE7CD007344EE /* SearchResultView.m in Sources */,
 				01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */,
 				01598DC413CAE7CD007344EE /* TextDisplayViewController.m in Sources */,
 				01598DC513CAE7CD007344EE /* TextSearchOperation.m in Sources */,
 				0123604013CC917600861EB7 /* AudioViewController.m in Sources */,
+				01CB28091A655D9900FDF2DE /* SearchResultView.m in Sources */,
 				0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
 				0123605413CC917600861EB7 /* WebBrowser.m in Sources */,
 				9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */,
@@ -2161,6 +2161,7 @@
 				01884A8E131E94DD0045038F /* main.m in Sources */,
 				01BC07C313C755610077CE63 /* ASIAuthenticationDialog.m in Sources */,
 				01BC07C513C755610077CE63 /* ASIDownloadCache.m in Sources */,
+				01CB28081A655D9900FDF2DE /* SearchResultView.m in Sources */,
 				01BC07C713C755610077CE63 /* ASIFormDataRequest.m in Sources */,
 				01BC07C913C755610077CE63 /* ASIHTTPRequest.m in Sources */,
 				01BC07CB13C755610077CE63 /* ASIInputStream.m in Sources */,
@@ -2180,7 +2181,6 @@
 				01BC084313C75D3A0077CE63 /* NotificationFactory.m in Sources */,
 				01BC084513C75D3A0077CE63 /* SearchManager.m in Sources */,
 				01BC084713C75D3A0077CE63 /* SearchResultCellView.m in Sources */,
-				01BC084913C75D3A0077CE63 /* SearchResultView.m in Sources */,
 				01BC085313C75D3A0077CE63 /* SearchViewController.m in Sources */,
 				01BC085713C75D3A0077CE63 /* TextDisplayViewController.m in Sources */,
 				01BC085913C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
@@ -2204,13 +2204,13 @@
 				01BC084213C75D3A0077CE63 /* NotificationFactory.m in Sources */,
 				01BC084413C75D3A0077CE63 /* SearchManager.m in Sources */,
 				01BC084613C75D3A0077CE63 /* SearchResultCellView.m in Sources */,
-				01BC084813C75D3A0077CE63 /* SearchResultView.m in Sources */,
 				01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */,
 				01BC085613C75D3A0077CE63 /* TextDisplayViewController.m in Sources */,
 				01F84DD71A00F55500AB4996 /* zip.c in Sources */,
 				01BC085813C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
 				010D14DE13CB002300FD6F08 /* BasicLauncherController.m in Sources */,
 				010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */,
+				01CB28071A655D9900FDF2DE /* SearchResultView.m in Sources */,
 				01F84DD51A00F55500AB4996 /* mztools.c in Sources */,
 				01F84DD61A00F55500AB4996 /* unzip.c in Sources */,
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
@@ -2254,11 +2254,11 @@
 				958A81C314027F5B00837C82 /* NotificationFactory.m in Sources */,
 				958A81C514027F5B00837C82 /* SearchManager.m in Sources */,
 				958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */,
-				958A81CA14027F5B00837C82 /* SearchResultView.m in Sources */,
 				958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */,
 				958A81D214027F5B00837C82 /* TextDisplayViewController.m in Sources */,
 				958A81D514027F5B00837C82 /* TextSearchOperation.m in Sources */,
 				958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */,
+				01CB280B1A655DA700FDF2DE /* SearchResultView.m in Sources */,
 				958A81E514027F9100837C82 /* AudioViewController.m in Sources */,
 				958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */,
 				958A81E714027F9100837C82 /* WebBrowser.m in Sources */,

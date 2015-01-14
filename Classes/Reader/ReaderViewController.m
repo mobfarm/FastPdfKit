@@ -539,8 +539,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	} else {
 		
 		// If not nil, remove it from the superview.
-		if([miniSearchView superview]!=nil)
-			[miniSearchView removeFromSuperview];
+        [miniSearchView removeFromSuperview];
 	}
 	
 	// Set up the connections.
@@ -660,7 +659,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                          if(miniSearchView!=nil) {
                              
                              [miniSearchView removeFromSuperview];
-                             [miniSearchView release];
+                             [miniSearchView release], miniSearchView = nil;
                          }
                          
                      }];

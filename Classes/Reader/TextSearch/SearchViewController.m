@@ -15,6 +15,7 @@
 #import "SearchManager.h"
 #import "SearchResultCellView.h"
 #import "NotificationFactory.h"
+#import "SearchResultView.h"
 
 /* This parameter set the zoom level that will be performed when you choose the next result, there's another one in the MiniSearchView.m */
 #define ZOOM_LEVEL 4.0
@@ -216,7 +217,6 @@
 	[delegate switchToMiniSearchView:item];
 	
 	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
-	
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -228,26 +228,22 @@
 	NSArray *searchResult = [[searchManager searchResults] objectAtIndex:indexPath.section];
 	MFTextItem *searchItem = [searchResult objectAtIndex:indexPath.row];
     
-	
 	// This is a custom view cell that display an MFTextItem directly.
-	
+    
 	SearchResultCellView *cell = (SearchResultCellView *)[tableView dequeueReusableCellWithIdentifier:cellId];
 	
 	if(nil == cell) {
 	
 		// Simple initialization.
-		
+        
 		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[searchItem page]];
+    [cell.searchResultView setSnippet:searchItem.text boldRange:searchItem.searchTermRange];
+    cell.searchResultView.pageNumberLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[searchItem page]];
     
-	[cell setTextSnippet:[searchItem text]];
-	[cell setPage:[searchItem page]];
-	[cell setBoldRange:[searchItem searchTermRange]];
-	
     return cell;
 }
 
@@ -319,7 +315,6 @@
         }
         
 		[cancelStopBarButtonItem setTitle:title];
-		
 	} 
 	
 	// Common setup.
@@ -335,7 +330,6 @@
 -(void)viewWillDisappear:(BOOL)animated 
 {    
     [super viewWillDisappear:animated];
-    
 }
 
 -(IBAction)actionToggleIgnoreCase:(id)sender
@@ -407,7 +401,6 @@
     [exactMatchSwitch release];
     
     // Toolbar.
-    
     [self.toolbar setItems: [NSArray arrayWithObjects:ignoreCaseLabelBarButtonItem,ignoreCaseSwitchBarButtonItem,exactMatchLabelBarButtonItem, exactMatchSwitchBarButtonItem, nil] animated:YES];
     
     [exactMatchLabelBarButtonItem release];

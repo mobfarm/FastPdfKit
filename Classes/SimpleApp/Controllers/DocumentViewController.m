@@ -439,19 +439,18 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		
 		// If nil, allocate and initialize it.
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+            self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)]autorelease];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 			
-		}else {
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)];
+		} else {
+            
+            self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-320)/2, -45, 320, 44)]autorelease];
 			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
 		}
 		
 	} else {
 		
-		// If not nil, remove it from the superview.
-		if([miniSearchView superview]!=nil)
-			[miniSearchView removeFromSuperview];
+        [miniSearchView removeFromSuperview];
 	}
 	
 	// Set up the connections.
@@ -484,7 +483,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                          
                          currentReusableView = FPK_REUSABLE_VIEW_SEARCH;
                          currentSearchViewMode = FPK_SEARCH_VIEW_MODE_MINI;
-                         
                      }];
 }
 
@@ -509,7 +507,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                          // Actual removal.
                          if(miniSearchView!=nil) {
                              [miniSearchView removeFromSuperview];
-                             [miniSearchView release];
+                             [miniSearchView release], miniSearchView = nil;
                          }
                          
                          [self removeOverlayDataSource:self.searchManager];
