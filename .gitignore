@@ -16,3 +16,4 @@ matteo.perspectivev3
 FastPdfKit.xcodeproj/xcuserdata/
 FastPdfKit.xcodeproj/project.xcworkspace/xcshareddata/
 Pods/
+*.lock
