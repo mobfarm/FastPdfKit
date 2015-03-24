@@ -19,5 +19,4 @@
 @property (nonatomic,copy) NSString * originalUri;
 @property (nonatomic,retain) NSURL * url;
 @property (nonatomic,readwrite) CGRect quadPointsRect;
-
 @end

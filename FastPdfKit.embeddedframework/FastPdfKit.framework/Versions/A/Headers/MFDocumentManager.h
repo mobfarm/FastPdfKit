@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 #import "Stuff.h"
+#import "FPKEmbeddedAnnotationURIHandler.h"
 
 @class MFOffscreenRenderer;
 
@@ -21,6 +22,12 @@
     CGDataProviderRef provider;
     
     NSString * resourceFolder;  /* If nil, will default to Documents folder */
+	
+	NSUInteger numberOfPages;
+	
+	int *dataSetFlags;
+	CGRect *cropboxes;
+	int *rotations;
     
     NSMutableDictionary * fontCache;
     
@@ -29,7 +36,7 @@
     BOOL alternateURISchemesEnabled;
 }
 
-@property (nonatomic,readonly) NSUInteger numberOfPages;
+@property (nonatomic, strong) id<FPKEmbeddedAnnotationURIHandler> embeddedAnnotationURIHandler;
 
 // These method are used internally.
 -(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage andRight:(NSInteger)rightPage size:(CGSize)size andScale:(CGFloat)scale useLegacy:(BOOL)legacy;

@@ -226,6 +226,12 @@
 		01CB28091A655D9900FDF2DE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB28051A655D9900FDF2DE /* SearchResultView.m */; };
 		01CB280B1A655DA700FDF2DE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB28051A655D9900FDF2DE /* SearchResultView.m */; };
 		01CB280C1A655DAF00FDF2DE /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CB28041A655D9900FDF2DE /* SearchResultView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01CD259E1AC1AB34008C1E23 /* FPKSharedSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD259D1AC1AB34008C1E23 /* FPKSharedSettings.h */; };
+		01CD259F1AC1AB34008C1E23 /* FPKSharedSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD259D1AC1AB34008C1E23 /* FPKSharedSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01CD25A11AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A01AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h */; };
+		01CD25A21AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A01AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01CD25A41AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A31AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h */; };
+		01CD25A51AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A31AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01DF25DE166385E100433BE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
 		01DF25E11663863400433BE7 /* Deafult.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E01663863400433BE7 /* Deafult.png */; };
 		01DF25E31663863E00433BE7 /* Deafult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E21663863E00433BE7 /* Deafult@2x.png */; };
@@ -598,6 +604,9 @@
 		01BC083713C75D3A0077CE63 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
 		01CB28041A655D9900FDF2DE /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
 		01CB28051A655D9900FDF2DE /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
+		01CD259D1AC1AB34008C1E23 /* FPKSharedSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKSharedSettings.h; sourceTree = "<group>"; };
+		01CD25A01AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKBaseEmbeddedAnnotationURIHandler.h; sourceTree = "<group>"; };
+		01CD25A31AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKEmbeddedAnnotationURIHandler.h; sourceTree = "<group>"; };
 		01CF7355132532FC00E42146 /* kiosk_list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kiosk_list.xml; sourceTree = "<group>"; };
 		01D73BB61474385300C142FE /* Courier-Bold.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-Bold.fpkfm"; sourceTree = "<group>"; };
 		01D73BB71474385300C142FE /* Courier-BoldOblique.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Courier-BoldOblique.fpkfm"; sourceTree = "<group>"; };
@@ -1092,6 +1101,9 @@
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				01CD25A31AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h */,
+				01CD25A01AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h */,
+				01CD259D1AC1AB34008C1E23 /* FPKSharedSettings.h */,
 				0102A1D91547022B00F7A9AF /* MFDocumentViewController.h */,
 				01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */,
 				0189D3BE1486C28400635C5D /* MFDocumentManager.h */,
@@ -1564,6 +1576,7 @@
 				01598E0213CAEBCF007344EE /* OutlineViewController.h in Headers */,
 				01598E0313CAEBCF007344EE /* OutlineViewControllerDelegate.h in Headers */,
 				01598E0413CAEBCF007344EE /* MiniSearchView.h in Headers */,
+				01CD25A11AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */,
 				01598E0513CAEBCF007344EE /* MiniSearchViewControllerDelegate.h in Headers */,
 				01598E0713CAEBCF007344EE /* SearchManager.h in Headers */,
 				01598E0813CAEBCF007344EE /* SearchResultCellView.h in Headers */,
@@ -1593,11 +1606,13 @@
 				0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */,
 				0155DE14145848590080FFEF /* MFTextItem.h in Headers */,
 				01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */,
+				01CD259E1AC1AB34008C1E23 /* FPKSharedSettings.h in Headers */,
 				0189D3BC1486C1C000635C5D /* FPKGlyphBox.h in Headers */,
 				0189D3BF1486C28400635C5D /* MFDocumentManager.h in Headers */,
 				01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */,
 				0102A1DA1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,
 				01F98AED1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */,
+				01CD25A41AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1645,6 +1660,7 @@
 				958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */,
 				0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,
 				958A81C414027F5B00837C82 /* SearchManager.h in Headers */,
+				01CD25A51AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h in Headers */,
 				958A81C614027F5B00837C82 /* SearchResultCellView.h in Headers */,
 				958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */,
 				958A81CD14027F5B00837C82 /* SearchViewController.h in Headers */,
@@ -1672,6 +1688,8 @@
 				0160960114482814003CEAAA /* MFPDFOutlineEntry.h in Headers */,
 				0160960414482814003CEAAA /* mfprofile.h in Headers */,
 				0168707F1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */,
+				01CD259F1AC1AB34008C1E23 /* FPKSharedSettings.h in Headers */,
+				01CD25A21AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */,
 				015ED17D1455AE9700C7C372 /* FPKAnnotation.h in Headers */,
 				0155DDE81458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */,
 				0155DE15145848590080FFEF /* MFTextItem.h in Headers */,

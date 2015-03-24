@@ -11,6 +11,7 @@
 #import "MFDocumentOverlayDataSource.h"
 #import "FPKOverlayViewDataSource.h"
 #import "FPKThumbnailDataStore.h"
+#import "FPKSharedSettings.h"
 
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
@@ -22,6 +23,19 @@
 @property (nonatomic, strong) UIImage * image;
 
 @end
+
+extern NSString * const FPKConfigurationDictionaryConfigKey;
+extern NSString * const FPKConfigurationDictionaryPageKey;
+extern NSString * const FPKConfigurationDictionaryOrientationKey;
+extern NSString * const FPKConfigurationDictionaryModeKey;
+extern NSString * const FPKConfigurationDictionaryPaddingKey;
+extern NSString * const FPKConfigurationDictionaryEdgeFlipKey;
+extern NSString * const FPKConfigurationDictionaryAlternateEdgeFlipKey;
+
+static const NSUInteger FPKEmbeddedAnnotationsVideo = 1;
+static const NSUInteger FPKEmbeddedAnnotationsAudio = 2;
+static const NSUInteger FPKEmbeddedAnnotationsWeb = 4;
+static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|FPKEmbeddedAnnotationsVideo|FPKEmbeddedAnnotationsWeb;
 
 @interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
 	
@@ -83,11 +97,25 @@
     CGFloat padding;
 	
     BOOL useTiledOverlayView;
-    
-    FPKSupportedOrientation supportedOrientation;
 }
 
+/** 
+ * Supported orientations that will be returned from -supportedInterfaceOrientations
+ */
+@property (nonatomic,readwrite) NSUInteger supportedOrientations;
+
+/**
+ * Can enable/disabled embedded annotations by type.
+ */
+@property (nonatomic, readwrite) NSUInteger supportedEmbeddedAnnotations;
+
+
 @property (nonatomic,strong)id<FPKThumbnailDataStore> thumbnailDataStore;
+
+/**
+ * This is the configuration dictionary you can pass on.
+ */
+@property (nonatomic, copy) NSDictionary * configurationDictionary;
 
 /**
  This property let you add the main DocumentViewControllerDelegate.
@@ -236,13 +264,6 @@
 @property (nonatomic,readwrite) CGFloat edgeFlipWidth;
 
 /**
- Default value to wich the current value will be reset to after each page change.
- Default is 0.1.
- */
-@property (nonatomic,readwrite) CGFloat defaultEdgeFlipWidth;
-
-
-/**
  Enabled the zoom in when the user double tap on the screen.
  */
 @property (assign,readwrite,getter=isZoomInOnDoubleTapEnabled) BOOL zoomInOnDoubleTapEnabled;
@@ -263,7 +284,6 @@
  depending on the device. Default is disabled.
  */
 @property (readwrite) BOOL legacyModeEnabled;
-
 
 /**
  This is the default maximum magnification the pdf will zoom.
@@ -653,4 +673,10 @@
  * current displayed page to be updated accordingly.
  */
 -(void)pageSliderStopped:(UISlider *)slider;
+
+/**
+ * Settings object.
+ */
+@property (nonatomic, strong) FPKSharedSettings * settings;
+
 @end

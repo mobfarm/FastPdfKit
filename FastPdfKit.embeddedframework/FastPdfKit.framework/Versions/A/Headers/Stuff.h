@@ -81,9 +81,9 @@ typedef NSUInteger MFDocumentLead;
  page is drawn on the view. MFDocumentModeDouble display two pages side-by-side.
  */
 enum MFDocumentMode {
-	MFDocumentModeSingle = 1,
-	MFDocumentModeDouble = 2,
-    MFDocumentModeOverflow = 3
+	MFDocumentModeSingle = 0,
+	MFDocumentModeDouble,
+    MFDocumentModeOverflow
 };
 typedef NSUInteger MFDocumentMode;
 
@@ -116,7 +116,10 @@ enum FPKSupportedOrientation {
     FPKSupportedOrientationPortrait = 1,
     FPKSupportedOrientationPortraitUpsideDown = 2,
     FPKSupportedOrientationLandscapeRight = 4,
-    FPKSupportedOrientationLandscapeLeft = 8
+    FPKSupportedOrientationLandscapeLeft = 8,
+    FPKSupportedOrientationPortaitBoth = FPKSupportedOrientationPortrait|FPKSupportedOrientationPortraitUpsideDown,
+    FPKSupportedOrientationLandscape = FPKSupportedOrientationLandscapeLeft|FPKSupportedOrientationLandscapeRight,
+    FPKSupportedOrientationAll = FPKSupportedOrientationLandscape|FPKSupportedOrientationPortaitBoth
 };
 typedef NSUInteger FPKSupportedOrientation;
 
