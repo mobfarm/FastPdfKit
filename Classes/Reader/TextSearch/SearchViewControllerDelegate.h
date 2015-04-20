@@ -1,6 +1,6 @@
 //
 //  SearchViewControllerDelegate.h
-//  FastPdfKit
+//  FastPdfKit Sample
 //
 //  Created by Mac Book Pro on 25/02/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -10,15 +10,18 @@
 #import "MFTextItem.h"
 
 @class SearchViewController;
+@class SearchManager;
+@class MFDocumentManager;
 
-@protocol SearchViewControllerDelegate
+@protocol SearchViewControllerDelegate <NSObject>
 
--(NSUInteger)page;
-
--(void)switchToMiniSearchView:(MFTextItem *)item;
-
--(void)dismissSearchViewController:(SearchViewController *)svc;
-
--(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
+-(MFDocumentManager *)documentForSearchViewController:(SearchViewController *)controller;
+-(NSUInteger)pageForSearchViewController:(SearchViewController *)controller;
+-(void)searchViewController:(SearchViewController *)controller switchToMiniSearchView:(MFTextItem *)item;
+-(void)dismissSearchViewController:(SearchViewController *)controller;
+-(void)searchViewController:(SearchViewController *)controller setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
+-(void)searchViewController:(SearchViewController *)controller addSearch:(SearchManager *)searchManager;
+-(void)searchViewController:(SearchViewController *)controller removeSearch:(SearchManager *)searchManager;
+-(SearchManager *)searchForSearchViewController:(SearchViewController *)controller;
 
 @end

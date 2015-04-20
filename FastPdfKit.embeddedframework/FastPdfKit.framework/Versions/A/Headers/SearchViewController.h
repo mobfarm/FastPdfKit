@@ -45,5 +45,6 @@
 @property (nonatomic, retain) IBOutlet UITableView *searchTableView;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
 @property (nonatomic, retain) IBOutlet UIToolbar * toolbar;
 @end

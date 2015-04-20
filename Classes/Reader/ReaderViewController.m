@@ -69,7 +69,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 @synthesize textDisplayViewController;
 @synthesize searchViewController;
-@synthesize searchManager;
 @synthesize miniSearchView;
 @synthesize reusablePopover;
 @synthesize multimediaVisible;
@@ -684,16 +683,45 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     } completion:NULL];
 }
 
--(SearchManager *)searchManager {
-	
-	// Lazily allocate and instantiate the search manager.
-	
-	if(!searchManager) {
-		
-		searchManager = [[SearchManager alloc]init];
-	}
-	
-	return searchManager;
+/**
+ * Set the SearchManager. If the new one is actually different thant the current
+ * one, first remote the current as overlay view datasource, then add the new
+ * one.
+ */
+-(void)setSearchManager:(SearchManager *)searchManager {
+    if(searchManager != _searchManager) {
+        [self removeOverlayViewDataSource:_searchManager];
+        _searchManager = searchManager;
+        [self addOverlayViewDataSource:_searchManager];
+    }
+}
+
+-(NSUInteger)pageForSearchViewController:(SearchViewController *)controller {
+    return self.page;
+}
+
+-(MFDocumentManager *)documentForSearchViewController:(SearchViewController *)controller {
+    return self.document;
+}
+
+-(SearchManager *)searchForSearchViewController:(SearchViewController *)controller {
+    return self.searchManager;
+}
+
+-(void)searchViewController:(SearchViewController *)controller setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect {
+    [self setPage:page withZoomOfLevel:zoomLevel onRect:rect];
+}
+
+-(void)searchViewController:(SearchViewController *)controller addSearch:(SearchManager *)searchManager {
+    
+    [self setSearchManager:searchManager];
+}
+
+-(void)searchViewController:(SearchViewController *)controller removeSearch:(SearchManager *)searchManager {
+    
+    if([self.searchManager isEqual:searchManager]) {
+        self.searchManager = nil;
+    }
 }
 
 -(void)revertToFullSearchView {
@@ -704,12 +732,10 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	[self presentFullSearchView];
 }
 
--(void)switchToMiniSearchView:(MFTextItem *)item {
-	
-	// Dismiss the full view and present the minimized one.
+-(void)searchViewController:(SearchViewController *)controller switchToMiniSearchView:(MFTextItem *)item {
     
-	[self dismissSearchViewController:searchViewController];
-	[self presentMiniSearchViewWithStartingItem:item];
+    [self dismissSearchViewController:searchViewController];
+    [self presentMiniSearchViewWithStartingItem:item];
 }
 
 -(void)dismissSearchViewController:(SearchViewController *)aSearchViewController {

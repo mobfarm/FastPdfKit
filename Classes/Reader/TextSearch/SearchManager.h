@@ -1,6 +1,6 @@
 //
 //  SearchManager.h
-//  FastPdfKit
+//  FastPDFKitTest
 //
 //  Created by Nicolò Tosi on 1/10/11.
 //  Copyright 2011 com.mobfarm. All rights reserved.
@@ -8,54 +8,38 @@
 
 #import <UIKit/UIKit.h>
 #import "MFDocumentOverlayDataSource.h"
+#import "FPKOverlayViewDataSource.h"
+
+static NSString * const kNotificationSearchResultAvailable = @"FPKSearchResultAvailableNotification";
+static NSString * const kNotificationSearchDidStart = @"FPKSearchDidStart";
+static NSString * const kNotificationSearchDidStop = @"FPKSearchDidStop";
+static NSString * const kNotificationSearchGotCancelled = @"FPKSearchGotCancelled";
+static NSString * const kNotificationSearchInfoResults = @"searchResults";
+static NSString * const kNotificationSearchInfoPage = @"page";
+static NSString * const kNotificationSearchInfoSearchTerm = @"searchTerm";
 
 @class MFDocumentManager;
 
-@interface SearchManager : UIView <MFDocumentOverlayDataSource> {
+@interface SearchManager : UIView <MFDocumentOverlayDataSource, FPKOverlayViewDataSource>
 
-	// Status.
-	
-    NSUInteger status;
-    
-	BOOL stopped;
-	BOOL running;
-	
-	// Data.
-	NSUInteger startingPage;		// Starting page for the sarch.
-	NSUInteger maxPage;				// Max page of the document.
-	NSUInteger currentPage;			// Current page.
-	NSString * currentSearchTerm;	// Current search term.
-	
-    // Options.
-    BOOL ignoreCase;
-    BOOL exactMatch;
-    
-	// Concurrent operations.
-	NSOperation * currentSearchOperation;		// Reference to the current op.
-	NSOperationQueue * searchOperationQueue;	// The operation queue.
-	
-	MFDocumentManager * document;	// Our document.
-	
-	NSMutableArray * searchResults;	// Array of results. It's an array of array.
-}
+@property (nonatomic, assign) MFDocumentManager * document;
+@property (nonatomic, copy) NSString * searchTerm;
 
-@property (nonatomic,retain) NSOperation * currentSearchOperation;
-@property (nonatomic,retain) MFDocumentManager * document;
-@property (nonatomic,copy) NSString * searchTerm;
-@property (nonatomic,retain) NSMutableArray * searchResults;
-@property (nonatomic,copy) NSString *currentSearchTerm;
+@property (nonatomic, readwrite) NSUInteger maxPage;
+@property (nonatomic, readwrite) NSUInteger startingPage;
+@property (nonatomic, readwrite) BOOL running;
+@property (nonatomic, readwrite) BOOL loop;
+@property (nonatomic, readwrite) BOOL ignoreCase;
+@property (nonatomic, readwrite) BOOL exactMatch;
 
--(BOOL)isRunning;
--(BOOL)isCancelled;
--(BOOL)isStopped;
+-(NSArray *)allSearchResults;
+-(NSArray *)searchResultOnPage:(NSUInteger)page;
 
--(NSArray *)searchResultsAsPlainArray;
+@property (nonatomic, strong) NSMutableDictionary * pagedSearchResults;
+@property (nonatomic, strong) NSMutableArray * sequentialSearchResults;
+
 -(void)stopSearch;
--(void)cancelSearch; 
--(void)startSearchOfTerm:(NSString *)term 
-                fromPage:(NSUInteger)startingPage;
--(void)startSearchOfTerm:(NSString *)term 
-                fromPage:(NSUInteger)page 
-              ignoreCase:(BOOL)ignoreCaseOrNot 
-              exactMatch:(BOOL)exactMatchOrNot;
+
+-(void)startSearch;
+
 @end

@@ -28,6 +28,16 @@
 -(id)initWithText:(NSString *)someText andHighlightPath:(CGPathRef)aPath;
 
 /**
+ Return the bounding box of the hightlight. This can double as the frame for the highlight view
+ */
+-(CGRect)boundingBox;
+
+/**
+ * The highlight view.
+ */
+@property (nonatomic,readonly) UIView * highlightView;
+
+/**
  Default initializer, plus the page number.
  */
 -(id)initWithText:(NSString *)someText highlightPath:(CGPathRef)aPath andPage:(NSUInteger)aPage;

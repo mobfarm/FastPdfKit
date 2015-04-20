@@ -14,7 +14,6 @@
 #import "TextSearchOperation.h"
 #import "SearchManager.h"
 #import "SearchResultCellView.h"
-#import "NotificationFactory.h"
 #import "SearchResultView.h"
 
 /* This parameter set the zoom level that will be performed when you choose the next result, there's another one in the MiniSearchView.m */
@@ -52,6 +51,7 @@
 }
 
 -(void)handleSearchDidStopNotification:(NSNotification *)notification {
+    
     NSString *title = NSLocalizedString(@"SEARCH_CANCEL_BTN_TITLE", @"Cancel");
     if ([title isEqualToString:@"SEARCH_CANCEL_BTN_TITLE"]){
         title = @"Cancel";
@@ -98,45 +98,63 @@
 -(void)stopSearch {
 	
 	// Tell the manager to stop the search and let the delegate's methods to refresh this view.
-	
-	[searchManager stopSearch];
+    if(self.searchManager) {
+        [searchManager stopSearch];
+    }
 }
 
 -(void)startSearchWithTerm:(NSString *)aSearchTerm {
 	
 	// Tell the manager to start the search  and let the delegate's methods to refresh this view.
-	
-	[searchManager startSearchOfTerm:aSearchTerm 
-                            fromPage:[delegate page] 
-                          ignoreCase:ignoreCase 
-                          exactMatch:exactMatch];
+    // Create a new search manager with the search term
+    SearchManager * searchManager = [SearchManager new];
+    self.searchManager = searchManager;
+    
+    self.searchManager.searchTerm = aSearchTerm;
+    self.searchManager.startingPage = [self.delegate pageForSearchViewController:self];
+    self.searchManager.document = [self.delegate documentForSearchViewController:self];
+    self.searchManager.ignoreCase = ignoreCase;
+    self.searchManager.exactMatch = exactMatch;
+    
+    // Start the search
+    [self.searchManager startSearch];
+    
+    // Inform the delegate of the search in progress
+    [self.delegate searchViewController:self addSearch:self.searchManager];
+
 }
 
 -(void)cancelSearch {
 	
-	// Tell the manager to cancel the search and let the delegate's  methods to refresh this view.
-	
-	[searchManager cancelSearch];
+    // Tell the manager to cancel the search and let the delegate's  methods to refresh this view.
+    if(self.searchManager) {
+        [self.searchManager stopSearch];
+        [self.delegate searchViewController:self removeSearch:self.searchManager];
+        self.searchManager = nil;
+        [self.searchTableView reloadData];
+    }
 }
 
 #pragma mark -
 #pragma mark Actions
 
 -(IBAction)actionCancelStop:(id)sender {
-	
-	// If the search is running, stop it. Otherwise, cancel the 
-	// search entirely.
-	
-	if([searchManager isRunning]) {
-	
-		// Stop.
-		[self stopSearch];
-		
-	} else {
-		
-		// Cancel.
-		[delegate dismissSearchViewController:self];
-	}
+    
+    if(!self.searchManager) {
+        return; // Nothing to do here
+    }
+    
+    // If the search is running, stop it. Otherwise, cancel the
+    // search entirely.
+    
+    if(self.searchManager.running) {
+        
+        [self stopSearch];
+        
+    } else {
+        
+        [self cancelSearch];
+    }
 }
 
 
@@ -147,27 +165,28 @@
 
 -(IBAction)actionMinimize:(id)sender {
 	
-	// We are going to use the first item to initialize the mini view.
-	
+    // We are going to use the first item to initialize the mini view.
+    
     NSIndexPath * visibleIndexPath = nil;
     
-	MFTextItem * firstItem = nil;
+    MFTextItem * firstItem = nil;
     
-    if([[searchManager searchResults]count] > 0) {
+    NSArray * results = [self.searchManager allSearchResults];
+    
+    if(results.count > 0) {
         
-        visibleIndexPath = [[searchTableView indexPathsForVisibleRows]objectAtIndex:0];
-        firstItem = [[[searchManager searchResults] objectAtIndex:visibleIndexPath.section]objectAtIndex:visibleIndexPath.row];
+        visibleIndexPath = [[self.searchTableView indexPathsForVisibleRows]objectAtIndex:0];
+        firstItem = [[results objectAtIndex:visibleIndexPath.section] objectAtIndex:visibleIndexPath.row];
         
         if(firstItem!=nil) {
             
-            [delegate switchToMiniSearchView:firstItem];
+            [self.delegate searchViewController:self switchToMiniSearchView:firstItem];
         }
     }
 }
 		
 #pragma mark -
 #pragma mark UISearchBarDelegate methods
-
 
 -(BOOL)searchBarShouldEndEditing:(UISearchBar *)sBar {
 	
@@ -190,33 +209,31 @@
 
 	[sBar resignFirstResponder];
 	
-	[self startSearchWithTerm:[sBar text]];
+    NSString * searchTerm = searchBar.text;
+    [self startSearchWithTerm:searchTerm];
 }
 
--(void) searchBarTextDidBeginEditing:(UISearchBar *)sBar {
-	
-	// Let the stopSearch helper function stop the pending operation.
-	
-	[self stopSearch];
+-(BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    [self cancelSearch];
+    
+    return YES;
 }
-
 		 
 #pragma mark -
 #pragma mark UITableViewDelegate and DataSource methods
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	// Let's get the MFTextItem from its container array.
-	
-	NSArray *searchResult = [[searchManager searchResults] objectAtIndex:indexPath.section];
-	MFTextItem * item = [searchResult objectAtIndex:indexPath.row];
-	
-	// Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page after
-	// displaying the mini search view.
-	
-	[delegate switchToMiniSearchView:item];
-	
-	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
+    NSArray *searchResult = self.searchManager.sequentialSearchResults[indexPath.section];
+    MFTextItem * item = [searchResult objectAtIndex:indexPath.row];
+    
+    // Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page after
+    // displaying the mini search view.
+    
+    [self.delegate searchViewController:self switchToMiniSearchView:item];
+    
+    [self.delegate searchViewController:self setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -225,7 +242,7 @@
 	
 	// Just costumize the cell with the content of the MFSearchItem for the right row in the right section.
 	
-	NSArray *searchResult = [[searchManager searchResults] objectAtIndex:indexPath.section];
+    NSArray *searchResult = self.searchManager.sequentialSearchResults[indexPath.section];
 	MFTextItem *searchItem = [searchResult objectAtIndex:indexPath.row];
     
 	// This is a custom view cell that display an MFTextItem directly.
@@ -251,7 +268,7 @@
 
     // Let's get the MFTextItem from its container array.
 	
-	NSArray *searchResult = [[searchManager searchResults] objectAtIndex:indexPath.section];
+    NSArray *searchResult = self.searchManager.sequentialSearchResults[indexPath.section];
 	MFTextItem * item = [searchResult objectAtIndex:indexPath.row];
 	
 	// Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page after
@@ -266,15 +283,15 @@
 -(NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
 	
 	// Nothing special here.
-	NSArray *searchResult = [[searchManager searchResults] objectAtIndex:section];
+    NSArray *searchResult = self.searchManager.sequentialSearchResults[section];
     
-	return [searchResult count];
+    return searchResult.count;
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
 	
 	// Nothing special here.
-	return [[searchManager searchResults] count];
+    return self.searchManager.sequentialSearchResults.count;
 }
 
 #pragma mark UIViewController methods
@@ -289,6 +306,11 @@
 		switchToMiniBarButtonItem.enabled = NO;
         ignoreCase = YES;
         exactMatch = NO;
+        
+        NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter addObserver:self selector:@selector(handleSearchDidStartNotification:) name:kNotificationSearchDidStart object:nil];
+        [notificationCenter addObserver:self selector:@selector(handleSearchDidStopNotification:) name:kNotificationSearchDidStop object:nil];
+        [notificationCenter addObserver:self selector:@selector(handleSearchResultsAvailableNotification:) name:kNotificationSearchResultAvailable object:nil];
 	}
     return self;
 }
@@ -298,15 +320,17 @@
 	// Different setup if search is running or not.
 	[super viewWillAppear:animated];
     
-	if([searchManager isRunning]) {
+    self.searchManager = [self.delegate searchForSearchViewController:self]; // Retrieve the searh currently displayed
+    
+	if(self.searchManager.running) {
 		
-		[activityIndicatorView startAnimating];
+		[self.activityIndicatorView startAnimating];
         NSString *title = NSLocalizedString(@"SEARCH_STOP_BTN_TITLE", @"Cancel");
         if ([title isEqualToString:@"SEARCH_STOP_BTN_TITLE"]){
             title = @"Stop";
         }
 
-		[cancelStopBarButtonItem setTitle:title];
+		[self.cancelStopBarButtonItem setTitle:title];
 		
 	} else {
 	    NSString *title = NSLocalizedString(@"SEARCH_CANCEL_BTN_TITLE", @"Cancel");
@@ -314,22 +338,18 @@
             title = @"Cancel";
         }
         
-		[cancelStopBarButtonItem setTitle:title];
+		[self.cancelStopBarButtonItem setTitle:title];
 	} 
 	
 	// Common setup.
 	
-	[searchBar setText:[searchManager searchTerm]];
+	[self.searchBar setText:[searchManager searchTerm]];
 	
-	[searchTableView reloadData];
+	[self.searchTableView reloadData];
     
-	if([[searchManager searchResults] count] <= 0)
+    if(self.searchManager.sequentialSearchResults.count == 0) {
 		[searchBar becomeFirstResponder];
-}
-
--(void)viewWillDisappear:(BOOL)animated 
-{    
-    [super viewWillDisappear:animated];
+    }
 }
 
 -(IBAction)actionToggleIgnoreCase:(id)sender
@@ -346,27 +366,6 @@
 - (void)viewDidLoad 
 {	
     [super viewDidLoad];
-    
-    /* Register for notifications. */
-    
-    NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
-    
-    [notificationCenter addObserver:self 
-                           selector:@selector(handleSearchDidStartNotification:) 
-                               name:kNotificationSearchDidStart 
-                             object:nil];
-    [notificationCenter addObserver:self 
-                           selector:@selector(handleSearchDidStopNotification:) 
-                               name:kNotificationSearchDidStop 
-                             object:nil];
-    [notificationCenter addObserver:self 
-                           selector:@selector(handleSearchGotCancelledNotification:) 
-                               name:kNotificationSearchGotCancelled 
-                             object:nil];
-    [notificationCenter addObserver:self 
-                           selector:@selector(handleSearchResultsAvailableNotification:) 
-                               name:kNotificationSearchResultAvailable 
-                             object:nil];
     
     /* Setup bottom toolbar with label and switches */
     
@@ -416,26 +415,6 @@
 
     return YES;
 }
-
-
-- (void)didReceiveMemoryWarning 
-{
-	[super didReceiveMemoryWarning];
-}
-
-- (void)viewDidUnload 
-{    
-    [super viewDidUnload];
-    
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
-	
-    self.searchBar = nil;
-    self.searchTableView = nil;
-    self.switchToMiniBarButtonItem = nil;
-    self.activityIndicatorView = nil;
-    self.toolbar = nil;
-}
-
 
 - (void)dealloc 
 {
