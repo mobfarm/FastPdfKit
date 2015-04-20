@@ -22,7 +22,7 @@ static NSString * const kNotificationSearchInfoSearchTerm = @"searchTerm";
 
 @interface SearchManager : UIView <MFDocumentOverlayDataSource, FPKOverlayViewDataSource>
 
-@property (nonatomic, assign) MFDocumentManager * document;
+@property (nonatomic, weak) MFDocumentManager * document;
 @property (nonatomic, copy) NSString * searchTerm;
 
 @property (nonatomic, readwrite) NSUInteger maxPage;

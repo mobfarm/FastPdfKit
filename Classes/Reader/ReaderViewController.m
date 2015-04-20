@@ -119,8 +119,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             case FPKReusableViewSearch:
                 
                 if(currentSearchViewMode == FPKSearchViewModeFull) {
-                
-                    [searchManager cancelSearch];
                     
                     currentReusableView = FPKReusableViewNone;
                 }
@@ -153,8 +151,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             if(currentSearchViewMode == FPKSearchViewModeFull)
             {
-                
-                [searchManager cancelSearch];
                 
                 currentReusableView = FPKReusableViewNone;
             }
@@ -221,12 +217,11 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             if(currentSearchViewMode == FPKSearchViewModeFull) {
            
-                [searchManager cancelSearch];
                 [self dismissSearchViewController:searchViewController];            
                 currentReusableView = FPKReusableViewNone;
                 
             } else if (currentSearchViewMode == FPKSearchViewModeMini) {
-                [searchManager cancelSearch];
+           
                 [self dismissMiniSearchView];
                 currentReusableView = FPKReusableViewNone;
             }
@@ -483,36 +478,37 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #pragma mark -
 #pragma mark SearchViewController, _Delegate and _Action
 
+-(void)handleSearchUpdateNotification:(NSNotification *)notification {
+    
+    NSDictionary * userInfo = notification.userInfo;
+    NSUInteger page = [userInfo[kNotificationSearchInfoPage] unsignedIntegerValue];
+    
+    if(self.isViewLoaded && (fabs(page - self.page) < 2)) {
+        // We get up to two false 'current' page positives but it is good enogh for now.
+        [self reloadOverlay];
+    }
+}
+
 -(void)presentFullSearchView {
 	
-	// Get the full search view controller lazily, set it upt as the delegate for
-	// the search manager and present it to the user modally.
-	
-	SearchManager * manager = nil;
-	SearchViewController * controller = nil;
-	
-	// Get the search manager lazily and set up the document.
-	
-	manager = self.searchManager;
-	manager.document = self.document;
-	
-	// Get the search view controller lazily, set the delegate at self to handle
-	// document action and the search manager as data source.
-	
-	controller = self.searchViewController;
-	[controller setDelegate:self];
-	controller.searchManager = manager;
-	
-	// Enable overlay and set the search manager as the data source for
-	// overlay items.
-	[self addOverlayDataSource:searchManager];
-	self.overlayEnabled = YES;
+    // Get the full search view controller lazily, set it upt as the delegate for
+    // the search manager and present it to the user modally.
+    
+    SearchViewController * controller = self.searchViewController;
+    controller.delegate = self;
+    controller.searchManager = self.searchManager;
+    
+    // Enable overlay and set the search manager as the data source for
+    // overlay items.
+    self.overlayEnabled = YES;
     
     currentReusableView = FPKReusableViewSearch;
     currentSearchViewMode = FPKSearchViewModeFull;
     
     CGSize popoverContentSize = CGSizeMake(450, 650);
-    [self presentViewController:controller barButtonItem:searchBarButtonItem contentSize:popoverContentSize];
+    [self presentViewController:controller
+                  barButtonItem:searchBarButtonItem
+                    contentSize:popoverContentSize];
 }
 
 -(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
@@ -1828,8 +1824,11 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	//	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
 	//	as long as you pass an instance of it to the superclass initializer.
 	    
-	if((self = [super initWithDocumentManager:aDocumentManager])) {
+    self = [super initWithDocumentManager:aDocumentManager];
+    if(self) {
 		[self setDocumentDelegate:self];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleSearchUpdateNotification:) name:kNotificationSearchResultAvailable object:nil];
 	}
     
 	return self;
@@ -1886,6 +1885,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     // UI images.
     
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    
 	[imgModeSingle release];
 	[imgModeDouble release];
     [imgModeOverflow release];
@@ -1932,7 +1933,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	[searchViewController release];
 	[textDisplayViewController release];
 	[miniSearchView release];
-	[searchManager release];
+    [_searchManager release],_searchManager = nil;
     
     self.dismissBlock = nil;
     

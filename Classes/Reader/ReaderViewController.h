@@ -42,7 +42,6 @@
 	// Child view controllers
     
 	SearchViewController * searchViewController;
-	SearchManager * searchManager;
 	MiniSearchView * miniSearchView;
 	TextDisplayViewController * textDisplayViewController;
 	    
