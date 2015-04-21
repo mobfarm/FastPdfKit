@@ -11,31 +11,13 @@
 #import "MFOverlayDrawable.h"
 #import <UIKit/UIKit.h>
 
-@interface MFTextItem : NSObject<MFOverlayDrawable> {
-
-	@private
-	NSString *text;
-	CGPathRef highlightPath;
-	NSUInteger page;
-	NSRange searchTermRange;
-    UIColor * highlightColor;
-}
+@interface MFTextItem : NSObject
 
 /**
  Default initializer. Init the Text Item with some text and a path for the hilight that will be rendered in
  page space.
  */
 -(id)initWithText:(NSString *)someText andHighlightPath:(CGPathRef)aPath;
-
-/**
- Return the bounding box of the hightlight. This can double as the frame for the highlight view
- */
--(CGRect)boundingBox;
-
-/**
- * The highlight view.
- */
-@property (nonatomic,readonly) UIView * highlightView;
 
 /**
  Default initializer, plus the page number.
@@ -58,18 +40,5 @@
  The page of which this text item represent the position of a word.
  */
 @property (readonly) NSUInteger page;
-
-/**
- Highlight color for the search result. Default is (1.0, 0.0, 0.0, 0.25)
- */
-@property (nonatomic,retain) UIColor * highlightColor;
-
-/**
- A few usefult colors for the highlight. You are NOT responsible for releasing
- the object.
- */
-+(UIColor *)highlightRedColor;
-+(UIColor *)highlightYellowColor;
-+(UIColor *)highlightBlueColor;
 
 @end

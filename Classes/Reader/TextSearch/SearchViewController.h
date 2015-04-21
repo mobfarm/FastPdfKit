@@ -15,24 +15,10 @@
 @class DocumentViewController;
 @class SearchManager;
 
-@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
+@interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
-	// UI elements.
-	IBOutlet UISearchBar *searchBar;
-	IBOutlet UITableView *searchTableView;
-	
-	UIActivityIndicatorView *activityIndicatorView;
-	
-	IBOutlet UIBarButtonItem *switchToMiniBarButtonItem;
-	IBOutlet UIBarButtonItem *cancelStopBarButtonItem;
-	
-	NSObject<SearchViewControllerDelegate> *delegate; // A delegate to change the page.
-	
-	SearchManager * searchManager;	// Data source.
-    
-    BOOL ignoreCase;
-    BOOL exactMatch;
-}
+@property (nonatomic, readwrite) BOOL ignoreCase;
+@property (nonatomic, readwrite) BOOL exactMatch;
 
 @property (assign) SearchManager * searchManager;
 @property (assign) NSObject<SearchViewControllerDelegate> *delegate;

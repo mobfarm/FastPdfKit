@@ -12,7 +12,7 @@
 
 @class MFDocumentViewController;
 
-@protocol MFDocumentViewControllerDelegate
+@protocol MFDocumentViewControllerDelegate<NSObject>
 
 @optional
 

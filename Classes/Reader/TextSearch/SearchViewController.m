@@ -7,7 +7,6 @@
 //
 
 #import "SearchViewController.h"
-#import "MFTextItem.h"
 #import "MFDocumentManager.h"
 #import "DocumentViewController.h"
 #import "ReaderViewController.h"
@@ -28,26 +27,18 @@
 
 @implementation SearchViewController
 
-@synthesize searchBar, searchTableView;
-@synthesize switchToMiniBarButtonItem, activityIndicatorView;
-@synthesize delegate;
-@synthesize searchManager;
-@synthesize toolbar;
-
 #pragma mark - Notification listeners
 
 -(void)handleSearchResultsAvailableNotification:(NSNotification *)notification {
  
-    NSDictionary * userInfo = [[notification userInfo]retain];
+    NSDictionary * userInfo = notification.userInfo;
     
     NSArray * searchResult = [userInfo objectForKey:kNotificationSearchInfoResults];
     
     if([searchResult count] > 0) {
         
-        [searchTableView reloadData];
+        [self.searchTableView reloadData];
     }
-    
-    [userInfo release];
 }
 
 -(void)handleSearchDidStopNotification:(NSNotification *)notification {
@@ -57,15 +48,15 @@
         title = @"Cancel";
     }
     
-    [cancelStopBarButtonItem setTitle:title];
-	[activityIndicatorView stopAnimating];
+    [self.cancelStopBarButtonItem setTitle:title];
+	[self.activityIndicatorView stopAnimating];
 }
 
 -(void)handleSearchDidStartNotification:(NSNotification *)notification {
     
     // Clean up if there are old search results.
     
-    [searchTableView reloadData];
+    [self.searchTableView reloadData];
 		
 	// Set up the view status accordingly.
 	
@@ -74,20 +65,19 @@
         title = @"Stop";
     }
     
-	[cancelStopBarButtonItem setTitle:title];
-	[activityIndicatorView startAnimating];
-	[cancelStopBarButtonItem setEnabled:YES];
-	[switchToMiniBarButtonItem setEnabled:YES];
+	[self.cancelStopBarButtonItem setTitle:title];
+	[self.activityIndicatorView startAnimating];
+	[self.cancelStopBarButtonItem setEnabled:YES];
+	[self.switchToMiniBarButtonItem setEnabled:YES];
 }
 
 -(void)handleSearchGotCancelledNotification:(NSNotification *)notification {
     // Setup the view accordingly.
 	
-	[searchBar setText:@""];
-	[activityIndicatorView stopAnimating];
-	[cancelStopBarButtonItem setEnabled:NO];
-	[switchToMiniBarButtonItem setEnabled:NO];
-//	[searchTableView reloadData];
+	[self.searchBar setText:@""];
+	[self.activityIndicatorView stopAnimating];
+	[self.cancelStopBarButtonItem setEnabled:NO];
+	[self.switchToMiniBarButtonItem setEnabled:NO];
 	
 	[[self delegate]dismissSearchViewController:self];
 }
@@ -98,9 +88,8 @@
 -(void)stopSearch {
 	
 	// Tell the manager to stop the search and let the delegate's methods to refresh this view.
-    if(self.searchManager) {
-        [searchManager stopSearch];
-    }
+
+        [self.searchManager stopSearch];
 }
 
 -(void)startSearchWithTerm:(NSString *)aSearchTerm {
@@ -113,8 +102,8 @@
     self.searchManager.searchTerm = aSearchTerm;
     self.searchManager.startingPage = [self.delegate pageForSearchViewController:self];
     self.searchManager.document = [self.delegate documentForSearchViewController:self];
-    self.searchManager.ignoreCase = ignoreCase;
-    self.searchManager.exactMatch = exactMatch;
+    self.searchManager.ignoreCase = self.ignoreCase;
+    self.searchManager.exactMatch = self.exactMatch;
     
     // Start the search
     [self.searchManager startSearch];
@@ -169,7 +158,7 @@
     
     NSIndexPath * visibleIndexPath = nil;
     
-    MFTextItem * firstItem = nil;
+    FPKSearchMatchItem * firstItem = nil;
     
     NSArray * results = [self.searchManager allSearchResults];
     
@@ -209,7 +198,7 @@
 
 	[sBar resignFirstResponder];
 	
-    NSString * searchTerm = searchBar.text;
+    NSString * searchTerm = self.searchBar.text;
     [self startSearchWithTerm:searchTerm];
 }
 
@@ -226,14 +215,14 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
     NSArray *searchResult = self.searchManager.sequentialSearchResults[indexPath.section];
-    MFTextItem * item = [searchResult objectAtIndex:indexPath.row];
+    FPKSearchMatchItem * item = [searchResult objectAtIndex:indexPath.row];
     
     // Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page after
     // displaying the mini search view.
     
     [self.delegate searchViewController:self switchToMiniSearchView:item];
     
-    [self.delegate searchViewController:self setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
+    [self.delegate searchViewController:self setPage:item.textItem.page withZoomOfLevel:ZOOM_LEVEL onRect:item.boundingBox];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -243,9 +232,9 @@
 	// Just costumize the cell with the content of the MFSearchItem for the right row in the right section.
 	
     NSArray *searchResult = self.searchManager.sequentialSearchResults[indexPath.section];
-	MFTextItem *searchItem = [searchResult objectAtIndex:indexPath.row];
+	FPKSearchMatchItem *searchItem = [searchResult objectAtIndex:indexPath.row];
     
-	// This is a custom view cell that display an MFTextItem directly.
+	// This is a custom view cell that display an FPKSearchMatchItem directly.
     
 	SearchResultCellView *cell = (SearchResultCellView *)[tableView dequeueReusableCellWithIdentifier:cellId];
 	
@@ -253,30 +242,33 @@
 	
 		// Simple initialization.
         
-		cell = [[[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+        cell = [[SearchResultCellView alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
     
-    [cell.searchResultView setSnippet:searchItem.text boldRange:searchItem.searchTermRange];
-    cell.searchResultView.pageNumberLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[searchItem page]];
+    [cell.searchResultView setSnippet:searchItem.textItem.text boldRange:searchItem.textItem.searchTermRange];
+    cell.searchResultView.pageNumberLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)searchItem.textItem.page];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 
-    // Let's get the MFTextItem from its container array.
+    // Let's get the FPKSearchMatchItem from its container array.
 	
     NSArray *searchResult = self.searchManager.sequentialSearchResults[indexPath.section];
-	MFTextItem * item = [searchResult objectAtIndex:indexPath.row];
+	FPKSearchMatchItem * item = [searchResult objectAtIndex:indexPath.row];
 	
 	// Dismiss this viewcontroller and tell the DocumentViewController to move to the selected page after
 	// displaying the mini search view.
 	
-	[delegate switchToMiniSearchView:item];
+	[self.delegate searchViewController:self switchToMiniSearchView:item];
 	
-	[delegate setPage:[item page] withZoomOfLevel:ZOOM_LEVEL onRect:CGPathGetBoundingBox([item highlightPath])];
+    [self.delegate searchViewController:self
+                           setPage:item.textItem.page
+                   withZoomOfLevel:ZOOM_LEVEL
+                            onRect:item.boundingBox];
 
 }
 
@@ -303,9 +295,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) 
     {
-		switchToMiniBarButtonItem.enabled = NO;
-        ignoreCase = YES;
-        exactMatch = NO;
+		self.switchToMiniBarButtonItem.enabled = NO;
+        self.ignoreCase = YES;
+        self.exactMatch = NO;
         
         NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter addObserver:self selector:@selector(handleSearchDidStartNotification:) name:kNotificationSearchDidStart object:nil];
@@ -343,23 +335,23 @@
 	
 	// Common setup.
 	
-	[self.searchBar setText:[searchManager searchTerm]];
+	[self.searchBar setText:[self.searchManager searchTerm]];
 	
 	[self.searchTableView reloadData];
     
     if(self.searchManager.sequentialSearchResults.count == 0) {
-		[searchBar becomeFirstResponder];
+		[self.searchBar becomeFirstResponder];
     }
 }
 
 -(IBAction)actionToggleIgnoreCase:(id)sender
 {
-    ignoreCase=!ignoreCase;
+    self.ignoreCase=!self.ignoreCase;
 }
 
 -(IBAction)actionToggleExactMatch:(id)sender
 {
-    exactMatch=!exactMatch;
+    self.exactMatch=!self.exactMatch;
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -376,13 +368,13 @@
     ignoreCaseLabel.textColor = [UIColor lightTextColor];
     ignoreCaseLabel.backgroundColor = [UIColor clearColor];
     UIBarButtonItem * ignoreCaseLabelBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ignoreCaseLabel];
-    [ignoreCaseLabel release];
+
     
     UISwitch * ignoreCaseSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
-    ignoreCaseSwitch.on = ignoreCase;
+    ignoreCaseSwitch.on = self.ignoreCase;
     [ignoreCaseSwitch addTarget:self action:@selector(actionToggleIgnoreCase:) forControlEvents:UIControlEventValueChanged];
     UIBarButtonItem * ignoreCaseSwitchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ignoreCaseSwitch];
-    [ignoreCaseSwitch release];
+
     
     // Exact match label and switch.
     
@@ -391,21 +383,16 @@
     exactMatchLabel.textColor = [UIColor lightTextColor];
     exactMatchLabel.backgroundColor = [UIColor clearColor];
     UIBarButtonItem * exactMatchLabelBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:exactMatchLabel];
-    [exactMatchLabel release];
+
     
     UISwitch * exactMatchSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
-    exactMatchSwitch.on = exactMatch;
+    exactMatchSwitch.on = self.exactMatch;
     [exactMatchSwitch addTarget:self action:@selector(actionToggleExactMatch:) forControlEvents:UIControlEventValueChanged];
     UIBarButtonItem * exactMatchSwitchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:exactMatchSwitch];
-    [exactMatchSwitch release];
+
     
     // Toolbar.
     [self.toolbar setItems: [NSArray arrayWithObjects:ignoreCaseLabelBarButtonItem,ignoreCaseSwitchBarButtonItem,exactMatchLabelBarButtonItem, exactMatchSwitchBarButtonItem, nil] animated:YES];
-    
-    [exactMatchLabelBarButtonItem release];
-    [exactMatchSwitchBarButtonItem release];
-    [ignoreCaseSwitchBarButtonItem release];
-    [ignoreCaseLabelBarButtonItem release];
 }
 
 
@@ -419,18 +406,6 @@
 - (void)dealloc 
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
-    
-	searchManager = nil;
-	
-    [switchToMiniBarButtonItem release];
-    [cancelStopBarButtonItem release];
-	
-    [searchBar release];
-    [searchTableView release];
-    [activityIndicatorView release];
-    [toolbar release];
-    
-    [super dealloc];
 }
 
 

@@ -37,67 +37,11 @@ static const NSUInteger FPKEmbeddedAnnotationsAudio = 2;
 static const NSUInteger FPKEmbeddedAnnotationsWeb = 4;
 static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|FPKEmbeddedAnnotationsVideo|FPKEmbeddedAnnotationsWeb;
 
-@interface MFDocumentViewController : UIViewController <UIScrollViewDelegate> {
-	
-    @protected
-    
-    NSString * documentId;
-    
-	// Mode change callback delegate
-	NSObject<MFDocumentViewControllerDelegate> *__weak documentDelegate;
-	CFMutableArrayRef documentDelegates;
-    
-    NSMutableSet * overlayDataSources;
-    NSMutableSet * overlayViewDataSources;
-    
-	// Document.
-	MFDocumentManager * document;
-	
-	// Detail view
-	
-	// Previews
-    int nextBias, prevBias, wrapperCount;           // Wrappers info.
-	
-	// Internal status
-	MFDocumentDirection currentDirection;
-	BOOL autoMode;
-	MFDocumentMode currentMode;
-    MFDocumentAutoMode currentAutoMode;
-    
-	MFDocumentLead currentLead;
-	NSUInteger currentPage;
-	NSUInteger startingPage;
-	
-	NSInteger currentPosition;              // Currently displayed position.
-	NSUInteger currentOrientation;          // Current orientation as intended by the application.
-	NSUInteger currentNumberOfPositions;    // Current number of "screens".
-    
-	NSInteger currentDetailPosition;        // Current position of the detail view.
-    
-	NSInteger maxNumberOfPages;
-	
-	CGSize currentSize;                     // Current size as intended by the application.
-	
-	BOOL pageControlUsed;
-	BOOL pageButtonUsed;
-	BOOL autoZoom;
-	
-	BOOL firstLoad;
-	int loads;
-	
-    float defaultMaxZoomScale;
-    CGFloat defaultPageFlipWidth;
-    
-	BOOL pageFlipOnEdgeTouchEnabled;
-	BOOL zoomInOnDoubleTapEnabled;
-	BOOL documentInteractionEnabled;
-	BOOL overlayEnabled;
-    
-    BOOL showShadow;
-    CGFloat padding;
-	
-    BOOL useTiledOverlayView;
-}
+@interface MFDocumentViewController : UIViewController <UIScrollViewDelegate>
+/**
+ * Other delegates.
+ */
+@property (nonatomic, readonly) NSPointerArray * delegates;
 
 /** 
  * Supported orientations that will be returned from -supportedInterfaceOrientations
@@ -146,7 +90,10 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
  */
 @property (nonatomic,readwrite) FPKSupportedOrientation supportedOrientation;
 
-@property (strong, readonly) MFDocumentManager * document;
+/**
+ * The DocumentManager associated with this DocumentViewController.
+ */
+@property (nonatomic, readonly) MFDocumentManager * document;
 
 /**
  This property enable or disable the directional lock in the inner (document)
@@ -180,9 +127,13 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
 @property (nonatomic,readwrite) CGFloat padding;
 
 /**
- Add and remove an Overlay Datasource for Drawables and Touchables.
+ * Add an OverlayDataSource. 
  */
--(void)addOverlayDataSource:(id<MFDocumentOverlayDataSource>)ods;
+-(void)addOverlayDataSource:(id<MFDocumentOverlayDataSource>)ovds;
+
+/**
+ * Remove an OverlayDataSource.
+ */
 -(void)removeOverlayDataSource:(id<MFDocumentOverlayDataSource>)ods;
 
 /**
@@ -192,16 +143,28 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
  */
 @property (nonatomic,readwrite) BOOL fpkAnnotationsEnabled;
 
+-(id<FPKOverlayViewDataSource>)overlayViewDataSourceWithName:(NSString *)name;
+
 /**
- Add an Overlay View Datasource for overlay UIViews.
+ Add an OverlayViewDataSource with a specific name.
 */
--(void)addOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
+-(void)addOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds name:(NSString *)name;
 
 /**
- Remove an Overlay View Datasource for overlay UIViews.
+ * Add an OverlayViewDataSources. The returned name is random generated and can 
+ * be used to retrieve it later on.
  */
+-(NSString *)addOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
 
+/**
+ Remove an OverlayViewDatasource.
+ */
 -(void)removeOverlayViewDataSource:(id<FPKOverlayViewDataSource>)ovds;
+
+/**
+ * Remove an OverlayViewDataSource with a specific name.
+ */
+-(id<FPKOverlayViewDataSource>)removeOverlayViewDataSourceWithName:(NSString *)name;
 
 /**
  This method will provoke the redraw of the overlay. Overlay Datasources will be
@@ -266,24 +229,24 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
 /**
  Enabled the zoom in when the user double tap on the screen.
  */
-@property (assign,readwrite,getter=isZoomInOnDoubleTapEnabled) BOOL zoomInOnDoubleTapEnabled;
+@property (nonatomic,readwrite,getter=isZoomInOnDoubleTapEnabled) BOOL zoomInOnDoubleTapEnabled;
 
 /**
  Enabled the document interaction.
  */
-@property (assign,readwrite,getter=isDocumentInteractionEnabled) BOOL documentInteractionEnabled;
+@property (nonatomic,readwrite,getter=isDocumentInteractionEnabled) BOOL documentInteractionEnabled;
 
 /**
  Enable or disable the display of overlay item over the document.
  Default is disabled.
  */
-@property (readwrite) BOOL overlayEnabled;
+@property (nonatomic,readwrite,getter = isOverlayEnabled) BOOL overlayEnabled;
 
 /**
  Enabled or force the legacy mode, or let the app choose to enable it or not 
  depending on the device. Default is disabled.
  */
-@property (readwrite) BOOL legacyModeEnabled;
+@property (nonatomic,readwrite,getter = isLegacyModeEnabled) BOOL legacyModeEnabled;
 
 /**
  This is the default maximum magnification the pdf will zoom.

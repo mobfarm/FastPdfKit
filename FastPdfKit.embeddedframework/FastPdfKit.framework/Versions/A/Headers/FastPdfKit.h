@@ -13,7 +13,7 @@
 #import "MFOverlayTouchable.h"
 #import "MFPDFOutlineEntry.h"
 #import "mfprofile.h"
-#import "MFTextItem.h"
+#import "FPKSearchMatchItem.h"
 #import "MiniSearchView.h"
 #import "MiniSearchViewControllerDelegate.h"
 #import "NotificationFactory.h"

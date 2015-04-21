@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MFTextItem.h"
+#import "FPKSearchMatchItem.h"
 
 @class SearchViewController;
 @class SearchManager;
@@ -17,7 +17,7 @@
 
 -(MFDocumentManager *)documentForSearchViewController:(SearchViewController *)controller;
 -(NSUInteger)pageForSearchViewController:(SearchViewController *)controller;
--(void)searchViewController:(SearchViewController *)controller switchToMiniSearchView:(MFTextItem *)item;
+-(void)searchViewController:(SearchViewController *)controller switchToMiniSearchView:(FPKSearchMatchItem *)item;
 -(void)dismissSearchViewController:(SearchViewController *)controller;
 -(void)searchViewController:(SearchViewController *)controller setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
 -(void)searchViewController:(SearchViewController *)controller addSearch:(SearchManager *)searchManager;

@@ -9,7 +9,7 @@
 #import "SearchManager.h"
 #import "Stuff.h"
 #import "TextSearchOperation.h"
-#import "MFTextItem.h"
+#import "FPKSearchMatchItem.h"
 #import "MFDocumentViewController.h"
 #import "MFDocumentManager.h"
 
@@ -43,7 +43,7 @@
     
     NSMutableArray * newViews = [NSMutableArray new];
     
-    for(MFTextItem * item in results) {
+    for(FPKSearchMatchItem * item in results) {
         UIView * view = item.highlightView;
         [newViews addObject:view];
     }
@@ -59,7 +59,7 @@
         return CGRectNull;
     }
     
-    for(MFTextItem * item in results) {
+    for(FPKSearchMatchItem * item in results) {
         if(view == item.highlightView) {
             return item.boundingBox;
         }
@@ -173,12 +173,14 @@
     
     if(searchResult && (page == self.currentPage)) {
         
-        self.pagedSearchResults[@(page)] = searchResult;
-        [self.sequentialSearchResults addObject:searchResult];
+        NSArray * matches = [FPKSearchMatchItem searchMatchItemsWithTextItems:searchResult];
+        
+        self.pagedSearchResults[@(page)] = matches;
+        [self.sequentialSearchResults addObject:matches];
         
         
         NSDictionary * info = @{ kNotificationSearchInfoPage:@(page),
-                                 kNotificationSearchInfoResults:searchResult,
+                                 kNotificationSearchInfoResults:matches,
                                  kNotificationSearchInfoSearchTerm:self.searchTerm
                                  };
         
@@ -241,6 +243,11 @@
         self.sequentialSearchResults = [NSMutableArray new];
     }
     return self;
+}
+
+-(void)dealloc {
+    
+    [self stopSearch];
 }
 
 @end

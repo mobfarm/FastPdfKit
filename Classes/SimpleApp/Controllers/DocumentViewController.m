@@ -427,7 +427,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	[self presentFullSearchView];	// This method will take care of everything.
 }
 
--(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
+-(void)presentMiniSearchViewWithStartingItem:(FPKSearchMatchItem *)item {
 	
 	// This could be rather tricky.
 	
@@ -552,7 +552,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	[self presentFullSearchView];
 }
 
--(void)switchToMiniSearchView:(MFTextItem *)item {
+-(void)switchToMiniSearchView:(FPKSearchMatchItem *)item {
 
 	// Dismiss the full view and present the minimized one.
 	

@@ -22,81 +22,9 @@
 @class TextDisplayViewController;
 @class SearchManager;
 @class MiniSearchView;
-@class MFTextItem;
 
-
-@interface ReaderViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate> {
-	
-	UILabel * numberOfPageTitleToolbar;
-	UILabel * pageNumLabel;
-	
-	id senderText;
-	id senderSearch;
+@interface ReaderViewController : MFDocumentViewController <MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,TextDisplayViewControllerDelegate,SearchViewControllerDelegate,BookmarkViewControllerDelegate,OutlineViewControllerDelegate,MiniSearchViewControllerDelegate>
     
-	UIToolbar * rollawayToolbar;
-    
-    CGFloat toolbarHeight;
-	CGFloat thumbSliderViewBorderWidth;
-	CGFloat thumbSliderViewHeight;
-	
-	// Child view controllers
-    
-	SearchViewController * searchViewController;
-	MiniSearchView * miniSearchView;
-	TextDisplayViewController * textDisplayViewController;
-	    
-	UIPopoverController *reusablePopover;   // This is a single popover controller that will be used to display alternate content view controller
-    NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user
-    NSUInteger currentSearchViewMode;       // This flag keep track of which search view is currently in use, full or mini
-    
-    // Button content for bar button items
-
-    UIButton *changeModeButton;
-	UIButton *zoomLockButton;
-	UIButton *changeDirectionButton;
-	UIButton *changeLeadButton;
-    
-    // Bar button items
-    
-    UIBarButtonItem *changeModeBarButtonItem;
-	UIBarButtonItem *zoomLockBarButtonItem;
-	UIBarButtonItem *changeDirectionBarButtonItem;
-	UIBarButtonItem *changeLeadBarButtonItem;
-	UIBarButtonItem *searchBarButtonItem;
-    
-    // Flags
-    
-    BOOL willFollowLink;
-    BOOL hudHidden; // General HUD visible flag
-	BOOL multimediaVisible;
-    BOOL pdfOpen;
-	BOOL thumbsViewVisible;
-    BOOL waitingForTextInput;
-    
-    // Cached images for dynamic interface elements
-	
-	UIImage * imgModeSingle;
-	UIImage * imgModeDouble;
-    UIImage * imgModeOverflow;
-	
-	UIImage * imgZoomLock;
-	UIImage * imgZoomUnlock;
-	
-	UIImage * imgl2r;
-	UIImage * imgr2l;
-	
-	UIImage * imgLeadRight;
-	UIImage * imgLeadLeft;
-    
-    UIImage * imgDismiss;
-    UIImage * imgBookmark;
-    UIImage * imgSearch;
-    UIImage * imgOutline;
-    UIImage * imgText;
-    
-    void (^dismissBlock) ();
-}
-
 /**
  This block will be executed inside the actionDismiss action. If not defined,
  the ReaderViewController will try to guesstimate the appropriate action.
@@ -147,7 +75,6 @@
 @property (nonatomic, retain) UILabel * numberOfPageTitleToolbar;
 
 @property (nonatomic, retain) SearchViewController * searchViewController;
-@property (nonatomic, retain) SearchManager * searchManager;
 @property (nonatomic, retain) MiniSearchView * miniSearchView;
 @property (nonatomic, retain) TextDisplayViewController * textDisplayViewController;
 

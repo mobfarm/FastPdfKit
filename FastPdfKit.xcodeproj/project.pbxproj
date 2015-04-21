@@ -77,11 +77,11 @@
 		0155DE14145848590080FFEF /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; };
 		0155DE15145848590080FFEF /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01598DA713CAE783007344EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
-		01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
 		01598DBF13CAE7CD007344EE /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01598DC013CAE7CD007344EE /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
 		01598DC113CAE7CD007344EE /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		01598DC413CAE7CD007344EE /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01598DC513CAE7CD007344EE /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
@@ -128,6 +128,12 @@
 		01598E3613CAEC8B007344EE /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07B313C755610077CE63 /* ASIProgressDelegate.h */; };
 		01598E3713CAEC8B007344EE /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07BF13C755610077CE63 /* Reachability.h */; };
 		01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07C113C755610077CE63 /* ZipArchive.h */; };
+		015D10BE1AE69B100014C999 /* FPKSearchMatchItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 015D10BC1AE69B100014C999 /* FPKSearchMatchItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		015D10BF1AE69B100014C999 /* FPKSearchMatchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 015D10BD1AE69B100014C999 /* FPKSearchMatchItem.m */; };
+		015D10C01AE69B270014C999 /* FPKSearchMatchItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 015D10BC1AE69B100014C999 /* FPKSearchMatchItem.h */; };
+		015D10C11AE69B2F0014C999 /* FPKSearchMatchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 015D10BD1AE69B100014C999 /* FPKSearchMatchItem.m */; };
+		015D10C21AE69B300014C999 /* FPKSearchMatchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 015D10BD1AE69B100014C999 /* FPKSearchMatchItem.m */; };
+		015D10C31AE69B300014C999 /* FPKSearchMatchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 015D10BD1AE69B100014C999 /* FPKSearchMatchItem.m */; };
 		015ED17C1455AE9700C7C372 /* FPKAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 015ED17B1455AE9700C7C372 /* FPKAnnotation.h */; };
 		015ED17D1455AE9700C7C372 /* FPKAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 015ED17B1455AE9700C7C372 /* FPKAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		015ED17E1455AEA900C7C372 /* FPKAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 015ED17B1455AE9700C7C372 /* FPKAnnotation.h */; };
@@ -155,9 +161,9 @@
 		0160960214482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; };
 		0160960314482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; };
 		0160960414482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0161F22A141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0161F22B141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0161F229141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
+		0161F22A141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
+		0161F22B141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
 		0161F22D141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0161F22E141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0161F22F141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -203,16 +209,16 @@
 		01BC081213C75B310077CE63 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080B13C75B310077CE63 /* XMLParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC083A13C75D3A0077CE63 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC083B13C75D3A0077CE63 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01BC084013C75D3A0077CE63 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01BC084113C75D3A0077CE63 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01BC084013C75D3A0077CE63 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
+		01BC084113C75D3A0077CE63 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
 		01BC084213C75D3A0077CE63 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC084313C75D3A0077CE63 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC084413C75D3A0077CE63 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
 		01BC084513C75D3A0077CE63 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
 		01BC084613C75D3A0077CE63 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC084713C75D3A0077CE63 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01BC085313C75D3A0077CE63 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
+		01BC085313C75D3A0077CE63 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		01BC085613C75D3A0077CE63 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC085713C75D3A0077CE63 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC085813C75D3A0077CE63 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -343,7 +349,7 @@
 		956A057014039F38003AE44D /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056E14039F38003AE44D /* OverlayManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		958A81BD14027F5300837C82 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
 		958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81C314027F5B00837C82 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -353,7 +359,7 @@
 		958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81CD14027F5B00837C82 /* SearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082F13C75D3A0077CE63 /* SearchViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
 		958A81CF14027F5B00837C82 /* SearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81D114027F5B00837C82 /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81D214027F5B00837C82 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -494,6 +500,8 @@
 		013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPad.xib; sourceTree = "<group>"; };
 		0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
 		0155DE13145848590080FFEF /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
+		015D10BC1AE69B100014C999 /* FPKSearchMatchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKSearchMatchItem.h; sourceTree = "<group>"; };
+		015D10BD1AE69B100014C999 /* FPKSearchMatchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKSearchMatchItem.m; sourceTree = "<group>"; };
 		015ED17B1455AE9700C7C372 /* FPKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKAnnotation.h; sourceTree = "<group>"; };
 		016095D414482814003CEAAA /* FPKURIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKURIAnnotation.h; sourceTree = "<group>"; };
 		016095D514482814003CEAAA /* MFAudioPlayerViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAudioPlayerViewProtocol.h; sourceTree = "<group>"; };
@@ -1306,6 +1314,8 @@
 		01BC081E13C75D3A0077CE63 /* TextSearch */ = {
 			isa = PBXGroup;
 			children = (
+				015D10BC1AE69B100014C999 /* FPKSearchMatchItem.h */,
+				015D10BD1AE69B100014C999 /* FPKSearchMatchItem.m */,
 				01BC081F13C75D3A0077CE63 /* MiniSearchView.h */,
 				01BC082013C75D3A0077CE63 /* MiniSearchView.m */,
 				01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */,
@@ -1587,6 +1597,7 @@
 				01598E0E13CAEBCF007344EE /* TextDisplayViewControllerDelegate.h in Headers */,
 				01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */,
 				010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */,
+				015D10C01AE69B270014C999 /* FPKSearchMatchItem.h in Headers */,
 				0123603C13CC917600861EB7 /* AudioViewController.h in Headers */,
 				0123604413CC917600861EB7 /* ReaderViewController.h in Headers */,
 				0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
@@ -1655,6 +1666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */,
+				015D10BE1AE69B100014C999 /* FPKSearchMatchItem.h in Headers */,
 				01F98AEE1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */,
 				958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */,
 				958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */,
@@ -2138,6 +2150,7 @@
 				01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */,
 				01598DBF13CAE7CD007344EE /* NotificationFactory.m in Sources */,
 				01598DC013CAE7CD007344EE /* SearchManager.m in Sources */,
+				015D10C31AE69B300014C999 /* FPKSearchMatchItem.m in Sources */,
 				01598DC113CAE7CD007344EE /* SearchResultCellView.m in Sources */,
 				01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */,
 				01598DC413CAE7CD007344EE /* TextDisplayViewController.m in Sources */,
@@ -2176,6 +2189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015D10C21AE69B300014C999 /* FPKSearchMatchItem.m in Sources */,
 				01884A8E131E94DD0045038F /* main.m in Sources */,
 				01BC07C313C755610077CE63 /* ASIAuthenticationDialog.m in Sources */,
 				01BC07C513C755610077CE63 /* ASIDownloadCache.m in Sources */,
@@ -2215,6 +2229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015D10C11AE69B2F0014C999 /* FPKSearchMatchItem.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				01F84DD41A00F55500AB4996 /* ioapi.c in Sources */,
 				01BC083A13C75D3A0077CE63 /* BookmarkViewController.m in Sources */,
@@ -2271,6 +2286,7 @@
 				958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */,
 				958A81C314027F5B00837C82 /* NotificationFactory.m in Sources */,
 				958A81C514027F5B00837C82 /* SearchManager.m in Sources */,
+				015D10BF1AE69B100014C999 /* FPKSearchMatchItem.m in Sources */,
 				958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */,
 				958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */,
 				958A81D214027F5B00837C82 /* TextDisplayViewController.m in Sources */,

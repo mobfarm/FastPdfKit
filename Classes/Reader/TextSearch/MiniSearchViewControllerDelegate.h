@@ -12,8 +12,8 @@
 
 @protocol MiniSearchViewControllerDelegate
 
--(void)dismissMiniSearchView;
--(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
--(void)revertToFullSearchView;
+-(void)dismissMiniSearchView:(MiniSearchView *)view;
+-(void)miniSearchView:(MiniSearchView *)view setPage:(NSUInteger)page zoomLevel:(float)zoomLevel rect:(CGRect)rect;
+-(void)revertToFullSearchViewFromMiniSearchView:(MiniSearchView *)view;
 
 @end

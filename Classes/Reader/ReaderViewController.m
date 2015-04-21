@@ -25,17 +25,17 @@
 #define FPK_REUSABLE_VIEW_OUTLINE 3
 #define FPK_REUSABLE_VIEW_BOOKMARK 4
 
-static const NSInteger FPKReusableViewNone = FPK_REUSABLE_VIEW_NONE;
-static const NSInteger FPKReusableViewSearch = FPK_REUSABLE_VIEW_SEARCH;
-static const NSInteger FPKReusableViewText = FPK_REUSABLE_VIEW_TEXT;
-static const NSInteger FPKReusableViewOutline = FPK_REUSABLE_VIEW_OUTLINE;
-static const NSInteger FPKReusableViewBookmarks = FPK_REUSABLE_VIEW_BOOKMARK;
+static const NSUInteger FPKReusableViewNone = FPK_REUSABLE_VIEW_NONE;
+static const NSUInteger FPKReusableViewSearch = FPK_REUSABLE_VIEW_SEARCH;
+static const NSUInteger FPKReusableViewText = FPK_REUSABLE_VIEW_TEXT;
+static const NSUInteger FPKReusableViewOutline = FPK_REUSABLE_VIEW_OUTLINE;
+static const NSUInteger FPKReusableViewBookmarks = FPK_REUSABLE_VIEW_BOOKMARK;
 
 #define FPK_SEARCH_VIEW_MODE_MINI 0
 #define FPK_SEARCH_VIEW_MODE_FULL 1
 
-static const NSInteger FPKSearchViewModeMini = FPK_SEARCH_VIEW_MODE_MINI;
-static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
+static const NSUInteger FPKSearchViewModeMini = FPK_SEARCH_VIEW_MODE_MINI;
+static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %lu of %lu",(x),(y)]
 #define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%lu / %lu",(x),(y)]
@@ -46,64 +46,40 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 @interface ReaderViewController()
 #endif
 
--(void)dismissMiniSearchView;
--(void)presentTextDisplayViewControllerForPage:(NSUInteger)page;
--(void)revertToFullSearchView;
+@property (nonatomic, readwrite) NSUInteger currentReusableView;
+@property (nonatomic, readwrite) NSUInteger currentSearchViewMode;
 
--(void)showToolbar;
--(void)hideToolbar;
--(void)prepareToolbar;
-
+@property (nonatomic, readwrite) BOOL thumbsViewVisible;
+@property (nonatomic, readwrite) BOOL waitingForTextInput;
+@property (nonatomic, readwrite) BOOL pdfOpen;
+@property (nonatomic, readwrite) BOOL willFollowLink;
+@property (nonatomic, readwrite) BOOL hudHidden;
 @end
 
 @implementation ReaderViewController
 
-@synthesize dismissBlock;
-
-@synthesize rollawayToolbar;
-
-@synthesize searchBarButtonItem, changeModeBarButtonItem, zoomLockBarButtonItem, changeDirectionBarButtonItem, changeLeadBarButtonItem;
-@synthesize bookmarkBarButtonItem, textBarButtonItem, numberOfPageTitleBarButtonItem, dismissBarButtonItem, outlineBarButtonItem;
-@synthesize numberOfPageTitleToolbar;
-@synthesize pageNumLabel;
-
-@synthesize textDisplayViewController;
-@synthesize searchViewController;
-@synthesize miniSearchView;
-@synthesize reusablePopover;
-@synthesize multimediaVisible;
-@synthesize toolbarHeight;
-@synthesize changeModeButton,zoomLockButton,changeDirectionButton,changeLeadButton;
-
-@synthesize imgModeSingle, imgModeDouble, imgZoomLock, imgZoomUnlock, imgl2r, imgr2l, imgLeadRight, imgLeadLeft, imgModeOverflow;
-@synthesize imgSearch, imgDismiss, imgOutline, imgBookmark, imgText;
-@synthesize pageLabelFormat;
-
 -(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
 
-    UIPopoverController * popoverController = nil;
-    
-    if(!reusablePopover) {
+    if(!self.reusablePopover) {
         
-        popoverController = [[UIPopoverController alloc]initWithContentViewController:controller];
+        UIPopoverController * popoverController = [[UIPopoverController alloc]initWithContentViewController:controller];
         popoverController.delegate = self;
         self.reusablePopover = popoverController;
         self.reusablePopover.delegate = self;
-        [popoverController release];
         
     } else {
         
-        [reusablePopover setContentViewController:controller animated:YES];
+        [self.reusablePopover setContentViewController:controller animated:YES];
     }
 
-    return reusablePopover;
+    return self.reusablePopover;
 }
 
 -(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
     
-    if(popoverController == reusablePopover) {  // Only on reusablePopover dismissal.
+    if(popoverController == self.reusablePopover) {  // Only on reusablePopover dismissal.
         
-        switch(currentReusableView) {
+        switch(self.currentReusableView) {
                 
             case FPKReusableViewNone: // This should never happens.
                 break;
@@ -113,14 +89,14 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                 
                 // The popover has been already dismissed, just set the flag accordingly.
                 
-                currentReusableView = FPKReusableViewNone;
+                self.currentReusableView = FPKReusableViewNone;
                 break;
                 
             case FPKReusableViewSearch:
                 
-                if(currentSearchViewMode == FPKSearchViewModeFull) {
+                if(self.currentSearchViewMode == FPKSearchViewModeFull) {
                     
-                    currentReusableView = FPKReusableViewNone;
+                    self.currentReusableView = FPKReusableViewNone;
                 }
                 break;
                 // Same as above, but also cancel the search.
@@ -133,7 +109,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #ifdef __IPHONE_8_0
 -(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
 {
-    switch(currentReusableView)
+    switch(self.currentReusableView)
     {
             
         case FPKReusableViewNone: // This should never happens.
@@ -144,15 +120,14 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             // The popover has been already dismissed, just set the flag accordingly.
             
-            currentReusableView = FPKReusableViewNone;
+            self.currentReusableView = FPKReusableViewNone;
             break;
             
         case FPKReusableViewSearch:
             
-            if(currentSearchViewMode == FPKSearchViewModeFull)
+            if(self.currentSearchViewMode == FPKSearchViewModeFull)
             {
-                
-                currentReusableView = FPKReusableViewNone;
+                self.currentReusableView = FPKReusableViewNone;
             }
             break;
             // Same as above, but also cancel the search.
@@ -167,7 +142,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     // This is just an utility method that will call the appropriate dismissal procedure depending
     // on which alternate controller is visible to the user.
     
-    switch(currentReusableView) {
+    switch(self.currentReusableView) {
             
         case FPKReusableViewNone:
             break;
@@ -178,7 +153,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
             
-            currentReusableView = FPKReusableViewNone;
+            self.currentReusableView = FPKReusableViewNone;
             
             break;
             
@@ -199,7 +174,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                 else
 #endif
                 {
-                    [reusablePopover dismissPopoverAnimated:YES];
+                    [self.reusablePopover dismissPopoverAnimated:YES];
                 }
                 
             } else {
@@ -210,20 +185,20 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }
             }
-            currentReusableView = FPKReusableViewNone;
+            self.currentReusableView = FPKReusableViewNone;
             break;
             
         case FPKReusableViewSearch:
             
-            if(currentSearchViewMode == FPKSearchViewModeFull) {
+            if(self.currentSearchViewMode == FPKSearchViewModeFull) {
            
-                [self dismissSearchViewController:searchViewController];            
-                currentReusableView = FPKReusableViewNone;
+                [self dismissSearchViewController:_searchViewController];
+                self.currentReusableView = FPKReusableViewNone;
                 
-            } else if (currentSearchViewMode == FPKSearchViewModeMini) {
+            } else if (self.currentSearchViewMode == FPKSearchViewModeMini) {
            
                 [self dismissMiniSearchView];
-                currentReusableView = FPKReusableViewNone;
+                self.currentReusableView = FPKReusableViewNone;
             }
             
             // Cancel search and remove the controller.
@@ -265,8 +240,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         {
             [self prepareReusablePopoverControllerWithController:controller];
             
-            [reusablePopover setPopoverContentSize:contentSize animated:YES];
-            [reusablePopover presentPopoverFromRect:rect inView:view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            [self.reusablePopover setPopoverContentSize:contentSize animated:YES];
+            [self.reusablePopover presentPopoverFromRect:rect inView:view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         }
     }
     else
@@ -304,8 +279,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         {
             [self prepareReusablePopoverControllerWithController:controller];
             
-            [reusablePopover setPopoverContentSize:contentSize animated:YES];
-            [reusablePopover presentPopoverFromBarButtonItem:barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            [self.reusablePopover setPopoverContentSize:contentSize animated:YES];
+            [self.reusablePopover presentPopoverFromBarButtonItem:barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         }
     }
     else
@@ -319,7 +294,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 -(IBAction) actionThumbnail:(id)sender{
 	
-	if (thumbsViewVisible) {
+	if (self.thumbsViewVisible) {
 		[self hideThumbnails];
 	}else {
 		[self showThumbnails];
@@ -329,41 +304,45 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #pragma mark -
 #pragma mark TextDisplayViewController, _Delegate and _Actions
 
+/**
+ * Lazily allocated TextDisplayViewController.
+ */
 -(TextDisplayViewController *)textDisplayViewController {
 	
 	// Show the text display view controller to the user.
 	
-	if(nil == textDisplayViewController) {
-		textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
-		textDisplayViewController.documentManager = self.document;
+	if(!_textDisplayViewController) {
+		_textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+		_textDisplayViewController.documentManager = self.document;
 	}
 	
-	return textDisplayViewController;
+	return _textDisplayViewController;
 }
 
 -(IBAction)actionText:(id)sender {
-	
-    UIAlertView * alert = nil;
     
     [self dismissAlternateViewController];
     
-	if(!waitingForTextInput) {
+	if(!self.waitingForTextInput) {
 		
 		// We set the flag to YES and enable the documenter interaction. The flag is used to discard unwanted
 		// user interaction on the document elsewhere, while the document interaction will allow the document
 		// manager to notify its delegate (in this case itself) of user generated event on the document, like
 		// the tap on a certain page.
 		
-		waitingForTextInput = YES;
+		self.waitingForTextInput = YES;
 		self.documentInteractionEnabled = YES;
 		
-		alert = [[UIAlertView alloc]initWithTitle:@"Text" message:@"Select the page you want the text of." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Text"
+                                                        message:@"Select the page you want the text of."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
 		[alert show];
-		[alert release];
 		
 	} else {
         
-		waitingForTextInput = NO;
+		self.waitingForTextInput = NO;
 	}
 }
 
@@ -384,29 +363,23 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 -(IBAction) actionBookmarks:(id)sender {
 	
-		//
 	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
 	//	you can also push the controller with the navigation controller or use an UIActionSheet.
 	
-    BookmarkViewController *bookmarksVC = nil;
-    UIBarButtonItem * bbItem = nil;
-    
-	if (currentReusableView == FPKReusableViewBookmarks) {
+	if (self.currentReusableView == FPKReusableViewBookmarks) {
         
 		[self dismissAlternateViewController];
 		
 	} else {
         
-        currentReusableView = FPKReusableViewBookmarks;
+        self.currentReusableView = FPKReusableViewBookmarks;
         
-        bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        BookmarkViewController * bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
         bookmarksVC.delegate = self;
 
         CGSize popoverContentSize = CGSizeMake(372, 650);
         
-        [self presentViewController:bookmarksVC barButtonItem:bookmarkBarButtonItem contentSize:popoverContentSize];
-    
-		[bookmarksVC release];
+        [self presentViewController:bookmarksVC barButtonItem:self.bookmarkBarButtonItem contentSize:popoverContentSize];
 	}
 }
 
@@ -449,13 +422,11 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
 	// of low memory warnings.
 	
-	OutlineViewController *outlineVC = nil;
-    
-	if (currentReusableView != FPKReusableViewOutline) {
+	if (self.currentReusableView != FPKReusableViewOutline) {
 		
-        currentReusableView = FPKReusableViewOutline;
+        self.currentReusableView = FPKReusableViewOutline;
 		
-        outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
         outlineVC.delegate = self;
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
@@ -465,18 +436,108 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         CGSize popoverContentSize = CGSizeMake(372, 650);
         
-        [self presentViewController:outlineVC barButtonItem:outlineBarButtonItem contentSize:popoverContentSize];
-		
-		[outlineVC release];
+        [self presentViewController:outlineVC barButtonItem:self.outlineBarButtonItem contentSize:popoverContentSize];
 
 	} else {
         
         [self dismissAlternateViewController];
     }
 }
+
+#pragma mark - MiniSearchViewDelegate
+
+-(void)miniSearchView:(MiniSearchView *)view
+              setPage:(NSUInteger)page
+            zoomLevel:(float)zoomLevel
+                 rect:(CGRect)rect {
+
+    [self setPage:page withZoomOfLevel:zoomLevel onRect:rect];
+}
+
+-(void)dismissMiniSearchView:(MiniSearchView *)view {
+    
+    [self dismissMiniSearchView];
+}
+
+
+-(void)revertToFullSearchViewFromMiniSearchView:(MiniSearchView *)view {
+    
+    // Dismiss the minimized view and present the full one.
+    [self revertToFullSearchView];
+}
 	
-#pragma mark -
-#pragma mark SearchViewController, _Delegate and _Action
+#pragma mark - SearchViewControllerDelegate
+
+-(MFDocumentManager *)documentForSearchViewController:(SearchViewController *)controller {
+    return self.document;
+}
+
+-(SearchManager *)searchForSearchViewController:(SearchViewController *)controller {
+    return [self searchManager];
+}
+
+-(void)searchViewController:(SearchViewController *)controller setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect {
+    [self setPage:page withZoomOfLevel:zoomLevel onRect:rect];
+}
+
+-(void)searchViewController:(SearchViewController *)controller addSearch:(SearchManager *)searchManager {
+    
+    [self addOverlayViewDataSource:searchManager name:@"FPKSearchManager"];
+}
+
+-(void)searchViewController:(SearchViewController *)controller removeSearch:(SearchManager *)searchManager {
+    
+    [self removeOverlayViewDataSource:searchManager];
+}
+
+-(void)searchViewController:(SearchViewController *)controller switchToMiniSearchView:(FPKSearchMatchItem *)item {
+    
+    [self dismissSearchViewController:self.searchViewController];
+    [self presentMiniSearchViewWithStartingItem:item];
+}
+
+-(NSUInteger)pageForSearchViewController:(SearchViewController *)controller {
+    return self.page;
+}
+
+-(void)dismissSearchViewController:(SearchViewController *)aSearchViewController {
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        /* Dismiss the popover on iPad pre iOS 8 */
+#ifdef __IPHONE_8_0
+        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
+        else
+#endif
+        {
+            [self.reusablePopover dismissPopoverAnimated:YES];
+        }
+    }
+    else
+    {
+        /* Dismiss the presented view controller on iPad iOS 8 and iPhone */
+        if(self.presentedViewController) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+    
+    [self removeOverlayViewDataSourceWithName:@"FPKSearchManager"];
+    [self reloadOverlay];
+    
+    self.currentReusableView = FPKReusableViewNone;
+}
+
+#pragma mark - Search stuff
+
+-(void)revertToFullSearchView {
+    
+    [self dismissMiniSearchView];
+    [self presentFullSearchView];
+}
 
 -(void)handleSearchUpdateNotification:(NSNotification *)notification {
     
@@ -496,22 +557,22 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     SearchViewController * controller = self.searchViewController;
     controller.delegate = self;
-    controller.searchManager = self.searchManager;
+    controller.searchManager = [self searchManager];
     
     // Enable overlay and set the search manager as the data source for
     // overlay items.
     self.overlayEnabled = YES;
     
-    currentReusableView = FPKReusableViewSearch;
-    currentSearchViewMode = FPKSearchViewModeFull;
+    self.currentReusableView = FPKReusableViewSearch;
+    self.currentSearchViewMode = FPKSearchViewModeFull;
     
     CGSize popoverContentSize = CGSizeMake(450, 650);
     [self presentViewController:controller
-                  barButtonItem:searchBarButtonItem
+                  barButtonItem:self.searchBarButtonItem
                     contentSize:popoverContentSize];
 }
 
--(void)presentMiniSearchViewWithStartingItem:(MFTextItem *)item {
+-(void)presentMiniSearchViewWithStartingItem:(FPKSearchMatchItem *)item {
 	
 	// This could be rather tricky.
 	
@@ -519,36 +580,35 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	// mini search view if necessary, then set the mini search view as the delegate for the current
 	// search manager - associated until now to the full SVC - then present it to the user.
 	
-	if(miniSearchView == nil) {
+	if(self.miniSearchView == nil) {
 		
 		// If nil, allocate and initialize it.
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)]autorelease];
-			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
+			[self.miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 			
-		}else {
-			self.miniSearchView = [[[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)]autorelease];
-			[miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+		} else {
+			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
+			[self.miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		}
 		
 	} else {
 		
 		// If not nil, remove it from the superview.
-        [miniSearchView removeFromSuperview];
+        [self.miniSearchView removeFromSuperview];
 	}
 	
 	// Set up the connections.
-	miniSearchView.dataSource = self.searchManager;
-    [self addOverlayDataSource:self.searchManager];
+	self.miniSearchView.dataSource = [self searchManager];
     
-	miniSearchView.documentDelegate = self;
+	self.miniSearchView.delegate = self;
 	
 	// Update the view with the right index.
-	[miniSearchView reloadData];
-	[miniSearchView setCurrentTextItem:item];
+	[self.miniSearchView reloadData];
+	[self.miniSearchView setCurrentTextItem:item];
 	
 	// Add the subview and referesh the superview.
-	[[self view]addSubview:miniSearchView];
+	[[self view]addSubview:self.miniSearchView];
 	
     [UIView animateWithDuration:0.25f
                           delay:0.0f
@@ -556,45 +616,50 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                      animations:^{
                          if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
                              
-                             [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
-                             [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+                             self.miniSearchView.frame = CGRectMake(0, 64, self.view.bounds.size.width, 44);
+                             self.miniSearchView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
                              
                          }else {
                              
-                             [miniSearchView setFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
-                             [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
-                             
+                             self.miniSearchView.frame = CGRectMake(0, 64, self.view.bounds.size.width, 44);
+                             self.miniSearchView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
                          }
                      }
                      completion:^(BOOL finished){
                          
-                         [self.view bringSubviewToFront:rollawayToolbar];
+                         [self.view bringSubviewToFront:self.rollawayToolbar];
                          
-                         currentReusableView = FPKReusableViewSearch;
-                         currentSearchViewMode = FPKSearchViewModeMini;
-                         
+                         self.currentReusableView = FPKReusableViewSearch;
+                         self.currentSearchViewMode = FPKSearchViewModeMini;
                      }];
 }
 
+-(SearchManager *)searchManager {
+    id<FPKOverlayViewDataSource> dataSource = [self overlayViewDataSourceWithName:@"FPKSearchManager"];
+    if([dataSource isKindOfClass:[SearchManager class]]) {
+        return (SearchManager *)dataSource;
+    }
+    return nil;
+}
+
+/**
+ * SearchViewController, lazily allocated.
+ */
 -(SearchViewController *)searchViewController {
 	
 	// Lazily allocation when required.
 	
-	if(!searchViewController) {
+	if(!_searchViewController) {
 		
 		// We use different xib on iPhone and iPad.
-		
-		BOOL isPad = NO;
-#ifdef UI_USER_INTERFACE_IDIOM
-		isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-		if(isPad) {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        
+		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			_searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
 		} else {
-			searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+			_searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
 		}
 	}
-	return searchViewController;
+	return _searchViewController;
 }
 
 -(IBAction)actionSearch:(id)sender {
@@ -603,9 +668,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	// to the user. The full search view controller will allow the user to type in a search term and
 	// start the search. Look at the details in the utility method implementation.
     
-    if(currentReusableView!= FPKReusableViewSearch) {
+    if(self.currentReusableView!= FPKReusableViewSearch) {
         
-        if(currentSearchViewMode == FPKSearchViewModeMini) {
+        if(self.currentSearchViewMode == FPKSearchViewModeMini) {
             
             [self revertToFullSearchView];
         
@@ -616,11 +681,11 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
     } else {
         
-        if(currentSearchViewMode == FPKSearchViewModeMini) {
+        if(self.currentSearchViewMode == FPKSearchViewModeMini) {
             
             [self revertToFullSearchView];
             
-        } else if (currentSearchViewMode == FPKSearchViewModeFull) {
+        } else if (self.currentSearchViewMode == FPKSearchViewModeFull) {
             
             [self dismissAlternateViewController];    
             
@@ -632,29 +697,30 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 	// Remove from the superview and release the mini search view.
     
-    [self removeOverlayDataSource:self.searchManager];
+    [self removeOverlayViewDataSourceWithName:@"FPKSearchManager"];
+    
     [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
     
 	// Animation.
+    ReaderViewController * __weak this = self;
     [UIView animateWithDuration:0.25f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
                              
-                             [miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
+                             this.miniSearchView.frame = CGRectMake(0,-45 , this.view.bounds.size.width, 44);
                          } else {
                              
-                             [miniSearchView setFrame:CGRectMake(0,-45 , self.view.bounds.size.width, 44)];
+                             this.miniSearchView.frame = CGRectMake(0,-45 , this.view.bounds.size.width, 44);
                          }
                          
                      }
                      completion:^(BOOL finished){
                          // Actual removal.
-                         if(miniSearchView!=nil) {
+                         if(this.miniSearchView!=nil) {
                              
-                             [miniSearchView removeFromSuperview];
-                             [miniSearchView release], miniSearchView = nil;
+                             [this.miniSearchView removeFromSuperview];
                          }
                          
                      }];
@@ -664,109 +730,23 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 	// Remove from the superview and release the mini search view.
 	
+    ReaderViewController * __weak this = self;
     [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         
-            [miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
-            [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+            this.miniSearchView.frame = CGRectMake(0,66 , this.view.bounds.size.width, 44);
+            this.miniSearchView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
         
         }else {
             
-            [miniSearchView setFrame:CGRectMake(0,66 , self.view.bounds.size.width, 44)];
-            [miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+            this.miniSearchView.frame = CGRectMake(0,66 , this.view.bounds.size.width, 44);
+            this.miniSearchView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
         }
     } completion:NULL];
 }
 
-/**
- * Set the SearchManager. If the new one is actually different thant the current
- * one, first remote the current as overlay view datasource, then add the new
- * one.
- */
--(void)setSearchManager:(SearchManager *)searchManager {
-    if(searchManager != _searchManager) {
-        [self removeOverlayViewDataSource:_searchManager];
-        _searchManager = searchManager;
-        [self addOverlayViewDataSource:_searchManager];
-    }
-}
-
--(NSUInteger)pageForSearchViewController:(SearchViewController *)controller {
-    return self.page;
-}
-
--(MFDocumentManager *)documentForSearchViewController:(SearchViewController *)controller {
-    return self.document;
-}
-
--(SearchManager *)searchForSearchViewController:(SearchViewController *)controller {
-    return self.searchManager;
-}
-
--(void)searchViewController:(SearchViewController *)controller setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect {
-    [self setPage:page withZoomOfLevel:zoomLevel onRect:rect];
-}
-
--(void)searchViewController:(SearchViewController *)controller addSearch:(SearchManager *)searchManager {
-    
-    [self setSearchManager:searchManager];
-}
-
--(void)searchViewController:(SearchViewController *)controller removeSearch:(SearchManager *)searchManager {
-    
-    if([self.searchManager isEqual:searchManager]) {
-        self.searchManager = nil;
-    }
-}
-
--(void)revertToFullSearchView {
-	
-	// Dismiss the minimized view and present the full one.
-	
-    [self dismissMiniSearchView];
-	[self presentFullSearchView];
-}
-
--(void)searchViewController:(SearchViewController *)controller switchToMiniSearchView:(MFTextItem *)item {
-    
-    [self dismissSearchViewController:searchViewController];
-    [self presentMiniSearchViewWithStartingItem:item];
-}
-
--(void)dismissSearchViewController:(SearchViewController *)aSearchViewController {
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
-        /* Dismiss the popover on iPad pre iOS 8 */
-#ifdef __IPHONE_8_0
-        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
-            if(self.presentedViewController) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }
-        }
-        else
-#endif
-        {
-        [reusablePopover dismissPopoverAnimated:YES];
-        }
-	}
-    else
-    {
-        /* Dismiss the presented view controller on iPad iOS 8 and iPhone */
-        if(self.presentedViewController) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-	}
-    
-    [self removeOverlayDataSource:self.searchManager];
-    [self reloadOverlay];
-    
-    currentReusableView = FPKReusableViewNone;
-}
-
-#pragma mark -
-#pragma mark Actions
+#pragma mark - Actions
 
 -(IBAction) actionDismiss:(id)sender {
 	
@@ -774,11 +754,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	// values you can just set up a delegate and implement in a delegate method both the
 	// removal of the DocumentViweController and the processing of the values.
 	
-    // Stop the search.
-    [self.searchManager cancelSearch];
-    
-	// Call this function to stop the worker threads and release the associated resources.
-	pdfOpen = NO;
+    // Call this function to stop the worker threads and release the associated resources.
+	self.pdfOpen = NO;
 	
     [self dismissAlternateViewController];
     
@@ -790,7 +767,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
 	if(self.dismissBlock) {
         
-        dismissBlock();
+        self.dismissBlock();
         
     } else {
         
@@ -886,14 +863,13 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	if(autozoom) {
 		[self setAutozoomOnPageChange:NO];
         
-        [self.zoomLockButton setImage:imgZoomUnlock forState:UIControlStateNormal];
+        [self.zoomLockButton setImage:self.imgZoomUnlock forState:UIControlStateNormal];
         
 	} else {
 		[self setAutozoomOnPageChange:YES];
         
         
-        [self.zoomLockButton setImage:imgZoomLock forState:UIControlStateNormal];
-        
+        [self.zoomLockButton setImage:self.imgZoomLock forState:UIControlStateNormal];
 	}
 }
 
@@ -997,33 +973,26 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 - (void)playAudio:(NSString *)audioURL local:(BOOL)_isLocal{
 	
-    AudioViewController *audioVC = nil;
+    self.multimediaVisible = YES;
     
-	multimediaVisible = YES;
-    
-	audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") audioFilePath:audioURL local:_isLocal];
+    AudioViewController *audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") audioFilePath:audioURL local:_isLocal];
 	
 	audioVC.documentViewController = self;
 	
 	[audioVC.view setFrame:CGRectMake(0, 0, 272, 40)];
 	
 	[self.view addSubview:audioVC.view];
-    
-    [audioVC release];
 }
 
 - (void)playVideo:(NSString *)videoPath local:(BOOL)isLocal{
 	
     NSURL *url = nil;
 	BOOL openVideo = NO;
-	MPMoviePlayerViewController *moviePlayViewController = nil;
-    NSFileManager * fileManager = nil;
-    
-	multimediaVisible = YES;
+	self.multimediaVisible = YES;
 	
 	if (isLocal) {
 		
-		fileManager = [[NSFileManager alloc]init];
+        NSFileManager * fileManager = [[NSFileManager alloc]init];
 		
 		if ([fileManager fileExistsAtPath:videoPath]) {
             
@@ -1033,8 +1002,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
 			openVideo = NO;
 		}
-        
-		[fileManager release];
 		
 	} else {
         
@@ -1044,7 +1011,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 	if (openVideo) {
         
-		moviePlayViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:url];
+        MPMoviePlayerViewController *moviePlayViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
 		
 		if (moviePlayViewController) {
 			[self presentMoviePlayerViewControllerAnimated:moviePlayViewController];
@@ -1053,8 +1020,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieViewFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:[moviePlayViewController moviePlayer]];
 			[moviePlayViewController.moviePlayer play];
 		}
-        
-        [moviePlayViewController release];
 	}
 }
 
@@ -1066,22 +1031,18 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:moviePlayerController];
 	[moviePlayerController stop];
 	
-    multimediaVisible = NO;
+    self.multimediaVisible = NO;
 }
 
 -(void)showWebView:(NSString *)url local:(BOOL)isLocal{
 	
-    WebBrowser * webBrowser = nil;
+    self.multimediaVisible = YES;
     
-	multimediaVisible = YES;
-    
-	webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") link:url local:isLocal];
+    WebBrowser * webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") link:url local:isLocal];
 	
 	webBrowser.docViewController = self;
     
     [self presentViewController:webBrowser animated:YES completion:nil];
-	
-	[webBrowser release];
 }
 
 #pragma mark -
@@ -1105,15 +1066,15 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 	if(mode == MFDocumentModeSingle) {
         
-        [changeModeButton setImage:imgModeSingle forState:UIControlStateNormal];
+        [self.changeModeButton setImage:self.imgModeSingle forState:UIControlStateNormal];
         
 	} else if (mode == MFDocumentModeDouble) {
         
-        [changeModeButton setImage:imgModeDouble forState:UIControlStateNormal];
+        [self.changeModeButton setImage:self.imgModeDouble forState:UIControlStateNormal];
 		
 	} else if (mode == MFDocumentModeOverflow) {
         
-        [changeModeButton setImage:imgModeOverflow forState:UIControlStateNormal];
+        [self.changeModeButton setImage:self.imgModeOverflow forState:UIControlStateNormal];
     }
 }
 
@@ -1125,13 +1086,13 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	if(direction == MFDocumentDirectionL2R) {
         
         
-        [self.changeDirectionButton setImage:imgl2r forState:UIControlStateNormal];
+        [self.changeDirectionButton setImage:self.imgl2r forState:UIControlStateNormal];
 		
 
 		
 	} else if (direction == MFDocumentDirectionR2L) {
         
-        [self.changeDirectionButton setImage:imgr2l forState:UIControlStateNormal];		
+        [self.changeDirectionButton setImage:self.imgr2l forState:UIControlStateNormal];
 	}
 }
 
@@ -1142,13 +1103,13 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
 	if(lead == MFDocumentLeadLeft) {
         
-        [self.changeLeadButton setImage:imgLeadLeft forState:UIControlStateNormal];
+        [self.changeLeadButton setImage:self.imgLeadLeft forState:UIControlStateNormal];
 		
 		//[changeLeadBarButtonItem setImage:imgLeadLeft];
 		
 	} else if (lead == MFDocumentLeadRight) {
         
-        [self.changeLeadButton setImage:imgLeadRight forState:UIControlStateNormal];
+        [self.changeLeadButton setImage:self.imgLeadRight forState:UIControlStateNormal];
 		
 		//[changeLeadBarButtonItem setImage:imgLeadRight];
 	}
@@ -1163,7 +1124,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     TextDisplayViewController * controller = nil;
     
-    if(currentReusableView != FPKReusableViewNone) {
+    if(self.currentReusableView != FPKReusableViewNone) {
         
         [self dismissAlternateViewController];
     }
@@ -1178,7 +1139,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     [self presentViewController:controller animated:YES completion:nil];
    
-    currentReusableView = FPKReusableViewText;
+    self.currentReusableView = FPKReusableViewText;
 }
 
 
@@ -1189,15 +1150,15 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 }
 
 -(void)documentViewController:(MFDocumentViewController *)dvc willFollowLinkToPage:(NSUInteger)page {
-    willFollowLink = YES; 
+    self.willFollowLink = YES;
 }
 
 -(void) documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point {
 	
     // Skip if we are going to move to a different page because the user tapped on the view to
     // over an internal link. Check the documentViewController:willFollowLinkToPage: callback.
-    if(willFollowLink) {
-        willFollowLink = NO;
+    if(self.willFollowLink) {
+        self.willFollowLink = NO;
         return;
     }
     
@@ -1210,22 +1171,22 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	}
 	
 	
-	if(!waitingForTextInput) {
+	if(!self.waitingForTextInput) {
 		
 		//	We are using this callback to selectively hide/unhide some UI components like the buttons.
         
-        if(!multimediaVisible){
+        if(!self.multimediaVisible){
 		
-            if(hudHidden) {
+            if(self.hudHidden) {
                 
                 [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 			
                 [self showToolbar];
                 [self showThumbnails];
 			
-                [miniSearchView setHidden:NO];
+                self.miniSearchView.hidden = NO;
 			
-                hudHidden = NO;
+                self.hudHidden = NO;
 			
             } else {
 			
@@ -1236,14 +1197,14 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                 [self hideToolbar];
                 [self hideThumbnails];
 			
-                [miniSearchView setHidden:YES];
+                self.miniSearchView.hidden = YES;
 			
-                hudHidden = YES;
+                self.hudHidden = YES;
             }
         }
-	}else{
+	} else {
     
-        waitingForTextInput = NO;
+        self.waitingForTextInput = NO;
 		
 		// Get the text display controller lazily, set up the delegate that will provide the document (this instance)
 		// and show it.
@@ -1264,14 +1225,8 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     [self setWantsFullScreenLayout:YES];
 	
-	UIView * aView = nil;
-	BOOL isPad = NO;
-    
-#ifdef UI_USER_INTERFACE_IDIOM
-	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-    
- 	if(isPad) {
+    UIView * aView = nil;
+ 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 768, 1024)];  // Status bar only
 	} else {
 		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 568)];   // Status bar only
@@ -1289,8 +1244,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	}
 	
 	[self setView:aView];
-	
-	[aView release];
 }
 
 /**
@@ -1399,66 +1352,58 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.dismissBarButtonItem = aBarButtonItem;
 
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
-				
 		// Zoom lock.
         
         self.zoomLockButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.zoomLockButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
-        [self.zoomLockButton setImage:imgZoomUnlock forState:UIControlStateNormal];
+        [self.zoomLockButton setImage:self.imgZoomUnlock forState:UIControlStateNormal];
         [self.zoomLockButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
         
 		self.zoomLockBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Change direction.
         
         self.changeDirectionButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.changeDirectionButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
-        [self.changeDirectionButton setImage:imgl2r forState:UIControlStateNormal];
+        [self.changeDirectionButton setImage:self.imgl2r forState:UIControlStateNormal];
         [self.changeDirectionButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
         
         self.changeDirectionBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Change lead.
         
         self.changeLeadButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.changeLeadButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
-        [self.changeLeadButton setImage:imgLeadRight forState:UIControlStateNormal];
+        [self.changeLeadButton setImage:self.imgLeadRight forState:UIControlStateNormal];
         [self.changeLeadButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
         
         self.changeLeadBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-        
-		[aBarButtonItem release];
 		
 		// Change mode.
         
         self.changeModeButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.changeModeButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
-        [self.changeModeButton setImage:imgModeSingle forState:UIControlStateNormal];
+        [self.changeModeButton setImage:self.imgModeSingle forState:UIControlStateNormal];
         [self.changeModeButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeModeButton];
         
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Space.
 		
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Page number.
 		
@@ -1478,15 +1423,11 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aLabel];
 		self.numberOfPageTitleBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
-		
-		[aLabel release];
-		
+        
 		// Space.
         
 		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Text.
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1500,7 +1441,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.textBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Outline.
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1514,7 +1454,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.outlineBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
 		// Bookmarks.
         
@@ -1529,7 +1468,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.bookmarkBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
         // Search.
         
@@ -1544,8 +1482,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.searchBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
-        
 		
 	} else { // Iphone.
              
@@ -1563,21 +1499,18 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.dismissBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
-		
 		
          // Space
          
          aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
          [items addObject:aBarButtonItem];
-         [aBarButtonItem release];
          
 		
 		// Zoom lock.
         
         self.zoomLockButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.zoomLockButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
-        [self.zoomLockButton setImage:imgZoomUnlock forState:UIControlStateNormal];
+        [self.zoomLockButton setImage:self.imgZoomUnlock forState:UIControlStateNormal];
         [self.zoomLockButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
         
@@ -1585,13 +1518,12 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgZoomUnlock style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
 		self.zoomLockBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Change direction.
         
         self.changeDirectionButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.changeDirectionButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
-        [self.changeDirectionButton setImage:imgl2r forState:UIControlStateNormal];
+        [self.changeDirectionButton setImage:self.imgl2r forState:UIControlStateNormal];
         [self.changeDirectionButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
         
@@ -1599,13 +1531,12 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
 		self.changeDirectionBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 		
 		// Change lead.
         
         self.changeLeadButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.changeLeadButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
-        [self.changeLeadButton setImage:imgLeadRight forState:UIControlStateNormal];
+        [self.changeLeadButton setImage:self.imgLeadRight forState:UIControlStateNormal];
         [self.changeLeadButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
         
@@ -1613,26 +1544,23 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
 		self.changeLeadBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-        
-		[aBarButtonItem release];
+
 		
 		// Change mode.
         
         self.changeModeButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.changeModeButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
-        [self.changeModeButton setImage:imgModeSingle forState:UIControlStateNormal];
+        [self.changeModeButton setImage:self.imgModeSingle forState:UIControlStateNormal];
         [self.changeModeButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeModeButton];
         
 		self.changeModeBarButtonItem = aBarButtonItem;
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
         // Space
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         [items addObject:aBarButtonItem];
-        [aBarButtonItem release];
         
 		
 		// Text.
@@ -1644,11 +1572,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
         
-        
 		self.textBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
 		
 		// Outline.
@@ -1664,7 +1590,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.outlineBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
         
         
 		// Bookmarks.
@@ -1681,8 +1606,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.bookmarkBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
-        
+		
         // Search.
         
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1696,10 +1620,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		self.searchBarButtonItem = aBarButtonItem;
         
 		[items addObject:aBarButtonItem];
-		[aBarButtonItem release];
 	}
 	
-	aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, toolbarHeight)];
+	aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, self.toolbarHeight)];
 	aToolbar.hidden = YES;
 	aToolbar.barStyle = UIBarStyleBlackTranslucent;
 	[aToolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
@@ -1708,9 +1631,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	[self.view addSubview:aToolbar];
 	
 	self.rollawayToolbar = aToolbar;
-	
-	[aToolbar release];
-	[items release];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -1718,10 +1638,10 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     // Defaulting the flags.
     
-    pdfOpen = YES;
-	hudHidden = YES;
-	currentReusableView = FPKReusableViewNone;
-    multimediaVisible = NO;
+    self.pdfOpen = YES;
+	self.hudHidden = YES;
+	self.currentReusableView = FPKReusableViewNone;
+    self.multimediaVisible = NO;
     
 	//	Let the superclass do its stuff (setting up the views), then you can begin to add your own custom subviews
 	//	like buttons.
@@ -1780,12 +1700,13 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(void)showToolbar {
 	
 	// Show toolbar, with animation.
-	[UIView animateWithDuration:0.25f
+    ReaderViewController * __weak this = self;
+    [UIView animateWithDuration:0.25f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         [self.rollawayToolbar setHidden:NO];
-                         [self.rollawayToolbar setFrame:CGRectMake(0, 20, rollawayToolbar.frame.size.width, toolbarHeight)];
+                         this.rollawayToolbar.hidden = NO;
+                         this.rollawayToolbar.frame = CGRectMake(0, 20, this.rollawayToolbar.frame.size.width, this.toolbarHeight);
                      }
                      completion:NULL
                      ];
@@ -1797,25 +1718,17 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(void)hideToolbar{
 	
 	// Hide the toolbar, with animation.
+        ReaderViewController * __weak this = self;
     [UIView animateWithDuration:0.25f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         [self.rollawayToolbar setFrame:CGRectMake(0, -toolbarHeight, rollawayToolbar.frame.size.width, toolbarHeight)];
+                         [this.rollawayToolbar setFrame:CGRectMake(0, -this.toolbarHeight, this.rollawayToolbar.frame.size.width, this.toolbarHeight)];
                      }
                      completion:^(BOOL finished){
-                         [self.rollawayToolbar setHidden:YES];
+                         this.rollawayToolbar.hidden = YES;
                      }];
 }
-
-
-
--(void)viewWillAppear:(BOOL)animated {
-
-	[super viewWillAppear:animated];
-	
-}
-
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager {
 	
@@ -1834,42 +1747,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	return self;
 }
 
-
-- (void)didReceiveMemoryWarning {
-	
-    [super didReceiveMemoryWarning];
-	
-	self.textDisplayViewController = nil;
-    self.searchViewController = nil;
-    
-    if(!self.isViewLoaded) {
-        
-        self.miniSearchView = nil;
-        self.pageNumLabel = nil;
-        self.numberOfPageTitleToolbar = nil;
-        
-        self.rollawayToolbar = nil;
-        
-        // Button and bar buttons
-        
-        self.changeModeBarButtonItem = nil;
-        self.zoomLockBarButtonItem = nil;
-        self.changeDirectionBarButtonItem = nil;
-        self.changeLeadBarButtonItem = nil;
-        self.searchBarButtonItem = nil;
-        self.textBarButtonItem = nil;
-        self.numberOfPageTitleBarButtonItem = nil;
-        self.outlineBarButtonItem = nil;
-        self.bookmarkBarButtonItem = nil;
-        self.dismissBarButtonItem = nil;
-        
-        self.changeModeButton = nil;
-        self.zoomLockButton = nil;
-        self.changeDirectionButton = nil;
-        self.changeLeadButton = nil;
-    }
-}
-
 #ifdef __IPHONE_6_0
 -(BOOL)shouldAutorotate {
     return YES;
@@ -1886,58 +1763,6 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     // UI images.
     
     [[NSNotificationCenter defaultCenter]removeObserver:self];
-    
-	[imgModeSingle release];
-	[imgModeDouble release];
-    [imgModeOverflow release];
-	[imgZoomLock release];
-	[imgZoomUnlock release];
-	[imgl2r release];
-	[imgr2l release];
-	[imgLeadRight release];
-	[imgLeadLeft release];
-    [imgBookmark release];
-    [imgDismiss release];
-    [imgText release];
-    [imgSearch release];
-    [imgOutline release];
-    
-    [rollawayToolbar release];
-	
-    // Bar button item.
-    
-    [searchBarButtonItem release], searchBarButtonItem = nil;
-	[zoomLockBarButtonItem release], zoomLockBarButtonItem = nil;
-	[changeModeBarButtonItem release], changeModeBarButtonItem = nil;
-	[changeDirectionBarButtonItem release], changeDirectionBarButtonItem = nil;
-	[changeLeadBarButtonItem release], changeLeadBarButtonItem = nil;
-    [textBarButtonItem release], textBarButtonItem = nil;
-    [numberOfPageTitleBarButtonItem release], numberOfPageTitleBarButtonItem = nil;
-    [outlineBarButtonItem release], outlineBarButtonItem = nil;
-    [bookmarkBarButtonItem release], bookmarkBarButtonItem = nil;
-    [dismissBarButtonItem release], dismissBarButtonItem = nil;
-    
-    // Inner buttons.
-    
-    [zoomLockButton release],zoomLockButton = nil;
-    [changeModeButton release],changeModeButton = nil;
-    [changeLeadButton release],changeLeadButton = nil;
-    [changeDirectionButton release],changeDirectionButton = nil;
-	
-    // Popovers.
-    
-    [reusablePopover release];
-   
-	[numberOfPageTitleBarButtonItem release];
-	
-	[searchViewController release];
-	[textDisplayViewController release];
-	[miniSearchView release];
-    [_searchManager release],_searchManager = nil;
-    
-    self.dismissBlock = nil;
-    
-    [super dealloc];
 }
 
 @end

@@ -14,14 +14,13 @@
 #import "MiniSearchViewControllerDelegate.h"
 #import "OutlineViewControllerDelegate.h"
 #import "TextDisplayViewControllerDelegate.h"
+#import "FPKSearchMatchItem.h"
 
 @class BookmarkViewController;
 @class SearchViewController;
 @class TextDisplayViewController;
 @class SearchManager;
 @class MiniSearchView;
-@class MFTextItem;
-
 
 @interface DocumentViewController : MFDocumentViewController <TextDisplayViewControllerDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,SearchViewControllerDelegate,MiniSearchViewControllerDelegate,OutlineViewControllerDelegate> {
 	
@@ -76,7 +75,7 @@
 }
 
 
--(void)switchToMiniSearchView:(MFTextItem *)index;
+-(void)switchToMiniSearchView:(FPKSearchMatchItem *)index;
 -(void)dismissMiniSearchView;
 -(void)revertToFullSearchView;
 -(void)showMiniSearchView;
