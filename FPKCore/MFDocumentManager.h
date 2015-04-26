@@ -210,6 +210,11 @@
 @property (nonatomic,assign) BOOL alternateURISchemesEnabled;
 
 /**
+ Tell to keep memory usage down. Use this if you see frequent memory warnings.
+ */
+@property (readwrite) BOOL conservativeMemoryUsage;
+
+/**
  This will return a Cocoa representation of the annotations array for each page.
  The returned value is actually a ditionary, where the value you are looking for
  is store with the key "object".
