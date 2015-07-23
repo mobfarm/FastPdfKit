@@ -17,6 +17,11 @@
 
 #define ZOOM_LEVEL 4.0
 
+@interface MiniSearchView()
+@property (nonatomic, readwrite) NSUInteger searchResultsCount;
+@property (nonatomic, strong) FPKSearchMatchItem * currentItem;
+@end
+
 @implementation MiniSearchView
 
 - (void)segmentSwitch:(id)sender {
@@ -40,102 +45,59 @@
 
 -(void)reloadData {
 	
-	// This method basically set the current appaerance of the view to 
-	// present the content of the Search Result pointed by currentSearchResultIndex.
+    self.searchResultsCount = [self.delegate numberOfSearchResults:self]; // Get the number of results
     
+    self.currentSearchResultIndex = 0; // Reset the index
     
-	NSArray * searchResults = self.dataSource.allSearchResults;
-	
-    if(self.currentSearchResultIndex >= searchResults.count) {
-        self.currentSearchResultIndex = searchResults.count - 1;
-    }
-    
-	FPKSearchMatchItem * item = searchResults[self.currentSearchResultIndex];
-    
-	if(!item)
-		return;
-	
-	// Update the content view.
-	[self updateSearchResultViewWithItem:item];
-    
+    [self updateButtons];
+    [self loadItem];
 }
 
--(void)setCurrentResultIndex:(NSUInteger)index {
-	
-	// This is more or less the same as the method above, just set the index
-	// passed as parameter as the current index and then proceed accordingly.
-	
-    NSArray * searchResults = [self.dataSource allSearchResults];
-	
-	if(index >= searchResults.count) {
-		index = searchResults.count - 1;
-	}
-	
-	self.currentSearchResultIndex = index;
-	
-	    FPKSearchMatchItem * item = searchResults[self.currentSearchResultIndex];
-	
-    if(!item) {
-		return;
+-(void)setCurrentItem:(FPKSearchMatchItem *)currentItem {
+    if(_currentItem != currentItem) {
+        _currentItem = currentItem;
+        
+        [self updateSearchResultViewWithItem:_currentItem];
     }
-	
-	[self updateSearchResultViewWithItem:item];
 }
 
--(void)setCurrentTextItem:(FPKSearchMatchItem *)item {
-	
-	// Just an utility method to set the current index when just the item is know.
-	
-	NSUInteger index = [[self.dataSource allSearchResults] indexOfObject:item];
-	
-	[self setCurrentResultIndex:index];
+-(void)loadItem {
+    // This method basically set the current appaerance of the view to
+    // present the content of the Search Result pointed by currentSearchResultIndex.
+    FPKSearchMatchItem * item = [self.delegate miniSearchView:self searchResultAtIndex:self.currentSearchResultIndex];
+    
+    self.currentItem = item;
+    [self.delegate miniSearchView:self setPage:item.textItem.page zoomLevel:1.0 rect:CGRectZero];
+}
+
+-(void)updateButtons {
+    
+    if(self.searchResultsCount > 0) {
+        self.nextButton.enabled = YES;
+        self.prevButton.enabled = YES;
+    } else {
+        self.nextButton.enabled = NO;
+        self.prevButton.enabled = NO;
+    }
+}
+
+-(void)setCurrentSearchResultIndex:(NSInteger)index {
+    if(_currentSearchResultIndex != index) {
+        _currentSearchResultIndex = index;
+     
+        [self loadItem];
+    }
 }
 
 -(void) moveToNextResult {
 	
-	
-	// The same as the two similar methods above. It only differs in the fact that increase
-	// the index by one, then proceed the same.
-	NSArray * searchResults = [self.dataSource allSearchResults];
-
-    
-	self.currentSearchResultIndex++;
-	
-    if(self.currentSearchResultIndex == searchResults.count) {
-		self.currentSearchResultIndex = 0;
-    }
-	
-    FPKSearchMatchItem * item = [searchResults objectAtIndex:self.currentSearchResultIndex];
-	
-    if(!item) {
-		return;
-    }
-	
-	[self updateSearchResultViewWithItem:item];
-	
-    [self.delegate miniSearchView:self setPage:item.textItem.page zoomLevel:ZOOM_LEVEL rect:item.boundingBox];
+    self.currentSearchResultIndex = (self.currentSearchResultIndex + 1) % self.searchResultsCount;
 }
 
 -(void) moveToPrevResult {
     
 	// As the above method, but it decrease the index instead.
-	NSArray * searchResults = [self.dataSource allSearchResults];
-
-    self.currentSearchResultIndex--;
-	
-    if(self.currentSearchResultIndex < 0) {
-		self.currentSearchResultIndex = searchResults.count - 1;
-    }
-    
-    FPKSearchMatchItem * item = [searchResults objectAtIndex:self.currentSearchResultIndex];
-	
-    if(!item) {
-		return;
-    }
-	
-	[self updateSearchResultViewWithItem:item];
-	
-    [self.delegate miniSearchView:self setPage:item.textItem.page zoomLevel:ZOOM_LEVEL rect:item.boundingBox];
+    self.currentSearchResultIndex = ((self.currentSearchResultIndex - 1) + self.searchResultsCount) % self.searchResultsCount;
 }
 
 #pragma mark - Search notification listeners
@@ -169,11 +131,7 @@
 
 -(void)actionCancel:(id)sender {
 	
-	// Tell the data source to stop the search.
-	
-	if(self.dataSource.running) {
-		[self.dataSource stopSearch];
-	}
+    [self.delegate cancelSearch:self];
 }
 
 -(void)actionFull:(id)sender {
@@ -181,67 +139,102 @@
     [self.delegate revertToFullSearchViewFromMiniSearchView:self];
 }
 
-#pragma mark -
-#pragma mark View lifecycle
+#pragma mark - View lifecycle
 - (id)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
-	
+    
     if (self) {
         
         [self.subviews.lastObject removeFromSuperview];
         
         // Initialization code.
-		
-		self.autoresizesSubviews = YES;		// Yes.
-		self.opaque = NO;					// Otherwise background transparencies will be flat black.
-		// Layout subviews.
-		
-        UIToolbar *bar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 44)];
-        bar.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
-        bar.barStyle = UIBarStyleBlack;
-        bar.translucent = YES;
-		
-        UIButton *btnPrev = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 37, 30)];
+        self.opaque = NO;
+        self.backgroundColor = [UIColor clearColor];
         
-        [btnPrev setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prew",@"png")] forState:UIControlStateNormal];
+        // Background.
+        UIImageView * backgroundImageView = [UIImageView new];
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = NO;
+        backgroundImageView.contentMode = UIViewContentModeScaleToFill;
+        backgroundImageView.backgroundColor = [UIColor clearColor];
+        self.backgroundImageView = backgroundImageView;
+        [self addSubview:backgroundImageView];
         
-        [btnPrev addTarget:self action:@selector(actionPrev:) forControlEvents:UIControlEventTouchUpInside];
+        // Previous result button.
+        UIButton *previousButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        previousButton.translatesAutoresizingMaskIntoConstraints = NO;
+        UIImage * previousImage = [[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prew",@"png")]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [previousButton setImage:previousImage forState:UIControlStateNormal];
+        [previousButton addTarget:self
+                           action:@selector(actionPrev:)
+                 forControlEvents:UIControlEventTouchUpInside];
+                [self addSubview:previousButton];
         
+        // Next result button.
+        UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeSystem];
+                nextButton.translatesAutoresizingMaskIntoConstraints = NO;
+        UIImage * nextImage = [[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [nextButton setImage:nextImage forState:UIControlStateNormal];
+        [nextButton addTarget:self
+                       action:@selector(actionNext:)
+             forControlEvents:UIControlEventTouchUpInside];
+                [self addSubview: nextButton];
         
-        UIBarButtonItem *prevItem = [[UIBarButtonItem alloc] initWithCustomView:btnPrev];
+        // Cancel search button.
+        UIButton * cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
+                cancelButton.translatesAutoresizingMaskIntoConstraints = NO;
+        [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+        [cancelButton addTarget:self action:@selector(actionCancel:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:cancelButton];
         
-        UIButton *btnNext = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 37, 30)];
+        // Go back to full search button.
+        UIButton * backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+                backButton.translatesAutoresizingMaskIntoConstraints = NO;
+        [backButton setTitle:@"Advanced" forState:UIControlStateNormal];
+        [backButton addTarget:self action:@selector(actionFull:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:backButton];
         
-        [btnNext setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")] forState:UIControlStateNormal];
+        // Search result "button".
+        SearchResultView * resultView = [SearchResultView new];
+                resultView.translatesAutoresizingMaskIntoConstraints = NO;
+        resultView.pageNumberLabel.textColor = [UIColor whiteColor];
+        resultView.snippetLabel.textColor = [UIColor whiteColor];
+        self.searchResultView = resultView;
+        [self addSubview:resultView];
         
-        [btnNext addTarget:self action:@selector(actionNext:) forControlEvents:UIControlEventTouchUpInside];
+        // Padding view used to align the other views without becoming insane with VFL.
+        UIView * topPaddingView = [UIView new];
+        topPaddingView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addSubview:topPaddingView];
         
-        UIBarButtonItem *nextItem = [[UIBarButtonItem alloc] initWithCustomView:btnNext];
+        UIView * bottomPaddingView = [UIView new];
+        bottomPaddingView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addSubview:bottomPaddingView];
         
+        // Layout.
+        NSDictionary * views = @{@"back":backButton,
+                                 @"cancel":cancelButton,
+                                 @"next":nextButton,
+                                 @"prev":previousButton,
+                                 @"result":resultView,
+                                 @"topPadding":topPaddingView,
+                                 @"bottomPadding":bottomPaddingView,
+                                 @"background":backgroundImageView
+                                 };
         
-		UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
-                                                                     style:UIBarButtonItemStyleDone
-                                                                    target:self
-                                                                    action:@selector(actionCancel:)];
-		
-        UIBarButtonItem *fullItem = [[UIBarButtonItem alloc] initWithTitle:@"Search"
-                                                                     style:UIBarButtonItemStyleBordered
-                                                                    target:self
-                                                                    action:@selector(actionFull:)];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[back]-[result(>=20)]-[prev]-[next]-[cancel]-|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[topPadding]|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bottomPadding]|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[background]|" options:0 metrics:nil views:views]];
         
-        UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                       target:nil
-                                                                                       action:nil];
-        UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                                                                    target:nil
-                                                                                    action:nil];
-        
-        [bar setItems:@[doneItem, flexibleSpace, prevItem,nextItem, fixedSpace, fullItem] animated:NO];
-        
-        [self addSubview:bar];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topPadding(>=1)][back][bottomPadding(==topPadding)]|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topPadding(>=1)][result][bottomPadding(==topPadding)]|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topPadding(>=1)][prev][bottomPadding(==topPadding)]|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topPadding(>=1)][next][bottomPadding(==topPadding)]|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topPadding(>=1)][cancel][bottomPadding(==topPadding)]|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[background]|" options:0 metrics:nil views:views]];
     }
-	
+    
     return self;
 }
 

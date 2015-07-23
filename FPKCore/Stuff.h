@@ -20,6 +20,15 @@ free((x)),(x)=NULL; \
 #define MF_BUNDLED_BUNDLE(x) [NSBundle bundleWithPath:[[NSBundle mainBundle]pathForResource:(x) ofType:@"bundle"]]
 #define MF_BUNDLED_RESOURCE(x,k,z) [(MF_BUNDLED_BUNDLE(x))pathForResource:(k) ofType:(z)]
 
+#define FPK_USE_XCASSETS 0
+#define FPK_READER_BUNDLE @"FPKReaderBundle"
+#define FPK_BUNDLED_IMAGE_FORMAT @"png"
+#if FPK_USE_XCASSETS
+#define FPK_BUNDLED_IMAGE(img_name) [UIImage imageNamed:(img_name)]
+#else
+#define FPK_BUNDLED_IMAGE(img_name) [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(FPK_READER_BUNDLE,(img_name),FPK_BUNDLED_IMAGE_FORMAT)]
+#endif
+
 #define PRINT_TRANSFORM(c,t) NSLog(@"%@ - [%.3f %.3f %.3f %.3f %.3f %.3f]",(c),(t).a,(t).b,(t).c,(t).d,(t).tx,(t).ty)
 #define PRINT_RECT(c,r) NSLog(@"%@ - (%.3f, %.3f)[%.3f x %.3f]",(c),(r).origin.x,(r).origin.y,(r).size.width,(r).size.height)
 #define PRINT_SIZE(c,s) NSLog(@"%@ - (%.3f, %.3f)",(c),(s).width,(s).height)

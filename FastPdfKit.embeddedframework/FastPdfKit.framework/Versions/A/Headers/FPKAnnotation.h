@@ -9,11 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CGGeometry.h>
 
-@interface FPKAnnotation : NSObject {
-
-    CGRect rect;
-    
-}
+@interface FPKAnnotation : NSObject
 
 /**
  Rect of the annotation in page coordinates (origin at the bottom left).

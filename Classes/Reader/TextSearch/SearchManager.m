@@ -28,10 +28,12 @@
 @interface SearchManager()
 
 @property (nonatomic, readwrite) NSUInteger currentPage;
-
+@property (nonatomic, readwrite) NSArray * allSearchResults;
 @end
 
 @implementation SearchManager
+
+#pragma mark - FPKOverlayViewDataSource
 
 -(NSArray *)documentViewController:(MFDocumentViewController *)dvc overlayViewsForPage:(NSUInteger)page {
     
@@ -104,17 +106,21 @@
 
 -(NSArray *)allSearchResults {
 
-	NSMutableArray *plainResults = [NSMutableArray array];
-	
-    for (NSArray * results in self.sequentialSearchResults) {
-        [plainResults addObjectsFromArray:results];
+    if(_allSearchResults == nil) {
+        
+        NSMutableArray *allResults = [NSMutableArray array];
+        
+        for (NSArray * results in self.sequentialSearchResults) {
+            [allResults addObjectsFromArray:results];
+        }
+        
+        _allSearchResults = allResults;
     }
-	
-	return plainResults;
+    
+    return _allSearchResults;
 }
 
-#pragma mark -
-#pragma mark Search methods
+#pragma mark - Search methods
 
 /**
  * Same sa calling stop.
@@ -177,7 +183,7 @@
         
         self.pagedSearchResults[@(page)] = matches;
         [self.sequentialSearchResults addObject:matches];
-        
+        self.allSearchResults = nil;
         
         NSDictionary * info = @{ kNotificationSearchInfoPage:@(page),
                                  kNotificationSearchInfoResults:matches,
@@ -205,7 +211,11 @@
         }
         
         // 2. Get the results
-        NSArray * results = [this.document searchResultOnPage:page forSearchTerms:term mode:FPKSearchModeSoft ignoreCase:self.ignoreCase exactMatch:self.exactMatch];
+        NSArray * results = [this.document searchResultOnPage:page
+                                               forSearchTerms:term
+                                                         mode:FPKSearchModeSoft
+                                                   ignoreCase:self.ignoreCase
+                                                   exactMatch:self.exactMatch];
         
         // 3. Handle the results on the main thread
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -233,14 +243,14 @@
 	[self searchForTerm:self.searchTerm page:self.currentPage];
 }
 
-#pragma mark -
-#pragma mark Lifecycle
+#pragma mark - Lifecycle
 
 -(instancetype)init {
     self = [super init];
     if(self) {
         self.pagedSearchResults = [NSMutableDictionary new];
         self.sequentialSearchResults = [NSMutableArray new];
+        self.allSearchResults = nil; // Lazy
     }
     return self;
 }

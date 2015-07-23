@@ -12,14 +12,14 @@
 
 -(UIFont *)boldSnippetFont {
     if(!_boldSnippetFont) {
-        _boldSnippetFont = [[UIFont boldSystemFontOfSize:14.0]retain];
+        _boldSnippetFont = [UIFont boldSystemFontOfSize:14.0];
     }
     return _boldSnippetFont;
 }
 
 -(UIFont *)regularSnippetFont {
     if(!_regularSnippetFont) {
-        _regularSnippetFont = [[UIFont systemFontOfSize:14.0] retain];
+        _regularSnippetFont = [UIFont systemFontOfSize:14.0];
     }
     return _regularSnippetFont;
 }
@@ -54,49 +54,26 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if(self) {
-        
-        UILabel * pageNumberLabel = [[UILabel alloc]init];
+
+        UILabel * pageNumberLabel = [UILabel new];
+        pageNumberLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addSubview:pageNumberLabel];
         self.pageNumberLabel = pageNumberLabel;
-        [pageNumberLabel release];
-        [self addSubview:_pageNumberLabel];
-        
-        CGRect pageNumberFrame = CGRectMake(frame.size.width - 40, 0, 40, frame.size.height);
-        _pageNumberLabel.frame = pageNumberFrame;
-        
-        UILabel * snippetLabel = [[UILabel alloc]init];
+
+        UILabel * snippetLabel = [UILabel new];
+        snippetLabel.translatesAutoresizingMaskIntoConstraints = NO;
         self.snippetLabel = snippetLabel;
-        [snippetLabel release];
-        [self addSubview:_snippetLabel];
+        [self addSubview:snippetLabel];
         
-        CGRect snippetNumberFrame = CGRectMake(20, 0, frame.size.width - (20 + 40 + 20), frame.size.height);
-        _snippetLabel.frame = snippetNumberFrame;
+        NSDictionary * views = @{@"number":pageNumberLabel,
+                                 @"snippet":snippetLabel};
+        
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[snippet]-[number]-|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[snippet]|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[number]|" options:0 metrics:nil views:views]];
+        
     }
     return self;
-}
-
--(void)layoutSubviews {
-    
-    [super layoutSubviews];
-    
-    CGRect bounds = self.bounds;
-    
-    // |<- snippet -><- margin, 20 pts-><- page number, 40 pts ->|
-    
-    CGRect pageNumberFrame = CGRectMake(bounds.size.width - 40, 0, 40, bounds.size.height);
-    self.pageNumberLabel.frame = pageNumberFrame;
-    
-    CGRect snippetNumberFrame = CGRectMake(20, 0, bounds.size.width - (20 + 40 + 20), bounds.size.height);
-    self.snippetLabel.frame = snippetNumberFrame;
-}
-
--(void)dealloc {
-    [super dealloc];
-    
-    [_pageNumberLabel release], _pageNumberLabel = nil;
-    [_snippetLabel release], _snippetLabel = nil;
-    
-    [_boldSnippetFont release], _boldSnippetFont = nil;
-    [_regularSnippetFont release], _regularSnippetFont = nil;
 }
 
 @end

@@ -17,7 +17,6 @@
 @interface MiniSearchView : UIView
 
 @property (nonatomic, weak) NSObject<MiniSearchViewControllerDelegate> * delegate;
-@property (nonatomic, weak) SearchManager *dataSource;
 
 @property (nonatomic, readwrite) NSInteger currentSearchResultIndex;
 
@@ -28,15 +27,17 @@
 
 @property (nonatomic,weak) UILabel *pageLabel;
 @property (nonatomic,weak) UILabel *snippetLabel;
+@property (nonatomic,weak) UIImageView *backgroundImageView;
+
+/**
+ * Used to tell the view that the data set has changed, for example when
+ * there are new results.
+ */
+-(void)reloadData;
 
 @property (nonatomic,weak) SearchResultView *searchResultView;
 
--(void)reloadData;
--(void)setCurrentResultIndex:(NSUInteger)index;
--(void)setCurrentTextItem:(FPKSearchMatchItem *)item;
 -(void)actionNext:(id)sender;
 -(void)actionPrev:(id)sender;
--(void)moveToPrevResult;
--(void)moveToNextResult;
 
 @end

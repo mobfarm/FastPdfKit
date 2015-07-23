@@ -32,9 +32,10 @@ static NSString * const kNotificationSearchInfoSearchTerm = @"searchTerm";
 @property (nonatomic, readwrite) BOOL ignoreCase;
 @property (nonatomic, readwrite) BOOL exactMatch;
 
--(NSArray *)allSearchResults;
+
 -(NSArray *)searchResultOnPage:(NSUInteger)page;
 
+@property (nonatomic, readonly) NSArray * allSearchResults;
 @property (nonatomic, strong) NSMutableDictionary * pagedSearchResults;
 @property (nonatomic, strong) NSMutableArray * sequentialSearchResults;
 

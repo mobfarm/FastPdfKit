@@ -38,6 +38,40 @@
 
 @property (nonatomic, strong) id<FPKEmbeddedAnnotationURIHandler> embeddedAnnotationURIHandler;
 
+/**
+ Convert a CGRect from PDF space coordinates to iOS view coordinate space.
+ @param rect The rect to convert.
+ @param page The number of the page from where the rect originates.
+ @return The converted CGRect.
+ */
+-(CGRect)convertRectFromPDFSpaceToViewSpace:(CGRect)rect page:(NSUInteger)page;
+
+/**
+Convert a CGRect from iOS view space to a PDF page coordinate space.
+@param rect The rect to convert.
+@param page The number of the page whose coordinate space the rect will be converted to.
+@return The converted CGRect.
+ */
+-(CGRect)convertRectFromViewSpaceToPDFSpace:(CGRect)rect page:(NSUInteger)page;
+
+/**
+ In-place batch conversion of rect from PDF space coordinates to iOS view space. It is more efficient than
+ using convertRectFromPDFSpaceToViewSpace:page: multiple times.
+ @param rects An array of CGRect.
+ @param length The number of values in the array.
+ @page The page from where the rect originates.
+ */
+-(void)convertRectsFromPDFSpaceToViewSpace:(CGRect *)rects length:(NSUInteger)length page:(NSUInteger)page;
+
+/**
+ In-place batch conversion of rect from iOS view space coordinates to PDF coordinate system. It is more efficient than
+ using convertRectFromViewSpaceToPDFSpace:page: multiple times.
+ @param rects An array of CGRect.
+ @param length The number of values in the array.
+ @page The page whose coordinates the rect will be converted to.
+ */
+-(void)convertRectsFromViewSpaceToPDFSpace:(CGRect *)rects length:(NSUInteger)length page:(NSUInteger)page;
+
 // These method are used internally.
 -(CGImageRef)createImageFromPDFPagesLeft:(NSInteger)leftPage andRight:(NSInteger)rightPage size:(CGSize)size andScale:(CGFloat)scale useLegacy:(BOOL)legacy;
 -(CGImageRef)createImageFromPDFPage:(NSInteger)page size:(CGSize)size  andScale:(CGFloat)scale useLegacy:(BOOL)legacy;

@@ -78,8 +78,6 @@
 	[self.activityIndicatorView stopAnimating];
 	[self.cancelStopBarButtonItem setEnabled:NO];
 	[self.switchToMiniBarButtonItem setEnabled:NO];
-	
-	[[self delegate]dismissSearchViewController:self];
 }
 
 #pragma mark -
@@ -89,7 +87,7 @@
 	
 	// Tell the manager to stop the search and let the delegate's methods to refresh this view.
 
-        [self.searchManager stopSearch];
+    [self.searchManager stopSearch];
 }
 
 -(void)startSearchWithTerm:(NSString *)aSearchTerm {
@@ -177,26 +175,26 @@
 #pragma mark -
 #pragma mark UISearchBarDelegate methods
 
--(BOOL)searchBarShouldEndEditing:(UISearchBar *)sBar {
+-(BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {
 	
-	[sBar resignFirstResponder];
+	[searchBar resignFirstResponder];
 	
 	return YES;
 }
 
--(void) searchBarCancelButtonClicked:(UISearchBar *)sBar {
-	
-	// Dismiss the keyboard and cancel the search.
-	
-	[sBar resignFirstResponder];
-	[self cancelSearch];
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    // Dismiss the keyboard and cancel the search.
+    
+    [searchBar resignFirstResponder];
+    [self cancelSearch];
 }
 
--(void) searchBarSearchButtonClicked:(UISearchBar *)sBar {
+
+-(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 
 	// Let the startSearch helper function handle the spawning of the operation.
 
-	[sBar resignFirstResponder];
+	[searchBar resignFirstResponder];
 	
     NSString * searchTerm = self.searchBar.text;
     [self startSearchWithTerm:searchTerm];
@@ -368,34 +366,27 @@
     ignoreCaseLabel.textColor = [UIColor lightTextColor];
     ignoreCaseLabel.backgroundColor = [UIColor clearColor];
     UIBarButtonItem * ignoreCaseLabelBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ignoreCaseLabel];
-
     
     UISwitch * ignoreCaseSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
     ignoreCaseSwitch.on = self.ignoreCase;
     [ignoreCaseSwitch addTarget:self action:@selector(actionToggleIgnoreCase:) forControlEvents:UIControlEventValueChanged];
     UIBarButtonItem * ignoreCaseSwitchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:ignoreCaseSwitch];
-
     
     // Exact match label and switch.
-    
     UILabel * exactMatchLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 25)];
     exactMatchLabel.text = @"Exact phrase";
     exactMatchLabel.textColor = [UIColor lightTextColor];
     exactMatchLabel.backgroundColor = [UIColor clearColor];
     UIBarButtonItem * exactMatchLabelBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:exactMatchLabel];
-
     
     UISwitch * exactMatchSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
     exactMatchSwitch.on = self.exactMatch;
     [exactMatchSwitch addTarget:self action:@selector(actionToggleExactMatch:) forControlEvents:UIControlEventValueChanged];
     UIBarButtonItem * exactMatchSwitchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:exactMatchSwitch];
-
     
     // Toolbar.
-    [self.toolbar setItems: [NSArray arrayWithObjects:ignoreCaseLabelBarButtonItem,ignoreCaseSwitchBarButtonItem,exactMatchLabelBarButtonItem, exactMatchSwitchBarButtonItem, nil] animated:YES];
+    [self.toolbar setItems: [NSArray arrayWithObjects: ignoreCaseLabelBarButtonItem,ignoreCaseSwitchBarButtonItem,exactMatchLabelBarButtonItem, exactMatchSwitchBarButtonItem, nil] animated:YES];
 }
-
-
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

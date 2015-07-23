@@ -9,14 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MFAnnotation.h"
 
-@interface MFFPKAnnotation : MFAnnotation {
-    
-    NSURL * url;
-    NSString * originalUri;
-    CGRect quadPointsRect;
-}
-
-@property (nonatomic,copy) NSString * originalUri;
-@property (nonatomic,retain) NSURL * url;
-@property (nonatomic,readwrite) CGRect quadPointsRect;
+@interface MFFPKAnnotation : MFAnnotation
+@property (nonatomic, copy) NSString * originalUri;
+@property (nonatomic, strong) NSURL * url;
+@property (nonatomic, readwrite) CGRect quadPointsRect;
 @end

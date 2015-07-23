@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FPKAnnotation.h"
 
-@interface FPKURIAnnotation : FPKAnnotation {
-    NSString * uri;
-}
+@interface FPKURIAnnotation : FPKAnnotation
 
 /**
  URI associated to the annotation.

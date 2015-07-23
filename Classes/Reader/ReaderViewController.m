@@ -346,6 +346,24 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	}
 }
 
+#pragma mark - Status bar
+
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    if(self.rollawayToolbar == nil || self.rollawayToolbar.hidden) {
+        return UIStatusBarStyleDefault;
+    }
+    return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - UIToolbarDelegate
+
+-(UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
+    if (bar == self.rollawayToolbar) {
+        return UIBarPositionTopAttached;
+    }
+    return UIBarPositionAny;
+}
+
 #pragma mark -
 #pragma mark BookmarkViewController, _Delegate and _Actions
 
@@ -444,28 +462,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
-#pragma mark - MiniSearchViewDelegate
-
--(void)miniSearchView:(MiniSearchView *)view
-              setPage:(NSUInteger)page
-            zoomLevel:(float)zoomLevel
-                 rect:(CGRect)rect {
-
-    [self setPage:page withZoomOfLevel:zoomLevel onRect:rect];
-}
-
--(void)dismissMiniSearchView:(MiniSearchView *)view {
-    
-    [self dismissMiniSearchView];
-}
-
-
--(void)revertToFullSearchViewFromMiniSearchView:(MiniSearchView *)view {
-    
-    // Dismiss the minimized view and present the full one.
-    [self revertToFullSearchView];
-}
-	
 #pragma mark - SearchViewControllerDelegate
 
 -(MFDocumentManager *)documentForSearchViewController:(SearchViewController *)controller {
@@ -483,11 +479,13 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(void)searchViewController:(SearchViewController *)controller addSearch:(SearchManager *)searchManager {
     
     [self addOverlayViewDataSource:searchManager name:@"FPKSearchManager"];
+    [self reloadOverlay];
 }
 
 -(void)searchViewController:(SearchViewController *)controller removeSearch:(SearchManager *)searchManager {
     
-    [self removeOverlayViewDataSource:searchManager];
+    [self removeOverlayViewDataSourceWithName:@"FPKSearchManager"];
+    [self reloadOverlay];
 }
 
 -(void)searchViewController:(SearchViewController *)controller switchToMiniSearchView:(FPKSearchMatchItem *)item {
@@ -525,9 +523,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         }
     }
     
-    [self removeOverlayViewDataSourceWithName:@"FPKSearchManager"];
-    [self reloadOverlay];
-    
     self.currentReusableView = FPKReusableViewNone;
 }
 
@@ -537,6 +532,13 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     
     [self dismissMiniSearchView];
     [self presentFullSearchView];
+}
+
+-(void)handleSearchGotCancelledNotification:(NSNotification *)notification {
+    
+    if(self.currentReusableView == FPKReusableViewSearch) {
+        [self dismissSearchViewController:self.searchViewController];
+    }
 }
 
 -(void)handleSearchUpdateNotification:(NSNotification *)notification {
@@ -579,16 +581,20 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	// This method is called only when the (Full) SearchViewController. It first instantiate the
 	// mini search view if necessary, then set the mini search view as the delegate for the current
 	// search manager - associated until now to the full SVC - then present it to the user.
-	
+    
 	if(self.miniSearchView == nil) {
 		
 		// If nil, allocate and initialize it.
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            
 			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
+            self.miniSearchView.backgroundImageView.image = [self toolbarBackgroundImage];
 			[self.miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 			
 		} else {
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
+			
+            self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
+            self.miniSearchView.backgroundImageView.image = [self toolbarBackgroundImage];
 			[self.miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
 		}
 		
@@ -598,14 +604,13 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         [self.miniSearchView removeFromSuperview];
 	}
 	
-	// Set up the connections.
-	self.miniSearchView.dataSource = [self searchManager];
+	// Set up the connections
     
 	self.miniSearchView.delegate = self;
 	
 	// Update the view with the right index.
 	[self.miniSearchView reloadData];
-	[self.miniSearchView setCurrentTextItem:item];
+    self.miniSearchView.currentSearchResultIndex = [[[self searchManager] allSearchResults] indexOfObject:item];
 	
 	// Add the subview and referesh the superview.
 	[[self view]addSubview:self.miniSearchView];
@@ -616,12 +621,12 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                      animations:^{
                          if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
                              
-                             self.miniSearchView.frame = CGRectMake(0, 64, self.view.bounds.size.width, 44);
+                             self.miniSearchView.frame = CGRectMake(0, (self.topLayoutGuide.length + self.rollawayToolbar.frame.size.height), self.view.bounds.size.width, 44);
                              self.miniSearchView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
                              
-                         }else {
+                         } else {
                              
-                             self.miniSearchView.frame = CGRectMake(0, 64, self.view.bounds.size.width, 44);
+                             self.miniSearchView.frame = CGRectMake(0, (self.topLayoutGuide.length +  self.rollawayToolbar.frame.size.height), self.view.bounds.size.width, 44);
                              self.miniSearchView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin;
                          }
                      }
@@ -693,13 +698,52 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
--(void)dismissMiniSearchView {
-	
-	// Remove from the superview and release the mini search view.
+#pragma mark - MiniSearchViewDelegate
+
+-(NSUInteger )numberOfSearchResults:(MiniSearchView *)view {
     
+    NSUInteger count = [[[self searchManager] allSearchResults] count];
+#if DEBUG
+    NSLog(@"sarch results %d", count);
+#endif
+    return count;
+}
+
+-(FPKSearchMatchItem *)miniSearchView:(MiniSearchView *)view searchResultAtIndex:(NSUInteger)index {
+    
+    
+    return [[[self searchManager] allSearchResults] objectAtIndex:index];
+}
+
+-(void)miniSearchView:(MiniSearchView *)view
+              setPage:(NSUInteger)page
+            zoomLevel:(float)zoomLevel
+                 rect:(CGRect)rect {
+    
+    [self setPage:page withZoomOfLevel:zoomLevel onRect:rect];
+}
+
+-(void)dismissMiniSearchView:(MiniSearchView *)view {
+    
+    [self dismissMiniSearchView];
+}
+
+-(void)revertToFullSearchViewFromMiniSearchView:(MiniSearchView *)view {
+    
+    // Dismiss the minimized view and present the full one.
+    [self revertToFullSearchView];
+}
+
+-(void)cancelSearch:(MiniSearchView *)view {
+    
+    [self dismissMiniSearchView];
+    
+    [[self searchManager] stopSearch];
     [self removeOverlayViewDataSourceWithName:@"FPKSearchManager"];
-    
-    [self reloadOverlay];   // Reset the overlay to clear any residual highlight.
+    [self reloadOverlay];
+}
+
+-(void)dismissMiniSearchView {
     
 	// Animation.
     ReaderViewController * __weak this = self;
@@ -714,7 +758,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                              
                              this.miniSearchView.frame = CGRectMake(0,-45 , this.view.bounds.size.width, 44);
                          }
-                         
                      }
                      completion:^(BOOL finished){
                          // Actual removal.
@@ -722,7 +765,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                              
                              [this.miniSearchView removeFromSuperview];
                          }
-                         
                      }];
 }
 
@@ -886,7 +928,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	}
 }
 
-
 #pragma mark -
 #pragma mark MFDocumentViewControllerDelegate methods implementation Support for Multimedia
 
@@ -898,7 +939,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(Class<MFAudioPlayerViewProtocol>)classForAudioPlayerView{
     return [MFAudioPlayerViewImpl class];
 }
-
 
 -(BOOL) documentViewController:(MFDocumentViewController *)dvc doesHaveToAutoplayAudio:(NSString *)audioUri{
 	return YES;
@@ -1202,6 +1242,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                 self.hudHidden = YES;
             }
         }
+        
 	} else {
     
         self.waitingForTextInput = NO;
@@ -1216,35 +1257,35 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #pragma mark -
 #pragma mark UIViewController lifcecycle
 
-- (void)loadView {
-	
-	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar. If
-	// you want to add a toolbar, use the navigation controller's one like you would with an UIImageView to not cover
-	// the document.
-    
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-    [self setWantsFullScreenLayout:YES];
-	
-    UIView * aView = nil;
- 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 768, 1024)];  // Status bar only
-	} else {
-		aView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 568)];   // Status bar only
-	}
-	
-	[aView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-	[aView setAutoresizesSubviews:YES];
-	
-	// Background color: a nice texture if available, otherwise plain gray.
-	
-	if ([UIColor respondsToSelector:@selector(scrollViewTexturedBackgroundColor)]) {
-		[aView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
-	} else {
-		[aView setBackgroundColor:[UIColor grayColor]];
-	}
-	
-	[self setView:aView];
-}
+//- (void)loadView {
+//	
+//	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar. If
+//	// you want to add a toolbar, use the navigation controller's one like you would with an UIImageView to not cover
+//	// the document.
+//    
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+//    [self setWantsFullScreenLayout:YES];
+//	
+//    UIView * aView = nil;
+// 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//        aView = [UIView new];
+//	} else {
+//        aView = [UIView new];
+//	}
+//	
+//	[aView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+//	[aView setAutoresizesSubviews:YES];
+//	
+//	// Background color: a nice texture if available, otherwise plain gray.
+//	
+//	if ([UIColor respondsToSelector:@selector(scrollViewTexturedBackgroundColor)]) {
+//		[aView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
+//	} else {
+//		[aView setBackgroundColor:[UIColor grayColor]];
+//	}
+//	
+//	[self setView:aView];
+//}
 
 /**
  * This method will load the image for the toolbar icons. You can override this
@@ -1252,74 +1293,60 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
  */
 -(void)loadResources {
     
-    if(self.toolbarHeight == 0)
-        self.toolbarHeight = 44.0;
+    if(!self.imgModeSingle) {
+        self.imgModeSingle = [FPK_BUNDLED_IMAGE(@"changeModeSingle") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgModeSingle)
-        self.imgModeSingle = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeSingle",@"png")];
+    if(!self.imgModeDouble) {
+        self.imgModeDouble = [FPK_BUNDLED_IMAGE(@"changeModeDouble") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgModeDouble)
-        self.imgModeDouble = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"changeModeDouble",@"png")];
+    if(!self.imgZoomLock) {
+        self.imgZoomLock = [FPK_BUNDLED_IMAGE(@"zoomLock") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgZoomLock)
-        self.imgZoomLock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"zoomLock",@"png")];
+    if(!self.imgZoomUnlock) {
+        self.imgZoomUnlock = [FPK_BUNDLED_IMAGE(@"zoomUnlock") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgZoomUnlock)
-        self.imgZoomUnlock = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"zoomUnlock",@"png")];
+    if(!self.imgl2r) {
+        self.imgl2r = [FPK_BUNDLED_IMAGE(@"direction_l2r") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgl2r)
-        self.imgl2r = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"direction_l2r",@"png")];
+    if(!self.imgr2l) {
+        self.imgr2l = [FPK_BUNDLED_IMAGE(@"direction_r2l") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgr2l)
-        self.imgr2l = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"direction_r2l",@"png")];
+    if(!self.imgLeadRight) {
+        self.imgLeadRight = [FPK_BUNDLED_IMAGE(@"pagelead") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgLeadRight)
-        self.imgLeadRight = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead",@"png")];
+    if(!self.imgLeadLeft) {
+        self.imgLeadLeft = [FPK_BUNDLED_IMAGE(@"pagelead") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgLeadLeft)
-        self.imgLeadLeft = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"pagelead",@"png")];
+    if(!self.imgModeOverflow) {
+		self.imgModeOverflow = [FPK_BUNDLED_IMAGE(@"changeModeOverflow") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(!self.imgModeOverflow)
-		self.imgModeOverflow = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"changeModeOverflow", @"png")];
+    if(!self.imgDismiss) {
+        self.imgDismiss = [FPK_BUNDLED_IMAGE(@"X") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
-        // iPad
-        
-        if(!self.imgDismiss)
-            self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"X", @"png")];
-        
-        if(!self.imgText)
-            self.imgText = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"text", @"png")];
-        
-        if(!self.imgOutline)
-            self.imgOutline = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"indice", @"png")];
-        
-        if(!self.imgBookmark)
-            self.imgBookmark = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"bookmark_add", @"png")];
-        
-        if(!self.imgSearch)
-            self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search", @"png")];    
-        
-    } else {
-        
-        // iPhone (same as iPad, the if else is just for convenience in the case
-        // you want to have different icons between ipad and iphone
-     
-        if(!self.imgDismiss)
-            self.imgDismiss = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"X", @"png")];
-        
-        if(!self.imgText)
-            self.imgText = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"text", @"png")];
-        
-        if(!self.imgOutline)
-            self.imgOutline = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"indice", @"png")];
-        
-        if(!self.imgBookmark)
-            self.imgBookmark = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"bookmark_add", @"png")];
-        
-        if(!self.imgSearch)
-            self.imgSearch = [UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle", @"search", @"png")];
+    if(!self.imgText) {
+        self.imgText = [FPK_BUNDLED_IMAGE(@"text") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
+    
+    if(!self.imgOutline) {
+        self.imgOutline = [FPK_BUNDLED_IMAGE(@"indice") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
+    
+    if(!self.imgBookmark) {
+        self.imgBookmark = [FPK_BUNDLED_IMAGE(@"bookmark_add") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
+    
+    if(!self.imgSearch) {
+        self.imgSearch = [FPK_BUNDLED_IMAGE(@"search") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     }
 }
 
@@ -1327,31 +1354,24 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
  * This method will create and customize the toolbar.
  */
 -(void)prepareToolbar {
-
-    NSMutableArray * items = nil;
-    UIBarButtonItem * aBarButtonItem = nil;
-    UILabel * aLabel = nil;
-    NSString *labelText = nil;
-    UIToolbar * aToolbar = nil;
-    UIButton *aButton = nil; 
         
-	items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
+	NSMutableArray * items = [[NSMutableArray alloc]init];	// This will be the containter for the bar button items.
 	
 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { // Ipad.
         
 		// Dismiss.
         
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 34 , 30);
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 34 , 30);
 
-        [aButton setImage:self.imgDismiss forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionDismiss:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgDismiss forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionDismiss:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
-		self.dismissBarButtonItem = aBarButtonItem;
+		self.dismissBarButtonItem = barButtonItem;
 
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
 		
 		// Zoom lock.
         
@@ -1360,10 +1380,10 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         [self.zoomLockButton setImage:self.imgZoomUnlock forState:UIControlStateNormal];
         [self.zoomLockButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
         
-		self.zoomLockBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+		self.zoomLockBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
 		
 		// Change direction.
         
@@ -1372,10 +1392,10 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         [self.changeDirectionButton setImage:self.imgl2r forState:UIControlStateNormal];
         [self.changeDirectionButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
         
-        self.changeDirectionBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+        self.changeDirectionBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
 		
 		// Change lead.
         
@@ -1384,10 +1404,10 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         [self.changeLeadButton setImage:self.imgLeadRight forState:UIControlStateNormal];
         [self.changeLeadButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
         
-        self.changeLeadBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+        self.changeLeadBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
 		
 		// Change mode.
         
@@ -1395,115 +1415,114 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         self.changeModeButton.bounds = CGRectMake( 0, 0, 30 , 30 );    
         [self.changeModeButton setImage:self.imgModeSingle forState:UIControlStateNormal];
         [self.changeModeButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeModeButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeModeButton];
         
-		self.changeModeBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+		self.changeModeBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
 		
 		// Space.
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-		[items addObject:aBarButtonItem];
+		barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+		[items addObject:barButtonItem];
 		
 		// Page number.
 		
-		aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 23)];
+		UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 23)];
 		
-        aLabel.textAlignment = NSTextAlignmentLeft;
-		aLabel.backgroundColor = [UIColor clearColor];
-		aLabel.shadowColor = [UIColor whiteColor];
-		aLabel.shadowOffset = CGSizeMake(0, 1);
-		aLabel.textColor = [UIColor whiteColor];
-		aLabel.font = [UIFont boldSystemFontOfSize:20.0];
+        label.textAlignment = NSTextAlignmentLeft;
+		label.backgroundColor = [UIColor clearColor];
+		label.shadowColor = [UIColor whiteColor];
+		label.shadowOffset = CGSizeMake(0, 1);
+		label.textColor = [UIColor whiteColor];
+		label.font = [UIFont boldSystemFontOfSize:20.0];
 		
-        labelText = [self pageLabelString];
-		aLabel.text = labelText;
-		self.pageNumLabel = aLabel;
+        NSString * labelText = [self pageLabelString];
+		label.text = labelText;
+		self.pageNumLabel = label;
 		
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aLabel];
-		self.numberOfPageTitleBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+		barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:label];
+		self.numberOfPageTitleBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
         
 		// Space.
         
-		aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-		[items addObject:aBarButtonItem];
+		barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+		[items addObject:barButtonItem];
 		
 		// Text.
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 34 , 30);
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 34 , 30);
         
-        [aButton setImage:self.imgText forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgText forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
-		self.textBarButtonItem = aBarButtonItem;
+		self.textBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
 		
 		// Outline.
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 34 , 30);
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 34 , 30);
        
-        [aButton setImage:self.imgOutline forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgOutline forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
-		self.outlineBarButtonItem = aBarButtonItem;
+		self.outlineBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
         
 		// Bookmarks.
         
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 34 , 30);
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 34 , 30);
         
-        [aButton setImage:self.imgBookmark forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgBookmark forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
-		self.bookmarkBarButtonItem = aBarButtonItem;
+		self.bookmarkBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
         
         // Search.
         
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 34 , 30);
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 34 , 30);
         
-        [aButton setImage:self.imgSearch forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgSearch forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
-		self.searchBarButtonItem = aBarButtonItem;
+		self.searchBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
 		
 	} else { // Iphone.
-             
-       
+        
         // Dismiss
         
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 30 , 24);
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 30 , 24);
        
-        [aButton setImage:self.imgDismiss forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionDismiss:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgDismiss forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionDismiss:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
-		self.dismissBarButtonItem = aBarButtonItem;
+		self.dismissBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
 		
          // Space
          
-         aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-         [items addObject:aBarButtonItem];
+         barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+         [items addObject:barButtonItem];
          
 		
 		// Zoom lock.
@@ -1512,12 +1531,13 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         self.zoomLockButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
         [self.zoomLockButton setImage:self.imgZoomUnlock forState:UIControlStateNormal];
         [self.zoomLockButton addTarget:self action:@selector(actionChangeAutozoom:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.zoomLockButton];
         
         
-		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgZoomUnlock style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
-		self.zoomLockBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+		// aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgZoomUnlock style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeAutozoom:)];
+        
+        self.zoomLockBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
 		
 		// Change direction.
         
@@ -1525,12 +1545,12 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         self.changeDirectionButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
         [self.changeDirectionButton setImage:self.imgl2r forState:UIControlStateNormal];
         [self.changeDirectionButton addTarget:self action:@selector(actionChangeDirection:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeDirectionButton];
         
 		
-		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
-		self.changeDirectionBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+		// aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
+		self.changeDirectionBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
 		
 		// Change lead.
         
@@ -1538,12 +1558,12 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         self.changeLeadButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
         [self.changeLeadButton setImage:self.imgLeadRight forState:UIControlStateNormal];
         [self.changeLeadButton addTarget:self action:@selector(actionChangeLead:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeLeadButton];
         
 		
 		//aBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imgl2r style:UIBarButtonItemStylePlain target:self action:@selector(actionChangeDirection:)];
-		self.changeLeadBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+		self.changeLeadBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
 
 		
 		// Change mode.
@@ -1552,85 +1572,87 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         self.changeModeButton.bounds = CGRectMake( 0, 0, 24 , 24 );    
         [self.changeModeButton setImage:self.imgModeSingle forState:UIControlStateNormal];
         [self.changeModeButton addTarget:self action:@selector(actionChangeMode:) forControlEvents:UIControlEventTouchUpInside];    
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeModeButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.changeModeButton];
         
-		self.changeModeBarButtonItem = aBarButtonItem;
-		[items addObject:aBarButtonItem];
+		self.changeModeBarButtonItem = barButtonItem;
+		[items addObject:barButtonItem];
         
         // Space
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        [items addObject:aBarButtonItem];
+        barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        [items addObject:barButtonItem];
         
 		
 		// Text.
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 25 , 25);
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 25 , 25);
         
-        [aButton setImage:self.imgText forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgText forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionText:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
-		self.textBarButtonItem = aBarButtonItem;
+		self.textBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
         
 		
 		// Outline.
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 24 , 24);
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 24 , 24);
         
-        [aButton setImage:self.imgOutline forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgOutline forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
         
-		self.outlineBarButtonItem = aBarButtonItem;
+		self.outlineBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
         
         
 		// Bookmarks.
         
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 24 , 24);
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 24 , 24);
         
-        [aButton setImage:self.imgBookmark forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgBookmark forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionBookmarks:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
         
-		self.bookmarkBarButtonItem = aBarButtonItem;
+		self.bookmarkBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
 		
         // Search.
         
-        aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aButton.bounds = CGRectMake( 0, 0, 24 , 24);
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.bounds = CGRectMake( 0, 0, 24 , 24);
         
-        [aButton setImage:self.imgSearch forState:UIControlStateNormal];
-        [aButton addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:self.imgSearch forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(actionSearch:) forControlEvents:UIControlEventTouchUpInside];
         
-        aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
-		self.searchBarButtonItem = aBarButtonItem;
+		self.searchBarButtonItem = barButtonItem;
         
-		[items addObject:aBarButtonItem];
+		[items addObject:barButtonItem];
 	}
 	
-	aToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, -44, self.view.bounds.size.width, self.toolbarHeight)];
-	aToolbar.hidden = YES;
-	aToolbar.barStyle = UIBarStyleBlackTranslucent;
-	[aToolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
-	[aToolbar setItems:items animated:NO];
+	UIToolbar * toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
+    toolbar.frame = CGRectMake(0, -self.toolbarHeight, self.view.bounds.size.width, self.toolbarHeight);
+	toolbar.hidden = YES;
+	toolbar.barStyle = UIBarStyleBlackTranslucent;
+	[toolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
+	[toolbar setItems:items animated:NO];
+    toolbar.delegate = self;
+    
+	[self.view addSubview:toolbar];
 	
-	[self.view addSubview:aToolbar];
-	
-	self.rollawayToolbar = aToolbar;
+	self.rollawayToolbar = toolbar;
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -1642,12 +1664,15 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	self.hudHidden = YES;
 	self.currentReusableView = FPKReusableViewNone;
     self.multimediaVisible = NO;
+    self.toolbarHeight = 44.0;
     
 	//	Let the superclass do its stuff (setting up the views), then you can begin to add your own custom subviews
 	//	like buttons.
 	
 	[super viewDidLoad];
-	
+    
+    self.view.backgroundColor = [UIColor darkGrayColor];
+    
     [self loadResources];
 	[self prepareToolbar];
 }
@@ -1677,7 +1702,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
  * pageLabelFormat, if not nil, or the default format and the page and
  * total number of pages.
  */
--(void)updatePageNumberLabel{
+-(void)updatePageNumberLabel {
     
     NSString *labelTitle = [self pageLabelString];
     self.pageNumLabel.text = labelTitle;
@@ -1693,40 +1718,44 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     self.pageNumLabel.text = labelTitle;
 }
 
-
 /**
  * This method will show the toolbar.
  */
 -(void)showToolbar {
-	
-	// Show toolbar, with animation.
+
+    // We used topLayoutGuide.length property to calculate the clearance.
+    
     ReaderViewController * __weak this = self;
-    [UIView animateWithDuration:0.25f
-                          delay:0.0f
+    [UIView animateWithDuration:.25f
+                          delay:.0f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          this.rollawayToolbar.hidden = NO;
-                         this.rollawayToolbar.frame = CGRectMake(0, 20, this.rollawayToolbar.frame.size.width, this.toolbarHeight);
+                        [this setNeedsStatusBarAppearanceUpdate];
+                         this.rollawayToolbar.frame = CGRectMake(0, self.topLayoutGuide.length, this.rollawayToolbar.frame.size.width, this.rollawayToolbar.frame.size.height);
                      }
-                     completion:NULL
+                     completion:^(BOOL finished) {
+
+                     }
                      ];
 }
 
 /**
  * This method will hide the toolbar.
  */
--(void)hideToolbar{
+-(void)hideToolbar {
 	
 	// Hide the toolbar, with animation.
         ReaderViewController * __weak this = self;
-    [UIView animateWithDuration:0.25f
-                          delay:0.0f
+    [UIView animateWithDuration:.25f
+                          delay:.0f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         [this.rollawayToolbar setFrame:CGRectMake(0, -this.toolbarHeight, this.rollawayToolbar.frame.size.width, this.toolbarHeight)];
+                         [this.rollawayToolbar setFrame:CGRectMake(0, -this.toolbarHeight, this.rollawayToolbar.frame.size.width, this.rollawayToolbar.frame.size.height)];
                      }
                      completion:^(BOOL finished){
                          this.rollawayToolbar.hidden = YES;
+                        [this setNeedsStatusBarAppearanceUpdate];
                      }];
 }
 
@@ -1739,9 +1768,17 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	    
     self = [super initWithDocumentManager:aDocumentManager];
     if(self) {
+        
 		[self setDocumentDelegate:self];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleSearchUpdateNotification:) name:kNotificationSearchResultAvailable object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleSearchUpdateNotification:)
+                                                     name:kNotificationSearchResultAvailable
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleSearchGotCancelledNotification:)
+                                                     name:kNotificationSearchGotCancelled
+                                                   object:nil];
 	}
     
 	return self;
