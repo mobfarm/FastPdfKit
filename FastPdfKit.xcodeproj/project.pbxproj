@@ -18,7 +18,7 @@
 		010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
 		010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */; };
 		010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */; };
-		010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */; };
 		010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14D913CB002300FD6F08 /* MainWindow.xib */; };
 		010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DA13CB002300FD6F08 /* MenuView_pad.xib */; };
 		010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DB13CB002300FD6F08 /* MenuView_phone.xib */; };
