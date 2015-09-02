@@ -39,19 +39,19 @@
 
 - (void)viewDidLoad {
     
-    NSData * audioData = nil;
+
     NSError *error = nil;
     
     [super viewDidLoad];
     
 	if (local) {
         
-		audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-	} else {
+		self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+	
+    } else {
 		
-        audioData = [[NSData alloc] initWithContentsOfURL:url];
-		audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
-		[audioData release];
+        NSData * audioData = [[NSData alloc] initWithContentsOfURL:url];
+		self. audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
 	}
 
 	if (error) {
@@ -104,16 +104,6 @@
 	
 }
 
-- (void)dealloc{
-	
-    [audioPlayer release];
-    [volumeControl release];
-    [url release];
-    
-    [super dealloc];
-	
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -121,7 +111,6 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
-
 
 
 - (void)viewDidUnload

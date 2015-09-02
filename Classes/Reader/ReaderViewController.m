@@ -40,11 +40,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %lu of %lu",(x),(y)]
 #define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%lu / %lu",(x),(y)]
 
-#ifdef __IPHONE_8_0
 @interface ReaderViewController() <UIPopoverPresentationControllerDelegate>
-#else
-@interface ReaderViewController()
-#endif
 
 @property (nonatomic, readwrite) NSUInteger currentReusableView;
 @property (nonatomic, readwrite) NSUInteger currentSearchViewMode;
@@ -106,7 +102,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
-#ifdef __IPHONE_8_0
 -(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
 {
     switch(self.currentReusableView)
@@ -135,7 +130,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         default: break;
     }
 }
-#endif
 
 -(void)dismissAlternateViewController {
     
@@ -164,15 +158,13 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                 
-#ifdef __IPHONE_8_0
-                if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+                if([UIPresentationController class])
                 {
                     if(self.presentedViewController) {
                         [self dismissViewControllerAnimated:YES completion:nil];
                     }
                 }
                 else
-#endif
                 {
                     [self.reusablePopover dismissPopoverAnimated:YES];
                 }
@@ -213,11 +205,9 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                   sourceView:(UIView *)view
                  contentSize:(CGSize)contentSize
 {
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
-#ifdef __IPHONE_8_0
-        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
-        {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+
+        if([UIPopoverPresentationController class]) {
             
             if(self.presentedViewController) {
                 [self dismissViewControllerAnimated:YES completion:nil];
@@ -234,18 +224,15 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             
             [self presentViewController:controller animated:YES completion:nil];
             
-        }
-        else
-#endif
-        {
+        } else {
+            
             [self prepareReusablePopoverControllerWithController:controller];
             
             [self.reusablePopover setPopoverContentSize:contentSize animated:YES];
             [self.reusablePopover presentPopoverFromRect:rect inView:view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         }
-    }
-    else
-    {
+        
+    } else {
         
         [self presentViewController:controller animated:YES completion:nil];
     }
@@ -257,9 +244,8 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 {
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
-#ifdef __IPHONE_8_0
-        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
-            
+        if([UIPopoverPresentationController class]) {
+                
             if(self.presentedViewController) {
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
@@ -275,7 +261,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             [self presentViewController:controller animated:YES completion:nil];
         }
         else
-#endif
         {
             [self prepareReusablePopoverControllerWithController:controller];
             
@@ -503,14 +488,13 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
         /* Dismiss the popover on iPad pre iOS 8 */
-#ifdef __IPHONE_8_0
-        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+
+        if([UIPopoverPresentationController class]) {
             if(self.presentedViewController) {
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
         }
         else
-#endif
         {
             [self.reusablePopover dismissPopoverAnimated:YES];
         }
@@ -1257,36 +1241,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #pragma mark -
 #pragma mark UIViewController lifcecycle
 
-//- (void)loadView {
-//	
-//	// Create the view of the right size. Keep into consideration height of the status bar and the navigation bar. If
-//	// you want to add a toolbar, use the navigation controller's one like you would with an UIImageView to not cover
-//	// the document.
-//    
-//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-//    [self setWantsFullScreenLayout:YES];
-//	
-//    UIView * aView = nil;
-// 	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-//        aView = [UIView new];
-//	} else {
-//        aView = [UIView new];
-//	}
-//	
-//	[aView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-//	[aView setAutoresizesSubviews:YES];
-//	
-//	// Background color: a nice texture if available, otherwise plain gray.
-//	
-//	if ([UIColor respondsToSelector:@selector(scrollViewTexturedBackgroundColor)]) {
-//		[aView setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
-//	} else {
-//		[aView setBackgroundColor:[UIColor grayColor]];
-//	}
-//	
-//	[self setView:aView];
-//}
-
 /**
  * This method will load the image for the toolbar icons. You can override this
  * method to load different images.
@@ -1603,9 +1557,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         [button setImage:self.imgOutline forState:UIControlStateNormal];
         [button addTarget:self action:@selector(actionOutline:) forControlEvents:UIControlEventTouchUpInside];
-        
         barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-        
         
 		self.outlineBarButtonItem = barButtonItem;
         
@@ -1613,7 +1565,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         
 		// Bookmarks.
-        
         button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.bounds = CGRectMake( 0, 0, 24 , 24);
         
@@ -1784,7 +1735,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	return self;
 }
 
-#ifdef __IPHONE_6_0
 -(BOOL)shouldAutorotate {
     return YES;
 }
@@ -1793,7 +1743,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
     return UIInterfaceOrientationMaskAll;
 }
-#endif
 
 - (void)dealloc {
     

@@ -8,7 +8,6 @@
 
 #import "SearchViewController.h"
 #import "MFDocumentManager.h"
-#import "DocumentViewController.h"
 #import "ReaderViewController.h"
 #import "TextSearchOperation.h"
 #import "SearchManager.h"

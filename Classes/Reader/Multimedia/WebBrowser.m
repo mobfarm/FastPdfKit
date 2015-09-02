@@ -29,17 +29,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    docViewController = nil;
-    
-    [closeButton release];
-    [webView release];
-    [uri release];
-    
-    [super dealloc];
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -69,8 +58,7 @@
 		
 		request = [[NSURLRequest alloc ]initWithURL:url];
 		[webView loadRequest:request];
-		[url release];
-		[request release];
+
 		
 	} else {
 		
@@ -78,8 +66,6 @@
         
 		request = [[NSURLRequest alloc ]initWithURL:url];
 		[webView loadRequest:request];
-		[url release];
-		[request release];		
 	}
 }
 

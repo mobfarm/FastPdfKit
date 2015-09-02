@@ -9,7 +9,6 @@
 #import "MiniSearchView.h"
 #import "NotificationFactory.h"
 #import "Stuff.h"
-#import "DocumentViewController.h"
 #import "SearchManager.h"
 #import "SearchResultView.h"
 #import "NotificationFactory.h"

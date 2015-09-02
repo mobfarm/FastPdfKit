@@ -8,38 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-#define TAG_PASSWORDFIELD 77
-
 @class MFDocumentManager;
 
-@interface MenuViewController : UIViewController {
+@interface MenuViewController : UIViewController
 
-	IBOutlet UIButton *referenceButton;
-	IBOutlet UIButton *manualButton;
-	IBOutlet UITextView *referenceTextView;
-	IBOutlet UITextView *manualTextView;
-	
-	MFDocumentManager *document;
-	
-	UIAlertView *passwordAlertView;
-	
-	NSString *nomePdfDaAprire;
-	
-}
+@property (nonatomic, weak) IBOutlet UIButton *referenceButton;
+@property (nonatomic, weak) IBOutlet UIButton *manualButton;
+@property (nonatomic, weak) IBOutlet UITextView *referenceTextView;
+@property (nonatomic, weak) IBOutlet UITextView *manualTextView;
 
--(IBAction)actionOpenPlainDocument:(id)sender;
--(IBAction)actionOpenEncryptedDocument:(id)sender;
--(void)setLinkedDocument:(NSString *)documentName withPage:(NSUInteger)destinationPage orDestinationName:(NSString *)destinationName;
--(void)openDocumentWithParams:(NSArray *)params;
-
-@property (nonatomic, retain) IBOutlet UIButton *referenceButton;
-@property (nonatomic, retain) IBOutlet UIButton *manualButton;
-@property (nonatomic, retain) IBOutlet UITextView *referenceTextView;
-@property (nonatomic, retain) IBOutlet UITextView *manualTextView;
-
-@property (nonatomic, retain) MFDocumentManager *document;
-@property (nonatomic, assign) UIAlertView *passwordAlertView;
-@property (nonatomic, assign) NSString *nomePdfDaAprire;
+@property (nonatomic, strong) MFDocumentManager *document;
+@property (nonatomic, weak) UIAlertView *passwordAlertView;
+@property (nonatomic, weak) NSString *nomePdfDaAprire;
 
 
 

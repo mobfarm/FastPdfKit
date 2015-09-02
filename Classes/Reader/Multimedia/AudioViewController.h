@@ -11,20 +11,13 @@
 #import "ReaderViewController.h"
 
 
-@interface AudioViewController : UIViewController <AVAudioPlayerDelegate>{
-	
-	AVAudioPlayer *audioPlayer;
-	UISlider *volumeControl;
-	BOOL local;
-	NSURL *url;
-	ReaderViewController *documentViewController;
-}
+@interface AudioViewController : UIViewController <AVAudioPlayerDelegate>
 
-@property (nonatomic, retain) IBOutlet UISlider *volumeControl;
-@property (nonatomic, assign) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) IBOutlet UISlider *volumeControl;
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, readwrite, getter = isLocal) BOOL local;
-@property (nonatomic, retain) NSURL *url; 
-@property (nonatomic,assign) ReaderViewController *documentViewController;
+@property (nonatomic, copy) NSURL *url;
+@property (nonatomic, weak) ReaderViewController *documentViewController;
 
 - (IBAction) playAudio;
 - (IBAction) stopAudio;

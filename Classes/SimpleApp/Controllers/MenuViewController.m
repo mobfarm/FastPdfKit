@@ -8,7 +8,7 @@
 
 #import "MenuViewController.h"
 #import "MFDocumentManager.h"
-#import "DocumentViewController.h"
+#import "ReaderViewController.h"
 #import "OverlayManager.h"
 
 #include <stdio.h>
@@ -23,12 +23,12 @@
 #define DOC_PLAIN @"Manual"
 #define DOC_ENCRYPTED @"ManualCrypt"
 
+#define TAG_ALERTVIEW 1
+#define TAG_PASSWORDFIELD 2
+
 @implementation MenuViewController
 
-@synthesize referenceButton, manualButton, referenceTextView, manualTextView;
-@synthesize passwordAlertView;
-@synthesize nomePdfDaAprire;
-@synthesize document;
+#pragma mark - Plain document
 
 -(IBAction)actionOpenPlainDocument:(id)sender {
     //
@@ -43,30 +43,24 @@
 	// it to initialize an MFDocumentViewController subclass 	
 	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
     
-	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
-	[aDocViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
-	[aDocViewController setDocumentDelegate:aDocViewController];
+    ReaderViewController * readerViewController = [[ReaderViewController alloc]initWithDocumentManager:aDocManager];
+    
+	[readerViewController setDocumentId:DOC_PLAIN];   // We use the filename as an ID. You can use whaterver you like, like the id entry in a database or the hash of the document.
+	[readerViewController setDocumentDelegate:readerViewController];
     
     // We are adding an image overlay on the first page on the bottom left corner
     OverlayManager *ovManager = [[OverlayManager alloc] init];
-    [aDocViewController addOverlayDataSource:ovManager];
-    [ovManager release];
-    
-    // This delegate has been added just to manage the links between pdfs, skip it if you just need standard visualization
-    [aDocViewController setDelegate:self];
-    
+    [readerViewController addOverlayDataSource:ovManager];
+
 	//	In this example we use a navigation controller to present the document view controller but you can present it
 	//	as a modal viewcontroller or just show a single PDF right from the beginning
 	// [self presentModalViewController:aDocViewController animated:YES]; 
 	// [[self navigationController]pushViewController:aDocViewController animated:YES];
 	
-    [self presentViewController:aDocViewController animated:YES completion:nil];
-    
-	[aDocViewController release];
-	[aDocManager release];
-	
+    [self presentViewController:readerViewController animated:YES completion:nil];
 }
 
+#pragma mark - Encrypted document
 
 -(IBAction)actionOpenEncryptedDocument:(id)sender {
 	
@@ -85,112 +79,89 @@
 	if([aDocManager isLocked]) {
 		
 		[self setDocument:aDocManager];
-        [aDocManager release];
         
-		// 
-		//	Create and alert a reference (assign) to it
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Insert Password" message:[NSString stringWithFormat:@"This get covered"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
-		[self setPasswordAlertView:alert];
-		
-		//
-		// Let's add a password field to the alert
-		
-		UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 45.0, 260.0, 25.0)];
-		[passwordField setAutocorrectionType:UITextAutocorrectionTypeNo];
-		[passwordField setSecureTextEntry:YES];
-		passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-		[passwordField setKeyboardType:UIKeyboardTypeASCIICapable];
-		[passwordField setSecureTextEntry:YES];
-		[passwordField setKeyboardAppearance:UIKeyboardAppearanceAlert];
-		[passwordField setBackgroundColor:[UIColor whiteColor]];
-		[passwordField setTag:TAG_PASSWORDFIELD];
-		
-		//
-		// Now show it
-		[alert addSubview:passwordField];
-		[alert show];
-		[alert release];
-		
+        if([UIAlertController class]) { // iOS8 and above.
+            
+            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Document locked" message:@"Insert the password." preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                textField.secureTextEntry = YES;
+            }];
+            
+            id __weak this = self;
+            UIAlertAction * confirmAction = [UIAlertAction actionWithTitle:@"Unlock" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
+                UITextField * passwordTextField = alertController.textFields[0];
+                NSString * password = passwordTextField.text;
+                
+                [this tryOpenPendingDocumentWithPassword:password];
+            }];
+            [alertController addAction:confirmAction];
+
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+        } else {
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Document locked" message:@"Insert the password." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Unlock",nil];
+            alert.tag = TAG_ALERTVIEW;
+            alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+            [alert show];
+        }
+        
 	} else {
 		
 		// This is not our case :)
 		
 	}
-	
 }
-
 
 -(void)tryOpenPendingDocumentWithPassword:(NSString *)password {
 	
-	//
 	//	The selector tryUnlockWithPassword will attemp to unlock the encrypted document and will
 	//	return YES on success
 	
-	if([document tryUnlockWithPassword:password]) {
+	if([self.document tryUnlockWithPassword:password]) {
 		
-		//
 		//		It works, the document is unlocked. Now you can create the DocumentViewController and push
 		//		it onto the stack for display. If you want to store the password for the document, you can use
 		//		core data, the settings or the keychain
 		
-		DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:document];
+		ReaderViewController *aDocViewController = [[ReaderViewController alloc]initWithDocumentManager:self.document];
+        self.document = nil;
+        
         [aDocViewController setDocumentId:DOC_ENCRYPTED]; // We know that in this sample that the file can only be this one.
 		[[self navigationController]pushViewController:aDocViewController animated:YES];
 		aDocViewController.documentId = DOC_ENCRYPTED;
-		[aDocViewController release];
+
 		
 	} else {
 		
-		//
-		//	The password is wrong. Display an error alert to let the user know
-		
-		UIAlertView * anAlertView = [[UIAlertView alloc]initWithTitle:@"Wrong Password" message:@"The password is wrong" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-		[anAlertView show];
-		[anAlertView release];
+        //	The password is wrong. Display an error alert to let the user know
+        
+        if([UIAlertController class]) { // iOS 8 and above.
+            
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Wrong password" message:@"The password is wrong!" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
+            }];
+            
+            [alert addAction:okAction];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        } else {
+            
+            UIAlertView * anAlertView = [[UIAlertView alloc]initWithTitle:@"Wrong Password"
+                                                                  message:@"The password is wrong!"
+                                                                 delegate:nil
+                                                        cancelButtonTitle:@"OK"
+                                                        otherButtonTitles:nil];
+            [anAlertView show];
+        }
 	}
 }
 
-
-/* This method should be called from the DocumentViewController when you get a link to another document */
-
--(void)setLinkedDocument:(NSString *)documentName withPage:(NSUInteger)destinationPage orDestinationName:(NSString *)destinationName{
-    
-    NSArray *params = [NSArray arrayWithObjects:documentName,destinationName,[NSNumber numberWithUnsignedInteger:destinationPage], nil];
-    [self performSelector:@selector(openDocumentWithParams:) withObject:params afterDelay:0.5];
-}
-
-/* This method opens a linked document after a delay to let you pop the controller */
-
--(void)openDocumentWithParams:(NSArray *)params{
-    
-    // Depending on the link format you need to manage the destination path accordingly to your own application path
-    // In this example we are assuming that every document is placed in your application bundle at the same level
-    NSString *filePath = [[NSBundle mainBundle]pathForResource:[[[params objectAtIndex:0] lastPathComponent] stringByDeletingPathExtension] ofType:@"pdf"];
-	NSURL *documentUrl = [NSURL fileURLWithPath:filePath];    
-    
-	MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
-    
-	DocumentViewController *aDocViewController = [[DocumentViewController alloc]initWithDocumentManager:aDocManager];
-	[aDocViewController setDocumentId:[params objectAtIndex:0]];
-    
-    NSInteger page;
-    if([[params objectAtIndex:2] intValue] != -1){
-        page = [[params objectAtIndex:2] intValue];
-    } else {
-        // We need to parse the pdf to get the correct page
-        page = [aDocManager pageNumberForDestinationNamed:[params objectAtIndex:1]];
-    }
-    
-    [aDocViewController setPage:page];
-	[aDocViewController setDocumentDelegate:aDocViewController];
-    [aDocViewController setDelegate:self];
-    
-	[[self navigationController]pushViewController:aDocViewController animated:YES];
-	
-	[aDocViewController release];
-	[aDocManager release];
-    
-}
+#pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 	
@@ -199,20 +170,18 @@
 //	we are sure of that, we can try to get the content of the password text field and use it
 //	to attemp to unlock the document by calling the appropriate method
 	
-	if (alertView==passwordAlertView)	{
+	if (alertView.tag == TAG_ALERTVIEW)	{
 		
 		if(buttonIndex == 1) {
 			
-			UITextField *passwordField = (UITextField *)[alertView viewWithTag:TAG_PASSWORDFIELD]; 
-			NSString * password = [passwordField text];
-			if(password == nil) {
-				password = @"";
-			}
-			
+            UITextField *passwordField = (UITextField *)[alertView textFieldAtIndex:0];
+            NSString * password = passwordField.text ? : @""; // Use empty string if nil.
 			[self tryOpenPendingDocumentWithPassword:password];
 		}
 	}	
 }
+
+#pragma mark - UIViewController
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -223,45 +192,27 @@
 		
 		UIFont *smallSystemFont = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
 		
-		[referenceTextView setText:TEXT_PLAIN];
-		[referenceTextView setFont:smallSystemFont];
-		[manualTextView setText:TEXT_ENCRYPTED];
-		[manualTextView setFont:smallSystemFont];
+		[self.referenceTextView setText:TEXT_PLAIN];
+		[self.referenceTextView setFont:smallSystemFont];
+		[self.manualTextView setText:TEXT_ENCRYPTED];
+		[self.manualTextView setFont:smallSystemFont];
 		
-		[referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
-		[manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
+		[self.referenceButton setTitle:TITLE_PLAIN forState:UIControlStateNormal];
+		[self.manualButton setTitle:TITLE_ENCRYPTED forState:UIControlStateNormal];
 }
 
+-(BOOL)shouldAutorotate {
+    return YES;
+}
 
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
 	return YES;
-}
-
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-	
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	
-	[self setManualButton:nil];
-	[self setManualTextView:nil];
-	[self setReferenceButton:nil];
-	[self setReferenceTextView:nil];
-}
-
-
-- (void)dealloc {
-    [super dealloc];
 }
 
 @end

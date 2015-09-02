@@ -18,8 +18,6 @@
 		010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
 		010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */; };
 		010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */; };
-		010D14DE13CB002300FD6F08 /* BasicLauncherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D413CB002300FD6F08 /* BasicLauncherController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D613CB002300FD6F08 /* DocumentViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14D913CB002300FD6F08 /* MainWindow.xib */; };
 		010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DA13CB002300FD6F08 /* MenuView_pad.xib */; };
@@ -37,22 +35,22 @@
 		010FE6EF15EE582200304C02 /* FPKShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6DF15EE582100304C02 /* FPKShared.framework */; };
 		010FE6F015EE582200304C02 /* FPKWebPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6E215EE582100304C02 /* FPKWebPopup.framework */; };
 		010FE6F115EE582200304C02 /* FPKYouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6E415EE582100304C02 /* FPKYouTube.framework */; };
-		01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01142A2D15CFC38E001B5374 /* MenuViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01142A2D15CFC38E001B5374 /* MenuViewController.m */; };
 		01142A3B15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		01142A3D15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		011DF92617D1755B0007DEAD /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
 		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
-		0123603F13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0123603F13CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
 		0123604013CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0123604313CC917600861EB7 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
 		0123604413CC917600861EB7 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; };
 		0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; };
-		0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0123604D13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
 		0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0123605013CC917600861EB7 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; };
-		0123605313CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0123605313CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		0123605413CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0123605713CC917600861EB7 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603B13CC917600861EB7 /* WebBrowser.xib */; };
 		0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
@@ -73,6 +71,10 @@
 		01298E431B6122E3003E0F20 /* fpk_reader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01298E421B6122E3003E0F20 /* fpk_reader.xcassets */; };
 		013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */; };
 		013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */; };
+		014259521B972ECB00C61312 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
+		014259531B97302000C61312 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
+		014259541B97302000C61312 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
+		014259551B97302000C61312 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; };
 		0155DDE81458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0155DE14145848590080FFEF /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; };
@@ -338,9 +340,9 @@
 		958A81DE14027F7100837C82 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81DF14027F7100837C82 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		958A81E514027F9100837C82 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		958A81E714027F9100837C82 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		958A81E514027F9100837C82 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
+		958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
+		958A81E714027F9100837C82 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
 		958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */; };
 		958CBA85141E612F0094D4C1 /* FastPdfKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 958CBA84141E612F0094D4C1 /* FastPdfKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958CBAB4141E65770094D4C1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -413,10 +415,6 @@
 		010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKKioskLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitKiosk-Prefix.pch"; sourceTree = "<group>"; };
 		010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitReader-Prefix.pch"; sourceTree = "<group>"; };
-		010D14D313CB002300FD6F08 /* BasicLauncherController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicLauncherController.h; sourceTree = "<group>"; };
-		010D14D413CB002300FD6F08 /* BasicLauncherController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicLauncherController.m; sourceTree = "<group>"; };
-		010D14D513CB002300FD6F08 /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
-		010D14D613CB002300FD6F08 /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
 		010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_SampleAppDelegate.h; sourceTree = "<group>"; };
 		010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_SampleAppDelegate.m; sourceTree = "<group>"; };
 		010D14D913CB002300FD6F08 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -1002,10 +1000,6 @@
 				010D14DA13CB002300FD6F08 /* MenuView_pad.xib */,
 				010D14DB13CB002300FD6F08 /* MenuView_phone.xib */,
 				010D14DC13CB002300FD6F08 /* MenuViewController.h */,
-				010D14D313CB002300FD6F08 /* BasicLauncherController.h */,
-				010D14D413CB002300FD6F08 /* BasicLauncherController.m */,
-				010D14D513CB002300FD6F08 /* DocumentViewController.h */,
-				010D14D613CB002300FD6F08 /* DocumentViewController.m */,
 				956A056B14039F38003AE44D /* Drawable.h */,
 				956A056C14039F38003AE44D /* Drawable.m */,
 				956A056D14039F38003AE44D /* OverlayManager.h */,
@@ -2092,12 +2086,14 @@
 				01BC084413C75D3A0077CE63 /* SearchManager.m in Sources */,
 				01BC084613C75D3A0077CE63 /* SearchResultCellView.m in Sources */,
 				01BC085213C75D3A0077CE63 /* SearchViewController.m in Sources */,
+				014259551B97302000C61312 /* WebBrowser.m in Sources */,
+				014259531B97302000C61312 /* AudioViewController.m in Sources */,
 				01BC085613C75D3A0077CE63 /* TextDisplayViewController.m in Sources */,
 				01F84DD71A00F55500AB4996 /* zip.c in Sources */,
 				01BC085813C75D3A0077CE63 /* TextSearchOperation.m in Sources */,
-				010D14DE13CB002300FD6F08 /* BasicLauncherController.m in Sources */,
-				010D14DF13CB002300FD6F08 /* DocumentViewController.m in Sources */,
 				01CB28071A655D9900FDF2DE /* SearchResultView.m in Sources */,
+				014259541B97302000C61312 /* MFAudioPlayerViewImpl.m in Sources */,
+				014259521B972ECB00C61312 /* ReaderViewController.m in Sources */,
 				01F84DD51A00F55500AB4996 /* mztools.c in Sources */,
 				01F84DD61A00F55500AB4996 /* unzip.c in Sources */,
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,

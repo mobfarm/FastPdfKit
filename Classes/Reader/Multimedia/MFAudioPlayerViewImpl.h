@@ -11,17 +11,10 @@
 #import "MFAudioProvider.h"
 
 
-@interface MFAudioPlayerViewImpl : UIView <MFAudioPlayerViewProtocol> {
-    
-    UIButton *startStopButton;
-    UISlider *volumeSlider;
-    
-    id<MFAudioProvider> audioProvider;
-    
-}
+@interface MFAudioPlayerViewImpl : UIView <MFAudioPlayerViewProtocol>
 
-@property (nonatomic,retain) UIButton *startStopButton;
-@property (nonatomic,retain) UISlider *volumeSlider;
-@property (nonatomic,assign) id<MFAudioProvider> audioProvider;
+@property (nonatomic, strong) UIButton *startStopButton;
+@property (nonatomic, strong) UISlider *volumeSlider;
+@property (nonatomic, weak) id<MFAudioProvider> audioProvider;
 
 @end
