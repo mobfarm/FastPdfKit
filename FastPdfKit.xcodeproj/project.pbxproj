@@ -311,8 +311,8 @@
 		954B751F14B4810000503F90 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B751E14B4810000503F90 /* libxml2.dylib */; };
 		954B752114B4811500503F90 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752014B4811500503F90 /* Security.framework */; };
 		954B752314B4812700503F90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752214B4812700503F90 /* MapKit.framework */; };
-		956A056F14039F38003AE44D /* Drawable.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056C14039F38003AE44D /* Drawable.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		956A057014039F38003AE44D /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056E14039F38003AE44D /* OverlayManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		956A056F14039F38003AE44D /* Drawable.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056C14039F38003AE44D /* Drawable.m */; };
+		956A057014039F38003AE44D /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056E14039F38003AE44D /* OverlayManager.m */; };
 		958A81BD14027F5300837C82 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };

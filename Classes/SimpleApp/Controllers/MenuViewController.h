@@ -18,9 +18,6 @@
 @property (nonatomic, weak) IBOutlet UITextView *manualTextView;
 
 @property (nonatomic, strong) MFDocumentManager *document;
-@property (nonatomic, weak) UIAlertView *passwordAlertView;
-@property (nonatomic, weak) NSString *nomePdfDaAprire;
-
 
 
 @end

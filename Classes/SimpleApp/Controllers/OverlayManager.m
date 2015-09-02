@@ -8,15 +8,18 @@
 
 #import "OverlayManager.h"
 #import "Drawable.h"
+
 @implementation OverlayManager
 
+/**
+ * Return a single Drawable object for the first page.
+ */
 - (NSArray *)documentViewController:(MFDocumentViewController *)dvc drawablesForPage:(NSUInteger)page{
-    NSArray *array;
     if(page == 1){
-        array = [NSArray arrayWithObject:[[[Drawable alloc] init]autorelease]];
-    } else
-        array = [NSArray array];
-    return array;
+        return @[[Drawable new]];
+    } else {
+        return @[];
+    }
 }
 
 @end

@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FastPDFKit_SampleAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-	UINavigationController *navigationController;
-}
+@interface FastPDFKit_SampleAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) UINavigationController *navigationController;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) UINavigationController *navigationController;
 
 @end
 

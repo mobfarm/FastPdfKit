@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <FastPdfKit/MFOverlayDrawable.h>
+#import <CoreText/CoreText.h>
 
-@interface Drawable : NSObject <MFOverlayDrawable>
+@interface Drawable : NSObject <MFOverlayDrawable> {
+    CFDictionaryRef _fontAttributes;
+    CTLineRef _firstLine;
+    CTLineRef _secondLine;
+}
 
 @end
