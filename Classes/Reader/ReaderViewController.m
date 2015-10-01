@@ -1039,7 +1039,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		
 		if (moviePlayViewController) {
 			[self presentMoviePlayerViewControllerAnimated:moviePlayViewController];
-			[self setWantsFullScreenLayout:NO];
 			moviePlayViewController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
 			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(myMovieViewFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:[moviePlayViewController moviePlayer]];
 			[moviePlayViewController.moviePlayer play];
@@ -1739,7 +1738,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations {
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations {
 
     return UIInterfaceOrientationMaskAll;
 }
