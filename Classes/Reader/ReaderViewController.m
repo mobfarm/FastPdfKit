@@ -352,6 +352,13 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #pragma mark -
 #pragma mark BookmarkViewController, _Delegate and _Actions
 
+-(BookmarkViewController *)bookmarksViewController {
+    if(!_bookmarksViewController) {
+        _bookmarksViewController = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+    }
+    return _bookmarksViewController;
+}
+
 -(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
 	
     [self dismissAlternateViewController];
@@ -364,26 +371,29 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     [self dismissAlternateViewController];
 }
 
--(IBAction) actionBookmarks:(id)sender {
-	
-	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
-	//	you can also push the controller with the navigation controller or use an UIActionSheet.
-	
-	if (self.currentReusableView == FPKReusableViewBookmarks) {
+-(void)presentBookmarksViewController {
+    
+    //	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
+    //	you can also push the controller with the navigation controller or use an UIActionSheet.
+    
+    if (self.currentReusableView == FPKReusableViewBookmarks) {
         
-		[self dismissAlternateViewController];
-		
-	} else {
+        [self dismissAlternateViewController];
+        
+    } else {
         
         self.currentReusableView = FPKReusableViewBookmarks;
         
-        BookmarkViewController * bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        BookmarkViewController * bookmarksVC = self.bookmarksViewController;
         bookmarksVC.delegate = self;
-
-        CGSize popoverContentSize = CGSizeMake(372, 650);
         
-        [self presentViewController:bookmarksVC barButtonItem:self.bookmarkBarButtonItem contentSize:popoverContentSize];
-	}
+        [self presentViewController:bookmarksVC barButtonItem:self.bookmarkBarButtonItem contentSize:self.popoverContentSize];
+    }
+}
+
+-(IBAction) actionBookmarks:(id)sender {
+	
+    [self presentBookmarksViewController];
 }
 
 
@@ -415,36 +425,39 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     NSLog(@"%@ %lu", file, (unsigned long)page);
 }
 
--(IBAction) actionOutline:(id)sender {
-	
-	// We create an instance of the OutlineViewController and push it onto the stack like we did with the 
-	// BookmarksViewController. However, you can show them in the same view with a segmented control, just
-	// switch datasources and take it into account in the various tableView delegate methods. Another thing
-	// to consider is that the view will be resetted once removed, and for an complex outline is not a nice thing.
-	// So, it would be better to store the position in the outline somewhere to present it again the very same
-	// view to the user or just retain the outlineVC and just let the application ditch only the view in case
-	// of low memory warnings.
-	
-	if (self.currentReusableView != FPKReusableViewOutline) {
-		
-        self.currentReusableView = FPKReusableViewOutline;
-		
-        OutlineViewController *outlineVC = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
-        outlineVC.delegate = self;
-		
-		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
-		// this array and the openentries array somewhere and set them again before present the view to the user again.
-		
-		[outlineVC setOutlineEntries:[[self document] outline]];
+-(OutlineViewController *)outlineViewController {
+    
+    // Lazily allocation when required.
+    
+    if(!_outlineViewController) {
         
-        CGSize popoverContentSize = CGSizeMake(372, 650);
-        
-        [self presentViewController:outlineVC barButtonItem:self.outlineBarButtonItem contentSize:popoverContentSize];
+        // We use different xib on iPhone and iPad.
+        _outlineViewController = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+    }
+    return _outlineViewController;
+}
 
-	} else {
+-(void)presentOutlineViewController {
+    
+    if (self.currentReusableView == FPKReusableViewOutline) {
         
         [self dismissAlternateViewController];
+        
+    } else {
+        
+        self.currentReusableView = FPKReusableViewOutline;
+        
+        OutlineViewController * controller = self.outlineViewController;
+        [controller setOutlineEntries: [[self document] outline]];
+        controller.delegate = self;
+        
+        [self presentViewController:controller barButtonItem:self.outlineBarButtonItem contentSize:self.popoverContentSize];
     }
+}
+
+-(IBAction) actionOutline:(id)sender {
+    
+    [self presentOutlineViewController];
 }
 
 #pragma mark - SearchViewControllerDelegate
@@ -1719,6 +1732,8 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     self = [super initWithDocumentManager:aDocumentManager];
     if(self) {
         
+        self.popoverContentSize = CGSizeMake(372, 650);
+        
 		[self setDocumentDelegate:self];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -1741,6 +1756,10 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {
 
     return UIInterfaceOrientationMaskAll;
+}
+
+-(void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 - (void)dealloc {

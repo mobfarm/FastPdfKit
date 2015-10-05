@@ -74,6 +74,9 @@
 
 @property (nonatomic, retain) UILabel * numberOfPageTitleToolbar;
 
+@property (nonatomic, retain) OutlineViewController * outlineViewController;
+@property (nonatomic, retain) BookmarkViewController * bookmarksViewController;
+
 @property (nonatomic, retain) SearchViewController * searchViewController;
 @property (nonatomic, retain) MiniSearchView * miniSearchView;
 @property (nonatomic, retain) TextDisplayViewController * textDisplayViewController;
@@ -81,6 +84,8 @@
 @property (nonatomic, readwrite, getter = isMultimediaVisible) BOOL multimediaVisible;
 
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
+
+@property (nonatomic, readwrite) CGSize popoverContentSize;
 
 @property (copy, nonatomic, readwrite) NSString * pageLabelFormat;
 
