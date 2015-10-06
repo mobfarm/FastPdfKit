@@ -1736,7 +1736,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     if(self) {
         
         self.popoverContentSize = CGSizeMake(372, 650);
-        
+
 		[self setDocumentDelegate:self];
         
         [[NSNotificationCenter defaultCenter] addObserver:self

@@ -20,9 +20,12 @@ free((x)),(x)=NULL; \
 #define MF_BUNDLED_BUNDLE(x) [NSBundle bundleWithPath:[[NSBundle mainBundle]pathForResource:(x) ofType:@"bundle"]]
 #define MF_BUNDLED_RESOURCE(x,k,z) [(MF_BUNDLED_BUNDLE(x))pathForResource:(k) ofType:(z)]
 
-#define FPK_USE_XCASSETS 0
+#ifndef FPK_USE_XCASSETS
+#define FPK_USE_XCASSETS 1
+#endif
 #define FPK_READER_BUNDLE @"FPKReaderBundle"
 #define FPK_BUNDLED_IMAGE_FORMAT @"png"
+
 #if FPK_USE_XCASSETS
 #define FPK_BUNDLED_IMAGE(img_name) [UIImage imageNamed:(img_name)]
 #else
