@@ -2697,7 +2697,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 armv7s x86_64 arm64";
+				VALID_ARCHS = "armv7 i386 x86_64 arm64";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -2731,7 +2731,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 armv7s x86_64 arm64";
+				VALID_ARCHS = "armv7 i386 x86_64 arm64";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

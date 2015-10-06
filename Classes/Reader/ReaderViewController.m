@@ -571,6 +571,27 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                     contentSize:popoverContentSize];
 }
 
+-(MiniSearchView *)miniSearchView {
+    if(!_miniSearchView) {
+        // If nil, allocate and initialize it.
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            
+            MiniSearchView * view = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
+            view.backgroundImageView.image = [self toolbarBackgroundImage];
+            [view setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+            self.miniSearchView = view;
+        } else {
+            
+            MiniSearchView * view = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
+            view.backgroundImageView.image = [self toolbarBackgroundImage];
+            [view setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
+            self.miniSearchView = view;
+        }
+    }
+    
+    return _miniSearchView;
+}
+
 -(void)presentMiniSearchViewWithStartingItem:(FPKSearchMatchItem *)item {
 	
 	// This could be rather tricky.
@@ -579,28 +600,10 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	// mini search view if necessary, then set the mini search view as the delegate for the current
 	// search manager - associated until now to the full SVC - then present it to the user.
     
-	if(self.miniSearchView == nil) {
-		
-		// If nil, allocate and initialize it.
-		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            
-			self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
-            self.miniSearchView.backgroundImageView.image = [self toolbarBackgroundImage];
-			[self.miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
-			
-		} else {
-			
-            self.miniSearchView = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
-            self.miniSearchView.backgroundImageView.image = [self toolbarBackgroundImage];
-			[self.miniSearchView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
-		}
-		
-	} else {
-		
-		// If not nil, remove it from the superview.
+    if(self.miniSearchView.superview != nil) {
         [self.miniSearchView removeFromSuperview];
-	}
-	
+    }
+    
 	// Set up the connections
     
 	self.miniSearchView.delegate = self;
