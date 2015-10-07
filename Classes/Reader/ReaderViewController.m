@@ -577,13 +577,13 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             
             MiniSearchView * view = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
-            view.backgroundImageView.image = [self toolbarBackgroundImage];
+            view.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.75];
             [view setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
             self.miniSearchView = view;
         } else {
             
             MiniSearchView * view = [[MiniSearchView alloc]initWithFrame:CGRectMake(0, -45, self.view.bounds.size.width, 44)];
-            view.backgroundImageView.image = [self toolbarBackgroundImage];
+            view.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.75];
             [view setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin];
             self.miniSearchView = view;
         }
