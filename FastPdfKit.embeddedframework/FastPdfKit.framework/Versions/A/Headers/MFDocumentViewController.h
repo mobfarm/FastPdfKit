@@ -606,18 +606,6 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
 @property (strong, nonatomic) UIToolbar * toolbar;
 
 /**
- * This will return the default toolbar background image. It is a resizable a
- * resizable image.
- */
-+(UIImage *)defaultToolbarBackgroundImage;
-
-/**
- * This is the resizable image used as background for both the embedded navigation
- * bar and the bottom toolbar. If not set will use the defaultToolbarBackgroundImage.
- */
-@property (strong, nonatomic) UIImage * toolbarBackgroundImage;
-
-/**
  * Invoked when the user cancel the page slider movement by touching up outside
  * the slider. Call super if you want the embedded pageSliderLabel to reset
  * to the actual page number.

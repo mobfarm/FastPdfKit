@@ -31,11 +31,6 @@
  */
 @property (nonatomic, copy) void (^dismissBlock) ();
 
-@property (nonatomic,retain) UIButton *changeModeButton;
-@property (nonatomic,retain) UIButton *zoomLockButton;
-@property (nonatomic,retain) UIButton *changeDirectionButton;
-@property (nonatomic,retain) UIButton *changeLeadButton;
-
 @property (nonatomic,retain) UIImage * imgModeSingle;
 @property (nonatomic,retain) UIImage * imgModeDouble;
 @property (nonatomic,retain) UIImage * imgZoomLock;
