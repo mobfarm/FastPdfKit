@@ -541,9 +541,10 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(void)handleSearchUpdateNotification:(NSNotification *)notification {
     
     NSDictionary * userInfo = notification.userInfo;
-    NSUInteger page = [userInfo[kNotificationSearchInfoPage] unsignedIntegerValue];
+    NSInteger page = [userInfo[kNotificationSearchInfoPage] integerValue];
+    NSInteger delta = page - self.page;
     
-    if(self.isViewLoaded && (fabs(page - self.page) < 2)) {
+    if(self.isViewLoaded && (delta < 2)) {
         // We get up to two false 'current' page positives but it is good enogh for now.
         [self reloadOverlay];
     }
