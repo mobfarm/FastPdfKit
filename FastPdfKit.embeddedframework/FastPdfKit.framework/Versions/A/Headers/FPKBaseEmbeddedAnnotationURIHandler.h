@@ -18,6 +18,7 @@
 @property (nonatomic,copy) NSSet * remoteAudioPrefixes;
 @property (nonatomic,copy) NSSet * remoteWebPrefixes;
 @property (nonatomic,copy) NSSet * configPrefixes;
+@property (nonatomic,copy) NSSet * multimediaPrefixes;
 
 +(BOOL)hasStringPrefix:(NSString *)string prefixes:(NSSet *)prefixes;
 

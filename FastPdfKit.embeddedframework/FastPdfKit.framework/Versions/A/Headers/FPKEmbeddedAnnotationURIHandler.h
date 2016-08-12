@@ -15,5 +15,6 @@
 -(BOOL)isWebURI:(NSString *)uri;
 -(BOOL)isRemoteWebURI:(NSString *)uri;
 -(BOOL)isConfigURI:(NSString *)uri;
+-(BOOL)isMultimediaURI:(NSString *)uri;
 
 @end

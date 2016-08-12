@@ -65,8 +65,7 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
 /**
  This property let you add the main DocumentViewControllerDelegate.
  */
-
-@property (weak) NSObject<MFDocumentViewControllerDelegate> *documentDelegate;
+@property (weak) id<MFDocumentViewControllerDelegate> documentDelegate;
 
 /**
  If you need to register objects as DocumentViewControllerDelegate you can add them using this method.

@@ -14,17 +14,13 @@
 -(CFDictionaryRef)fontAttributes {
     if(!_fontAttributes) {
         
-        CFStringRef fontName = CFStringCreateWithCString(NULL, "Helvetica-Neue", kCFStringEncodingMacRoman);
-        
-        CTFontRef font = CTFontCreateWithName(fontName, 12.0, NULL);
+        CTFontRef font = CTFontCreateWithName((CFStringRef)@"Helvetica-Neue", 12.0, NULL);
         
         CFStringRef keys[] = { kCTFontAttributeName };
         
         CFTypeRef values[] = { font };
         
         _fontAttributes = CFDictionaryCreate(kCFAllocatorDefault, (const void **)&keys, (const void **)&values, sizeof(keys) / sizeof(keys[0]), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-        
-        CFRelease(fontName);
         
         CFRelease(font);
     }
@@ -60,11 +56,7 @@
     
     CGRect clipBoundingBox = CGContextGetClipBoundingBox(context);
     
-    CGContextTranslateCTM(context, 0, clipBoundingBox.size.height);
-    CGContextScaleCTM(context, 1.0, -1.0);
-    
     const char *text = "Hello World!";
-    
     
     CGContextSetTextPosition(context, 101, 113);
     CTLineDraw([self firstLine], context);

@@ -24,10 +24,6 @@
     NSString * resourceFolder;  /* If nil, will default to Documents folder */
 	
 	NSUInteger numberOfPages;
-	
-	int *dataSetFlags;
-	CGRect *cropboxes;
-	int *rotations;
     
     NSMutableDictionary * fontCache;
     
@@ -86,9 +82,17 @@ Convert a CGRect from iOS view space to a PDF page coordinate space.
 -(void)drawPageNumber:(NSInteger)pageNumber onContext:(CGContextRef)ctx;
 
 /**
- Use this method to get the cropbox and the rotation of a certain pdf page.
+ Use this method to get the cropbox and the rotation of a page.
  */
 -(void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber withBuffer:(BOOL)withOrWithout;
+
+/**
+ * Same as -getCropbox:andRotation:forPageNumber:withBuffer: with the last parameter passed as NO.
+ * Actually, since the parent method ignores the withBuffer parameter, it behaves the same.
+ */
+-(void)getCropbox:(CGRect *)cropbox
+      andRotation:(int *)rotation
+    forPageNumber:(NSInteger)pageNumber;
 
 /**
  Create a thumbnail for a specific page. It will look far better than the 
@@ -145,27 +149,40 @@ Convert a CGRect from iOS view space to a PDF page coordinate space.
  */
 -(void)emptyCache;
 
-/**
- * Return an array of MFTextItem representing the matches of teh search term on 
- * the page passed as arguments. It is a good idea running this method in a 
- * secondary thread.
- *
- * mode is of type FPKSearchMode and has the following values:
- * FPKSearchModeHard - if you search for 'bèzier' it will match 'bèzier' only 
- * but not 'bezier'. If you search for 'bezier' it will match 'bezier' only.
- * FPKSearchModeSoft - if you search for term 'bèzier' it will match both 
- * 'bezier' and 'bèzier'. Same if you search for 'bezier'.
- * FPKSearchModeSmart - if you search for term 'bezier', it will also match 
- * 'bèzier', but if you search for 'bèzier' it will match 'bèzier' only.
- *
- * ignoreOrNot tell the function if it should ignore case or not.
- *
- * exactMatchOrNot tell the function if it should match the term as a whole or 
- * search for each component separated by spaces.
- *
- * Default parameters are FPKSearchModeSmart, ignoreCase to YES and exactMatch 
- * to NO.
+/*!
+ Return an array of MFTextItem representing the matches of teh search term on
+ the page passed as arguments. It is a good idea running this method in a
+ secondary thread.
+ 
+ @param mode is of type FPKSearchMode and has the following values:
+ FPKSearchModeHard - if you search for 'bèzier' it will match 'bèzier' only
+ but not 'bezier'. If you search for 'bezier' it will match 'bezier' only.
+ FPKSearchModeSoft - if you search for term 'bèzier' it will match both
+ 'bezier' and 'bèzier'. Same if you search for 'bezier'.
+ FPKSearchModeSmart - if you search for term 'bezier', it will also match
+ 'bèzier', but if you search for 'bèzier' it will match 'bèzier' only.
+ 
+ @param ignoreOrNot tell the function if it should ignore case or not.
+ 
+ @param exactMatchOrNot tell the function if it should match the term as a whole or
+ search for each component separated by spaces.
+ 
+ @param pdfCoordinates If set to YES, the coordinates of the MFTextItem will be
+ in PDF Coordinate System (origin on the lower left). If set to NO the coordinates
+ will be in UI interface space, that is origin on the upper left.
+ 
+ Default parameters are FPKSearchModeSmart, ignoreCase to YES, exactMatch
+ to NO and pdfCoordinates to YES.
+ 
+ @return NSArray An array of MFTextItem or nil if no match is found.
  */
+-(NSArray *)searchResultOnPage:(NSUInteger)pageNr
+                forSearchTerms:(NSString *)searchTerm
+                          mode:(FPKSearchMode)mode
+                    ignoreCase:(BOOL)ignoreOrNot
+                    exactMatch:(BOOL)exactMatchOrNot
+                pdfCoordinates:(BOOL)pdfCoordinates;
+
 -(NSArray *)searchResultOnPage:(NSUInteger)pageNr 
                 forSearchTerms:(NSString *)searchTerm 
                           mode:(FPKSearchMode)mode 
