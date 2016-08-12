@@ -24,10 +24,6 @@
     NSString * resourceFolder;  /* If nil, will default to Documents folder */
 	
 	NSUInteger numberOfPages;
-	
-	int *dataSetFlags;
-	CGRect *cropboxes;
-	int *rotations;
     
     NSMutableDictionary * fontCache;
     
@@ -86,9 +82,17 @@ Convert a CGRect from iOS view space to a PDF page coordinate space.
 -(void)drawPageNumber:(NSInteger)pageNumber onContext:(CGContextRef)ctx;
 
 /**
- Use this method to get the cropbox and the rotation of a certain pdf page.
+ Use this method to get the cropbox and the rotation of a page.
  */
 -(void)getCropbox:(CGRect *)cropbox andRotation:(int *)rotation forPageNumber:(NSInteger)pageNumber withBuffer:(BOOL)withOrWithout;
+
+/**
+ * Same as -getCropbox:andRotation:forPageNumber:withBuffer: with the last parameter passed as NO.
+ * Actually, since the parent method ignores the withBuffer parameter, it behaves the same.
+ */
+-(void)getCropbox:(CGRect *)cropbox
+      andRotation:(int *)rotation
+    forPageNumber:(NSInteger)pageNumber;
 
 /**
  Create a thumbnail for a specific page. It will look far better than the 

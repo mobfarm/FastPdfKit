@@ -948,7 +948,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     return YES;
 }
 
--(void) documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri{
+-(BOOL) documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri{
     
     if (![uri hasPrefix:@"#page="]) {
         
@@ -976,6 +976,8 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                     documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
                     
                     [self playVideo:documentPath local:YES];
+                    
+                    return YES;
                 }
                 
                 if ([uriType isEqualToString:@"fpkz"]||[uriType isEqualToString:@"videoremotemodal"]) {
@@ -983,6 +985,8 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                     documentPath = [@"http://" stringByAppendingString:uriResource];
                     
                     [self playVideo:documentPath local:NO];
+                
+                    return YES;
                 }
                 
                 if ([uriType isEqualToString:@"fpki"]||[uriType isEqualToString:@"htmlmodal"]){
@@ -990,11 +994,15 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                     documentPath = [self.document.resourceFolder stringByAppendingPathComponent:uriResource];
                     
                     [self showWebView:documentPath local:YES];
+                
+                    return YES;
                 }
                 
                 if ([uriType isEqualToString:@"http"]){
                     
                     [self showWebView:uri local:NO];
+                    
+                    return YES;
                 }
             }
         }
@@ -1008,7 +1016,10 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         arrayParameter = [uri componentsSeparatedByString:@"="];
         
         [self setPage:[[arrayParameter objectAtIndex:1]intValue]];
+        
     }
+    
+    return NO;
 }
 
 - (void)playAudio:(NSString *)audioURL local:(BOOL)_isLocal{

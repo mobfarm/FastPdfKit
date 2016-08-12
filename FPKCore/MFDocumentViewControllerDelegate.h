@@ -47,10 +47,14 @@
 -(void)documentViewController:(MFDocumentViewController *)dvc didReceiveTapAtPoint:(CGPoint)point;
 
 /**
- This method will notify if the user has tapped on a annotation with a remote uri action. This is usually invoked when an external
- link is activated and an internet browser should be open to show the link's content.
+ This method will notify if the user has tapped on a annotation with a link 
+ action. If you return YES, the controller will not handle the request on your
+ behalf.
+ Not implementing this method is the same as returning NO.
+ 
+ @return YES if you handled the request, NO if you want the controller to handle it on your behalf.
  */
--(void)documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri;
+-(BOOL)documentViewController:(MFDocumentViewController *)dvc didReceiveURIRequest:(NSString *)uri;
 
 /**
  This method will notify if and where the user has tapped on a page bounds. Coordinates of the point are in document's user space. 
