@@ -17,4 +17,5 @@ FastPdfKit.xcodeproj/xcuserdata/
 FastPdfKit.xcodeproj/project.xcworkspace/xcshareddata/
 FastPdfKit.xcworkspace/xcuserdata
 Pods/
+build/
 *.lock
