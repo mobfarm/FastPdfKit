@@ -262,8 +262,17 @@ Convert a CGRect from iOS view space to a PDF page coordinate space.
 
 /**
  Tell to keep memory usage down. Use this if you see frequent memory warnings.
+ Default is false.
  */
 @property (readwrite) BOOL conservativeMemoryUsage;
+
+/**
+ Hint used by the kit to determine when the memory pressure is becoming excessive and
+ take action. Only used when conservativeMemoryUsage is true. Is an hint, don't expect 
+ it to be an hard limit.
+ Minimum value is 100 millions of bytes (100 MB). Default value is 250 MB.
+ */
+@property (nonatomic, readwrite) size_t conservativeMemoryUsageHint;
 
 /**
  This will return a Cocoa representation of the annotations array for each page.
