@@ -45,4 +45,9 @@
  */
 @property (readwrite, nonatomic) FPKForceTiles forceTiles;
 
+/**
+ * If true, high-res images are enabled. Default true.
+ */
+@property (readwrite, nonatomic) BOOL foregroundEnabled;
+
 @end
