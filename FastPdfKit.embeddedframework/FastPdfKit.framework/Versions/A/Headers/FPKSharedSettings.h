@@ -50,4 +50,14 @@
  */
 @property (readwrite, nonatomic) BOOL foregroundEnabled;
 
+/**
+ If true, an extra step of resolution in background resources is used. Default to false.
+ */
+@property (readwrite, nonatomic) BOOL highResolutionBackgroundEnabled;
+
+/**
+ Scaling factor for the high resolution background images. Default to 2.0. Accepted values are between 1.0 and 4.0. Avoid values higher than 2.0.
+ */
+@property (readwrite, nonatomic) CGFloat highResolutionBackgroundScale;
+
 @end
