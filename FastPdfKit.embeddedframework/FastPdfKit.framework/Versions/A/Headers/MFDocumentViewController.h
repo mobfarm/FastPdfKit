@@ -255,9 +255,16 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
 
 /**
  Call this method to start working with the pdf.
+ @param aDocumentManager The MFDocumentManager to use.
  */
-
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager;
+
+/**
+ Call this method to start working with the pdf.
+ @param aDocumentManager The MFDocumentManager to use.
+ @param count Max amount of concurrent operations. Pass 0 to set it to an automatic value.
+ */
+-(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager count:(NSUInteger)count;
 
 /**
  This metod enable or disable the automatic mode switching upon rotation. If 

@@ -129,6 +129,9 @@ enum FPKSupportedOrientation {
 typedef NSUInteger FPKSupportedOrientation;
 
 
+/**
+ Utility method to check if the orientation is among the supported ones.
+ */
 static BOOL isOrientationSupported(NSUInteger orientation, NSUInteger orientations) {
     
     NSUInteger zeroOrNotZero;

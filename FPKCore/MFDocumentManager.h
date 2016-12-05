@@ -97,6 +97,7 @@ Convert a CGRect from iOS view space to a PDF page coordinate space.
 /**
  Create a thumbnail for a specific page. It will look far better than the 
  thumbnail integrated inside the pdf, but it is also slower.
+ @return The page thumbnail.
  */
 -(CGImageRef)createImageForThumbnailOfPageNumber:(NSUInteger)pageNr ofSize:(CGSize)size andScale:(CGFloat)scale;
 
@@ -107,13 +108,22 @@ Convert a CGRect from iOS view space to a PDF page coordinate space.
 
 /** 
  Return an array of MFOutlineEntry as the outline/TOC of the pdf document.
+ @return The TOC as an array of outline entries.
  */
 -(NSMutableArray *)outline;
 
 /**
- Initializer. You can also use the factory method above. 
+ Initialize the document with a pdf file.
+ @param anUrl The pdf file URL.
  */
 -(id)initWithFileUrl:(NSURL*)anUrl;
+
+/**
+ Initialize the document with a pdf file.
+ @param anUrl The pdf file URL.
+ @param count Amount of concurrent document copies. Pass 0 to let the system choose the appropriate value.
+ */
+-(id)initWithFireURL:(NSURL *)anUrl count:(NSUInteger)count;
 
 /**
  Initializer with data provider.
@@ -122,23 +132,29 @@ Convert a CGRect from iOS view space to a PDF page coordinate space.
 	
 /** 
  Check if a document is encrypted and blocked by a password or not.
+ @return If the document is password protected.
  */
 -(BOOL)isLocked;
 
 /**
  Try to unlock the document with a password and return if the unlock has been 
  successful or not.
+ @param password The password.
+ @return If the document is unlocked or not.
 */
--(BOOL)tryUnlockWithPassword:(NSString *)aPassword;
+-(BOOL)tryUnlockWithPassword:(NSString *)password;
 
 /** 
  Return the number of pages that make up the document.
+ @return The number of pages.
  */
 -(NSUInteger)numberOfPages;
 
 /**
  This method will return the page number of the destination with the name passed 
  as argument.
+ @param name The name of the destination.
+ @return The page number or 0 if no destination with such name is found.
  */
 -(NSUInteger)pageNumberForDestinationNamed:(NSString *)name;
 
