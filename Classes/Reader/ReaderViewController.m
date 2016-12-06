@@ -1604,6 +1604,34 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	return self;
 }
 
+-(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager count:(NSUInteger)count {
+    
+    //	Here we call the superclass initWithDocumentManager passing the very same MFDocumentManager
+    //	we used to initialize this class. However, since you probably want to track which document are
+    //	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
+    //	as long as you pass an instance of it to the superclass initializer.
+    
+    self = [super initWithDocumentManager:aDocumentManager count:count];
+    if(self) {
+        
+        self.popoverContentSize = CGSizeMake(372, 650);
+        
+        [self setDocumentDelegate:self];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleSearchUpdateNotification:)
+                                                     name:kNotificationSearchResultAvailable
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleSearchGotCancelledNotification:)
+                                                     name:kNotificationSearchGotCancelled
+                                                   object:nil];
+    }
+    
+    return self;
+}
+
+
 -(BOOL)shouldAutorotate {
     return YES;
 }

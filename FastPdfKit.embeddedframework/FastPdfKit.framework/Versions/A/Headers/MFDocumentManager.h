@@ -123,7 +123,7 @@ Convert a CGRect from iOS view space to a PDF page coordinate space.
  @param anUrl The pdf file URL.
  @param count Amount of concurrent document copies. Pass 0 to let the system choose the appropriate value.
  */
--(id)initWithFireURL:(NSURL *)anUrl count:(NSUInteger)count;
+-(id)initWithFileUrl:(NSURL *)anUrl count:(NSUInteger)count;
 
 /**
  Initializer with data provider.
