@@ -9,16 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class SearchResultView;
-@class SearchResultView;
 
 @interface SearchResultCellView : UITableViewCell
 
-@property (nonatomic,retain) SearchResultView *searchResultView;
+@property (nonatomic, strong) SearchResultView *searchResultView;
 
 @property (nonatomic, copy) NSString * textSnippet;
 @property (nonatomic, readwrite) NSRange boldRange;
 @property (nonatomic, readwrite) NSUInteger page;
-
-
 
 @end

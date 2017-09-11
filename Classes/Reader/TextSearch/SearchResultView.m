@@ -46,7 +46,6 @@
     [snippetAttributedString setAttributes:boldAttributes range:range];
     
     self.snippetLabel.attributedText = snippetAttributedString;
-    [snippetAttributedString release];
 }
 
 #pragma mark - UIView

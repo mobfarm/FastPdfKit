@@ -11,7 +11,7 @@
 
 @class TextDisplayViewController;
 
-@protocol TextDisplayViewControllerDelegate
+@protocol TextDisplayViewControllerDelegate <NSObject>
 
 -(MFDocumentManager	*)document;
 -(void)dismissTextDisplayViewController:(TextDisplayViewController *)controller;

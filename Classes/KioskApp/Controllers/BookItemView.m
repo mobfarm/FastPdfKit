@@ -16,33 +16,25 @@
 #define TITLE_REMOVE @"Remove"
 #define TITLE_RESUME @"Resume"
 
+@interface BookItemView()
+@property (nonatomic, readwrite) CGSize size;
+@property (nonatomic, readwrite) BOOL pdfInDownload;
+@end
+
 @implementation BookItemView
-@synthesize object, temp, dataSource ,corner,documentNumber;
-@synthesize menuViewController;
-@synthesize page,titleOfPdf;
-@synthesize removeButton,openButton,openButtonFromImage;
-@synthesize progressDownload;
-// @synthesize yProgressBar,xBtnRemove,yBtnRemove,xBtnOpen,yBtnOpen,widthButton,heightButton;
-@synthesize thumbImage;
-@synthesize downloadUrl;
-@synthesize httpRequest;
-@synthesize thumbName;
-@synthesize isPdfLink;
-@synthesize downloadPdfStopped;
-// Load the view and initialize the pageNumber ivar.
 
-- (id)initWithName:(NSString *)Page andTitoloPdf:(NSString *)titlePdf andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)_image andSize:(CGSize)_size{
+- (id)initWithName:(NSString *)page andTitoloPdf:(NSString *)titlePdf andLinkPdf:(NSString *)linkpdf andnumOfDoc:(int)numDoc andImage:(NSString *)image andSize:(CGSize)size{
 
-	size = _size;
+	self.size = size;
 	self.downloadUrl = linkpdf;
-	self.thumbName = _image;
-	self.page=Page;
+	self.thumbName = image;
+	self.page = page;
     self.titleOfPdf = titlePdf;
 	
-    [self downloadImage:self withUrl:thumbName andName:Page];
+    [self downloadImage:self withUrl:self.thumbName andName:page];
     
-	documentNumber = numDoc;
-	temp = NO;
+	self.documentNumber = numDoc;
+	self.temp = NO;
     
 	return self;
 }
@@ -113,11 +105,11 @@
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];	
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",page,page]];
+	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",self.page,self.page]];
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	cacheDirectory = [paths objectAtIndex:0];
-	thumbPath = [cacheDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",page]];
+	thumbPath = [cacheDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",self.page]];
 	
 	fileManager = [[NSFileManager alloc]init];
     
@@ -139,46 +131,42 @@
 		
 		// Background.
 		
-		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)];
+		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, self.size.width-10, self.size.height-10)];
 		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"backThumb",@"png")]];
 		[[self view] addSubview:anImageView];
-		[anImageView release];
 
 		// Cover.
 		
-		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, size.width-24, size.height-24)];
+		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(22, 17, self.size.width-24, self.size.height-24)];
 		[anImageView setImage:[UIImage imageWithContentsOfFile:thumbPath]];
 		[anImageView setUserInteractionEnabled:YES];
-		[anImageView setTag:documentNumber];
+		[anImageView setTag: self.documentNumber];
 		[[self view] addSubview:anImageView];
 		self.thumbImage = anImageView;
-		[anImageView release];
 		
 	} else {
 		
 		// Background.
 		
-		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, size.width-10, size.height-10)];
+		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, self.size.width-10, self.size.height-10)];
 		[anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"backThumb_iphone",@"png")]];
 		[[self view] addSubview:anImageView];
-		[anImageView release];
 
 		// Cover.
 		
-		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(17, 12, size.width-14, size.height-14)];
+		anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(17, 12, self.size.width-14, self.size.height-14)];
 		[anImageView setImage:[UIImage imageWithContentsOfFile:thumbPath]];
 		[anImageView setUserInteractionEnabled:YES];
-		[anImageView setTag:documentNumber];
+		[anImageView setTag: self.documentNumber];
 		[[self view] addSubview:anImageView];
 		self.thumbImage = anImageView;
-		[anImageView release];
 	}
 	
 	// Open button.
 	
 	aButton= [UIButton buttonWithType:UIButtonTypeCustom];
-	[aButton setFrame:CGRectMake(20, 15, size.width-20, size.height-20)];
-	[aButton setTag:documentNumber];
+	[aButton setFrame:CGRectMake(20, 15, self.size.width-20, self.size.height-20)];
+	[aButton setTag: self.documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	
 	// Open or download action, depend if the file is already present or not.
@@ -195,26 +183,24 @@
 	
 	// Progress bar for the download operation.
 
-	aProgressView = [[UIProgressView alloc] initWithFrame:CGRectMake(21, progressBarVOffset, size.width-24, size.height-10)];
+	aProgressView = [[UIProgressView alloc] initWithFrame:CGRectMake(21, progressBarVOffset, self.size.width-24, self.size.height-10)];
 	aProgressView.progressViewStyle = UIProgressViewStyleDefault; // FIXME: it was UIActivityIndicatorViewStyleGray. 
 	aProgressView.progress= 0.0;
 	aProgressView.hidden = TRUE;
 	[[self view] addSubview:aProgressView];
 	self.progressDownload = aProgressView;
-	[aProgressView release];
-	
-	
+    
 	// Open/download button.
 	
 	aButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	[aButton setFrame:CGRectMake(openButtonHOffset, openButtonVOffset, buttonWidth, buttonHeight)];
-	[aButton setTag:documentNumber];
+	[aButton setTag:self.documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
 	
 	if (!fileAlreadyExists) {
         
-        if ([fileManager fileExistsAtPath:[pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",page]]]) {
+        if ([fileManager fileExistsAtPath:[pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf", self.page]]]) {
 			// Resume.
 			
 			[aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
@@ -247,7 +233,7 @@
 	[aButton setFrame:CGRectMake(removeButtonHOffset, removeButtonVOffset, buttonWidth, buttonHeight)];
 	[aButton setTitle:TITLE_REMOVE forState:UIControlStateNormal];
 	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"remove",@"png")] forState:UIControlStateNormal];
-	[aButton setTag:documentNumber];
+	[aButton setTag: self.documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton addTarget:self action:@selector(actionremovePdf:) forControlEvents:UIControlEventTouchUpInside];
 	[[aButton titleLabel]setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:(15.0)]];
@@ -280,9 +266,6 @@
 	aLabelTitle = [NSString stringWithFormat:@"%@",self.titleOfPdf];
 	[aLabel setText:aLabelTitle]; 
 	[[self view] addSubview:aLabel];
-	[aLabel release];
-    [fileManager release];
-	
 }
 
 -(void)actionremovePdf:(id)sender{
@@ -291,39 +274,34 @@
 	
 	UIButton * aButton = nil; /* Will reuse to reference different buttons */
 	
-	NSFileManager *filemanager = nil;
-	
-	NSArray *paths = nil; 
+	NSArray *paths = nil;
 	NSString *documentsDirectory = nil;
 	NSString *pdfPath = nil; 
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
-	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",page]];
+	pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", self.page]];
 	
 	// Remove the file form disk (ignore the error).
-	
-	filemanager = [[NSFileManager alloc]init];
-	[filemanager removeItemAtPath:pdfPath error:NULL];
-	[filemanager release];
+	[[NSFileManager defaultManager] removeItemAtPath:pdfPath error:NULL];
 	
 	// Hide the remove button.
-	aButton = [menuViewController.buttonRemoveDict objectForKey:page];
+	aButton = [self.menuViewController.buttonRemoveDict objectForKey:self.page];
 	aButton.hidden = YES;
 
 	// Change the open/download button to download.
 	
-	aButton = [menuViewController.openButtons objectForKey:page];
+	aButton = [self.menuViewController.openButtons objectForKey:self.page];
 	[aButton setTitle:TITLE_DOWNLOAD forState:UIControlStateNormal];
 	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"download",@"png")] forState:UIControlStateNormal];
-	[aButton setTag:documentNumber];
+	[aButton setTag: self.documentNumber];
 	[aButton setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin];
 	[aButton removeTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
 	// Change the action on the cover from open to download.
 	
-	aButton = [menuViewController.imgDict objectForKey:page];
+	aButton = [self.menuViewController.imgDict objectForKey:self.page];
 	[aButton removeTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -331,13 +309,13 @@
 							   
 -(void)visualizzaButtonRemove{
 	//show btnRemove
-	UIButton *btnRemoveSel = [menuViewController.buttonRemoveDict objectForKey:page];
+	UIButton *btnRemoveSel = [self.menuViewController.buttonRemoveDict objectForKey:self.page];
 	btnRemoveSel.hidden = NO;
 }
 
 -(void)actionOpenPdf:(id)sender {
 	
-    [menuViewController actionOpenPlainDocument:page];
+    [self.menuViewController actionOpenPlainDocument:self.page];
 }
 
 -(void)actionStopPdf:(id)sender {
@@ -349,10 +327,11 @@
     if ([app respondsToSelector:@selector(setNewsstandIconImage:)] && YES){
         
         NKLibrary *library = [NKLibrary sharedLibrary];
-        if ([library issueWithName:page]) {               
-            [library removeIssue:[library issueWithName:page]];
+        if ([library issueWithName:self.page]) {
+            [library removeIssue:[library issueWithName:self.page]];
         }
-        pdfInDownload=NO;
+        self.pdfInDownload=NO;
+        
     }else{
     
         
@@ -360,10 +339,10 @@
     
     [self.httpRequest cancel];
     
-    downloadPdfStopped = YES;
+    self.downloadPdfStopped = YES;
 	
     
-	aButton = [menuViewController.openButtons objectForKey:page];
+	aButton = [self.menuViewController.openButtons objectForKey:self.page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
 	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
@@ -371,7 +350,7 @@
 	
 	// Cover button.
 	
-	aButton = [menuViewController.imgDict objectForKey:page];
+	aButton = [self.menuViewController.imgDict objectForKey:self.page];
 	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -379,12 +358,11 @@
 
 -(void)actionDownloadPdf:(id)sender {
 	
-	if(pdfInDownload)
+    if(self.pdfInDownload) {
 		return;
+    }
 	
-	//senderButton = sender;
-	//self.pdfToDownload=[NSString stringWithFormat:@"%@", page];
-	[self downloadPDF:self withUrl:downloadUrl andName:page];
+	[self downloadPDF:self withUrl:self.downloadUrl andName:self.page];
 }
 
 
@@ -421,8 +399,6 @@
         
         [self updateBtnDownload];
         
-        [request release];
-        
     } else {
         
         NSURL *url = nil;
@@ -439,21 +415,18 @@
         NSString *pdfPathTempForResume = nil;
         
         //check if the download url is a link to a pdf file or pfk file.
-        isPdfLink = [self checkIfPDfLink:sourceURL];
+        self.isPdfLink = [self checkIfPDfLink:sourceURL];
         
         // Filename path.
-        
         paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         documentsDirectory = [paths objectAtIndex:0];
         
         pathContainPdf = [NSString stringWithString:[NSString stringWithFormat:@"/%@/",namePdf]];
         pathContainPdf = [documentsDirectory stringByAppendingString:pathContainPdf];
         
-        filemanager = [[NSFileManager alloc]init];
-        [filemanager createDirectoryAtPath:pathContainPdf withIntermediateDirectories:YES attributes:nil error:&error];
-        [filemanager release];
+        [[NSFileManager defaultManager] createDirectoryAtPath:pathContainPdf withIntermediateDirectories:YES attributes:nil error:&error];
         
-        if (isPdfLink) {
+        if (self.isPdfLink) {
             pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.pdf",namePdf,namePdf]];
         }else{
             pdfPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@.fpk",namePdf,namePdf]];
@@ -462,7 +435,7 @@
         //This Directory Contains the temp file in download . it's used when resume is supported.
         pdfPathTempForResume = [documentsDirectory stringByAppendingPathComponent:@"temp"];
         
-        if (isPdfLink) {
+        if (self.isPdfLink) {
         
             pdfPathTempForResume = [pdfPathTempForResume stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf",namePdf]];
         
@@ -483,7 +456,7 @@
         
         // Get the progressview from the mainviewcontroller and set it as the progress delegate.
         
-        progressView = [menuViewController.progressViewDict objectForKey:page];
+        progressView = [self.menuViewController.progressViewDict objectForKey:self.page];
         [request setDownloadProgressDelegate:progressView];
         
         [request setShouldPresentAuthenticationDialog:YES];
@@ -495,8 +468,6 @@
         
         [request startAsynchronous];
     }
-	
-    [plistDict release];
 }
 
 
@@ -509,12 +480,12 @@
     UIButton *aButton = nil;
     UIProgressView *progressView = nil;
     
-    pdfInDownload = YES;
+    self.pdfInDownload = YES;
     
-    progressView = [menuViewController.progressViewDict objectForKey:page];
+    progressView = [self.menuViewController.progressViewDict objectForKey:self.page];
     progressView.hidden = NO;
     
-    aButton =[menuViewController.openButtons objectForKey:page];
+    aButton =[self.menuViewController.openButtons objectForKey:self.page];
     [aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
     [aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
     [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"pause",@"png")] forState:UIControlStateNormal];
@@ -522,11 +493,9 @@
     
     // Cover button.
     
-    aButton = [menuViewController.imgDict objectForKey:page];
+    aButton = [self.menuViewController.imgDict objectForKey:self.page];
     [aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
     [aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
-    
-    //[aButton release];
 }
 
 
@@ -552,23 +521,23 @@
     UIButton * aButton = nil;
     UIProgressView * aProgressView = nil;
     
-	pdfInDownload = NO;
+	self.pdfInDownload = NO;
 	
-	aProgressView = [menuViewController.progressViewDict objectForKey:page];
-	aProgressView.hidden = !downloadPdfStopped;
+	aProgressView = [self.menuViewController.progressViewDict objectForKey:self.page];
+	aProgressView.hidden = !self.downloadPdfStopped;
     
-    aButton = [menuViewController.openButtons objectForKey:page];
+    aButton = [self.menuViewController.openButtons objectForKey:self.page];
     [aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
     [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
     [aButton removeTarget:self action:@selector(actionStopPDF:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
-    aButton = [menuViewController.imgDict objectForKey:page];
+    aButton = [self.menuViewController.imgDict objectForKey:self.page];
 	[aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
     
-	if (downloadPdfStopped) {
-		downloadPdfStopped=NO;
+	if (self.downloadPdfStopped) {
+		self.downloadPdfStopped=NO;
 	}
     
     
@@ -581,14 +550,14 @@
     
 	UIButton * aButton = nil; /* Will reuse this to reference different buttons */
 	
-	pdfInDownload = NO;
+	self.pdfInDownload = NO;
 	
 	// Update the UI elements from download status to pen status. We get the buttons from the main view controller
 	// and update them to the new status.
 	
 	// Download/open button.
 	
-	aButton =[menuViewController.openButtons objectForKey:page];
+	aButton = [self.menuViewController.openButtons objectForKey:self.page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
 	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"view",@"png")] forState:UIControlStateNormal];
@@ -596,7 +565,7 @@
 	
 	// Cover button.
 	
-	aButton = [menuViewController.imgDict objectForKey:page];
+	aButton = [self.menuViewController.imgDict objectForKey:self.page];
 	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -606,7 +575,7 @@
     //write pdf
     
     
-    NSArray *tempArray = [NSArray arrayWithObjects:page, [NSNumber numberWithInt:[page intValue]], nil];  
+    NSArray *tempArray = [NSArray arrayWithObjects:self.page, [NSNumber numberWithInt:[self.page intValue]], nil];
     NKAssetDownload *asset = [connection newsstandAssetDownload];
     NSString *filename = [[asset userInfo] objectForKey:@"filename"];
     NSString *suffix = nil;
@@ -657,8 +626,8 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
-    NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",page,page]];
+    NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/", self.page]];
+    NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",self.page,self.page]];
     
     [[NSFileManager defaultManager] createDirectoryAtPath:unzippedDestination withIntermediateDirectories:YES attributes:nil error:nil];        
     
@@ -666,7 +635,6 @@
     [zipFile UnzipOpenFile:saveLocation];
     zipStatus = [zipFile UnzipFileTo:unzippedDestination overWrite:YES];    
     [zipFile UnzipCloseFile];
-    [zipFile release];
     
     dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
     
@@ -677,7 +645,7 @@
         if ([tString hasSuffix:@".pdf"]) {
             
             oldPath =[unzippedDestination stringByAppendingString:tString];
-            newPath = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.pdf",page,page]];
+            newPath = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.pdf",self.page,self.page]];
             
             [[NSFileManager defaultManager] moveItemAtPath:oldPath toPath:newPath error:nil];				
             pdfStatus = YES;
@@ -702,18 +670,16 @@
 	NSString * documentsDirectory = nil;
 	NSString * imgSavedPath = nil;
 	NSString * pdfPath = nil;
-	
-	NSFileManager * fileManager = nil;
-	
+    
 	ASIHTTPRequest * aRequest = nil;
 	
 	// Filename path.
 	
-	fileManager = [[NSFileManager alloc]init];
+    NSFileManager * fileManager = [NSFileManager defaultManager];
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	documentsDirectory = [paths objectAtIndex:0];
-	imgSavedPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",page]];
+	imgSavedPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",self.page]];
 	
 	if(![fileManager fileExistsAtPath: imgSavedPath]) {
 	
@@ -733,8 +699,6 @@
 		[aRequest startSynchronous];
 		
 	}
-	
-	[fileManager release];
 }
 
 -(void)requestStarted:(ASIHTTPRequest *)request{
@@ -742,12 +706,12 @@
     UIButton *aButton = nil;
     UIProgressView *progressView = nil;
     
-	pdfInDownload = YES;
+	self.pdfInDownload = YES;
 	
-	progressView = [menuViewController.progressViewDict objectForKey:page];
+	progressView = [self.menuViewController.progressViewDict objectForKey:self.page];
 	progressView.hidden = NO;
     
-    aButton =[menuViewController.openButtons objectForKey:page];
+    aButton =[self.menuViewController.openButtons objectForKey:self.page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
 	[aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"pause",@"png")] forState:UIControlStateNormal];
@@ -755,11 +719,9 @@
 	
 	// Cover button.
 	
-	aButton = [menuViewController.imgDict objectForKey:page];
+	aButton = [self.menuViewController.imgDict objectForKey:self.page];
 	[aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
-    
-    //[aButton release];
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
@@ -767,14 +729,14 @@
     UIProgressView * aProgressView = nil;
 	UIButton * aButton = nil; /* Will reuse this to reference different buttons */
 	
-	pdfInDownload = NO;
+	self.pdfInDownload = NO;
 	
 	// Update the UI elements from download status to pen status. We get the buttons from the main view controller
 	// and update them to the new status.
 	
 	// Download/open button.
 	
-	aButton =[menuViewController.openButtons objectForKey:page];
+	aButton =[self.menuViewController.openButtons objectForKey:self.page];
 	[aButton setTitle:TITLE_OPEN forState:UIControlStateNormal];
 	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"view",@"png")] forState:UIControlStateNormal];
@@ -782,7 +744,7 @@
 	
 	// Cover button.
 	
-	aButton = [menuViewController.imgDict objectForKey:page];
+	aButton = [self.menuViewController.imgDict objectForKey:self.page];
 	[aButton removeTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionOpenPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -790,10 +752,10 @@
 	
 	// Hide the progress view.
 	
-	aProgressView = [menuViewController.progressViewDict objectForKey:page];
+	aProgressView = [self.menuViewController.progressViewDict objectForKey:self.page];
 	aProgressView.hidden = YES;
     
-    if (!isPdfLink) {
+    if (!self.isPdfLink) {
         
         ZipArchive * zipFile = nil;
         NSArray * dirContents = nil;
@@ -804,15 +766,14 @@
         //set the directory for the Unzip and use ZipArchive library to unzip the file and the multimedia file
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 		NSString *documentsDirectory = [paths objectAtIndex:0];
-		NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",page]];
-		NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",page,page]];
+		NSString *unzippedDestination = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/",self.page]];
+		NSString *saveLocation = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@/%@.fpk",self.page,self.page]];
 		
 		zipFile = [[ZipArchive alloc] init];
 		[zipFile UnzipOpenFile:saveLocation];
 		[zipFile UnzipFileTo:unzippedDestination overWrite:YES];
 		[zipFile UnzipCloseFile];
-		[zipFile release];
-		
+        
 		// rename the file pdf ( only one must be exists in the fpk folder ) correctly 
         // With this rename of the pdf we are sure that the pdf name is correct.  
 		
@@ -823,7 +784,7 @@
 			if ([tString hasSuffix:@".pdf"]) {
 				
                 oldPath =[unzippedDestination stringByAppendingString:tString];
-				newPath = [unzippedDestination stringByAppendingString:[NSString stringWithFormat:@"%@.pdf",page]];
+				newPath = [unzippedDestination stringByAppendingString:[NSString stringWithFormat:@"%@.pdf",self.page]];
                 
 				[[NSFileManager defaultManager] moveItemAtPath:oldPath toPath:newPath error:nil];				
 			}
@@ -836,23 +797,23 @@
     UIButton * aButton = nil;
     UIProgressView * aProgressView = nil;
     
-	pdfInDownload = NO;
+	self.pdfInDownload = NO;
 	
-	aProgressView = [menuViewController.progressViewDict objectForKey:page];
-	aProgressView.hidden = !downloadPdfStopped;
+	aProgressView = [self.menuViewController.progressViewDict objectForKey:self.page];
+	aProgressView.hidden = !self.downloadPdfStopped;
     
-    aButton = [menuViewController.openButtons objectForKey:page];
+    aButton = [self.menuViewController.openButtons objectForKey:self.page];
     [aButton setTitle:TITLE_RESUME forState:UIControlStateNormal];
     [aButton setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"resume",@"png")] forState:UIControlStateNormal];
     [aButton removeTarget:self action:@selector(actionStopPDF:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	
-    aButton = [menuViewController.imgDict objectForKey:page];
+    aButton = [self.menuViewController.imgDict objectForKey:self.page];
 	[aButton removeTarget:self action:@selector(actionDownloadPdf:) forControlEvents:UIControlEventTouchUpInside];
 	[aButton addTarget:self action:@selector(actionStopPdf:) forControlEvents:UIControlEventTouchUpInside];
     
-	if (downloadPdfStopped) {
-		downloadPdfStopped=NO;
+	if (self.downloadPdfStopped) {
+		self.downloadPdfStopped=NO;
 	}
 }
 
@@ -881,30 +842,5 @@
 - (void)setSelected:(BOOL)selected{
  
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
-}
-
-
-- (void)dealloc {
-	
-	[corner release];
-	[httpRequest release];
-	[thumbName release];
-	[page release];
-	[downloadUrl release];
-	
-	[removeButton release];
-	[openButton release];
-	[thumbImage release];
-	[openButtonFromImage release];
-	[progressDownload release];
-	
-	[super dealloc];
-}
-
 
 @end

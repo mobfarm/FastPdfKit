@@ -10,7 +10,7 @@
 
 @class BookmarkViewController;
 
-@protocol BookmarkViewControllerDelegate
+@protocol BookmarkViewControllerDelegate <NSObject>
 
 -(NSUInteger)page;
 

@@ -59,8 +59,6 @@
 		<string>Icon72.png</string>
 		<string>Icon144.png</string>
 	</array>
-	<key>NSMainNibFile</key>
-	<string>MainWindow_Kiosk</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>newsstand-content</string>
@@ -71,6 +69,8 @@
 	<string>Default-Pad.png</string>
 	<key>UILaunchImageFile~iphone</key>
 	<string>Deafult.png</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Kiosk</string>
 	<key>UINewsstandApp</key>
 	<false/>
 	<key>UISupportedInterfaceOrientations</key>

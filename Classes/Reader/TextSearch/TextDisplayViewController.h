@@ -10,24 +10,14 @@
 #import "TextDisplayViewControllerDelegate.h"
 
 @class DocumentViewController;
-@interface TextDisplayViewController : UIViewController {
-
-	IBOutlet UIActivityIndicatorView *activityIndicatorView;
-	IBOutlet UITextView *textView;
-	
-	NSObject<TextDisplayViewControllerDelegate> *delegate;
-	
-	NSString *text;
-	
-	MFDocumentManager *documentManager;
-}
+@interface TextDisplayViewController : UIViewController
 
 -(IBAction)actionBack:(id)sender;
 @property (nonatomic,retain) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic,retain) UITextView *textView;
 @property (nonatomic,retain) MFDocumentManager *documentManager;
 @property (nonatomic,copy) NSString *text;
-@property (nonatomic,assign) NSObject<TextDisplayViewControllerDelegate> *delegate;
+@property (nonatomic,weak) id<TextDisplayViewControllerDelegate>delegate;
 -(void)clearText;
 -(void)updateWithTextOfPage:(NSUInteger)page;
 

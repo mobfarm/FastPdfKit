@@ -11,26 +11,25 @@
 
 #define KEY_FROM_DOCUMENT_ID(doc_id) [NSString stringWithFormat:@"bookmarks_%@",(doc_id)]
 
-@implementation BookmarkViewController
-@synthesize editButton, bookmarksTableView;
-@synthesize delegate;
-@synthesize bookmarks;
-@synthesize toolbar;
+@interface BookmarkViewController()
+@property (nonatomic, readwrite) NSInteger status;
+@end
 
+@implementation BookmarkViewController
 
 -(void)saveBookmarks {
-	 NSString * documentId = [delegate documentId];
-    [[NSUserDefaults standardUserDefaults]setObject:bookmarks forKey:KEY_FROM_DOCUMENT_ID(documentId)];
+	 NSString * documentId = [self.delegate documentId];
+    [[NSUserDefaults standardUserDefaults]setObject:self.bookmarks forKey:KEY_FROM_DOCUMENT_ID(documentId)];
 
 }
 
 -(NSMutableArray *) loadBookmarks {
 	
-	NSString * documentId = [delegate documentId];
+	NSString * documentId = [self.delegate documentId];
 	NSMutableArray * bookmarksArray = nil;
 	NSArray * storedBookmarks = [[NSUserDefaults standardUserDefaults]objectForKey:KEY_FROM_DOCUMENT_ID(documentId)];
 	if(storedBookmarks) {
-		bookmarksArray = [[storedBookmarks mutableCopy]autorelease];
+        bookmarksArray = [storedBookmarks mutableCopy];
 	} else {
 		bookmarksArray = [NSMutableArray array];
 	}
@@ -41,36 +40,33 @@
 
 -(void)enableEditing {
 	
-	NSMutableArray * items = [[toolbar items]mutableCopy];
+	NSMutableArray * items = [[self.toolbar items]mutableCopy];
     
 	UIBarButtonItem * button = [items objectAtIndex:1];
 	[button setTitle:@"Done"];
 	
-	[toolbar setItems:items];
+	[self.toolbar setItems:items];
 	
-    [bookmarksTableView setEditing:YES];
-    status = STATUS_EDITING;
-    [items release];
+    [self.bookmarksTableView setEditing:YES];
+    self.status = STATUS_EDITING;
 }
 
 -(void)disableEditing {
     
-	NSMutableArray * items = [[toolbar items]mutableCopy];
+	NSMutableArray * items = [[self.toolbar items]mutableCopy];
     
 	UIBarButtonItem * button = [items objectAtIndex:1];
 	[button setTitle:@"Edit"];
 	
-	[toolbar setItems:items];
+	[self.toolbar setItems:items];
 	
-    [bookmarksTableView setEditing:NO];
-    status = STATUS_NORMAL;
-    
-    [items release];
+    [self.bookmarksTableView setEditing:NO];
+    self.status = STATUS_NORMAL;
 }
 
 -(IBAction)actionDone:(id)sender {
 
-	if(status == STATUS_EDITING)
+	if(self.status == STATUS_EDITING)
 		[self disableEditing];
     
 	[self saveBookmarks];
@@ -80,92 +76,49 @@
 
 -(IBAction)actionToggleMode:(id)sender {
 
-	if(status == STATUS_NORMAL) {
+	if(self.status == STATUS_NORMAL) {
 		
 		[self enableEditing];
         
-	} else if (status == STATUS_EDITING) {
+	} else if (self.status == STATUS_EDITING) {
 		[self disableEditing];
 	}
 }
 
 -(IBAction)actionAddBookmark:(id)sender {
 	
-	NSUInteger currentPage = [delegate page];
+	NSUInteger currentPage = [self.delegate page];
 	
-	[bookmarks addObject:[NSNumber numberWithUnsignedInteger:currentPage]];
+	[self.bookmarks addObject:[NSNumber numberWithUnsignedInteger:currentPage]];
 	
     [self saveBookmarks];
     
-	[bookmarksTableView reloadData];
+	[self.bookmarksTableView reloadData];
 }
 
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-		status = STATUS_NORMAL;
-    }
-    return self;
-}
-
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	
-	//
-//	Here we recover the bookmarks from the userdefaults. While this is fine for an application with a single 
-//	pdf document, you probably want to store them in coredata or some other way and bind them to a specific document
-//	by setting or passing to this viewcontroller an identifier for the document or tell a delegate to load/save
-//	them for us.
-    
-	NSMutableArray *aBookmarksArray = [self loadBookmarks];
-	
-	[self setBookmarks:aBookmarksArray];
-	
-	[bookmarksTableView reloadData];
-}
+#pragma mark - UITableViewDelegate, UITableViewDataSource
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	// 
-//	Get the right page number from the array
+    //	Get the right page number from the array.
 	NSUInteger index = indexPath.row;
-	NSNumber *pageNumber = [bookmarks objectAtIndex:index];
+	NSNumber *pageNumber = [self.bookmarks objectAtIndex:index];
 	NSUInteger page = [pageNumber unsignedIntValue];
-
-	//
-//	Dismiss this modal view controller and tell the delegate to show the requested page number. Consider
-// implementing a documentDelegate interface that handle such kind of request
 	
-	[delegate bookmarkViewController:self didRequestPage:page];
-	//[delegate setPage:page];
-	//[delegate dismissBookmark:self];
+    // Inform the delegate which page we want.
+	[self.delegate bookmarkViewController:self didRequestPage:page];
 }
 
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 
-	// 
-    //	Get the right page number from the array
+    //	Get the right page number from the array.
 	NSUInteger index = indexPath.row;
-	NSNumber *pageNumber = [bookmarks objectAtIndex:index];
+	NSNumber *pageNumber = [self.bookmarks objectAtIndex:index];
 	NSUInteger page = [pageNumber unsignedIntValue];
     
-	//
-    //	Dismiss this modal view controller and tell the delegate to show the requested page number. Consider
-    // implementing a documentDelegate interface that handle such kind of request
-	
-	[delegate bookmarkViewController:self didRequestPage:page];
-	//[delegate setPage:page];
-	//[delegate dismissBookmark:self];
+    // Inform the delegate which page we want.
+	[self.delegate bookmarkViewController:self didRequestPage:page];
 }
 
 -(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -173,7 +126,7 @@
 	if(editingStyle == UITableViewCellEditingStyleDelete) {
 		
 		NSUInteger index = indexPath.row;
-		[bookmarks removeObjectAtIndex:index];
+		[self.bookmarks removeObjectAtIndex:index];
 		
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 	}
@@ -189,7 +142,7 @@
 
 -(NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
 	
-	NSInteger count = [bookmarks count];
+	NSInteger count = [self.bookmarks count];
 	return count;
 }
 
@@ -197,12 +150,12 @@
 	
 	static NSString *cellId = @"bookmarkCell";
 	
-	NSNumber *pageNumber = [bookmarks objectAtIndex:[indexPath row]];
+	NSNumber *pageNumber = [self.bookmarks objectAtIndex:[indexPath row]];
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
 	
 	if(nil == cell) {
-		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	}
@@ -213,38 +166,44 @@
 	
 }
 
+#pragma mark - UIViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        self.status = STATUS_NORMAL;
+    }
+    return self;
+}
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        self.status = STATUS_NORMAL;
+    }
+    return self;
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    //	Here we recover the bookmarks from the userdefaults. While this is fine for an application with a single
+    //	pdf document, you probably want to store them in coredata or some other way and bind them to a specific document
+    //	by setting or passing to this viewcontroller an identifier for the document or tell a delegate to load/save
+    //	them for us.
+    
+    NSMutableArray *aBookmarksArray = [self loadBookmarks];
+    
+    [self setBookmarks:aBookmarksArray];
+    
+    [self.bookmarksTableView reloadData];
+}
+
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return YES;
 }
-
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-
-- (void)dealloc {
-
-	[toolbar release], toolbar = nil;
-	[bookmarksTableView release], bookmarksTableView = nil;
-	[editButton release];
-	
-	[bookmarks release];
-	
-    [super dealloc];
-}
-
 
 @end

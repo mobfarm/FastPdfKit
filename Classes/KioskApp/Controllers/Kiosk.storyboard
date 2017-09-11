@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZxA-Mh-6Qk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <development version="8000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Cc5-KV-8Hh">
+            <objects>
+                <navigationController id="ZxA-Mh-6Qk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rjv-gk-lB7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="y3F-ST-ESd" kind="relationship" relationship="rootViewController" id="4Yf-1q-9n6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89c-qv-ftc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-374" y="-213"/>
+        </scene>
+        <!--Menu View Controller Kiosk-->
+        <scene sceneID="QZ0-As-bGj">
+            <objects>
+                <viewController id="y3F-ST-ESd" customClass="MenuViewController_Kiosk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3xc-Cf-A85"/>
+                        <viewControllerLayoutGuide type="bottom" id="S66-Ln-RTe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A6W-aV-hJV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jU3-BW-anX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jU3-BW-anX" firstAttribute="leading" secondItem="A6W-aV-hJV" secondAttribute="leading" id="KdW-Cw-4hl"/>
+                            <constraint firstAttribute="trailing" secondItem="jU3-BW-anX" secondAttribute="trailing" id="L5H-YM-0qp"/>
+                            <constraint firstItem="S66-Ln-RTe" firstAttribute="top" secondItem="jU3-BW-anX" secondAttribute="bottom" id="pXl-Z4-O7O"/>
+                            <constraint firstItem="jU3-BW-anX" firstAttribute="top" secondItem="3xc-Cf-A85" secondAttribute="bottom" id="qC3-BQ-7LL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bg5-4D-Mms"/>
+                    <connections>
+                        <outlet property="scrollView" destination="jU3-BW-anX" id="ZIn-f6-ujd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BD2-CA-Sab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386" y="-211"/>
+        </scene>
+    </scenes>
+</document>

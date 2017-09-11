@@ -13,14 +13,9 @@
 
 @implementation OutlineViewController
 
-@synthesize outlineEntries, openOutlineEntries;
-@synthesize outlineTableView;
-@synthesize delegate;
-
-
 -(IBAction)actionBack:(id)sender {
 	
-	[[self delegate]dismissOutlineViewController:self];
+    [self.delegate dismissOutlineViewController:self];
 }
 
 #pragma mark -
@@ -31,7 +26,7 @@
 }
 
 -(NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
-	return [outlineEntries count];
+	return [self.outlineEntries count];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -43,13 +38,13 @@
 	
 	static NSString *cellId = @"outlineCellId";
 	
-	id entry = [outlineEntries objectAtIndex:indexPath.row];
+	id entry = [self.outlineEntries objectAtIndex:indexPath.row];
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
 	
 	if(nil == cell) {
 		
-		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId]autorelease];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 		
 	}
@@ -66,19 +61,18 @@
         
         MFPDFOutlineRemoteEntry * outlineEntry = (MFPDFOutlineRemoteEntry *)entry;
         
-        if((([outlineEntry file])&&(([outlineEntry pageNumber]!=0)||[outlineEntry destination]))) {
-            
-            [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-        }
+        [self.delegate outlineViewController:self didRequestDestination:outlineEntry.destination file:outlineEntry.file];
+        
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        
         
     } else if ([entry isKindOfClass:[MFPDFOutlineEntry class]]) { // Local (this document) entry
         
         MFPDFOutlineEntry * outlineEntry = (MFPDFOutlineEntry *)entry;
         
-        if([outlineEntry pageNumber] != 0) {
-            
-            [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-        }
+        [self.delegate outlineViewController:self didRequestDestination:outlineEntry.destination file:nil];
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        
     }
     
 	if([[(MFPDFOutlineEntry *)entry bookmarks]count]> 0) { // Check if the entry has children.
@@ -95,7 +89,7 @@
 
 -(void) tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 	
-    id entry = [outlineEntries objectAtIndex:indexPath.row];
+    id entry = [self.outlineEntries objectAtIndex:indexPath.row];
 	
 	// Go to page if it is not 0. The point is that some kind of link are not supported, for example the ones
 	// that refer to actions linking to other pdf files. In this case the destination page is set to be 0, and
@@ -110,35 +104,20 @@
         NSString * destination = nil;
         NSUInteger pageNumber = 0;
         
-        if((file = [outlineEntry file])) {
-            
-            if((pageNumber = [outlineEntry pageNumber])!=0) {
-                
-                if([delegate respondsToSelector:@selector(outlineViewController:didRequestPage:file:)])
-                    [delegate outlineViewController:self didRequestPage:pageNumber file:file];
-                
-            } else if ((destination = [outlineEntry destination])) {
-                
-                if([delegate respondsToSelector:@selector(outlineViewController:didRequestDestination:file:)])
-                    [delegate outlineViewController:self didRequestDestination:destination file:file];
-            }
+        
+        if([self.delegate respondsToSelector:@selector(outlineViewController:didRequestDestination:file:)]) {
+            [self.delegate outlineViewController:self didRequestDestination:outlineEntry.destination file:outlineEntry.file];
         }
         
     } else if ([entry isKindOfClass:[MFPDFOutlineEntry class]]) {
         
+        MFPDFOutlineEntry * outlineEntry = (MFPDFOutlineEntry *)entry;
         
-        NSUInteger pageNumber = [(MFPDFOutlineEntry *)entry pageNumber];
-        if(pageNumber != 0) {
-            
-            if([delegate respondsToSelector:@selector(outlineViewController:didRequestPage:)])
-                [delegate outlineViewController:self didRequestPage:pageNumber];
+        if([self.delegate respondsToSelector:@selector(outlineViewController:didRequestDestination:file:)]) {
+            [self.delegate outlineViewController:self didRequestDestination:outlineEntry.destination file:nil];
         }
         
-    } else {
-        
-        // This should never happen!
     }
-
 }
 
 -(void)recursivelyAddVisibleChildrenOfEntry:(MFPDFOutlineEntry *)entry toArray:(NSMutableArray *)array {
@@ -169,7 +148,7 @@
 		// Thus, we take the position of the entry in the array and insert its children at the right
 		// positions in the array, then invoke this very same method on every children just added.
 		
-		if([openOutlineEntries containsObject:entry]) {
+		if([self.openOutlineEntries containsObject:entry]) {
 			
 			NSUInteger position = [array indexOfObject:entry];
 			NSMutableArray *children = [[entry bookmarks]mutableCopy];
@@ -181,8 +160,6 @@
 			for(MFPDFOutlineEntry *e in children) {
 				[self recursivelyAddVisibleChildrenOfEntry:e toArray:array];
 			}
-			
-			[children release];
 			
 		} else {
 			
@@ -202,21 +179,17 @@
 	// is and how important is to your application: for a book is probably vital, for a catalog not
 	// so much...
 	
-	MFPDFOutlineEntry * entry = [outlineEntries objectAtIndex:indexPath.row];
+	MFPDFOutlineEntry * entry = [self.outlineEntries objectAtIndex:indexPath.row];
     
 	// If the entry is a leaf (it doesn't have children), go to the page.
-	if(![[entry bookmarks]count]>0) {
+	if(entry.bookmarks.count == 0) {
         
         // Go to page if it is not 0. The point is that some kind of link are not supported, for example the ones
         // that refer to actions linking to other pdf files. In this case the destination page is set to be 0, and
         // it never exist. We already have a control in the cellForRowAtIndexPath: method and the setPage: method
         // does nothing if the page is 0, but better be paranoid than sorry.
         
-        NSUInteger pageNumber = [entry pageNumber];
-        if(pageNumber != 0) {
-            
-            [delegate outlineViewController:self didRequestPage:pageNumber];
-        }
+        [self.delegate outlineViewController:self didRequestDestination:entry.destination file:nil];
 	}
 	
 	// We need to add/remove a certain number of rows depending on how
@@ -232,7 +205,7 @@
 	// Then we need an NSIndexSet to update the entry array and an array of NSIndexPath to update the table view.
 	// The number of object to add/remove and the first position of them are necessary to be know. 
 	NSUInteger count = [children count];						// Number of row to be removed.
-	NSUInteger firstPosition = [outlineEntries indexOfObject:entry]+1;	// The position right under the selected cell.
+	NSUInteger firstPosition = [self.outlineEntries indexOfObject:entry]+1;	// The position right under the selected cell.
 	
 	// This is the indexSet of the item to be added/removed from the outline array.
 	NSIndexSet * indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(firstPosition, count)];
@@ -248,7 +221,7 @@
 	
 	// Now we will proceed differently if we are collapsing the node or not.
 	
-	if([openOutlineEntries containsObject:entry]) {
+	if([self.openOutlineEntries containsObject:entry]) {
         
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
@@ -257,18 +230,18 @@
 		// Remove the entry selected and all of its visible children from the outlineEntries array
 		// and update the tableview by removing the cell at the corresponding indexPaths.
 		
-		[outlineEntries removeObjectsAtIndexes:indexSet];
+		[self.outlineEntries removeObjectsAtIndexes:indexSet];
 		
 		// Now we can update the table view.
-		[outlineTableView beginUpdates];
+		[self.outlineTableView beginUpdates];
 		
-		[outlineTableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
+		[self.outlineTableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
 		
-		[outlineTableView endUpdates];
+		[self.outlineTableView endUpdates];
 		
 		// Critical: remove the entry from the open list. If you want to collapse the entire subtree, you can
 		// remove the children you find to be open in the recursivelyAddVisibleChildrenOfEntry: selector.
-		[openOutlineEntries removeObject:entry];
+		[self.openOutlineEntries removeObject:entry];
 		
 	} else {
 		
@@ -279,23 +252,22 @@
         
         [[cell imageView]setImage:aImage];
         
-        [aImage release];
         
 		// Add the visible children of the selected entry to the outlineEntries array and update
 		// the tableview by addind the cell at the corresponding indexPaths
 		
 		// First the entries in the array.
-		[outlineEntries insertObjects:children atIndexes:indexSet];
+		[self.outlineEntries insertObjects:children atIndexes:indexSet];
 		
 		// Then the table.
-		[outlineTableView beginUpdates];
+		[self.outlineTableView beginUpdates];
 		
-		[outlineTableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
+		[self.outlineTableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
 		
-		[outlineTableView endUpdates];
+		[self.outlineTableView endUpdates];
 		
 		// Critical: add the entry from the open list.
-		[openOutlineEntries addObject:entry];
+		[self.openOutlineEntries addObject:entry];
 	}
 	
 }
@@ -306,11 +278,18 @@
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        
-		// Empty arrays, just in case...
-		outlineEntries = [[NSMutableArray alloc]init];
-		openOutlineEntries = [[NSMutableArray alloc]init];
+		self.outlineEntries = [[NSMutableArray alloc]init];
+		self.openOutlineEntries = [[NSMutableArray alloc]init];
 		
+    }
+    return self;
+}
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        self.outlineEntries = [[NSMutableArray alloc]init];
+        self.openOutlineEntries = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -342,25 +321,5 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	[self setOutlineTableView:nil];
-	
-}
-
-
-- (void)dealloc {
-	
-	[outlineEntries release];
-	[openOutlineEntries release];
-	
-	[outlineTableView release];
-	
-    [super dealloc];
-}
-
 
 @end

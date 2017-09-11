@@ -10,9 +10,6 @@
 #import "MFDocumentManager.h"
 
 @implementation TextSearchOperation
-@synthesize page, searchTerm, delegate, document;
-@synthesize profile;
-@synthesize exactMatch, ignoreCase;
 
 -(void)main 
 {	
@@ -20,29 +17,21 @@
 	
 	@autoreleasepool {
         
-        NSArray *searchResult = [document searchResultOnPage:page
-                                               forSearchTerms:searchTerm
-                                                   ignoreCase:ignoreCase
-                                                   exactMatch:exactMatch];
+        NSArray *searchResult = [self.document searchResultOnPage:self.page
+                                               forSearchTerms:self.searchTerm
+                                                   ignoreCase:self.ignoreCase
+                                                   exactMatch:self.exactMatch];
         
-        if(![self isCancelled])
+        if([self isCancelled])
         {
+            return;
+        }
+        
             dispatch_async(dispatch_get_main_queue(), ^{
                
-                [delegate handleSearchResult:searchResult];
+                [_delegate handleSearchResult:searchResult];
             });
-        }
     }
-}
-
--(void)dealloc 
-{	
-	self.delegate = nil;
-	
-    [searchTerm release];
-    [document release];
-    
-	[super dealloc];
 }
 
 @end

@@ -14,7 +14,6 @@
 @property (nonatomic, strong) IBOutlet UILabel * snippetLabel;
 
 @property (nonatomic, strong) UIFont * boldSnippetFont;
-
 @property (nonatomic, strong) UIFont * regularSnippetFont;
 
 /**

@@ -297,7 +297,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	// Show the text display view controller to the user.
 	
 	if(!_textDisplayViewController) {
-		_textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+		_textDisplayViewController = [[TextDisplayViewController alloc]initWithNibName:@"TextDisplayView" bundle:[NSBundle bundleForClass:[self class]]];
 		_textDisplayViewController.documentManager = self.document;
 	}
 	
@@ -354,7 +354,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 -(BookmarkViewController *)bookmarksViewController {
     if(!_bookmarksViewController) {
-        _bookmarksViewController = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        _bookmarksViewController = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:[NSBundle bundleForClass:[self class]]];
     }
     return _bookmarksViewController;
 }
@@ -405,24 +405,14 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     [self dismissAlternateViewController];
 }
 
--(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page{
-	
-    self.page = page;
-	
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestDestination:(id<FPKDestination>)destination file:(NSString *)file {
+    
+    if(file) {
+        return;
+    }
+    
+    [self setDestination:destination];
     [self dismissAlternateViewController];
-}
-
--(void)outlineViewController:(OutlineViewController *)ovc didRequestDestination:(NSString *)destinationName file:(NSString *)file {
-    
-    // Here's the chance to unload this view controller and load a new one with the starting page set to the page returned
-    // by MFDocumentManager's -pageForNamedDestination: method.
-}
-
--(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page file:(NSString *)file {
-    
-    // Here's the chance to unload this view controller and load a new one with the starting page set to page.
-    
-    NSLog(@"%@ %lu", file, (unsigned long)page);
 }
 
 -(OutlineViewController *)outlineViewController {
@@ -432,7 +422,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     if(!_outlineViewController) {
         
         // We use different xib on iPhone and iPad.
-        _outlineViewController = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        _outlineViewController = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle bundleForClass:[self class]]];
     }
     return _outlineViewController;
 }
@@ -660,9 +650,9 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		// We use different xib on iPhone and iPad.
         
 		if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			_searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+			_searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_pad" bundle:[NSBundle bundleForClass:[self class]]];
 		} else {
-			_searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+			_searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchView2_phone" bundle:[NSBundle bundleForClass:[self class]]];
 		}
 	}
 	return _searchViewController;
@@ -1011,27 +1001,23 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         // Chop the page parameters into an array and set is as current page parameters
         
-        NSArray *arrayParameter = nil;
-        
-        arrayParameter = [uri componentsSeparatedByString:@"="];
-        
+        NSArray *arrayParameter = arrayParameter = [uri componentsSeparatedByString:@"="];
         [self setPage:[[arrayParameter objectAtIndex:1]intValue]];
-        
     }
     
     return NO;
 }
 
-- (void)playAudio:(NSString *)audioURL local:(BOOL)_isLocal{
+- (void)playAudio:(NSString *)audioURL local:(BOOL)isLocal{
 	
     self.multimediaVisible = YES;
     
-    AudioViewController *audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") audioFilePath:audioURL local:_isLocal];
-	
+    AudioViewController *audioVC = [[AudioViewController alloc]initWithNibName:@"AudioViewController" bundle:[NSBundle bundleForClass:[self class]]];
+    audioVC.url = [NSURL fileURLWithPath:audioURL];
+    audioVC.local = isLocal;
 	audioVC.documentViewController = self;
-	
-	[audioVC.view setFrame:CGRectMake(0, 0, 272, 40)];
-	
+    audioVC.view.frame = CGRectMake(0, 0, 272, 40);
+    
 	[self.view addSubview:audioVC.view];
 }
 
@@ -1088,8 +1074,9 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	
     self.multimediaVisible = YES;
     
-    WebBrowser * webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle") link:url local:isLocal];
-	
+    WebBrowser * webBrowser = [[WebBrowser alloc]initWithNibName:@"WebBrowser" bundle:[NSBundle bundleForClass:[self class]]];
+    webBrowser.uri = url;
+    webBrowser.local = isLocal;
 	webBrowser.docViewController = self;
     
     [self presentViewController:webBrowser animated:YES completion:nil];
@@ -1234,7 +1221,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             } else {
 			
                 // Hide
-                
                 [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 			
                 [self hideToolbar];
@@ -1257,8 +1243,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     }
 }
 
-#pragma mark -
-#pragma mark UIViewController lifcecycle
+#pragma mark - UIViewController
 
 /**
  * This method will load the image for the toolbar icons. You can override this
@@ -1266,62 +1251,21 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
  */
 -(void)loadResources {
     
-    if(!self.imgModeSingle) {
-        self.imgModeSingle = [FPK_BUNDLED_IMAGE(@"changeModeSingle") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgModeDouble) {
-        self.imgModeDouble = [FPK_BUNDLED_IMAGE(@"changeModeDouble") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgZoomLock) {
-        self.imgZoomLock = [FPK_BUNDLED_IMAGE(@"zoomLock") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgZoomUnlock) {
-        self.imgZoomUnlock = [FPK_BUNDLED_IMAGE(@"zoomUnlock") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgl2r) {
-        self.imgl2r = [FPK_BUNDLED_IMAGE(@"direction_l2r") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgr2l) {
-        self.imgr2l = [FPK_BUNDLED_IMAGE(@"direction_r2l") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgLeadRight) {
-        self.imgLeadRight = [FPK_BUNDLED_IMAGE(@"pagelead") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgLeadLeft) {
-        self.imgLeadLeft = [FPK_BUNDLED_IMAGE(@"pagelead") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgModeOverflow) {
-		self.imgModeOverflow = [FPK_BUNDLED_IMAGE(@"changeModeOverflow") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgDismiss) {
-        
-        self.imgDismiss = [FPK_BUNDLED_IMAGE(@"X") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgText) {
-        self.imgText = [FPK_BUNDLED_IMAGE(@"text") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgOutline) {
-        self.imgOutline = [FPK_BUNDLED_IMAGE(@"indice") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgBookmark) {
-        self.imgBookmark = [FPK_BUNDLED_IMAGE(@"bookmark_add") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
-    
-    if(!self.imgSearch) {
-        self.imgSearch = [FPK_BUNDLED_IMAGE(@"search") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    }
+    NSBundle * bundle = [NSBundle bundleForClass:[self class]];
+    self.imgModeSingle = [UIImage imageNamed:@"Reader/changeModeSingle" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgModeDouble = [UIImage imageNamed:@"Reader/changeModeDouble" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgZoomLock = [UIImage imageNamed:@"Reader/zoomLock" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgZoomUnlock = [UIImage imageNamed:@"Reader/zoomUnlock" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgl2r = [UIImage imageNamed:@"Reader/direction_l2r" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgr2l = [UIImage imageNamed:@"Reader/direction_r2l" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgLeadRight = [UIImage imageNamed:@"Reader/pagelead" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgLeadLeft = [UIImage imageNamed:@"Reader/pagelead" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgModeOverflow = [UIImage imageNamed:@"Reader/changeModeoverflow" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgDismiss = [UIImage imageNamed:@"Reader/X" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgText = [UIImage imageNamed:@"Reader/text" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgOutline = [UIImage imageNamed:@"Reader/indice" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgBookmark = [UIImage imageNamed:@"Reader/bookmark_add" inBundle:bundle compatibleWithTraitCollection:nil];
+    self.imgSearch = [UIImage imageNamed:@"Reader/search" inBundle:bundle compatibleWithTraitCollection:nil];
 }
 
 /**

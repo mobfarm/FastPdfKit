@@ -8,16 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FPKDestination;
 @class OutlineViewController;
 
-@protocol OutlineViewControllerDelegate
+@protocol OutlineViewControllerDelegate <NSObject>
 
 -(void)dismissOutlineViewController:(OutlineViewController *)ovc;
 
 @optional
-
--(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page;
--(void)outlineViewController:(OutlineViewController *)ovc didRequestPage:(NSUInteger)page file:(NSString *)file;
--(void)outlineViewController:(OutlineViewController *)ovc didRequestDestination:(NSString *)destinationName file:(NSString *)file;
-
+-(void)outlineViewController:(OutlineViewController *)ovc didRequestDestination:(id<FPKDestination>)destination file:(NSString *)file;
 @end

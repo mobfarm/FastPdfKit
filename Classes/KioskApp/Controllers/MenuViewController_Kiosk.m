@@ -67,6 +67,24 @@
 	[documentManager release];
 }
 
+-(instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        buttonRemoveDict = [[NSMutableDictionary alloc] init];
+        openButtons = [[NSMutableDictionary alloc] init];
+        progressViewDict = [[NSMutableDictionary alloc] init];
+        imgDict = [[NSMutableDictionary alloc] init];
+        
+        bookItemViews = [[NSMutableArray alloc]init];
+        
+        xmlDirty = YES;
+        
+        self.xmlURL = [NSURL URLWithString:FPK_KIOSK_XML_URL];
+
+    }
+    return self;
+}
+
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 
 	if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -274,20 +292,6 @@
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
-
-- (void)viewDidUnload {
-    
-    [buttonRemoveDict removeAllObjects];
-	[openButtons removeAllObjects];
-	[progressViewDict removeAllObjects];
-	[imgDict removeAllObjects];
-	[bookItemViews removeAllObjects];
-    
-    self.scrollView = nil; 
-    
-    [super viewDidUnload];
-}
-
 
 - (void)dealloc {
 	

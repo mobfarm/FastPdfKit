@@ -9,20 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "OutlineViewControllerDelegate.h"
 
-@interface OutlineViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
-
-	NSMutableArray *outlineEntries;
-	NSMutableArray *openOutlineEntries;
-	
-	NSObject<OutlineViewControllerDelegate> *delegate;
-	
-	IBOutlet UITableView *outlineTableView;
-}
+@interface OutlineViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 -(IBAction)actionBack:(id)sender;
 
-@property (nonatomic, retain) NSArray *outlineEntries;
-@property (nonatomic, retain) NSArray *openOutlineEntries;
+@property (nonatomic, retain) NSMutableArray *outlineEntries;
+@property (nonatomic, retain) NSMutableArray *openOutlineEntries;
 @property (nonatomic, retain) IBOutlet UITableView *outlineTableView;
-@property (assign) NSObject<OutlineViewControllerDelegate> *delegate;
+@property (weak, nonatomic) id<OutlineViewControllerDelegate> delegate;
 @end

@@ -8,42 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol FPKDestination;
 
-@interface MFPDFOutlineEntry : NSObject {
-	
-	// Presentation
-	NSString * title;
-	NSInteger indentation;
-	
-	// Link
-	NSUInteger pageNumber;
-	
-	// Structure
-	NSArray * bookmarks;
-}
+@interface MFPDFOutlineEntry : NSObject
 
 /**
- Indentation level of the outline entry. It is also the node level inside the outline tree.
+ * Indentation level of the outline entry. It is also the node level inside the outline tree.
  */
-@property NSInteger indentation;
+@property (readwrite, nonatomic) NSInteger indentation;
 
 /**
- Page number of the entry.
+ * Page number of the entry.
  */
-@property NSUInteger pageNumber;
+@property (strong, nonatomic) id<FPKDestination> destination;
 
 /**
- Child entries.
+ * Child entries.
  */
-@property (strong) NSArray * bookmarks;
+@property (strong, nonatomic) NSArray * bookmarks;
 
 /**
- Title for the outline entry.
+ * Title for the outline entry.
  */
-@property (copy) NSString * title;
+@property (copy, nonatomic) NSString * title;
 
 /**
- Default constructor.
+ * Default constructor.
  */
 -(id)initWithTitle:(NSString *)aTitle;
 

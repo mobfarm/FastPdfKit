@@ -11,21 +11,16 @@
 
 @class MFDocumentManager;
 
-@protocol TextSearchOperationDelegate
-
+@protocol TextSearchOperationDelegate <NSObject>
 -(void)handleSearchResult:(NSArray *)results;
-
 @end
 
 @interface TextSearchOperation : NSOperation
-
-@property (retain) MFDocumentManager *document;
-@property (readwrite) NSUInteger page;
-@property (copy) NSString *searchTerm;
-@property (assign) id<TextSearchOperationDelegate> delegate;
+@property (nonatomic, strong) MFDocumentManager *document;
+@property (nonatomic, readwrite) NSUInteger page;
+@property (nonatomic, copy) NSString *searchTerm;
+@property (nonatomic, weak) id<TextSearchOperationDelegate> delegate;
 @property (nonatomic,readwrite) MFProfile profile;
-
 @property (nonatomic, readwrite) BOOL ignoreCase;
 @property (nonatomic, readwrite) BOOL exactMatch;
-
 @end

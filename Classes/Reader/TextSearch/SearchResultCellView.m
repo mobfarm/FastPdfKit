@@ -8,7 +8,6 @@
 
 #import "SearchResultCellView.h"
 #import "SearchResultView.h"
-#import "SearchResultView.h"
 
 @implementation SearchResultCellView
 
@@ -30,7 +29,7 @@
         
         // Initialization code.
 		CGRect srvFrame = CGRectMake(0, 0, self.contentView.bounds.size.width, self.contentView.bounds.size.height);
-        self.searchResultView = [[[SearchResultView alloc]initWithFrame:srvFrame]autorelease];
+        self.searchResultView = [[SearchResultView alloc]initWithFrame:srvFrame];
         
 		_searchResultView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
 		
@@ -48,14 +47,5 @@
     
     // Configure the view for the selected state.
 }
-
-
-- (void)dealloc {
-	
-    [_searchResultView release], _searchResultView = nil;
-    
-    [super dealloc];
-}
-
 
 @end

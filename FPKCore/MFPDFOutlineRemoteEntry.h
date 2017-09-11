@@ -9,15 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "MFPDFOutlineEntry.h"
 
-@interface MFPDFOutlineRemoteEntry : MFPDFOutlineEntry {
-    
-    NSString * file;
-    
-    NSString * destination;
-}
+@interface MFPDFOutlineRemoteEntry : MFPDFOutlineEntry
 
 @property (nonatomic,copy) NSString * file;
-@property (nonatomic,copy) NSString * destination;
 
 -(id)initWithTitle:(NSString *)title;
 

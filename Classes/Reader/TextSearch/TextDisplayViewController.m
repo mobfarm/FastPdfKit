@@ -11,11 +11,6 @@
 
 @implementation TextDisplayViewController
 
-@synthesize textView, activityIndicatorView;
-@synthesize text;
-@synthesize delegate;
-@synthesize documentManager;
-
 #pragma mark -
 #pragma mark Text extraction in background
 
@@ -26,39 +21,30 @@
 	self.text = someText;
 	
 	// Stop the activity indictor.
-	[activityIndicatorView stopAnimating];
+	[self.activityIndicatorView stopAnimating];
 	
 }
 
 -(void)selectorWholeTextForPage:(NSNumber *)page {
 	
-	// This is going to be run in the background, so we need to create an autorelease pool for the thread.
-	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
-	
 	// Just call the -wholeTextForPage: method of MFDocumentManager. Pass NULL as profile to use the default profile.
 	// If you want to use a different profile pass a reference to a MFProfile.
     
     // Use -(void)test_wholeTextForPage:(NSUInteger)page if you want to test the new text extraction engine instead.
-    NSString * someText = [[documentManager wholeTextForPage:[page unsignedIntValue]]copy];
+    NSString * someText = [[self.documentManager wholeTextForPage:[page unsignedIntValue]]copy];
 	
 	// NSString *someText = [[documentManager wholeTextForPage:[page intValue] withProfile:NULL]copy];
 	
 	
 	// Call back performed on the main thread.
 	[self performSelectorOnMainThread:@selector(updateTextToTextDisplayView:) withObject:someText  waitUntilDone:YES];
-	
-	// Cleanup.
-	[someText release];
-	[pool release];
-	
 }
 
 -(void)clearText {
 	
 	// Clear both the view and the saved text.
 	self.text = nil;
-	textView.text = nil;	
+	self.textView.text = nil;
 }
 
 -(void)updateWithTextOfPage:(NSUInteger)page {
@@ -67,7 +53,7 @@
 	
 	[self clearText];
 	
-	[activityIndicatorView startAnimating];
+	[self.activityIndicatorView startAnimating];
 	
     [self performSelectorInBackground:@selector(selectorWholeTextForPage:) withObject:[NSNumber numberWithUnsignedInteger:page]];
 }
@@ -84,7 +70,7 @@
     
 	// Set up the view accordingly to the saved text (if any).
 	[super viewDidLoad];
-	[textView setText:text];
+	[self.textView setText:self.text];
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -92,36 +78,5 @@
     // Return YES for supported orientations
     return YES;
 }
-
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	self.activityIndicatorView = nil;
-	
-	self.text = self.textView.text;
-	self.textView = nil;
-}
-
-
-- (void)dealloc {
-	
-	delegate = nil;
-	[textView release],textView = nil;
-	[activityIndicatorView release],activityIndicatorView = nil;
-	[text release],text = nil;
-	[documentManager release];
-	
-    [super dealloc];
-}
-
 
 @end

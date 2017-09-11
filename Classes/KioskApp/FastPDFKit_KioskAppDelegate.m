@@ -10,15 +10,10 @@
 #import "MenuViewController_Kiosk.h"
 #import "ZipArchive.h"
 
-
-
 @implementation FastPDFKit_KioskAppDelegate
-@synthesize window,navigationController;
-@synthesize menuVC_Kiosk;
 
 #ifdef __IPHONE_6_0
--(NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-    
+-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     return UIInterfaceOrientationMaskAll;
 }
 
@@ -82,21 +77,8 @@
         }		
 	}
     
-    menuVC_Kiosk = aMenuViewController;
+    self.menuVC_Kiosk = aMenuViewController;
     
-	UINavigationController *aNavController = [[UINavigationController alloc]initWithRootViewController:menuVC_Kiosk];
-	[aNavController setNavigationBarHidden:YES];
-	[self setNavigationController:aNavController];
-	
-	[window setRootViewController:self.navigationController];
-    [window makeKeyAndVisible];
-	
-	// Cleanup
-	
-	[aNavController release];
-	[aMenuViewController release];
-    [plistDict release];
-	
 	return YES;
 }
 
@@ -177,7 +159,6 @@
             NKAssetDownload *asset = [issue addAssetWithRequest:request];
             [asset setUserInfo:[NSDictionary dictionaryWithObject:namePdf forKey:@"filename"]];
             [asset downloadWithDelegate:self];
-            [request release];
         }        
     }
 
@@ -230,9 +211,9 @@
     }
     
     //reload interface
-    if (menuVC_Kiosk) {
-        if (menuVC_Kiosk.interfaceLoaded) {
-            [menuVC_Kiosk buildInterface];
+    if (self.menuVC_Kiosk) {
+        if (self.menuVC_Kiosk.interfaceLoaded) {
+            [self.menuVC_Kiosk buildInterface];
         }
     }
     
@@ -265,7 +246,6 @@
     [zipFile UnzipOpenFile:saveLocation];
     zipStatus = [zipFile UnzipFileTo:unzippedDestination overWrite:YES];    
     [zipFile UnzipCloseFile];
-    [zipFile release];
     
     dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:unzippedDestination error:nil];
     
@@ -333,16 +313,6 @@
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
 }
-
-
-- (void)dealloc {
-	
-	[navigationController release];
-    [window release];
-    [menuVC_Kiosk release];
-    [super dealloc];
-}
-
 
 @end
 
