@@ -11,7 +11,6 @@
 @interface FastPDFKit_SampleAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
-@property (nonatomic, strong) UINavigationController *navigationController;
 
 @end
 

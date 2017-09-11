@@ -21,7 +21,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
     // Load default settings
-    
     NSString * bundlePath = [[NSBundle mainBundle]bundlePath];
     NSString * settingsBundlePath = [bundlePath stringByAppendingPathComponent:@"Settings.bundle"];
     NSString * settingsPath = [NSBundle pathForResource:@"Root" ofType:@"plist" inDirectory:settingsBundlePath];
@@ -31,20 +30,6 @@
     NSDictionary * settingsDictionary = [NSDictionary dictionaryWithContentsOfFile:settingsPath];
     [[NSUserDefaults standardUserDefaults] registerDefaults:settingsDictionary];
     
-    MenuViewController *menuViewController = nil;
-	
-	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			menuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_pad" bundle:[NSBundle mainBundle]];
-	} else {
-			menuViewController = [[MenuViewController alloc]initWithNibName:@"MenuView_phone" bundle:[NSBundle mainBundle]];
-	}
-	UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:menuViewController];
-    navController.navigationBarHidden = YES;
-    self.navigationController = navController;
-	
-	[self.window setRootViewController:self.navigationController];
-    [self.window makeKeyAndVisible];
-	
 	return YES;
 }
 

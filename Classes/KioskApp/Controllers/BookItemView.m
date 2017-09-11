@@ -9,7 +9,6 @@
 #import "BookItemView.h"
 #import "MenuViewController_Kiosk.h"
 #import "ZipArchive.h"
-#import "FastPDFKit_KioskAppDelegate.h"
 
 #define TITLE_DOWNLOAD @"Download"
 #define TITLE_OPEN @"Open"
