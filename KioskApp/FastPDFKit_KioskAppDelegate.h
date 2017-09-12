@@ -16,7 +16,6 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic,retain ) MenuViewController_Kiosk *menuVC_Kiosk;
 
 - (BOOL)handleFPKFile:(NSString *)namePdf;
 

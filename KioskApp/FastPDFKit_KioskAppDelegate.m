@@ -51,33 +51,6 @@
     if([launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]){
         [self application:application didReceiveRemoteNotification:[launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]];
     }
-	
-    // Uncomment to print the library version.
-    // NSLog(@"FastPdfKit Version: %@",[MFDocumentManager version]);
-    
-    MenuViewController_Kiosk *aMenuViewController = nil;
-	
-	BOOL isPad = NO;
-	
-#ifdef UI_USER_INTERFACE_IDIOM
-	isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#endif
-	
-	if(isPad) {
-			aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_ipad" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
-	} else {
-        
-        if (([[UIScreen mainScreen] bounds].size.height - 568.0) < FLT_EPSILON ) {
-        
-            aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone5" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
-        
-        } else {
-            
-            aMenuViewController = [[MenuViewController_Kiosk alloc]initWithNibName:@"Kiosk_phone" bundle:MF_BUNDLED_BUNDLE(@"FPKKioskBundle")];
-        }		
-	}
-    
-    self.menuVC_Kiosk = aMenuViewController;
     
 	return YES;
 }
@@ -168,8 +141,6 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_Error" object:nil];
     
     NSLog(@"Download Failed");
-    
-    
 }
 
 - (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *)destinationURL {
@@ -210,13 +181,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"down_Doc_OK" object:tempArray];
     }
     
-    //reload interface
-    if (self.menuVC_Kiosk) {
-        if (self.menuVC_Kiosk.interfaceLoaded) {
-            [self.menuVC_Kiosk buildInterface];
-        }
-    }
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"eu.fastpdfkit.kiosk.ConnectionDidFinish" object:nil];
 }
 
 - (void)connection:(NSURLConnection *)connection didWriteData:(long long)bytesWritten totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long)expectedTotalBytes{

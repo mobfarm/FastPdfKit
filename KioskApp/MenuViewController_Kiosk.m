@@ -139,8 +139,15 @@
     }
     
     [self buildInterface];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleConnectionDidFinish:) name:@"eu.fastpdfkit.kiosk.ConnectionDidFinish" object:nil];
 }
 
+-(void)handleConnectionDidFinish:(NSNotification *)notification {
+    if(self.interfaceLoaded) {
+        [self buildInterface];
+    }
+}
 
 -(void)buildInterface{
 
@@ -269,10 +276,6 @@
     interfaceLoaded = YES;
 }
 
-
-
-
-
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     
@@ -286,15 +289,10 @@
 	}
 }
 
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
 - (void)dealloc {
 	
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    
 	[documentsList release];
 	
 	[buttonRemoveDict release];
