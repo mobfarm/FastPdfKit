@@ -59,25 +59,18 @@
     
     if([entry isKindOfClass:[MFPDFOutlineRemoteEntry class]]) { // Remote (another document) entry
         
-        MFPDFOutlineRemoteEntry * outlineEntry = (MFPDFOutlineRemoteEntry *)entry;
-        
-        [self.delegate outlineViewController:self didRequestDestination:outlineEntry.destination file:outlineEntry.file];
-        
+        // Here you can setup a custom accessory for a remote destination.
         [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-        
         
     } else if ([entry isKindOfClass:[MFPDFOutlineEntry class]]) { // Local (this document) entry
         
-        MFPDFOutlineEntry * outlineEntry = (MFPDFOutlineEntry *)entry;
-        
-        [self.delegate outlineViewController:self didRequestDestination:outlineEntry.destination file:nil];
+        // Here you can setup a custom accessory for a local destination.
         [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-        
     }
     
 	if([[(MFPDFOutlineEntry *)entry bookmarks]count]> 0) { // Check if the entry has children.
         
-        [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangleright",@"png")]];
+        [[cell imageView]setImage:[UIImage imageNamed:@"Reader/img_outline_triangleright" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
 	}
 	
 	[cell setIndentationLevel:[entry indentation]];
@@ -100,10 +93,6 @@
     if([entry isKindOfClass:[MFPDFOutlineRemoteEntry class]]) {
         
         MFPDFOutlineRemoteEntry * outlineEntry = (MFPDFOutlineRemoteEntry *)entry;
-        NSString * file = nil;
-        NSString * destination = nil;
-        NSUInteger pageNumber = 0;
-        
         
         if([self.delegate respondsToSelector:@selector(outlineViewController:didRequestDestination:file:)]) {
             [self.delegate outlineViewController:self didRequestDestination:outlineEntry.destination file:outlineEntry.file];
@@ -190,6 +179,7 @@
         // does nothing if the page is 0, but better be paranoid than sorry.
         
         [self.delegate outlineViewController:self didRequestDestination:entry.destination file:nil];
+        return;
 	}
 	
 	// We need to add/remove a certain number of rows depending on how
@@ -225,7 +215,7 @@
         
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
-        [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangleright",@"png")]];
+        [[cell imageView]setImage:[UIImage imageNamed:@"Reader/img_outline_triangleright" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
 		
 		// Remove the entry selected and all of its visible children from the outlineEntries array
 		// and update the tableview by removing the cell at the corresponding indexPaths.
@@ -245,13 +235,9 @@
 		
 	} else {
 		
-        
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
-        UIImage *aImage = [[UIImage alloc]initWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangledown",@"png")];
-        
-        [[cell imageView]setImage:aImage];
-        
+        [[cell imageView]setImage:[UIImage imageNamed:@"Reader/img_outline_triangledown" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
         
 		// Add the visible children of the selected entry to the outlineEntries array and update
 		// the tableview by addind the cell at the corresponding indexPaths

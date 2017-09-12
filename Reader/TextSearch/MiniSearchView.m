@@ -162,7 +162,7 @@
         // Previous result button.
         UIButton *previousButton = [UIButton buttonWithType:UIButtonTypeSystem];
         previousButton.translatesAutoresizingMaskIntoConstraints = NO;
-        UIImage * previousImage = [[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"prew",@"png")]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage * previousImage = [UIImage imageNamed:@"Reader/prew" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
         [previousButton setImage:previousImage forState:UIControlStateNormal];
         [previousButton addTarget:self
                            action:@selector(actionPrev:)
@@ -172,7 +172,7 @@
         // Next result button.
         UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeSystem];
                 nextButton.translatesAutoresizingMaskIntoConstraints = NO;
-        UIImage * nextImage = [[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"next",@"png")] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage * nextImage = [UIImage imageNamed:@"Reader/next" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
         [nextButton setImage:nextImage forState:UIControlStateNormal];
         [nextButton addTarget:self
                        action:@selector(actionNext:)

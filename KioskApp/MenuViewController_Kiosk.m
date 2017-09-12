@@ -205,7 +205,7 @@
     }
     
     anImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, yBorder, scrollViewWidth+2, 40)];
-    [anImageView setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKKioskBundle",@"border",@"png")]];
+    [anImageView setImage:[UIImage imageNamed:@"Kioks/border" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]];
     [anImageView setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleWidth];
     [self.view addSubview:anImageView];
     [anImageView release];
