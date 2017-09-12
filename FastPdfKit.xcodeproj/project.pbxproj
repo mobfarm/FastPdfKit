@@ -19,9 +19,6 @@
 		010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */; };
 		010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */; };
 		010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */; };
-		010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14D913CB002300FD6F08 /* MainWindow.xib */; };
-		010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DA13CB002300FD6F08 /* MenuView_pad.xib */; };
-		010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D14DB13CB002300FD6F08 /* MenuView_phone.xib */; };
 		010FE6E515EE582100304C02 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6C615EE582100304C02 /* Common.framework */; };
 		010FE6E615EE582200304C02 /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6C815EE582100304C02 /* libPayPalMPL.a */; };
 		010FE6E715EE582200304C02 /* FPKConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6CA15EE582100304C02 /* FPKConfig.framework */; };
@@ -40,6 +37,8 @@
 		01157E451F66EF7800BA3E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		01157E471F66F3A400BA3E8A /* Kiosk.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0137C7B81F66ED46003A3380 /* Kiosk.xcassets */; };
 		01157E491F66F3FB00BA3E8A /* Kiosk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01157E481F66F3FB00BA3E8A /* Kiosk.storyboard */; };
+		01157E4F1F66F66E00BA3E8A /* Simple.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01157E4C1F66F5A400BA3E8A /* Simple.xcassets */; };
+		01157E511F66F7CE00BA3E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01157E501F66F7CD00BA3E8A /* main.m */; };
 		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
 		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
 		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
@@ -361,9 +360,6 @@
 		010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitReader-Prefix.pch"; sourceTree = "<group>"; };
 		010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_SampleAppDelegate.h; sourceTree = "<group>"; };
 		010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastPDFKit_SampleAppDelegate.m; sourceTree = "<group>"; };
-		010D14D913CB002300FD6F08 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		010D14DA13CB002300FD6F08 /* MenuView_pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_pad.xib; sourceTree = "<group>"; };
-		010D14DB13CB002300FD6F08 /* MenuView_phone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView_phone.xib; sourceTree = "<group>"; };
 		010D14DC13CB002300FD6F08 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		010FE6C615EE582100304C02 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
 		010FE6C815EE582100304C02 /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
@@ -381,6 +377,8 @@
 		01142A2D15CFC38E001B5374 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		01142A3A15CFCE48001B5374 /* libFastPdfKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFastPdfKit.a; sourceTree = "<group>"; };
 		01157E481F66F3FB00BA3E8A /* Kiosk.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Kiosk.storyboard; sourceTree = "<group>"; };
+		01157E4C1F66F5A400BA3E8A /* Simple.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Simple.xcassets; sourceTree = "<group>"; };
+		01157E501F66F7CD00BA3E8A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		011E42B81472D1510099754E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
 		0123602813CC908E00861EB7 /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
@@ -426,7 +424,6 @@
 		0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKOverlayViewDataSource.h; sourceTree = "<group>"; };
 		0174E2AF12EF24CA003699A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		018848E7131E89570045038F /* FastPdfKit Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Kiosk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Kiosk-Info.plist"; sourceTree = "<group>"; };
 		01884A66131E93A80045038F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		01884AC2131E96C50045038F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01884AC6131E96CE0045038F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -603,7 +600,6 @@
 		6FB9770A13CB6E76007C368C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPKReaderBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		890986A913CECF0F00656A49 /* Snippets.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FastPdfKit_Sample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		9505BB1C13CCB941003163D2 /* FastPdfKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastPdfKit.xcconfig; sourceTree = "<group>"; };
 		950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		950B37C1125CBEA5007BDDA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -805,12 +801,19 @@
 		010D14D213CB002300FD6F08 /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
+				01157E521F66F7D300BA3E8A /* Supporting files */,
+				956A056B14039F38003AE44D /* Drawable.h */,
+				956A056C14039F38003AE44D /* Drawable.m */,
+				010D14DC13CB002300FD6F08 /* MenuViewController.h */,
+				01142A2D15CFC38E001B5374 /* MenuViewController.m */,
+				956A056D14039F38003AE44D /* OverlayManager.h */,
+				956A056E14039F38003AE44D /* OverlayManager.m */,
+				0137C7901F66E171003A3380 /* Simple.storyboard */,
 				010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */,
 				010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */,
-				0123605813CC93B700861EB7 /* Controllers */,
+				01157E4C1F66F5A400BA3E8A /* Simple.xcassets */,
 			);
-			name = SimpleApp;
-			path = Classes/SimpleApp;
+			path = SimpleApp;
 			sourceTree = SOURCE_ROOT;
 		};
 		010FE6C515EE582100304C02 /* Common.embeddedframework */ = {
@@ -986,6 +989,14 @@
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
+		01157E521F66F7D300BA3E8A /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				01157E501F66F7CD00BA3E8A /* main.m */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
 		0123603113CC917600861EB7 /* Multimedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,24 +1011,6 @@
 			);
 			path = Multimedia;
 			sourceTree = "<group>";
-		};
-		0123605813CC93B700861EB7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				956A056B14039F38003AE44D /* Drawable.h */,
-				956A056C14039F38003AE44D /* Drawable.m */,
-				010D14D913CB002300FD6F08 /* MainWindow.xib */,
-				010D14DA13CB002300FD6F08 /* MenuView_pad.xib */,
-				010D14DB13CB002300FD6F08 /* MenuView_phone.xib */,
-				010D14DC13CB002300FD6F08 /* MenuViewController.h */,
-				01142A2D15CFC38E001B5374 /* MenuViewController.m */,
-				956A056D14039F38003AE44D /* OverlayManager.h */,
-				956A056E14039F38003AE44D /* OverlayManager.m */,
-				0137C7901F66E171003A3380 /* Simple.storyboard */,
-			);
-			name = Controllers;
-			path = Classes/SimpleApp/Controllers;
-			sourceTree = SOURCE_ROOT;
 		};
 		01448A0D134C70A700FD83D8 /* headers */ = {
 			isa = PBXGroup;
@@ -1362,8 +1355,6 @@
 			children = (
 				01F840B5163FC810009104F0 /* Default-568h@2x.png */,
 				0102A1D11547009B00F7A9AF /* Settings.bundle */,
-				018848E9131E89570045038F /* FastPdfKit_Kiosk-Info.plist */,
-				8D1107310486CEB800E47090 /* FastPdfKit_Sample-Info.plist */,
 				0123602913CC90C800861EB7 /* KioskBundle-Info.plist */,
 				0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */,
 				951AE313140298910025DA52 /* ReaderFramework-Info.plist */,
@@ -1912,10 +1903,7 @@
 			files = (
 				95075CD414062F7700B8C979 /* FPKReaderBundle.bundle in Resources */,
 				9597F995125D17E400E17B47 /* iTunesArtwork in Resources */,
-				010D14E113CB002300FD6F08 /* MainWindow.xib in Resources */,
 				0137C7911F66E171003A3380 /* Simple.storyboard in Resources */,
-				010D14E213CB002300FD6F08 /* MenuView_pad.xib in Resources */,
-				010D14E313CB002300FD6F08 /* MenuView_phone.xib in Resources */,
 				6FB9779B13CC4CA1007C368C /* Icon.png in Resources */,
 				6FB9779F13CC4CBA007C368C /* Icon72.png in Resources */,
 				6FB977A013CC4CBA007C368C /* Icon114.png in Resources */,
@@ -1927,6 +1915,7 @@
 				0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */,
 				95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */,
 				95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */,
+				01157E4F1F66F66E00BA3E8A /* Simple.xcassets in Resources */,
 				0102A1D21547009B00F7A9AF /* Settings.bundle in Resources */,
 				01DF25DE166385E100433BE7 /* Default-568h@2x.png in Resources */,
 			);
@@ -2165,6 +2154,7 @@
 				010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */,
 				956A056F14039F38003AE44D /* Drawable.m in Sources */,
 				956A057014039F38003AE44D /* OverlayManager.m in Sources */,
+				01157E511F66F7CE00BA3E8A /* main.m in Sources */,
 				01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2545,6 +2535,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2553,11 +2545,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitSimple-Prefix.pch";
+				GCC_PREFIX_HEADER = "SimpleApp/FastPDFKitSimple-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "Resources/FastPdfKit_Sample-Info.plist";
+				INFOPLIST_FILE = "SimpleApp/FastPdfKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
@@ -2575,17 +2567,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = 24PN5XJ85Y;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitSimple-Prefix.pch";
+				GCC_PREFIX_HEADER = "SimpleApp/FastPDFKitSimple-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "Resources/FastPdfKit_Sample-Info.plist";
+				INFOPLIST_FILE = "SimpleApp/FastPdfKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
