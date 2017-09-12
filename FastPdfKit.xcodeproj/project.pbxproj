@@ -1284,8 +1284,8 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* FPKSimpleApp */,
 				018848E6131E89570045038F /* FPKKioskApp */,
-				954B74AC14B47F0D00503F90 /* Extended */,
 				01A5FCFE1F669FAA00943CFB /* FastPdfKit */,
+				954B74AC14B47F0D00503F90 /* Extended */,
 			);
 		};
 /* End PBXProject section */
@@ -1462,19 +1462,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KioskApp/FastPDFKitKiosk-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/FastPdfKit\\ Library",
-					"\"$(SRCROOT)/Classes\"/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "KioskApp/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/FPKCore\"",
-					"\"$(SRCROOT)/ThirdParties\"/**",
-					"\"$(SRCROOT)/Classes/ThirdParties\"",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				PROVISIONING_PROFILE = "";
@@ -1498,19 +1491,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KioskApp/FastPDFKitKiosk-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/FastPdfKit\\ Library",
-					"\"$(SRCROOT)/Classes\"/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "KioskApp/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/FPKCore\"",
-					"\"$(SRCROOT)/ThirdParties\"/**",
-					"\"$(SRCROOT)/Classes/ThirdParties\"",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "FastPdfKit Kiosk";
 				PROVISIONING_PROFILE = "";
@@ -1667,7 +1653,7 @@
 				INFOPLIST_FILE = "SimpleApp/FastPdfKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1697,7 +1683,7 @@
 				INFOPLIST_FILE = "SimpleApp/FastPdfKit_Sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/FPKCore\"";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "FastPdfKit Sample";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
