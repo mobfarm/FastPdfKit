@@ -12,6 +12,7 @@
 #import "FPKOverlayViewDataSource.h"
 #import "FPKThumbnailDataStore.h"
 #import "FPKSharedSettings.h"
+#import "FPKDestination.h"
 
 @class MFDeferredContentLayerWrapper;
 @class MFDocumentManager;
@@ -317,6 +318,13 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
 -(void)setPage:(NSUInteger)page withZoomOfLevel:(float)zoomLevel onRect:(CGRect)rect;
 
 /**
+ * Will attemp to reach the destination.
+ * It will return YES if the destination has been found on the current document,
+ * otherwise NO.
+ */
+-(BOOL)setDestination:(id<FPKDestination>)destination;
+
+/**
  Returns the current page of the document.
  */
 -(NSUInteger)page;
@@ -581,6 +589,7 @@ static const NSUInteger FPKEmbeddedAnnotationsAll = FPKEmbeddedAnnotationsAudio|
  *
  * Default is 0.05.
  */
+
 -(void)setImageCacheOversize:(CGFloat)oversize;
 -(CGFloat)imageCacheOversize;
 

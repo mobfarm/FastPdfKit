@@ -60,4 +60,10 @@
  */
 @property (readwrite, nonatomic) CGFloat highResolutionBackgroundScale;
 
+/**
+ If true, background images will use only the data already rendered for the
+ thumbnails.
+ */
+@property (readwrite, nonatomic) BOOL disableCacheImageRendering;
+
 @end
