@@ -82,7 +82,7 @@
 		0116E7DA1F67D5FC0074EF6E /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0116E7DB1F67D5FC0074EF6E /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0116E7DC1F67D5FC0074EF6E /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0116E7DE1F67D8100074EF6E /* FPKPageNumberDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 0116E7DD1F67D8100074EF6E /* FPKPageNumberDestination.h */; };
+		0116E7DE1F67D8100074EF6E /* FPKPageNumberDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 0116E7DD1F67D8100074EF6E /* FPKPageNumberDestination.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0123E95F1A41A95900E1A521 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E95E1A41A95900E1A521 /* AVKit.framework */; };
 		0123E9611A41A96400E1A521 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E9601A41A96400E1A521 /* CoreMedia.framework */; };
 		0123E9621A41A98800E1A521 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E95E1A41A95900E1A521 /* AVKit.framework */; };
@@ -98,6 +98,9 @@
 		0137C7861F66DAD2003A3380 /* SearchView2_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082B13C75D3A0077CE63 /* SearchView2_pad.xib */; };
 		0137C7871F66DAD2003A3380 /* SearchView2_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082C13C75D3A0077CE63 /* SearchView2_phone.xib */; };
 		0137C7911F66E171003A3380 /* Simple.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0137C7901F66E171003A3380 /* Simple.storyboard */; };
+		014529491F6833A80006FE3D /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0145294C1F6834250006FE3D /* OutlineViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081D13C75D3A0077CE63 /* OutlineViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		014529511F68348B0006FE3D /* SearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082F13C75D3A0077CE63 /* SearchViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		0181A3BC15F6790200AC476F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752014B4811500503F90 /* Security.framework */; };
 		0181A3BE15F6791500AC476F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752014B4811500503F90 /* Security.framework */; };
@@ -1124,11 +1127,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				01A5FD031F669FAA00943CFB /* FastPdfKit.h in Headers */,
+				014529491F6833A80006FE3D /* BookmarkViewControllerDelegate.h in Headers */,
 				0116E7B31F67D5C20074EF6E /* BookmarkViewController.h in Headers */,
 				0116E7B41F67D5C20074EF6E /* AudioViewController.h in Headers */,
 				0116E7B51F67D5C20074EF6E /* MFAudioPlayerViewImpl.h in Headers */,
 				0116E7B61F67D5C20074EF6E /* WebBrowser.h in Headers */,
 				0116E7B71F67D5C20074EF6E /* OutlineViewController.h in Headers */,
+				0145294C1F6834250006FE3D /* OutlineViewControllerDelegate.h in Headers */,
 				0116E7B81F67D5C20074EF6E /* ReaderViewController.h in Headers */,
 				0116E7B91F67D5C20074EF6E /* FPKSearchMatchItem.h in Headers */,
 				0116E7BA1F67D5C20074EF6E /* MiniSearchView.h in Headers */,
@@ -1139,10 +1144,12 @@
 				0116E7BF1F67D5C20074EF6E /* SearchResultDataSource.h in Headers */,
 				0116E7C01F67D5C20074EF6E /* SearchResultView.h in Headers */,
 				0116E7C11F67D5C20074EF6E /* SearchViewControllerDelegate.h in Headers */,
+				014529511F68348B0006FE3D /* SearchViewController.h in Headers */,
 				0116E7C21F67D5C20074EF6E /* TextDisplayViewController.h in Headers */,
 				0116E7C31F67D5C20074EF6E /* TextDisplayViewControllerDelegate.h in Headers */,
 				0116E7C61F67D5FC0074EF6E /* FPKDestination.h in Headers */,
 				0116E7C71F67D5FC0074EF6E /* FPKNamedDestination.h in Headers */,
+				0116E7DE1F67D8100074EF6E /* FPKPageNumberDestination.h in Headers */,
 				0116E7C81F67D5FC0074EF6E /* FPKAnnotation.h in Headers */,
 				0116E7C91F67D5FC0074EF6E /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */,
 				0116E7CA1F67D5FC0074EF6E /* FPKEmbeddedAnnotationURIHandler.h in Headers */,
@@ -1159,7 +1166,6 @@
 				0116E7D51F67D5FC0074EF6E /* MFDocumentViewControllerDelegate.h in Headers */,
 				0116E7D61F67D5FC0074EF6E /* MFOverlayDrawable.h in Headers */,
 				0116E7D71F67D5FC0074EF6E /* MFOverlayTouchable.h in Headers */,
-				0116E7DE1F67D8100074EF6E /* FPKPageNumberDestination.h in Headers */,
 				0116E7D81F67D5FC0074EF6E /* MFPDFOutlineEntry.h in Headers */,
 				0116E7D91F67D5FC0074EF6E /* MFPDFOutlineRemoteEntry.h in Headers */,
 				0116E7DA1F67D5FC0074EF6E /* mfprofile.h in Headers */,
