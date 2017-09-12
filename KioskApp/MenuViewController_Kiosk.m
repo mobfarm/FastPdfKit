@@ -8,7 +8,7 @@
 
 #import "MenuViewController_Kiosk.h"
 #import <FastPdfKit/MFDocumentManager.h>
-#import <FastPdfKit/ReaderViewController.h>
+#import <FastPdfKit/FastPdfKit.h>
 #import "BookItemView.h"
 #import "XMLParser.h"
 #include <stdio.h>
