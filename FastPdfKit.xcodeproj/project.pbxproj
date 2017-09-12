@@ -843,8 +843,7 @@
 				01BC081E13C75D3A0077CE63 /* TextSearch */,
 				010D14CB13CAFFD800FD6F08 /* ThumbnailSlider */,
 			);
-			name = Reader;
-			path = ../Reader;
+			path = Reader;
 			sourceTree = "<group>";
 		};
 		01BC080013C75B310077CE63 /* KioskApp */ = {
@@ -943,9 +942,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				010D14D213CB002300FD6F08 /* SimpleApp */,
-				01BC080013C75B310077CE63 /* KioskApp */,
-				01BC07DC13C756130077CE63 /* Reader */,
 				954B74B214B47F0D00503F90 /* Extended */,
 				01BC07A013C755610077CE63 /* ThirdParties */,
 			);
@@ -967,6 +963,9 @@
 			isa = PBXGroup;
 			children = (
 				011E42B81472D1510099754E /* README.md */,
+				01BC07DC13C756130077CE63 /* Reader */,
+				01BC080013C75B310077CE63 /* KioskApp */,
+				010D14D213CB002300FD6F08 /* SimpleApp */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				95F5A3511270A2A700F65929 /* FPKCore */,
 				29B97315FDCFA39411CA2CEA /* OtherSources */,
