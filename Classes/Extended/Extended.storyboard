@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fUH-t5-vlO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="IUW-sa-GHe">
+            <objects>
+                <viewController id="fUH-t5-vlO" customClass="FPKMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9cv-FL-7SL"/>
+                        <viewControllerLayoutGuide type="bottom" id="wUk-Vz-RSl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yuj-eW-d6c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="EOS-jI-ZfY">
+                                <rect key="frame" x="20" y="208.5" width="335" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHa-89-zfO">
+                                        <rect key="frame" x="147" y="20" width="41" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="eNv-Us-CUm"/>
+                                        </constraints>
+                                        <state key="normal" title="OPEN">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionOpenPlainDocument:" destination="fUH-t5-vlO" eventType="touchUpInside" id="aAY-Bb-8Ui"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QVN-DO-fZj">
+                                        <rect key="frame" x="0.0" y="77" width="335" height="153"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="153" id="aNm-aT-k7O"/>
+                                        </constraints>
+                                        <string key="text">The pdf is named sample.pdf and is located in the 
+./Classes/Extended/Resources/ 
+folder.
+
+To get the Extension source code and for to find more informations 
+
+http://git.io/fpke</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QVN-DO-fZj" secondAttribute="trailing" id="20Y-La-533"/>
+                                    <constraint firstAttribute="bottom" secondItem="QVN-DO-fZj" secondAttribute="bottom" constant="20" id="6RA-cM-Av7"/>
+                                    <constraint firstItem="QVN-DO-fZj" firstAttribute="leading" secondItem="EOS-jI-ZfY" secondAttribute="leading" id="Dxl-Vd-8eU"/>
+                                    <constraint firstItem="XHa-89-zfO" firstAttribute="top" secondItem="EOS-jI-ZfY" secondAttribute="top" constant="20" id="FER-5Z-QdM"/>
+                                    <constraint firstItem="QVN-DO-fZj" firstAttribute="top" secondItem="XHa-89-zfO" secondAttribute="bottom" constant="20" id="HOc-oA-dEt"/>
+                                    <constraint firstItem="XHa-89-zfO" firstAttribute="centerX" secondItem="EOS-jI-ZfY" secondAttribute="centerX" id="ILk-RC-Jao"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EOS-jI-ZfY" firstAttribute="centerY" secondItem="yuj-eW-d6c" secondAttribute="centerY" id="9U0-HG-EVs"/>
+                            <constraint firstItem="EOS-jI-ZfY" firstAttribute="centerY" secondItem="yuj-eW-d6c" secondAttribute="centerY" id="Efm-0q-66j"/>
+                            <constraint firstAttribute="trailing" secondItem="EOS-jI-ZfY" secondAttribute="trailing" constant="20" id="Lno-G8-bM2"/>
+                            <constraint firstItem="EOS-jI-ZfY" firstAttribute="centerY" secondItem="yuj-eW-d6c" secondAttribute="centerY" id="MgJ-0K-w3H"/>
+                            <constraint firstItem="EOS-jI-ZfY" firstAttribute="leading" secondItem="yuj-eW-d6c" secondAttribute="leading" constant="20" id="hTq-8I-7jt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zeC-Vz-x7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="-8.5457271364317844"/>
+        </scene>
+    </scenes>
+</document>

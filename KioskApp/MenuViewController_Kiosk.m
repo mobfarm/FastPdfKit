@@ -126,7 +126,7 @@
             
         } else { // Embedded xml as backup.
             
-            xmlUrl = [MF_BUNDLED_BUNDLE(@"FPKKioskBundle") URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
+            xmlUrl = [[NSBundle bundleForClass:[self class]] URLForResource:FPK_KIOSK_XML_NAME withExtension:@"xml"];
             
             [parser parseXMLFileAtURL:xmlUrl];
             

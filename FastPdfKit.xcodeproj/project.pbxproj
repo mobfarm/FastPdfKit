@@ -7,17 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0102A1D21547009B00F7A9AF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0102A1D11547009B00F7A9AF /* Settings.bundle */; };
-		0102A1D31547009B00F7A9AF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0102A1D11547009B00F7A9AF /* Settings.bundle */; };
-		0102A1DA1547022B00F7A9AF /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0102A1D91547022B00F7A9AF /* MFDocumentViewController.h */; };
-		0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0102A1D91547022B00F7A9AF /* MFDocumentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010D14AF13CAF5F400FD6F08 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
 		010D14B113CAF62400FD6F08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */; };
 		010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */; };
 		010D14B313CAF64000FD6F08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9FBD191356F2CD006884F5 /* AVFoundation.framework */; };
 		010D14B513CAF6DE00FD6F08 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884A66131E93A80045038F /* CFNetwork.framework */; };
-		010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */; };
-		010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */; };
 		010D14E013CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */; };
 		010FE6E515EE582100304C02 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6C615EE582100304C02 /* Common.framework */; };
 		010FE6E615EE582200304C02 /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6C815EE582100304C02 /* libPayPalMPL.a */; };
@@ -33,30 +27,62 @@
 		010FE6F015EE582200304C02 /* FPKWebPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6E215EE582100304C02 /* FPKWebPopup.framework */; };
 		010FE6F115EE582200304C02 /* FPKYouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010FE6E415EE582100304C02 /* FPKYouTube.framework */; };
 		01142A2E15CFC38E001B5374 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01142A2D15CFC38E001B5374 /* MenuViewController.m */; };
-		01142A3D15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		01157E451F66EF7800BA3E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		01157E471F66F3A400BA3E8A /* Kiosk.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0137C7B81F66ED46003A3380 /* Kiosk.xcassets */; };
 		01157E491F66F3FB00BA3E8A /* Kiosk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01157E481F66F3FB00BA3E8A /* Kiosk.storyboard */; };
 		01157E4F1F66F66E00BA3E8A /* Simple.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01157E4C1F66F5A400BA3E8A /* Simple.xcassets */; };
 		01157E511F66F7CE00BA3E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01157E501F66F7CD00BA3E8A /* main.m */; };
-		0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602913CC90C800861EB7 /* KioskBundle-Info.plist */; };
-		0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */; };
-		0123603C13CC917600861EB7 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; };
-		0123604013CC917600861EB7 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
-		0123604413CC917600861EB7 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; };
-		0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; };
-		0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0123605013CC917600861EB7 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; };
-		0123605413CC917600861EB7 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; };
-		0123607113CCA18700861EB7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606D13CCA18700861EB7 /* Default@2x.png */; };
-		0123607213CCA18700861EB7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606D13CCA18700861EB7 /* Default@2x.png */; };
-		0123607313CCA18700861EB7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606E13CCA18700861EB7 /* Default.png */; };
-		0123607413CCA18700861EB7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606E13CCA18700861EB7 /* Default.png */; };
-		0123607513CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
-		0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */; };
-		0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
-		0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */; };
+		0116E78A1F67C66E0074EF6E /* Extended.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0116E7891F67C66E0074EF6E /* Extended.xcassets */; };
+		0116E78E1F67CABB0074EF6E /* Extended.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0116E78D1F67CABB0074EF6E /* Extended.storyboard */; };
+		0116E78F1F67CF450074EF6E /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A5FCFF1F669FAA00943CFB /* FastPdfKit.framework */; };
+		0116E7911F67D0680074EF6E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0116E7901F67D0680074EF6E /* Settings.bundle */; };
+		0116E7931F67D0880074EF6E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0116E7921F67D0880074EF6E /* Settings.bundle */; };
+		0116E7941F67D1510074EF6E /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A5FCFF1F669FAA00943CFB /* FastPdfKit.framework */; };
+		0116E7951F67D1580074EF6E /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A5FCFF1F669FAA00943CFB /* FastPdfKit.framework */; };
+		0116E7AE1F67D5210074EF6E /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A5FCFF1F669FAA00943CFB /* FastPdfKit.framework */; };
+		0116E7AF1F67D5210074EF6E /* FastPdfKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01A5FCFF1F669FAA00943CFB /* FastPdfKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0116E7B31F67D5C20074EF6E /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7B41F67D5C20074EF6E /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7B51F67D5C20074EF6E /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7B61F67D5C20074EF6E /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7B71F67D5C20074EF6E /* OutlineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7B81F67D5C20074EF6E /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7B91F67D5C20074EF6E /* FPKSearchMatchItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 015D10BC1AE69B100014C999 /* FPKSearchMatchItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7BA1F67D5C20074EF6E /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7BB1F67D5C20074EF6E /* MiniSearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7BC1F67D5C20074EF6E /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7BD1F67D5C20074EF6E /* SearchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082413C75D3A0077CE63 /* SearchManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7BE1F67D5C20074EF6E /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7BF1F67D5C20074EF6E /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C01F67D5C20074EF6E /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CB28041A655D9900FDF2DE /* SearchResultView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C11F67D5C20074EF6E /* SearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C21F67D5C20074EF6E /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C31F67D5C20074EF6E /* TextDisplayViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C41F67D5C20074EF6E /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C51F67D5FC0074EF6E /* FPKDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AF55B51F62F43A002958B4 /* FPKDestination.h */; };
+		0116E7C61F67D5FC0074EF6E /* FPKDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD253D1F62F92D00A6AA8D /* FPKDestination.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C71F67D5FC0074EF6E /* FPKNamedDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD253E1F62F92D00A6AA8D /* FPKNamedDestination.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C81F67D5FC0074EF6E /* FPKAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 015ED17B1455AE9700C7C372 /* FPKAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7C91F67D5FC0074EF6E /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A01AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7CA1F67D5FC0074EF6E /* FPKEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A31AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7CB1F67D5FC0074EF6E /* FPKGlyphBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7CC1F67D5FC0074EF6E /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7CD1F67D5FC0074EF6E /* FPKSharedSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD259D1AC1AB34008C1E23 /* FPKSharedSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7CE1F67D5FC0074EF6E /* FPKThumbnailDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F98AEC1A31AB020097D82D /* FPKThumbnailDataStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7CF1F67D5FC0074EF6E /* FPKURIAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D414482814003CEAAA /* FPKURIAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D01F67D5FC0074EF6E /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D514482814003CEAAA /* MFAudioPlayerViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D11F67D5FC0074EF6E /* MFAudioProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D614482814003CEAAA /* MFAudioProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D21F67D5FC0074EF6E /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D31F67D5FC0074EF6E /* MFDocumentOverlayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D814482814003CEAAA /* MFDocumentOverlayDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D41F67D5FC0074EF6E /* MFDocumentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0102A1D91547022B00F7A9AF /* MFDocumentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D51F67D5FC0074EF6E /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D61F67D5FC0074EF6E /* MFOverlayDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DB14482814003CEAAA /* MFOverlayDrawable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D71F67D5FC0074EF6E /* MFOverlayTouchable.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DC14482814003CEAAA /* MFOverlayTouchable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D81F67D5FC0074EF6E /* MFPDFOutlineEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DD14482814003CEAAA /* MFPDFOutlineEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7D91F67D5FC0074EF6E /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7DA1F67D5FC0074EF6E /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7DB1F67D5FC0074EF6E /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0116E7DC1F67D5FC0074EF6E /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0123E95F1A41A95900E1A521 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E95E1A41A95900E1A521 /* AVKit.framework */; };
 		0123E9611A41A96400E1A521 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E9601A41A96400E1A521 /* CoreMedia.framework */; };
 		0123E9621A41A98800E1A521 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E95E1A41A95900E1A521 /* AVKit.framework */; };
@@ -71,104 +97,7 @@
 		0137C7851F66D64E003A3380 /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0123603413CC917600861EB7 /* AudioViewController.xib */; };
 		0137C7861F66DAD2003A3380 /* SearchView2_pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082B13C75D3A0077CE63 /* SearchView2_pad.xib */; };
 		0137C7871F66DAD2003A3380 /* SearchView2_phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BC082C13C75D3A0077CE63 /* SearchView2_phone.xib */; };
-		0137C78A1F66DE0B003A3380 /* FastPdfKitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A5FCFF1F669FAA00943CFB /* FastPdfKitFramework.framework */; };
-		0137C78B1F66DE99003A3380 /* FastPdfKitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A5FCFF1F669FAA00943CFB /* FastPdfKitFramework.framework */; };
 		0137C7911F66E171003A3380 /* Simple.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0137C7901F66E171003A3380 /* Simple.storyboard */; };
-		013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */; };
-		013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */; };
-		0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; };
-		0155DDE81458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0155DE14145848590080FFEF /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; };
-		0155DE15145848590080FFEF /* MFTextItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0155DE13145848590080FFEF /* MFTextItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01598DA713CAE783007344EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
-		01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
-		01598DBF13CAE7CD007344EE /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
-		01598DC013CAE7CD007344EE /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
-		01598DC113CAE7CD007344EE /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
-		01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
-		01598DC413CAE7CD007344EE /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
-		01598DC513CAE7CD007344EE /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
-		01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
-		01598DE513CAEA78007344EE /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A313C755610077CE63 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DE613CAEA78007344EE /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A613C755610077CE63 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DE713CAEA78007344EE /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A813C755610077CE63 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DE813CAEA78007344EE /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07AA13C755610077CE63 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DE913CAEA78007344EE /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07AE13C755610077CE63 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DEA13CAEA78007344EE /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07B013C755610077CE63 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DEB13CAEA78007344EE /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07B213C755610077CE63 /* ASINSStringAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DED13CAEAA6007344EE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07C013C755610077CE63 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DEE13CAEB09007344EE /* FastPDFKit_KioskAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DEF13CAEB09007344EE /* MenuViewController_Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598DF013CAEB09007344EE /* BookItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080913C75B310077CE63 /* BookItemView.m */; };
-		01598DF113CAEB09007344EE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080B13C75B310077CE63 /* XMLParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01598E0013CAEBCF007344EE /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; };
-		01598E0113CAEBCF007344EE /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; };
-		01598E0213CAEBCF007344EE /* OutlineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */; };
-		01598E0313CAEBCF007344EE /* OutlineViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081D13C75D3A0077CE63 /* OutlineViewControllerDelegate.h */; };
-		01598E0413CAEBCF007344EE /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; };
-		01598E0513CAEBCF007344EE /* MiniSearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */; };
-		01598E0713CAEBCF007344EE /* SearchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082413C75D3A0077CE63 /* SearchManager.h */; };
-		01598E0813CAEBCF007344EE /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; };
-		01598E0913CAEBCF007344EE /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; };
-		01598E0B13CAEBCF007344EE /* SearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082F13C75D3A0077CE63 /* SearchViewController.h */; };
-		01598E0C13CAEBCF007344EE /* SearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */; };
-		01598E0D13CAEBCF007344EE /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; };
-		01598E0E13CAEBCF007344EE /* TextDisplayViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */; };
-		01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; };
-		01598E2413CAEC8B007344EE /* FastPDFKit_KioskAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */; };
-		01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */; settings = {ATTRIBUTES = (); }; };
-		01598E2613CAEC8B007344EE /* BookItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080813C75B310077CE63 /* BookItemView.h */; };
-		01598E2713CAEC8B007344EE /* XMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC080A13C75B310077CE63 /* XMLParser.h */; };
-		01598E2C13CAEC8B007344EE /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A213C755610077CE63 /* ASIAuthenticationDialog.h */; };
-		01598E2D13CAEC8B007344EE /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A413C755610077CE63 /* ASICacheDelegate.h */; };
-		01598E2E13CAEC8B007344EE /* ASIDownloadCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A513C755610077CE63 /* ASIDownloadCache.h */; };
-		01598E2F13CAEC8B007344EE /* ASIFormDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A713C755610077CE63 /* ASIFormDataRequest.h */; };
-		01598E3013CAEC8B007344EE /* ASIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07A913C755610077CE63 /* ASIHTTPRequest.h */; };
-		01598E3113CAEC8B007344EE /* ASIHTTPRequestConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07AB13C755610077CE63 /* ASIHTTPRequestConfig.h */; };
-		01598E3213CAEC8B007344EE /* ASIHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07AC13C755610077CE63 /* ASIHTTPRequestDelegate.h */; };
-		01598E3313CAEC8B007344EE /* ASIInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07AD13C755610077CE63 /* ASIInputStream.h */; };
-		01598E3413CAEC8B007344EE /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07AF13C755610077CE63 /* ASINetworkQueue.h */; };
-		01598E3513CAEC8B007344EE /* ASINSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07B113C755610077CE63 /* ASINSStringAdditions.h */; };
-		01598E3613CAEC8B007344EE /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07B313C755610077CE63 /* ASIProgressDelegate.h */; };
-		01598E3713CAEC8B007344EE /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07BF13C755610077CE63 /* Reachability.h */; };
-		01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC07C113C755610077CE63 /* ZipArchive.h */; };
-		015D10BE1AE69B100014C999 /* FPKSearchMatchItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 015D10BC1AE69B100014C999 /* FPKSearchMatchItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		015D10BF1AE69B100014C999 /* FPKSearchMatchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 015D10BD1AE69B100014C999 /* FPKSearchMatchItem.m */; };
-		015D10C01AE69B270014C999 /* FPKSearchMatchItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 015D10BC1AE69B100014C999 /* FPKSearchMatchItem.h */; };
-		015D10C31AE69B300014C999 /* FPKSearchMatchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 015D10BD1AE69B100014C999 /* FPKSearchMatchItem.m */; };
-		015ED17C1455AE9700C7C372 /* FPKAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 015ED17B1455AE9700C7C372 /* FPKAnnotation.h */; };
-		015ED17D1455AE9700C7C372 /* FPKAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 015ED17B1455AE9700C7C372 /* FPKAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		015ED17E1455AEA900C7C372 /* FPKAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 015ED17B1455AE9700C7C372 /* FPKAnnotation.h */; };
-		016095E414482814003CEAAA /* FPKURIAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D414482814003CEAAA /* FPKURIAnnotation.h */; };
-		016095E514482814003CEAAA /* FPKURIAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D414482814003CEAAA /* FPKURIAnnotation.h */; };
-		016095E614482814003CEAAA /* FPKURIAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D414482814003CEAAA /* FPKURIAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		016095E714482814003CEAAA /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D514482814003CEAAA /* MFAudioPlayerViewProtocol.h */; };
-		016095E814482814003CEAAA /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D514482814003CEAAA /* MFAudioPlayerViewProtocol.h */; };
-		016095E914482814003CEAAA /* MFAudioPlayerViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D514482814003CEAAA /* MFAudioPlayerViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		016095EA14482814003CEAAA /* MFAudioProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D614482814003CEAAA /* MFAudioProvider.h */; };
-		016095EB14482814003CEAAA /* MFAudioProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D614482814003CEAAA /* MFAudioProvider.h */; };
-		016095EC14482814003CEAAA /* MFAudioProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D614482814003CEAAA /* MFAudioProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		016095F014482814003CEAAA /* MFDocumentOverlayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D814482814003CEAAA /* MFDocumentOverlayDataSource.h */; };
-		016095F114482814003CEAAA /* MFDocumentOverlayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D814482814003CEAAA /* MFDocumentOverlayDataSource.h */; };
-		016095F214482814003CEAAA /* MFDocumentOverlayDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095D814482814003CEAAA /* MFDocumentOverlayDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		016095F914482814003CEAAA /* MFOverlayDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DB14482814003CEAAA /* MFOverlayDrawable.h */; };
-		016095FA14482814003CEAAA /* MFOverlayDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DB14482814003CEAAA /* MFOverlayDrawable.h */; };
-		016095FB14482814003CEAAA /* MFOverlayDrawable.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DB14482814003CEAAA /* MFOverlayDrawable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		016095FC14482814003CEAAA /* MFOverlayTouchable.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DC14482814003CEAAA /* MFOverlayTouchable.h */; };
-		016095FD14482814003CEAAA /* MFOverlayTouchable.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DC14482814003CEAAA /* MFOverlayTouchable.h */; };
-		016095FE14482814003CEAAA /* MFOverlayTouchable.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DC14482814003CEAAA /* MFOverlayTouchable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		016095FF14482814003CEAAA /* MFPDFOutlineEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DD14482814003CEAAA /* MFPDFOutlineEntry.h */; };
-		0160960014482814003CEAAA /* MFPDFOutlineEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DD14482814003CEAAA /* MFPDFOutlineEntry.h */; };
-		0160960114482814003CEAAA /* MFPDFOutlineEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DD14482814003CEAAA /* MFPDFOutlineEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0160960214482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; };
-		0160960314482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; };
-		0160960414482814003CEAAA /* mfprofile.h in Headers */ = {isa = PBXBuildFile; fileRef = 016095DE14482814003CEAAA /* mfprofile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0161F22A141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
-		0161F22B141FABE8000EA8E4 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F228141FABE8000EA8E4 /* ReaderViewController.m */; };
-		0161F22F141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
-		0161F230141FAC24000EA8E4 /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
-		0168707E1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */; };
-		0168707F1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0168707D1451B79400E9AE65 /* FPKOverlayViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0174E2B012EF24CA003699A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174E2AF12EF24CA003699A8 /* CoreText.framework */; };
 		0181A3BC15F6790200AC476F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752014B4811500503F90 /* Security.framework */; };
 		0181A3BE15F6791500AC476F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752014B4811500503F90 /* Security.framework */; };
@@ -178,13 +107,8 @@
 		01884A6C131E93C70045038F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC2131E96C50045038F /* SystemConfiguration.framework */; };
 		01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01884AC6131E96CE0045038F /* MobileCoreServices.framework */; };
-		0189D3BC1486C1C000635C5D /* FPKGlyphBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */; };
-		0189D3BD1486C1C000635C5D /* FPKGlyphBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0189D3BF1486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; };
-		0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0189D3BE1486C28400635C5D /* MFDocumentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0193CA0A161B43BA0060A401 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0193CA09161B43B90060A401 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0193CA0B161B43BA0060A401 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0193CA09161B43B90060A401 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01A5FD031F669FAA00943CFB /* FastPdfKitFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A5FD011F669FAA00943CFB /* FastPdfKitFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01A5FD031F669FAA00943CFB /* FastPdfKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A5FD011F669FAA00943CFB /* FastPdfKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01A5FD0C1F669FDA00943CFB /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
 		01A5FD0D1F669FE400943CFB /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
 		01A5FD0E1F669FED00943CFB /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
@@ -202,12 +126,6 @@
 		01A5FD1A1F66A07500943CFB /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161F22C141FAC24000EA8E4 /* OutlineViewController.m */; };
 		01A5FD1B1F66B56600943CFB /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
 		01A5FD1C1F66B58F00943CFB /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0123E95E1A41A95900E1A521 /* AVKit.framework */; };
-		01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; };
-		01AD4F1D14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AD4F1B14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01AF55B61F62F441002958B4 /* FPKDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AF55B51F62F43A002958B4 /* FPKDestination.h */; };
-		01AF55B81F62F442002958B4 /* FPKDestination.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AF55B51F62F43A002958B4 /* FPKDestination.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; };
-		01B3DADA146D920F00F8C740 /* Stuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B3DAD8146D920F00F8C740 /* Stuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01BC07C313C755610077CE63 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A313C755610077CE63 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC07C513C755610077CE63 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A613C755610077CE63 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC07C713C755610077CE63 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07A813C755610077CE63 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -226,48 +144,18 @@
 		01BC081213C75B310077CE63 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC080B13C75B310077CE63 /* XMLParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01BC085A13C75F890077CE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		01BC085B13C75F890077CE63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
-		01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01142A3A15CFCE48001B5374 /* libFastPdfKit.a */; };
-		01CB28061A655D9900FDF2DE /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CB28041A655D9900FDF2DE /* SearchResultView.h */; };
-		01CB28091A655D9900FDF2DE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB28051A655D9900FDF2DE /* SearchResultView.m */; };
-		01CB280B1A655DA700FDF2DE /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CB28051A655D9900FDF2DE /* SearchResultView.m */; };
-		01CB280C1A655DAF00FDF2DE /* SearchResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CB28041A655D9900FDF2DE /* SearchResultView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01CD259E1AC1AB34008C1E23 /* FPKSharedSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD259D1AC1AB34008C1E23 /* FPKSharedSettings.h */; };
-		01CD259F1AC1AB34008C1E23 /* FPKSharedSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD259D1AC1AB34008C1E23 /* FPKSharedSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01CD25A11AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A01AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h */; };
-		01CD25A21AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A01AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01CD25A41AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A31AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h */; };
-		01CD25A51AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CD25A31AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01DF25DE166385E100433BE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
-		01DF25E11663863400433BE7 /* Deafult.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E01663863400433BE7 /* Deafult.png */; };
-		01DF25E31663863E00433BE7 /* Deafult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E21663863E00433BE7 /* Deafult@2x.png */; };
-		01DF25E51663867F00433BE7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E41663867F00433BE7 /* Default.png */; };
-		01DF25E71663868300433BE7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF25E61663868300433BE7 /* Default@2x.png */; };
-		01ECFCEC18351DD8003FB9C5 /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */; };
 		01F65FC313CAF48700BEBBC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */; };
-		01F840B6163FC810009104F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F840B5163FC810009104F0 /* Default-568h@2x.png */; };
 		01F84DD31A00F4F700AB4996 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E4E4013D71E8400C9FC70 /* libz.dylib */; };
 		01F84DD41A00F55500AB4996 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07B713C755610077CE63 /* ioapi.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01F84DD51A00F55500AB4996 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07B913C755610077CE63 /* mztools.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01F84DD61A00F55500AB4996 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BB13C755610077CE63 /* unzip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01F84DD71A00F55500AB4996 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BC07BD13C755610077CE63 /* zip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		01F98AED1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F98AEC1A31AB020097D82D /* FPKThumbnailDataStore.h */; };
-		01F98AEE1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F98AEC1A31AB020097D82D /* FPKThumbnailDataStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39224923146832B3004A3EB1 /* NewsstandKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9FBD191356F2CD006884F5 /* AVFoundation.framework */; };
-		6FB9770B13CB6E76007C368C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB9770A13CB6E76007C368C /* CoreFoundation.framework */; };
-		6FB9771C13CB6E8A007C368C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB9770A13CB6E76007C368C /* CoreFoundation.framework */; };
-		6FB9779B13CC4CA1007C368C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
-		6FB9779F13CC4CBA007C368C /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
-		6FB977A013CC4CBA007C368C /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
-		6FB977A713CC4E5E007C368C /* kiosk_list.xml in Resources */ = {isa = PBXBuildFile; fileRef = 01CF7355132532FC00E42146 /* kiosk_list.xml */; };
-		9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
-		95075CD414062F7700B8C979 /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */; };
 		950B37C0125CBEA5007BDDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */; };
 		950B37C2125CBEA5007BDDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
 		950B37C4125CBEA5007BDDA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C3125CBEA5007BDDA1 /* QuartzCore.framework */; };
 		950B37D0125CBEC4007BDDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		951AE312140298690025DA52 /* FastPdfKitFramework-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 951AE311140298690025DA52 /* FastPdfKitFramework-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		951E4E4113D71E8400C9FC70 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E4E4013D71E8400C9FC70 /* libz.dylib */; };
 		954B74AF14B47F0D00503F90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37CF125CBEC4007BDDA1 /* UIKit.framework */; };
 		954B74B014B47F0D00503F90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B37C1125CBEA5007BDDA1 /* Foundation.framework */; };
@@ -286,76 +174,41 @@
 		954B752314B4812700503F90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B752214B4812700503F90 /* MapKit.framework */; };
 		956A056F14039F38003AE44D /* Drawable.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056C14039F38003AE44D /* Drawable.m */; };
 		956A057014039F38003AE44D /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A056E14039F38003AE44D /* OverlayManager.m */; };
-		958A81BD14027F5300837C82 /* ReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603513CC917600861EB7 /* ReaderViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081F13C75D3A0077CE63 /* MiniSearchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082013C75D3A0077CE63 /* MiniSearchView.m */; };
-		958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082113C75D3A0077CE63 /* MiniSearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082213C75D3A0077CE63 /* NotificationFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81C314027F5B00837C82 /* NotificationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082313C75D3A0077CE63 /* NotificationFactory.m */; };
-		958A81C414027F5B00837C82 /* SearchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082413C75D3A0077CE63 /* SearchManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81C514027F5B00837C82 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082513C75D3A0077CE63 /* SearchManager.m */; };
-		958A81C614027F5B00837C82 /* SearchResultCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082613C75D3A0077CE63 /* SearchResultCellView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC082713C75D3A0077CE63 /* SearchResultCellView.m */; };
-		958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082813C75D3A0077CE63 /* SearchResultDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81CD14027F5B00837C82 /* SearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC082F13C75D3A0077CE63 /* SearchViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083013C75D3A0077CE63 /* SearchViewController.m */; };
-		958A81CF14027F5B00837C82 /* SearchViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083113C75D3A0077CE63 /* SearchViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81D114027F5B00837C82 /* TextDisplayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083313C75D3A0077CE63 /* TextDisplayViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81D214027F5B00837C82 /* TextDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083413C75D3A0077CE63 /* TextDisplayViewController.m */; };
-		958A81D314027F5B00837C82 /* TextDisplayViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083513C75D3A0077CE63 /* TextDisplayViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81D414027F5B00837C82 /* TextSearchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC083613C75D3A0077CE63 /* TextSearchOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81D514027F5B00837C82 /* TextSearchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC083713C75D3A0077CE63 /* TextSearchOperation.m */; };
-		958A81D614027F7100837C82 /* OutlineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081B13C75D3A0077CE63 /* OutlineViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81D714027F7100837C82 /* OutlineViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081D13C75D3A0077CE63 /* OutlineViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81D814027F7100837C82 /* BookmarkViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081613C75D3A0077CE63 /* BookmarkViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81D914027F7100837C82 /* BookmarkViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC081813C75D3A0077CE63 /* BookmarkViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81DD14027F7100837C82 /* AudioViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603213CC917600861EB7 /* AudioViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81DE14027F7100837C82 /* MFAudioPlayerViewImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603713CC917600861EB7 /* MFAudioPlayerViewImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81DF14027F7100837C82 /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0123603913CC917600861EB7 /* WebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BC081713C75D3A0077CE63 /* BookmarkViewController.m */; };
-		958A81E514027F9100837C82 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603313CC917600861EB7 /* AudioViewController.m */; };
-		958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603813CC917600861EB7 /* MFAudioPlayerViewImpl.m */; };
-		958A81E714027F9100837C82 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123603A13CC917600861EB7 /* WebBrowser.m */; };
-		958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */; };
-		958CBA85141E612F0094D4C1 /* FastPdfKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 958CBA84141E612F0094D4C1 /* FastPdfKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958CBAB5141E66060094D4C1 /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 890986A913CECF0F00656A49 /* Snippets.txt */; };
 		9597F995125D17E400E17B47 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9597F994125D17E400E17B47 /* iTunesArtwork */; };
 		95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5E13CCA59800195F0F /* Manual.pdf */; };
 		95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */; };
-		95B9C58415110EAA00411AF6 /* backThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C57E15110EAA00411AF6 /* backThumb@2x.png */; };
-		95B9C58515110EAA00411AF6 /* download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C57F15110EAA00411AF6 /* download@2x.png */; };
-		95B9C58715110EAA00411AF6 /* remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58115110EAA00411AF6 /* remove@2x.png */; };
-		95B9C58815110EAA00411AF6 /* resume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58215110EAA00411AF6 /* resume@2x.png */; };
-		95B9C58915110EAA00411AF6 /* view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B9C58315110EAA00411AF6 /* view@2x.png */; };
-		95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FFFB6D14B48C3100B1CD3B /* FastPdfKit.framework */; };
-		95EF544114B48E4800910B3D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD312337F24008D7198 /* Icon.png */; };
-		95EF544214B48E4C00910B3D /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDD112337F0F008D7198 /* Icon72.png */; };
-		95EF544314B48E4F00910B3D /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9598FDE512338042008D7198 /* Icon114.png */; };
-		95EF544714B48EDD00910B3D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544414B48EDD00910B3D /* Icon.png */; };
-		95EF544814B48EDD00910B3D /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544514B48EDD00910B3D /* Icon72.png */; };
-		95EF544914B48EDD00910B3D /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF544614B48EDD00910B3D /* Icon114.png */; };
 		95FFFB5014B488AE00B1CD3B /* FPKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4C14B488AE00B1CD3B /* FPKMainViewController.m */; };
 		95FFFB5214B488AE00B1CD3B /* OverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */; };
 		95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */; };
 		95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95FFFB7114B48C3100B1CD3B /* Snippets.txt */; };
-		FFB9B956160A025F00A6F8EC /* Deafult-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		951AE30F140295060025DA52 /* PBXContainerItemProxy */ = {
+		0116E7B01F67D5210074EF6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6FB9771A13CB6E8A007C368C;
-			remoteInfo = FPKReaderBundle;
+			remoteGlobalIDString = 01A5FCFE1F669FAA00943CFB;
+			remoteInfo = FastPdfKit;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0116E7B21F67D5210074EF6E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0116E7AF1F67D5210074EF6E /* FastPdfKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0102A1D11547009B00F7A9AF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		0102A1D91547022B00F7A9AF /* MFDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewController.h; sourceTree = "<group>"; };
-		010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKReaderLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPKKioskLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D14C513CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitKiosk-Prefix.pch"; sourceTree = "<group>"; };
 		010D14C613CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitReader-Prefix.pch"; sourceTree = "<group>"; };
 		010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPDFKit_SampleAppDelegate.h; sourceTree = "<group>"; };
@@ -379,6 +232,10 @@
 		01157E481F66F3FB00BA3E8A /* Kiosk.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Kiosk.storyboard; sourceTree = "<group>"; };
 		01157E4C1F66F5A400BA3E8A /* Simple.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Simple.xcassets; sourceTree = "<group>"; };
 		01157E501F66F7CD00BA3E8A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0116E7891F67C66E0074EF6E /* Extended.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Extended.xcassets; sourceTree = "<group>"; };
+		0116E78D1F67CABB0074EF6E /* Extended.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Extended.storyboard; sourceTree = "<group>"; };
+		0116E7901F67D0680074EF6E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		0116E7921F67D0880074EF6E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		011E42B81472D1510099754E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0123602713CC908E00861EB7 /* KioskBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KioskBundle-Prefix.pch"; sourceTree = "<group>"; };
 		0123602813CC908E00861EB7 /* SimpleBundle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleBundle-Prefix.pch"; sourceTree = "<group>"; };
@@ -393,10 +250,6 @@
 		0123603913CC917600861EB7 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
 		0123603A13CC917600861EB7 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
 		0123603B13CC917600861EB7 /* WebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebBrowser.xib; sourceTree = "<group>"; };
-		0123606D13CCA18700861EB7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		0123606E13CCA18700861EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		0123E95E1A41A95900E1A521 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		0123E9601A41A96400E1A521 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		012E52911F66C0CB001DEAE2 /* Reader.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Reader.xcassets; sourceTree = "<group>"; };
@@ -404,8 +257,6 @@
 		0134EE0C1456D9B2007D543F /* TVThumbnailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailScrollView.m; sourceTree = "<group>"; };
 		0137C7901F66E171003A3380 /* Simple.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Simple.storyboard; sourceTree = "<group>"; };
 		0137C7B81F66ED46003A3380 /* Kiosk.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Kiosk.xcassets; sourceTree = "<group>"; };
-		013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPhone.xib; sourceTree = "<group>"; };
-		013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPKMainViewController_iPad.xib; sourceTree = "<group>"; };
 		0155DDE61458144A0080FFEF /* MFDocumentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentViewControllerDelegate.h; sourceTree = "<group>"; };
 		0155DE13145848590080FFEF /* MFTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextItem.h; sourceTree = "<group>"; };
 		015D10BC1AE69B100014C999 /* FPKSearchMatchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKSearchMatchItem.h; sourceTree = "<group>"; };
@@ -430,8 +281,8 @@
 		0189D3BB1486C1C000635C5D /* FPKGlyphBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKGlyphBox.h; sourceTree = "<group>"; };
 		0189D3BE1486C28400635C5D /* MFDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDocumentManager.h; sourceTree = "<group>"; };
 		0193CA09161B43B90060A401 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
-		01A5FCFF1F669FAA00943CFB /* FastPdfKitFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastPdfKitFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		01A5FD011F669FAA00943CFB /* FastPdfKitFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastPdfKitFramework.h; sourceTree = "<group>"; };
+		01A5FCFF1F669FAA00943CFB /* FastPdfKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastPdfKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A5FD011F669FAA00943CFB /* FastPdfKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastPdfKit.h; sourceTree = "<group>"; };
 		01A5FD021F669FAA00943CFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01AB4AE413EFE267008EB17B /* TVThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVThumbnailView.h; sourceTree = "<group>"; };
 		01AB4AE513EFE267008EB17B /* TVThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVThumbnailView.m; sourceTree = "<group>"; };
@@ -506,66 +357,6 @@
 		01BC083713C75D3A0077CE63 /* TextSearchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSearchOperation.m; sourceTree = "<group>"; };
 		01CB28041A655D9900FDF2DE /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
 		01CB28051A655D9900FDF2DE /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
-		01CC87EC1BC51BA100EB20CE /* bookmark_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_add.png; sourceTree = "<group>"; };
-		01CC87ED1BC51BA100EB20CE /* bookmark_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark_add@2x.png"; sourceTree = "<group>"; };
-		01CC87EE1BC51BA100EB20CE /* bookmark_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark_add@3x.png"; sourceTree = "<group>"; };
-		01CC87EF1BC51BA100EB20CE /* changeModeDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeModeDouble.png; sourceTree = "<group>"; };
-		01CC87F01BC51BA100EB20CE /* changeModeDouble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "changeModeDouble@2x.png"; sourceTree = "<group>"; };
-		01CC87F11BC51BA100EB20CE /* changeModeOverflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeModeOverflow.png; sourceTree = "<group>"; };
-		01CC87F21BC51BA100EB20CE /* changeModeOverflow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "changeModeOverflow@2x.png"; sourceTree = "<group>"; };
-		01CC87F31BC51BA100EB20CE /* changeModeSingle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeModeSingle.png; sourceTree = "<group>"; };
-		01CC87F41BC51BA100EB20CE /* changeModeSingle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "changeModeSingle@2x.png"; sourceTree = "<group>"; };
-		01CC87F51BC51BA100EB20CE /* close_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_player.png; sourceTree = "<group>"; };
-		01CC87F61BC51BA100EB20CE /* close_player@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_player@2x.png"; sourceTree = "<group>"; };
-		01CC87F71BC51BA100EB20CE /* close_player@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_player@3x.png"; sourceTree = "<group>"; };
-		01CC87F81BC51BA100EB20CE /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
-		01CC87F91BC51BA100EB20CE /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
-		01CC87FA1BC51BA100EB20CE /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
-		01CC87FB1BC51BA100EB20CE /* direction_l2r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_l2r.png; sourceTree = "<group>"; };
-		01CC87FC1BC51BA100EB20CE /* direction_l2r@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "direction_l2r@2x.png"; sourceTree = "<group>"; };
-		01CC87FD1BC51BA100EB20CE /* direction_r2l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_r2l.png; sourceTree = "<group>"; };
-		01CC87FE1BC51BA100EB20CE /* direction_r2l@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "direction_r2l@2x.png"; sourceTree = "<group>"; };
-		01CC87FF1BC51BA100EB20CE /* img_outline_triangledown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_outline_triangledown.png; sourceTree = "<group>"; };
-		01CC88001BC51BA100EB20CE /* img_outline_triangledown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_outline_triangledown@2x.png"; sourceTree = "<group>"; };
-		01CC88011BC51BA100EB20CE /* img_outline_triangledown@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_outline_triangledown@3x.png"; sourceTree = "<group>"; };
-		01CC88021BC51BA100EB20CE /* img_outline_triangleright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_outline_triangleright.png; sourceTree = "<group>"; };
-		01CC88031BC51BA100EB20CE /* img_outline_triangleright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_outline_triangleright@2x.png"; sourceTree = "<group>"; };
-		01CC88041BC51BA100EB20CE /* img_outline_triangleright@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_outline_triangleright@3x.png"; sourceTree = "<group>"; };
-		01CC88051BC51BA100EB20CE /* indice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indice.png; sourceTree = "<group>"; };
-		01CC88061BC51BA100EB20CE /* indice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "indice@2x.png"; sourceTree = "<group>"; };
-		01CC88071BC51BA100EB20CE /* indice@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "indice@3x.png"; sourceTree = "<group>"; };
-		01CC88081BC51BA100EB20CE /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
-		01CC88091BC51BA100EB20CE /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@2x.png"; sourceTree = "<group>"; };
-		01CC880A1BC51BA100EB20CE /* next@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@3x.png"; sourceTree = "<group>"; };
-		01CC880B1BC51BA100EB20CE /* pagelead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pagelead.png; sourceTree = "<group>"; };
-		01CC880C1BC51BA100EB20CE /* pagelead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pagelead@2x.png"; sourceTree = "<group>"; };
-		01CC880D1BC51BA100EB20CE /* pause_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_player.png; sourceTree = "<group>"; };
-		01CC880E1BC51BA100EB20CE /* pause_player@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_player@2x.png"; sourceTree = "<group>"; };
-		01CC880F1BC51BA100EB20CE /* pause_player@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_player@3x.png"; sourceTree = "<group>"; };
-		01CC88101BC51BA100EB20CE /* play_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_player.png; sourceTree = "<group>"; };
-		01CC88111BC51BA100EB20CE /* play_player@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_player@2x.png"; sourceTree = "<group>"; };
-		01CC88121BC51BA100EB20CE /* play_player@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_player@3x.png"; sourceTree = "<group>"; };
-		01CC88131BC51BA100EB20CE /* prew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prew.png; sourceTree = "<group>"; };
-		01CC88141BC51BA100EB20CE /* prew@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "prew@2x.png"; sourceTree = "<group>"; };
-		01CC88151BC51BA100EB20CE /* prew@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "prew@3x.png"; sourceTree = "<group>"; };
-		01CC88161BC51BA100EB20CE /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
-		01CC88171BC51BA100EB20CE /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
-		01CC88181BC51BA100EB20CE /* reload@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@3x.png"; sourceTree = "<group>"; };
-		01CC88191BC51BA100EB20CE /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
-		01CC881A1BC51BA100EB20CE /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
-		01CC881B1BC51BA100EB20CE /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
-		01CC881C1BC51BA100EB20CE /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
-		01CC881D1BC51BA100EB20CE /* stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@2x.png"; sourceTree = "<group>"; };
-		01CC881E1BC51BA100EB20CE /* stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@3x.png"; sourceTree = "<group>"; };
-		01CC881F1BC51BA100EB20CE /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
-		01CC88201BC51BA100EB20CE /* text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text@2x.png"; sourceTree = "<group>"; };
-		01CC88211BC51BA100EB20CE /* X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X.png; sourceTree = "<group>"; };
-		01CC88221BC51BA100EB20CE /* X@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X@2x.png"; sourceTree = "<group>"; };
-		01CC88231BC51BA100EB20CE /* X@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X@3x.png"; sourceTree = "<group>"; };
-		01CC88241BC51BA100EB20CE /* zoomLock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomLock.png; sourceTree = "<group>"; };
-		01CC88251BC51BA100EB20CE /* zoomLock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoomLock@2x.png"; sourceTree = "<group>"; };
-		01CC88261BC51BA100EB20CE /* zoomUnlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomUnlock.png; sourceTree = "<group>"; };
-		01CC88271BC51BA100EB20CE /* zoomUnlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoomUnlock@2x.png"; sourceTree = "<group>"; };
 		01CD253D1F62F92D00A6AA8D /* FPKDestination.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPKDestination.h; sourceTree = "<group>"; };
 		01CD253E1F62F92D00A6AA8D /* FPKNamedDestination.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPKNamedDestination.h; sourceTree = "<group>"; };
 		01CD259D1AC1AB34008C1E23 /* FPKSharedSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKSharedSettings.h; sourceTree = "<group>"; };
@@ -584,21 +375,14 @@
 		01D73BBF1474385300C142FE /* Times-BoldItalic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-BoldItalic.fpkfm"; sourceTree = "<group>"; };
 		01D73BC01474385300C142FE /* Times-Italic.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Italic.fpkfm"; sourceTree = "<group>"; };
 		01D73BC11474385300C142FE /* Times-Roman.fpkfm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Times-Roman.fpkfm"; sourceTree = "<group>"; };
-		01DF25E01663863400433BE7 /* Deafult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deafult.png; sourceTree = "<group>"; };
-		01DF25E21663863E00433BE7 /* Deafult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deafult@2x.png"; sourceTree = "<group>"; };
-		01DF25E41663867F00433BE7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		01DF25E61663868300433BE7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01F65FC013CAF42000BEBBC1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		01F65FC213CAF48700BEBBC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		01F840B5163FC810009104F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		01F98AEC1A31AB020097D82D /* FPKThumbnailDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKThumbnailDataStore.h; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FastPdfKit Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39224923146832B3004A3EB1 /* NewsstandKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NewsstandKit.framework; path = System/Library/Frameworks/NewsstandKit.framework; sourceTree = SDKROOT; };
 		6F9FBD191356F2CD006884F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPKKioskBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB9770A13CB6E76007C368C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPKReaderBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		890986A913CECF0F00656A49 /* Snippets.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
 		9505BB1C13CCB941003163D2 /* FastPdfKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastPdfKit.xcconfig; sourceTree = "<group>"; };
 		950B37BF125CBEA5007BDDA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -629,26 +413,14 @@
 		956A056C14039F38003AE44D /* Drawable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawable.m; sourceTree = "<group>"; };
 		956A056D14039F38003AE44D /* OverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayManager.h; sourceTree = "<group>"; };
 		956A056E14039F38003AE44D /* OverlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayManager.m; sourceTree = "<group>"; };
-		958A81A014027EEE00837C82 /* FastPdfKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastPdfKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		958CBA84141E612F0094D4C1 /* FastPdfKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastPdfKit.h; sourceTree = "<group>"; };
 		9597F994125D17E400E17B47 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
-		9598FDD112337F0F008D7198 /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
-		9598FDD312337F24008D7198 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		9598FDE512338042008D7198 /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
 		959BB88613D97302004CB203 /* FastPDFKitSimple-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastPDFKitSimple-Prefix.pch"; sourceTree = "<group>"; };
 		95B86D9F14BC4AC80018B2C7 /* FPKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPKMainViewController.h; sourceTree = "<group>"; };
-		95B8BD5E13CCA59800195F0F /* Manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Manual.pdf; path = Doc/Manual.pdf; sourceTree = SOURCE_ROOT; };
-		95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ManualCrypt.pdf; path = Doc/ManualCrypt.pdf; sourceTree = SOURCE_ROOT; };
+		95B8BD5E13CCA59800195F0F /* Manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Manual.pdf; sourceTree = "<group>"; };
+		95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ManualCrypt.pdf; sourceTree = "<group>"; };
 		95B8BDB613CCAB3200195F0F /* FPKKioskBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FPKKioskBundle.bundle; path = Bundle/FPKKioskBundle.bundle; sourceTree = SOURCE_ROOT; };
 		95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FPKReaderBundle.bundle; path = Bundle/FPKReaderBundle.bundle; sourceTree = SOURCE_ROOT; };
-		95B9C57E15110EAA00411AF6 /* backThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backThumb@2x.png"; sourceTree = "<group>"; };
-		95B9C57F15110EAA00411AF6 /* download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "download@2x.png"; sourceTree = "<group>"; };
-		95B9C58115110EAA00411AF6 /* remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remove@2x.png"; sourceTree = "<group>"; };
-		95B9C58215110EAA00411AF6 /* resume@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resume@2x.png"; sourceTree = "<group>"; };
-		95B9C58315110EAA00411AF6 /* view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view@2x.png"; sourceTree = "<group>"; };
-		95EF544414B48EDD00910B3D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		95EF544514B48EDD00910B3D /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
-		95EF544614B48EDD00910B3D /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
 		95FFFB4C14B488AE00B1CD3B /* FPKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPKMainViewController.m; sourceTree = "<group>"; };
 		95FFFB4D14B488AE00B1CD3B /* OverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = OverlayManager.h; sourceTree = "<group>"; };
 		95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayManager.m; sourceTree = "<group>"; };
@@ -656,33 +428,14 @@
 		95FFFB6F14B48C3100B1CD3B /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
 		95FFFB7014B48C3100B1CD3B /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FPKReaderBundle.bundle; sourceTree = "<group>"; };
 		95FFFB7114B48C3100B1CD3B /* Snippets.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
-		FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deafult-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		01598DA313CAE783007344EE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01598DA713CAE783007344EE /* Foundation.framework in Frameworks */,
-				01BD939015F756AA007D8594 /* libFastPdfKit.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01598DD713CAE917007344EE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01598DDB13CAE917007344EE /* Foundation.framework in Frameworks */,
-				39224A2114685400004A3EB1 /* NewsstandKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		018848E5131E89570045038F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0137C78A1F66DE0B003A3380 /* FastPdfKitFramework.framework in Frameworks */,
+				0116E7941F67D1510074EF6E /* FastPdfKit.framework in Frameworks */,
 				0123E9611A41A96400E1A521 /* CoreMedia.framework in Frameworks */,
 				0123E95F1A41A95900E1A521 /* AVKit.framework in Frameworks */,
 				0181A3BC15F6790200AC476F /* Security.framework in Frameworks */,
@@ -696,6 +449,7 @@
 				01884A6C131E93C70045038F /* CoreGraphics.framework in Frameworks */,
 				01884AC3131E96C50045038F /* SystemConfiguration.framework in Frameworks */,
 				01884AC7131E96CE0045038F /* MobileCoreServices.framework in Frameworks */,
+				0116E7AE1F67D5210074EF6E /* FastPdfKit.framework in Frameworks */,
 				6F9FBD1A1356F2CD006884F5 /* AVFoundation.framework in Frameworks */,
 				010D14B213CAF62500FD6F08 /* MediaPlayer.framework in Frameworks */,
 				3922492614683424004A3EB1 /* NewsstandKit.framework in Frameworks */,
@@ -715,7 +469,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0137C78B1F66DE99003A3380 /* FastPdfKitFramework.framework in Frameworks */,
+				0116E7951F67D1580074EF6E /* FastPdfKit.framework in Frameworks */,
 				0123E9631A41A98D00E1A521 /* CoreMedia.framework in Frameworks */,
 				0123E9621A41A98800E1A521 /* AVKit.framework in Frameworks */,
 				01F84DD31A00F4F700AB4996 /* libz.dylib in Frameworks */,
@@ -732,26 +486,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6FB9770613CB6E76007C368C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6FB9770B13CB6E76007C368C /* CoreFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6FB9771813CB6E8A007C368C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6FB9771C13CB6E8A007C368C /* CoreFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		954B74AA14B47F0D00503F90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0116E78F1F67CF450074EF6E /* FastPdfKit.framework in Frameworks */,
 				0123E9651A41A99E00E1A521 /* CoreMedia.framework in Frameworks */,
 				0123E9641A41A99800E1A521 /* AVKit.framework in Frameworks */,
 				954B752314B4812700503F90 /* MapKit.framework in Frameworks */,
@@ -760,7 +499,6 @@
 				954B74AF14B47F0D00503F90 /* UIKit.framework in Frameworks */,
 				954B74B014B47F0D00503F90 /* Foundation.framework in Frameworks */,
 				954B74B114B47F0D00503F90 /* CoreGraphics.framework in Frameworks */,
-				95EF543A14B48D7E00910B3D /* FastPdfKit.framework in Frameworks */,
 				010FE6E515EE582100304C02 /* Common.framework in Frameworks */,
 				010FE6E615EE582200304C02 /* libPayPalMPL.a in Frameworks */,
 				010FE6E715EE582200304C02 /* FPKConfig.framework in Frameworks */,
@@ -773,14 +511,6 @@
 				010FE6EF15EE582200304C02 /* FPKShared.framework in Frameworks */,
 				010FE6F015EE582200304C02 /* FPKWebPopup.framework in Frameworks */,
 				010FE6F115EE582200304C02 /* FPKYouTube.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		958A819B14027EEE00837C82 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01142A3D15CFCE48001B5374 /* libFastPdfKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,17 +531,20 @@
 		010D14D213CB002300FD6F08 /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
-				01157E521F66F7D300BA3E8A /* Supporting files */,
+				0116E7901F67D0680074EF6E /* Settings.bundle */,
 				956A056B14039F38003AE44D /* Drawable.h */,
 				956A056C14039F38003AE44D /* Drawable.m */,
+				010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */,
+				010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */,
+				95B8BD5E13CCA59800195F0F /* Manual.pdf */,
+				95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */,
 				010D14DC13CB002300FD6F08 /* MenuViewController.h */,
 				01142A2D15CFC38E001B5374 /* MenuViewController.m */,
 				956A056D14039F38003AE44D /* OverlayManager.h */,
 				956A056E14039F38003AE44D /* OverlayManager.m */,
 				0137C7901F66E171003A3380 /* Simple.storyboard */,
-				010D14D713CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.h */,
-				010D14D813CB002300FD6F08 /* FastPDFKit_SampleAppDelegate.m */,
 				01157E4C1F66F5A400BA3E8A /* Simple.xcassets */,
+				01157E521F66F7D300BA3E8A /* Supporting files */,
 			);
 			path = SimpleApp;
 			sourceTree = SOURCE_ROOT;
@@ -1046,72 +779,6 @@
 		0188491A131E8A630045038F /* img */ = {
 			isa = PBXGroup;
 			children = (
-				01CC87EC1BC51BA100EB20CE /* bookmark_add.png */,
-				01CC87ED1BC51BA100EB20CE /* bookmark_add@2x.png */,
-				01CC87EE1BC51BA100EB20CE /* bookmark_add@3x.png */,
-				01CC87EF1BC51BA100EB20CE /* changeModeDouble.png */,
-				01CC87F01BC51BA100EB20CE /* changeModeDouble@2x.png */,
-				01CC87F11BC51BA100EB20CE /* changeModeOverflow.png */,
-				01CC87F21BC51BA100EB20CE /* changeModeOverflow@2x.png */,
-				01CC87F31BC51BA100EB20CE /* changeModeSingle.png */,
-				01CC87F41BC51BA100EB20CE /* changeModeSingle@2x.png */,
-				01CC87F51BC51BA100EB20CE /* close_player.png */,
-				01CC87F61BC51BA100EB20CE /* close_player@2x.png */,
-				01CC87F71BC51BA100EB20CE /* close_player@3x.png */,
-				01CC87F81BC51BA100EB20CE /* close.png */,
-				01CC87F91BC51BA100EB20CE /* close@2x.png */,
-				01CC87FA1BC51BA100EB20CE /* close@3x.png */,
-				01CC87FB1BC51BA100EB20CE /* direction_l2r.png */,
-				01CC87FC1BC51BA100EB20CE /* direction_l2r@2x.png */,
-				01CC87FD1BC51BA100EB20CE /* direction_r2l.png */,
-				01CC87FE1BC51BA100EB20CE /* direction_r2l@2x.png */,
-				01CC87FF1BC51BA100EB20CE /* img_outline_triangledown.png */,
-				01CC88001BC51BA100EB20CE /* img_outline_triangledown@2x.png */,
-				01CC88011BC51BA100EB20CE /* img_outline_triangledown@3x.png */,
-				01CC88021BC51BA100EB20CE /* img_outline_triangleright.png */,
-				01CC88031BC51BA100EB20CE /* img_outline_triangleright@2x.png */,
-				01CC88041BC51BA100EB20CE /* img_outline_triangleright@3x.png */,
-				01CC88051BC51BA100EB20CE /* indice.png */,
-				01CC88061BC51BA100EB20CE /* indice@2x.png */,
-				01CC88071BC51BA100EB20CE /* indice@3x.png */,
-				01CC88081BC51BA100EB20CE /* next.png */,
-				01CC88091BC51BA100EB20CE /* next@2x.png */,
-				01CC880A1BC51BA100EB20CE /* next@3x.png */,
-				01CC880B1BC51BA100EB20CE /* pagelead.png */,
-				01CC880C1BC51BA100EB20CE /* pagelead@2x.png */,
-				01CC880D1BC51BA100EB20CE /* pause_player.png */,
-				01CC880E1BC51BA100EB20CE /* pause_player@2x.png */,
-				01CC880F1BC51BA100EB20CE /* pause_player@3x.png */,
-				01CC88101BC51BA100EB20CE /* play_player.png */,
-				01CC88111BC51BA100EB20CE /* play_player@2x.png */,
-				01CC88121BC51BA100EB20CE /* play_player@3x.png */,
-				01CC88131BC51BA100EB20CE /* prew.png */,
-				01CC88141BC51BA100EB20CE /* prew@2x.png */,
-				01CC88151BC51BA100EB20CE /* prew@3x.png */,
-				01CC88161BC51BA100EB20CE /* reload.png */,
-				01CC88171BC51BA100EB20CE /* reload@2x.png */,
-				01CC88181BC51BA100EB20CE /* reload@3x.png */,
-				01CC88191BC51BA100EB20CE /* search.png */,
-				01CC881A1BC51BA100EB20CE /* search@2x.png */,
-				01CC881B1BC51BA100EB20CE /* search@3x.png */,
-				01CC881C1BC51BA100EB20CE /* stop.png */,
-				01CC881D1BC51BA100EB20CE /* stop@2x.png */,
-				01CC881E1BC51BA100EB20CE /* stop@3x.png */,
-				01CC881F1BC51BA100EB20CE /* text.png */,
-				01CC88201BC51BA100EB20CE /* text@2x.png */,
-				01CC88211BC51BA100EB20CE /* X.png */,
-				01CC88221BC51BA100EB20CE /* X@2x.png */,
-				01CC88231BC51BA100EB20CE /* X@3x.png */,
-				01CC88241BC51BA100EB20CE /* zoomLock.png */,
-				01CC88251BC51BA100EB20CE /* zoomLock@2x.png */,
-				01CC88261BC51BA100EB20CE /* zoomUnlock.png */,
-				01CC88271BC51BA100EB20CE /* zoomUnlock@2x.png */,
-				95B9C57E15110EAA00411AF6 /* backThumb@2x.png */,
-				95B9C57F15110EAA00411AF6 /* download@2x.png */,
-				95B9C58115110EAA00411AF6 /* remove@2x.png */,
-				95B9C58215110EAA00411AF6 /* resume@2x.png */,
-				95B9C58315110EAA00411AF6 /* view@2x.png */,
-				012E52911F66C0CB001DEAE2 /* Reader.xcassets */,
 			);
 			name = img;
 			path = ../img;
@@ -1120,7 +787,7 @@
 		01A5FD001F669FAA00943CFB /* FastPdfKitFramework */ = {
 			isa = PBXGroup;
 			children = (
-				01A5FD011F669FAA00943CFB /* FastPdfKitFramework.h */,
+				01A5FD011F669FAA00943CFB /* FastPdfKit.h */,
 				01A5FD021F669FAA00943CFB /* Info.plist */,
 			);
 			path = FastPdfKitFramework;
@@ -1183,28 +850,32 @@
 		01BC07DC13C756130077CE63 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				01BC081413C75D3A0077CE63 /* Bookmarks */,
+				0123603113CC917600861EB7 /* Multimedia */,
+				01BC081913C75D3A0077CE63 /* Outline */,
+				012E52911F66C0CB001DEAE2 /* Reader.xcassets */,
 				0123603513CC917600861EB7 /* ReaderViewController.h */,
 				0161F228141FABE8000EA8E4 /* ReaderViewController.m */,
 				01BC081E13C75D3A0077CE63 /* TextSearch */,
-				01BC081913C75D3A0077CE63 /* Outline */,
-				01BC081413C75D3A0077CE63 /* Bookmarks */,
 				010D14CB13CAFFD800FD6F08 /* ThumbnailSlider */,
-				0123603113CC917600861EB7 /* Multimedia */,
 			);
-			path = Reader;
+			name = Reader;
+			path = ../Reader;
 			sourceTree = "<group>";
 		};
 		01BC080013C75B310077CE63 /* KioskApp */ = {
 			isa = PBXGroup;
 			children = (
+				0116E7921F67D0880074EF6E /* Settings.bundle */,
+				01CF7355132532FC00E42146 /* kiosk_list.xml */,
 				01BC080813C75B310077CE63 /* BookItemView.h */,
 				01BC080913C75B310077CE63 /* BookItemView.m */,
 				01BC080113C75B310077CE63 /* FastPDFKit_KioskAppDelegate.h */,
 				01BC080213C75B310077CE63 /* FastPDFKit_KioskAppDelegate.m */,
-				01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */,
-				01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */,
 				01157E481F66F3FB00BA3E8A /* Kiosk.storyboard */,
 				0137C7B81F66ED46003A3380 /* Kiosk.xcassets */,
+				01BC080613C75B310077CE63 /* MenuViewController_Kiosk.h */,
+				01BC080713C75B310077CE63 /* MenuViewController_Kiosk.m */,
 				01157E461F66F09400BA3E8A /* Supporting files */,
 				01BC080A13C75B310077CE63 /* XMLParser.h */,
 				01BC080B13C75B310077CE63 /* XMLParser.m */,
@@ -1302,13 +973,8 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */,
 				018848E7131E89570045038F /* FastPdfKit Kiosk.app */,
-				010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */,
-				010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */,
-				6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */,
-				6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */,
-				958A81A014027EEE00837C82 /* FastPdfKit.framework */,
 				954B74AD14B47F0D00503F90 /* Extended.app */,
-				01A5FCFF1F669FAA00943CFB /* FastPdfKitFramework.framework */,
+				01A5FCFF1F669FAA00943CFB /* FastPdfKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1316,11 +982,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				01DF25E61663868300433BE7 /* Default@2x.png */,
-				01DF25E41663867F00433BE7 /* Default.png */,
-				01DF25E21663863E00433BE7 /* Deafult@2x.png */,
-				01DF25E01663863400433BE7 /* Deafult.png */,
-				FFB9B955160A025F00A6F8EC /* Deafult-568h@2x.png */,
 				011E42B81472D1510099754E /* README.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				95F5A3511270A2A700F65929 /* FPKCore */,
@@ -1353,22 +1014,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01F840B5163FC810009104F0 /* Default-568h@2x.png */,
-				0102A1D11547009B00F7A9AF /* Settings.bundle */,
 				0123602913CC90C800861EB7 /* KioskBundle-Info.plist */,
 				0123602A13CC90C800861EB7 /* ReaderBundle-Info.plist */,
 				951AE313140298910025DA52 /* ReaderFramework-Info.plist */,
-				95B8BD5E13CCA59800195F0F /* Manual.pdf */,
-				95B8BD5F13CCA59800195F0F /* ManualCrypt.pdf */,
-				0123606D13CCA18700861EB7 /* Default@2x.png */,
-				0123606E13CCA18700861EB7 /* Default.png */,
-				0123606F13CCA18700861EB7 /* Default-Portrait~ipad.png */,
-				0123607013CCA18700861EB7 /* Default-Landscape~ipad.png */,
-				01CF7355132532FC00E42146 /* kiosk_list.xml */,
 				9597F994125D17E400E17B47 /* iTunesArtwork */,
-				9598FDD312337F24008D7198 /* Icon.png */,
-				9598FDD112337F0F008D7198 /* Icon72.png */,
-				9598FDE512338042008D7198 /* Icon114.png */,
 				0188491A131E8A630045038F /* img */,
 				95B8BDB613CCAB3200195F0F /* FPKKioskBundle.bundle */,
 				95B8BDB713CCAB3200195F0F /* FPKReaderBundle.bundle */,
@@ -1411,11 +1060,11 @@
 				95FFFB4C14B488AE00B1CD3B /* FPKMainViewController.m */,
 				95FFFB4D14B488AE00B1CD3B /* OverlayManager.h */,
 				95FFFB4E14B488AE00B1CD3B /* OverlayManager.m */,
-				013FC2531585FC81003A0F04 /* FPKMainViewController_iPhone.xib */,
-				013FC2561585FC87003A0F04 /* FPKMainViewController_iPad.xib */,
 				954B74CC14B47FE000503F90 /* Extensions */,
 				954B74FB14B4803800503F90 /* Resources */,
 				954B74B314B47F0D00503F90 /* Supporting Files */,
+				0116E7891F67C66E0074EF6E /* Extended.xcassets */,
+				0116E78D1F67CABB0074EF6E /* Extended.storyboard */,
 			);
 			path = Extended;
 			sourceTree = "<group>";
@@ -1460,9 +1109,6 @@
 				954B74FF14B4805100503F90 /* img4.png */,
 				954B750014B4805100503F90 /* sample.indd */,
 				954B750114B4805100503F90 /* sample.pdf */,
-				95EF544414B48EDD00910B3D /* Icon.png */,
-				95EF544514B48EDD00910B3D /* Icon72.png */,
-				95EF544614B48EDD00910B3D /* Icon114.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1499,188 +1145,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		01598DA413CAE783007344EE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01598E0013CAEBCF007344EE /* BookmarkViewController.h in Headers */,
-				01598E0113CAEBCF007344EE /* BookmarkViewControllerDelegate.h in Headers */,
-				01598E0213CAEBCF007344EE /* OutlineViewController.h in Headers */,
-				01598E0313CAEBCF007344EE /* OutlineViewControllerDelegate.h in Headers */,
-				01598E0413CAEBCF007344EE /* MiniSearchView.h in Headers */,
-				01CD25A11AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */,
-				01598E0513CAEBCF007344EE /* MiniSearchViewControllerDelegate.h in Headers */,
-				01598E0713CAEBCF007344EE /* SearchManager.h in Headers */,
-				01598E0813CAEBCF007344EE /* SearchResultCellView.h in Headers */,
-				01AF55B61F62F441002958B4 /* FPKDestination.h in Headers */,
-				01598E0913CAEBCF007344EE /* SearchResultDataSource.h in Headers */,
-				01598E0B13CAEBCF007344EE /* SearchViewController.h in Headers */,
-				01598E0C13CAEBCF007344EE /* SearchViewControllerDelegate.h in Headers */,
-				01598E0D13CAEBCF007344EE /* TextDisplayViewController.h in Headers */,
-				01598E0E13CAEBCF007344EE /* TextDisplayViewControllerDelegate.h in Headers */,
-				01598E0F13CAEBCF007344EE /* TextSearchOperation.h in Headers */,
-				010D14C913CAFF1B00FD6F08 /* FastPDFKitReader-Prefix.pch in Headers */,
-				015D10C01AE69B270014C999 /* FPKSearchMatchItem.h in Headers */,
-				0123603C13CC917600861EB7 /* AudioViewController.h in Headers */,
-				0123604413CC917600861EB7 /* ReaderViewController.h in Headers */,
-				0123604A13CC917600861EB7 /* MFAudioPlayerViewImpl.h in Headers */,
-				01CB28061A655D9900FDF2DE /* SearchResultView.h in Headers */,
-				0123605013CC917600861EB7 /* WebBrowser.h in Headers */,
-				0123605B13CC957C00861EB7 /* NotificationFactory.h in Headers */,
-				016095E414482814003CEAAA /* FPKURIAnnotation.h in Headers */,
-				016095E714482814003CEAAA /* MFAudioPlayerViewProtocol.h in Headers */,
-				016095EA14482814003CEAAA /* MFAudioProvider.h in Headers */,
-				016095F014482814003CEAAA /* MFDocumentOverlayDataSource.h in Headers */,
-				016095F914482814003CEAAA /* MFOverlayDrawable.h in Headers */,
-				016095FC14482814003CEAAA /* MFOverlayTouchable.h in Headers */,
-				016095FF14482814003CEAAA /* MFPDFOutlineEntry.h in Headers */,
-				0160960214482814003CEAAA /* mfprofile.h in Headers */,
-				0168707E1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */,
-				015ED17C1455AE9700C7C372 /* FPKAnnotation.h in Headers */,
-				0155DDE71458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */,
-				0155DE14145848590080FFEF /* MFTextItem.h in Headers */,
-				01B3DAD9146D920F00F8C740 /* Stuff.h in Headers */,
-				01CD259E1AC1AB34008C1E23 /* FPKSharedSettings.h in Headers */,
-				0189D3BC1486C1C000635C5D /* FPKGlyphBox.h in Headers */,
-				0189D3BF1486C28400635C5D /* MFDocumentManager.h in Headers */,
-				01AD4F1C14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */,
-				0102A1DA1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,
-				01F98AED1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */,
-				01CD25A41AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01598DD813CAE917007344EE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01598E2513CAEC8B007344EE /* MenuViewController_Kiosk.h in Headers */,
-				01598E2413CAEC8B007344EE /* FastPDFKit_KioskAppDelegate.h in Headers */,
-				01598E2613CAEC8B007344EE /* BookItemView.h in Headers */,
-				01598E2713CAEC8B007344EE /* XMLParser.h in Headers */,
-				01598E2C13CAEC8B007344EE /* ASIAuthenticationDialog.h in Headers */,
-				01598E2D13CAEC8B007344EE /* ASICacheDelegate.h in Headers */,
-				01598E2E13CAEC8B007344EE /* ASIDownloadCache.h in Headers */,
-				01598E2F13CAEC8B007344EE /* ASIFormDataRequest.h in Headers */,
-				01598E3013CAEC8B007344EE /* ASIHTTPRequest.h in Headers */,
-				01598E3113CAEC8B007344EE /* ASIHTTPRequestConfig.h in Headers */,
-				01598E3213CAEC8B007344EE /* ASIHTTPRequestDelegate.h in Headers */,
-				01598E3313CAEC8B007344EE /* ASIInputStream.h in Headers */,
-				01598E3413CAEC8B007344EE /* ASINetworkQueue.h in Headers */,
-				01598E3513CAEC8B007344EE /* ASINSStringAdditions.h in Headers */,
-				01598E3613CAEC8B007344EE /* ASIProgressDelegate.h in Headers */,
-				01598E3713CAEC8B007344EE /* Reachability.h in Headers */,
-				01598E3813CAEC8B007344EE /* ZipArchive.h in Headers */,
-				010D14C813CAFF1B00FD6F08 /* FastPDFKitKiosk-Prefix.pch in Headers */,
-				016095E514482814003CEAAA /* FPKURIAnnotation.h in Headers */,
-				016095E814482814003CEAAA /* MFAudioPlayerViewProtocol.h in Headers */,
-				016095EB14482814003CEAAA /* MFAudioProvider.h in Headers */,
-				016095F114482814003CEAAA /* MFDocumentOverlayDataSource.h in Headers */,
-				016095FA14482814003CEAAA /* MFOverlayDrawable.h in Headers */,
-				016095FD14482814003CEAAA /* MFOverlayTouchable.h in Headers */,
-				0160960014482814003CEAAA /* MFPDFOutlineEntry.h in Headers */,
-				0160960314482814003CEAAA /* mfprofile.h in Headers */,
-				015ED17E1455AEA900C7C372 /* FPKAnnotation.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		01A5FCFC1F669FAA00943CFB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01A5FD031F669FAA00943CFB /* FastPdfKitFramework.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		958A819C14027EEE00837C82 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				958A81BF14027F5B00837C82 /* MiniSearchView.h in Headers */,
-				015D10BE1AE69B100014C999 /* FPKSearchMatchItem.h in Headers */,
-				01F98AEE1A31AB020097D82D /* FPKThumbnailDataStore.h in Headers */,
-				958A81C114027F5B00837C82 /* MiniSearchViewControllerDelegate.h in Headers */,
-				958A81C214027F5B00837C82 /* NotificationFactory.h in Headers */,
-				0102A1DB1547022B00F7A9AF /* MFDocumentViewController.h in Headers */,
-				958A81C414027F5B00837C82 /* SearchManager.h in Headers */,
-				01CD25A51AC1ABE4008C1E23 /* FPKEmbeddedAnnotationURIHandler.h in Headers */,
-				958A81C614027F5B00837C82 /* SearchResultCellView.h in Headers */,
-				958A81C814027F5B00837C82 /* SearchResultDataSource.h in Headers */,
-				958A81CD14027F5B00837C82 /* SearchViewController.h in Headers */,
-				958A81CF14027F5B00837C82 /* SearchViewControllerDelegate.h in Headers */,
-				958A81D114027F5B00837C82 /* TextDisplayViewController.h in Headers */,
-				01CB280C1A655DAF00FDF2DE /* SearchResultView.h in Headers */,
-				958A81D314027F5B00837C82 /* TextDisplayViewControllerDelegate.h in Headers */,
-				958A81D414027F5B00837C82 /* TextSearchOperation.h in Headers */,
-				958A81D614027F7100837C82 /* OutlineViewController.h in Headers */,
-				958A81D714027F7100837C82 /* OutlineViewControllerDelegate.h in Headers */,
-				958A81D814027F7100837C82 /* BookmarkViewController.h in Headers */,
-				958A81D914027F7100837C82 /* BookmarkViewControllerDelegate.h in Headers */,
-				958A81DD14027F7100837C82 /* AudioViewController.h in Headers */,
-				958A81DE14027F7100837C82 /* MFAudioPlayerViewImpl.h in Headers */,
-				958A81DF14027F7100837C82 /* WebBrowser.h in Headers */,
-				958A81BD14027F5300837C82 /* ReaderViewController.h in Headers */,
-				951AE312140298690025DA52 /* FastPdfKitFramework-Prefix.pch in Headers */,
-				958CBA85141E612F0094D4C1 /* FastPdfKit.h in Headers */,
-				016095E614482814003CEAAA /* FPKURIAnnotation.h in Headers */,
-				016095E914482814003CEAAA /* MFAudioPlayerViewProtocol.h in Headers */,
-				01AF55B81F62F442002958B4 /* FPKDestination.h in Headers */,
-				016095EC14482814003CEAAA /* MFAudioProvider.h in Headers */,
-				016095F214482814003CEAAA /* MFDocumentOverlayDataSource.h in Headers */,
-				016095FB14482814003CEAAA /* MFOverlayDrawable.h in Headers */,
-				016095FE14482814003CEAAA /* MFOverlayTouchable.h in Headers */,
-				0160960114482814003CEAAA /* MFPDFOutlineEntry.h in Headers */,
-				0160960414482814003CEAAA /* mfprofile.h in Headers */,
-				0168707F1451B79400E9AE65 /* FPKOverlayViewDataSource.h in Headers */,
-				01CD259F1AC1AB34008C1E23 /* FPKSharedSettings.h in Headers */,
-				01CD25A21AC1AB64008C1E23 /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */,
-				015ED17D1455AE9700C7C372 /* FPKAnnotation.h in Headers */,
-				0155DDE81458144A0080FFEF /* MFDocumentViewControllerDelegate.h in Headers */,
-				0155DE15145848590080FFEF /* MFTextItem.h in Headers */,
-				01B3DADA146D920F00F8C740 /* Stuff.h in Headers */,
-				0189D3BD1486C1C000635C5D /* FPKGlyphBox.h in Headers */,
-				0189D3C01486C28400635C5D /* MFDocumentManager.h in Headers */,
-				01AD4F1D14CF0F8600DF0AB3 /* MFPDFOutlineRemoteEntry.h in Headers */,
+				01A5FD031F669FAA00943CFB /* FastPdfKit.h in Headers */,
+				0116E7B31F67D5C20074EF6E /* BookmarkViewController.h in Headers */,
+				0116E7B41F67D5C20074EF6E /* AudioViewController.h in Headers */,
+				0116E7B51F67D5C20074EF6E /* MFAudioPlayerViewImpl.h in Headers */,
+				0116E7B61F67D5C20074EF6E /* WebBrowser.h in Headers */,
+				0116E7B71F67D5C20074EF6E /* OutlineViewController.h in Headers */,
+				0116E7B81F67D5C20074EF6E /* ReaderViewController.h in Headers */,
+				0116E7B91F67D5C20074EF6E /* FPKSearchMatchItem.h in Headers */,
+				0116E7BA1F67D5C20074EF6E /* MiniSearchView.h in Headers */,
+				0116E7BB1F67D5C20074EF6E /* MiniSearchViewControllerDelegate.h in Headers */,
+				0116E7BC1F67D5C20074EF6E /* NotificationFactory.h in Headers */,
+				0116E7BD1F67D5C20074EF6E /* SearchManager.h in Headers */,
+				0116E7BE1F67D5C20074EF6E /* SearchResultCellView.h in Headers */,
+				0116E7BF1F67D5C20074EF6E /* SearchResultDataSource.h in Headers */,
+				0116E7C01F67D5C20074EF6E /* SearchResultView.h in Headers */,
+				0116E7C11F67D5C20074EF6E /* SearchViewControllerDelegate.h in Headers */,
+				0116E7C21F67D5C20074EF6E /* TextDisplayViewController.h in Headers */,
+				0116E7C31F67D5C20074EF6E /* TextDisplayViewControllerDelegate.h in Headers */,
+				0116E7C51F67D5FC0074EF6E /* FPKDestination.h in Headers */,
+				0116E7C61F67D5FC0074EF6E /* FPKDestination.h in Headers */,
+				0116E7C71F67D5FC0074EF6E /* FPKNamedDestination.h in Headers */,
+				0116E7C81F67D5FC0074EF6E /* FPKAnnotation.h in Headers */,
+				0116E7C91F67D5FC0074EF6E /* FPKBaseEmbeddedAnnotationURIHandler.h in Headers */,
+				0116E7CA1F67D5FC0074EF6E /* FPKEmbeddedAnnotationURIHandler.h in Headers */,
+				0116E7CB1F67D5FC0074EF6E /* FPKGlyphBox.h in Headers */,
+				0116E7CC1F67D5FC0074EF6E /* FPKOverlayViewDataSource.h in Headers */,
+				0116E7CD1F67D5FC0074EF6E /* FPKSharedSettings.h in Headers */,
+				0116E7CE1F67D5FC0074EF6E /* FPKThumbnailDataStore.h in Headers */,
+				0116E7CF1F67D5FC0074EF6E /* FPKURIAnnotation.h in Headers */,
+				0116E7D01F67D5FC0074EF6E /* MFAudioPlayerViewProtocol.h in Headers */,
+				0116E7D11F67D5FC0074EF6E /* MFAudioProvider.h in Headers */,
+				0116E7D21F67D5FC0074EF6E /* MFDocumentManager.h in Headers */,
+				0116E7D31F67D5FC0074EF6E /* MFDocumentOverlayDataSource.h in Headers */,
+				0116E7D41F67D5FC0074EF6E /* MFDocumentViewController.h in Headers */,
+				0116E7D51F67D5FC0074EF6E /* MFDocumentViewControllerDelegate.h in Headers */,
+				0116E7D61F67D5FC0074EF6E /* MFOverlayDrawable.h in Headers */,
+				0116E7D71F67D5FC0074EF6E /* MFOverlayTouchable.h in Headers */,
+				0116E7D81F67D5FC0074EF6E /* MFPDFOutlineEntry.h in Headers */,
+				0116E7D91F67D5FC0074EF6E /* MFPDFOutlineRemoteEntry.h in Headers */,
+				0116E7DA1F67D5FC0074EF6E /* mfprofile.h in Headers */,
+				0116E7DB1F67D5FC0074EF6E /* MFTextItem.h in Headers */,
+				0116E7DC1F67D5FC0074EF6E /* Stuff.h in Headers */,
+				0116E7C41F67D5C20074EF6E /* TextSearchOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		01598DA513CAE783007344EE /* FPKReaderLib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01598DAE13CAE783007344EE /* Build configuration list for PBXNativeTarget "FPKReaderLib" */;
-			buildPhases = (
-				01598DA213CAE783007344EE /* Sources */,
-				01598DA313CAE783007344EE /* Frameworks */,
-				01598DA413CAE783007344EE /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FPKReaderLib;
-			productName = FastPDFKitReader;
-			productReference = 010D14AD13CAF5CE00FD6F08 /* libFPKReaderLib.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		01598DD913CAE917007344EE /* FPKKioskLib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01598DDF13CAE917007344EE /* Build configuration list for PBXNativeTarget "FPKKioskLib" */;
-			buildPhases = (
-				01598DD613CAE917007344EE /* Sources */,
-				01598DD713CAE917007344EE /* Frameworks */,
-				01598DD813CAE917007344EE /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FPKKioskLib;
-			productName = FastPDFKitKiosk;
-			productReference = 010D14AE13CAF5CE00FD6F08 /* libFPKKioskLib.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		018848E6131E89570045038F /* FPKKioskApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 018848ED131E89570045038F /* Build configuration list for PBXNativeTarget "FPKKioskApp" */;
@@ -1688,19 +1205,21 @@
 				018848E3131E89570045038F /* Resources */,
 				018848E4131E89570045038F /* Sources */,
 				018848E5131E89570045038F /* Frameworks */,
+				0116E7B21F67D5210074EF6E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0116E7B11F67D5210074EF6E /* PBXTargetDependency */,
 			);
 			name = FPKKioskApp;
 			productName = "FastPDFKit Kiosk";
 			productReference = 018848E7131E89570045038F /* FastPdfKit Kiosk.app */;
 			productType = "com.apple.product-type.application";
 		};
-		01A5FCFE1F669FAA00943CFB /* FastPdfKitFramework */ = {
+		01A5FCFE1F669FAA00943CFB /* FastPdfKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01A5FD0A1F669FAA00943CFB /* Build configuration list for PBXNativeTarget "FastPdfKitFramework" */;
+			buildConfigurationList = 01A5FD0A1F669FAA00943CFB /* Build configuration list for PBXNativeTarget "FastPdfKit" */;
 			buildPhases = (
 				01A5FCFA1F669FAA00943CFB /* Sources */,
 				01A5FCFB1F669FAA00943CFB /* Frameworks */,
@@ -1711,9 +1230,9 @@
 			);
 			dependencies = (
 			);
-			name = FastPdfKitFramework;
+			name = FastPdfKit;
 			productName = FastPdfKitFramework;
-			productReference = 01A5FCFF1F669FAA00943CFB /* FastPdfKitFramework.framework */;
+			productReference = 01A5FCFF1F669FAA00943CFB /* FastPdfKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1D6058900D05DD3D006BFB54 /* FPKSimpleApp */ = {
@@ -1733,42 +1252,6 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* FastPdfKit Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6FB9770813CB6E76007C368C /* FPKKioskBundle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6FB9771313CB6E76007C368C /* Build configuration list for PBXNativeTarget "FPKKioskBundle" */;
-			buildPhases = (
-				6FB9770513CB6E76007C368C /* Sources */,
-				6FB9770613CB6E76007C368C /* Frameworks */,
-				6FB9770713CB6E76007C368C /* Resources */,
-				01235FEB13CC7F9B00861EB7 /* Run Script */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FPKKioskBundle;
-			productName = KioskBundle;
-			productReference = 6FB9770913CB6E76007C368C /* FPKKioskBundle.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		6FB9771A13CB6E8A007C368C /* FPKReaderBundle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "FPKReaderBundle" */;
-			buildPhases = (
-				6FB9771713CB6E8A007C368C /* Sources */,
-				6FB9771813CB6E8A007C368C /* Frameworks */,
-				6FB9771913CB6E8A007C368C /* Resources */,
-				01235FE913CC7F7F00861EB7 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FPKReaderBundle;
-			productName = SimpleBundle;
-			productReference = 6FB9771B13CB6E8A007C368C /* FPKReaderBundle.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
 		954B74AC14B47F0D00503F90 /* Extended */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 954B74CA14B47F0D00503F90 /* Build configuration list for PBXNativeTarget "Extended" */;
@@ -1786,28 +1269,6 @@
 			productReference = 954B74AD14B47F0D00503F90 /* Extended.app */;
 			productType = "com.apple.product-type.application";
 		};
-		958A819F14027EEE00837C82 /* FastPdfKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 958A81AB14027EEE00837C82 /* Build configuration list for PBXNativeTarget "FastPdfKit" */;
-			buildPhases = (
-				958A819914027EEE00837C82 /* ShellScript */,
-				958A819A14027EEE00837C82 /* Sources */,
-				958A819B14027EEE00837C82 /* Frameworks */,
-				958A819C14027EEE00837C82 /* Headers */,
-				958A819D14027EEE00837C82 /* Resources */,
-				01663B4F15C974280053EBE7 /* Run Script */,
-				958A819E14027EEE00837C82 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				951AE310140295060025DA52 /* PBXTargetDependency */,
-			);
-			name = FastPdfKit;
-			productName = FastPdfKit;
-			productReference = 958A81A014027EEE00837C82 /* FastPdfKit.framework */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1821,15 +1282,14 @@
 					};
 					01A5FCFE1F669FAA00943CFB = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = GXH4K8J6KR;
+						DevelopmentTeam = 24PN5XJ85Y;
 						ProvisioningStyle = Automatic;
 					};
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 24PN5XJ85Y;
 					};
-					958A819F14027EEE00837C82 = {
-						DevelopmentTeam = GXH4K8J6KR;
-						ProvisioningStyle = Manual;
+					954B74AC14B47F0D00503F90 = {
+						DevelopmentTeam = 24PN5XJ85Y;
 					};
 				};
 			};
@@ -1850,13 +1310,8 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* FPKSimpleApp */,
 				018848E6131E89570045038F /* FPKKioskApp */,
-				01598DA513CAE783007344EE /* FPKReaderLib */,
-				01598DD913CAE917007344EE /* FPKKioskLib */,
-				6FB9770813CB6E76007C368C /* FPKKioskBundle */,
-				6FB9771A13CB6E8A007C368C /* FPKReaderBundle */,
-				958A819F14027EEE00837C82 /* FastPdfKit */,
 				954B74AC14B47F0D00503F90 /* Extended */,
-				01A5FCFE1F669FAA00943CFB /* FastPdfKitFramework */,
+				01A5FCFE1F669FAA00943CFB /* FastPdfKit */,
 			);
 		};
 /* End PBXProject section */
@@ -1866,19 +1321,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0123607213CCA18700861EB7 /* Default@2x.png in Resources */,
-				0123607413CCA18700861EB7 /* Default.png in Resources */,
-				0123607613CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */,
 				01157E491F66F3FB00BA3E8A /* Kiosk.storyboard in Resources */,
-				0123607813CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */,
-				95EF544114B48E4800910B3D /* Icon.png in Resources */,
-				95EF544214B48E4C00910B3D /* Icon72.png in Resources */,
-				95EF544314B48E4F00910B3D /* Icon114.png in Resources */,
+				0116E7931F67D0880074EF6E /* Settings.bundle in Resources */,
 				01157E471F66F3A400BA3E8A /* Kiosk.xcassets in Resources */,
-				0102A1D31547009B00F7A9AF /* Settings.bundle in Resources */,
-				FFB9B956160A025F00A6F8EC /* Deafult-568h@2x.png in Resources */,
-				01DF25E11663863400433BE7 /* Deafult.png in Resources */,
-				01DF25E31663863E00433BE7 /* Deafult@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1901,43 +1346,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95075CD414062F7700B8C979 /* FPKReaderBundle.bundle in Resources */,
 				9597F995125D17E400E17B47 /* iTunesArtwork in Resources */,
 				0137C7911F66E171003A3380 /* Simple.storyboard in Resources */,
-				6FB9779B13CC4CA1007C368C /* Icon.png in Resources */,
-				6FB9779F13CC4CBA007C368C /* Icon72.png in Resources */,
-				6FB977A013CC4CBA007C368C /* Icon114.png in Resources */,
-				0123602B13CC90C800861EB7 /* KioskBundle-Info.plist in Resources */,
-				0123602E13CC90C800861EB7 /* ReaderBundle-Info.plist in Resources */,
-				0123607113CCA18700861EB7 /* Default@2x.png in Resources */,
-				0123607313CCA18700861EB7 /* Default.png in Resources */,
-				0123607513CCA18700861EB7 /* Default-Portrait~ipad.png in Resources */,
-				0123607713CCA18700861EB7 /* Default-Landscape~ipad.png in Resources */,
 				95B8BD6013CCA59800195F0F /* Manual.pdf in Resources */,
 				95B8BD6113CCA59800195F0F /* ManualCrypt.pdf in Resources */,
 				01157E4F1F66F66E00BA3E8A /* Simple.xcassets in Resources */,
-				0102A1D21547009B00F7A9AF /* Settings.bundle in Resources */,
-				01DF25DE166385E100433BE7 /* Default-568h@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6FB9770713CB6E76007C368C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6FB977A713CC4E5E007C368C /* kiosk_list.xml in Resources */,
-				95B9C58415110EAA00411AF6 /* backThumb@2x.png in Resources */,
-				95B9C58515110EAA00411AF6 /* download@2x.png in Resources */,
-				95B9C58715110EAA00411AF6 /* remove@2x.png in Resources */,
-				95B9C58815110EAA00411AF6 /* resume@2x.png in Resources */,
-				95B9C58915110EAA00411AF6 /* view@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6FB9771913CB6E8A007C368C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				0116E7911F67D0680074EF6E /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1946,156 +1360,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				954B74B714B47F0D00503F90 /* InfoPlist.strings in Resources */,
-				013FC2521585FC81003A0F04 /* FPKMainViewController_iPhone.xib in Resources */,
-				013FC2551585FC87003A0F04 /* FPKMainViewController_iPad.xib in Resources */,
 				954B750214B4805100503F90 /* img1.png in Resources */,
 				954B750314B4805100503F90 /* img2.png in Resources */,
 				954B750414B4805100503F90 /* img3.png in Resources */,
 				954B750514B4805100503F90 /* img4.png in Resources */,
+				0116E78A1F67C66E0074EF6E /* Extended.xcassets in Resources */,
 				954B750614B4805100503F90 /* sample.indd in Resources */,
 				954B750714B4805100503F90 /* sample.pdf in Resources */,
 				95FFFB7414B48C3100B1CD3B /* FPKReaderBundle.bundle in Resources */,
+				0116E78E1F67CABB0074EF6E /* Extended.storyboard in Resources */,
 				95FFFB7514B48C3100B1CD3B /* Snippets.txt in Resources */,
-				95EF544714B48EDD00910B3D /* Icon.png in Resources */,
-				95EF544814B48EDD00910B3D /* Icon72.png in Resources */,
-				95EF544914B48EDD00910B3D /* Icon114.png in Resources */,
 				010FE6ED15EE582200304C02 /* fpkmessage-info.png in Resources */,
-				01F840B6163FC810009104F0 /* Default-568h@2x.png in Resources */,
-				01DF25E51663867F00433BE7 /* Default.png in Resources */,
-				01DF25E71663868300433BE7 /* Default@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		958A819D14027EEE00837C82 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01ECFCEC18351DD8003FB9C5 /* FastPdfKitFramework.xcconfig in Resources */,
-				958A81E81402804700837C82 /* FPKReaderBundle.bundle in Resources */,
-				958CBAB5141E66060094D4C1 /* Snippets.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		01235FE913CC7F7F00861EB7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(CONTENTS_FOLDER_PATH)",
-			);
-			outputPaths = (
-				"$(PROJECT_DIR)/Bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp -rf \"${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH}\" \"${PROJECT_DIR}/Bundle\"";
-		};
-		01235FEB13CC7F9B00861EB7 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(CONTENTS_FOLDER_PATH)",
-			);
-			name = "Run Script";
-			outputPaths = (
-				"$(PROJECT_DIR)/Bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp -rf \"${BUILD_DIR}/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${CONTENTS_FOLDER_PATH}\" \"${PROJECT_DIR}/Bundle\"";
-		};
-		01663B4F15C974280053EBE7 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "HEADERS_ROOT=$SRCROOT/$PRODUCT_NAME\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Versions/$FRAMEWORK_VERSION/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$(find $FRAMEWORK_HEADERS_DIR/. -not -type d 2> /dev/null | sed -e \"s@.*/@@g\")\n\nFIND_OPTS=\"\"\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\nif [ -n \"$FIND_OPTS\" ]; then\nFIND_OPTS=\"$FIND_OPTS -o\"\nfi\nFIND_OPTS=\"$FIND_OPTS -name '$PUBLIC_HEADER'\"\ndone\n\nif [ -n \"$FIND_OPTS\" ]; then\nfor ORIG_HEADER in $(eval \"find $HEADERS_ROOT/. $FIND_OPTS\" 2> /dev/null | sed -e \"s@^$HEADERS_ROOT/./@@g\"); do\nPUBLIC_HEADER=$(basename $ORIG_HEADER)\nRELATIVE_PATH=$(dirname $ORIG_HEADER)\nif [ -e $FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER ]; then\nmkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\nmv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\nfi\ndone\nfi\n";
-		};
-		958A819914027EEE00837C82 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n[[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n[[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n[[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n[[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n[[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
-		};
-		958A819E14027EEE00837C82 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n# Nothing for the slave script to do\nexit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n    eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\necho \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\nexit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nUFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nUFW_OTHER_PLATFORM=iphonesimulator\nelse\nUFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\nUFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\necho \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\nexit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\n# Thank you Andy\n\nif [[ \"$XCODE_VERSION_MAJOR\" = \"0500\" ]]\nthen\necho \"$DT_TOOLCHAIN_DIR/usr/bin/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$DT_TOOLCHAIN_DIR/usr/bin/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\nelse\necho \"$TOOLCHAIN_DIR/usr/bin/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$TOOLCHAIN_DIR/usr/bin/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\nfi\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build framework structure\n\necho \"Build symlinks\"\n\necho ln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\nln -sfh A \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Versions/Current\"\necho ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\nln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Headers\"\necho ln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\nln -sfh Versions/Current/Resources \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Resources\"\necho ln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\nln -sfh \"Versions/Current/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${EXECUTABLE_NAME}\"\n\n\n# Link to binary for unit tests\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework\"\nln -sfh \"../${WRAPPER_NAME}/${EXECUTABLE_NAME}\" \"${BUILT_PRODUCTS_DIR}/.fake_fw_testing.framework/.fake_fw_testing\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\nif [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\nthen\necho ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\nfi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n\n# Copying the framework to the project dir\n\necho \"Copying the Framework to the project directory\"\nrm -rf \"${PROJECT_DIR}/${PRODUCT_NAME}.embeddedframework\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}/${PRODUCT_NAME}.embeddedframework\" \"${PROJECT_DIR}/\"\n\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		01598DA213CAE783007344EE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01598DBE13CAE7CD007344EE /* MiniSearchView.m in Sources */,
-				01598DBF13CAE7CD007344EE /* NotificationFactory.m in Sources */,
-				01598DC013CAE7CD007344EE /* SearchManager.m in Sources */,
-				015D10C31AE69B300014C999 /* FPKSearchMatchItem.m in Sources */,
-				01598DC113CAE7CD007344EE /* SearchResultCellView.m in Sources */,
-				01598DC313CAE7CD007344EE /* SearchViewController.m in Sources */,
-				01598DC413CAE7CD007344EE /* TextDisplayViewController.m in Sources */,
-				01598DC513CAE7CD007344EE /* TextSearchOperation.m in Sources */,
-				0123604013CC917600861EB7 /* AudioViewController.m in Sources */,
-				01CB28091A655D9900FDF2DE /* SearchResultView.m in Sources */,
-				0123604E13CC917600861EB7 /* MFAudioPlayerViewImpl.m in Sources */,
-				0123605413CC917600861EB7 /* WebBrowser.m in Sources */,
-				9505BB1613CCB0F0003163D2 /* BookmarkViewController.m in Sources */,
-				0161F22A141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
-				0161F22F141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01598DD613CAE917007344EE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01598DE513CAEA78007344EE /* ASIAuthenticationDialog.m in Sources */,
-				01598DE613CAEA78007344EE /* ASIDownloadCache.m in Sources */,
-				01598DEE13CAEB09007344EE /* FastPDFKit_KioskAppDelegate.m in Sources */,
-				01598DEF13CAEB09007344EE /* MenuViewController_Kiosk.m in Sources */,
-				01598DF013CAEB09007344EE /* BookItemView.m in Sources */,
-				01598DF113CAEB09007344EE /* XMLParser.m in Sources */,
-				01598DE713CAEA78007344EE /* ASIFormDataRequest.m in Sources */,
-				01598DE813CAEA78007344EE /* ASIHTTPRequest.m in Sources */,
-				01598DE913CAEA78007344EE /* ASIInputStream.m in Sources */,
-				01598DED13CAEAA6007344EE /* Reachability.m in Sources */,
-				01598DEA13CAEA78007344EE /* ASINetworkQueue.m in Sources */,
-				01598DEB13CAEA78007344EE /* ASINSStringAdditions.m in Sources */,
-				0193CA0B161B43BA0060A401 /* ZipArchive.mm in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		018848E4131E89570045038F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2159,20 +1440,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6FB9770513CB6E76007C368C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6FB9771713CB6E8A007C368C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		954B74A914B47F0D00503F90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2184,35 +1451,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		958A819A14027EEE00837C82 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				958A81C014027F5B00837C82 /* MiniSearchView.m in Sources */,
-				958A81C314027F5B00837C82 /* NotificationFactory.m in Sources */,
-				958A81C514027F5B00837C82 /* SearchManager.m in Sources */,
-				015D10BF1AE69B100014C999 /* FPKSearchMatchItem.m in Sources */,
-				958A81C714027F5B00837C82 /* SearchResultCellView.m in Sources */,
-				958A81CE14027F5B00837C82 /* SearchViewController.m in Sources */,
-				958A81D214027F5B00837C82 /* TextDisplayViewController.m in Sources */,
-				958A81D514027F5B00837C82 /* TextSearchOperation.m in Sources */,
-				958A81E114027F9100837C82 /* BookmarkViewController.m in Sources */,
-				01CB280B1A655DA700FDF2DE /* SearchResultView.m in Sources */,
-				958A81E514027F9100837C82 /* AudioViewController.m in Sources */,
-				958A81E614027F9100837C82 /* MFAudioPlayerViewImpl.m in Sources */,
-				958A81E714027F9100837C82 /* WebBrowser.m in Sources */,
-				0161F22B141FABE8000EA8E4 /* ReaderViewController.m in Sources */,
-				0161F230141FAC24000EA8E4 /* OutlineViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		951AE310140295060025DA52 /* PBXTargetDependency */ = {
+		0116E7B11F67D5210074EF6E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6FB9771A13CB6E8A007C368C /* FPKReaderBundle */;
-			targetProxy = 951AE30F140295060025DA52 /* PBXContainerItemProxy */;
+			target = 01A5FCFE1F669FAA00943CFB /* FastPdfKit */;
+			targetProxy = 0116E7B01F67D5210074EF6E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2228,112 +1473,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		01598DAB13CAE783007344EE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				DSTROOT = /tmp/FastPDFKitReader.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitReader-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FastPdfKit\\ Library\"",
-					"\"$(SRCROOT)/FPKCore\"",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
-			};
-			name = Debug;
-		};
-		01598DAC13CAE783007344EE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				DSTROOT = /tmp/FastPDFKitReader.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitReader-Prefix.pch";
-				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FastPdfKit\\ Library\"",
-					"\"$(SRCROOT)/FPKCore\"",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
-			};
-			name = Release;
-		};
-		01598DE013CAE917007344EE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				DSTROOT = /tmp/FastPDFKitKiosk.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitKiosk-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FastPdfKit\\ Library\"",
-					"\"$(SRCROOT)/Classes/Third parties\"",
-					"\"$(SRCROOT)/FPKCore\"",
-					"\"$(SRCROOT)/Classes/ThirdParties\"",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s arm64 x86_64 i386";
-			};
-			name = Debug;
-		};
-		01598DE113CAE917007344EE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				DSTROOT = /tmp/FastPDFKitKiosk.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OtherSources/FastPDFKitKiosk-Prefix.pch";
-				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FastPdfKit\\ Library\"",
-					"\"$(SRCROOT)/Classes/Third parties\"",
-					"\"$(SRCROOT)/FPKCore\"",
-					"\"$(SRCROOT)/Classes/ThirdParties\"",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s arm64 x86_64 i386";
-			};
-			name = Release;
-		};
 		018848EA131E89570045038F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2356,6 +1495,7 @@
 				INFOPLIST_FILE = "KioskApp/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/ThirdParties\"/**",
@@ -2391,6 +1531,7 @@
 				INFOPLIST_FILE = "KioskApp/FastPdfKit_Kiosk-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/FPKCore\"",
 					"\"$(SRCROOT)/ThirdParties\"/**",
@@ -2436,7 +1577,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GXH4K8J6KR;
+				DEVELOPMENT_TEAM = 24PN5XJ85Y;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2501,7 +1642,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GXH4K8J6KR;
+				DEVELOPMENT_TEAM = 24PN5XJ85Y;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2594,119 +1735,17 @@
 			};
 			name = Release;
 		};
-		6FB9771413CB6E76007C368C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/KioskBundle-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "Resources/KioskBundle-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s arm64";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		6FB9771513CB6E76007C368C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/KioskBundle-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "Resources/KioskBundle-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s arm64";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		6FB9772513CB6E8A007C368C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_BITCODE = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/SimpleBundle-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "Resources/ReaderBundle-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s arm64";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		6FB9772613CB6E8A007C368C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_BITCODE = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/SimpleBundle-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "Resources/ReaderBundle-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s arm64";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		954B74C714B47F0D00503F90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 24PN5XJ85Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
@@ -2736,8 +1775,8 @@
 				GCC_VERSION = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Classes/Extended/Resources/Extended-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
@@ -2783,8 +1822,12 @@
 			baseConfigurationReference = 951AE31514029A6F0025DA52 /* FastPdfKitFramework.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 24PN5XJ85Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FastPdfKit.embeddedframework\"",
@@ -2807,8 +1850,8 @@
 				GCC_VERSION = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Classes/Extended/Resources/Extended-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				INFOPLIST_FILE = "Classes/Extended/Extended-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Extensions/Common.embeddedframework/Resources\"",
@@ -2847,83 +1890,6 @@
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		958A81A814027EEE00837C82 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CODE_SIGN_STYLE = Manual;
-				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
-				DEAD_CODE_STRIPPING = NO;
-				DEPLOYMENT_POSTPROCESSING = YES;
-				DEVELOPMENT_TEAM = GXH4K8J6KR;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OtherSources/FastPdfKitFramework-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "Resources/ReaderFramework-Info.plist";
-				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FPKCore\"",
-				);
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				MACH_O_TYPE = mh_object;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 x86_64 arm64";
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Debug;
-		};
-		958A81A914027EEE00837C82 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CODE_SIGN_STYLE = Manual;
-				CONTENTS_FOLDER_PATH = "$(WRAPPER_NAME)/Versions/$(FRAMEWORK_VERSION)";
-				DEAD_CODE_STRIPPING = NO;
-				DEPLOYMENT_POSTPROCESSING = YES;
-				DEVELOPMENT_TEAM = GXH4K8J6KR;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OtherSources/FastPdfKitFramework-Prefix.pch";
-				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "Resources/ReaderFramework-Info.plist";
-				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FPKCore\"",
-				);
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				MACH_O_TYPE = mh_object;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				UNLOCALIZED_RESOURCES_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Resources";
-				VALID_ARCHS = "armv7 i386 x86_64 arm64";
-				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
@@ -2992,24 +1958,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01598DAE13CAE783007344EE /* Build configuration list for PBXNativeTarget "FPKReaderLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01598DAB13CAE783007344EE /* Debug */,
-				01598DAC13CAE783007344EE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		01598DDF13CAE917007344EE /* Build configuration list for PBXNativeTarget "FPKKioskLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01598DE013CAE917007344EE /* Debug */,
-				01598DE113CAE917007344EE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		018848ED131E89570045038F /* Build configuration list for PBXNativeTarget "FPKKioskApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3019,7 +1967,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		01A5FD0A1F669FAA00943CFB /* Build configuration list for PBXNativeTarget "FastPdfKitFramework" */ = {
+		01A5FD0A1F669FAA00943CFB /* Build configuration list for PBXNativeTarget "FastPdfKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01A5FD081F669FAA00943CFB /* Debug */,
@@ -3037,38 +1985,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FB9771313CB6E76007C368C /* Build configuration list for PBXNativeTarget "FPKKioskBundle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6FB9771413CB6E76007C368C /* Debug */,
-				6FB9771513CB6E76007C368C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6FB9772413CB6E8A007C368C /* Build configuration list for PBXNativeTarget "FPKReaderBundle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6FB9772513CB6E8A007C368C /* Debug */,
-				6FB9772613CB6E8A007C368C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		954B74CA14B47F0D00503F90 /* Build configuration list for PBXNativeTarget "Extended" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				954B74C714B47F0D00503F90 /* Debug */,
 				954B74C814B47F0D00503F90 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		958A81AB14027EEE00837C82 /* Build configuration list for PBXNativeTarget "FastPdfKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				958A81A814027EEE00837C82 /* Debug */,
-				958A81A914027EEE00837C82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -13,7 +13,6 @@
 #define FPK_XML_LINK @"link"
 #define FPK_XML_TITLE @"title"
 #define FPK_XML_PDF @"pdf"
-// #define DEF_XML_URL @"http://fastpdfkit.com/kiosk/kiosk_list.xml"
 
 @interface XMLParser()
 
