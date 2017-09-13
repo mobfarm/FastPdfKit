@@ -67,7 +67,7 @@
         NSDictionary * views = @{@"number":pageNumberLabel,
                                  @"snippet":snippetLabel};
         
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[snippet]-[number]-|" options:0 metrics:nil views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[snippet]-[number(>=50)]-|" options:0 metrics:nil views:views]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[snippet]|" options:0 metrics:nil views:views]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[number]|" options:0 metrics:nil views:views]];
         

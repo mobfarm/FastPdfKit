@@ -214,15 +214,15 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
             }
             
             controller.modalPresentationStyle = UIModalPresentationPopover;
+            controller.preferredContentSize = contentSize;
+            
+            [self presentViewController:controller animated:YES completion:nil];
             
             UIPopoverPresentationController * popoverPresentationController = controller.popoverPresentationController;
-            
             popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
             popoverPresentationController.sourceRect = rect;
             popoverPresentationController.sourceView = view;
             popoverPresentationController.delegate = self;
-            
-            [self presentViewController:controller animated:YES completion:nil];
             
         } else {
             
@@ -1306,7 +1306,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		
 		// Page number.
 		
-		UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 23)];
+		UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 170, 23)];
 		
         label.textAlignment = NSTextAlignmentLeft;
 		label.backgroundColor = [UIColor clearColor];
