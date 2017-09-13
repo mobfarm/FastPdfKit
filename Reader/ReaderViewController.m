@@ -423,6 +423,8 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         
         // We use different xib on iPhone and iPad.
         _outlineViewController = [[OutlineViewController alloc]initWithNibName:@"OutlineView" bundle:[NSBundle bundleForClass:[self class]]];
+        [_outlineViewController setOutlineEntries: [[self document] outline]];
+        _outlineViewController.delegate = self;
     }
     return _outlineViewController;
 }
@@ -438,9 +440,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         self.currentReusableView = FPKReusableViewOutline;
         
         OutlineViewController * controller = self.outlineViewController;
-        [controller setOutlineEntries: [[self document] outline]];
-        controller.delegate = self;
-        
         [self presentViewController:controller barButtonItem:self.outlineBarButtonItem contentSize:self.popoverContentSize];
     }
 }

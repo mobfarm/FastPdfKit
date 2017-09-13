@@ -59,13 +59,18 @@
     
     if([entry isKindOfClass:[MFPDFOutlineRemoteEntry class]]) { // Remote (another document) entry
         
-        // Here you can setup a custom accessory for a remote destination.
-        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        MFPDFOutlineRemoteEntry * outlineRemoteEntry = (MFPDFOutlineRemoteEntry *)entry;
+        if(outlineRemoteEntry.file && outlineRemoteEntry.destination) {
+            [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        }
         
     } else if ([entry isKindOfClass:[MFPDFOutlineEntry class]]) { // Local (this document) entry
         
         // Here you can setup a custom accessory for a local destination.
-        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        MFPDFOutlineEntry * outlineEntry = (MFPDFOutlineEntry *)entry;
+        if(outlineEntry.destination) {
+            [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        }
     }
     
 	if([[(MFPDFOutlineEntry *)entry bookmarks]count]> 0) { // Check if the entry has children.
@@ -75,7 +80,7 @@
 	
 	[cell setIndentationLevel:[entry indentation]];
 	
-	[[cell textLabel]setText:[entry title]];
+    cell.textLabel.text = [entry title];
 	
 	return cell;
 }
@@ -280,32 +285,10 @@
     return self;
 }
 
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
-
-
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return YES;
-}
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 @end
