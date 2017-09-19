@@ -162,7 +162,7 @@
     
 	BookItemView * bookItemView = nil;
     
-	int documentsCount; // Used to iterate over each item in the list.
+	NSUInteger documentsCount; // Used to iterate over each item in the list.
 	
 	//Graphics visualization
 	

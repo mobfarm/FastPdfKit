@@ -693,9 +693,6 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(NSUInteger )numberOfSearchResults:(MiniSearchView *)view {
     
     NSUInteger count = [[[self searchManager] allSearchResults] count];
-#if DEBUG
-    NSLog(@"sarch results %d", count);
-#endif
     return count;
 }
 

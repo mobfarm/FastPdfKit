@@ -129,7 +129,7 @@ static const NSUInteger kDomainSection = 1;
 {
 	[self showTitle];
 	
-	UIDeviceOrientation o = [[UIApplication sharedApplication] statusBarOrientation];
+	UIInterfaceOrientation o = [[UIApplication sharedApplication] statusBarOrientation];
 	CGFloat angle = 0;
 	switch (o) {
 		case UIDeviceOrientationLandscapeLeft: angle = 90; break;
@@ -141,7 +141,7 @@ static const NSUInteger kDomainSection = 1;
 	CGRect f = [[UIScreen mainScreen] applicationFrame];
 
 	// Swap the frame height and width if necessary
- 	if (UIDeviceOrientationIsLandscape(o)) {
+ 	if (UIInterfaceOrientationIsLandscape(o)) {
 		CGFloat t;
 		t = f.size.width;
 		f.size.width = f.size.height;
@@ -212,7 +212,7 @@ static const NSUInteger kDomainSection = 1;
 
 + (void)dismiss
 {
-	[[sharedDialog parentViewController] dismissModalViewControllerAnimated:YES];
+    [[sharedDialog parentViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -229,7 +229,7 @@ static const NSUInteger kDomainSection = 1;
 	if (self == sharedDialog) {
 		[[self class] dismiss];
 	} else {
-		[[self parentViewController] dismissModalViewControllerAnimated:YES];
+        [[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
 	}
 }
 

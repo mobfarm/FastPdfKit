@@ -29,7 +29,7 @@
  This block will be executed inside the actionDismiss action. If not defined,
  the ReaderViewController will try to guesstimate the appropriate action.
  */
-@property (nonatomic, copy) void (^dismissBlock) ();
+@property (nonatomic, copy) void (^dismissBlock) (void);
 
 @property (nonatomic,retain) UIImage * imgModeSingle;
 @property (nonatomic,retain) UIImage * imgModeDouble;
