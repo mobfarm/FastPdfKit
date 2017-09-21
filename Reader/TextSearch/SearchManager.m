@@ -224,6 +224,19 @@
     });
 }
 
+-(BOOL)isSearchTermValid:(NSString*)term {
+    BOOL result = YES;
+    
+    // Can run mutiple validations on the search term below
+    
+    // Validate against searching single or multiple blank spaces
+    NSCharacterSet * notWhiteSpaceSet = [[NSCharacterSet whitespaceAndNewlineCharacterSet] invertedSet];
+    NSRange rangeOfNonWhitespaceChars = [self.searchTerm rangeOfCharacterFromSet:notWhiteSpaceSet];
+    result = rangeOfNonWhitespaceChars.location != NSNotFound;
+
+    return result;
+}
+
 -(void)startSearch {
     
     if(self.running) {
@@ -239,8 +252,14 @@
     NSNotification * notification = [NSNotification notificationWithName:kNotificationSearchDidStart object:self userInfo:info];
     [[NSNotificationCenter defaultCenter] postNotification:notification];
     
-    // Start the search
-	[self searchForTerm:self.searchTerm page:self.currentPage];
+    // Validate search term before searching
+    if([self isSearchTermValid: self.searchTerm]) {
+        // Start the search
+        [self searchForTerm:self.searchTerm page:self.currentPage];
+    } else {
+        [self stopSearch];
+        return;
+    }
 }
 
 #pragma mark - Lifecycle
