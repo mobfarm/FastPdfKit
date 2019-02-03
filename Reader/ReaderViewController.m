@@ -40,7 +40,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #define PAGE_NUM_LABEL_TEXT(x,y) [NSString stringWithFormat:@"Page %lu of %lu",(x),(y)]
 #define PAGE_NUM_LABEL_TEXT_PHONE(x,y) [NSString stringWithFormat:@"%lu / %lu",(x),(y)]
 
-@interface ReaderViewController() <UIPopoverPresentationControllerDelegate>
+@interface ReaderViewController() <UIPopoverPresentationControllerDelegate, UIToolbarDelegate>
 
 @property (nonatomic, readwrite) NSUInteger currentReusableView;
 @property (nonatomic, readwrite) NSUInteger currentSearchViewMode;
@@ -50,6 +50,8 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 @property (nonatomic, readwrite) BOOL pdfOpen;
 @property (nonatomic, readwrite) BOOL willFollowLink;
 @property (nonatomic, readwrite) BOOL hudHidden;
+@property (nonatomic, strong) NSLayoutConstraint * toolbarHiddenTopConstraint;
+@property (nonatomic, strong) NSLayoutConstraint * toolbarVisibleTopConstraint;
 @end
 
 @implementation ReaderViewController
@@ -1400,17 +1402,31 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         [items addObject:self.searchBarButtonItem];
 	}
 	
-	UIToolbar * toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
-    toolbar.frame = CGRectMake(0, -self.toolbarHeight, self.view.bounds.size.width, self.toolbarHeight);
-	toolbar.hidden = YES;
-	toolbar.barStyle = UIBarStyleBlackTranslucent;
-	[toolbar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
-	[toolbar setItems:items animated:NO];
+    UIToolbar * toolbar = [UIToolbar new];
+    self.rollawayToolbar = toolbar;
     toolbar.delegate = self;
+    toolbar.translatesAutoresizingMaskIntoConstraints = NO; // Prevent auto-generated conflicting constraints.
+	toolbar.barStyle = UIBarStyleBlackTranslucent;
+    [toolbar setItems:items animated:NO];
     
 	[self.view addSubview:toolbar];
-	
-	self.rollawayToolbar = toolbar;
+    
+    // We ensure the toolbar rests outside of the visible area.
+    self.toolbarHiddenTopConstraint =[NSLayoutConstraint constraintWithItem:toolbar attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    
+    if(@available(iOS 11,*)) {
+        // On iOS 11 and above, rest below the safeAreaLayoutGuide top margin.
+         self.toolbarVisibleTopConstraint = [NSLayoutConstraint constraintWithItem:toolbar attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view.safeAreaLayoutGuide attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    } else {
+        // On iOS 10 and earlier, rest below the topLayoutGuide (the area occupied by status and/or navigation bar) bottom margin.
+         self.toolbarVisibleTopConstraint = [NSLayoutConstraint constraintWithItem:toolbar attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
+    }
+    
+    NSLayoutConstraint * toolbarLeadingConstraint = [NSLayoutConstraint constraintWithItem:toolbar attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0];
+    NSLayoutConstraint * toolbarTrailingConstraint = [NSLayoutConstraint constraintWithItem:toolbar attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0];
+    
+    [self.view addConstraints:@[self.toolbarHiddenTopConstraint, self.toolbarVisibleTopConstraint, toolbarLeadingConstraint, toolbarTrailingConstraint]];
+    self.toolbarHiddenTopConstraint.active = YES;
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -1481,8 +1497,15 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
  */
 -(void)showToolbar {
 
-    // We used topLayoutGuide.length property to calculate the clearance.
+    [self.view layoutIfNeeded];
+    self.toolbarHiddenTopConstraint.active = NO;
+    self.toolbarVisibleTopConstraint.active = YES;
+    [UIView animateWithDuration:0.25f animations:^{
+        [self.view layoutIfNeeded];
+    }];
     
+    // We used topLayoutGuide.length property to calculate the clearance.
+    /*
     ReaderViewController * __weak this = self;
     [UIView animateWithDuration:.25f
                           delay:.0f
@@ -1496,6 +1519,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
                      }
                      ];
+     */
 }
 
 /**
@@ -1503,6 +1527,14 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
  */
 -(void)hideToolbar {
 	
+     [self.view layoutIfNeeded];
+    self.toolbarVisibleTopConstraint.active = NO;
+    self.toolbarHiddenTopConstraint.active = YES;
+    [UIView animateWithDuration:0.25f animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
+    /*
 	// Hide the toolbar, with animation.
         ReaderViewController * __weak this = self;
     [UIView animateWithDuration:.25f
@@ -1515,6 +1547,7 @@ static const NSUInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
                          this.rollawayToolbar.hidden = YES;
                         [this setNeedsStatusBarAppearanceUpdate];
                      }];
+     */
 }
 
 -(id)initWithDocumentManager:(MFDocumentManager *)aDocumentManager {

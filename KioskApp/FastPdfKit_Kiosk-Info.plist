@@ -74,6 +74,8 @@
 	<string>Kiosk</string>
 	<key>UINewsstandApp</key>
 	<false/>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
