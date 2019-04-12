@@ -154,7 +154,7 @@ For more information, see the [FastPdfKit website](http://fastpdfkit.com) and th
     results skimming
 -   [Zoom on
     results](http://support.fastpdfkit.com/kb/faq-and-tips/change-zoom-level-for-search-results)
--   [Multibyte charachters
+-   [Multibyte characters
     supported](http://en.wikipedia.org/wiki/Variable-width_encoding)
 -   [Customizable
     search](https://github.com/mobfarm/FastPdfKit/tree/master/Classes/Reader/TextSearch)
